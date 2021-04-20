@@ -1,0 +1,64 @@
+name: Generate stable API 
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./stable
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: 'master'
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0.x'
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x'
+
+    - name: Restore packages
+      run: dotnet restore
+
+    - name: Get OpenApi version
+      id: apiversion
+      run: echo "::set-output name=number::$(curl -s https://api.jellyfin.org/openapi/jellyfin-openapi-stable.json | jq '.info.version')"
+
+    - name: Create new version string
+      id: version
+      run: echo "::set-output name=number::$(echo ${{ steps.apiversion.outputs.number }})"
+
+    - name: Install dotnet-setversion
+      run: dotnet tool install -g dotnet-setversion
+    
+    - name: Set project version
+      run: setversion ${{steps.version.outputs.number}}
+
+    - name: Generate Api Client
+      run: dotnet build -c Release
+
+    - name: Check if generated client files were modified
+      id: diff
+      run: echo "::set-output name=count::$(git status -s | grep g.cs | grep -v csproj | wc -l)"
+
+    - name: Publish to nuget
+      # if: ${{ steps.diff.outputs.count }} > 0
+      run: dotnet nuget push bin/Release/*.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+    - name: Commit new changes to the repo
+      # if: ${{ steps.diff.outputs.count }} > 0
+      run: |
+        git config --global user.email "packaging@jellyfin.org"
+        git config --global user.name "Jellyfin Packaging Team"
+        git pull
+        git add .
+        git commit -m "Update stable OpenAPI client" || echo
+        git push

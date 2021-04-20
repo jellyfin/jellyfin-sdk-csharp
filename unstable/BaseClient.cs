@@ -1,0 +1,88 @@
+﻿using System.Net.Http;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Jellyfin.Sdk
+{
+    /// <summary>
+    /// The base client.
+    /// </summary>
+    public class BaseClient
+    {
+        private readonly SdkClientSettings _clientState;
+        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BaseClient"/>.
+        /// </summary>
+        /// <param name="clientState">The sdk client state.</param>
+        public BaseClient(SdkClientSettings clientState)
+        {
+            _clientState = clientState;
+        }
+        
+        /// <summary>
+        /// Prepare the request.
+        /// </summary>
+        /// <remarks>
+        /// Required for generated clients.
+        /// </remarks>
+        /// <param name="client">The http client.</param>
+        /// <param name="request">The http request message.</param>
+        /// <param name="url">The request url.</param>
+        /// <returns>The Task.</returns>
+        protected Task PrepareRequestAsync(HttpClient client, HttpRequestMessage request, StringBuilder url)
+        {
+            // Insert baseurl into full url.
+            if (!string.IsNullOrEmpty(_clientState.BaseUrl))
+            {
+                url.Insert(0, _clientState.BaseUrl.TrimEnd('/') + '/');
+            }
+
+            if (string.IsNullOrEmpty(_clientState.AccessToken))
+            {
+                // Token isn't set, attempt to request without.
+                request.Headers.Add("X-Emby-Authorization", _clientState.DefaultAuthorizationHeader);
+            }
+            else
+            {
+                // Token is set, make regular request.
+                request.Headers.Add("X-Emby-Token", _clientState.AccessToken);
+            }
+
+            return Task.CompletedTask;
+        }
+        
+        /// <summary>
+        /// Prepare the request.
+        /// </summary>
+        /// <remarks>
+        /// Required for generated clients.
+        /// </remarks>
+        /// <param name="client">The http client.</param>
+        /// <param name="request">The http request message.</param>
+        /// <param name="url">The request url.</param>
+        /// <returns>The Task.</returns>
+        protected Task PrepareRequestAsync(HttpClient client, HttpRequestMessage request, string url)
+        {
+            // Required for generated api.
+            return Task.CompletedTask;
+        }
+        
+        /// <summary>
+        /// Process response message.
+        /// </summary>
+        /// <remarks>
+        /// Required for generated clients.
+        /// </remarks>
+        /// <param name="client">The http client.</param>
+        /// <param name="response">The http response message.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>The Task.</returns>
+        protected Task ProcessResponseAsync(HttpClient client, HttpResponseMessage response, CancellationToken cancellationToken)
+        {
+            // Required for generated api.
+            return Task.CompletedTask;
+        }
+    }
+}
