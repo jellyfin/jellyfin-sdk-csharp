@@ -4,16 +4,15 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <Version>10.8.0-unstable.202104202035</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
-    <PackageId>Jellyfin.ApiClient</PackageId>
+    <PackageId>Jellyfin.Sdk</PackageId>
     <Authors>Jellyfin Contributors</Authors>
-    <PackageTags>Jellyfin;Api;Client</PackageTags>
+    <PackageTags>Jellyfin;Api;Sdk;Client</PackageTags>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>Auto generated Api client for Jellyfin.</Description>
+    <Description>Auto generated sdk for Jellyfin.</Description>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
@@ -27,7 +26,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-  <Target Name="GenerateApiClientSourceCode" BeforeTargets="CoreCompile;PrepareResource">
+  <Target Name="GenerateSdkSourceCode" BeforeTargets="CoreCompile;PrepareResource">
     <Exec Command="$(NSwagExe_Net50) run nswag.json" />
   </Target>
 </Project>
