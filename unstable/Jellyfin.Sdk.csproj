@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk" InitialTargets="GenerateSdkSourceCode">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -27,7 +27,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-  <Target Name="GenerateSdkSourceCode" BeforeTargets="CoreCompile;PrepareResource">
+  <Target Name="GenerateSdkSourceCode">
     <Exec Command="$(NSwagExe_Net50) run nswag.json" />
   </Target>
 </Project>

@@ -47,7 +47,7 @@ jobs:
 
     - name: Check if generated client files were modified
       id: diff
-      run: echo "::set-output name=count::$(git status -s | grep g.cs | grep -v csproj | wc -l)"
+      run: echo "::set-output name=count::$(git status -s | grep cs | grep -v csproj | wc -l)"
 
     - name: Publish to nuget
       if: ${{ steps.diff.outputs.count }} > 0
