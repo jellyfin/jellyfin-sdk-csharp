@@ -1,4 +1,4 @@
-name: Generate stable API 
+name: Generate stable API (no version update)
 
 on:
   workflow_dispatch:
@@ -30,16 +30,10 @@ jobs:
     - name: Generate Api Client
       run: dotnet build -c Release
 
-    - name: Check if generated client files were modified
-      id: diff
-      run: echo "::set-output name=count::$(git status -s | grep cs | grep -v csproj | wc -l)"
-
     - name: Publish to nuget
-      if: ${{ steps.diff.outputs.count }} > 0
       run: dotnet nuget push bin/Release/*.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
 
     - name: Commit new changes to the repo
-      if: ${{ steps.diff.outputs.count }} > 0
       run: |
         git config --global user.email "packaging@jellyfin.org"
         git config --global user.name "Jellyfin Packaging Team"
