@@ -42,7 +42,10 @@ jobs:
     - name: Set project version
       run: setversion ${{steps.version.outputs.number}}
 
-    - name: Generate Api Client
+    - name: Generate sdk
+      run: dotnet msbuild -target:GenerateSdk
+
+    - name: Build packages
       run: dotnet build -c Release
 
     - name: Check if generated client files were modified

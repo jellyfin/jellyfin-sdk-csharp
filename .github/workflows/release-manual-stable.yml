@@ -27,7 +27,10 @@ jobs:
       id: apiversion
       run: echo "::set-output name=number::$(curl -s https://api.jellyfin.org/openapi/jellyfin-openapi-stable.json | jq '.info.version')"
 
-    - name: Generate Api Client
+    - name: Generate sdk
+      run: dotnet msbuild -target:GenerateSdk
+
+    - name: Build packages
       run: dotnet build -c Release
 
     - name: Publish to nuget
