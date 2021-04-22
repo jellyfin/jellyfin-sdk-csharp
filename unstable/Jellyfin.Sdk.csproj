@@ -5,7 +5,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>10.8.0-unstable.202104211744</Version>
+    <Version>10.8.0-unstable.202104220050</Version>
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>Jellyfin.Sdk</PackageId>
