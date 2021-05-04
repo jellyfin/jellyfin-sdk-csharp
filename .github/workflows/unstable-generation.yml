@@ -48,6 +48,10 @@ jobs:
     - name: Build packages
       run: dotnet build -c Release
 
+    - name: [Debug] Check if generated client files were modified
+      id: diff
+      run: echo "$(git status -s | grep cs | grep -v csproj | wc -l)"
+
     - name: Check if generated client files were modified
       id: diff
       run: echo "::set-output name=count::$(git status -s | grep cs | grep -v csproj | wc -l)"
