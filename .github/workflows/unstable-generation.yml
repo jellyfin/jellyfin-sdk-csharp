@@ -48,7 +48,7 @@ jobs:
     - name: Build packages
       run: dotnet build -c Release
 
-    - name: [Debug] Check if generated client files were modified
+    - name: (Debug) Check if generated client files were modified
       id: diff
       run: echo "$(git status -s | grep cs | grep -v csproj | wc -l)"
 
