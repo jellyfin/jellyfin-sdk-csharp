@@ -48,13 +48,15 @@ jobs:
     - name: Build packages
       run: dotnet build -c Release
 
-    - name: (Debug) Check if generated client files were modified
-      id: diff-debug
-      run: echo "$(git status -s | grep cs | grep -v csproj | wc -l)"
-
     - name: Check if generated client files were modified
       id: diff
       run: echo "::set-output name=count::$(git status -s | grep cs | grep -v csproj | wc -l)"
+
+    - name: Validate update output
+      if: ${{ steps.diff.outputs.count }} > 0
+      run: |
+        echo ${{ steps.diff.outputs.count }} > 0
+        echo ${{ steps.diff.outputs.count }}
 
     - name: Publish to nuget
       if: ${{ steps.diff.outputs.count }} > 0
