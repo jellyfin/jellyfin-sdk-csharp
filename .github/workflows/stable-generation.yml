@@ -45,12 +45,13 @@ jobs:
     - name: Generate sdk
       run: dotnet msbuild -target:GenerateSdk
 
-    - name: Build packages
-      run: dotnet build -c Release
-
     - name: Check if generated client files were modified
       id: diff
       run: echo "::set-output name=count::$(git status -s | grep cs | grep -v csproj | wc -l)"
+
+    - name: Build packages
+      if: ${{ steps.diff.outputs.count > 0 }}
+      run: dotnet build -c Release
 
     - name: Publish to nuget
       if: ${{ steps.diff.outputs.count > 0 }}
