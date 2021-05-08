@@ -44,3 +44,6 @@ jobs:
         git add .
         git commit -m "Update stable OpenAPI client" || echo
         git push
+
+    - name: Build all sample projects
+      run: find ../samples -type f -name "*.csproj" -exec dotnet build {} \;
