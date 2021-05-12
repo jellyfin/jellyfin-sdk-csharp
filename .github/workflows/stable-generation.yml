@@ -60,11 +60,11 @@ jobs:
     - name: Commit new changes to the repo
       if: ${{ steps.diff.outputs.count > 0 }}
       run: |
-        git config --global user.email "packaging@jellyfin.org"
-        git config --global user.name "Jellyfin Packaging Team"
+        git config user.name jellyfin-bot
+        git config user.email team@jellyfin.org
         git pull
         git add .
-        git commit -m "Update stable OpenAPI client" || echo
+        git commit --allow-empty -m "Update stable OpenAPI client"
         git push
 
     - name: Build all sample projects
