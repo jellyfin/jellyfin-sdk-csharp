@@ -57,10 +57,10 @@ namespace Simple
             // Add Jellyfin SDK services.
             serviceCollection
                 .AddSingleton<SdkClientSettings>()
-                .AddScoped<ISystemClient, SystemClient>()
-                .AddScoped<IUserClient, UserClient>()
-                .AddScoped<IUserViewsClient, UserViewsClient>()
-                .AddScoped<IUserLibraryClient, UserLibraryClient>();
+                .AddSingleton<ISystemClient, SystemClient>()
+                .AddSingleton<IUserClient, UserClient>()
+                .AddSingleton<IUserViewsClient, UserViewsClient>()
+                .AddSingleton<IUserLibraryClient, UserLibraryClient>();
 
             // Add sample service
             serviceCollection.AddSingleton<SampleService>();
