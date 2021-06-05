@@ -35,6 +35,13 @@ namespace Simple
         {
             var serviceCollection = new ServiceCollection();
 
+            static HttpMessageHandler DefaultHttpClientHandlerDelegate(IServiceProvider service)
+                => new SocketsHttpHandler
+                {
+                    AutomaticDecompression = DecompressionMethods.All,
+                    RequestHeaderEncodingSelector = (_, _) => Encoding.UTF8
+                };
+
             // Add Http Client
             serviceCollection.AddHttpClient("Default", c =>
                 {
@@ -48,19 +55,23 @@ namespace Simple
                     c.DefaultRequestHeaders.Accept.Add(
                         new MediaTypeWithQualityHeaderValue("*/*", 0.8));
                 })
-                .ConfigurePrimaryHttpMessageHandler(() => new SocketsHttpHandler
-                {
-                    AutomaticDecompression = DecompressionMethods.All,
-                    RequestHeaderEncodingSelector = (_, _) => Encoding.UTF8
-                });
+                .ConfigurePrimaryHttpMessageHandler(DefaultHttpClientHandlerDelegate);
 
             // Add Jellyfin SDK services.
             serviceCollection
-                .AddSingleton<SdkClientSettings>()
-                .AddSingleton<ISystemClient, SystemClient>()
-                .AddSingleton<IUserClient, UserClient>()
-                .AddSingleton<IUserViewsClient, UserViewsClient>()
-                .AddSingleton<IUserLibraryClient, UserLibraryClient>();
+                .AddSingleton<SdkClientSettings>();
+            serviceCollection
+                .AddHttpClient<ISystemClient, SystemClient>()
+                .ConfigurePrimaryHttpMessageHandler(DefaultHttpClientHandlerDelegate);
+            serviceCollection
+                .AddHttpClient<IUserClient, UserClient>()
+                .ConfigurePrimaryHttpMessageHandler(DefaultHttpClientHandlerDelegate);
+            serviceCollection
+                .AddHttpClient<IUserViewsClient, UserViewsClient>()
+                .ConfigurePrimaryHttpMessageHandler(DefaultHttpClientHandlerDelegate);
+            serviceCollection
+                .AddHttpClient<IUserLibraryClient, UserLibraryClient>()
+                .ConfigurePrimaryHttpMessageHandler(DefaultHttpClientHandlerDelegate);
 
             // Add sample service
             serviceCollection.AddSingleton<SampleService>();
