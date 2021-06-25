@@ -7,8 +7,8 @@
 <img alt="Logo Banner" src="https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/banner-logo-solid.svg?sanitize=true"/>
 <br/>
 <br/>
-<a href="https://github.com/jellyfin/jellyfin-client-csharp">
-<img alt="MIT License" src="https://img.shields.io/github/license/jellyfin/jellyfin-client-csharp.svg"/>
+<a href="https://github.com/jellyfin/jellyfin-sdk-csharp">
+<img alt="MIT License" src="https://img.shields.io/github/license/jellyfin/jellyfin-sdk-csharp.svg"/>
 </a>
 <a href="https://opencollective.com/jellyfin">
 <img alt="Donate" src="https://img.shields.io/opencollective/all/jellyfin.svg?label=backers"/>
