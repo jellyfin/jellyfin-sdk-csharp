@@ -38,6 +38,8 @@ jobs:
       - name: Get Previous tag
         id: previoustag
         uses: WyriHaximus/github-action-get-previous-tag@v1
+        with:
+          fallback: $(date +'%Y.%m.%d')
 
       - name: Get next minor version
         id: semvers
@@ -51,8 +53,12 @@ jobs:
         with:
           title: ${{ steps.semvers.outputs.patch }}
 
+      - name: Create new version string
+        id: version
+        run: echo "::set-output name=number::$(echo ${{ steps.createmilestone.outputs.number }}-unstable.$(date +'%Y%m%d%H%M'))"
+
       - name: Set project version
-        run: setversion ${{ steps.createmilestone.outputs.number }}
+        run: setversion ${{ steps.version.outputs.number }}
 
       - name: Generate sdk
         run: dotnet msbuild -target:GenerateSdk-Unstable
