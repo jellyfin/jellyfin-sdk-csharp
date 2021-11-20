@@ -35,27 +35,9 @@ jobs:
       - name: Restore packages
         run: dotnet restore
 
-      - name: Get Previous tag
-        id: previoustag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
-        with:
-          fallback: 2000.01.01
-
-      - name: Get next minor version
-        id: semvers
-        uses: WyriHaximus/github-action-next-semvers@v1
-        with:
-          version: ${{ steps.previoustag.outputs.tag }}
-
-      - name: Create new milestone
-        id: createmilestone
-        uses: WyriHaximus/github-action-create-milestone@v1
-        with:
-          title: ${{ steps.semvers.outputs.patch }}
-
       - name: Create new version string
         id: version
-        run: echo "::set-output name=number::$(echo ${{ steps.createmilestone.outputs.number }}-unstable.$(date +'%Y%m%d%H%M'))"
+        run: echo "::set-output name=number::$(echo $(date +'%Y.%m.%d')-unstable.$(date +'%Y%m%d%H%M'))"
 
       - name: Set project version
         run: setversion ${{ steps.version.outputs.number }}
