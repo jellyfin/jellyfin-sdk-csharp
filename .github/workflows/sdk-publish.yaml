@@ -34,7 +34,6 @@ jobs:
 
       - name: Get Version
         run: |
-          echo "${{ github.event.release.tag_name }} | tr -d v"
           echo "::set-output name=number::$( ${{ github.event.release.tag_name }} | tr -d v )"
 
       - name: Set project version
