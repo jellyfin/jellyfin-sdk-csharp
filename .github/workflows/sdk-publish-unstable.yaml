@@ -39,7 +39,7 @@ jobs:
         id: previoustag
         uses: WyriHaximus/github-action-get-previous-tag@v1
         with:
-          fallback: $(date +'%Y.%m.%d')
+          fallback: '2000.01.01'
 
       - name: Get next minor version
         id: semvers
