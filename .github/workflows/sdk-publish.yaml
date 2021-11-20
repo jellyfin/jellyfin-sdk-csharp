@@ -33,8 +33,9 @@ jobs:
         run: dotnet restore
 
       - name: Get Version
-        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
-        run: echo "::set-output name=number::$(echo ${GITHUB_REF#refs/tags/v} | tr / -)"
+        run: |
+          echo "${{ github.event.release.tag_name }} | tr -d v"
+          echo "::set-output name=number::$( ${{ github.event.release.tag_name }} | tr -d v )"
 
       - name: Set project version
         run: setversion ${{steps.version.outputs.number}}
