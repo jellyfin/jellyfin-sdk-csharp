@@ -33,8 +33,8 @@ jobs:
         run: dotnet restore
 
       - name: Get Version
-        run: |
-          echo "::set-output name=number::$( echo ${{ github.event.release.tag_name }} | tr -d v )"
+        id: version
+        run: echo "::set-output name=number::$( echo ${{ github.event.release.tag_name }} | tr -d v )"
 
       - name: Set project version
         run: setversion ${{steps.version.outputs.number}}
