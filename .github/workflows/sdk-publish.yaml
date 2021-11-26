@@ -21,10 +21,9 @@ jobs:
           ref: "master"
       - uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: "6.0.x"
-      - uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: "5.0.x"
+          dotnet-version: |
+            6.0.x
+            5.0.x
 
       - name: Install dotnet-setversion
         run: dotnet tool install -g dotnet-setversion
