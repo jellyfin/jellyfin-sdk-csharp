@@ -19,11 +19,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: "master"
-      - uses: actions/setup-dotnet@v2
-        with:
-          dotnet-version: |
-            6.0.x
-            5.0.x
 
       - name: Install dotnet-setversion
         run: dotnet tool install -g dotnet-setversion
