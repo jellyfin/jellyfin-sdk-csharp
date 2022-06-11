@@ -31,11 +31,9 @@ public class BaseClient
     /// <param name="client">The http client.</param>
     /// <param name="request">The http request message.</param>
     /// <param name="url">The request url.</param>
-    /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>The Task.</returns>
     [SuppressMessage("Usage", "CA1801", Justification = "Required for generated code", Scope = "client")]
-    [SuppressMessage("Usage", "CA1801", Justification = "Required for generated code", Scope = "cancellationToken")]
-    protected Task PrepareRequestAsync(HttpClient client, HttpRequestMessage request, StringBuilder url, CancellationToken cancellationToken)
+    protected Task PrepareRequestAsync(HttpClient client, HttpRequestMessage request, StringBuilder url)
     {
         // Insert baseurl into full url.
         if (!string.IsNullOrEmpty(_clientState.BaseUrl))
@@ -66,13 +64,11 @@ public class BaseClient
     /// <param name="client">The http client.</param>
     /// <param name="request">The http request message.</param>
     /// <param name="url">The request url.</param>
-    /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>The Task.</returns>
     [SuppressMessage("Usage", "CA1801", Justification = "Required for generated code", Scope = "client")]
     [SuppressMessage("Usage", "CA1801", Justification = "Required for generated code", Scope = "request")]
     [SuppressMessage("Usage", "CA1801", Justification = "Required for generated code", Scope = "url")]
-    [SuppressMessage("Usage", "CA1801", Justification = "Required for generated code", Scope = "cancellationToken")]
-    protected Task PrepareRequestAsync(HttpClient client, HttpRequestMessage request, string url, CancellationToken cancellationToken)
+    protected Task PrepareRequestAsync(HttpClient client, HttpRequestMessage request, string url)
     {
         // Required for generated api.
         return Task.CompletedTask;
