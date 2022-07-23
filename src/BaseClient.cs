@@ -92,4 +92,17 @@ public class BaseClient
         // Required for generated api.
         return Task.CompletedTask;
     }
+
+    /// <summary>
+    /// Prepare the request url by inserting the base url.
+    /// </summary>
+    /// <param name="url">The url path.</param>
+    protected void PrepareRequestUrl(StringBuilder url)
+    {
+        // Insert baseurl into full url.
+        if (!string.IsNullOrEmpty(_clientState.BaseUrl))
+        {
+            url.Insert(0, _clientState.BaseUrl.TrimEnd('/') + '/');
+        }
+    }
 }
