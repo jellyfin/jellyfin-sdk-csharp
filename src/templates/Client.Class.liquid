@@ -160,6 +160,7 @@
         urlBuilder_.Length--;
     {% endif -%}
 
+        PrepareRequestUrl(urlBuilder_);
         return urlBuilder_.ToString();
     }
 {% endif -%}    
