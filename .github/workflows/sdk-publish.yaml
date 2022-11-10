@@ -13,12 +13,17 @@ jobs:
     defaults:
       run:
         working-directory: ./src
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: ${{ startsWith(github.ref, 'refs/tags/v') && github.repository == 'jellyfin/jellyfin-sdk-csharp' }}
     steps:
       - uses: actions/checkout@v3
         with:
           ref: "master"
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@607fce577a46308457984d59e4954e075820f10a # tag=v3
+        with:
+          dotnet-version: 7.0.x
 
       - name: Install dotnet-setversion
         run: dotnet tool install -g dotnet-setversion

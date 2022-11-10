@@ -10,7 +10,7 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     env:
       DOTNET_NOLOGO: true
       DOTNET_CLI_TELEMETRY_OPTOUT: true
@@ -22,6 +22,11 @@ jobs:
         with:
           ref: "master"
           fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@607fce577a46308457984d59e4954e075820f10a # tag=v3
+        with:
+          dotnet-version: 7.0.x
 
       - name: Install dotnet-setversion
         run: dotnet tool install -g dotnet-setversion
