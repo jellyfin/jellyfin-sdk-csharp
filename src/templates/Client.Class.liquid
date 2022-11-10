@@ -95,7 +95,6 @@
     partial void ProcessResponse({{ HttpClientType }} client, System.Net.Http.HttpResponseMessage response);
 {% endif -%}
 {% for operation in Operations %}
-{% assign http_method = operation.HttpMethodUpper | upcase %}    
 {%     if GenerateOptionalParameters == false -%}
     {% template Client.Method.Documentation %}
     {% template Client.Method.Annotations %}
@@ -114,56 +113,6 @@
     }
 
 {%     endif -%}
-{%-  if http_method == 'GET' and operation.SyncResultType == 'FileResponse'  -%}
-    {% template Client.Method.Documentation %}
-    {% template Client.Method.Annotations %}
-    {{ operation.MethodAccessModifier }} virtual string {{ operation.ActualOperationName }}Url({% for parameter in operation.Parameters %}{{ parameter.Type }} {{ parameter.VariableName }}{% if GenerateOptionalParameters and parameter.IsOptional %} = null{% endif %}{% if parameter.IsLast == false %}, {% endif %}{% endfor %})
-    {
-    {% for parameter in operation.PathParameters -%}
-        {% if parameter.IsNullable == false and parameter.IsRequired -%}
-            if ({{ parameter.VariableName }} == null)
-            throw new System.ArgumentNullException("{{ parameter.VariableName }}");
-
-        {% endif -%}
-    {% endfor -%}
-    {% for parameter in operation.QueryParameters -%}
-        {% if parameter.IsNullable == false and parameter.IsRequired -%}
-            if ({{ parameter.VariableName }} == null)
-            throw new System.ArgumentNullException("{{ parameter.VariableName }}");
-
-        {% endif -%}
-    {% endfor -%}
-
-    var urlBuilder_ = new System.Text.StringBuilder();
-    urlBuilder_.Append({% if UseBaseUrl %}BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/{% else %}"{% endif %}{{ operation.Path }}{% if operation.HasQueryParameters %}?{% endif %}");
-    {% for parameter in operation.PathParameters -%}
-        {% if parameter.IsOptional -%}
-            if ({{ parameter.VariableName }} != null)
-            {% template Client.Class.PathParameter %}
-            else
-            urlBuilder_.Replace("/{{ "{" }}{{ parameter.Name }}}", string.Empty);
-        {% else -%}
-            {% template Client.Class.PathParameter %}
-        {% endif -%}
-    {% endfor -%}
-    {% for parameter in operation.QueryParameters -%}
-        {% if parameter.IsOptional -%}
-            if ({{ parameter.VariableName }} != null)
-            {
-            {% template Client.Class.QueryParameter %}
-            }
-        {% else -%}
-            {% template Client.Class.QueryParameter %}
-        {% endif -%}
-    {% endfor -%}
-    {% if operation.HasQueryParameters -%}
-        urlBuilder_.Length--;
-    {% endif -%}
-
-        PrepareRequestUrl(urlBuilder_);
-        return urlBuilder_.ToString();
-    }
-{% endif -%}    
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
     {% template Client.Method.Documentation %}
     {% template Client.Method.Annotations %}
@@ -261,8 +210,12 @@
                 var dictionary_ = Newtonsoft.Json.JsonConvert.DeserializeObject<System.Collections.Generic.Dictionary<string, string>>(json_, _settings.Value);
                 var content_ = new System.Net.Http.FormUrlEncodedContent(dictionary_);
                 content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("{{ operation.Consumes }}");
+{%         elsif operation.HasPlainTextBodyParameter -%}
+                var content_ = new System.Net.Http.StringContent({{ operation.ContentParameter.VariableName }});
+                content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("{{ operation.Consumes }}");
 {%         else -%}
-                var content_ = new System.Net.Http.StringContent({% if UseSystemTextJson %}System.Text.Json.JsonSerializer.Serialize{% else %}Newtonsoft.Json.JsonConvert.SerializeObject{% endif %}({{ operation.ContentParameter.VariableName }}, {% if SerializeTypeInformation %}typeof({{ operation.ContentParameter.Type }}), {% endif %}{% if UseRequestAndResponseSerializationSettings %}_requestSettings{% else %}_settings{% endif %}.Value));
+                var json_ = {% if UseSystemTextJson %}System.Text.Json.JsonSerializer.Serialize{% else %}Newtonsoft.Json.JsonConvert.SerializeObject{% endif %}({{ operation.ContentParameter.VariableName }}, {% if SerializeTypeInformation %}typeof({{ operation.ContentParameter.Type }}), {% endif %}{% if UseRequestAndResponseSerializationSettings %}_requestSettings{% else %}_settings{% endif %}.Value);
+                var content_ = new System.Net.Http.StringContent(json_);
                 content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("{{ operation.Consumes }}");
 {%         endif -%}
                 request_.Content = content_;
@@ -316,7 +269,8 @@
                         content_.Add(new System.Net.Http.StringContent(ConvertToString(item_, System.Globalization.CultureInfo.InvariantCulture)), "{{ parameter.Name }}");
                     }
 {%                     elsif parameter.IsObject -%}
-                    content_.Add(new System.Net.Http.StringContent({% if UseSystemTextJson %}System.Text.Json.JsonSerializer.Serialize{% else %}Newtonsoft.Json.JsonConvert.SerializeObject{% endif %}({{ parameter.VariableName }}, {% if UseRequestAndResponseSerializationSettings %}_requestSettings{% else %}_settings{% endif %}.Value)), "{{ parameter.Name }}");
+                    var json_ = {% if UseSystemTextJson %}System.Text.Json.JsonSerializer.Serialize{% else %}Newtonsoft.Json.JsonConvert.SerializeObject{% endif %}({{ parameter.VariableName }}, {% if UseRequestAndResponseSerializationSettings %}_requestSettings{% else %}_settings{% endif %}.Value);
+                    content_.Add(new System.Net.Http.StringContent(json_), "{{ parameter.Name }}");
 {%                     else -%}
                     content_.Add(new System.Net.Http.StringContent(ConvertToString({{ parameter.VariableName }}, System.Globalization.CultureInfo.InvariantCulture)), "{{ parameter.Name }}");
 {%                     endif -%}
@@ -334,7 +288,7 @@
 {%     endif -%}
 
 {% if GeneratePrepareRequestAndProcessResponseAsAsyncMethods %}
-                await PrepareRequestAsync(client_, request_, urlBuilder_).ConfigureAwait(false);
+                await PrepareRequestAsync(client_, request_, urlBuilder_, cancellationToken).ConfigureAwait(false);
 {% else -%}
                 PrepareRequest(client_, request_, urlBuilder_);
 {% endif -%}
@@ -343,7 +297,7 @@
                 request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
 
 {% if GeneratePrepareRequestAndProcessResponseAsAsyncMethods -%}
-                await PrepareRequestAsync(client_, request_, url_).ConfigureAwait(false);
+                await PrepareRequestAsync(client_, request_, url_, cancellationToken).ConfigureAwait(false);
 {% else -%}
                 PrepareRequest(client_, request_, url_);
 {% endif -%}

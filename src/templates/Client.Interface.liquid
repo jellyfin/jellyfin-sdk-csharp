@@ -4,7 +4,6 @@ public partial interface I{{ Class }}{% if HasClientBaseInterface %} : {{ Client
 {
     {% template Client.Interface.Body %}
 {% for operation in InterfaceOperations -%}
-{%- assign http_method = operation.HttpMethodUpper | upcase -%}
 {%   if GenerateOptionalParameters == false -%}
     {% template Client.Method.Documentation %}
     {% template Client.Method.Annotations %}
@@ -17,12 +16,6 @@ public partial interface I{{ Class }}{% if HasClientBaseInterface %} : {{ Client
     {{ operation.SyncResultType }} {{ operation.ActualOperationName }}({% for parameter in operation.Parameters %}{{ parameter.Type }} {{ parameter.VariableName }}{% if GenerateOptionalParameters and parameter.IsOptional %} = null{% endif %}{% if parameter.IsLast == false %}, {% endif %}{% endfor %});
 
 {%-   endif %}
-{%- if http_method == 'GET' and operation.SyncResultType == 'FileResponse'  -%}
-    {% template Client.Method.Documentation %}
-    {% template Client.Method.Annotations %}
-    string {{ operation.ActualOperationName }}Url({% for parameter in operation.Parameters %}{{ parameter.Type }} {{ parameter.VariableName }}{% if GenerateOptionalParameters and parameter.IsOptional %} = null{% endif %}{% if parameter.IsLast == false %}, {% endif %}{% endfor %});
-
-{%- endif -%}
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
     {% template Client.Method.Documentation %}
     {% template Client.Method.Annotations %}
