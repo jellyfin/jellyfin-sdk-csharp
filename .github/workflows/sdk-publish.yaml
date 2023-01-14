@@ -33,7 +33,7 @@ jobs:
 
       - name: Get Version
         id: version
-        run: echo "number=$( echo ${{ github.event.release.tag_name }} | tr -d v )"
+        run: echo "number=$( echo ${{ github.event.release.tag_name }} | tr -d v )" >> $GITHUB_OUTPUT
 
       - name: Set project version
         run: setversion ${{steps.version.outputs.number}}
