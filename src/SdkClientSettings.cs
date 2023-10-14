@@ -1,4 +1,4 @@
-using System;
+using System.Text;
 
 namespace Jellyfin.Sdk;
 
@@ -47,29 +47,51 @@ public class SdkClientSettings
     /// This is used when the access token is not set.
     /// </remarks>
     /// <returns>The default authorization header.</returns>
-    public string GetDefaultAuthorizationHeader()
+    public string GetAuthorizationHeader()
     {
-        if (string.IsNullOrEmpty(ClientName))
+        var builder = new StringBuilder();
+        if (!string.IsNullOrEmpty(ClientName))
         {
-            throw new ArgumentException($"{nameof(ClientName)} is required.");
+            builder.Append(" Client=\"")
+                .Append(ClientName)
+                .Append("\",");
         }
 
-        if (string.IsNullOrEmpty(DeviceName))
+        if (!string.IsNullOrEmpty(ClientVersion))
         {
-            throw new ArgumentException($"{nameof(DeviceName)} is required.");
+            builder.Append(" Version=\"")
+                .Append(ClientVersion)
+                .Append("\",");
         }
 
-        if (string.IsNullOrEmpty(DeviceId))
+        if (!string.IsNullOrEmpty(DeviceName))
         {
-            throw new ArgumentException($"{nameof(DeviceId)} is required.");
+            builder.Append(" Device=\"")
+                .Append(DeviceName)
+                .Append("\",");
         }
 
-        if (string.IsNullOrEmpty(ClientVersion))
+        if (!string.IsNullOrEmpty(DeviceId))
         {
-            throw new ArgumentException($"{nameof(ClientVersion)} is required.");
+            builder.Append(" DeviceId=\"")
+                .Append(DeviceId)
+                .Append("\",");
         }
 
-        return $"MediaBrowser Client=\"{ClientName}\", Device=\"{DeviceName}\", DeviceId=\"{DeviceId}\", Version=\"{ClientVersion}\"";
+        if (!string.IsNullOrEmpty(AccessToken))
+        {
+            builder.Append(" Token=\"")
+                .Append(AccessToken)
+                .Append("\",");
+        }
+
+        // Trim trailing comma.
+        if (builder.Length > 0)
+        {
+            builder.Length--;
+        }
+
+        return builder.ToString();
     }
 
     /// <summary>

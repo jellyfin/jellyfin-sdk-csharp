@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -43,16 +44,7 @@ public class BaseClient
             url.Insert(0, _clientState.BaseUrl.TrimEnd('/') + '/');
         }
 
-        if (string.IsNullOrEmpty(_clientState.AccessToken))
-        {
-            // Token isn't set, attempt to request without.
-            request.Headers.Add("X-Emby-Authorization", _clientState.GetDefaultAuthorizationHeader());
-        }
-        else
-        {
-            // Token is set, make regular request.
-            request.Headers.Add("X-Emby-Token", _clientState.AccessToken);
-        }
+        request.Headers.Authorization = new AuthenticationHeaderValue("MediaBrowser", _clientState.GetAuthorizationHeader());
 
         return Task.CompletedTask;
     }
