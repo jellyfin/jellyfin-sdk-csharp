@@ -10,10 +10,10 @@ namespace Jellyfin.Sdk.JsonConverters;
 public class JsonGuidConverter : JsonConverter<Guid>
 {
     /// <inheritdoc />
-    public override Guid Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override Guid Read(ref Utf8JsonReader reader, System.Type typeToConvert, JsonSerializerOptions options)
     {
         var guidStr = reader.GetString();
-        return guidStr == null ? Guid.Empty : new Guid(guidStr);
+        return string.IsNullOrEmpty(guidStr) ? Guid.Empty : new Guid(guidStr);
     }
 
     /// <inheritdoc />

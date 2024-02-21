@@ -11,16 +11,16 @@ namespace Jellyfin.Sdk.JsonConverters;
 public class JsonNullableGuidConverter : JsonConverter<Guid?>
 {
     /// <inheritdoc />
-    public override Guid? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override Guid? Read(ref Utf8JsonReader reader, System.Type typeToConvert, JsonSerializerOptions options)
     {
         var guidStr = reader.GetString();
-        return guidStr == null ? null : (Guid?)new Guid(guidStr);
+        return string.IsNullOrEmpty(guidStr) ? null : new Guid(guidStr);
     }
 
     /// <inheritdoc />
     public override void Write(Utf8JsonWriter writer, Guid? value, JsonSerializerOptions options)
     {
-        if (value == null || value == Guid.Empty)
+        if (value is null || value.Value.Equals(default))
         {
             writer.WriteNullValue();
         }
