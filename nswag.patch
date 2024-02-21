@@ -1,0 +1,147 @@
+Index: src/templates/Client.Interface.liquid
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/templates/Client.Interface.liquid b/src/templates/Client.Interface.liquid
+--- a/src/templates/Client.Interface.liquid	(revision 7102fdde0c974045ad7e8039c96bd2be6bbc2ead)
++++ b/src/templates/Client.Interface.liquid	(date 1708475638619)
+@@ -4,6 +4,7 @@
+ {
+     {% template Client.Interface.Body %}
+ {% for operation in InterfaceOperations -%}
++{%- assign http_method = operation.HttpMethodUpper | upcase -%}
+ {%   if GenerateOptionalParameters == false -%}
+     {% template Client.Method.Documentation %}
+     {% template Client.Method.Annotations %}
+@@ -15,6 +16,12 @@
+     {% template Client.Method.Annotations %}
+     {{ operation.SyncResultType }} {{ operation.ActualOperationName }}({% for parameter in operation.Parameters %}{{ parameter.Type }} {{ parameter.VariableName }}{% if GenerateOptionalParameters and parameter.IsOptional %} = null{% endif %}{% if parameter.IsLast == false %}, {% endif %}{% endfor %});
+ 
++{%-   endif %}
++{%   if http_method == 'GET' and operation.SyncResultType == 'FileResponse' -%}
++    {% template Client.Method.Documentation %}
++    {% template Client.Method.Annotations %}
++    string {{ operation.ActualOperationName }}Url({% for parameter in operation.Parameters %}{{ parameter.Type }} {{ parameter.VariableName }}{% if GenerateOptionalParameters and parameter.IsOptional %} = null{% endif %}, {% endfor %}System.Threading.CancellationToken cancellationToken{% if GenerateOptionalParameters %} = default(System.Threading.CancellationToken){% endif %});
++
+ {%-   endif %}
+     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+     {% template Client.Method.Documentation %}
+Index: src/templates/Client.Class.liquid
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/templates/Client.Class.liquid b/src/templates/Client.Class.liquid
+--- a/src/templates/Client.Class.liquid	(revision 7102fdde0c974045ad7e8039c96bd2be6bbc2ead)
++++ b/src/templates/Client.Class.liquid	(date 1708475624916)
+@@ -122,6 +122,7 @@
+     partial void ProcessResponse({{ HttpClientType }} client, System.Net.Http.HttpResponseMessage response);
+ {% endif -%}
+ {% for operation in Operations %}
++{% assign http_method = operation.HttpMethodUpper | upcase %}
+ {%     if GenerateOptionalParameters == false -%}
+     {% template Client.Method.Documentation %}
+     {% template Client.Method.Annotations %}
+@@ -140,6 +141,101 @@
+     }
+ 
+ {%     endif -%}
++{%-  if http_method == 'GET' and operation.SyncResultType == 'FileResponse'  -%}
++    {% template Client.Method.Documentation %}
++    {% template Client.Method.Annotations %}
++    {{ operation.MethodAccessModifier }} virtual string {{ operation.ActualOperationName }}Url({% for parameter in operation.Parameters %}{{ parameter.Type }} {{ parameter.VariableName }}{% if GenerateOptionalParameters and parameter.IsOptional %} = null{% endif %}, {% endfor %}System.Threading.CancellationToken cancellationToken{% if GenerateOptionalParameters %} = default(System.Threading.CancellationToken){% endif %})
++    {
++{%     for parameter in operation.PathParameters -%}
++{%         if parameter.IsNullable == false and parameter.IsRequired -%}
++        if ({{ parameter.VariableName }} == null)
++            throw new System.ArgumentNullException("{{ parameter.VariableName }}");
++
++{%         endif -%}
++{%     endfor -%}
++{%     for parameter in operation.QueryParameters -%}
++{%         if parameter.IsNullable == false and parameter.IsRequired -%}
++        if ({{ parameter.VariableName }} == null)
++            throw new System.ArgumentNullException("{{ parameter.VariableName }}");
++
++{%         endif -%}
++{%     endfor -%}
++{%     for parameter in operation.HeaderParameters %}
++{%         if parameter.IsRequired -%}
++        if ({{ parameter.VariableName }} == null)
++            throw new System.ArgumentNullException("{{ parameter.VariableName }}");
++                {% template Client.Class.HeaderParameter %}
++
++{%         else -%}
++        if ({{ parameter.VariableName }} != null)
++            {% template Client.Class.HeaderParameter %}
++
++{%         endif -%}
++{%     endfor -%}
++        var urlBuilder_ = new System.Text.StringBuilder();
++        {% if UseBaseUrl %}if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);{% endif %}
++        // Operation Path: "{{ operation.Path }}"
++{%     if operation.Path contains "{" -%}
++{%        assign pathParts = operation.Path | split: "{" -%}
++{%        for pathPart in pathParts -%}
++{%            if pathPart contains "}" -%}
++{%                assign pathParameterParts = pathPart | split: "}" -%}
++{%                assign pathParameterFound = true -%}
++{%                for parameter in operation.PathParameters -%}
++{%                    if parameter.Name == pathParameterParts[0] -%}
++{%                        if parameter.IsOptional -%}
++{%                            assign pathParameterFound = false -%}
++        if ({{ parameter.VariableName }} != null)
++        {
++            {% template Client.Class.PathParameter %}
++        }
++        else
++            if (urlBuilder_.Length > 0) urlBuilder_.Length--;
++{%                        else -%}
++        {% template Client.Class.PathParameter %}
++{%                        endif -%}
++{%                    endif -%}
++{%                endfor -%}
++{%                comment -%} >>> just in case {% endcomment -%}
++{%                unless pathParameterFound -%}
++        urlBuilder_.Append("{{ '{' }}{{ pathParameterParts[0] }}{{ '}' }}");
++{%                endunless -%}
++{%                comment -%} <<< just in case {% endcomment -%}
++{%                assign nonParameterPartLengh = pathParameterParts[1] | size -%}
++{%                if nonParameterPartLengh == 1 -%}
++        urlBuilder_.Append('{{ pathParameterParts[1] }}');
++{%                elsif nonParameterPartLengh > 0 -%}
++        urlBuilder_.Append("{{ pathParameterParts[1] }}");
++{%                endif -%}
++{%            else -%}
++{%                 unless pathPart == "" -%}
++        urlBuilder_.Append("{{ pathPart }}");
++{%                 endunless -%}
++{%            endif -%}
++{%        endfor -%}
++{%    else -%}
++{%        unless operation.Path == "" -%}
++        urlBuilder_.Append("{{ operation.Path }}");
++{%        endunless -%}
++{%    endif -%}
++{%     if operation.HasQueryParameters -%}
++        urlBuilder_.Append('?');
++{%         for parameter in operation.QueryParameters -%}
++{%             if parameter.IsOptional -%}
++        if ({{ parameter.VariableName }} != null)
++        {
++            {% template Client.Class.QueryParameter %}
++        }
++{%             else -%}
++        {% template Client.Class.QueryParameter %}
++{%             endif -%}
++{%         endfor -%}
++        urlBuilder_.Length--;
++{%     endif -%}
++        return urlBuilder_.ToString();
++    }
++
++{% endif -%}
+     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+     {% template Client.Method.Documentation %}
+     {% template Client.Method.Annotations %}

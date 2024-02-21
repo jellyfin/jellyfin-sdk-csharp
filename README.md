@@ -25,6 +25,6 @@
 </p>
 
 - Uses https://github.com/RicoSuter/NSwag for generation.
-- Default templates with [patch](https://github.com/RicoSuter/NSwag/compare/master...crobibero:generate-url?expand=1) to also generate url functions.
+- Default templates with [patch](nswag.patch) to also generate url functions.
 
 Documentation WIP.
