@@ -49,7 +49,7 @@ jobs:
 
       - name: Generate sdk
         run: |
-          dotnet msbuild -target:GenerateUnstable
+          dotnet nuke --configuration unstable
 
       - name: Build packages
         run: |

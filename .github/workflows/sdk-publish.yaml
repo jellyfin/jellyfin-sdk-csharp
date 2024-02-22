@@ -46,11 +46,11 @@ jobs:
 
       - name: Generate sdk
         run: |
-          dotnet msbuild -target:GenerateStable
+          dotnet nuke --configuration stable
 
       - name: Build packages
         run: |
-          dotnet build -c Release
+          dotnet build -c Release Jellyfin.Sdk
 
       - name: Publish to nuget
         run: |
