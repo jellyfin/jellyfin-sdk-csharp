@@ -23,29 +23,38 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@4d6c8fcf3c8f7a60068d26b594648e99df24cee3 # v4
         with:
-          dotnet-version: 7.0.x
+          dotnet-version: |
+            8.0.x
 
       - name: Install dotnet-setversion
-        run: dotnet tool install -g dotnet-setversion
+        run: |
+          dotnet tool install -g dotnet-setversion
 
       - name: Restore packages
-        run: dotnet restore
+        run: |
+          dotnet restore
+          dotnet tool restore
 
       - name: Get Version
         id: version
-        run: echo "number=$( echo ${{ github.event.release.tag_name }} | tr -d v )" >> $GITHUB_OUTPUT
+        run: |
+          echo "number=$( echo ${{ github.event.release.tag_name }} | tr -d v )" >> $GITHUB_OUTPUT
 
       - name: Set project version
-        run: setversion ${{steps.version.outputs.number}}
+        run: |
+          setversion ${{steps.version.outputs.number}}
 
       - name: Generate sdk
-        run: dotnet msbuild -target:GenerateSdk
+        run: |
+          dotnet msbuild -target:GenerateStable
 
       - name: Build packages
-        run: dotnet build -c Release
+        run: |
+          dotnet build -c Release
 
       - name: Publish to nuget
-        run: dotnet nuget push bin/Release/*.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        run: |
+          dotnet nuget push bin/Release/*.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
 
       - name: Commit new changes to the repo
         run: |

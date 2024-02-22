@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jellyfin.Sdk", "Jellyfin.Sdk\Jellyfin.Sdk.csproj", "{E7A14136-D713-4C16-B457-9D34F0BD538A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{78BAA928-CCBC-41B2-A404-143B1C8376A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple", "Simple\Simple.csproj", "{64D8F287-24CA-4CB3-A187-2640FF16C6AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7A14136-D713-4C16-B457-9D34F0BD538A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7A14136-D713-4C16-B457-9D34F0BD538A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7A14136-D713-4C16-B457-9D34F0BD538A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7A14136-D713-4C16-B457-9D34F0BD538A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64D8F287-24CA-4CB3-A187-2640FF16C6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64D8F287-24CA-4CB3-A187-2640FF16C6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64D8F287-24CA-4CB3-A187-2640FF16C6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64D8F287-24CA-4CB3-A187-2640FF16C6AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{64D8F287-24CA-4CB3-A187-2640FF16C6AA} = {78BAA928-CCBC-41B2-A404-143B1C8376A9}
+	EndGlobalSection
+EndGlobal
