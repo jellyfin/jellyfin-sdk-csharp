@@ -1,4 +1,6 @@
+using System;
 using System.IO;
+using System.Linq;
 using Nuke.Common;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tools.DotNet;
@@ -6,6 +8,15 @@ using Serilog;
 
 public class Generate : NukeBuild
 {
+    static string[] IgnoreFiles =
+    [
+        ".editorconfig",
+        "kiota-lock.json",
+        "kiota-lock-stable.json",
+        "kiota-lock-unstable.json"
+    ];
+    
+    
     public static int Main () => Execute<Generate>(x => x.Run);
 
     [Parameter("Configuration to build - 'Stable' (default) or 'Unstable'")]
@@ -15,9 +26,29 @@ public class Generate : NukeBuild
     readonly Solution Solution;
 
     Target RestoreTools => g => g.Executes(() => DotNetTasks.DotNetToolRestore());
+
+    Target CleanGenerated => g => g.Executes(() =>
+    {
+        var generatedDirectory = new DirectoryInfo(Path.Combine(Solution.Jellyfin_Sdk.Directory, "Generated"));
+
+        foreach (var file in generatedDirectory.GetFiles())
+        {
+            if (IgnoreFiles.Contains(file.Name, StringComparer.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+            
+            file.Delete();
+        }
+
+        foreach (var directory in generatedDirectory.GetDirectories())
+        {
+            directory.Delete(recursive: true);
+        }
+    });
     
     Target CopyConfig => g => g
-        .DependsOn(RestoreTools)
+        .DependsOn(RestoreTools, CleanGenerated)
         .Executes(() =>
         {
             var sourceFile = Configuration == Configuration.Stable
