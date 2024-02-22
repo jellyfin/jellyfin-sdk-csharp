@@ -1,12 +1,11 @@
-﻿using System;
-using System.Net;
-using System.Net.Http;
+﻿using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Mime;
 using System.Text;
-using System.Threading.Tasks;
 using Jellyfin.Sdk;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
 
 namespace Simple;
 
@@ -17,30 +16,23 @@ internal static class Program
         var serviceProvider = ConfigureServices();
 
         // Initialize the sdk client settings. This only needs to happen once on startup.
-        var sdkClientSettings = serviceProvider.GetRequiredService<SdkClientSettings>();
-        sdkClientSettings.InitializeClientSettings(
+        var sdkClientSettings = serviceProvider.GetRequiredService<JellyfinSdkSettings>();
+        sdkClientSettings.Initialize(
             "My-Jellyfin-Client",
             "0.0.1",
             "Sample Device",
             $"this-is-my-device-id-{Guid.NewGuid():N}");
 
-        var sampleService = serviceProvider.GetRequiredService<SampleService>();
+        var sampleService = serviceProvider.GetRequiredService<SimpleService>();
         await sampleService.RunAsync()
             .ConfigureAwait(false);
 
-        Console.WriteLine("Sample complete");
+        Console.WriteLine("Simple sample complete");
     }
 
     private static ServiceProvider ConfigureServices()
     {
         var serviceCollection = new ServiceCollection();
-
-        static HttpMessageHandler DefaultHttpClientHandlerDelegate(IServiceProvider service)
-            => new SocketsHttpHandler
-            {
-                AutomaticDecompression = DecompressionMethods.All,
-                RequestHeaderEncodingSelector = (_, _) => Encoding.UTF8
-            };
 
         // Add Http Client
         serviceCollection.AddHttpClient("Default", c =>
@@ -55,26 +47,23 @@ internal static class Program
                 c.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("*/*", 0.8));
             })
-            .ConfigurePrimaryHttpMessageHandler(DefaultHttpClientHandlerDelegate);
+            .ConfigurePrimaryHttpMessageHandler(_ => new SocketsHttpHandler
+            {
+                AutomaticDecompression = DecompressionMethods.All,
+                RequestHeaderEncodingSelector = (_, _) => Encoding.UTF8
+            });
 
         // Add Jellyfin SDK services.
-        serviceCollection
-            .AddSingleton<SdkClientSettings>();
-        serviceCollection
-            .AddHttpClient<ISystemClient, SystemClient>()
-            .ConfigurePrimaryHttpMessageHandler(DefaultHttpClientHandlerDelegate);
-        serviceCollection
-            .AddHttpClient<IUserClient, UserClient>()
-            .ConfigurePrimaryHttpMessageHandler(DefaultHttpClientHandlerDelegate);
-        serviceCollection
-            .AddHttpClient<IUserViewsClient, UserViewsClient>()
-            .ConfigurePrimaryHttpMessageHandler(DefaultHttpClientHandlerDelegate);
-        serviceCollection
-            .AddHttpClient<IUserLibraryClient, UserLibraryClient>()
-            .ConfigurePrimaryHttpMessageHandler(DefaultHttpClientHandlerDelegate);
+        serviceCollection.AddSingleton<JellyfinSdkSettings>();
+        serviceCollection.AddSingleton<IAuthenticationProvider, JellyfinAuthenticationProvider>();
+        serviceCollection.AddScoped<IRequestAdapter, JellyfinRequestAdapter>(s => new JellyfinRequestAdapter(
+            s.GetRequiredService<IAuthenticationProvider>(),
+            s.GetRequiredService<JellyfinSdkSettings>(),
+            s.GetRequiredService<IHttpClientFactory>().CreateClient("Default")));
+        serviceCollection.AddScoped<JellyfinApiClient>();
 
         // Add sample service
-        serviceCollection.AddSingleton<SampleService>();
+        serviceCollection.AddSingleton<SimpleService>();
 
         return serviceCollection.BuildServiceProvider();
     }

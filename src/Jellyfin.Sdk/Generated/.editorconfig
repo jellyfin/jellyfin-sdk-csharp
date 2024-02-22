@@ -1,0 +1,2 @@
+[*.cs]
+dotnet_diagnostic.CS1591.severity = none

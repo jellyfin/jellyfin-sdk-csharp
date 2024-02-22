@@ -24,7 +24,6 @@
 </a>
 </p>
 
-- Uses https://github.com/RicoSuter/NSwag for generation.
-- Default templates with [patch](nswag.patch) to also generate url functions.
+- Uses [Kiota](https://github.com/microsoft/kiota) for generation.
 
 Documentation WIP.

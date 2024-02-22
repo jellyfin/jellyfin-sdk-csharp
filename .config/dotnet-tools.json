@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "microsoft.openapi.kiota": {
+      "version": "1.11.1",
+      "commands": [
+        "kiota"
+      ]
+    },
+    "nuke.globaltool": {
+      "version": "8.0.0",
+      "commands": [
+        "nuke"
+      ]
+    }
+  }
+}
