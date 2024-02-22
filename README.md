@@ -22,8 +22,12 @@
 <a href="https://www.reddit.com/r/jellyfin">
 <img alt="Join our Subreddit" src="https://img.shields.io/badge/reddit-r%2Fjellyfin-%23FF5700.svg"/>
 </a>
+<a href="https://www.nuget.org/packages/Jellyfin.Sdk/">
+<img alt="Nuget" src="https://img.shields.io/nuget/v/Jellyfin.Sdk?style=flat-square&label=nuget"/>
+</a>
 </p>
 
 - Uses [Kiota](https://github.com/microsoft/kiota) for generation.
 
 Documentation WIP.
+https://img.shields.io/nuget/v/Jellyfin.Sdk?style=flat-square&label=nuget
