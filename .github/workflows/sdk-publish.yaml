@@ -42,7 +42,7 @@ jobs:
 
       - name: Set project version
         run: |
-          setversion ${{steps.version.outputs.number}}
+          setversion ${{ steps.version.outputs.number }} Jellyfin.Sdk
 
       - name: Generate sdk
         run: |
