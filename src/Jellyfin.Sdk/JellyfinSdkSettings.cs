@@ -105,7 +105,7 @@ public class JellyfinSdkSettings
     /// Set the server url.
     /// </summary>
     /// <param name="serverUrl">The server url.</param>
-    public void SetServerUrl(string serverUrl)
+    public void SetServerUrl(string? serverUrl)
     {
         ServerUrl = serverUrl;
     }
@@ -114,9 +114,12 @@ public class JellyfinSdkSettings
     /// Set the access token.
     /// </summary>
     /// <param name="accessToken">The access token.</param>
-    public void SetAccessToken(string accessToken)
+    public void SetAccessToken(string? accessToken)
     {
         AccessToken = accessToken;
-        _authTokenHeader = $"{AuthScheme} Token=\"{accessToken}\"";
+
+        _authTokenHeader = string.IsNullOrEmpty(accessToken)
+            ? null
+            : $"{AuthScheme} Token=\"{accessToken}\"";
     }
 }
