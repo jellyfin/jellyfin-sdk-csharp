@@ -1,4 +1,5 @@
 using Jellyfin.Sdk;
+using Jellyfin.Sdk.Generated;
 using Jellyfin.Sdk.Generated.Models;
 
 namespace Simple;
@@ -6,7 +7,7 @@ namespace Simple;
 /// <summary>
 /// Sample Jellyfin service.
 /// </summary>
-public class SimpleService
+public class SimpleService : IDisposable
 {
     private readonly JellyfinSdkSettings _sdkClientSettings;
     private readonly JellyfinApiClient _jellyfinApiClient;
@@ -40,7 +41,6 @@ public class SimpleService
             var host = Console.ReadLine();
 
             _sdkClientSettings.SetServerUrl(host);
-            _jellyfinApiClient.Update();
 
             try
             {
@@ -123,5 +123,10 @@ public class SimpleService
             await Console.Error.WriteLineAsync("Error getting user views").ConfigureAwait(false);
             await Console.Error.WriteLineAsync(ex.Message).ConfigureAwait(false);
         }
+    }
+
+    public void Dispose()
+    {
+        _jellyfinApiClient.Dispose();
     }
 }

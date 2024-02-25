@@ -23,7 +23,7 @@ internal static class Program
             "Sample Device",
             $"this-is-my-device-id-{Guid.NewGuid():N}");
 
-        var sampleService = serviceProvider.GetRequiredService<SimpleService>();
+       using var sampleService = serviceProvider.GetRequiredService<SimpleService>();
         await sampleService.RunAsync()
             .ConfigureAwait(false);
 

@@ -244,8 +244,13 @@ internal sealed class JellyfinJsonParseNode : IParseNode
     }
 
     /// <inheritdoc />
+#if NET5_0_OR_GREATER
+    public T? GetEnumValue<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>()
+        where T : struct, Enum
+#else
     public T? GetEnumValue<T>()
         where T : struct, Enum
+#endif
         => _jsonParseNode.GetEnumValue<T>();
 
     /// <inheritdoc />

@@ -15,6 +15,11 @@ public class JellyfinSdkSettings
     private string? _authTokenHeader;
 
     /// <summary>
+    /// The event that fires when the server url is updated.
+    /// </summary>
+    public event EventHandler<TypedEventArgs<string?>>? ServerUrlUpdated;
+
+    /// <summary>
     /// Gets the Jellyfin server's base url.
     /// </summary>
     /// <example>
@@ -108,6 +113,7 @@ public class JellyfinSdkSettings
     public void SetServerUrl(string? serverUrl)
     {
         ServerUrl = serverUrl;
+        ServerUrlUpdated?.Invoke(this, new TypedEventArgs<string?>(serverUrl));
     }
 
     /// <summary>

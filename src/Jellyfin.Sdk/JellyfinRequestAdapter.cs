@@ -10,7 +10,9 @@ namespace Jellyfin.Sdk;
 /// </summary>
 public class JellyfinRequestAdapter : HttpClientRequestAdapter
 {
-    private static JellyfinParseNodeFactory _jellyfinParseNodeFactory = new();
+    private static readonly JellyfinParseNodeFactory _jellyfinParseNodeFactory = new();
+
+    private readonly JellyfinSdkSettings _jellyfinSdkSettings;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="JellyfinRequestAdapter"/> class.
@@ -27,6 +29,23 @@ public class JellyfinRequestAdapter : HttpClientRequestAdapter
             parseNodeFactory: _jellyfinParseNodeFactory,
             httpClient: httpClient)
     {
-        BaseUrl = jellyfinSdkSettings.ServerUrl;
+        _jellyfinSdkSettings = jellyfinSdkSettings;
+
+        BaseUrl = _jellyfinSdkSettings.ServerUrl;
+        _jellyfinSdkSettings.ServerUrlUpdated += OnServerUrlUpdated;
     }
+
+    /// <inheritdoc />
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
+        {
+            _jellyfinSdkSettings.ServerUrlUpdated -= OnServerUrlUpdated;
+        }
+
+        base.Dispose(disposing);
+    }
+
+    private void OnServerUrlUpdated(object? sender, TypedEventArgs<string?> e)
+        => BaseUrl = e.Content;
 }
