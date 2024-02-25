@@ -18,14 +18,6 @@ namespace Jellyfin.Sdk.Generated.Artists.Item.Images.Item {
             urlTplParams.Add("imageIndex", position);
             return new WithImageIndexItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Artists.item.Images.item.item collection</summary>
-        /// <param name="position">Image index.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithImageIndexItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("imageIndex", position);
-            return new WithImageIndexItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new WithImageTypeItemRequestBuilder and sets the default values.
         /// </summary>

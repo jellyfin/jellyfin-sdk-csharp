@@ -18,14 +18,6 @@ namespace Jellyfin.Sdk.Generated.Albums {
             urlTplParams.Add("Albums%2Did", position);
             return new AlbumsItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Albums.item collection</summary>
-        /// <param name="position">The item id.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public AlbumsItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("Albums%2Did", position);
-            return new AlbumsItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new AlbumsRequestBuilder and sets the default values.
         /// </summary>

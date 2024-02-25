@@ -18,14 +18,6 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Attachments {
             urlTplParams.Add("index", position);
             return new WithIndexItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item.item.Attachments.item collection</summary>
-        /// <param name="position">Attachment Index.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithIndexItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("index", position);
-            return new WithIndexItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new AttachmentsRequestBuilder and sets the default values.
         /// </summary>

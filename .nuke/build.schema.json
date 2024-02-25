@@ -73,9 +73,9 @@
             "type": "string",
             "enum": [
               "CleanGenerated",
-              "CopyConfig",
               "RestoreTools",
-              "Run"
+              "Run",
+              "UpdateConfig"
             ]
           }
         },
@@ -90,9 +90,9 @@
             "type": "string",
             "enum": [
               "CleanGenerated",
-              "CopyConfig",
               "RestoreTools",
-              "Run"
+              "Run",
+              "UpdateConfig"
             ]
           }
         },

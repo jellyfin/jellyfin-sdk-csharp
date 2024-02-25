@@ -18,14 +18,6 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles {
             urlTplParams.Add("Subtitles%2Did", position);
             return new SubtitlesItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item.item.Subtitles.item collection</summary>
-        /// <param name="position">The subtitle stream index.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public SubtitlesItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("Subtitles%2Did", position);
-            return new SubtitlesItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new SubtitlesRequestBuilder and sets the default values.
         /// </summary>

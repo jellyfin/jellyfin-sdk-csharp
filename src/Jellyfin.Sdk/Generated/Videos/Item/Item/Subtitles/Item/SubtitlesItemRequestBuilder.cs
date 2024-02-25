@@ -24,14 +24,6 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item {
             urlTplParams.Add("routeStartPositionTicks", position);
             return new WithRouteStartPositionTicksItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item.item.Subtitles.item.item collection</summary>
-        /// <param name="position">The (route) start position of the subtitle in ticks.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithRouteStartPositionTicksItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("routeStartPositionTicks", position);
-            return new WithRouteStartPositionTicksItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new SubtitlesItemRequestBuilder and sets the default values.
         /// </summary>

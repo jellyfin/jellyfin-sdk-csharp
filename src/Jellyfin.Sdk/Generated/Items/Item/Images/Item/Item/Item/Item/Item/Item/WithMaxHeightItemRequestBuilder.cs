@@ -18,14 +18,6 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.Item.Item.Item
             urlTplParams.Add("percentPlayed", position);
             return new WithPercentPlayedItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Items.item.Images.item.item.item.item.item.item.item collection</summary>
-        /// <param name="position">Optional. Percent to render for the percent played overlay.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithPercentPlayedItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("percentPlayed", position);
-            return new WithPercentPlayedItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new WithMaxHeightItemRequestBuilder and sets the default values.
         /// </summary>

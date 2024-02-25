@@ -5,15 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public class BaseItemDto_ImageBlurHashes_Backdrop : IAdditionalDataHolder, IParsable {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>
-        /// Instantiates a new BaseItemDto_ImageBlurHashes_Backdrop and sets the default values.
-        /// </summary>
-        public BaseItemDto_ImageBlurHashes_Backdrop() {
-            AdditionalData = new Dictionary<string, object>();
-        }
+    public class BaseItemDto_ImageBlurHashes_Backdrop : IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +27,6 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -18,14 +18,6 @@ namespace Jellyfin.Sdk.Generated.Users.Item.PlayedItems {
             urlTplParams.Add("itemId", position);
             return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Users.item.PlayedItems.item collection</summary>
-        /// <param name="position">Item id.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithItemItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("itemId", position);
-            return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new PlayedItemsRequestBuilder and sets the default values.
         /// </summary>

@@ -18,14 +18,6 @@ namespace Jellyfin.Sdk.Generated.Packages.Installing {
             urlTplParams.Add("packageId", position);
             return new WithPackageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Packages.Installing.item collection</summary>
-        /// <param name="position">Installation Id.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithPackageItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("packageId", position);
-            return new WithPackageItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new InstallingRequestBuilder and sets the default values.
         /// </summary>

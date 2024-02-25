@@ -8,15 +8,7 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Gets or sets the image tags.
     /// </summary>
-    public class SeriesTimerInfoDto_ImageTags : IAdditionalDataHolder, IParsable {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>
-        /// Instantiates a new SeriesTimerInfoDto_ImageTags and sets the default values.
-        /// </summary>
-        public SeriesTimerInfoDto_ImageTags() {
-            AdditionalData = new Dictionary<string, object>();
-        }
+    public class SeriesTimerInfoDto_ImageTags : IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +30,6 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

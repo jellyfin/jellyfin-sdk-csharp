@@ -18,14 +18,6 @@ namespace Jellyfin.Sdk.Generated.Audio {
             urlTplParams.Add("itemId", position);
             return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Audio.item collection</summary>
-        /// <param name="position">The item id.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithItemItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("itemId", position);
-            return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new AudioRequestBuilder and sets the default values.
         /// </summary>

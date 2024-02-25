@@ -8,9 +8,7 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Gets or sets the primary image blurhash.
     /// </summary>
-    public class BaseItemPerson_ImageBlurHashes : IAdditionalDataHolder, IParsable {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+    public class BaseItemPerson_ImageBlurHashes : IParsable {
         /// <summary>The Art property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,12 +114,6 @@ namespace Jellyfin.Sdk.Generated.Models {
         public BaseItemPerson_ImageBlurHashes_Thumb Thumb { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new BaseItemPerson_ImageBlurHashes and sets the default values.
-        /// </summary>
-        public BaseItemPerson_ImageBlurHashes() {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -168,7 +160,6 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteObjectValue<BaseItemPerson_ImageBlurHashes_Profile>("Profile", Profile);
             writer.WriteObjectValue<BaseItemPerson_ImageBlurHashes_Screenshot>("Screenshot", Screenshot);
             writer.WriteObjectValue<BaseItemPerson_ImageBlurHashes_Thumb>("Thumb", Thumb);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

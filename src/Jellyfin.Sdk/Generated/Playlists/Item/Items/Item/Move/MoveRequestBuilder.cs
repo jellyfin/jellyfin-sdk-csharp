@@ -18,14 +18,6 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move {
             urlTplParams.Add("newIndex", position);
             return new WithNewIndexItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Playlists.item.Items.item.Move.item collection</summary>
-        /// <param name="position">The new index.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithNewIndexItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("newIndex", position);
-            return new WithNewIndexItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new MoveRequestBuilder and sets the default values.
         /// </summary>

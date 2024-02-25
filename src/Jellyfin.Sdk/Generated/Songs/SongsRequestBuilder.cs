@@ -18,14 +18,6 @@ namespace Jellyfin.Sdk.Generated.Songs {
             urlTplParams.Add("id", position);
             return new SongsItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Songs.item collection</summary>
-        /// <param name="position">The item id.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public SongsItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("id", position);
-            return new SongsItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new SongsRequestBuilder and sets the default values.
         /// </summary>

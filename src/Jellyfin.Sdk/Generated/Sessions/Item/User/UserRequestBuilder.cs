@@ -18,14 +18,6 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.User {
             urlTplParams.Add("userId", position);
             return new WithUserItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Sessions.item.User.item collection</summary>
-        /// <param name="position">The user id.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithUserItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("userId", position);
-            return new WithUserItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new UserRequestBuilder and sets the default values.
         /// </summary>

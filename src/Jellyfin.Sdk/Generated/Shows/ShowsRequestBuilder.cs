@@ -28,14 +28,6 @@ namespace Jellyfin.Sdk.Generated.Shows {
             urlTplParams.Add("Shows%2Did", position);
             return new ShowsItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Shows.item collection</summary>
-        /// <param name="position">The item id.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public ShowsItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("Shows%2Did", position);
-            return new ShowsItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new ShowsRequestBuilder and sets the default values.
         /// </summary>

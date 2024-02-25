@@ -7,8 +7,8 @@
   "clientNamespaceName": "Jellyfin.Sdk.Generated",
   "language": "CSharp",
   "usesBackingStore": false,
-  "excludeBackwardCompatible": false,
-  "includeAdditionalData": true,
+  "excludeBackwardCompatible": true,
+  "includeAdditionalData": false,
   "serializers": [
     "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
     "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",

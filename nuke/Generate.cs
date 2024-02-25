@@ -1,21 +1,26 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Nuke.Common;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tools.DotNet;
-using Serilog;
 
-public class Generate : NukeBuild
+public partial class Generate : NukeBuild
 {
-    static string[] IgnoreFiles =
+    const string StableOpenApi = """
+                                 "descriptionLocation": "https://repo.jellyfin.org/master/releases/openapi/jellyfin-openapi-stable.json"
+                                 """;
+    
+    const string UnstableOpenApi = """
+                                 "descriptionLocation": "https://repo.jellyfin.org/master/releases/openapi/jellyfin-openapi-unstable.json"
+                                 """;
+    
+    static readonly string[] _ignoreFiles =
     [
         ".editorconfig",
-        "kiota-lock.json",
-        "kiota-lock-stable.json",
-        "kiota-lock-unstable.json"
+        "kiota-lock.json"
     ];
-    
     
     public static int Main () => Execute<Generate>(x => x.Run);
 
@@ -33,7 +38,7 @@ public class Generate : NukeBuild
 
         foreach (var file in generatedDirectory.GetFiles())
         {
-            if (IgnoreFiles.Contains(file.Name, StringComparer.OrdinalIgnoreCase))
+            if (_ignoreFiles.Contains(file.Name, StringComparer.OrdinalIgnoreCase))
             {
                 continue;
             }
@@ -47,22 +52,23 @@ public class Generate : NukeBuild
         }
     });
     
-    Target CopyConfig => g => g
+    Target UpdateConfig => g => g
         .DependsOn(RestoreTools, CleanGenerated)
         .Executes(() =>
         {
-            var sourceFile = Configuration == Configuration.Stable
-                ? "kiota-lock-stable.json"
-                : "kiota-lock-unstable.json";
-            var sourcePath = Path.Combine(Solution.Jellyfin_Sdk.Directory, "Generated", sourceFile);
-            var destinationPath = Path.Combine(Solution.Jellyfin_Sdk.Directory, "Generated", "kiota-lock.json");
-            
-            Log.Debug("Copying {0} to {1}", sourcePath, destinationPath);
-            File.Copy(sourcePath, destinationPath, overwrite: true);
+            var configPath = Path.Combine(Solution.Jellyfin_Sdk.Directory, "Generated", "kiota-lock.json");
+            var config = File.ReadAllText(configPath);
+
+            var desiredSpecification = Configuration == Configuration.Stable
+                ? StableOpenApi
+                : UnstableOpenApi;
+
+            config = OpenApiRegex().Replace(config, desiredSpecification);
+            File.WriteAllText(configPath, config);
         });
 
     Target Run => g => g
-        .DependsOn(CopyConfig)
+        .DependsOn(UpdateConfig)
         .Executes(() =>
         {
             DotNetTasks.DotNet(
@@ -85,4 +91,9 @@ public class Generate : NukeBuild
                 File.WriteAllText(file, contents);
             }
         });
+
+    [GeneratedRegex("""
+                    "descriptionLocation": ".+"
+                    """)]
+    private static partial Regex OpenApiRegex();
 }
