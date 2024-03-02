@@ -1,7 +1,9 @@
 using System.Net.Http;
+using System.Text.Json;
 using Jellyfin.Sdk.Internal;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
+using Microsoft.Kiota.Serialization.Json;
 
 namespace Jellyfin.Sdk;
 
@@ -10,7 +12,16 @@ namespace Jellyfin.Sdk;
 /// </summary>
 public class JellyfinRequestAdapter : HttpClientRequestAdapter
 {
-    private static readonly JellyfinParseNodeFactory _jellyfinParseNodeFactory = new();
+    private static readonly JsonParseNodeFactory _jsonParseNodeFactory = new(
+        new KiotaJsonSerializationContext(
+            new JsonSerializerOptions(KiotaJsonSerializationContext.Default.Options)
+            {
+                Converters =
+                {
+                    new JsonNullableGuidConverter(),
+                    new JsonGuidConverter()
+                }
+            }));
 
     private readonly JellyfinSdkSettings _jellyfinSdkSettings;
 
@@ -26,7 +37,7 @@ public class JellyfinRequestAdapter : HttpClientRequestAdapter
         HttpClient? httpClient = null)
         : base(
             authenticationProvider,
-            parseNodeFactory: _jellyfinParseNodeFactory,
+            parseNodeFactory: _jsonParseNodeFactory,
             httpClient: httpClient)
     {
         _jellyfinSdkSettings = jellyfinSdkSettings;

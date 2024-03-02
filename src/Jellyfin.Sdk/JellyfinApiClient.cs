@@ -1,6 +1,7 @@
 using System;
 using Jellyfin.Sdk.Generated;
 using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Extensions;
 
 namespace Jellyfin.Sdk;
 
@@ -19,6 +20,21 @@ public class JellyfinApiClient : BaseJellyfinApiClient, IDisposable
         : base(requestAdapter)
     {
         _requestAdapter = requestAdapter;
+    }
+
+    /// <summary>
+    /// Build the uri from the request information.
+    /// </summary>
+    /// <param name="requestInformation">The request information.</param>
+    /// <returns>The built uri.</returns>
+    public Uri BuildUri(RequestInformation requestInformation)
+    {
+        if (!string.IsNullOrEmpty(_requestAdapter.BaseUrl))
+        {
+            requestInformation.PathParameters.AddOrReplace("baseurl", _requestAdapter.BaseUrl!);
+        }
+
+        return requestInformation.URI;
     }
 
     /// <inheritdoc />
