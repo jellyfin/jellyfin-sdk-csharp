@@ -28,20 +28,21 @@ namespace Jellyfin.Sdk.Generated.Dlna {
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Dlna.item collection</summary>
         /// <param name="position">Server UUID.</param>
+        /// <returns>A <see cref="WithServerItemRequestBuilder"/></returns>
         public WithServerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serverId", position);
             return new WithServerItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new DlnaRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DlnaRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public DlnaRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Dlna", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new DlnaRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DlnaRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

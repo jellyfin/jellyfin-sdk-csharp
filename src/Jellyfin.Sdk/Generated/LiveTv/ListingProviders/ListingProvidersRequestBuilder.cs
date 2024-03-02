@@ -29,18 +29,18 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders {
             new SchedulesDirectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new ListingProvidersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ListingProvidersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListingProvidersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/ListingProviders{?id*,pw*,validateListings*,validateLogin*}", pathParameters) {
+        public ListingProvidersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/ListingProviders{?pw*,validateListings*,validateLogin*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ListingProvidersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ListingProvidersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListingProvidersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/ListingProviders{?id*,pw*,validateListings*,validateLogin*}", rawUrl) {
+        public ListingProvidersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/ListingProviders{?pw*,validateListings*,validateLogin*}", rawUrl) {
         }
         /// <summary>
         /// Delete listing provider.
@@ -60,6 +60,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders {
         /// <summary>
         /// Adds a listings provider.
         /// </summary>
+        /// <returns>A <see cref="ListingsProviderInfo"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,6 +78,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders {
         /// <summary>
         /// Delete listing provider.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,13 +87,14 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<ListingProvidersRequestBuilderDeleteQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/LiveTv/ListingProviders{?id*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
         /// <summary>
         /// Adds a listings provider.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,6 +114,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ListingProvidersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ListingProvidersRequestBuilder WithUrl(string rawUrl) {
             return new ListingProvidersRequestBuilder(rawUrl, RequestAdapter);

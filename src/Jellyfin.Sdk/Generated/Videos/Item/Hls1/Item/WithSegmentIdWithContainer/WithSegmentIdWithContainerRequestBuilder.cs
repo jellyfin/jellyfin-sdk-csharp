@@ -9,30 +9,31 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Videos.Item.Hls1.Item.WithSegmentIdWithContainer {
     /// <summary>
-    /// Builds and executes requests for operations under \Videos\{Videos-id}\hls1\{playlistId}\{segmentId}.{container}
+    /// Builds and executes requests for operations under \Videos\{itemId-id}\hls1\{playlistId}\{segmentId}.{container}
     /// </summary>
     public class WithSegmentIdWithContainerRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithSegmentIdWithContainerRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithSegmentIdWithContainerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="container">The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="segmentId">The segment id.</param>
-        public WithSegmentIdWithContainerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string container = "", int? segmentId = default) : base(requestAdapter, "{+baseurl}/Videos/{Videos%2Did}/hls1/{playlistId}/{segmentId}.{container}?actualSegmentLengthTicks={actualSegmentLengthTicks}&runtimeTicks={runtimeTicks}{&allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", pathParameters) {
+        public WithSegmentIdWithContainerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string container = "", int? segmentId = default) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/hls1/{playlistId}/{segmentId}.{container}?actualSegmentLengthTicks={actualSegmentLengthTicks}&runtimeTicks={runtimeTicks}{&allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(container)) PathParameters.Add("container", container);
             if (segmentId != null) PathParameters.Add("segmentId", segmentId);
         }
         /// <summary>
-        /// Instantiates a new WithSegmentIdWithContainerRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithSegmentIdWithContainerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSegmentIdWithContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{Videos%2Did}/hls1/{playlistId}/{segmentId}.{container}?actualSegmentLengthTicks={actualSegmentLengthTicks}&runtimeTicks={runtimeTicks}{&allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", rawUrl) {
+        public WithSegmentIdWithContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/hls1/{playlistId}/{segmentId}.{container}?actualSegmentLengthTicks={actualSegmentLengthTicks}&runtimeTicks={runtimeTicks}{&allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", rawUrl) {
         }
         /// <summary>
         /// Gets a video stream using HTTP live streaming.
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,6 +49,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Hls1.Item.WithSegmentIdWithContaine
         /// <summary>
         /// Gets a video stream using HTTP live streaming.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Hls1.Item.WithSegmentIdWithContaine
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithSegmentIdWithContainerRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithSegmentIdWithContainerRequestBuilder WithUrl(string rawUrl) {
             return new WithSegmentIdWithContainerRequestBuilder(rawUrl, RequestAdapter);

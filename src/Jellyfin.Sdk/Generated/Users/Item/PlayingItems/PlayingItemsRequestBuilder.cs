@@ -13,20 +13,21 @@ namespace Jellyfin.Sdk.Generated.Users.Item.PlayingItems {
     public class PlayingItemsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Users.item.PlayingItems.item collection</summary>
         /// <param name="position">Item id.</param>
+        /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
         public WithItemItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemId", position);
             return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new PlayingItemsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PlayingItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PlayingItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Users/{userId}/PlayingItems", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PlayingItemsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PlayingItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

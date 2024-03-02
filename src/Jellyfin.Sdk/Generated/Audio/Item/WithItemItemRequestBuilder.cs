@@ -42,14 +42,14 @@ namespace Jellyfin.Sdk.Generated.Audio.Item {
             new UniversalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithItemItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithItemItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -58,6 +58,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item {
         /// <summary>
         /// Builds and executes requests for operations under \Audio\{itemId}\stream.{container}
         /// </summary>
+        /// <returns>A <see cref="StreamWithContainerRequestBuilder"/></returns>
         /// <param name="container">The audio container.</param>
         public StreamWithContainerRequestBuilder StreamWithContainer(string container) {
             if(string.IsNullOrEmpty(container)) throw new ArgumentNullException(nameof(container));

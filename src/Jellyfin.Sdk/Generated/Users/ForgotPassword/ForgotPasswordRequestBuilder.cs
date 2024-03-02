@@ -19,14 +19,14 @@ namespace Jellyfin.Sdk.Generated.Users.ForgotPassword {
             new PinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new ForgotPasswordRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ForgotPasswordRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ForgotPasswordRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Users/ForgotPassword", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ForgotPasswordRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ForgotPasswordRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,6 +35,7 @@ namespace Jellyfin.Sdk.Generated.Users.ForgotPassword {
         /// <summary>
         /// Initiates the forgot password process for a local user.
         /// </summary>
+        /// <returns>A <see cref="ForgotPasswordResult"/></returns>
         /// <param name="body">Forgot Password request body DTO.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -52,6 +53,7 @@ namespace Jellyfin.Sdk.Generated.Users.ForgotPassword {
         /// <summary>
         /// Initiates the forgot password process for a local user.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Forgot Password request body DTO.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,6 +73,7 @@ namespace Jellyfin.Sdk.Generated.Users.ForgotPassword {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ForgotPasswordRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ForgotPasswordRequestBuilder WithUrl(string rawUrl) {
             return new ForgotPasswordRequestBuilder(rawUrl, RequestAdapter);

@@ -13,20 +13,21 @@ namespace Jellyfin.Sdk.Generated.Dlna.Item.Icons {
     public class IconsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Dlna.item.icons.item collection</summary>
         /// <param name="position">The icon filename.</param>
+        /// <returns>A <see cref="WithFileNameItemRequestBuilder"/></returns>
         public WithFileNameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("fileName", position);
             return new WithFileNameItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new IconsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="IconsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public IconsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Dlna/{serverId}/icons", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new IconsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="IconsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

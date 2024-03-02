@@ -14,14 +14,14 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Message {
     /// </summary>
     public class MessageRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new MessageRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="MessageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public MessageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/{sessionId}/Message", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new MessageRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="MessageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,6 +47,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Message {
         /// <summary>
         /// Issues a command to a client to display a message to the user.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,6 +66,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Message {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="MessageRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public MessageRequestBuilder WithUrl(string rawUrl) {
             return new MessageRequestBuilder(rawUrl, RequestAdapter);

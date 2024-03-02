@@ -13,20 +13,21 @@ namespace Jellyfin.Sdk.Generated.DisplayPreferences {
     public class DisplayPreferencesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.DisplayPreferences.item collection</summary>
         /// <param name="position">Display preferences id.</param>
+        /// <returns>A <see cref="WithDisplayPreferencesItemRequestBuilder"/></returns>
         public WithDisplayPreferencesItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("displayPreferencesId", position);
             return new WithDisplayPreferencesItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new DisplayPreferencesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DisplayPreferencesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public DisplayPreferencesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/DisplayPreferences", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new DisplayPreferencesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DisplayPreferencesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -14,14 +14,14 @@ namespace Jellyfin.Sdk.Generated.Users.Item.Items.Item.Rating {
     /// </summary>
     public class RatingRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new RatingRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RatingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public RatingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Users/{userId}/Items/{itemId}/Rating{?likes*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RatingRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RatingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,6 +30,7 @@ namespace Jellyfin.Sdk.Generated.Users.Item.Items.Item.Rating {
         /// <summary>
         /// Deletes a user&apos;s saved personal rating for an item.
         /// </summary>
+        /// <returns>A <see cref="UserItemDataDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +46,7 @@ namespace Jellyfin.Sdk.Generated.Users.Item.Items.Item.Rating {
         /// <summary>
         /// Updates a user&apos;s rating for an item.
         /// </summary>
+        /// <returns>A <see cref="UserItemDataDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,6 +62,7 @@ namespace Jellyfin.Sdk.Generated.Users.Item.Items.Item.Rating {
         /// <summary>
         /// Deletes a user&apos;s saved personal rating for an item.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +71,7 @@ namespace Jellyfin.Sdk.Generated.Users.Item.Items.Item.Rating {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/Users/{userId}/Items/{itemId}/Rating", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             return requestInfo;
@@ -76,6 +79,7 @@ namespace Jellyfin.Sdk.Generated.Users.Item.Items.Item.Rating {
         /// <summary>
         /// Updates a user&apos;s rating for an item.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +96,7 @@ namespace Jellyfin.Sdk.Generated.Users.Item.Items.Item.Rating {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="RatingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public RatingRequestBuilder WithUrl(string rawUrl) {
             return new RatingRequestBuilder(rawUrl, RequestAdapter);

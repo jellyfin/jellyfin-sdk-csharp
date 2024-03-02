@@ -16,14 +16,14 @@ namespace Jellyfin.Sdk.Generated.FallbackFont {
             new FontsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new FallbackFontRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="FallbackFontRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public FallbackFontRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/FallbackFont", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new FallbackFontRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="FallbackFontRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

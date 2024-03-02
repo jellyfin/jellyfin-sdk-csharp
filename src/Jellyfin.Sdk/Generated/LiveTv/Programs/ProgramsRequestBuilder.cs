@@ -21,28 +21,30 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.LiveTv.Programs.item collection</summary>
         /// <param name="position">Program id.</param>
+        /// <returns>A <see cref="WithProgramItemRequestBuilder"/></returns>
         public WithProgramItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("programId", position);
             return new WithProgramItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ProgramsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ProgramsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProgramsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs{?channelIds*,enableImages*,enableImageTypes*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,genres*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,librarySeriesId*,limit*,maxEndDate*,maxStartDate*,minEndDate*,minStartDate*,seriesTimerId*,sortBy*,sortOrder*,startIndex*,userId*}", pathParameters) {
+        public ProgramsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs{?channelIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,genres*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,librarySeriesId*,limit*,maxEndDate*,maxStartDate*,minEndDate*,minStartDate*,seriesTimerId*,sortBy*,sortOrder*,startIndex*,userId*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ProgramsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ProgramsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProgramsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs{?channelIds*,enableImages*,enableImageTypes*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,genres*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,librarySeriesId*,limit*,maxEndDate*,maxStartDate*,minEndDate*,minStartDate*,seriesTimerId*,sortBy*,sortOrder*,startIndex*,userId*}", rawUrl) {
+        public ProgramsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs{?channelIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,genres*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,librarySeriesId*,limit*,maxEndDate*,maxStartDate*,minEndDate*,minStartDate*,seriesTimerId*,sortBy*,sortOrder*,startIndex*,userId*}", rawUrl) {
         }
         /// <summary>
         /// Gets available live tv epgs.
         /// </summary>
+        /// <returns>A <see cref="BaseItemDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,6 +60,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
         /// <summary>
         /// Gets available live tv epgs.
         /// </summary>
+        /// <returns>A <see cref="BaseItemDtoQueryResult"/></returns>
         /// <param name="body">Get programs dto.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -75,6 +78,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
         /// <summary>
         /// Gets available live tv epgs.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +95,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
         /// <summary>
         /// Gets available live tv epgs.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Get programs dto.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,7 +106,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
         public RequestInformation ToPostRequestInformation(GetProgramsDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/LiveTv/Programs", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -110,6 +115,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ProgramsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ProgramsRequestBuilder WithUrl(string rawUrl) {
             return new ProgramsRequestBuilder(rawUrl, RequestAdapter);
@@ -135,11 +141,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("enableImageTypes")]
-            public string[]? EnableImageTypes { get; set; }
+            public ImageType[]? EnableImageTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("enableImageTypes")]
-            public string[] EnableImageTypes { get; set; }
+            public ImageType[] EnableImageTypes { get; set; }
 #endif
             /// <summary>Retrieve total record count.</summary>
             [QueryParameter("enableTotalRecordCount")]
@@ -151,11 +157,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public string[]? Fields { get; set; }
+            public ItemFields[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public string[] Fields { get; set; }
+            public ItemFields[] Fields { get; set; }
 #endif
             /// <summary>The genre ids to return guide information for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -243,11 +249,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortOrder")]
-            public string[]? SortOrder { get; set; }
+            public Jellyfin.Sdk.Generated.Models.SortOrder[]? SortOrder { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortOrder")]
-            public string[] SortOrder { get; set; }
+            public Jellyfin.Sdk.Generated.Models.SortOrder[] SortOrder { get; set; }
 #endif
             /// <summary>Optional. The record index to start at. All items with a lower index will be dropped from the results.</summary>
             [QueryParameter("startIndex")]

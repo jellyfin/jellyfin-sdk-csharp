@@ -15,20 +15,21 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Playing {
     public class PlayingRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Sessions.item.Playing.item collection</summary>
         /// <param name="position">The MediaBrowser.Model.Session.PlaystateCommand.</param>
+        /// <returns>A <see cref="WithCommandItemRequestBuilder"/></returns>
         public WithCommandItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("command", position);
             return new WithCommandItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new PlayingRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PlayingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PlayingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/{sessionId}/Playing?itemIds={itemIds}&playCommand={playCommand}{&audioStreamIndex*,mediaSourceId*,startIndex*,startPositionTicks*,subtitleStreamIndex*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PlayingRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PlayingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,6 +53,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Playing {
         /// <summary>
         /// Instructs a session to play an item.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +69,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Playing {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="PlayingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public PlayingRequestBuilder WithUrl(string rawUrl) {
             return new PlayingRequestBuilder(rawUrl, RequestAdapter);

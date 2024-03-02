@@ -14,14 +14,14 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.SetIgnoreWait {
     /// </summary>
     public class SetIgnoreWaitRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new SetIgnoreWaitRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SetIgnoreWaitRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public SetIgnoreWaitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay/SetIgnoreWait", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SetIgnoreWaitRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SetIgnoreWaitRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,6 +47,7 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.SetIgnoreWait {
         /// <summary>
         /// Request SyncPlay group to ignore member during group-wait.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Class IgnoreWaitRequestDto.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,6 +66,7 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.SetIgnoreWait {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="SetIgnoreWaitRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public SetIgnoreWaitRequestBuilder WithUrl(string rawUrl) {
             return new SetIgnoreWaitRequestBuilder(rawUrl, RequestAdapter);

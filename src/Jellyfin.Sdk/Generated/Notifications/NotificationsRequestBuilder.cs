@@ -28,20 +28,21 @@ namespace Jellyfin.Sdk.Generated.Notifications {
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Notifications.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="WithUserItemRequestBuilder"/></returns>
         public WithUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userId", position);
             return new WithUserItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new NotificationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="NotificationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public NotificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Notifications", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new NotificationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="NotificationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -16,14 +16,14 @@ namespace Jellyfin.Sdk.Generated.Search {
             new HintsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new SearchRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Search", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SearchRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

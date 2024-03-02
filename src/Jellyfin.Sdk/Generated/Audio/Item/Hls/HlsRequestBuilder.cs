@@ -13,20 +13,21 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls {
     public class HlsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Audio.item.hls.item collection</summary>
         /// <param name="position">The segment id.</param>
+        /// <returns>A <see cref="WithSegmentItemRequestBuilder"/></returns>
         public WithSegmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("segmentId", position);
             return new WithSegmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new HlsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="HlsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public HlsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new HlsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="HlsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

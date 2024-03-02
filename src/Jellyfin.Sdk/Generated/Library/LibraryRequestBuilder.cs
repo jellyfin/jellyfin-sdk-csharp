@@ -46,14 +46,14 @@ namespace Jellyfin.Sdk.Generated.Library {
             new VirtualFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new LibraryRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LibraryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public LibraryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new LibraryRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LibraryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

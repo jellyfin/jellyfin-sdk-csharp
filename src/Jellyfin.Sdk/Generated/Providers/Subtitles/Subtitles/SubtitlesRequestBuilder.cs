@@ -13,20 +13,21 @@ namespace Jellyfin.Sdk.Generated.Providers.Subtitles.Subtitles {
     public class SubtitlesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Providers.Subtitles.Subtitles.item collection</summary>
         /// <param name="position">The item id.</param>
+        /// <returns>A <see cref="SubtitlesItemRequestBuilder"/></returns>
         public SubtitlesItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("id", position);
             return new SubtitlesItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new SubtitlesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SubtitlesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public SubtitlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Providers/Subtitles/Subtitles", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SubtitlesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SubtitlesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

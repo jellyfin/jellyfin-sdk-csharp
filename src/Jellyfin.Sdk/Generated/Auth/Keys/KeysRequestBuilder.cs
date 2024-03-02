@@ -16,28 +16,30 @@ namespace Jellyfin.Sdk.Generated.Auth.Keys {
     public class KeysRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Auth.Keys.item collection</summary>
         /// <param name="position">The access token to delete.</param>
+        /// <returns>A <see cref="WithKeyItemRequestBuilder"/></returns>
         public WithKeyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("key", position);
             return new WithKeyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new KeysRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="KeysRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/Keys?app={app}", pathParameters) {
+        public KeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/Keys", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new KeysRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="KeysRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/Keys?app={app}", rawUrl) {
+        public KeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/Keys", rawUrl) {
         }
         /// <summary>
         /// Get all keys.
         /// </summary>
+        /// <returns>A <see cref="AuthenticationInfoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,6 +70,7 @@ namespace Jellyfin.Sdk.Generated.Auth.Keys {
         /// <summary>
         /// Get all keys.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +87,7 @@ namespace Jellyfin.Sdk.Generated.Auth.Keys {
         /// <summary>
         /// Create a new api key.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,13 +96,14 @@ namespace Jellyfin.Sdk.Generated.Auth.Keys {
 #else
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<KeysRequestBuilderPostQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Auth/Keys?app={app}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="KeysRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public KeysRequestBuilder WithUrl(string rawUrl) {
             return new KeysRequestBuilder(rawUrl, RequestAdapter);

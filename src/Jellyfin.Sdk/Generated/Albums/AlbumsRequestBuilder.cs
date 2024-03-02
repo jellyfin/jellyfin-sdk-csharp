@@ -13,20 +13,21 @@ namespace Jellyfin.Sdk.Generated.Albums {
     public class AlbumsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Albums.item collection</summary>
         /// <param name="position">The item id.</param>
-        public AlbumsItemRequestBuilder this[Guid position] { get {
+        /// <returns>A <see cref="IdItemRequestBuilder"/></returns>
+        public IdItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("Albums%2Did", position);
-            return new AlbumsItemRequestBuilder(urlTplParams, RequestAdapter);
+            urlTplParams.Add("id%2Did", position);
+            return new IdItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new AlbumsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AlbumsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public AlbumsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AlbumsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AlbumsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -19,18 +19,18 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths {
             new UpdateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new PathsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PathsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PathsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/VirtualFolders/Paths{?name*,path*,refreshLibrary*}", pathParameters) {
+        public PathsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/VirtualFolders/Paths{?refreshLibrary*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PathsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PathsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PathsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/VirtualFolders/Paths{?name*,path*,refreshLibrary*}", rawUrl) {
+        public PathsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/VirtualFolders/Paths{?refreshLibrary*}", rawUrl) {
         }
         /// <summary>
         /// Remove a media path.
@@ -67,6 +67,7 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths {
         /// <summary>
         /// Remove a media path.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,13 +76,14 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<PathsRequestBuilderDeleteQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/Library/VirtualFolders/Paths{?name*,path*,refreshLibrary*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
         /// <summary>
         /// Add a media path to a library.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Media Path dto.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,6 +102,7 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="PathsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public PathsRequestBuilder WithUrl(string rawUrl) {
             return new PathsRequestBuilder(rawUrl, RequestAdapter);

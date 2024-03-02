@@ -11,29 +11,30 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Videos.Item.Subtitles {
     /// <summary>
-    /// Builds and executes requests for operations under \Videos\{Videos-id}\Subtitles
+    /// Builds and executes requests for operations under \Videos\{itemId-id}\Subtitles
     /// </summary>
     public class SubtitlesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item.Subtitles.item collection</summary>
         /// <param name="position">The index of the subtitle file.</param>
+        /// <returns>A <see cref="WithIndexItemRequestBuilder"/></returns>
         public WithIndexItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("index", position);
             return new WithIndexItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new SubtitlesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SubtitlesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubtitlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{Videos%2Did}/Subtitles", pathParameters) {
+        public SubtitlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/Subtitles", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SubtitlesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SubtitlesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubtitlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{Videos%2Did}/Subtitles", rawUrl) {
+        public SubtitlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/Subtitles", rawUrl) {
         }
         /// <summary>
         /// Upload an external subtitle file.
@@ -55,6 +56,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Subtitles {
         /// <summary>
         /// Upload an external subtitle file.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Upload subtitles dto.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,6 +75,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Subtitles {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="SubtitlesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public SubtitlesRequestBuilder WithUrl(string rawUrl) {
             return new SubtitlesRequestBuilder(rawUrl, RequestAdapter);

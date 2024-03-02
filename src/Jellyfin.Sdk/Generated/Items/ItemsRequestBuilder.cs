@@ -36,30 +36,32 @@ namespace Jellyfin.Sdk.Generated.Items {
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Items.item collection</summary>
         /// <param name="position">The item id.</param>
-        public ItemsItemRequestBuilder this[Guid position] { get {
+        /// <returns>A <see cref="IdItemRequestBuilder"/></returns>
+        public IdItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("Items%2Did", position);
-            return new ItemsItemRequestBuilder(urlTplParams, RequestAdapter);
+            urlTplParams.Add("id%2Did", position);
+            return new IdItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ItemsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items{?adjacentTo*,albumArtistIds*,albumIds*,albums*,artistIds*,artists*,collapseBoxSetItems*,contributingArtistIds*,enableImages*,enableImageTypes*,enableTotalRecordCount*,enableUserData*,excludeArtistIds*,excludeItemIds*,excludeItemTypes*,excludeLocationTypes*,fields*,filters*,genreIds*,genres*,hasImdbId*,hasOfficialRating*,hasOverview*,hasParentalRating*,hasSpecialFeature*,hasSubtitles*,hasThemeSong*,hasThemeVideo*,hasTmdbId*,hasTrailer*,hasTvdbId*,ids*,imageTypeLimit*,imageTypes*,includeItemTypes*,is3D*,is4K*,isFavorite*,isHd*,isKids*,isLocked*,isMissing*,isMovie*,isNews*,isPlaceHolder*,isPlayed*,isSeries*,isSports*,isUnaired*,limit*,locationTypes*,maxHeight*,maxOfficialRating*,maxPremiereDate*,maxWidth*,mediaTypes*,minCommunityRating*,minCriticRating*,minDateLastSaved*,minDateLastSavedForUser*,minHeight*,minOfficialRating*,minPremiereDate*,minWidth*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,officialRatings*,parentId*,parentIndexNumber*,person*,personIds*,personTypes*,recursive*,searchTerm*,seriesStatus*,sortBy*,sortOrder*,startIndex*,studioIds*,studios*,tags*,userId*,videoTypes*,years*}", pathParameters) {
+        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items{?adjacentTo*,albumArtistIds*,albumIds*,albums*,artistIds*,artists*,collapseBoxSetItems*,contributingArtistIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeArtistIds*,excludeItemIds*,excludeItemTypes*,excludeLocationTypes*,fields*,filters*,genreIds*,genres*,hasImdbId*,hasOfficialRating*,hasOverview*,hasParentalRating*,hasSpecialFeature*,hasSubtitles*,hasThemeSong*,hasThemeVideo*,hasTmdbId*,hasTrailer*,hasTvdbId*,ids*,imageTypeLimit*,imageTypes*,includeItemTypes*,is3D*,is4K*,isFavorite*,isHd*,isKids*,isLocked*,isMissing*,isMovie*,isNews*,isPlaceHolder*,isPlayed*,isSeries*,isSports*,isUnaired*,limit*,locationTypes*,maxHeight*,maxOfficialRating*,maxPremiereDate*,maxWidth*,mediaTypes*,minCommunityRating*,minCriticRating*,minDateLastSaved*,minDateLastSavedForUser*,minHeight*,minOfficialRating*,minPremiereDate*,minWidth*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,officialRatings*,parentId*,parentIndexNumber*,person*,personIds*,personTypes*,recursive*,searchTerm*,seriesStatus*,sortBy*,sortOrder*,startIndex*,studioIds*,studios*,tags*,userId*,videoTypes*,years*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ItemsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items{?adjacentTo*,albumArtistIds*,albumIds*,albums*,artistIds*,artists*,collapseBoxSetItems*,contributingArtistIds*,enableImages*,enableImageTypes*,enableTotalRecordCount*,enableUserData*,excludeArtistIds*,excludeItemIds*,excludeItemTypes*,excludeLocationTypes*,fields*,filters*,genreIds*,genres*,hasImdbId*,hasOfficialRating*,hasOverview*,hasParentalRating*,hasSpecialFeature*,hasSubtitles*,hasThemeSong*,hasThemeVideo*,hasTmdbId*,hasTrailer*,hasTvdbId*,ids*,imageTypeLimit*,imageTypes*,includeItemTypes*,is3D*,is4K*,isFavorite*,isHd*,isKids*,isLocked*,isMissing*,isMovie*,isNews*,isPlaceHolder*,isPlayed*,isSeries*,isSports*,isUnaired*,limit*,locationTypes*,maxHeight*,maxOfficialRating*,maxPremiereDate*,maxWidth*,mediaTypes*,minCommunityRating*,minCriticRating*,minDateLastSaved*,minDateLastSavedForUser*,minHeight*,minOfficialRating*,minPremiereDate*,minWidth*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,officialRatings*,parentId*,parentIndexNumber*,person*,personIds*,personTypes*,recursive*,searchTerm*,seriesStatus*,sortBy*,sortOrder*,startIndex*,studioIds*,studios*,tags*,userId*,videoTypes*,years*}", rawUrl) {
+        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items{?adjacentTo*,albumArtistIds*,albumIds*,albums*,artistIds*,artists*,collapseBoxSetItems*,contributingArtistIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeArtistIds*,excludeItemIds*,excludeItemTypes*,excludeLocationTypes*,fields*,filters*,genreIds*,genres*,hasImdbId*,hasOfficialRating*,hasOverview*,hasParentalRating*,hasSpecialFeature*,hasSubtitles*,hasThemeSong*,hasThemeVideo*,hasTmdbId*,hasTrailer*,hasTvdbId*,ids*,imageTypeLimit*,imageTypes*,includeItemTypes*,is3D*,is4K*,isFavorite*,isHd*,isKids*,isLocked*,isMissing*,isMovie*,isNews*,isPlaceHolder*,isPlayed*,isSeries*,isSports*,isUnaired*,limit*,locationTypes*,maxHeight*,maxOfficialRating*,maxPremiereDate*,maxWidth*,mediaTypes*,minCommunityRating*,minCriticRating*,minDateLastSaved*,minDateLastSavedForUser*,minHeight*,minOfficialRating*,minPremiereDate*,minWidth*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,officialRatings*,parentId*,parentIndexNumber*,person*,personIds*,personTypes*,recursive*,searchTerm*,seriesStatus*,sortBy*,sortOrder*,startIndex*,studioIds*,studios*,tags*,userId*,videoTypes*,years*}", rawUrl) {
         }
         /// <summary>
         /// Deletes items from the library and filesystem.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<ItemsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -76,6 +78,7 @@ namespace Jellyfin.Sdk.Generated.Items {
         /// <summary>
         /// Gets items based on a query.
         /// </summary>
+        /// <returns>A <see cref="BaseItemDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,6 +94,7 @@ namespace Jellyfin.Sdk.Generated.Items {
         /// <summary>
         /// Deletes items from the library and filesystem.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +103,7 @@ namespace Jellyfin.Sdk.Generated.Items {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<ItemsRequestBuilderDeleteQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/Items{?ids*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             return requestInfo;
@@ -107,6 +111,7 @@ namespace Jellyfin.Sdk.Generated.Items {
         /// <summary>
         /// Gets items based on a query.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +128,7 @@ namespace Jellyfin.Sdk.Generated.Items {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ItemsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ItemsRequestBuilder WithUrl(string rawUrl) {
             return new ItemsRequestBuilder(rawUrl, RequestAdapter);
@@ -226,11 +232,11 @@ namespace Jellyfin.Sdk.Generated.Items {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("enableImageTypes")]
-            public string[]? EnableImageTypes { get; set; }
+            public ImageType[]? EnableImageTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("enableImageTypes")]
-            public string[] EnableImageTypes { get; set; }
+            public ImageType[] EnableImageTypes { get; set; }
 #endif
             /// <summary>Optional. Enable the total record count.</summary>
             [QueryParameter("enableTotalRecordCount")]
@@ -262,41 +268,41 @@ namespace Jellyfin.Sdk.Generated.Items {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("excludeItemTypes")]
-            public string[]? ExcludeItemTypes { get; set; }
+            public BaseItemKind[]? ExcludeItemTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("excludeItemTypes")]
-            public string[] ExcludeItemTypes { get; set; }
+            public BaseItemKind[] ExcludeItemTypes { get; set; }
 #endif
             /// <summary>Optional. If specified, results will be filtered based on the LocationType. This allows multiple, comma delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("excludeLocationTypes")]
-            public string[]? ExcludeLocationTypes { get; set; }
+            public LocationType[]? ExcludeLocationTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("excludeLocationTypes")]
-            public string[] ExcludeLocationTypes { get; set; }
+            public LocationType[] ExcludeLocationTypes { get; set; }
 #endif
             /// <summary>Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public string[]? Fields { get; set; }
+            public ItemFields[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public string[] Fields { get; set; }
+            public ItemFields[] Fields { get; set; }
 #endif
             /// <summary>Optional. Specify additional filters to apply. This allows multiple, comma delimited. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filters")]
-            public string[]? Filters { get; set; }
+            public ItemFilter[]? Filters { get; set; }
 #nullable restore
 #else
             [QueryParameter("filters")]
-            public string[] Filters { get; set; }
+            public ItemFilter[] Filters { get; set; }
 #endif
             /// <summary>Optional. If specified, results will be filtered based on genre id. This allows multiple, pipe delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -368,21 +374,21 @@ namespace Jellyfin.Sdk.Generated.Items {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("imageTypes")]
-            public string[]? ImageTypes { get; set; }
+            public ImageType[]? ImageTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("imageTypes")]
-            public string[] ImageTypes { get; set; }
+            public ImageType[] ImageTypes { get; set; }
 #endif
             /// <summary>Optional. If specified, results will be filtered based on the item type. This allows multiple, comma delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("includeItemTypes")]
-            public string[]? IncludeItemTypes { get; set; }
+            public BaseItemKind[]? IncludeItemTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("includeItemTypes")]
-            public string[] IncludeItemTypes { get; set; }
+            public BaseItemKind[] IncludeItemTypes { get; set; }
 #endif
             /// <summary>Optional filter by items that are 3D, or not.</summary>
             [QueryParameter("is3D")]
@@ -433,11 +439,11 @@ namespace Jellyfin.Sdk.Generated.Items {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("locationTypes")]
-            public string[]? LocationTypes { get; set; }
+            public LocationType[]? LocationTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("locationTypes")]
-            public string[] LocationTypes { get; set; }
+            public LocationType[] LocationTypes { get; set; }
 #endif
             /// <summary>Optional. Filter by the maximum height of the item.</summary>
             [QueryParameter("maxHeight")]
@@ -592,11 +598,11 @@ namespace Jellyfin.Sdk.Generated.Items {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("seriesStatus")]
-            public string[]? SeriesStatus { get; set; }
+            public Jellyfin.Sdk.Generated.Models.SeriesStatus[]? SeriesStatus { get; set; }
 #nullable restore
 #else
             [QueryParameter("seriesStatus")]
-            public string[] SeriesStatus { get; set; }
+            public Jellyfin.Sdk.Generated.Models.SeriesStatus[] SeriesStatus { get; set; }
 #endif
             /// <summary>Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -612,11 +618,11 @@ namespace Jellyfin.Sdk.Generated.Items {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortOrder")]
-            public string[]? SortOrder { get; set; }
+            public Jellyfin.Sdk.Generated.Models.SortOrder[]? SortOrder { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortOrder")]
-            public string[] SortOrder { get; set; }
+            public Jellyfin.Sdk.Generated.Models.SortOrder[] SortOrder { get; set; }
 #endif
             /// <summary>Optional. The record index to start at. All items with a lower index will be dropped from the results.</summary>
             [QueryParameter("startIndex")]
@@ -658,11 +664,11 @@ namespace Jellyfin.Sdk.Generated.Items {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("videoTypes")]
-            public string[]? VideoTypes { get; set; }
+            public VideoType[]? VideoTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("videoTypes")]
-            public string[] VideoTypes { get; set; }
+            public VideoType[] VideoTypes { get; set; }
 #endif
             /// <summary>Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

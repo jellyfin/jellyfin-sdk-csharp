@@ -8,29 +8,30 @@ using System.Threading.Tasks;
 using System;
 namespace Jellyfin.Sdk.Generated.MusicGenres.Item.Images {
     /// <summary>
-    /// Builds and executes requests for operations under \MusicGenres\{MusicGenres-id}\Images
+    /// Builds and executes requests for operations under \MusicGenres\{genreName-id}\Images
     /// </summary>
     public class ImagesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.MusicGenres.item.Images.item collection</summary>
         /// <param name="position">Image type.</param>
+        /// <returns>A <see cref="WithImageTypeItemRequestBuilder"/></returns>
         public WithImageTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("imageType", position);
             return new WithImageTypeItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ImagesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ImagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ImagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/MusicGenres/{MusicGenres%2Did}/Images", pathParameters) {
+        public ImagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/MusicGenres/{genreName%2Did}/Images", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ImagesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ImagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/MusicGenres/{MusicGenres%2Did}/Images", rawUrl) {
+        public ImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/MusicGenres/{genreName%2Did}/Images", rawUrl) {
         }
     }
 }

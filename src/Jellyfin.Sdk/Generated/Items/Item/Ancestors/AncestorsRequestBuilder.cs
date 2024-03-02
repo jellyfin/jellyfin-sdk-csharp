@@ -10,28 +10,30 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.Ancestors {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{Items-id}\Ancestors
+    /// Builds and executes requests for operations under \Items\{id-id}\Ancestors
     /// </summary>
     public class AncestorsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new AncestorsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AncestorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AncestorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{Items%2Did}/Ancestors{?userId*}", pathParameters) {
+        public AncestorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Ancestors{?userId*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AncestorsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AncestorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AncestorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{Items%2Did}/Ancestors{?userId*}", rawUrl) {
+        public AncestorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Ancestors{?userId*}", rawUrl) {
         }
         /// <summary>
         /// Gets all parents of an item.
         /// </summary>
+        /// <returns>A List&lt;BaseItemDto&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<BaseItemDto>?> GetAsync(Action<RequestConfiguration<AncestorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -49,6 +51,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Ancestors {
         /// <summary>
         /// Gets all parents of an item.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +68,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Ancestors {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="AncestorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AncestorsRequestBuilder WithUrl(string rawUrl) {
             return new AncestorsRequestBuilder(rawUrl, RequestAdapter);

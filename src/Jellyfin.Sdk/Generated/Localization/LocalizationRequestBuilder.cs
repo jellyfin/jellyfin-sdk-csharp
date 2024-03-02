@@ -31,14 +31,14 @@ namespace Jellyfin.Sdk.Generated.Localization {
             new ParentalRatingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new LocalizationRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LocalizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public LocalizationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Localization", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new LocalizationRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LocalizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

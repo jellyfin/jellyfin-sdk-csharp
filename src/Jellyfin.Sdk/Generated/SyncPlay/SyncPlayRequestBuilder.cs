@@ -116,14 +116,14 @@ namespace Jellyfin.Sdk.Generated.SyncPlay {
             new UnpauseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new SyncPlayRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SyncPlayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public SyncPlayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SyncPlayRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SyncPlayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

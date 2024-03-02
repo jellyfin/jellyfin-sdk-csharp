@@ -26,14 +26,14 @@ namespace Jellyfin.Sdk.Generated.Images {
             new RatingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new ImagesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ImagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ImagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Images", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ImagesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ImagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

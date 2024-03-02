@@ -14,14 +14,14 @@ namespace Jellyfin.Sdk.Generated.Auth.PasswordResetProviders {
     /// </summary>
     public class PasswordResetProvidersRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new PasswordResetProvidersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PasswordResetProvidersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PasswordResetProvidersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/PasswordResetProviders", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PasswordResetProvidersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PasswordResetProvidersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,6 +30,7 @@ namespace Jellyfin.Sdk.Generated.Auth.PasswordResetProviders {
         /// <summary>
         /// Get all password reset providers.
         /// </summary>
+        /// <returns>A List&lt;NameIdPair&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +47,7 @@ namespace Jellyfin.Sdk.Generated.Auth.PasswordResetProviders {
         /// <summary>
         /// Get all password reset providers.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +64,7 @@ namespace Jellyfin.Sdk.Generated.Auth.PasswordResetProviders {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="PasswordResetProvidersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public PasswordResetProvidersRequestBuilder WithUrl(string rawUrl) {
             return new PasswordResetProvidersRequestBuilder(rawUrl, RequestAdapter);

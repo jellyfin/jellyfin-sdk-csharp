@@ -16,20 +16,21 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Command {
     public class CommandRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Sessions.item.Command.item collection</summary>
         /// <param name="position">The command to send.</param>
+        /// <returns>A <see cref="WithCommandItemRequestBuilder"/></returns>
         public WithCommandItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("command", position);
             return new WithCommandItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new CommandRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CommandRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CommandRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/{sessionId}/Command", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CommandRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CommandRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,6 +56,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Command {
         /// <summary>
         /// Issues a full general command to a client.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,6 +75,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Command {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="CommandRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public CommandRequestBuilder WithUrl(string rawUrl) {
             return new CommandRequestBuilder(rawUrl, RequestAdapter);

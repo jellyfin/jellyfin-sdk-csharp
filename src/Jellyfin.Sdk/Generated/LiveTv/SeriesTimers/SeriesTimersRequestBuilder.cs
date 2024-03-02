@@ -16,20 +16,21 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
     public class SeriesTimersRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.item collection</summary>
         /// <param name="position">Timer id.</param>
+        /// <returns>A <see cref="WithTimerItemRequestBuilder"/></returns>
         public WithTimerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("timerId", position);
             return new WithTimerItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new SeriesTimersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SeriesTimersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public SeriesTimersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/SeriesTimers{?sortBy*,sortOrder*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SeriesTimersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SeriesTimersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,6 +39,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
         /// <summary>
         /// Gets live tv series timers.
         /// </summary>
+        /// <returns>A <see cref="SeriesTimerInfoDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,6 +72,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
         /// <summary>
         /// Gets live tv series timers.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +89,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
         /// <summary>
         /// Creates a live tv series timer.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Class SeriesTimerInfoDto.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +100,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
         public RequestInformation ToPostRequestInformation(SeriesTimerInfoDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/LiveTv/SeriesTimers", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
@@ -104,6 +108,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="SeriesTimersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public SeriesTimersRequestBuilder WithUrl(string rawUrl) {
             return new SeriesTimersRequestBuilder(rawUrl, RequestAdapter);

@@ -10,28 +10,29 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.IndexNamespace {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{itemId}\Images\{imageType}\{imageIndex}\Index
+    /// Builds and executes requests for operations under \Items\{id-id}\Images\{imageType}\{imageIndex}\Index
     /// </summary>
     public class IndexRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new IndexRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="IndexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndexRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}/{imageIndex}/Index?newIndex={newIndex}", pathParameters) {
+        public IndexRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}/{imageIndex}/Index?newIndex={newIndex}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new IndexRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="IndexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndexRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}/{imageIndex}/Index?newIndex={newIndex}", rawUrl) {
+        public IndexRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}/{imageIndex}/Index?newIndex={newIndex}", rawUrl) {
         }
         /// <summary>
         /// Updates the index for an item image.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(Action<RequestConfiguration<IndexRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -48,6 +49,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.IndexNamespace {
         /// <summary>
         /// Updates the index for an item image.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.IndexNamespace {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="IndexRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public IndexRequestBuilder WithUrl(string rawUrl) {
             return new IndexRequestBuilder(rawUrl, RequestAdapter);

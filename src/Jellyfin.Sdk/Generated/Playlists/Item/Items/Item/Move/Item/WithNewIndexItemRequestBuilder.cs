@@ -9,22 +9,22 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Playlists\{playlistId}\Items\{itemId}\Move\{newIndex}
+    /// Builds and executes requests for operations under \Playlists\{id-id}\Items\{itemId}\Move\{newIndex}
     /// </summary>
     public class WithNewIndexItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithNewIndexItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithNewIndexItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNewIndexItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{playlistId}/Items/{itemId}/Move/{newIndex}", pathParameters) {
+        public WithNewIndexItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{id%2Did}/Items/{itemId}/Move/{newIndex}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithNewIndexItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithNewIndexItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNewIndexItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{playlistId}/Items/{itemId}/Move/{newIndex}", rawUrl) {
+        public WithNewIndexItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{id%2Did}/Items/{itemId}/Move/{newIndex}", rawUrl) {
         }
         /// <summary>
         /// Moves a playlist item.
@@ -44,6 +44,7 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move.Item {
         /// <summary>
         /// Moves a playlist item.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +60,7 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithNewIndexItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithNewIndexItemRequestBuilder WithUrl(string rawUrl) {
             return new WithNewIndexItemRequestBuilder(rawUrl, RequestAdapter);

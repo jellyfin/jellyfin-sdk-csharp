@@ -16,14 +16,14 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.Item {
             new StreamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithRecordingItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithRecordingItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithRecordingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveRecordings/{recordingId}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithRecordingItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithRecordingItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

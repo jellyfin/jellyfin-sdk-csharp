@@ -13,20 +13,21 @@ namespace Jellyfin.Sdk.Generated.Images.General.Item {
     public class WithNameItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Images.General.item.item collection</summary>
         /// <param name="position">Image Type (primary, backdrop, logo, etc).</param>
+        /// <returns>A <see cref="WithTypeItemRequestBuilder"/></returns>
         public WithTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("type", position);
             return new WithTypeItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new WithNameItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithNameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Images/General/{name}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithNameItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithNameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

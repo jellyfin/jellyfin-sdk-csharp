@@ -202,6 +202,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="SessionInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static SessionInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -210,6 +211,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"AdditionalUsers", n => { AdditionalUsers = n.GetCollectionOfObjectValues<SessionUserInfo>(SessionUserInfo.CreateFromDiscriminatorValue)?.ToList(); } },

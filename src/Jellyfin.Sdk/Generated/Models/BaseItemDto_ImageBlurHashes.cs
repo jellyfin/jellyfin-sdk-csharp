@@ -8,7 +8,9 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Gets or sets the blurhashes for the image tags.Maps image type to dictionary mapping image tag to blurhash value.
     /// </summary>
-    public class BaseItemDto_ImageBlurHashes : IParsable {
+    public class BaseItemDto_ImageBlurHashes : IAdditionalDataHolder, IParsable {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Art property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,8 +116,15 @@ namespace Jellyfin.Sdk.Generated.Models {
         public BaseItemDto_ImageBlurHashes_Thumb Thumb { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="BaseItemDto_ImageBlurHashes"/> and sets the default values.
+        /// </summary>
+        public BaseItemDto_ImageBlurHashes() {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="BaseItemDto_ImageBlurHashes"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static BaseItemDto_ImageBlurHashes CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -124,6 +133,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"Art", n => { Art = n.GetObjectValue<BaseItemDto_ImageBlurHashes_Art>(BaseItemDto_ImageBlurHashes_Art.CreateFromDiscriminatorValue); } },
@@ -160,6 +170,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteObjectValue<BaseItemDto_ImageBlurHashes_Profile>("Profile", Profile);
             writer.WriteObjectValue<BaseItemDto_ImageBlurHashes_Screenshot>("Screenshot", Screenshot);
             writer.WriteObjectValue<BaseItemDto_ImageBlurHashes_Thumb>("Thumb", Thumb);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

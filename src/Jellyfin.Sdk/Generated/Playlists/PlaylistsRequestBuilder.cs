@@ -16,20 +16,21 @@ namespace Jellyfin.Sdk.Generated.Playlists {
     public class PlaylistsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Playlists.item collection</summary>
         /// <param name="position">The item id.</param>
-        public PlaylistsItemRequestBuilder this[Guid position] { get {
+        /// <returns>A <see cref="IdItemRequestBuilder"/></returns>
+        public IdItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("Playlists%2Did", position);
-            return new PlaylistsItemRequestBuilder(urlTplParams, RequestAdapter);
+            urlTplParams.Add("id%2Did", position);
+            return new IdItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new PlaylistsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PlaylistsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PlaylistsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists{?ids*,mediaType*,name*,userId*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PlaylistsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PlaylistsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,6 +39,7 @@ namespace Jellyfin.Sdk.Generated.Playlists {
         /// <summary>
         /// For backwards compatibility parameters can be sent via Query or Body, with Query having higher precedence.Query parameters are obsolete.
         /// </summary>
+        /// <returns>A <see cref="PlaylistCreationResult"/></returns>
         /// <param name="body">Create new playlist dto.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,6 +57,7 @@ namespace Jellyfin.Sdk.Generated.Playlists {
         /// <summary>
         /// For backwards compatibility parameters can be sent via Query or Body, with Query having higher precedence.Query parameters are obsolete.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Create new playlist dto.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,6 +77,7 @@ namespace Jellyfin.Sdk.Generated.Playlists {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="PlaylistsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public PlaylistsRequestBuilder WithUrl(string rawUrl) {
             return new PlaylistsRequestBuilder(rawUrl, RequestAdapter);

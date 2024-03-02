@@ -29,14 +29,14 @@ namespace Jellyfin.Sdk.Generated.Sessions.Playing {
             new StoppedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new PlayingRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PlayingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PlayingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Playing", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PlayingRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PlayingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,6 +62,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Playing {
         /// <summary>
         /// Reports playback has started within a session.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Class PlaybackStartInfo.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,6 +81,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Playing {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="PlayingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public PlayingRequestBuilder WithUrl(string rawUrl) {
             return new PlayingRequestBuilder(rawUrl, RequestAdapter);

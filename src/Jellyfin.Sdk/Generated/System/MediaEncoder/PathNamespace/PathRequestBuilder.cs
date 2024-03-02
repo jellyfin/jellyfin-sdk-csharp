@@ -14,14 +14,14 @@ namespace Jellyfin.Sdk.Generated.System.MediaEncoder.PathNamespace {
     /// </summary>
     public class PathRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new PathRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PathRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PathRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/MediaEncoder/Path", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PathRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PathRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,6 +48,7 @@ namespace Jellyfin.Sdk.Generated.System.MediaEncoder.PathNamespace {
         /// <summary>
         /// Updates the path to the media encoder.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Media Encoder Path Dto.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
@@ -67,6 +68,7 @@ namespace Jellyfin.Sdk.Generated.System.MediaEncoder.PathNamespace {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="PathRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
         public PathRequestBuilder WithUrl(string rawUrl) {

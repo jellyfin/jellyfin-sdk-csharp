@@ -18,20 +18,21 @@ namespace Jellyfin.Sdk.Generated.Movies {
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Movies.item collection</summary>
         /// <param name="position">The item id.</param>
+        /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
         public WithItemItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemId", position);
             return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new MoviesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="MoviesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public MoviesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Movies", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new MoviesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="MoviesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

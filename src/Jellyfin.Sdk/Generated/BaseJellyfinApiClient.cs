@@ -47,7 +47,6 @@ using Jellyfin.Sdk.Generated.Users;
 using Jellyfin.Sdk.Generated.Videos;
 using Jellyfin.Sdk.Generated.Web;
 using Jellyfin.Sdk.Generated.Years;
-using Jellyfin.Sdk.Internal;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Serialization.Form;
@@ -257,7 +256,7 @@ namespace Jellyfin.Sdk.Generated {
             new YearsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new BaseJellyfinApiClient and sets the default values.
+        /// Instantiates a new <see cref="BaseJellyfinApiClient"/> and sets the default values.
         /// </summary>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public BaseJellyfinApiClient(IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}", new Dictionary<string, object>()) {
@@ -265,7 +264,7 @@ namespace Jellyfin.Sdk.Generated {
             ApiClientBuilder.RegisterDefaultSerializer<TextSerializationWriterFactory>();
             ApiClientBuilder.RegisterDefaultSerializer<FormSerializationWriterFactory>();
             ApiClientBuilder.RegisterDefaultSerializer<MultipartSerializationWriterFactory>();
-            ApiClientBuilder.RegisterDefaultDeserializer<JellyfinParseNodeFactory>();
+            ApiClientBuilder.RegisterDefaultDeserializer<JsonParseNodeFactory>();
             ApiClientBuilder.RegisterDefaultDeserializer<TextParseNodeFactory>();
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
             if (string.IsNullOrEmpty(RequestAdapter.BaseUrl)) {

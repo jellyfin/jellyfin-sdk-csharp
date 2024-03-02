@@ -16,20 +16,21 @@ namespace Jellyfin.Sdk.Generated.Images.Ratings {
     public class RatingsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Images.Ratings.item collection</summary>
         /// <param name="position">The theme to get the image from.</param>
+        /// <returns>A <see cref="WithThemeItemRequestBuilder"/></returns>
         public WithThemeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("theme", position);
             return new WithThemeItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new RatingsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RatingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public RatingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Images/Ratings", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RatingsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RatingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,6 +39,7 @@ namespace Jellyfin.Sdk.Generated.Images.Ratings {
         /// <summary>
         /// Get all general images.
         /// </summary>
+        /// <returns>A List&lt;ImageByNameInfo&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,6 +56,7 @@ namespace Jellyfin.Sdk.Generated.Images.Ratings {
         /// <summary>
         /// Get all general images.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +73,7 @@ namespace Jellyfin.Sdk.Generated.Images.Ratings {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="RatingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public RatingsRequestBuilder WithUrl(string rawUrl) {
             return new RatingsRequestBuilder(rawUrl, RequestAdapter);

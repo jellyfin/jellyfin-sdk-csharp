@@ -61,14 +61,14 @@ namespace Jellyfin.Sdk.Generated.System {
             new WakeOnLanInfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new SystemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public SystemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SystemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

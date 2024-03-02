@@ -26,20 +26,21 @@ namespace Jellyfin.Sdk.Generated.Packages {
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Packages.item collection</summary>
         /// <param name="position">The name of the package.</param>
+        /// <returns>A <see cref="WithNameItemRequestBuilder"/></returns>
         public WithNameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("name", position);
             return new WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new PackagesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PackagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PackagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Packages", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PackagesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PackagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,6 +49,7 @@ namespace Jellyfin.Sdk.Generated.Packages {
         /// <summary>
         /// Gets available packages.
         /// </summary>
+        /// <returns>A List&lt;PackageInfo&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,6 +66,7 @@ namespace Jellyfin.Sdk.Generated.Packages {
         /// <summary>
         /// Gets available packages.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +83,7 @@ namespace Jellyfin.Sdk.Generated.Packages {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="PackagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public PackagesRequestBuilder WithUrl(string rawUrl) {
             return new PackagesRequestBuilder(rawUrl, RequestAdapter);

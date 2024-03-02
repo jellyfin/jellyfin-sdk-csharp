@@ -13,20 +13,21 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.System {
     public class SystemRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Sessions.item.System.item collection</summary>
         /// <param name="position">The command to send.</param>
+        /// <returns>A <see cref="WithCommandItemRequestBuilder"/></returns>
         public WithCommandItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("command", position);
             return new WithCommandItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new SystemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public SystemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/{sessionId}/System", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SystemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

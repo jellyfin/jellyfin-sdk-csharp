@@ -21,20 +21,21 @@ namespace Jellyfin.Sdk.Generated.ScheduledTasks {
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.ScheduledTasks.item collection</summary>
         /// <param name="position">Task Id.</param>
+        /// <returns>A <see cref="WithTaskItemRequestBuilder"/></returns>
         public WithTaskItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("taskId", position);
             return new WithTaskItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ScheduledTasksRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ScheduledTasksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ScheduledTasksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ScheduledTasks{?isEnabled*,isHidden*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ScheduledTasksRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ScheduledTasksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,6 +44,7 @@ namespace Jellyfin.Sdk.Generated.ScheduledTasks {
         /// <summary>
         /// Get tasks.
         /// </summary>
+        /// <returns>A List&lt;TaskInfo&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,6 +61,7 @@ namespace Jellyfin.Sdk.Generated.ScheduledTasks {
         /// <summary>
         /// Get tasks.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +78,7 @@ namespace Jellyfin.Sdk.Generated.ScheduledTasks {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ScheduledTasksRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ScheduledTasksRequestBuilder WithUrl(string rawUrl) {
             return new ScheduledTasksRequestBuilder(rawUrl, RequestAdapter);

@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public class ProblemDetails : ApiException, IParsable {
+    public class ProblemDetails : ApiException, IAdditionalDataHolder, IParsable {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The detail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,8 +46,15 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Type { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="ProblemDetails"/> and sets the default values.
+        /// </summary>
+        public ProblemDetails() {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ProblemDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ProblemDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -54,6 +63,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"detail", n => { Detail = n.GetStringValue(); } },
@@ -74,6 +84,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

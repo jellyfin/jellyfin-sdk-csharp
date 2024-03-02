@@ -23,20 +23,21 @@ namespace Jellyfin.Sdk.Generated.Videos {
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item collection</summary>
         /// <param name="position">The item id.</param>
-        public VideosItemRequestBuilder this[Guid position] { get {
+        /// <returns>A <see cref="ItemIdItemRequestBuilder"/></returns>
+        public ItemIdItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("Videos%2Did", position);
-            return new VideosItemRequestBuilder(urlTplParams, RequestAdapter);
+            urlTplParams.Add("itemId%2Did", position);
+            return new ItemIdItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new VideosRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="VideosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public VideosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new VideosRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="VideosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

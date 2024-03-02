@@ -21,20 +21,21 @@ namespace Jellyfin.Sdk.Generated.Dlna.Profiles {
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Dlna.Profiles.item collection</summary>
         /// <param name="position">Profile Id.</param>
+        /// <returns>A <see cref="WithProfileItemRequestBuilder"/></returns>
         public WithProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("profileId", position);
             return new WithProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ProfilesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Dlna/Profiles", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ProfilesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -60,6 +61,7 @@ namespace Jellyfin.Sdk.Generated.Dlna.Profiles {
         /// <summary>
         /// Creates a profile.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A MediaBrowser.Model.Dlna.DeviceProfile represents a set of metadata which determines which content a certain device is able to play.&lt;br /&gt;Specifically, it defines the supported &lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.ContainerProfiles&quot;&gt;containers&lt;/see&gt; and&lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.CodecProfiles&quot;&gt;codecs&lt;/see&gt; (video and/or audio, including codec profiles and levels)the device is able to direct play (without transcoding or remuxing),as well as which &lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.TranscodingProfiles&quot;&gt;containers/codecs to transcode to&lt;/see&gt; in case it isn&apos;t.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,6 +80,7 @@ namespace Jellyfin.Sdk.Generated.Dlna.Profiles {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ProfilesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ProfilesRequestBuilder WithUrl(string rawUrl) {
             return new ProfilesRequestBuilder(rawUrl, RequestAdapter);

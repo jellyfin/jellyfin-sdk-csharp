@@ -14,14 +14,14 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.SetRepeatMode {
     /// </summary>
     public class SetRepeatModeRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new SetRepeatModeRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SetRepeatModeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public SetRepeatModeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay/SetRepeatMode", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SetRepeatModeRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SetRepeatModeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,6 +47,7 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.SetRepeatMode {
         /// <summary>
         /// Request to set repeat mode in SyncPlay group.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Class SetRepeatModeRequestDto.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,6 +66,7 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.SetRepeatMode {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="SetRepeatModeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public SetRepeatModeRequestBuilder WithUrl(string rawUrl) {
             return new SetRepeatModeRequestBuilder(rawUrl, RequestAdapter);

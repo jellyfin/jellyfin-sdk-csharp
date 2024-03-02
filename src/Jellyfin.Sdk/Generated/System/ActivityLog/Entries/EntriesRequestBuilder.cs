@@ -14,14 +14,14 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog.Entries {
     /// </summary>
     public class EntriesRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new EntriesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="EntriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog/Entries{?hasUserId*,limit*,minDate*,startIndex*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new EntriesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="EntriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,6 +30,7 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog.Entries {
         /// <summary>
         /// Gets activity log entries.
         /// </summary>
+        /// <returns>A <see cref="ActivityLogEntryQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +46,7 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog.Entries {
         /// <summary>
         /// Gets activity log entries.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,7 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog.Entries {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="EntriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public EntriesRequestBuilder WithUrl(string rawUrl) {
             return new EntriesRequestBuilder(rawUrl, RequestAdapter);

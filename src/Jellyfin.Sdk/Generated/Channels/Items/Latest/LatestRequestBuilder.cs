@@ -14,14 +14,14 @@ namespace Jellyfin.Sdk.Generated.Channels.Items.Latest {
     /// </summary>
     public class LatestRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new LatestRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LatestRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public LatestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels/Items/Latest{?channelIds*,fields*,filters*,limit*,startIndex*,userId*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new LatestRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LatestRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,6 +30,7 @@ namespace Jellyfin.Sdk.Generated.Channels.Items.Latest {
         /// <summary>
         /// Gets latest channel items.
         /// </summary>
+        /// <returns>A <see cref="BaseItemDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +46,7 @@ namespace Jellyfin.Sdk.Generated.Channels.Items.Latest {
         /// <summary>
         /// Gets latest channel items.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,7 @@ namespace Jellyfin.Sdk.Generated.Channels.Items.Latest {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="LatestRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public LatestRequestBuilder WithUrl(string rawUrl) {
             return new LatestRequestBuilder(rawUrl, RequestAdapter);
@@ -83,21 +86,21 @@ namespace Jellyfin.Sdk.Generated.Channels.Items.Latest {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public string[]? Fields { get; set; }
+            public ItemFields[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public string[] Fields { get; set; }
+            public ItemFields[] Fields { get; set; }
 #endif
             /// <summary>Optional. Specify additional filters to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filters")]
-            public string[]? Filters { get; set; }
+            public ItemFilter[]? Filters { get; set; }
 #nullable restore
 #else
             [QueryParameter("filters")]
-            public string[] Filters { get; set; }
+            public ItemFilter[] Filters { get; set; }
 #endif
             /// <summary>Optional. The maximum number of records to return.</summary>
             [QueryParameter("limit")]

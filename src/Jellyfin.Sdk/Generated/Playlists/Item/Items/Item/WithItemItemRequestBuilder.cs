@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System;
 namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Playlists\{playlistId}\Items\{itemId}
+    /// Builds and executes requests for operations under \Playlists\{id-id}\Items\{itemId}
     /// </summary>
     public class WithItemItemRequestBuilder : BaseRequestBuilder {
         /// <summary>The Move property</summary>
@@ -16,18 +16,18 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item {
             new MoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithItemItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{playlistId}/Items/{itemId}", pathParameters) {
+        public WithItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{id%2Did}/Items/{itemId}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithItemItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{playlistId}/Items/{itemId}", rawUrl) {
+        public WithItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{id%2Did}/Items/{itemId}", rawUrl) {
         }
     }
 }

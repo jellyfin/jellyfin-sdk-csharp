@@ -10,28 +10,30 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.ThemeVideos {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{Items-id}\ThemeVideos
+    /// Builds and executes requests for operations under \Items\{id-id}\ThemeVideos
     /// </summary>
     public class ThemeVideosRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ThemeVideosRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ThemeVideosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThemeVideosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{Items%2Did}/ThemeVideos{?inheritFromParent*,userId*}", pathParameters) {
+        public ThemeVideosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ThemeVideos{?inheritFromParent*,userId*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ThemeVideosRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ThemeVideosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThemeVideosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{Items%2Did}/ThemeVideos{?inheritFromParent*,userId*}", rawUrl) {
+        public ThemeVideosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ThemeVideos{?inheritFromParent*,userId*}", rawUrl) {
         }
         /// <summary>
         /// Get theme videos for an item.
         /// </summary>
+        /// <returns>A <see cref="ThemeMediaResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ThemeMediaResult?> GetAsync(Action<RequestConfiguration<ThemeVideosRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -48,6 +50,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ThemeVideos {
         /// <summary>
         /// Get theme videos for an item.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +67,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ThemeVideos {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ThemeVideosRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ThemeVideosRequestBuilder WithUrl(string rawUrl) {
             return new ThemeVideosRequestBuilder(rawUrl, RequestAdapter);

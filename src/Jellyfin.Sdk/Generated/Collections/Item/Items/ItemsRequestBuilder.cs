@@ -13,14 +13,14 @@ namespace Jellyfin.Sdk.Generated.Collections.Item.Items {
     /// </summary>
     public class ItemsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ItemsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections/{collectionId}/Items?ids={ids}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ItemsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,6 +59,7 @@ namespace Jellyfin.Sdk.Generated.Collections.Item.Items {
         /// <summary>
         /// Removes items from a collection.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +75,7 @@ namespace Jellyfin.Sdk.Generated.Collections.Item.Items {
         /// <summary>
         /// Adds items to a collection.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +91,7 @@ namespace Jellyfin.Sdk.Generated.Collections.Item.Items {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ItemsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ItemsRequestBuilder WithUrl(string rawUrl) {
             return new ItemsRequestBuilder(rawUrl, RequestAdapter);

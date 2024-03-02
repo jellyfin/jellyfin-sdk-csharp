@@ -13,20 +13,21 @@ namespace Jellyfin.Sdk.Generated.ScheduledTasks.Running {
     public class RunningRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.ScheduledTasks.Running.item collection</summary>
         /// <param name="position">Task Id.</param>
+        /// <returns>A <see cref="WithTaskItemRequestBuilder"/></returns>
         public WithTaskItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("taskId", position);
             return new WithTaskItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new RunningRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RunningRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public RunningRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ScheduledTasks/Running", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RunningRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RunningRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

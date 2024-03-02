@@ -18,18 +18,18 @@ namespace Jellyfin.Sdk.Generated.Users.Item.PlayingItems.Item {
             new ProgressRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithItemItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Users/{userId}/PlayingItems/{itemId}{?audioStreamIndex*,canSeek*,liveStreamId*,mediaSourceId*,nextMediaType*,playMethod*,playSessionId*,positionTicks*,subtitleStreamIndex*}", pathParameters) {
+        public WithItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Users/{userId}/PlayingItems/{itemId}{?audioStreamIndex*,canSeek*,liveStreamId*,mediaSourceId*,playMethod*,playSessionId*,subtitleStreamIndex*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithItemItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Users/{userId}/PlayingItems/{itemId}{?audioStreamIndex*,canSeek*,liveStreamId*,mediaSourceId*,nextMediaType*,playMethod*,playSessionId*,positionTicks*,subtitleStreamIndex*}", rawUrl) {
+        public WithItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Users/{userId}/PlayingItems/{itemId}{?audioStreamIndex*,canSeek*,liveStreamId*,mediaSourceId*,playMethod*,playSessionId*,subtitleStreamIndex*}", rawUrl) {
         }
         /// <summary>
         /// Reports that a user has stopped playing an item.
@@ -64,6 +64,7 @@ namespace Jellyfin.Sdk.Generated.Users.Item.PlayingItems.Item {
         /// <summary>
         /// Reports that a user has stopped playing an item.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,13 +73,14 @@ namespace Jellyfin.Sdk.Generated.Users.Item.PlayingItems.Item {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<WithItemItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/Users/{userId}/PlayingItems/{itemId}{?liveStreamId*,mediaSourceId*,nextMediaType*,playSessionId*,positionTicks*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
         /// <summary>
         /// Reports that a user has begun playing an item.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +96,7 @@ namespace Jellyfin.Sdk.Generated.Users.Item.PlayingItems.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithItemItemRequestBuilder WithUrl(string rawUrl) {
             return new WithItemItemRequestBuilder(rawUrl, RequestAdapter);

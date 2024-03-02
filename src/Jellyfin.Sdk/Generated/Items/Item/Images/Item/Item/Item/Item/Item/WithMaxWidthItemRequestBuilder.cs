@@ -8,29 +8,30 @@ using System.Threading.Tasks;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.Item.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{itemId}\Images\{imageType}\{imageIndex}\{tag}\{format}\{maxWidth}
+    /// Builds and executes requests for operations under \Items\{id-id}\Images\{imageType}\{imageIndex}\{tag}\{format}\{maxWidth}
     /// </summary>
     public class WithMaxWidthItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Items.item.Images.item.item.item.item.item.item collection</summary>
         /// <param name="position">The maximum image height to return.</param>
+        /// <returns>A <see cref="WithMaxHeightItemRequestBuilder"/></returns>
         public WithMaxHeightItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("maxHeight", position);
             return new WithMaxHeightItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new WithMaxWidthItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithMaxWidthItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithMaxWidthItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}", pathParameters) {
+        public WithMaxWidthItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithMaxWidthItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithMaxWidthItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithMaxWidthItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}", rawUrl) {
+        public WithMaxWidthItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}", rawUrl) {
         }
     }
 }

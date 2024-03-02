@@ -13,20 +13,21 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.User {
     public class UserRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Sessions.item.User.item collection</summary>
         /// <param name="position">The user id.</param>
+        /// <returns>A <see cref="WithUserItemRequestBuilder"/></returns>
         public WithUserItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userId", position);
             return new WithUserItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new UserRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public UserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/{sessionId}/User", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new UserRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

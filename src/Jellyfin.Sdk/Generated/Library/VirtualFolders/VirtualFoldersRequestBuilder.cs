@@ -29,18 +29,18 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
             new PathsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new VirtualFoldersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="VirtualFoldersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VirtualFoldersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/VirtualFolders{?collectionType*,name*,paths*,refreshLibrary*}", pathParameters) {
+        public VirtualFoldersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/VirtualFolders", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new VirtualFoldersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="VirtualFoldersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VirtualFoldersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/VirtualFolders{?collectionType*,name*,paths*,refreshLibrary*}", rawUrl) {
+        public VirtualFoldersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/VirtualFolders", rawUrl) {
         }
         /// <summary>
         /// Removes a virtual folder.
@@ -60,6 +60,7 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         /// <summary>
         /// Gets all virtual folders.
         /// </summary>
+        /// <returns>A List&lt;VirtualFolderInfo&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,6 +94,7 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         /// <summary>
         /// Removes a virtual folder.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,13 +103,14 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<VirtualFoldersRequestBuilderDeleteQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/Library/VirtualFolders{?name*,refreshLibrary*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
         /// <summary>
         /// Gets all virtual folders.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +127,7 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         /// <summary>
         /// Adds a virtual folder.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Add virtual folder dto.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +138,7 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         public RequestInformation ToPostRequestInformation(AddVirtualFolderDto body, Action<RequestConfiguration<VirtualFoldersRequestBuilderPostQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Library/VirtualFolders{?collectionType*,name*,paths*,refreshLibrary*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
@@ -142,6 +146,7 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="VirtualFoldersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public VirtualFoldersRequestBuilder WithUrl(string rawUrl) {
             return new VirtualFoldersRequestBuilder(rawUrl, RequestAdapter);

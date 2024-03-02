@@ -10,32 +10,34 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Videos.Item.Hls.Item.WithSegmentIdWithSegmentContainer {
     /// <summary>
-    /// Builds and executes requests for operations under \Videos\{Videos-id}\hls\{playlistId}\{segmentId}.{segmentContainer}
+    /// Builds and executes requests for operations under \Videos\{itemId-id}\hls\{playlistId}\{segmentId}.{segmentContainer}
     /// </summary>
     public class WithSegmentIdWithSegmentContainerRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithSegmentIdWithSegmentContainerRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithSegmentIdWithSegmentContainerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="segmentContainer">The segment container.</param>
         /// <param name="segmentId">The segment id.</param>
-        public WithSegmentIdWithSegmentContainerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string segmentContainer = "", string segmentId = "") : base(requestAdapter, "{+baseurl}/Videos/{Videos%2Did}/hls/{playlistId}/{segmentId}.{segmentContainer}", pathParameters) {
+        public WithSegmentIdWithSegmentContainerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string segmentContainer = "", string segmentId = "") : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/hls/{playlistId}/{segmentId}.{segmentContainer}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(segmentContainer)) PathParameters.Add("segmentContainer", segmentContainer);
             if (!string.IsNullOrWhiteSpace(segmentId)) PathParameters.Add("segmentId", segmentId);
         }
         /// <summary>
-        /// Instantiates a new WithSegmentIdWithSegmentContainerRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithSegmentIdWithSegmentContainerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSegmentIdWithSegmentContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{Videos%2Did}/hls/{playlistId}/{segmentId}.{segmentContainer}", rawUrl) {
+        public WithSegmentIdWithSegmentContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/hls/{playlistId}/{segmentId}.{segmentContainer}", rawUrl) {
         }
         /// <summary>
         /// Gets a hls video segment.
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -52,6 +54,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Hls.Item.WithSegmentIdWithSegmentCo
         /// <summary>
         /// Gets a hls video segment.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +71,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Hls.Item.WithSegmentIdWithSegmentCo
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithSegmentIdWithSegmentContainerRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithSegmentIdWithSegmentContainerRequestBuilder WithUrl(string rawUrl) {
             return new WithSegmentIdWithSegmentContainerRequestBuilder(rawUrl, RequestAdapter);

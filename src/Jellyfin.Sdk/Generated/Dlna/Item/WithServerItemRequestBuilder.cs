@@ -41,14 +41,14 @@ namespace Jellyfin.Sdk.Generated.Dlna.Item {
             new MediaReceiverRegistrarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithServerItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithServerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithServerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Dlna/{serverId}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithServerItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithServerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

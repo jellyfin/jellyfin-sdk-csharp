@@ -14,14 +14,14 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
     /// </summary>
     public class SplashscreenRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new SplashscreenRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SplashscreenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public SplashscreenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Branding/Splashscreen{?backgroundColor*,blur*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,maxHeight*,maxWidth*,quality*,tag*,width*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SplashscreenRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SplashscreenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,6 +45,7 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
         /// <summary>
         /// Generates or gets the splashscreen.
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,6 +64,8 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 400 status code</exception>
+        /// <exception cref="ProblemDetails">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(Stream body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -81,6 +84,7 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
         /// <summary>
         /// Delete a custom splashscreen.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,13 +93,14 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/Branding/Splashscreen", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
         /// <summary>
         /// Generates or gets the splashscreen.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +117,7 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
         /// <summary>
         /// Uploads a custom splashscreen.The body is expected to the image contents base64 encoded.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +128,7 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
         public RequestInformation ToPostRequestInformation(Stream body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Branding/Splashscreen", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             requestInfo.SetStreamContent(body, "image/*");
@@ -131,6 +137,7 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="SplashscreenRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public SplashscreenRequestBuilder WithUrl(string rawUrl) {
             return new SplashscreenRequestBuilder(rawUrl, RequestAdapter);

@@ -10,28 +10,29 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.ContentType {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{Items-id}\ContentType
+    /// Builds and executes requests for operations under \Items\{id-id}\ContentType
     /// </summary>
     public class ContentTypeRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ContentTypeRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ContentTypeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ContentTypeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{Items%2Did}/ContentType{?contentType*}", pathParameters) {
+        public ContentTypeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ContentType{?contentType*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ContentTypeRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ContentTypeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ContentTypeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{Items%2Did}/ContentType{?contentType*}", rawUrl) {
+        public ContentTypeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ContentType{?contentType*}", rawUrl) {
         }
         /// <summary>
         /// Updates an item&apos;s content type.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(Action<RequestConfiguration<ContentTypeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -48,6 +49,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ContentType {
         /// <summary>
         /// Updates an item&apos;s content type.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ContentType {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ContentTypeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ContentTypeRequestBuilder WithUrl(string rawUrl) {
             return new ContentTypeRequestBuilder(rawUrl, RequestAdapter);

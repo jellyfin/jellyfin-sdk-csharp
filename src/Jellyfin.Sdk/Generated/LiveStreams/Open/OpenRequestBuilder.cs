@@ -14,14 +14,14 @@ namespace Jellyfin.Sdk.Generated.LiveStreams.Open {
     /// </summary>
     public class OpenRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new OpenRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="OpenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public OpenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveStreams/Open{?audioStreamIndex*,enableDirectPlay*,enableDirectStream*,itemId*,maxAudioChannels*,maxStreamingBitrate*,openToken*,playSessionId*,startTimeTicks*,subtitleStreamIndex*,userId*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new OpenRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="OpenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,6 +30,7 @@ namespace Jellyfin.Sdk.Generated.LiveStreams.Open {
         /// <summary>
         /// Opens a media source.
         /// </summary>
+        /// <returns>A <see cref="LiveStreamResponse"/></returns>
         /// <param name="body">Open live stream dto.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,6 +48,7 @@ namespace Jellyfin.Sdk.Generated.LiveStreams.Open {
         /// <summary>
         /// Opens a media source.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Open live stream dto.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,6 +68,7 @@ namespace Jellyfin.Sdk.Generated.LiveStreams.Open {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="OpenRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public OpenRequestBuilder WithUrl(string rawUrl) {
             return new OpenRequestBuilder(rawUrl, RequestAdapter);
