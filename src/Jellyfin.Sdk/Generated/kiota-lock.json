@@ -1,6 +1,6 @@
 {
   "descriptionHash": "3F58114763F2F98A3960C2DD27E5804D784D2535E426484FA04F945EA064E23929A7A6B7B2BCD04EEE249A290D52A665C8372BE3869F877D3041DAEEDE48C295",
-  "descriptionLocation": "https://repo.jellyfin.org/master/releases/openapi/jellyfin-openapi-stable.json",
+  "descriptionLocation": "https://api.jellyfin.org/openapi/jellyfin-openapi-stable.json",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.12.0-preview.202402290001",
   "clientClassName": "BaseJellyfinApiClient",

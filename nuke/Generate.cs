@@ -9,11 +9,11 @@ using Nuke.Common.Tools.DotNet;
 public partial class Generate : NukeBuild
 {
     const string StableOpenApi = """
-                                 "descriptionLocation": "https://repo.jellyfin.org/master/releases/openapi/jellyfin-openapi-stable.json"
+                                 "descriptionLocation": "https://api.jellyfin.org/openapi/jellyfin-openapi-stable.json"
                                  """;
     
     const string UnstableOpenApi = """
-                                 "descriptionLocation": "https://repo.jellyfin.org/master/releases/openapi/jellyfin-openapi-unstable.json"
+                                 "descriptionLocation": "https://api.jellyfin.org/openapi/jellyfin-openapi-unstable.json"
                                  """;
     
     static readonly string[] _ignoreFiles =
