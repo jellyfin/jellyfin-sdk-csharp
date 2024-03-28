@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Download {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\RemoteImages\Download
+    /// Builds and executes requests for operations under \Items\{itemId}\RemoteImages\Download
     /// </summary>
     public class DownloadRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Download {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DownloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteImages/Download?type={type}{&imageUrl*}", pathParameters) {
+        public DownloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteImages/Download?type={type}{&imageUrl*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="DownloadRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DownloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteImages/Download?type={type}{&imageUrl*}", rawUrl) {
+        public DownloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteImages/Download?type={type}{&imageUrl*}", rawUrl) {
         }
         /// <summary>
         /// Downloads a remote image for an item.
@@ -86,15 +86,8 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Download {
             public string ImageUrl { get; set; }
 #endif
             /// <summary>The image type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public PostTypeQueryParameterType? Type { get; set; }
         }
     }
 }

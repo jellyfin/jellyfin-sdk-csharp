@@ -30,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public List<string> Participants { get; set; }
 #endif
         /// <summary>Gets the group state.</summary>
-        public GroupStateType? State { get; set; }
+        public GroupInfoDto_State? State { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"GroupName", n => { GroupName = n.GetStringValue(); } },
                 {"LastUpdatedAt", n => { LastUpdatedAt = n.GetDateTimeOffsetValue(); } },
                 {"Participants", n => { Participants = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"State", n => { State = n.GetEnumValue<GroupStateType>(); } },
+                {"State", n => { State = n.GetEnumValue<GroupInfoDto_State>(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("GroupName", GroupName);
             writer.WriteDateTimeOffsetValue("LastUpdatedAt", LastUpdatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("Participants", Participants);
-            writer.WriteEnumValue<GroupStateType>("State", State);
+            writer.WriteEnumValue<GroupInfoDto_State>("State", State);
         }
     }
 }

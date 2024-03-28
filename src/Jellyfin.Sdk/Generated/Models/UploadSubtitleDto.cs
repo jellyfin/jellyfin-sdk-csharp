@@ -27,6 +27,8 @@ namespace Jellyfin.Sdk.Generated.Models {
 #endif
         /// <summary>Gets or sets a value indicating whether the subtitle is forced.</summary>
         public bool? IsForced { get; set; }
+        /// <summary>Gets or sets a value indicating whether the subtitle is for hearing impaired.</summary>
+        public bool? IsHearingImpaired { get; set; }
         /// <summary>Gets or sets the subtitle language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +55,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"Data", n => { Data = n.GetStringValue(); } },
                 {"Format", n => { Format = n.GetStringValue(); } },
                 {"IsForced", n => { IsForced = n.GetBoolValue(); } },
+                {"IsHearingImpaired", n => { IsHearingImpaired = n.GetBoolValue(); } },
                 {"Language", n => { Language = n.GetStringValue(); } },
             };
         }
@@ -65,6 +68,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("Data", Data);
             writer.WriteStringValue("Format", Format);
             writer.WriteBoolValue("IsForced", IsForced);
+            writer.WriteBoolValue("IsHearingImpaired", IsHearingImpaired);
             writer.WriteStringValue("Language", Language);
         }
     }

@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.IndexNamespace {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\Images\{imageType}\{imageIndex}\Index
+    /// Builds and executes requests for operations under \Items\{itemId}\Images\{imageType}\{imageIndex}\Index
     /// </summary>
     public class IndexRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.IndexNamespace {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndexRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}/{imageIndex}/Index?newIndex={newIndex}", pathParameters) {
+        public IndexRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}/{imageIndex}/Index?newIndex={newIndex}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="IndexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndexRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}/{imageIndex}/Index?newIndex={newIndex}", rawUrl) {
+        public IndexRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}/{imageIndex}/Index?newIndex={newIndex}", rawUrl) {
         }
         /// <summary>
         /// Updates the index for an item image.

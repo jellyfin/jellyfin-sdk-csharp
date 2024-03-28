@@ -25,7 +25,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public List<BaseItemDto> Items { get; set; }
 #endif
         /// <summary>The RecommendationType property</summary>
-        public Jellyfin.Sdk.Generated.Models.RecommendationType? RecommendationType { get; set; }
+        public RecommendationDto_RecommendationType? RecommendationType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,7 +44,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"BaselineItemName", n => { BaselineItemName = n.GetStringValue(); } },
                 {"CategoryId", n => { CategoryId = n.GetGuidValue(); } },
                 {"Items", n => { Items = n.GetCollectionOfObjectValues<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"RecommendationType", n => { RecommendationType = n.GetEnumValue<RecommendationType>(); } },
+                {"RecommendationType", n => { RecommendationType = n.GetEnumValue<RecommendationDto_RecommendationType>(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("BaselineItemName", BaselineItemName);
             writer.WriteGuidValue("CategoryId", CategoryId);
             writer.WriteCollectionOfObjectValues<BaseItemDto>("Items", Items);
-            writer.WriteEnumValue<RecommendationType>("RecommendationType", RecommendationType);
+            writer.WriteEnumValue<RecommendationDto_RecommendationType>("RecommendationType", RecommendationType);
         }
     }
 }

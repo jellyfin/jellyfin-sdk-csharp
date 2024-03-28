@@ -146,15 +146,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamNamespace {
             public string Container { get; set; }
 #endif
             /// <summary>Optional. The MediaBrowser.Model.Dlna.EncodingContext.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("context")]
-            public string? Context { get; set; }
-#nullable restore
-#else
-            [QueryParameter("context")]
-            public string Context { get; set; }
-#endif
+            public GetContextQueryParameterType? Context { get; set; }
             /// <summary>Whether or not to copy timestamps when transcoding with an offset. Defaults to false.</summary>
             [QueryParameter("copyTimestamps")]
             public bool? CopyTimestamps { get; set; }
@@ -175,6 +168,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamNamespace {
             public string DeviceId { get; set; }
 #endif
             /// <summary>Optional. The dlna device profile id to utilize.</summary>
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("deviceProfileId")]
@@ -326,15 +320,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamNamespace {
             public string SubtitleCodec { get; set; }
 #endif
             /// <summary>Optional. Specify the subtitle delivery method.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("subtitleMethod")]
-            public string? SubtitleMethod { get; set; }
-#nullable restore
-#else
-            [QueryParameter("subtitleMethod")]
-            public string SubtitleMethod { get; set; }
-#endif
+            public GetSubtitleMethodQueryParameterType? SubtitleMethod { get; set; }
             /// <summary>Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.</summary>
             [QueryParameter("subtitleStreamIndex")]
             public int? SubtitleStreamIndex { get; set; }
@@ -427,15 +414,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamNamespace {
             public string Container { get; set; }
 #endif
             /// <summary>Optional. The MediaBrowser.Model.Dlna.EncodingContext.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("context")]
-            public string? Context { get; set; }
-#nullable restore
-#else
-            [QueryParameter("context")]
-            public string Context { get; set; }
-#endif
+            public HeadContextQueryParameterType? Context { get; set; }
             /// <summary>Whether or not to copy timestamps when transcoding with an offset. Defaults to false.</summary>
             [QueryParameter("copyTimestamps")]
             public bool? CopyTimestamps { get; set; }
@@ -456,6 +436,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamNamespace {
             public string DeviceId { get; set; }
 #endif
             /// <summary>Optional. The dlna device profile id to utilize.</summary>
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("deviceProfileId")]
@@ -607,15 +588,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamNamespace {
             public string SubtitleCodec { get; set; }
 #endif
             /// <summary>Optional. Specify the subtitle delivery method.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("subtitleMethod")]
-            public string? SubtitleMethod { get; set; }
-#nullable restore
-#else
-            [QueryParameter("subtitleMethod")]
-            public string SubtitleMethod { get; set; }
-#endif
+            public HeadSubtitleMethodQueryParameterType? SubtitleMethod { get; set; }
             /// <summary>Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.</summary>
             [QueryParameter("subtitleStreamIndex")]
             public int? SubtitleStreamIndex { get; set; }

@@ -9,12 +9,10 @@ using Jellyfin.Sdk.Generated.ClientLog;
 using Jellyfin.Sdk.Generated.Collections;
 using Jellyfin.Sdk.Generated.Devices;
 using Jellyfin.Sdk.Generated.DisplayPreferences;
-using Jellyfin.Sdk.Generated.Dlna;
 using Jellyfin.Sdk.Generated.EnvironmentNamespace;
 using Jellyfin.Sdk.Generated.FallbackFont;
 using Jellyfin.Sdk.Generated.Genres;
 using Jellyfin.Sdk.Generated.GetUtcTime;
-using Jellyfin.Sdk.Generated.Images;
 using Jellyfin.Sdk.Generated.Items;
 using Jellyfin.Sdk.Generated.Libraries;
 using Jellyfin.Sdk.Generated.Library;
@@ -23,10 +21,10 @@ using Jellyfin.Sdk.Generated.LiveTv;
 using Jellyfin.Sdk.Generated.Localization;
 using Jellyfin.Sdk.Generated.Movies;
 using Jellyfin.Sdk.Generated.MusicGenres;
-using Jellyfin.Sdk.Generated.Notifications;
 using Jellyfin.Sdk.Generated.Packages;
 using Jellyfin.Sdk.Generated.Persons;
 using Jellyfin.Sdk.Generated.Playback;
+using Jellyfin.Sdk.Generated.PlayingItems;
 using Jellyfin.Sdk.Generated.Playlists;
 using Jellyfin.Sdk.Generated.Plugins;
 using Jellyfin.Sdk.Generated.Providers;
@@ -43,6 +41,11 @@ using Jellyfin.Sdk.Generated.SyncPlay;
 using Jellyfin.Sdk.Generated.System;
 using Jellyfin.Sdk.Generated.Tmdb;
 using Jellyfin.Sdk.Generated.Trailers;
+using Jellyfin.Sdk.Generated.UserFavoriteItems;
+using Jellyfin.Sdk.Generated.UserImage;
+using Jellyfin.Sdk.Generated.UserItems;
+using Jellyfin.Sdk.Generated.UserPlayedItems;
+using Jellyfin.Sdk.Generated.UserViews;
 using Jellyfin.Sdk.Generated.Users;
 using Jellyfin.Sdk.Generated.Videos;
 using Jellyfin.Sdk.Generated.Web;
@@ -103,10 +106,6 @@ namespace Jellyfin.Sdk.Generated {
         public DisplayPreferencesRequestBuilder DisplayPreferences { get =>
             new DisplayPreferencesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The Dlna property</summary>
-        public DlnaRequestBuilder Dlna { get =>
-            new DlnaRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The Environment property</summary>
         public EnvironmentRequestBuilder Environment { get =>
             new EnvironmentRequestBuilder(PathParameters, RequestAdapter);
@@ -122,10 +121,6 @@ namespace Jellyfin.Sdk.Generated {
         /// <summary>The GetUtcTime property</summary>
         public GetUtcTimeRequestBuilder GetUtcTime { get =>
             new GetUtcTimeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The Images property</summary>
-        public ImagesRequestBuilder Images { get =>
-            new ImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Items property</summary>
         public ItemsRequestBuilder Items { get =>
@@ -159,10 +154,6 @@ namespace Jellyfin.Sdk.Generated {
         public MusicGenresRequestBuilder MusicGenres { get =>
             new MusicGenresRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The Notifications property</summary>
-        public NotificationsRequestBuilder Notifications { get =>
-            new NotificationsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The Packages property</summary>
         public PackagesRequestBuilder Packages { get =>
             new PackagesRequestBuilder(PathParameters, RequestAdapter);
@@ -174,6 +165,10 @@ namespace Jellyfin.Sdk.Generated {
         /// <summary>The Playback property</summary>
         public PlaybackRequestBuilder Playback { get =>
             new PlaybackRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The PlayingItems property</summary>
+        public PlayingItemsRequestBuilder PlayingItems { get =>
+            new PlayingItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Playlists property</summary>
         public PlaylistsRequestBuilder Playlists { get =>
@@ -239,9 +234,29 @@ namespace Jellyfin.Sdk.Generated {
         public TrailersRequestBuilder Trailers { get =>
             new TrailersRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The UserFavoriteItems property</summary>
+        public UserFavoriteItemsRequestBuilder UserFavoriteItems { get =>
+            new UserFavoriteItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The UserImage property</summary>
+        public UserImageRequestBuilder UserImage { get =>
+            new UserImageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The UserItems property</summary>
+        public UserItemsRequestBuilder UserItems { get =>
+            new UserItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The UserPlayedItems property</summary>
+        public UserPlayedItemsRequestBuilder UserPlayedItems { get =>
+            new UserPlayedItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The Users property</summary>
         public UsersRequestBuilder Users { get =>
             new UsersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The UserViews property</summary>
+        public UserViewsRequestBuilder UserViews { get =>
+            new UserViewsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Videos property</summary>
         public VideosRequestBuilder Videos { get =>

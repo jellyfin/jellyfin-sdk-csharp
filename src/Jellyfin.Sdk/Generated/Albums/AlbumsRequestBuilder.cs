@@ -13,11 +13,11 @@ namespace Jellyfin.Sdk.Generated.Albums {
     public class AlbumsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Albums.item collection</summary>
         /// <param name="position">The item id.</param>
-        /// <returns>A <see cref="IdItemRequestBuilder"/></returns>
-        public IdItemRequestBuilder this[Guid position] { get {
+        /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
+        public WithItemItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("id%2Did", position);
-            return new IdItemRequestBuilder(urlTplParams, RequestAdapter);
+            urlTplParams.Add("itemId", position);
+            return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new <see cref="AlbumsRequestBuilder"/> and sets the default values.

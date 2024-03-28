@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\Images\{imageType}\{imageIndex}\{tag}
+    /// Builds and executes requests for operations under \Items\{itemId}\Images\{imageType}\{imageIndex}\{tag}
     /// </summary>
     public class WithTagItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Items.item.Images.item.item.item.item collection</summary>
@@ -24,14 +24,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTagItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}/{imageIndex}/{tag}", pathParameters) {
+        public WithTagItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}/{imageIndex}/{tag}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithTagItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTagItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}/{imageIndex}/{tag}", rawUrl) {
+        public WithTagItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}/{imageIndex}/{tag}", rawUrl) {
         }
     }
 }

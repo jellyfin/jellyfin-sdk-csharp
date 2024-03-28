@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.FileNamespace {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\File
+    /// Builds and executes requests for operations under \Items\{itemId}\File
     /// </summary>
     public class FileRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.FileNamespace {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FileRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/File", pathParameters) {
+        public FileRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/File", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="FileRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FileRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/File", rawUrl) {
+        public FileRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/File", rawUrl) {
         }
         /// <summary>
         /// Get the original file of an item.

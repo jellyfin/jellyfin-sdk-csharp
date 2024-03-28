@@ -102,15 +102,8 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Playing {
             public string MediaSourceId { get; set; }
 #endif
             /// <summary>The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("playCommand")]
-            public string? PlayCommand { get; set; }
-#nullable restore
-#else
-            [QueryParameter("playCommand")]
-            public string PlayCommand { get; set; }
-#endif
+            public PostPlayCommandQueryParameterType? PlayCommand { get; set; }
             /// <summary>Optional. The start index.</summary>
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }

@@ -9,7 +9,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Playlists\{id-id}\Items\{itemId}\Move\{newIndex}
+    /// Builds and executes requests for operations under \Playlists\{itemId-id}\Items\{itemId}\Move\{newIndex}
     /// </summary>
     public class WithNewIndexItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -17,14 +17,14 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNewIndexItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{id%2Did}/Items/{itemId}/Move/{newIndex}", pathParameters) {
+        public WithNewIndexItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{itemId%2Did}/Items/{itemId}/Move/{newIndex}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithNewIndexItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNewIndexItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{id%2Did}/Items/{itemId}/Move/{newIndex}", rawUrl) {
+        public WithNewIndexItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{itemId%2Did}/Items/{itemId}/Move/{newIndex}", rawUrl) {
         }
         /// <summary>
         /// Moves a playlist item.

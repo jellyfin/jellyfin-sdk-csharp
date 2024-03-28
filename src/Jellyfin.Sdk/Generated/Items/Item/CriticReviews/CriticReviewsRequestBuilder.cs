@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.CriticReviews {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\CriticReviews
+    /// Builds and executes requests for operations under \Items\{itemId}\CriticReviews
     /// </summary>
     public class CriticReviewsRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.CriticReviews {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CriticReviewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/CriticReviews", pathParameters) {
+        public CriticReviewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/CriticReviews", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="CriticReviewsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CriticReviewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/CriticReviews", rawUrl) {
+        public CriticReviewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/CriticReviews", rawUrl) {
         }
         /// <summary>
         /// Gets critic review for an item.

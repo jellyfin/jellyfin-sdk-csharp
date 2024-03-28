@@ -26,7 +26,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Path { get; set; }
 #endif
         /// <summary>Gets the type.</summary>
-        public FileSystemEntryType? Type { get; set; }
+        public FileSystemEntryInfo_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,7 +44,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"Name", n => { Name = n.GetStringValue(); } },
                 {"Path", n => { Path = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<FileSystemEntryType>(); } },
+                {"Type", n => { Type = n.GetEnumValue<FileSystemEntryInfo_Type>(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("Path", Path);
-            writer.WriteEnumValue<FileSystemEntryType>("Type", Type);
+            writer.WriteEnumValue<FileSystemEntryInfo_Type>("Type", Type);
         }
     }
 }

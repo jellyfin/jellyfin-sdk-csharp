@@ -102,11 +102,11 @@ namespace Jellyfin.Sdk.Generated.Channels.Item.Items {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
-            public string[]? SortBy { get; set; }
+            public ItemSortBy[]? SortBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortBy")]
-            public string[] SortBy { get; set; }
+            public ItemSortBy[] SortBy { get; set; }
 #endif
             /// <summary>Optional. Sort Order - Ascending,Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

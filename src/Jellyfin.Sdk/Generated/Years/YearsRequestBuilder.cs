@@ -137,11 +137,11 @@ namespace Jellyfin.Sdk.Generated.Years {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mediaTypes")]
-            public string[]? MediaTypes { get; set; }
+            public MediaType[]? MediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("mediaTypes")]
-            public string[] MediaTypes { get; set; }
+            public MediaType[] MediaTypes { get; set; }
 #endif
             /// <summary>Specify this to localize the search to a specific item or folder. Omit to use the root.</summary>
             [QueryParameter("parentId")]
@@ -153,11 +153,11 @@ namespace Jellyfin.Sdk.Generated.Years {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
-            public string[]? SortBy { get; set; }
+            public ItemSortBy[]? SortBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortBy")]
-            public string[] SortBy { get; set; }
+            public ItemSortBy[] SortBy { get; set; }
 #endif
             /// <summary>Sort Order - Ascending,Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

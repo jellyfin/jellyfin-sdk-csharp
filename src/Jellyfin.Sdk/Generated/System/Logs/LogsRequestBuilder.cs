@@ -38,6 +38,7 @@ namespace Jellyfin.Sdk.Generated.System.Logs {
         /// <returns>A List&lt;LogFile&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<LogFile>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -46,7 +47,10 @@ namespace Jellyfin.Sdk.Generated.System.Logs {
         public async Task<List<LogFile>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<LogFile>(requestInfo, LogFile.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"403", ProblemDetails.CreateFromDiscriminatorValue},
+            };
+            var collectionResult = await RequestAdapter.SendCollectionAsync<LogFile>(requestInfo, LogFile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

@@ -38,7 +38,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Overview { get; set; }
 #endif
         /// <summary>Gets or sets the log severity.</summary>
-        public LogLevel? Severity { get; set; }
+        public ActivityLogEntry_Severity? Severity { get; set; }
         /// <summary>Gets or sets the short overview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,7 +86,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"ItemId", n => { ItemId = n.GetStringValue(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
                 {"Overview", n => { Overview = n.GetStringValue(); } },
-                {"Severity", n => { Severity = n.GetEnumValue<LogLevel>(); } },
+                {"Severity", n => { Severity = n.GetEnumValue<ActivityLogEntry_Severity>(); } },
                 {"ShortOverview", n => { ShortOverview = n.GetStringValue(); } },
                 {"Type", n => { Type = n.GetStringValue(); } },
                 {"UserId", n => { UserId = n.GetGuidValue(); } },
@@ -104,7 +104,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("ItemId", ItemId);
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("Overview", Overview);
-            writer.WriteEnumValue<LogLevel>("Severity", Severity);
+            writer.WriteEnumValue<ActivityLogEntry_Severity>("Severity", Severity);
             writer.WriteStringValue("ShortOverview", ShortOverview);
             writer.WriteStringValue("Type", Type);
             writer.WriteGuidValue("UserId", UserId);

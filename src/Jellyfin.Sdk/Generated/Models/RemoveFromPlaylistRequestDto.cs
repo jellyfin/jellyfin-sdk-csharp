@@ -13,7 +13,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public bool? ClearPlayingItem { get; set; }
         /// <summary>Gets or sets a value indicating whether the entire playlist should be cleared.</summary>
         public bool? ClearPlaylist { get; set; }
-        /// <summary>Gets or sets the playlist identifiers ot the items. Ignored when clearing the playlist.</summary>
+        /// <summary>Gets or sets the playlist identifiers of the items. Ignored when clearing the playlist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Guid?>? PlaylistItemIds { get; set; }

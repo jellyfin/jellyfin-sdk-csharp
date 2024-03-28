@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.ContentType {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\ContentType
+    /// Builds and executes requests for operations under \Items\{itemId}\ContentType
     /// </summary>
     public class ContentTypeRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ContentType {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ContentTypeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ContentType{?contentType*}", pathParameters) {
+        public ContentTypeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/ContentType{?contentType*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="ContentTypeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ContentTypeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ContentType{?contentType*}", rawUrl) {
+        public ContentTypeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/ContentType{?contentType*}", rawUrl) {
         }
         /// <summary>
         /// Updates an item&apos;s content type.

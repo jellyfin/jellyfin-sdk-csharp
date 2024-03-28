@@ -128,15 +128,8 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
             public string SortBy { get; set; }
 #endif
             /// <summary>Optional. Sort in Ascending or Descending order.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sortOrder")]
-            public string? SortOrder { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sortOrder")]
-            public string SortOrder { get; set; }
-#endif
+            public GetSortOrderQueryParameterType? SortOrder { get; set; }
         }
     }
 }

@@ -76,15 +76,8 @@ namespace Jellyfin.Sdk.Generated.Libraries.AvailableOptions {
             [QueryParameter("isNewLibrary")]
             public bool? IsNewLibrary { get; set; }
             /// <summary>Library content type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("libraryContentType")]
-            public string? LibraryContentType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("libraryContentType")]
-            public string LibraryContentType { get; set; }
-#endif
+            public GetLibraryContentTypeQueryParameterType? LibraryContentType { get; set; }
         }
     }
 }

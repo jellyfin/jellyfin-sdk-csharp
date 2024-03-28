@@ -10,6 +10,7 @@ using Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8;
 using Jellyfin.Sdk.Generated.Videos.Item.StreamNamespace;
 using Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer;
 using Jellyfin.Sdk.Generated.Videos.Item.Subtitles;
+using Jellyfin.Sdk.Generated.Videos.Item.Trickplay;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
@@ -56,6 +57,10 @@ namespace Jellyfin.Sdk.Generated.Videos.Item {
         /// <summary>The Subtitles property</summary>
         public SubtitlesRequestBuilder Subtitles { get =>
             new SubtitlesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The Trickplay property</summary>
+        public TrickplayRequestBuilder Trickplay { get =>
+            new TrickplayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item.item collection</summary>
         /// <param name="position">The media source id.</param>

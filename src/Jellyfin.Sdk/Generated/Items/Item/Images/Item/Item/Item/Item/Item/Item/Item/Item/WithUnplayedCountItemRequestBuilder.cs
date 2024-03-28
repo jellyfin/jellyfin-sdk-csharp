@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.Item.Item.Item.Item.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\Images\{imageType}\{imageIndex}\{tag}\{format}\{maxWidth}\{maxHeight}\{percentPlayed}\{unplayedCount}
+    /// Builds and executes requests for operations under \Items\{itemId}\Images\{imageType}\{imageIndex}\{tag}\{format}\{maxWidth}\{maxHeight}\{percentPlayed}\{unplayedCount}
     /// </summary>
     public class WithUnplayedCountItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.Item.Item.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUnplayedCountItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}/{maxHeight}/{percentPlayed}/{unplayedCount}{?addPlayedIndicator*,backgroundColor*,blur*,cropWhitespace*,fillHeight*,fillWidth*,foregroundLayer*,height*,quality*,width*}", pathParameters) {
+        public WithUnplayedCountItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}/{maxHeight}/{percentPlayed}/{unplayedCount}{?backgroundColor*,blur*,fillHeight*,fillWidth*,foregroundLayer*,height*,quality*,width*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithUnplayedCountItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUnplayedCountItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}/{maxHeight}/{percentPlayed}/{unplayedCount}{?addPlayedIndicator*,backgroundColor*,blur*,cropWhitespace*,fillHeight*,fillWidth*,foregroundLayer*,height*,quality*,width*}", rawUrl) {
+        public WithUnplayedCountItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}/{maxHeight}/{percentPlayed}/{unplayedCount}{?backgroundColor*,blur*,fillHeight*,fillWidth*,foregroundLayer*,height*,quality*,width*}", rawUrl) {
         }
         /// <summary>
         /// Gets the item&apos;s image.
@@ -113,9 +113,6 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.Item.Item.Item
         /// Gets the item&apos;s image.
         /// </summary>
         public class WithUnplayedCountItemRequestBuilderGetQueryParameters {
-            /// <summary>Optional. Add a played indicator.</summary>
-            [QueryParameter("addPlayedIndicator")]
-            public bool? AddPlayedIndicator { get; set; }
             /// <summary>Optional. Apply a background color for transparent images.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,10 +126,6 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.Item.Item.Item
             /// <summary>Optional. Blur image.</summary>
             [QueryParameter("blur")]
             public int? Blur { get; set; }
-            /// <summary>Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.</summary>
-            [Obsolete("")]
-            [QueryParameter("cropWhitespace")]
-            public bool? CropWhitespace { get; set; }
             /// <summary>Height of box to fill.</summary>
             [QueryParameter("fillHeight")]
             public int? FillHeight { get; set; }
@@ -163,9 +156,6 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.Item.Item.Item
         /// Gets the item&apos;s image.
         /// </summary>
         public class WithUnplayedCountItemRequestBuilderHeadQueryParameters {
-            /// <summary>Optional. Add a played indicator.</summary>
-            [QueryParameter("addPlayedIndicator")]
-            public bool? AddPlayedIndicator { get; set; }
             /// <summary>Optional. Apply a background color for transparent images.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -179,10 +169,6 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.Item.Item.Item
             /// <summary>Optional. Blur image.</summary>
             [QueryParameter("blur")]
             public int? Blur { get; set; }
-            /// <summary>Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.</summary>
-            [Obsolete("")]
-            [QueryParameter("cropWhitespace")]
-            public bool? CropWhitespace { get; set; }
             /// <summary>Height of box to fill.</summary>
             [QueryParameter("fillHeight")]
             public int? FillHeight { get; set; }

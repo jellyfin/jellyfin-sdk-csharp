@@ -30,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string ImageTag { get; set; }
 #endif
         /// <summary>Gets or sets the type of the image.</summary>
-        public Jellyfin.Sdk.Generated.Models.ImageType? ImageType { get; set; }
+        public ImageInfo_ImageType? ImageType { get; set; }
         /// <summary>Gets or sets the path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +62,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"Height", n => { Height = n.GetIntValue(); } },
                 {"ImageIndex", n => { ImageIndex = n.GetIntValue(); } },
                 {"ImageTag", n => { ImageTag = n.GetStringValue(); } },
-                {"ImageType", n => { ImageType = n.GetEnumValue<ImageType>(); } },
+                {"ImageType", n => { ImageType = n.GetEnumValue<ImageInfo_ImageType>(); } },
                 {"Path", n => { Path = n.GetStringValue(); } },
                 {"Size", n => { Size = n.GetLongValue(); } },
                 {"Width", n => { Width = n.GetIntValue(); } },
@@ -78,7 +78,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("Height", Height);
             writer.WriteIntValue("ImageIndex", ImageIndex);
             writer.WriteStringValue("ImageTag", ImageTag);
-            writer.WriteEnumValue<ImageType>("ImageType", ImageType);
+            writer.WriteEnumValue<ImageInfo_ImageType>("ImageType", ImageType);
             writer.WriteStringValue("Path", Path);
             writer.WriteLongValue("Size", Size);
             writer.WriteIntValue("Width", Width);

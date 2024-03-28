@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.ThemeMedia {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\ThemeMedia
+    /// Builds and executes requests for operations under \Items\{itemId}\ThemeMedia
     /// </summary>
     public class ThemeMediaRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ThemeMedia {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThemeMediaRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ThemeMedia{?inheritFromParent*,userId*}", pathParameters) {
+        public ThemeMediaRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/ThemeMedia{?inheritFromParent*,userId*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="ThemeMediaRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThemeMediaRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ThemeMedia{?inheritFromParent*,userId*}", rawUrl) {
+        public ThemeMediaRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/ThemeMedia{?inheritFromParent*,userId*}", rawUrl) {
         }
         /// <summary>
         /// Get theme songs and videos for an item.

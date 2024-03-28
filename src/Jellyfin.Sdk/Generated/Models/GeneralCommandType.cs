@@ -88,5 +88,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         Play,
         [EnumMember(Value = "SetMaxStreamingBitrate")]
         SetMaxStreamingBitrate,
+        [EnumMember(Value = "SetPlaybackOrder")]
+        SetPlaybackOrder,
     }
 }

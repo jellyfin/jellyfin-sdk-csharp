@@ -18,13 +18,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public List<Guid?> Ids { get; set; }
 #endif
         /// <summary>Gets or sets the media type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MediaType { get; set; }
-#nullable restore
-#else
-        public string MediaType { get; set; }
-#endif
+        public CreatePlaylistDto_MediaType? MediaType { get; set; }
         /// <summary>Gets or sets the name of the new playlist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,7 +45,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"Ids", n => { Ids = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"MediaType", n => { MediaType = n.GetStringValue(); } },
+                {"MediaType", n => { MediaType = n.GetEnumValue<CreatePlaylistDto_MediaType>(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
                 {"UserId", n => { UserId = n.GetGuidValue(); } },
             };
@@ -63,7 +57,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<Guid?>("Ids", Ids);
-            writer.WriteStringValue("MediaType", MediaType);
+            writer.WriteEnumValue<CreatePlaylistDto_MediaType>("MediaType", MediaType);
             writer.WriteStringValue("Name", Name);
             writer.WriteGuidValue("UserId", UserId);
         }

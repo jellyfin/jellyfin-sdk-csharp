@@ -23,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Container { get; set; }
 #endif
         /// <summary>The Type property</summary>
-        public DlnaProfileType? Type { get; set; }
+        public ContainerProfile_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +41,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"Conditions", n => { Conditions = n.GetCollectionOfObjectValues<ProfileCondition>(ProfileCondition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"Container", n => { Container = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<DlnaProfileType>(); } },
+                {"Type", n => { Type = n.GetEnumValue<ContainerProfile_Type>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<ProfileCondition>("Conditions", Conditions);
             writer.WriteStringValue("Container", Container);
-            writer.WriteEnumValue<DlnaProfileType>("Type", Type);
+            writer.WriteEnumValue<ContainerProfile_Type>("Type", Type);
         }
     }
 }

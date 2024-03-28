@@ -27,14 +27,14 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item.Images.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithImageTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/MusicGenres/{genreName%2Did}/Images/{imageType}{?addPlayedIndicator*,backgroundColor*,blur*,cropWhitespace*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,imageIndex*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,width*}", pathParameters) {
+        public WithImageTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/MusicGenres/{genreName%2Did}/Images/{imageType}{?backgroundColor*,blur*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,imageIndex*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,width*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithImageTypeItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithImageTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/MusicGenres/{genreName%2Did}/Images/{imageType}{?addPlayedIndicator*,backgroundColor*,blur*,cropWhitespace*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,imageIndex*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,width*}", rawUrl) {
+        public WithImageTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/MusicGenres/{genreName%2Did}/Images/{imageType}{?backgroundColor*,blur*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,imageIndex*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,width*}", rawUrl) {
         }
         /// <summary>
         /// Get music genre image by name.
@@ -122,9 +122,6 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item.Images.Item {
         /// Get music genre image by name.
         /// </summary>
         public class WithImageTypeItemRequestBuilderGetQueryParameters {
-            /// <summary>Optional. Add a played indicator.</summary>
-            [QueryParameter("addPlayedIndicator")]
-            public bool? AddPlayedIndicator { get; set; }
             /// <summary>Optional. Apply a background color for transparent images.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,10 +135,6 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item.Images.Item {
             /// <summary>Optional. Blur image.</summary>
             [QueryParameter("blur")]
             public int? Blur { get; set; }
-            /// <summary>Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.</summary>
-            [Obsolete("")]
-            [QueryParameter("cropWhitespace")]
-            public bool? CropWhitespace { get; set; }
             /// <summary>Height of box to fill.</summary>
             [QueryParameter("fillHeight")]
             public int? FillHeight { get; set; }
@@ -159,15 +152,8 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item.Images.Item {
             public string ForegroundLayer { get; set; }
 #endif
             /// <summary>Determines the output format of the image - original,gif,jpg,png.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
+            public GetFormatQueryParameterType? Format { get; set; }
             /// <summary>The fixed image height to return.</summary>
             [QueryParameter("height")]
             public int? Height { get; set; }
@@ -207,9 +193,6 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item.Images.Item {
         /// Get music genre image by name.
         /// </summary>
         public class WithImageTypeItemRequestBuilderHeadQueryParameters {
-            /// <summary>Optional. Add a played indicator.</summary>
-            [QueryParameter("addPlayedIndicator")]
-            public bool? AddPlayedIndicator { get; set; }
             /// <summary>Optional. Apply a background color for transparent images.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -223,10 +206,6 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item.Images.Item {
             /// <summary>Optional. Blur image.</summary>
             [QueryParameter("blur")]
             public int? Blur { get; set; }
-            /// <summary>Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.</summary>
-            [Obsolete("")]
-            [QueryParameter("cropWhitespace")]
-            public bool? CropWhitespace { get; set; }
             /// <summary>Height of box to fill.</summary>
             [QueryParameter("fillHeight")]
             public int? FillHeight { get; set; }
@@ -244,15 +223,8 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item.Images.Item {
             public string ForegroundLayer { get; set; }
 #endif
             /// <summary>Determines the output format of the image - original,gif,jpg,png.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
+            public HeadFormatQueryParameterType? Format { get; set; }
             /// <summary>The fixed image height to return.</summary>
             [QueryParameter("height")]
             public int? Height { get; set; }

@@ -174,15 +174,8 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         /// </summary>
         public class VirtualFoldersRequestBuilderPostQueryParameters {
             /// <summary>The type of the collection.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("collectionType")]
-            public string? CollectionType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("collectionType")]
-            public string CollectionType { get; set; }
-#endif
+            public PostCollectionTypeQueryParameterType? CollectionType { get; set; }
             /// <summary>The name of the virtual folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

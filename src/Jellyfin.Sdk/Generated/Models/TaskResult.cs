@@ -54,7 +54,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the start time UTC.</summary>
         public DateTimeOffset? StartTimeUtc { get; set; }
         /// <summary>Gets or sets the status.</summary>
-        public TaskCompletionStatus? Status { get; set; }
+        public TaskResult_Status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,7 +77,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"LongErrorMessage", n => { LongErrorMessage = n.GetStringValue(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
                 {"StartTimeUtc", n => { StartTimeUtc = n.GetDateTimeOffsetValue(); } },
-                {"Status", n => { Status = n.GetEnumValue<TaskCompletionStatus>(); } },
+                {"Status", n => { Status = n.GetEnumValue<TaskResult_Status>(); } },
             };
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("LongErrorMessage", LongErrorMessage);
             writer.WriteStringValue("Name", Name);
             writer.WriteDateTimeOffsetValue("StartTimeUtc", StartTimeUtc);
-            writer.WriteEnumValue<TaskCompletionStatus>("Status", Status);
+            writer.WriteEnumValue<TaskResult_Status>("Status", Status);
         }
     }
 }

@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Authorize {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthorizeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Authorize?code={code}", pathParameters) {
+        public AuthorizeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Authorize?code={code}{&userId*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="AuthorizeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthorizeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Authorize?code={code}", rawUrl) {
+        public AuthorizeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Authorize?code={code}{&userId*}", rawUrl) {
         }
         /// <summary>
         /// Authorizes a pending quick connect request.
@@ -86,6 +86,9 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Authorize {
             [QueryParameter("code")]
             public string Code { get; set; }
 #endif
+            /// <summary>The user the authorize. Access to the requested user is required.</summary>
+            [QueryParameter("userId")]
+            public Guid? UserId { get; set; }
         }
     }
 }

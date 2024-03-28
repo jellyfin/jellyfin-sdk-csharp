@@ -30,21 +30,13 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string IconUrl { get; set; }
 #endif
-        /// <summary>The MessageCallbackUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessageCallbackUrl { get; set; }
-#nullable restore
-#else
-        public string MessageCallbackUrl { get; set; }
-#endif
         /// <summary>The PlayableMediaTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PlayableMediaTypes { get; set; }
+        public List<MediaType?>? PlayableMediaTypes { get; set; }
 #nullable restore
 #else
-        public List<string> PlayableMediaTypes { get; set; }
+        public List<MediaType?> PlayableMediaTypes { get; set; }
 #endif
         /// <summary>The SupportedCommands property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,12 +47,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         public List<GeneralCommandType?> SupportedCommands { get; set; }
 #endif
         /// <summary>The SupportsContentUploading property</summary>
+        [Obsolete("")]
         public bool? SupportsContentUploading { get; set; }
         /// <summary>The SupportsMediaControl property</summary>
         public bool? SupportsMediaControl { get; set; }
         /// <summary>The SupportsPersistentIdentifier property</summary>
         public bool? SupportsPersistentIdentifier { get; set; }
         /// <summary>The SupportsSync property</summary>
+        [Obsolete("")]
         public bool? SupportsSync { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -80,8 +74,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"AppStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
                 {"DeviceProfile", n => { DeviceProfile = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.DeviceProfile>(Jellyfin.Sdk.Generated.Models.DeviceProfile.CreateFromDiscriminatorValue); } },
                 {"IconUrl", n => { IconUrl = n.GetStringValue(); } },
-                {"MessageCallbackUrl", n => { MessageCallbackUrl = n.GetStringValue(); } },
-                {"PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfEnumValues<MediaType>()?.ToList(); } },
                 {"SupportedCommands", n => { SupportedCommands = n.GetCollectionOfEnumValues<GeneralCommandType>()?.ToList(); } },
                 {"SupportsContentUploading", n => { SupportsContentUploading = n.GetBoolValue(); } },
                 {"SupportsMediaControl", n => { SupportsMediaControl = n.GetBoolValue(); } },
@@ -98,8 +91,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("AppStoreUrl", AppStoreUrl);
             writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.DeviceProfile>("DeviceProfile", DeviceProfile);
             writer.WriteStringValue("IconUrl", IconUrl);
-            writer.WriteStringValue("MessageCallbackUrl", MessageCallbackUrl);
-            writer.WriteCollectionOfPrimitiveValues<string>("PlayableMediaTypes", PlayableMediaTypes);
+            writer.WriteCollectionOfEnumValues<MediaType>("PlayableMediaTypes", PlayableMediaTypes);
             writer.WriteCollectionOfEnumValues<GeneralCommandType>("SupportedCommands", SupportedCommands);
             writer.WriteBoolValue("SupportsContentUploading", SupportsContentUploading);
             writer.WriteBoolValue("SupportsMediaControl", SupportsMediaControl);

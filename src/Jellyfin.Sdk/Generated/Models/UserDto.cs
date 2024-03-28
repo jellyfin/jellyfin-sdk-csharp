@@ -20,6 +20,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets whether async login is enabled or not.</summary>
         public bool? EnableAutoLogin { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance has configured easy password.</summary>
+        [Obsolete("")]
         public bool? HasConfiguredEasyPassword { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance has configured password.</summary>
         public bool? HasConfiguredPassword { get; set; }

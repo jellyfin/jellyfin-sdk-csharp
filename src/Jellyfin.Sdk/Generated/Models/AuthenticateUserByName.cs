@@ -9,15 +9,6 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// The authenticate user by name request body.
     /// </summary>
     public class AuthenticateUserByName : IParsable {
-        /// <summary>Gets or sets the sha1-hashed password.</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Password { get; set; }
-#nullable restore
-#else
-        public string Password { get; set; }
-#endif
         /// <summary>Gets or sets the plain text password.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +40,6 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"Password", n => { Password = n.GetStringValue(); } },
                 {"Pw", n => { Pw = n.GetStringValue(); } },
                 {"Username", n => { Username = n.GetStringValue(); } },
             };
@@ -60,7 +50,6 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Password", Password);
             writer.WriteStringValue("Pw", Pw);
             writer.WriteStringValue("Username", Username);
         }

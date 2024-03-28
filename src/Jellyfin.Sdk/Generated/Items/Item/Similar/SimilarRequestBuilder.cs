@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.Similar {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\Similar
+    /// Builds and executes requests for operations under \Items\{itemId}\Similar
     /// </summary>
     public class SimilarRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Similar {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SimilarRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Similar{?excludeArtistIds*,fields*,limit*,userId*}", pathParameters) {
+        public SimilarRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Similar{?excludeArtistIds*,fields*,limit*,userId*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="SimilarRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SimilarRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Similar{?excludeArtistIds*,fields*,limit*,userId*}", rawUrl) {
+        public SimilarRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Similar{?excludeArtistIds*,fields*,limit*,userId*}", rawUrl) {
         }
         /// <summary>
         /// Gets similar items.

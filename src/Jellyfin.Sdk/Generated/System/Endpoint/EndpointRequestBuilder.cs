@@ -33,6 +33,7 @@ namespace Jellyfin.Sdk.Generated.System.Endpoint {
         /// <returns>A <see cref="EndPointInfo"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<EndPointInfo?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -41,7 +42,10 @@ namespace Jellyfin.Sdk.Generated.System.Endpoint {
         public async Task<EndPointInfo> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<EndPointInfo>(requestInfo, EndPointInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"403", ProblemDetails.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<EndPointInfo>(requestInfo, EndPointInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets information about the request endpoint.

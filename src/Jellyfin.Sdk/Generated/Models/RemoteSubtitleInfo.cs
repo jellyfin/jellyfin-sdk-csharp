@@ -6,6 +6,8 @@ using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
     public class RemoteSubtitleInfo : IParsable {
+        /// <summary>The AiTranslated property</summary>
+        public bool? AiTranslated { get; set; }
         /// <summary>The Author property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public DateTimeOffset? DateCreated { get; set; }
         /// <summary>The DownloadCount property</summary>
         public int? DownloadCount { get; set; }
+        /// <summary>The Forced property</summary>
+        public bool? Forced { get; set; }
         /// <summary>The Format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +40,10 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string Format { get; set; }
 #endif
+        /// <summary>The FrameRate property</summary>
+        public float? FrameRate { get; set; }
+        /// <summary>The HearingImpaired property</summary>
+        public bool? HearingImpaired { get; set; }
         /// <summary>The Id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +54,8 @@ namespace Jellyfin.Sdk.Generated.Models {
 #endif
         /// <summary>The IsHashMatch property</summary>
         public bool? IsHashMatch { get; set; }
+        /// <summary>The MachineTranslated property</summary>
+        public bool? MachineTranslated { get; set; }
         /// <summary>The Name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,14 +95,19 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"AiTranslated", n => { AiTranslated = n.GetBoolValue(); } },
                 {"Author", n => { Author = n.GetStringValue(); } },
                 {"Comment", n => { Comment = n.GetStringValue(); } },
                 {"CommunityRating", n => { CommunityRating = n.GetFloatValue(); } },
                 {"DateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 {"DownloadCount", n => { DownloadCount = n.GetIntValue(); } },
+                {"Forced", n => { Forced = n.GetBoolValue(); } },
                 {"Format", n => { Format = n.GetStringValue(); } },
+                {"FrameRate", n => { FrameRate = n.GetFloatValue(); } },
+                {"HearingImpaired", n => { HearingImpaired = n.GetBoolValue(); } },
                 {"Id", n => { Id = n.GetStringValue(); } },
                 {"IsHashMatch", n => { IsHashMatch = n.GetBoolValue(); } },
+                {"MachineTranslated", n => { MachineTranslated = n.GetBoolValue(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
                 {"ProviderName", n => { ProviderName = n.GetStringValue(); } },
                 {"ThreeLetterISOLanguageName", n => { ThreeLetterISOLanguageName = n.GetStringValue(); } },
@@ -104,14 +119,19 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("AiTranslated", AiTranslated);
             writer.WriteStringValue("Author", Author);
             writer.WriteStringValue("Comment", Comment);
             writer.WriteFloatValue("CommunityRating", CommunityRating);
             writer.WriteDateTimeOffsetValue("DateCreated", DateCreated);
             writer.WriteIntValue("DownloadCount", DownloadCount);
+            writer.WriteBoolValue("Forced", Forced);
             writer.WriteStringValue("Format", Format);
+            writer.WriteFloatValue("FrameRate", FrameRate);
+            writer.WriteBoolValue("HearingImpaired", HearingImpaired);
             writer.WriteStringValue("Id", Id);
             writer.WriteBoolValue("IsHashMatch", IsHashMatch);
+            writer.WriteBoolValue("MachineTranslated", MachineTranslated);
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("ProviderName", ProviderName);
             writer.WriteStringValue("ThreeLetterISOLanguageName", ThreeLetterISOLanguageName);

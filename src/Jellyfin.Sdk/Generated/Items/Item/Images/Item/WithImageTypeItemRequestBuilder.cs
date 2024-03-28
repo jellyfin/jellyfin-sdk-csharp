@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\Images\{imageType}
+    /// Builds and executes requests for operations under \Items\{itemId}\Images\{imageType}
     /// </summary>
     public class WithImageTypeItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Items.item.Images.item.item collection</summary>
@@ -27,14 +27,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithImageTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}{?addPlayedIndicator*,backgroundColor*,blur*,cropWhitespace*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,imageIndex*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,width*}", pathParameters) {
+        public WithImageTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}{?backgroundColor*,blur*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,imageIndex*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,width*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithImageTypeItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithImageTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}{?addPlayedIndicator*,backgroundColor*,blur*,cropWhitespace*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,imageIndex*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,width*}", rawUrl) {
+        public WithImageTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}{?backgroundColor*,blur*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,imageIndex*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,width*}", rawUrl) {
         }
         /// <summary>
         /// Delete an item&apos;s image.
@@ -101,6 +101,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item {
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 400 status code</exception>
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +113,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"400", ProblemDetails.CreateFromDiscriminatorValue},
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -128,7 +130,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<WithImageTypeItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/Items/{id%2Did}/Images/{imageType}{?imageIndex*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/Items/{itemId}/Images/{imageType}{?imageIndex*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             return requestInfo;
@@ -181,7 +183,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item {
         public RequestInformation ToPostRequestInformation(Stream body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Items/{id%2Did}/Images/{imageType}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Items/{itemId}/Images/{imageType}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             requestInfo.SetStreamContent(body, "image/*");
@@ -207,9 +209,6 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item {
         /// Gets the item&apos;s image.
         /// </summary>
         public class WithImageTypeItemRequestBuilderGetQueryParameters {
-            /// <summary>Optional. Add a played indicator.</summary>
-            [QueryParameter("addPlayedIndicator")]
-            public bool? AddPlayedIndicator { get; set; }
             /// <summary>Optional. Apply a background color for transparent images.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -223,10 +222,6 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item {
             /// <summary>Optional. Blur image.</summary>
             [QueryParameter("blur")]
             public int? Blur { get; set; }
-            /// <summary>Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.</summary>
-            [Obsolete("")]
-            [QueryParameter("cropWhitespace")]
-            public bool? CropWhitespace { get; set; }
             /// <summary>Height of box to fill.</summary>
             [QueryParameter("fillHeight")]
             public int? FillHeight { get; set; }
@@ -244,15 +239,8 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item {
             public string ForegroundLayer { get; set; }
 #endif
             /// <summary>Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
+            public GetFormatQueryParameterType? Format { get; set; }
             /// <summary>The fixed image height to return.</summary>
             [QueryParameter("height")]
             public int? Height { get; set; }
@@ -292,9 +280,6 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item {
         /// Gets the item&apos;s image.
         /// </summary>
         public class WithImageTypeItemRequestBuilderHeadQueryParameters {
-            /// <summary>Optional. Add a played indicator.</summary>
-            [QueryParameter("addPlayedIndicator")]
-            public bool? AddPlayedIndicator { get; set; }
             /// <summary>Optional. Apply a background color for transparent images.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -308,10 +293,6 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item {
             /// <summary>Optional. Blur image.</summary>
             [QueryParameter("blur")]
             public int? Blur { get; set; }
-            /// <summary>Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.</summary>
-            [Obsolete("")]
-            [QueryParameter("cropWhitespace")]
-            public bool? CropWhitespace { get; set; }
             /// <summary>Height of box to fill.</summary>
             [QueryParameter("fillHeight")]
             public int? FillHeight { get; set; }
@@ -329,15 +310,8 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item {
             public string ForegroundLayer { get; set; }
 #endif
             /// <summary>Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
+            public HeadFormatQueryParameterType? Format { get; set; }
             /// <summary>The fixed image height to return.</summary>
             [QueryParameter("height")]
             public int? Height { get; set; }

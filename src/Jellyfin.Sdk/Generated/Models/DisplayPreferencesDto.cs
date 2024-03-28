@@ -49,8 +49,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public bool? RememberIndexing { get; set; }
         /// <summary>Gets or sets a value indicating whether [remember sorting].</summary>
         public bool? RememberSorting { get; set; }
-        /// <summary>Gets or sets the scroll direction.</summary>
-        public Jellyfin.Sdk.Generated.Models.ScrollDirection? ScrollDirection { get; set; }
+        /// <summary>An enum representing the axis that should be scrolled.</summary>
+        public DisplayPreferencesDto_ScrollDirection? ScrollDirection { get; set; }
         /// <summary>Gets or sets a value indicating whether to show backdrops on this item.</summary>
         public bool? ShowBackdrop { get; set; }
         /// <summary>Gets or sets a value indicating whether [show sidebar].</summary>
@@ -63,8 +63,8 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string SortBy { get; set; }
 #endif
-        /// <summary>Gets or sets the sort order.</summary>
-        public Jellyfin.Sdk.Generated.Models.SortOrder? SortOrder { get; set; }
+        /// <summary>An enum representing the sorting order.</summary>
+        public DisplayPreferencesDto_SortOrder? SortOrder { get; set; }
         /// <summary>Gets or sets the type of the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,11 +96,11 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"PrimaryImageWidth", n => { PrimaryImageWidth = n.GetIntValue(); } },
                 {"RememberIndexing", n => { RememberIndexing = n.GetBoolValue(); } },
                 {"RememberSorting", n => { RememberSorting = n.GetBoolValue(); } },
-                {"ScrollDirection", n => { ScrollDirection = n.GetEnumValue<ScrollDirection>(); } },
+                {"ScrollDirection", n => { ScrollDirection = n.GetEnumValue<DisplayPreferencesDto_ScrollDirection>(); } },
                 {"ShowBackdrop", n => { ShowBackdrop = n.GetBoolValue(); } },
                 {"ShowSidebar", n => { ShowSidebar = n.GetBoolValue(); } },
                 {"SortBy", n => { SortBy = n.GetStringValue(); } },
-                {"SortOrder", n => { SortOrder = n.GetEnumValue<SortOrder>(); } },
+                {"SortOrder", n => { SortOrder = n.GetEnumValue<DisplayPreferencesDto_SortOrder>(); } },
                 {"ViewType", n => { ViewType = n.GetStringValue(); } },
             };
         }
@@ -118,11 +118,11 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("PrimaryImageWidth", PrimaryImageWidth);
             writer.WriteBoolValue("RememberIndexing", RememberIndexing);
             writer.WriteBoolValue("RememberSorting", RememberSorting);
-            writer.WriteEnumValue<ScrollDirection>("ScrollDirection", ScrollDirection);
+            writer.WriteEnumValue<DisplayPreferencesDto_ScrollDirection>("ScrollDirection", ScrollDirection);
             writer.WriteBoolValue("ShowBackdrop", ShowBackdrop);
             writer.WriteBoolValue("ShowSidebar", ShowSidebar);
             writer.WriteStringValue("SortBy", SortBy);
-            writer.WriteEnumValue<SortOrder>("SortOrder", SortOrder);
+            writer.WriteEnumValue<DisplayPreferencesDto_SortOrder>("SortOrder", SortOrder);
             writer.WriteStringValue("ViewType", ViewType);
         }
     }

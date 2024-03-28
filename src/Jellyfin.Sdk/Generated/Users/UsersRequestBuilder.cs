@@ -2,10 +2,12 @@
 using Jellyfin.Sdk.Generated.Models;
 using Jellyfin.Sdk.Generated.Users.AuthenticateByName;
 using Jellyfin.Sdk.Generated.Users.AuthenticateWithQuickConnect;
+using Jellyfin.Sdk.Generated.Users.Configuration;
 using Jellyfin.Sdk.Generated.Users.ForgotPassword;
 using Jellyfin.Sdk.Generated.Users.Item;
 using Jellyfin.Sdk.Generated.Users.Me;
 using Jellyfin.Sdk.Generated.Users.New;
+using Jellyfin.Sdk.Generated.Users.Password;
 using Jellyfin.Sdk.Generated.Users.Public;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -28,6 +30,10 @@ namespace Jellyfin.Sdk.Generated.Users {
         public AuthenticateWithQuickConnectRequestBuilder AuthenticateWithQuickConnect { get =>
             new AuthenticateWithQuickConnectRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The Configuration property</summary>
+        public ConfigurationRequestBuilder Configuration { get =>
+            new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The ForgotPassword property</summary>
         public ForgotPasswordRequestBuilder ForgotPassword { get =>
             new ForgotPasswordRequestBuilder(PathParameters, RequestAdapter);
@@ -39,6 +45,10 @@ namespace Jellyfin.Sdk.Generated.Users {
         /// <summary>The New property</summary>
         public NewRequestBuilder New { get =>
             new NewRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The Password property</summary>
+        public PasswordRequestBuilder Password { get =>
+            new PasswordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Public property</summary>
         public PublicRequestBuilder Public { get =>
@@ -84,6 +94,29 @@ namespace Jellyfin.Sdk.Generated.Users {
             return collectionResult?.ToList();
         }
         /// <summary>
+        /// Updates a user.
+        /// </summary>
+        /// <param name="body">Class UserDto.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 400 status code</exception>
+        /// <exception cref="ProblemDetails">When receiving a 403 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task PostAsync(UserDto body, Action<RequestConfiguration<UsersRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task PostAsync(UserDto body, Action<RequestConfiguration<UsersRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"400", ProblemDetails.CreateFromDiscriminatorValue},
+                {"403", ProblemDetails.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Gets a list of users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -98,6 +131,26 @@ namespace Jellyfin.Sdk.Generated.Users {
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Updates a user.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Class UserDto.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(UserDto body, Action<RequestConfiguration<UsersRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(UserDto body, Action<RequestConfiguration<UsersRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Users{?userId*}", PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -118,6 +171,14 @@ namespace Jellyfin.Sdk.Generated.Users {
             /// <summary>Optional filter by IsHidden=true or false.</summary>
             [QueryParameter("isHidden")]
             public bool? IsHidden { get; set; }
+        }
+        /// <summary>
+        /// Updates a user.
+        /// </summary>
+        public class UsersRequestBuilderPostQueryParameters {
+            /// <summary>The user id.</summary>
+            [QueryParameter("userId")]
+            public Guid? UserId { get; set; }
         }
     }
 }

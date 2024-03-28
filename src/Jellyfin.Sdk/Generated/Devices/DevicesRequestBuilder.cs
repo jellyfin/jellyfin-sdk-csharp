@@ -28,14 +28,14 @@ namespace Jellyfin.Sdk.Generated.Devices {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices{?supportsSync*,userId*}", pathParameters) {
+        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices{?userId*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="DevicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices{?supportsSync*,userId*}", rawUrl) {
+        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices{?userId*}", rawUrl) {
         }
         /// <summary>
         /// Deletes a device.
@@ -133,9 +133,6 @@ namespace Jellyfin.Sdk.Generated.Devices {
         /// Get Devices.
         /// </summary>
         public class DevicesRequestBuilderGetQueryParameters {
-            /// <summary>Gets or sets a value indicating whether [supports synchronize].</summary>
-            [QueryParameter("supportsSync")]
-            public bool? SupportsSync { get; set; }
             /// <summary>Gets or sets the user identifier.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

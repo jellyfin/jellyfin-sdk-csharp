@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.Images {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\Images
+    /// Builds and executes requests for operations under \Items\{itemId}\Images
     /// </summary>
     public class ImagesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Items.item.Images.item collection</summary>
@@ -27,14 +27,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ImagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images", pathParameters) {
+        public ImagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="ImagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images", rawUrl) {
+        public ImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images", rawUrl) {
         }
         /// <summary>
         /// Get item image infos.

@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.Ancestors {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\Ancestors
+    /// Builds and executes requests for operations under \Items\{itemId}\Ancestors
     /// </summary>
     public class AncestorsRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Ancestors {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AncestorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Ancestors{?userId*}", pathParameters) {
+        public AncestorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Ancestors{?userId*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="AncestorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AncestorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Ancestors{?userId*}", rawUrl) {
+        public AncestorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Ancestors{?userId*}", rawUrl) {
         }
         /// <summary>
         /// Gets all parents of an item.

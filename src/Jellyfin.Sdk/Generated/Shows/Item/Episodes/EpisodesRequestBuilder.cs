@@ -77,15 +77,8 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Episodes {
         /// </summary>
         public class EpisodesRequestBuilderGetQueryParameters {
             /// <summary>Optional. Return items that are siblings of a supplied item.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("adjacentTo")]
-            public string? AdjacentTo { get; set; }
-#nullable restore
-#else
-            [QueryParameter("adjacentTo")]
-            public string AdjacentTo { get; set; }
-#endif
+            public Guid? AdjacentTo { get; set; }
             /// <summary>Optional, include image information in output.</summary>
             [QueryParameter("enableImages")]
             public bool? EnableImages { get; set; }
@@ -128,15 +121,8 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Episodes {
             [QueryParameter("seasonId")]
             public Guid? SeasonId { get; set; }
             /// <summary>Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sortBy")]
-            public string? SortBy { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sortBy")]
-            public string SortBy { get; set; }
-#endif
+            public GetSortByQueryParameterType? SortBy { get; set; }
             /// <summary>Optional. The record index to start at. All items with a lower index will be dropped from the results.</summary>
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }

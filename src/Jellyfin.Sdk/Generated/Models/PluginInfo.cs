@@ -40,7 +40,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Name { get; set; }
 #endif
         /// <summary>Gets or sets a value indicating the status of the plugin.</summary>
-        public PluginStatus? Status { get; set; }
+        public PluginInfo_Status? Status { get; set; }
         /// <summary>Gets or sets the version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +70,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"HasImage", n => { HasImage = n.GetBoolValue(); } },
                 {"Id", n => { Id = n.GetGuidValue(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
-                {"Status", n => { Status = n.GetEnumValue<PluginStatus>(); } },
+                {"Status", n => { Status = n.GetEnumValue<PluginInfo_Status>(); } },
                 {"Version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -86,7 +86,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("HasImage", HasImage);
             writer.WriteGuidValue("Id", Id);
             writer.WriteStringValue("Name", Name);
-            writer.WriteEnumValue<PluginStatus>("Status", Status);
+            writer.WriteEnumValue<PluginInfo_Status>("Status", Status);
             writer.WriteStringValue("Version", Version);
         }
     }

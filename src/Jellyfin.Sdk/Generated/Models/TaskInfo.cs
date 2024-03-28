@@ -62,7 +62,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Name { get; set; }
 #endif
         /// <summary>Gets or sets the state of the task.</summary>
-        public TaskState? State { get; set; }
+        public TaskInfo_State? State { get; set; }
         /// <summary>Gets or sets the triggers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +94,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"Key", n => { Key = n.GetStringValue(); } },
                 {"LastExecutionResult", n => { LastExecutionResult = n.GetObjectValue<TaskResult>(TaskResult.CreateFromDiscriminatorValue); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
-                {"State", n => { State = n.GetEnumValue<TaskState>(); } },
+                {"State", n => { State = n.GetEnumValue<TaskInfo_State>(); } },
                 {"Triggers", n => { Triggers = n.GetCollectionOfObjectValues<TaskTriggerInfo>(TaskTriggerInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -112,7 +112,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("Key", Key);
             writer.WriteObjectValue<TaskResult>("LastExecutionResult", LastExecutionResult);
             writer.WriteStringValue("Name", Name);
-            writer.WriteEnumValue<TaskState>("State", State);
+            writer.WriteEnumValue<TaskInfo_State>("State", State);
             writer.WriteCollectionOfObjectValues<TaskTriggerInfo>("Triggers", Triggers);
         }
     }

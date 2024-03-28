@@ -23,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Container { get; set; }
 #endif
         /// <summary>The Type property</summary>
-        public DlnaProfileType? Type { get; set; }
+        public DirectPlayProfile_Type? Type { get; set; }
         /// <summary>The VideoCodec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"AudioCodec", n => { AudioCodec = n.GetStringValue(); } },
                 {"Container", n => { Container = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<DlnaProfileType>(); } },
+                {"Type", n => { Type = n.GetEnumValue<DirectPlayProfile_Type>(); } },
                 {"VideoCodec", n => { VideoCodec = n.GetStringValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("AudioCodec", AudioCodec);
             writer.WriteStringValue("Container", Container);
-            writer.WriteEnumValue<DlnaProfileType>("Type", Type);
+            writer.WriteEnumValue<DirectPlayProfile_Type>("Type", Type);
             writer.WriteStringValue("VideoCodec", VideoCodec);
         }
     }

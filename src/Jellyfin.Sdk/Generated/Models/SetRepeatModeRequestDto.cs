@@ -9,8 +9,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// Class SetRepeatModeRequestDto.
     /// </summary>
     public class SetRepeatModeRequestDto : IParsable {
-        /// <summary>Enum GroupRepeatMode.</summary>
-        public GroupRepeatMode? Mode { get; set; }
+        /// <summary>Gets or sets the repeat mode.</summary>
+        public SetRepeatModeRequestDto_Mode? Mode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -26,7 +26,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"Mode", n => { Mode = n.GetEnumValue<GroupRepeatMode>(); } },
+                {"Mode", n => { Mode = n.GetEnumValue<SetRepeatModeRequestDto_Mode>(); } },
             };
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<GroupRepeatMode>("Mode", Mode);
+            writer.WriteEnumValue<SetRepeatModeRequestDto_Mode>("Mode", Mode);
         }
     }
 }

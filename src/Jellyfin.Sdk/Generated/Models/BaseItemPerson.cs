@@ -43,14 +43,8 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string Role { get; set; }
 #endif
-        /// <summary>Gets or sets the type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>The person kind.</summary>
+        public BaseItemPerson_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,7 +65,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"Name", n => { Name = n.GetStringValue(); } },
                 {"PrimaryImageTag", n => { PrimaryImageTag = n.GetStringValue(); } },
                 {"Role", n => { Role = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetStringValue(); } },
+                {"Type", n => { Type = n.GetEnumValue<BaseItemPerson_Type>(); } },
             };
         }
         /// <summary>
@@ -85,7 +79,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("PrimaryImageTag", PrimaryImageTag);
             writer.WriteStringValue("Role", Role);
-            writer.WriteStringValue("Type", Type);
+            writer.WriteEnumValue<BaseItemPerson_Type>("Type", Type);
         }
     }
 }

@@ -77,15 +77,8 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Seasons {
         /// </summary>
         public class SeasonsRequestBuilderGetQueryParameters {
             /// <summary>Optional. Return items that are siblings of a supplied item.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("adjacentTo")]
-            public string? AdjacentTo { get; set; }
-#nullable restore
-#else
-            [QueryParameter("adjacentTo")]
-            public string AdjacentTo { get; set; }
-#endif
+            public Guid? AdjacentTo { get; set; }
             /// <summary>Optional. Include image information in output.</summary>
             [QueryParameter("enableImages")]
             public bool? EnableImages { get; set; }

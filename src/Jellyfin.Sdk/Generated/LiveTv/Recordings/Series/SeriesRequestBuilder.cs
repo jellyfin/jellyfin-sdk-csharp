@@ -147,15 +147,8 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings.Series {
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }
             /// <summary>Optional. Filter by recording status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("status")]
-            public string? Status { get; set; }
-#nullable restore
-#else
-            [QueryParameter("status")]
-            public string Status { get; set; }
-#endif
+            public GetStatusQueryParameterType? Status { get; set; }
             /// <summary>Optional. Filter by user and attach user data.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

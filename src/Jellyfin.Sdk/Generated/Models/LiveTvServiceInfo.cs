@@ -30,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Name { get; set; }
 #endif
         /// <summary>Gets or sets the status.</summary>
-        public LiveTvServiceStatus? Status { get; set; }
+        public LiveTvServiceInfo_Status? Status { get; set; }
         /// <summary>Gets or sets the status message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +74,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"HomePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
                 {"IsVisible", n => { IsVisible = n.GetBoolValue(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
-                {"Status", n => { Status = n.GetEnumValue<LiveTvServiceStatus>(); } },
+                {"Status", n => { Status = n.GetEnumValue<LiveTvServiceInfo_Status>(); } },
                 {"StatusMessage", n => { StatusMessage = n.GetStringValue(); } },
                 {"Tuners", n => { Tuners = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"Version", n => { Version = n.GetStringValue(); } },
@@ -90,7 +90,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("HomePageUrl", HomePageUrl);
             writer.WriteBoolValue("IsVisible", IsVisible);
             writer.WriteStringValue("Name", Name);
-            writer.WriteEnumValue<LiveTvServiceStatus>("Status", Status);
+            writer.WriteEnumValue<LiveTvServiceInfo_Status>("Status", Status);
             writer.WriteStringValue("StatusMessage", StatusMessage);
             writer.WriteCollectionOfPrimitiveValues<string>("Tuners", Tuners);
             writer.WriteStringValue("Version", Version);

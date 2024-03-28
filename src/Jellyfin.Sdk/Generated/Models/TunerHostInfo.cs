@@ -34,6 +34,8 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The IgnoreDts property</summary>
+        public bool? IgnoreDts { get; set; }
         /// <summary>The ImportFavoritesOnly property</summary>
         public bool? ImportFavoritesOnly { get; set; }
         /// <summary>The Source property</summary>
@@ -90,6 +92,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"EnableStreamLooping", n => { EnableStreamLooping = n.GetBoolValue(); } },
                 {"FriendlyName", n => { FriendlyName = n.GetStringValue(); } },
                 {"Id", n => { Id = n.GetStringValue(); } },
+                {"IgnoreDts", n => { IgnoreDts = n.GetBoolValue(); } },
                 {"ImportFavoritesOnly", n => { ImportFavoritesOnly = n.GetBoolValue(); } },
                 {"Source", n => { Source = n.GetStringValue(); } },
                 {"TunerCount", n => { TunerCount = n.GetIntValue(); } },
@@ -109,6 +112,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("EnableStreamLooping", EnableStreamLooping);
             writer.WriteStringValue("FriendlyName", FriendlyName);
             writer.WriteStringValue("Id", Id);
+            writer.WriteBoolValue("IgnoreDts", IgnoreDts);
             writer.WriteBoolValue("ImportFavoritesOnly", ImportFavoritesOnly);
             writer.WriteStringValue("Source", Source);
             writer.WriteIntValue("TunerCount", TunerCount);

@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Playlists.Item.Items {
     /// <summary>
-    /// Builds and executes requests for operations under \Playlists\{id-id}\Items
+    /// Builds and executes requests for operations under \Playlists\{itemId-id}\Items
     /// </summary>
     public class ItemsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Playlists.item.Items.item collection</summary>
@@ -27,14 +27,14 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{id%2Did}/Items?userId={userId}{&enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,startIndex*}", pathParameters) {
+        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{itemId%2Did}/Items{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,startIndex*,userId*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="ItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{id%2Did}/Items?userId={userId}{&enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,startIndex*}", rawUrl) {
+        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{itemId%2Did}/Items{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,startIndex*,userId*}", rawUrl) {
         }
         /// <summary>
         /// Removes items from a playlist.
@@ -57,6 +57,7 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items {
         /// <returns>A <see cref="BaseItemDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -65,7 +66,10 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items {
         public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds items to a playlist.
@@ -94,7 +98,7 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<ItemsRequestBuilderDeleteQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/Playlists/{id%2Did}/Items{?entryIds*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/Playlists/{itemId%2Did}/Items{?entryIds*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -127,7 +131,7 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items {
 #else
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<ItemsRequestBuilderPostQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Playlists/{id%2Did}/Items{?ids*,userId*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Playlists/{itemId%2Did}/Items{?ids*,userId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Providers {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\RemoteImages\Providers
+    /// Builds and executes requests for operations under \Items\{itemId}\RemoteImages\Providers
     /// </summary>
     public class ProvidersRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Providers {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProvidersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteImages/Providers", pathParameters) {
+        public ProvidersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteImages/Providers", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="ProvidersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProvidersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteImages/Providers", rawUrl) {
+        public ProvidersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteImages/Providers", rawUrl) {
         }
         /// <summary>
         /// Gets available remote image providers for an item.

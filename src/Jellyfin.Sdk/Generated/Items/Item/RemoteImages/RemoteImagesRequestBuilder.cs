@@ -12,7 +12,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\RemoteImages
+    /// Builds and executes requests for operations under \Items\{itemId}\RemoteImages
     /// </summary>
     public class RemoteImagesRequestBuilder : BaseRequestBuilder {
         /// <summary>The Download property</summary>
@@ -28,14 +28,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemoteImagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteImages{?includeAllLanguages*,limit*,providerName*,startIndex*,type*}", pathParameters) {
+        public RemoteImagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteImages{?includeAllLanguages*,limit*,providerName*,startIndex*,type*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="RemoteImagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemoteImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteImages{?includeAllLanguages*,limit*,providerName*,startIndex*,type*}", rawUrl) {
+        public RemoteImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteImages{?includeAllLanguages*,limit*,providerName*,startIndex*,type*}", rawUrl) {
         }
         /// <summary>
         /// Gets available remote images for an item.
@@ -106,15 +106,8 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages {
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }
             /// <summary>The image type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public GetTypeQueryParameterType? Type { get; set; }
         }
     }
 }

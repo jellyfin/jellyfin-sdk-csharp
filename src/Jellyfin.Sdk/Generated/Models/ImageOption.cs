@@ -11,7 +11,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the minimum width.</summary>
         public int? MinWidth { get; set; }
         /// <summary>Gets or sets the type.</summary>
-        public ImageType? Type { get; set; }
+        public ImageOption_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -29,7 +29,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"Limit", n => { Limit = n.GetIntValue(); } },
                 {"MinWidth", n => { MinWidth = n.GetIntValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<ImageType>(); } },
+                {"Type", n => { Type = n.GetEnumValue<ImageOption_Type>(); } },
             };
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("Limit", Limit);
             writer.WriteIntValue("MinWidth", MinWidth);
-            writer.WriteEnumValue<ImageType>("Type", Type);
+            writer.WriteEnumValue<ImageOption_Type>("Type", Type);
         }
     }
 }

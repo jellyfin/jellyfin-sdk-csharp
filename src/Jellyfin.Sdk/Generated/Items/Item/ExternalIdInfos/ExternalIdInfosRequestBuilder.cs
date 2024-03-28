@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.ExternalIdInfos {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\ExternalIdInfos
+    /// Builds and executes requests for operations under \Items\{itemId}\ExternalIdInfos
     /// </summary>
     public class ExternalIdInfosRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ExternalIdInfos {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExternalIdInfosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ExternalIdInfos", pathParameters) {
+        public ExternalIdInfosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/ExternalIdInfos", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="ExternalIdInfosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExternalIdInfosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ExternalIdInfos", rawUrl) {
+        public ExternalIdInfosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/ExternalIdInfos", rawUrl) {
         }
         /// <summary>
         /// Get the item&apos;s external id info.

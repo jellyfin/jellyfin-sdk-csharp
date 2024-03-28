@@ -7,11 +7,11 @@ using System;
 namespace Jellyfin.Sdk.Generated.Models {
     public class ProfileCondition : IParsable {
         /// <summary>The Condition property</summary>
-        public ProfileConditionType? Condition { get; set; }
+        public ProfileCondition_Condition? Condition { get; set; }
         /// <summary>The IsRequired property</summary>
         public bool? IsRequired { get; set; }
         /// <summary>The Property property</summary>
-        public ProfileConditionValue? Property { get; set; }
+        public ProfileCondition_Property? Property { get; set; }
         /// <summary>The Value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,9 +35,9 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"Condition", n => { Condition = n.GetEnumValue<ProfileConditionType>(); } },
+                {"Condition", n => { Condition = n.GetEnumValue<ProfileCondition_Condition>(); } },
                 {"IsRequired", n => { IsRequired = n.GetBoolValue(); } },
-                {"Property", n => { Property = n.GetEnumValue<ProfileConditionValue>(); } },
+                {"Property", n => { Property = n.GetEnumValue<ProfileCondition_Property>(); } },
                 {"Value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -47,9 +47,9 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ProfileConditionType>("Condition", Condition);
+            writer.WriteEnumValue<ProfileCondition_Condition>("Condition", Condition);
             writer.WriteBoolValue("IsRequired", IsRequired);
-            writer.WriteEnumValue<ProfileConditionValue>("Property", Property);
+            writer.WriteEnumValue<ProfileCondition_Property>("Property", Property);
             writer.WriteStringValue("Value", Value);
         }
     }

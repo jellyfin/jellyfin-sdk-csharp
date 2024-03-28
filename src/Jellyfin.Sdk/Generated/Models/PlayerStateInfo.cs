@@ -30,12 +30,14 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string MediaSourceId { get; set; }
 #endif
+        /// <summary>Gets or sets the playback order.</summary>
+        public PlayerStateInfo_PlaybackOrder? PlaybackOrder { get; set; }
         /// <summary>Gets or sets the play method.</summary>
-        public Jellyfin.Sdk.Generated.Models.PlayMethod? PlayMethod { get; set; }
+        public PlayerStateInfo_PlayMethod? PlayMethod { get; set; }
         /// <summary>Gets or sets the now playing position ticks.</summary>
         public long? PositionTicks { get; set; }
         /// <summary>Gets or sets the repeat mode.</summary>
-        public Jellyfin.Sdk.Generated.Models.RepeatMode? RepeatMode { get; set; }
+        public PlayerStateInfo_RepeatMode? RepeatMode { get; set; }
         /// <summary>Gets or sets the index of the now playing subtitle stream.</summary>
         public int? SubtitleStreamIndex { get; set; }
         /// <summary>Gets or sets the volume level.</summary>
@@ -61,9 +63,10 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"IsPaused", n => { IsPaused = n.GetBoolValue(); } },
                 {"LiveStreamId", n => { LiveStreamId = n.GetStringValue(); } },
                 {"MediaSourceId", n => { MediaSourceId = n.GetStringValue(); } },
-                {"PlayMethod", n => { PlayMethod = n.GetEnumValue<PlayMethod>(); } },
+                {"PlayMethod", n => { PlayMethod = n.GetEnumValue<PlayerStateInfo_PlayMethod>(); } },
+                {"PlaybackOrder", n => { PlaybackOrder = n.GetEnumValue<PlayerStateInfo_PlaybackOrder>(); } },
                 {"PositionTicks", n => { PositionTicks = n.GetLongValue(); } },
-                {"RepeatMode", n => { RepeatMode = n.GetEnumValue<RepeatMode>(); } },
+                {"RepeatMode", n => { RepeatMode = n.GetEnumValue<PlayerStateInfo_RepeatMode>(); } },
                 {"SubtitleStreamIndex", n => { SubtitleStreamIndex = n.GetIntValue(); } },
                 {"VolumeLevel", n => { VolumeLevel = n.GetIntValue(); } },
             };
@@ -80,9 +83,10 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("IsPaused", IsPaused);
             writer.WriteStringValue("LiveStreamId", LiveStreamId);
             writer.WriteStringValue("MediaSourceId", MediaSourceId);
-            writer.WriteEnumValue<PlayMethod>("PlayMethod", PlayMethod);
+            writer.WriteEnumValue<PlayerStateInfo_PlaybackOrder>("PlaybackOrder", PlaybackOrder);
+            writer.WriteEnumValue<PlayerStateInfo_PlayMethod>("PlayMethod", PlayMethod);
             writer.WriteLongValue("PositionTicks", PositionTicks);
-            writer.WriteEnumValue<RepeatMode>("RepeatMode", RepeatMode);
+            writer.WriteEnumValue<PlayerStateInfo_RepeatMode>("RepeatMode", RepeatMode);
             writer.WriteIntValue("SubtitleStreamIndex", SubtitleStreamIndex);
             writer.WriteIntValue("VolumeLevel", VolumeLevel);
         }

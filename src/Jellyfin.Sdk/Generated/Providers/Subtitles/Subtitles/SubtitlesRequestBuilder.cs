@@ -13,11 +13,11 @@ namespace Jellyfin.Sdk.Generated.Providers.Subtitles.Subtitles {
     public class SubtitlesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Providers.Subtitles.Subtitles.item collection</summary>
         /// <param name="position">The item id.</param>
-        /// <returns>A <see cref="SubtitlesItemRequestBuilder"/></returns>
-        public SubtitlesItemRequestBuilder this[string position] { get {
+        /// <returns>A <see cref="WithSubtitleItemRequestBuilder"/></returns>
+        public WithSubtitleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("id", position);
-            return new SubtitlesItemRequestBuilder(urlTplParams, RequestAdapter);
+            urlTplParams.Add("subtitleId", position);
+            return new WithSubtitleItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new <see cref="SubtitlesRequestBuilder"/> and sets the default values.

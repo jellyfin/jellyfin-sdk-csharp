@@ -33,7 +33,6 @@ namespace Jellyfin.Sdk.Generated.System.MediaEncoder.PathNamespace {
         /// <param name="body">Media Encoder Path Dto.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(MediaEncoderPathDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -51,7 +50,6 @@ namespace Jellyfin.Sdk.Generated.System.MediaEncoder.PathNamespace {
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Media Encoder Path Dto.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(MediaEncoderPathDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -70,7 +68,6 @@ namespace Jellyfin.Sdk.Generated.System.MediaEncoder.PathNamespace {
         /// </summary>
         /// <returns>A <see cref="PathRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("")]
         public PathRequestBuilder WithUrl(string rawUrl) {
             return new PathRequestBuilder(rawUrl, RequestAdapter);
         }

@@ -2,11 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    /// <summary>Enum SeriesStatus.</summary>
+    /// <summary>The status of a series.</summary>
     public enum SeriesStatus {
         [EnumMember(Value = "Continuing")]
         Continuing,
         [EnumMember(Value = "Ended")]
         Ended,
+        [EnumMember(Value = "Unreleased")]
+        Unreleased,
     }
 }

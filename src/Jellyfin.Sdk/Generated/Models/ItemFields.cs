@@ -14,6 +14,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         ChannelInfo,
         [EnumMember(Value = "Chapters")]
         Chapters,
+        [EnumMember(Value = "Trickplay")]
+        Trickplay,
         [EnumMember(Value = "ChildCount")]
         ChildCount,
         [EnumMember(Value = "CumulativeRunTimeTicks")]
@@ -74,10 +76,6 @@ namespace Jellyfin.Sdk.Generated.Models {
         SpecialEpisodeNumbers,
         [EnumMember(Value = "Studios")]
         Studios,
-        [EnumMember(Value = "BasicSyncInfo")]
-        BasicSyncInfo,
-        [EnumMember(Value = "SyncInfo")]
-        SyncInfo,
         [EnumMember(Value = "Taglines")]
         Taglines,
         [EnumMember(Value = "Tags")]

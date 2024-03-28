@@ -39,7 +39,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Container { get; set; }
 #endif
         /// <summary>The Type property</summary>
-        public CodecType? Type { get; set; }
+        public CodecProfile_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +59,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"Codec", n => { Codec = n.GetStringValue(); } },
                 {"Conditions", n => { Conditions = n.GetCollectionOfObjectValues<ProfileCondition>(ProfileCondition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"Container", n => { Container = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<CodecType>(); } },
+                {"Type", n => { Type = n.GetEnumValue<CodecProfile_Type>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("Codec", Codec);
             writer.WriteCollectionOfObjectValues<ProfileCondition>("Conditions", Conditions);
             writer.WriteStringValue("Container", Container);
-            writer.WriteEnumValue<CodecType>("Type", Type);
+            writer.WriteEnumValue<CodecProfile_Type>("Type", Type);
         }
     }
 }

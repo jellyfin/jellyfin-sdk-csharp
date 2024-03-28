@@ -23,6 +23,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string LocalAddress { get; set; }
 #endif
         /// <summary>Gets or sets the operating system.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatingSystem { get; set; }

@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.MetadataEditor {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\MetadataEditor
+    /// Builds and executes requests for operations under \Items\{itemId}\MetadataEditor
     /// </summary>
     public class MetadataEditorRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.MetadataEditor {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MetadataEditorRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/MetadataEditor", pathParameters) {
+        public MetadataEditorRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/MetadataEditor", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="MetadataEditorRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MetadataEditorRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/MetadataEditor", rawUrl) {
+        public MetadataEditorRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/MetadataEditor", rawUrl) {
         }
         /// <summary>
         /// Gets metadata editor info for an item.

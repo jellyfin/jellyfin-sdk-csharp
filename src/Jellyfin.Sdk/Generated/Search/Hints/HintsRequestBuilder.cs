@@ -72,7 +72,7 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
         /// Gets the search hint result.
         /// </summary>
         public class HintsRequestBuilderGetQueryParameters {
-            /// <summary>If specified, results with these item types are filtered out. This allows multiple, comma delimeted.</summary>
+            /// <summary>If specified, results with these item types are filtered out. This allows multiple, comma delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("excludeItemTypes")]
@@ -88,7 +88,7 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
             /// <summary>Optional filter whether to include genres.</summary>
             [QueryParameter("includeGenres")]
             public bool? IncludeGenres { get; set; }
-            /// <summary>If specified, only results with the specified item types are returned. This allows multiple, comma delimeted.</summary>
+            /// <summary>If specified, only results with the specified item types are returned. This allows multiple, comma delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("includeItemTypes")]
@@ -125,15 +125,15 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
             /// <summary>Optional. The maximum number of records to return.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>If specified, only results with the specified media types are returned. This allows multiple, comma delimeted.</summary>
+            /// <summary>If specified, only results with the specified media types are returned. This allows multiple, comma delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mediaTypes")]
-            public string[]? MediaTypes { get; set; }
+            public MediaType[]? MediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("mediaTypes")]
-            public string[] MediaTypes { get; set; }
+            public MediaType[] MediaTypes { get; set; }
 #endif
             /// <summary>If specified, only children of the parent are returned.</summary>
             [QueryParameter("parentId")]

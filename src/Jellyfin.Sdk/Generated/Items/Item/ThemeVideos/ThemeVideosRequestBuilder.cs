@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.ThemeVideos {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\ThemeVideos
+    /// Builds and executes requests for operations under \Items\{itemId}\ThemeVideos
     /// </summary>
     public class ThemeVideosRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ThemeVideos {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThemeVideosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ThemeVideos{?inheritFromParent*,userId*}", pathParameters) {
+        public ThemeVideosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/ThemeVideos{?inheritFromParent*,userId*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="ThemeVideosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThemeVideosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ThemeVideos{?inheritFromParent*,userId*}", rawUrl) {
+        public ThemeVideosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/ThemeVideos{?inheritFromParent*,userId*}", rawUrl) {
         }
         /// <summary>
         /// Get theme videos for an item.

@@ -26,11 +26,11 @@ namespace Jellyfin.Sdk.Generated.Artists {
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Artists.item collection</summary>
         /// <param name="position">Studio name.</param>
-        /// <returns>A <see cref="IdItemRequestBuilder"/></returns>
-        public IdItemRequestBuilder this[string position] { get {
+        /// <returns>A <see cref="ItemIdItemRequestBuilder"/></returns>
+        public ItemIdItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("id%2Did", position);
-            return new IdItemRequestBuilder(urlTplParams, RequestAdapter);
+            urlTplParams.Add("itemId%2Did", position);
+            return new ItemIdItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new <see cref="ArtistsRequestBuilder"/> and sets the default values.
@@ -183,11 +183,11 @@ namespace Jellyfin.Sdk.Generated.Artists {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mediaTypes")]
-            public string[]? MediaTypes { get; set; }
+            public MediaType[]? MediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("mediaTypes")]
-            public string[] MediaTypes { get; set; }
+            public MediaType[] MediaTypes { get; set; }
 #endif
             /// <summary>Optional filter by minimum community rating.</summary>
             [QueryParameter("minCommunityRating")]
@@ -279,11 +279,11 @@ namespace Jellyfin.Sdk.Generated.Artists {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
-            public string[]? SortBy { get; set; }
+            public ItemSortBy[]? SortBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortBy")]
-            public string[] SortBy { get; set; }
+            public ItemSortBy[] SortBy { get; set; }
 #endif
             /// <summary>Sort Order - Ascending,Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

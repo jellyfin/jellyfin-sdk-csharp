@@ -94,10 +94,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets specify one or more sort orders, comma delimited. Options: Name, StartDate.Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SortBy { get; set; }
+        public List<ItemSortBy?>? SortBy { get; set; }
 #nullable restore
 #else
-        public List<string> SortBy { get; set; }
+        public List<ItemSortBy?> SortBy { get; set; }
 #endif
         /// <summary>Gets or sets sort Order - Ascending,Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -149,7 +149,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"MinEndDate", n => { MinEndDate = n.GetDateTimeOffsetValue(); } },
                 {"MinStartDate", n => { MinStartDate = n.GetDateTimeOffsetValue(); } },
                 {"SeriesTimerId", n => { SeriesTimerId = n.GetStringValue(); } },
-                {"SortBy", n => { SortBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"SortBy", n => { SortBy = n.GetCollectionOfEnumValues<ItemSortBy>()?.ToList(); } },
                 {"SortOrder", n => { SortOrder = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.SortOrder>()?.ToList(); } },
                 {"StartIndex", n => { StartIndex = n.GetIntValue(); } },
                 {"UserId", n => { UserId = n.GetGuidValue(); } },
@@ -184,7 +184,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteDateTimeOffsetValue("MinEndDate", MinEndDate);
             writer.WriteDateTimeOffsetValue("MinStartDate", MinStartDate);
             writer.WriteStringValue("SeriesTimerId", SeriesTimerId);
-            writer.WriteCollectionOfPrimitiveValues<string>("SortBy", SortBy);
+            writer.WriteCollectionOfEnumValues<ItemSortBy>("SortBy", SortBy);
             writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.SortOrder>("SortOrder", SortOrder);
             writer.WriteIntValue("StartIndex", StartIndex);
             writer.WriteGuidValue("UserId", UserId);

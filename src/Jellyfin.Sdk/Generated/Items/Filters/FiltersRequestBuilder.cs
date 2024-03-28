@@ -86,11 +86,11 @@ namespace Jellyfin.Sdk.Generated.Items.Filters {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mediaTypes")]
-            public string[]? MediaTypes { get; set; }
+            public MediaType[]? MediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("mediaTypes")]
-            public string[] MediaTypes { get; set; }
+            public MediaType[] MediaTypes { get; set; }
 #endif
             /// <summary>Optional. Parent id.</summary>
             [QueryParameter("parentId")]

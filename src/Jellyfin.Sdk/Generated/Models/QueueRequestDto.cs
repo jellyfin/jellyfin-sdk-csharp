@@ -17,8 +17,8 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public List<Guid?> ItemIds { get; set; }
 #endif
-        /// <summary>Enum GroupQueueMode.</summary>
-        public GroupQueueMode? Mode { get; set; }
+        /// <summary>Gets or sets the mode in which to add the new items.</summary>
+        public QueueRequestDto_Mode? Mode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +35,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"ItemIds", n => { ItemIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"Mode", n => { Mode = n.GetEnumValue<GroupQueueMode>(); } },
+                {"Mode", n => { Mode = n.GetEnumValue<QueueRequestDto_Mode>(); } },
             };
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<Guid?>("ItemIds", ItemIds);
-            writer.WriteEnumValue<GroupQueueMode>("Mode", Mode);
+            writer.WriteEnumValue<QueueRequestDto_Mode>("Mode", Mode);
         }
     }
 }

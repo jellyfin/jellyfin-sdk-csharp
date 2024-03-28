@@ -185,15 +185,8 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Universal {
             public string TranscodingContainer { get; set; }
 #endif
             /// <summary>Optional. The transcoding protocol.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("transcodingProtocol")]
-            public string? TranscodingProtocol { get; set; }
-#nullable restore
-#else
-            [QueryParameter("transcodingProtocol")]
-            public string TranscodingProtocol { get; set; }
-#endif
+            public GetTranscodingProtocolQueryParameterType? TranscodingProtocol { get; set; }
             /// <summary>Optional. The user id.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }
@@ -283,15 +276,8 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Universal {
             public string TranscodingContainer { get; set; }
 #endif
             /// <summary>Optional. The transcoding protocol.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("transcodingProtocol")]
-            public string? TranscodingProtocol { get; set; }
-#nullable restore
-#else
-            [QueryParameter("transcodingProtocol")]
-            public string TranscodingProtocol { get; set; }
-#endif
+            public HeadTranscodingProtocolQueryParameterType? TranscodingProtocol { get; set; }
             /// <summary>Optional. The user id.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

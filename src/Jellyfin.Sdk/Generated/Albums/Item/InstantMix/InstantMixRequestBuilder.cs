@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Albums.Item.InstantMix {
     /// <summary>
-    /// Builds and executes requests for operations under \Albums\{id-id}\InstantMix
+    /// Builds and executes requests for operations under \Albums\{itemId}\InstantMix
     /// </summary>
     public class InstantMixRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Albums.Item.InstantMix {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstantMixRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums/{id%2Did}/InstantMix{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,userId*}", pathParameters) {
+        public InstantMixRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums/{itemId}/InstantMix{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,userId*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="InstantMixRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstantMixRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums/{id%2Did}/InstantMix{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,userId*}", rawUrl) {
+        public InstantMixRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums/{itemId}/InstantMix{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,userId*}", rawUrl) {
         }
         /// <summary>
         /// Creates an instant playlist based on a given album.

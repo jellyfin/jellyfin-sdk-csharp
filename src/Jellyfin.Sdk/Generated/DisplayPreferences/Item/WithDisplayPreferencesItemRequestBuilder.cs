@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.DisplayPreferences.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDisplayPreferencesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/DisplayPreferences/{displayPreferencesId}?client={client}&userId={userId}", pathParameters) {
+        public WithDisplayPreferencesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/DisplayPreferences/{displayPreferencesId}?client={client}{&userId*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithDisplayPreferencesItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDisplayPreferencesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/DisplayPreferences/{displayPreferencesId}?client={client}&userId={userId}", rawUrl) {
+        public WithDisplayPreferencesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/DisplayPreferences/{displayPreferencesId}?client={client}{&userId*}", rawUrl) {
         }
         /// <summary>
         /// Get Display Preferences.

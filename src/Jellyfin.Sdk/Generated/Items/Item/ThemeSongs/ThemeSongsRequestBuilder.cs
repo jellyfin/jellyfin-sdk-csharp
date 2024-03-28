@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.ThemeSongs {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\ThemeSongs
+    /// Builds and executes requests for operations under \Items\{itemId}\ThemeSongs
     /// </summary>
     public class ThemeSongsRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ThemeSongs {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThemeSongsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ThemeSongs{?inheritFromParent*,userId*}", pathParameters) {
+        public ThemeSongsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/ThemeSongs{?inheritFromParent*,userId*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="ThemeSongsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThemeSongsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ThemeSongs{?inheritFromParent*,userId*}", rawUrl) {
+        public ThemeSongsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/ThemeSongs{?inheritFromParent*,userId*}", rawUrl) {
         }
         /// <summary>
         /// Get theme songs for an item.

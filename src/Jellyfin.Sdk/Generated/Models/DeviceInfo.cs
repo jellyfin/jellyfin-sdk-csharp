@@ -38,6 +38,14 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public ClientCapabilities Capabilities { get; set; }
 #endif
+        /// <summary>The CustomName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomName { get; set; }
+#nullable restore
+#else
+        public string CustomName { get; set; }
+#endif
         /// <summary>Gets or sets the date last modified.</summary>
         public DateTimeOffset? DateLastActivity { get; set; }
         /// <summary>The IconUrl property</summary>
@@ -93,6 +101,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"AppName", n => { AppName = n.GetStringValue(); } },
                 {"AppVersion", n => { AppVersion = n.GetStringValue(); } },
                 {"Capabilities", n => { Capabilities = n.GetObjectValue<ClientCapabilities>(ClientCapabilities.CreateFromDiscriminatorValue); } },
+                {"CustomName", n => { CustomName = n.GetStringValue(); } },
                 {"DateLastActivity", n => { DateLastActivity = n.GetDateTimeOffsetValue(); } },
                 {"IconUrl", n => { IconUrl = n.GetStringValue(); } },
                 {"Id", n => { Id = n.GetStringValue(); } },
@@ -111,6 +120,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("AppName", AppName);
             writer.WriteStringValue("AppVersion", AppVersion);
             writer.WriteObjectValue<ClientCapabilities>("Capabilities", Capabilities);
+            writer.WriteStringValue("CustomName", CustomName);
             writer.WriteDateTimeOffsetValue("DateLastActivity", DateLastActivity);
             writer.WriteStringValue("IconUrl", IconUrl);
             writer.WriteStringValue("Id", Id);

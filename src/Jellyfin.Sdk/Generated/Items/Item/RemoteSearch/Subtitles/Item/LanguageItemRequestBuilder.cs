@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\RemoteSearch\Subtitles\{language-id}
+    /// Builds and executes requests for operations under \Items\{itemId}\RemoteSearch\Subtitles\{language-id}
     /// </summary>
     public class LanguageItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LanguageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteSearch/Subtitles/{language%2Did}{?isPerfectMatch*}", pathParameters) {
+        public LanguageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteSearch/Subtitles/{language%2Did}{?isPerfectMatch*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="LanguageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LanguageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteSearch/Subtitles/{language%2Did}{?isPerfectMatch*}", rawUrl) {
+        public LanguageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteSearch/Subtitles/{language%2Did}{?isPerfectMatch*}", rawUrl) {
         }
         /// <summary>
         /// Search remote subtitles.
@@ -88,7 +88,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles.Item {
 #else
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Items/{id%2Did}/RemoteSearch/Subtitles/{language%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Items/{itemId}/RemoteSearch/Subtitles/{language%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

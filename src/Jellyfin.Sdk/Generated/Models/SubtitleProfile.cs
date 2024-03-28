@@ -39,7 +39,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Language { get; set; }
 #endif
         /// <summary>Delivery method to use during playback of a specific subtitle format.</summary>
-        public SubtitleDeliveryMethod? Method { get; set; }
+        public SubtitleProfile_Method? Method { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +59,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"DidlMode", n => { DidlMode = n.GetStringValue(); } },
                 {"Format", n => { Format = n.GetStringValue(); } },
                 {"Language", n => { Language = n.GetStringValue(); } },
-                {"Method", n => { Method = n.GetEnumValue<SubtitleDeliveryMethod>(); } },
+                {"Method", n => { Method = n.GetEnumValue<SubtitleProfile_Method>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("DidlMode", DidlMode);
             writer.WriteStringValue("Format", Format);
             writer.WriteStringValue("Language", Language);
-            writer.WriteEnumValue<SubtitleDeliveryMethod>("Method", Method);
+            writer.WriteEnumValue<SubtitleProfile_Method>("Method", Method);
         }
     }
 }

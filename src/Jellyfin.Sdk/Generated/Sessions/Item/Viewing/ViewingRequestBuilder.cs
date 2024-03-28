@@ -90,15 +90,8 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Viewing {
             public string ItemName { get; set; }
 #endif
             /// <summary>The type of item to browse to.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("itemType")]
-            public string? ItemType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("itemType")]
-            public string ItemType { get; set; }
-#endif
+            public PostItemTypeQueryParameterType? ItemType { get; set; }
         }
     }
 }

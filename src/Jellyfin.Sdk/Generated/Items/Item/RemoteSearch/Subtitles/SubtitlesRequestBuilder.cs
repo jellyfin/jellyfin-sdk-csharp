@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\RemoteSearch\Subtitles
+    /// Builds and executes requests for operations under \Items\{itemId}\RemoteSearch\Subtitles
     /// </summary>
     public class SubtitlesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Items.item.RemoteSearch.Subtitles.item collection</summary>
@@ -24,14 +24,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubtitlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteSearch/Subtitles", pathParameters) {
+        public SubtitlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteSearch/Subtitles", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="SubtitlesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubtitlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteSearch/Subtitles", rawUrl) {
+        public SubtitlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteSearch/Subtitles", rawUrl) {
         }
     }
 }

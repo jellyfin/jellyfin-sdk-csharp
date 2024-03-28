@@ -17,14 +17,14 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8 {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MasterM3u8RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/master.m3u8?mediaSourceId={mediaSourceId}{&allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAdaptiveBitrateStreaming*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", pathParameters) {
+        public MasterM3u8RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/master.m3u8?mediaSourceId={mediaSourceId}{&allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAdaptiveBitrateStreaming*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,enableTrickplay*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="MasterM3u8RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MasterM3u8RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/master.m3u8?mediaSourceId={mediaSourceId}{&allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAdaptiveBitrateStreaming*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", rawUrl) {
+        public MasterM3u8RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/master.m3u8?mediaSourceId={mediaSourceId}{&allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAdaptiveBitrateStreaming*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,enableTrickplay*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", rawUrl) {
         }
         /// <summary>
         /// Gets a video hls playlist stream.
@@ -136,15 +136,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8 {
             [QueryParameter("breakOnNonKeyFrames")]
             public bool? BreakOnNonKeyFrames { get; set; }
             /// <summary>Optional. The MediaBrowser.Model.Dlna.EncodingContext.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("context")]
-            public string? Context { get; set; }
-#nullable restore
-#else
-            [QueryParameter("context")]
-            public string Context { get; set; }
-#endif
+            public GetContextQueryParameterType? Context { get; set; }
             /// <summary>Whether or not to copy timestamps when transcoding with an offset. Defaults to false.</summary>
             [QueryParameter("copyTimestamps")]
             public bool? CopyTimestamps { get; set; }
@@ -165,6 +158,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8 {
             public string DeviceId { get; set; }
 #endif
             /// <summary>Optional. The dlna device profile id to utilize.</summary>
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("deviceProfileId")]
@@ -183,6 +177,9 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8 {
             /// <summary>Optional. Whether to enable the MpegtsM2Ts mode.</summary>
             [QueryParameter("enableMpegtsM2TsMode")]
             public bool? EnableMpegtsM2TsMode { get; set; }
+            /// <summary>Enable trickplay image playlists being added to master playlist.</summary>
+            [QueryParameter("enableTrickplay")]
+            public bool? EnableTrickplay { get; set; }
             /// <summary>Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.</summary>
             [QueryParameter("framerate")]
             public float? Framerate { get; set; }
@@ -319,15 +316,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8 {
             public string SubtitleCodec { get; set; }
 #endif
             /// <summary>Optional. Specify the subtitle delivery method.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("subtitleMethod")]
-            public string? SubtitleMethod { get; set; }
-#nullable restore
-#else
-            [QueryParameter("subtitleMethod")]
-            public string SubtitleMethod { get; set; }
-#endif
+            public GetSubtitleMethodQueryParameterType? SubtitleMethod { get; set; }
             /// <summary>Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.</summary>
             [QueryParameter("subtitleStreamIndex")]
             public int? SubtitleStreamIndex { get; set; }
@@ -410,15 +400,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8 {
             [QueryParameter("breakOnNonKeyFrames")]
             public bool? BreakOnNonKeyFrames { get; set; }
             /// <summary>Optional. The MediaBrowser.Model.Dlna.EncodingContext.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("context")]
-            public string? Context { get; set; }
-#nullable restore
-#else
-            [QueryParameter("context")]
-            public string Context { get; set; }
-#endif
+            public HeadContextQueryParameterType? Context { get; set; }
             /// <summary>Whether or not to copy timestamps when transcoding with an offset. Defaults to false.</summary>
             [QueryParameter("copyTimestamps")]
             public bool? CopyTimestamps { get; set; }
@@ -439,6 +422,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8 {
             public string DeviceId { get; set; }
 #endif
             /// <summary>Optional. The dlna device profile id to utilize.</summary>
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("deviceProfileId")]
@@ -457,6 +441,9 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8 {
             /// <summary>Optional. Whether to enable the MpegtsM2Ts mode.</summary>
             [QueryParameter("enableMpegtsM2TsMode")]
             public bool? EnableMpegtsM2TsMode { get; set; }
+            /// <summary>Enable trickplay image playlists being added to master playlist.</summary>
+            [QueryParameter("enableTrickplay")]
+            public bool? EnableTrickplay { get; set; }
             /// <summary>Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.</summary>
             [QueryParameter("framerate")]
             public float? Framerate { get; set; }
@@ -593,15 +580,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8 {
             public string SubtitleCodec { get; set; }
 #endif
             /// <summary>Optional. Specify the subtitle delivery method.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("subtitleMethod")]
-            public string? SubtitleMethod { get; set; }
-#nullable restore
-#else
-            [QueryParameter("subtitleMethod")]
-            public string SubtitleMethod { get; set; }
-#endif
+            public HeadSubtitleMethodQueryParameterType? SubtitleMethod { get; set; }
             /// <summary>Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.</summary>
             [QueryParameter("subtitleStreamIndex")]
             public int? SubtitleStreamIndex { get; set; }

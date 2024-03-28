@@ -31,7 +31,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The Framerate property</summary>
         public float? Framerate { get; set; }
         /// <summary>The HardwareAccelerationType property</summary>
-        public HardwareEncodingType? HardwareAccelerationType { get; set; }
+        public TranscodingInfo_HardwareAccelerationType? HardwareAccelerationType { get; set; }
         /// <summary>The Height property</summary>
         public int? Height { get; set; }
         /// <summary>The IsAudioDirect property</summary>
@@ -77,7 +77,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"CompletionPercentage", n => { CompletionPercentage = n.GetDoubleValue(); } },
                 {"Container", n => { Container = n.GetStringValue(); } },
                 {"Framerate", n => { Framerate = n.GetFloatValue(); } },
-                {"HardwareAccelerationType", n => { HardwareAccelerationType = n.GetEnumValue<HardwareEncodingType>(); } },
+                {"HardwareAccelerationType", n => { HardwareAccelerationType = n.GetEnumValue<TranscodingInfo_HardwareAccelerationType>(); } },
                 {"Height", n => { Height = n.GetIntValue(); } },
                 {"IsAudioDirect", n => { IsAudioDirect = n.GetBoolValue(); } },
                 {"IsVideoDirect", n => { IsVideoDirect = n.GetBoolValue(); } },
@@ -98,7 +98,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteDoubleValue("CompletionPercentage", CompletionPercentage);
             writer.WriteStringValue("Container", Container);
             writer.WriteFloatValue("Framerate", Framerate);
-            writer.WriteEnumValue<HardwareEncodingType>("HardwareAccelerationType", HardwareAccelerationType);
+            writer.WriteEnumValue<TranscodingInfo_HardwareAccelerationType>("HardwareAccelerationType", HardwareAccelerationType);
             writer.WriteIntValue("Height", Height);
             writer.WriteBoolValue("IsAudioDirect", IsAudioDirect);
             writer.WriteBoolValue("IsVideoDirect", IsVideoDirect);

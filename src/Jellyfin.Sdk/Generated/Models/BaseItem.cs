@@ -51,8 +51,6 @@ namespace Jellyfin.Sdk.Generated.Models {
 #endif
         /// <summary>The Size property</summary>
         public long? Size { get; set; }
-        /// <summary>The SupportsExternalTransfer property</summary>
-        public bool? SupportsExternalTransfer { get; private set; }
         /// <summary>The Width property</summary>
         public int? Width { get; set; }
         /// <summary>
@@ -79,7 +77,6 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"RemoteTrailers", n => { RemoteTrailers = n.GetCollectionOfObjectValues<MediaUrl>(MediaUrl.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"ShortcutPath", n => { ShortcutPath = n.GetStringValue(); } },
                 {"Size", n => { Size = n.GetLongValue(); } },
-                {"SupportsExternalTransfer", n => { SupportsExternalTransfer = n.GetBoolValue(); } },
                 {"Width", n => { Width = n.GetIntValue(); } },
             };
         }

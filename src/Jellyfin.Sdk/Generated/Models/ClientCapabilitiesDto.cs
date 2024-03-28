@@ -17,7 +17,7 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string AppStoreUrl { get; set; }
 #endif
-        /// <summary>A MediaBrowser.Model.Dlna.DeviceProfile represents a set of metadata which determines which content a certain device is able to play.&lt;br /&gt;Specifically, it defines the supported &lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.ContainerProfiles&quot;&gt;containers&lt;/see&gt; and&lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.CodecProfiles&quot;&gt;codecs&lt;/see&gt; (video and/or audio, including codec profiles and levels)the device is able to direct play (without transcoding or remuxing),as well as which &lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.TranscodingProfiles&quot;&gt;containers/codecs to transcode to&lt;/see&gt; in case it isn&apos;t.</summary>
+        /// <summary>Gets or sets the device profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Jellyfin.Sdk.Generated.Models.DeviceProfile? DeviceProfile { get; set; }
@@ -33,21 +33,13 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string IconUrl { get; set; }
 #endif
-        /// <summary>Gets or sets the message callback url.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessageCallbackUrl { get; set; }
-#nullable restore
-#else
-        public string MessageCallbackUrl { get; set; }
-#endif
         /// <summary>Gets or sets the list of playable media types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PlayableMediaTypes { get; set; }
+        public List<MediaType?>? PlayableMediaTypes { get; set; }
 #nullable restore
 #else
-        public List<string> PlayableMediaTypes { get; set; }
+        public List<MediaType?> PlayableMediaTypes { get; set; }
 #endif
         /// <summary>Gets or sets the list of supported commands.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,13 +49,15 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public List<GeneralCommandType?> SupportedCommands { get; set; }
 #endif
-        /// <summary>Gets or sets a value indicating whether session supports content uploading.</summary>
+        /// <summary>The SupportsContentUploading property</summary>
+        [Obsolete("")]
         public bool? SupportsContentUploading { get; set; }
         /// <summary>Gets or sets a value indicating whether session supports media control.</summary>
         public bool? SupportsMediaControl { get; set; }
         /// <summary>Gets or sets a value indicating whether session supports a persistent identifier.</summary>
         public bool? SupportsPersistentIdentifier { get; set; }
-        /// <summary>Gets or sets a value indicating whether session supports sync.</summary>
+        /// <summary>The SupportsSync property</summary>
+        [Obsolete("")]
         public bool? SupportsSync { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -83,8 +77,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"AppStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
                 {"DeviceProfile", n => { DeviceProfile = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.DeviceProfile>(Jellyfin.Sdk.Generated.Models.DeviceProfile.CreateFromDiscriminatorValue); } },
                 {"IconUrl", n => { IconUrl = n.GetStringValue(); } },
-                {"MessageCallbackUrl", n => { MessageCallbackUrl = n.GetStringValue(); } },
-                {"PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfEnumValues<MediaType>()?.ToList(); } },
                 {"SupportedCommands", n => { SupportedCommands = n.GetCollectionOfEnumValues<GeneralCommandType>()?.ToList(); } },
                 {"SupportsContentUploading", n => { SupportsContentUploading = n.GetBoolValue(); } },
                 {"SupportsMediaControl", n => { SupportsMediaControl = n.GetBoolValue(); } },
@@ -101,8 +94,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("AppStoreUrl", AppStoreUrl);
             writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.DeviceProfile>("DeviceProfile", DeviceProfile);
             writer.WriteStringValue("IconUrl", IconUrl);
-            writer.WriteStringValue("MessageCallbackUrl", MessageCallbackUrl);
-            writer.WriteCollectionOfPrimitiveValues<string>("PlayableMediaTypes", PlayableMediaTypes);
+            writer.WriteCollectionOfEnumValues<MediaType>("PlayableMediaTypes", PlayableMediaTypes);
             writer.WriteCollectionOfEnumValues<GeneralCommandType>("SupportedCommands", SupportedCommands);
             writer.WriteBoolValue("SupportsContentUploading", SupportsContentUploading);
             writer.WriteBoolValue("SupportsMediaControl", SupportsMediaControl);

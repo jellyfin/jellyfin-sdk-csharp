@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Shows.NextUp {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NextUpRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/NextUp{?disableFirstEpisode*,enableImageTypes*,enableImages*,enableRewatching*,enableTotalRecordCount*,enableUserData*,fields*,imageTypeLimit*,limit*,nextUpDateCutoff*,parentId*,seriesId*,startIndex*,userId*}", pathParameters) {
+        public NextUpRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/NextUp{?disableFirstEpisode*,enableImageTypes*,enableImages*,enableResumable*,enableRewatching*,enableTotalRecordCount*,enableUserData*,fields*,imageTypeLimit*,limit*,nextUpDateCutoff*,parentId*,seriesId*,startIndex*,userId*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="NextUpRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NextUpRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/NextUp{?disableFirstEpisode*,enableImageTypes*,enableImages*,enableRewatching*,enableTotalRecordCount*,enableUserData*,fields*,imageTypeLimit*,limit*,nextUpDateCutoff*,parentId*,seriesId*,startIndex*,userId*}", rawUrl) {
+        public NextUpRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/NextUp{?disableFirstEpisode*,enableImageTypes*,enableImages*,enableResumable*,enableRewatching*,enableTotalRecordCount*,enableUserData*,fields*,imageTypeLimit*,limit*,nextUpDateCutoff*,parentId*,seriesId*,startIndex*,userId*}", rawUrl) {
         }
         /// <summary>
         /// Gets a list of next up episodes.
@@ -88,7 +88,10 @@ namespace Jellyfin.Sdk.Generated.Shows.NextUp {
             [QueryParameter("enableImageTypes")]
             public ImageType[] EnableImageTypes { get; set; }
 #endif
-            /// <summary>Whether to include watched episode in next up results.</summary>
+            /// <summary>Whether to include resumable episodes in next up results.</summary>
+            [QueryParameter("enableResumable")]
+            public bool? EnableResumable { get; set; }
+            /// <summary>Whether to include watched episodes in next up results.</summary>
             [QueryParameter("enableRewatching")]
             public bool? EnableRewatching { get; set; }
             /// <summary>Whether to enable the total records count. Defaults to true.</summary>
@@ -120,15 +123,8 @@ namespace Jellyfin.Sdk.Generated.Shows.NextUp {
             [QueryParameter("parentId")]
             public Guid? ParentId { get; set; }
             /// <summary>Optional. Filter by series id.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("seriesId")]
-            public string? SeriesId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("seriesId")]
-            public string SeriesId { get; set; }
-#endif
+            public Guid? SeriesId { get; set; }
             /// <summary>Optional. The record index to start at. All items with a lower index will be dropped from the results.</summary>
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }

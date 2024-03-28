@@ -176,15 +176,8 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
             public string ForegroundLayer { get; set; }
 #endif
             /// <summary>Determines the output format of the image - original,gif,jpg,png.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
+            public GetFormatQueryParameterType? Format { get; set; }
             /// <summary>The fixed image height to return.</summary>
             [QueryParameter("height")]
             public int? Height { get; set; }

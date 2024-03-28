@@ -10,7 +10,7 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// </summary>
     public class VirtualFolderInfo : IParsable {
         /// <summary>Gets or sets the type of the collection.</summary>
-        public CollectionTypeOptions? CollectionType { get; set; }
+        public VirtualFolderInfo_CollectionType? CollectionType { get; set; }
         /// <summary>Gets or sets the item identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +76,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"CollectionType", n => { CollectionType = n.GetEnumValue<CollectionTypeOptions>(); } },
+                {"CollectionType", n => { CollectionType = n.GetEnumValue<VirtualFolderInfo_CollectionType>(); } },
                 {"ItemId", n => { ItemId = n.GetStringValue(); } },
                 {"LibraryOptions", n => { LibraryOptions = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.LibraryOptions>(Jellyfin.Sdk.Generated.Models.LibraryOptions.CreateFromDiscriminatorValue); } },
                 {"Locations", n => { Locations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -92,7 +92,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<CollectionTypeOptions>("CollectionType", CollectionType);
+            writer.WriteEnumValue<VirtualFolderInfo_CollectionType>("CollectionType", CollectionType);
             writer.WriteStringValue("ItemId", ItemId);
             writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.LibraryOptions>("LibraryOptions", LibraryOptions);
             writer.WriteCollectionOfPrimitiveValues<string>("Locations", Locations);

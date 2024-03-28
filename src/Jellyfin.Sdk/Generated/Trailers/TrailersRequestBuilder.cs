@@ -82,15 +82,8 @@ namespace Jellyfin.Sdk.Generated.Trailers {
         /// </summary>
         public class TrailersRequestBuilderGetQueryParameters {
             /// <summary>Optional. Return items that are siblings of a supplied item.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("adjacentTo")]
-            public string? AdjacentTo { get; set; }
-#nullable restore
-#else
-            [QueryParameter("adjacentTo")]
-            public string AdjacentTo { get; set; }
-#endif
+            public Guid? AdjacentTo { get; set; }
             /// <summary>Optional. If specified, results will be filtered to include only those containing the specified album artist id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -253,7 +246,7 @@ namespace Jellyfin.Sdk.Generated.Trailers {
             [QueryParameter("genres")]
             public string[] Genres { get; set; }
 #endif
-            /// <summary>Optional filter by items that have an imdb id or not.</summary>
+            /// <summary>Optional filter by items that have an IMDb id or not.</summary>
             [QueryParameter("hasImdbId")]
             public bool? HasImdbId { get; set; }
             /// <summary>Optional filter by items that have official ratings.</summary>
@@ -277,13 +270,13 @@ namespace Jellyfin.Sdk.Generated.Trailers {
             /// <summary>Optional filter by items with theme videos.</summary>
             [QueryParameter("hasThemeVideo")]
             public bool? HasThemeVideo { get; set; }
-            /// <summary>Optional filter by items that have a tmdb id or not.</summary>
+            /// <summary>Optional filter by items that have a TMDb id or not.</summary>
             [QueryParameter("hasTmdbId")]
             public bool? HasTmdbId { get; set; }
             /// <summary>Optional filter by items with trailers.</summary>
             [QueryParameter("hasTrailer")]
             public bool? HasTrailer { get; set; }
-            /// <summary>Optional filter by items that have a tvdb id or not.</summary>
+            /// <summary>Optional filter by items that have a TVDb id or not.</summary>
             [QueryParameter("hasTvdbId")]
             public bool? HasTvdbId { get; set; }
             /// <summary>Optional. If specific items are needed, specify a list of item id&apos;s to retrieve. This allows multiple, comma delimited.</summary>
@@ -387,11 +380,11 @@ namespace Jellyfin.Sdk.Generated.Trailers {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mediaTypes")]
-            public string[]? MediaTypes { get; set; }
+            public MediaType[]? MediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("mediaTypes")]
-            public string[] MediaTypes { get; set; }
+            public MediaType[] MediaTypes { get; set; }
 #endif
             /// <summary>Optional filter by minimum community rating.</summary>
             [QueryParameter("minCommunityRating")]
@@ -527,13 +520,13 @@ namespace Jellyfin.Sdk.Generated.Trailers {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
-            public string[]? SortBy { get; set; }
+            public ItemSortBy[]? SortBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortBy")]
-            public string[] SortBy { get; set; }
+            public ItemSortBy[] SortBy { get; set; }
 #endif
-            /// <summary>Sort Order - Ascending,Descending.</summary>
+            /// <summary>Sort Order - Ascending, Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortOrder")]
@@ -576,7 +569,7 @@ namespace Jellyfin.Sdk.Generated.Trailers {
             [QueryParameter("tags")]
             public string[] Tags { get; set; }
 #endif
-            /// <summary>The user id.</summary>
+            /// <summary>The user id supplied as query parameter; this is required when not using an API key.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }
             /// <summary>Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimited.</summary>

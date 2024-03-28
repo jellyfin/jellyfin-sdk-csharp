@@ -87,6 +87,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public bool? IsActive { get; private set; }
         /// <summary>Gets or sets the last activity date.</summary>
         public DateTimeOffset? LastActivityDate { get; set; }
+        /// <summary>Gets or sets the last paused date.</summary>
+        public DateTimeOffset? LastPausedDate { get; set; }
         /// <summary>Gets or sets the last playback check in.</summary>
         public DateTimeOffset? LastPlaybackCheckIn { get; set; }
         /// <summary>Gets or sets the now playing item.</summary>
@@ -124,10 +126,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets the playable media types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PlayableMediaTypes { get; private set; }
+        public List<MediaType?>? PlayableMediaTypes { get; private set; }
 #nullable restore
 #else
-        public List<string> PlayableMediaTypes { get; private set; }
+        public List<MediaType?> PlayableMediaTypes { get; private set; }
 #endif
         /// <summary>The PlaylistItemId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -226,13 +228,14 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"Id", n => { Id = n.GetStringValue(); } },
                 {"IsActive", n => { IsActive = n.GetBoolValue(); } },
                 {"LastActivityDate", n => { LastActivityDate = n.GetDateTimeOffsetValue(); } },
+                {"LastPausedDate", n => { LastPausedDate = n.GetDateTimeOffsetValue(); } },
                 {"LastPlaybackCheckIn", n => { LastPlaybackCheckIn = n.GetDateTimeOffsetValue(); } },
                 {"NowPlayingItem", n => { NowPlayingItem = n.GetObjectValue<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue); } },
                 {"NowPlayingQueue", n => { NowPlayingQueue = n.GetCollectionOfObjectValues<QueueItem>(QueueItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"NowPlayingQueueFullItems", n => { NowPlayingQueueFullItems = n.GetCollectionOfObjectValues<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"NowViewingItem", n => { NowViewingItem = n.GetObjectValue<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue); } },
                 {"PlayState", n => { PlayState = n.GetObjectValue<PlayerStateInfo>(PlayerStateInfo.CreateFromDiscriminatorValue); } },
-                {"PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfEnumValues<MediaType>()?.ToList(); } },
                 {"PlaylistItemId", n => { PlaylistItemId = n.GetStringValue(); } },
                 {"RemoteEndPoint", n => { RemoteEndPoint = n.GetStringValue(); } },
                 {"ServerId", n => { ServerId = n.GetStringValue(); } },
@@ -262,6 +265,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("HasCustomDeviceName", HasCustomDeviceName);
             writer.WriteStringValue("Id", Id);
             writer.WriteDateTimeOffsetValue("LastActivityDate", LastActivityDate);
+            writer.WriteDateTimeOffsetValue("LastPausedDate", LastPausedDate);
             writer.WriteDateTimeOffsetValue("LastPlaybackCheckIn", LastPlaybackCheckIn);
             writer.WriteObjectValue<BaseItemDto>("NowPlayingItem", NowPlayingItem);
             writer.WriteCollectionOfObjectValues<QueueItem>("NowPlayingQueue", NowPlayingQueue);

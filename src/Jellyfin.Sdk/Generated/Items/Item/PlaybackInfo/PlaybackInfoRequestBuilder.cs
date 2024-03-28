@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\PlaybackInfo
+    /// Builds and executes requests for operations under \Items\{itemId}\PlaybackInfo
     /// </summary>
     public class PlaybackInfoRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PlaybackInfoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/PlaybackInfo?userId={userId}", pathParameters) {
+        public PlaybackInfoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/PlaybackInfo{?userId*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="PlaybackInfoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PlaybackInfoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/PlaybackInfo?userId={userId}", rawUrl) {
+        public PlaybackInfoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/PlaybackInfo{?userId*}", rawUrl) {
         }
         /// <summary>
         /// Gets live playback media info for an item.
@@ -92,7 +92,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo {
         public RequestInformation ToPostRequestInformation(PlaybackInfoDto body, Action<RequestConfiguration<PlaybackInfoRequestBuilderPostQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Items/{id%2Did}/PlaybackInfo{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioStreamIndex*,autoOpenLiveStream*,enableDirectPlay*,enableDirectStream*,enableTranscoding*,liveStreamId*,maxAudioChannels*,maxStreamingBitrate*,mediaSourceId*,startTimeTicks*,subtitleStreamIndex*,userId*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Items/{itemId}/PlaybackInfo{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioStreamIndex*,autoOpenLiveStream*,enableDirectPlay*,enableDirectStream*,enableTranscoding*,liveStreamId*,maxAudioChannels*,maxStreamingBitrate*,mediaSourceId*,startTimeTicks*,subtitleStreamIndex*,userId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

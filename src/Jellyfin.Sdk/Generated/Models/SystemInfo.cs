@@ -18,9 +18,19 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string CachePath { get; set; }
 #endif
         /// <summary>The CanLaunchWebBrowser property</summary>
+        [Obsolete("")]
         public bool? CanLaunchWebBrowser { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance can self restart.</summary>
+        [Obsolete("")]
         public bool? CanSelfRestart { get; set; }
+        /// <summary>Gets or sets the list of cast receiver applications.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CastReceiverApplication>? CastReceiverApplications { get; set; }
+#nullable restore
+#else
+        public List<CastReceiverApplication> CastReceiverApplications { get; set; }
+#endif
         /// <summary>Gets or sets the completed installations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,9 +39,15 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public List<InstallationInfo> CompletedInstallations { get; set; }
 #endif
-        /// <summary>Enum describing the location of the FFmpeg tool.</summary>
+        /// <summary>The EncoderLocation property</summary>
         [Obsolete("")]
-        public FFmpegLocation? EncoderLocation { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EncoderLocation { get; set; }
+#nullable restore
+#else
+        public string EncoderLocation { get; set; }
+#endif
         /// <summary>Gets or sets a value indicating whether this instance has pending restart.</summary>
         public bool? HasPendingRestart { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance has update available.</summary>
@@ -80,6 +96,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string LogPath { get; set; }
 #endif
         /// <summary>Gets or sets the operating system.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatingSystem { get; set; }
@@ -88,6 +105,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string OperatingSystem { get; set; }
 #endif
         /// <summary>Gets or sets the display name of the operating system.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatingSystemDisplayName { get; set; }
@@ -132,7 +150,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets a value indicating whether [supports library monitor].</summary>
         public bool? SupportsLibraryMonitor { get; set; }
         /// <summary>The SystemArchitecture property</summary>
-        public Architecture? SystemArchitecture { get; set; }
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SystemArchitecture { get; set; }
+#nullable restore
+#else
+        public string SystemArchitecture { get; set; }
+#endif
         /// <summary>Gets or sets the transcode path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,6 +185,13 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the web socket port number.</summary>
         public int? WebSocketPortNumber { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="SystemInfo"/> and sets the default values.
+        /// </summary>
+        public SystemInfo() {
+            EncoderLocation = "System";
+            SystemArchitecture = "X64";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="SystemInfo"/></returns>
@@ -177,8 +209,9 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"CachePath", n => { CachePath = n.GetStringValue(); } },
                 {"CanLaunchWebBrowser", n => { CanLaunchWebBrowser = n.GetBoolValue(); } },
                 {"CanSelfRestart", n => { CanSelfRestart = n.GetBoolValue(); } },
+                {"CastReceiverApplications", n => { CastReceiverApplications = n.GetCollectionOfObjectValues<CastReceiverApplication>(CastReceiverApplication.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"CompletedInstallations", n => { CompletedInstallations = n.GetCollectionOfObjectValues<InstallationInfo>(InstallationInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"EncoderLocation", n => { EncoderLocation = n.GetEnumValue<FFmpegLocation>(); } },
+                {"EncoderLocation", n => { EncoderLocation = n.GetStringValue(); } },
                 {"HasPendingRestart", n => { HasPendingRestart = n.GetBoolValue(); } },
                 {"HasUpdateAvailable", n => { HasUpdateAvailable = n.GetBoolValue(); } },
                 {"Id", n => { Id = n.GetStringValue(); } },
@@ -195,7 +228,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"ServerName", n => { ServerName = n.GetStringValue(); } },
                 {"StartupWizardCompleted", n => { StartupWizardCompleted = n.GetBoolValue(); } },
                 {"SupportsLibraryMonitor", n => { SupportsLibraryMonitor = n.GetBoolValue(); } },
-                {"SystemArchitecture", n => { SystemArchitecture = n.GetEnumValue<Architecture>(); } },
+                {"SystemArchitecture", n => { SystemArchitecture = n.GetStringValue(); } },
                 {"TranscodingTempPath", n => { TranscodingTempPath = n.GetStringValue(); } },
                 {"Version", n => { Version = n.GetStringValue(); } },
                 {"WebPath", n => { WebPath = n.GetStringValue(); } },
@@ -211,8 +244,9 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("CachePath", CachePath);
             writer.WriteBoolValue("CanLaunchWebBrowser", CanLaunchWebBrowser);
             writer.WriteBoolValue("CanSelfRestart", CanSelfRestart);
+            writer.WriteCollectionOfObjectValues<CastReceiverApplication>("CastReceiverApplications", CastReceiverApplications);
             writer.WriteCollectionOfObjectValues<InstallationInfo>("CompletedInstallations", CompletedInstallations);
-            writer.WriteEnumValue<FFmpegLocation>("EncoderLocation", EncoderLocation);
+            writer.WriteStringValue("EncoderLocation", EncoderLocation);
             writer.WriteBoolValue("HasPendingRestart", HasPendingRestart);
             writer.WriteBoolValue("HasUpdateAvailable", HasUpdateAvailable);
             writer.WriteStringValue("Id", Id);
@@ -229,7 +263,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("ServerName", ServerName);
             writer.WriteBoolValue("StartupWizardCompleted", StartupWizardCompleted);
             writer.WriteBoolValue("SupportsLibraryMonitor", SupportsLibraryMonitor);
-            writer.WriteEnumValue<Architecture>("SystemArchitecture", SystemArchitecture);
+            writer.WriteStringValue("SystemArchitecture", SystemArchitecture);
             writer.WriteStringValue("TranscodingTempPath", TranscodingTempPath);
             writer.WriteStringValue("Version", Version);
             writer.WriteStringValue("WebPath", WebPath);

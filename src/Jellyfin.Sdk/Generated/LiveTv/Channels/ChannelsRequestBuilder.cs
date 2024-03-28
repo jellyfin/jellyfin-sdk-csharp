@@ -147,35 +147,21 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Channels {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
-            public string[]? SortBy { get; set; }
+            public ItemSortBy[]? SortBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortBy")]
-            public string[] SortBy { get; set; }
+            public ItemSortBy[] SortBy { get; set; }
 #endif
             /// <summary>Optional. Sort order.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sortOrder")]
-            public string? SortOrder { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sortOrder")]
-            public string SortOrder { get; set; }
-#endif
+            public GetSortOrderQueryParameterType? SortOrder { get; set; }
             /// <summary>Optional. The record index to start at. All items with a lower index will be dropped from the results.</summary>
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }
             /// <summary>Optional. Filter by channel type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public GetTypeQueryParameterType? Type { get; set; }
             /// <summary>Optional. Filter by user and attach user data.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }
