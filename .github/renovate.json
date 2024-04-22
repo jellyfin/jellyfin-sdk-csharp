@@ -2,5 +2,18 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>jellyfin/.github//renovate-presets/dotnet"
+  ],
+  "ignorePaths": [
+    "src/global.json"
+  ],
+  "packageRules": [
+    {
+      "description": "Group Microsoft dependencies",
+      "groupName": "Microsoft",
+      "matchPackagePrefixes": [
+        "System.",
+        "Microsoft."
+      ]
+    }
   ]
 }
