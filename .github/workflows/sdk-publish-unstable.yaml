@@ -53,11 +53,11 @@ jobs:
 
       - name: Build packages
         run: |
-          dotnet build -c Release Jellyfin.Sdk -o artifacts
+          dotnet build -c Release Jellyfin.Sdk
 
       - name: Publish to nuget
         run: |
-          dotnet nuget push artifacts/*.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push artifacts/package/release/*.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
 
       - name: Commit new changes to the repo
         run: |
