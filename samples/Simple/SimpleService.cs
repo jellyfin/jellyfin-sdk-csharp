@@ -101,15 +101,15 @@ public class SimpleService : IDisposable
         }
         while (!validUser);
 
-        await PrintViews(userDto.Id.Value)
+        await PrintViews()
             .ConfigureAwait(false);
     }
 
-    private async Task PrintViews(Guid userId)
+    private async Task PrintViews()
     {
         try
         {
-            var views = await _jellyfinApiClient.Users[userId].Views.GetAsync()
+            var views = await _jellyfinApiClient.UserViews.GetAsync()
                 .ConfigureAwait(false);
             Console.WriteLine("Printing Views:");
             foreach (var view in views.Items)
