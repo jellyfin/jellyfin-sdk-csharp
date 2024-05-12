@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Library option info dto.
     /// </summary>
-    public class LibraryOptionInfoDto : IParsable {
+    public class LibraryOptionInfoDto : IParsable 
+    {
         /// <summary>Gets or sets a value indicating whether default enabled.</summary>
         public bool? DefaultEnabled { get; set; }
         /// <summary>Gets or sets name.</summary>
@@ -24,7 +25,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="LibraryOptionInfoDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LibraryOptionInfoDto CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static LibraryOptionInfoDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new LibraryOptionInfoDto();
         }
@@ -32,8 +34,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"DefaultEnabled", n => { DefaultEnabled = n.GetBoolValue(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
             };
@@ -42,7 +46,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("DefaultEnabled", DefaultEnabled);
             writer.WriteStringValue("Name", Name);

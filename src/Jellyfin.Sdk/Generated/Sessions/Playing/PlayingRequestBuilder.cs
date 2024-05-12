@@ -15,32 +15,38 @@ namespace Jellyfin.Sdk.Generated.Sessions.Playing {
     /// <summary>
     /// Builds and executes requests for operations under \Sessions\Playing
     /// </summary>
-    public class PlayingRequestBuilder : BaseRequestBuilder {
+    public class PlayingRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Ping property</summary>
-        public PingRequestBuilder Ping { get =>
-            new PingRequestBuilder(PathParameters, RequestAdapter);
+        public PingRequestBuilder Ping
+        {
+            get => new PingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Progress property</summary>
-        public ProgressRequestBuilder Progress { get =>
-            new ProgressRequestBuilder(PathParameters, RequestAdapter);
+        public ProgressRequestBuilder Progress
+        {
+            get => new ProgressRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Stopped property</summary>
-        public StoppedRequestBuilder Stopped { get =>
-            new StoppedRequestBuilder(PathParameters, RequestAdapter);
+        public StoppedRequestBuilder Stopped
+        {
+            get => new StoppedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="PlayingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PlayingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Playing", pathParameters) {
+        public PlayingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Playing", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="PlayingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PlayingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Playing", rawUrl) {
+        public PlayingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Playing", rawUrl)
+        {
         }
         /// <summary>
         /// Reports playback has started within a session.
@@ -50,10 +56,12 @@ namespace Jellyfin.Sdk.Generated.Sessions.Playing {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(PlaybackStartInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(PlaybackStartInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(PlaybackStartInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(PlaybackStartInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -67,10 +75,12 @@ namespace Jellyfin.Sdk.Generated.Sessions.Playing {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(PlaybackStartInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(PlaybackStartInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(PlaybackStartInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(PlaybackStartInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -83,7 +93,8 @@ namespace Jellyfin.Sdk.Generated.Sessions.Playing {
         /// </summary>
         /// <returns>A <see cref="PlayingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PlayingRequestBuilder WithUrl(string rawUrl) {
+        public PlayingRequestBuilder WithUrl(string rawUrl)
+        {
             return new PlayingRequestBuilder(rawUrl, RequestAdapter);
         }
     }

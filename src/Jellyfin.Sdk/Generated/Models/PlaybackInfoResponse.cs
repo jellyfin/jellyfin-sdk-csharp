@@ -8,9 +8,10 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Class PlaybackInfoResponse.
     /// </summary>
-    public class PlaybackInfoResponse : IParsable {
+    public class PlaybackInfoResponse : IParsable 
+    {
         /// <summary>Gets or sets the error code.</summary>
-        public PlaybackErrorCode? ErrorCode { get; set; }
+        public PlaybackInfoResponse_ErrorCode? ErrorCode { get; set; }
         /// <summary>Gets or sets the media sources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,7 +33,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="PlaybackInfoResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlaybackInfoResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static PlaybackInfoResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new PlaybackInfoResponse();
         }
@@ -40,9 +42,11 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
-                {"ErrorCode", n => { ErrorCode = n.GetEnumValue<PlaybackErrorCode>(); } },
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
+                {"ErrorCode", n => { ErrorCode = n.GetEnumValue<PlaybackInfoResponse_ErrorCode>(); } },
                 {"MediaSources", n => { MediaSources = n.GetCollectionOfObjectValues<MediaSourceInfo>(MediaSourceInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"PlaySessionId", n => { PlaySessionId = n.GetStringValue(); } },
             };
@@ -51,9 +55,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<PlaybackErrorCode>("ErrorCode", ErrorCode);
+            writer.WriteEnumValue<PlaybackInfoResponse_ErrorCode>("ErrorCode", ErrorCode);
             writer.WriteCollectionOfObjectValues<MediaSourceInfo>("MediaSources", MediaSources);
             writer.WriteStringValue("PlaySessionId", PlaySessionId);
         }

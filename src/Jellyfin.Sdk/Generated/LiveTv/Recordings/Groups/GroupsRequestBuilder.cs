@@ -13,29 +13,36 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings.Groups {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\Recordings\Groups
     /// </summary>
-    public class GroupsRequestBuilder : BaseRequestBuilder {
+    public class GroupsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.LiveTv.Recordings.Groups.item collection</summary>
         /// <param name="position">Group id.</param>
         /// <returns>A <see cref="WithGroupItemRequestBuilder"/></returns>
         [Obsolete("")]
-        public WithGroupItemRequestBuilder this[Guid position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("groupId", position);
-            return new WithGroupItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithGroupItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("groupId", position);
+                return new WithGroupItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="GroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Recordings/Groups{?userId*}", pathParameters) {
+        public GroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Recordings/Groups{?userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Recordings/Groups{?userId*}", rawUrl) {
+        public GroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Recordings/Groups{?userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets live tv recording groups.
@@ -46,10 +53,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings.Groups {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -62,10 +71,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings.Groups {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -78,13 +89,15 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings.Groups {
         /// <returns>A <see cref="GroupsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public GroupsRequestBuilder WithUrl(string rawUrl) {
+        public GroupsRequestBuilder WithUrl(string rawUrl)
+        {
             return new GroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets live tv recording groups.
         /// </summary>
-        public class GroupsRequestBuilderGetQueryParameters {
+        public class GroupsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Filter by user and attach user data.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

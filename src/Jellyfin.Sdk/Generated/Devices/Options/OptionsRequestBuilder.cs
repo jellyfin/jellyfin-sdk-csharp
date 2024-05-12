@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
     /// <summary>
     /// Builds and executes requests for operations under \Devices\Options
     /// </summary>
-    public class OptionsRequestBuilder : BaseRequestBuilder {
+    public class OptionsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="OptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices/Options?id={id}", pathParameters) {
+        public OptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices/Options?id={id}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="OptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices/Options?id={id}", rawUrl) {
+        public OptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices/Options?id={id}", rawUrl)
+        {
         }
         /// <summary>
         /// Get options for a device.
@@ -36,13 +39,16 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceOptions?> GetAsync(Action<RequestConfiguration<OptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceOptions?> GetAsync(Action<RequestConfiguration<OptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DeviceOptions> GetAsync(Action<RequestConfiguration<OptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceOptions> GetAsync(Action<RequestConfiguration<OptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceOptions>(requestInfo, DeviceOptions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(DeviceOptionsDto body, Action<RequestConfiguration<OptionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(DeviceOptionsDto body, Action<RequestConfiguration<OptionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(DeviceOptionsDto body, Action<RequestConfiguration<OptionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(DeviceOptionsDto body, Action<RequestConfiguration<OptionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -71,10 +79,12 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OptionsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OptionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -89,10 +99,12 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeviceOptionsDto body, Action<RequestConfiguration<OptionsRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(DeviceOptionsDto body, Action<RequestConfiguration<OptionsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeviceOptionsDto body, Action<RequestConfiguration<OptionsRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(DeviceOptionsDto body, Action<RequestConfiguration<OptionsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -105,13 +117,15 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
         /// </summary>
         /// <returns>A <see cref="OptionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OptionsRequestBuilder WithUrl(string rawUrl) {
+        public OptionsRequestBuilder WithUrl(string rawUrl)
+        {
             return new OptionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get options for a device.
         /// </summary>
-        public class OptionsRequestBuilderGetQueryParameters {
+        public class OptionsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Device Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,7 +140,8 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
         /// <summary>
         /// Update device options.
         /// </summary>
-        public class OptionsRequestBuilderPostQueryParameters {
+        public class OptionsRequestBuilderPostQueryParameters 
+        {
             /// <summary>Device Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

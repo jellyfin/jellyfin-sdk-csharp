@@ -11,20 +11,23 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.ParentPath {
     /// <summary>
     /// Builds and executes requests for operations under \Environment\ParentPath
     /// </summary>
-    public class ParentPathRequestBuilder : BaseRequestBuilder {
+    public class ParentPathRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ParentPathRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ParentPathRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Environment/ParentPath?path={path}", pathParameters) {
+        public ParentPathRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Environment/ParentPath?path={path}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ParentPathRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ParentPathRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Environment/ParentPath?path={path}", rawUrl) {
+        public ParentPathRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Environment/ParentPath?path={path}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets the parent path of a given path.
@@ -34,10 +37,12 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.ParentPath {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<string?> GetAsync(Action<RequestConfiguration<ParentPathRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<string?> GetAsync(Action<RequestConfiguration<ParentPathRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<string> GetAsync(Action<RequestConfiguration<ParentPathRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<string> GetAsync(Action<RequestConfiguration<ParentPathRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -49,10 +54,12 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.ParentPath {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ParentPathRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ParentPathRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ParentPathRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ParentPathRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -64,13 +71,15 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.ParentPath {
         /// </summary>
         /// <returns>A <see cref="ParentPathRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ParentPathRequestBuilder WithUrl(string rawUrl) {
+        public ParentPathRequestBuilder WithUrl(string rawUrl)
+        {
             return new ParentPathRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets the parent path of a given path.
         /// </summary>
-        public class ParentPathRequestBuilderGetQueryParameters {
+        public class ParentPathRequestBuilderGetQueryParameters 
+        {
             /// <summary>The path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

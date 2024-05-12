@@ -14,33 +14,41 @@ namespace Jellyfin.Sdk.Generated.MusicGenres {
     /// <summary>
     /// Builds and executes requests for operations under \MusicGenres
     /// </summary>
-    public class MusicGenresRequestBuilder : BaseRequestBuilder {
+    public class MusicGenresRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The InstantMix property</summary>
         [Obsolete("")]
-        public InstantMixRequestBuilder InstantMix { get =>
-            new InstantMixRequestBuilder(PathParameters, RequestAdapter);
+        public InstantMixRequestBuilder InstantMix
+        {
+            get => new InstantMixRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.MusicGenres.item collection</summary>
         /// <param name="position">The genre name.</param>
         /// <returns>A <see cref="GenreNameItemRequestBuilder"/></returns>
-        public GenreNameItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("genreName%2Did", position);
-            return new GenreNameItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public GenreNameItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("genreName%2Did", position);
+                return new GenreNameItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="MusicGenresRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MusicGenresRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/MusicGenres{?enableImageTypes*,enableImages*,enableTotalRecordCount*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,searchTerm*,sortBy*,sortOrder*,startIndex*,userId*}", pathParameters) {
+        public MusicGenresRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/MusicGenres{?enableImageTypes*,enableImages*,enableTotalRecordCount*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,searchTerm*,sortBy*,sortOrder*,startIndex*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MusicGenresRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MusicGenresRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/MusicGenres{?enableImageTypes*,enableImages*,enableTotalRecordCount*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,searchTerm*,sortBy*,sortOrder*,startIndex*,userId*}", rawUrl) {
+        public MusicGenresRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/MusicGenres{?enableImageTypes*,enableImages*,enableTotalRecordCount*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,searchTerm*,sortBy*,sortOrder*,startIndex*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets all music genres from a given item, folder, or the entire library.
@@ -51,10 +59,12 @@ namespace Jellyfin.Sdk.Generated.MusicGenres {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<MusicGenresRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<MusicGenresRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<MusicGenresRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<MusicGenresRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -67,10 +77,12 @@ namespace Jellyfin.Sdk.Generated.MusicGenres {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MusicGenresRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MusicGenresRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MusicGenresRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MusicGenresRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -83,13 +95,15 @@ namespace Jellyfin.Sdk.Generated.MusicGenres {
         /// <returns>A <see cref="MusicGenresRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public MusicGenresRequestBuilder WithUrl(string rawUrl) {
+        public MusicGenresRequestBuilder WithUrl(string rawUrl)
+        {
             return new MusicGenresRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets all music genres from a given item, folder, or the entire library.
         /// </summary>
-        public class MusicGenresRequestBuilderGetQueryParameters {
+        public class MusicGenresRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional, include image information in output.</summary>
             [QueryParameter("enableImages")]
             public bool? EnableImages { get; set; }
@@ -192,11 +206,11 @@ namespace Jellyfin.Sdk.Generated.MusicGenres {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
-            public string[]? SortBy { get; set; }
+            public ItemSortBy[]? SortBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortBy")]
-            public string[] SortBy { get; set; }
+            public ItemSortBy[] SortBy { get; set; }
 #endif
             /// <summary>Sort Order - Ascending,Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

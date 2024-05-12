@@ -5,7 +5,10 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public class TimerInfoDto : IParsable {
+    #pragma warning disable CS1591
+    public class TimerInfoDto : IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>Gets or sets the channel id of the recording.</summary>
         public Guid? ChannelId { get; set; }
         /// <summary>Gets or sets the channel name of the recording.</summary>
@@ -71,7 +74,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets a value indicating whether this instance is pre padding required.</summary>
         public bool? IsPrePaddingRequired { get; set; }
         /// <summary>The KeepUntil property</summary>
-        public Jellyfin.Sdk.Generated.Models.KeepUntil? KeepUntil { get; set; }
+        public TimerInfoDto_KeepUntil? KeepUntil { get; set; }
         /// <summary>Gets or sets the name of the recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,7 +158,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the start date of the recording, in UTC.</summary>
         public DateTimeOffset? StartDate { get; set; }
         /// <summary>Gets or sets the status.</summary>
-        public RecordingStatus? Status { get; set; }
+        public TimerInfoDto_Status? Status { get; set; }
         /// <summary>The Type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,7 +172,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="TimerInfoDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TimerInfoDto CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static TimerInfoDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new TimerInfoDto();
         }
@@ -177,8 +181,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"ChannelId", n => { ChannelId = n.GetGuidValue(); } },
                 {"ChannelName", n => { ChannelName = n.GetStringValue(); } },
                 {"ChannelPrimaryImageTag", n => { ChannelPrimaryImageTag = n.GetStringValue(); } },
@@ -190,7 +196,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"Id", n => { Id = n.GetStringValue(); } },
                 {"IsPostPaddingRequired", n => { IsPostPaddingRequired = n.GetBoolValue(); } },
                 {"IsPrePaddingRequired", n => { IsPrePaddingRequired = n.GetBoolValue(); } },
-                {"KeepUntil", n => { KeepUntil = n.GetEnumValue<KeepUntil>(); } },
+                {"KeepUntil", n => { KeepUntil = n.GetEnumValue<TimerInfoDto_KeepUntil>(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
                 {"Overview", n => { Overview = n.GetStringValue(); } },
                 {"ParentBackdropImageTags", n => { ParentBackdropImageTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -205,7 +211,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"ServerId", n => { ServerId = n.GetStringValue(); } },
                 {"ServiceName", n => { ServiceName = n.GetStringValue(); } },
                 {"StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                {"Status", n => { Status = n.GetEnumValue<RecordingStatus>(); } },
+                {"Status", n => { Status = n.GetEnumValue<TimerInfoDto_Status>(); } },
                 {"Type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -213,7 +219,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("ChannelId", ChannelId);
             writer.WriteStringValue("ChannelName", ChannelName);
@@ -226,7 +233,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("Id", Id);
             writer.WriteBoolValue("IsPostPaddingRequired", IsPostPaddingRequired);
             writer.WriteBoolValue("IsPrePaddingRequired", IsPrePaddingRequired);
-            writer.WriteEnumValue<KeepUntil>("KeepUntil", KeepUntil);
+            writer.WriteEnumValue<TimerInfoDto_KeepUntil>("KeepUntil", KeepUntil);
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("Overview", Overview);
             writer.WriteCollectionOfPrimitiveValues<string>("ParentBackdropImageTags", ParentBackdropImageTags);
@@ -241,7 +248,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("ServerId", ServerId);
             writer.WriteStringValue("ServiceName", ServiceName);
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteEnumValue<RecordingStatus>("Status", Status);
+            writer.WriteEnumValue<TimerInfoDto_Status>("Status", Status);
             writer.WriteStringValue("Type", Type);
         }
     }

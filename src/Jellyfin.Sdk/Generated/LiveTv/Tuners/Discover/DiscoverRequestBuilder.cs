@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Tuners.Discover {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\Tuners\Discover
     /// </summary>
-    public class DiscoverRequestBuilder : BaseRequestBuilder {
+    public class DiscoverRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="DiscoverRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DiscoverRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Tuners/Discover{?newDevicesOnly*}", pathParameters) {
+        public DiscoverRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Tuners/Discover{?newDevicesOnly*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DiscoverRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DiscoverRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Tuners/Discover{?newDevicesOnly*}", rawUrl) {
+        public DiscoverRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Tuners/Discover{?newDevicesOnly*}", rawUrl)
+        {
         }
         /// <summary>
         /// Discover tuners.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Tuners.Discover {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<TunerHostInfo>?> GetAsync(Action<RequestConfiguration<DiscoverRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<TunerHostInfo>?> GetAsync(Action<RequestConfiguration<DiscoverRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<TunerHostInfo>> GetAsync(Action<RequestConfiguration<DiscoverRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<TunerHostInfo>> GetAsync(Action<RequestConfiguration<DiscoverRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<TunerHostInfo>(requestInfo, TunerHostInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +56,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Tuners.Discover {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DiscoverRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DiscoverRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DiscoverRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DiscoverRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -66,13 +73,15 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Tuners.Discover {
         /// </summary>
         /// <returns>A <see cref="DiscoverRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DiscoverRequestBuilder WithUrl(string rawUrl) {
+        public DiscoverRequestBuilder WithUrl(string rawUrl)
+        {
             return new DiscoverRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Discover tuners.
         /// </summary>
-        public class DiscoverRequestBuilderGetQueryParameters {
+        public class DiscoverRequestBuilderGetQueryParameters 
+        {
             /// <summary>Only discover new tuners.</summary>
             [QueryParameter("newDevicesOnly")]
             public bool? NewDevicesOnly { get; set; }

@@ -10,22 +10,25 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Shows.Item.Seasons {
     /// <summary>
-    /// Builds and executes requests for operations under \Shows\{itemId-id}\Seasons
+    /// Builds and executes requests for operations under \Shows\{item-id}\Seasons
     /// </summary>
-    public class SeasonsRequestBuilder : BaseRequestBuilder {
+    public class SeasonsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="SeasonsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SeasonsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/{itemId%2Did}/Seasons{?adjacentTo*,enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,isMissing*,isSpecialSeason*,userId*}", pathParameters) {
+        public SeasonsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/{item%2Did}/Seasons{?adjacentTo*,enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,isMissing*,isSpecialSeason*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SeasonsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SeasonsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/{itemId%2Did}/Seasons{?adjacentTo*,enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,isMissing*,isSpecialSeason*,userId*}", rawUrl) {
+        public SeasonsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/{item%2Did}/Seasons{?adjacentTo*,enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,isMissing*,isSpecialSeason*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets seasons for a tv series.
@@ -36,13 +39,16 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Seasons {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<SeasonsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<SeasonsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<SeasonsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<SeasonsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -54,10 +60,12 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Seasons {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeasonsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeasonsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeasonsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeasonsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -69,23 +77,18 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Seasons {
         /// </summary>
         /// <returns>A <see cref="SeasonsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SeasonsRequestBuilder WithUrl(string rawUrl) {
+        public SeasonsRequestBuilder WithUrl(string rawUrl)
+        {
             return new SeasonsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets seasons for a tv series.
         /// </summary>
-        public class SeasonsRequestBuilderGetQueryParameters {
+        public class SeasonsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Return items that are siblings of a supplied item.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("adjacentTo")]
-            public string? AdjacentTo { get; set; }
-#nullable restore
-#else
-            [QueryParameter("adjacentTo")]
-            public string AdjacentTo { get; set; }
-#endif
+            public Guid? AdjacentTo { get; set; }
             /// <summary>Optional. Include image information in output.</summary>
             [QueryParameter("enableImages")]
             public bool? EnableImages { get; set; }

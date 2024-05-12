@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Initiate {
     /// <summary>
     /// Builds and executes requests for operations under \QuickConnect\Initiate
     /// </summary>
-    public class InitiateRequestBuilder : BaseRequestBuilder {
+    public class InitiateRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="InitiateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InitiateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Initiate", pathParameters) {
+        public InitiateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Initiate", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="InitiateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InitiateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Initiate", rawUrl) {
+        public InitiateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Initiate", rawUrl)
+        {
         }
         /// <summary>
         /// Initiate a new quick connect request.
@@ -35,12 +38,14 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Initiate {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<QuickConnectResult?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<QuickConnectResult?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<QuickConnectResult> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<QuickConnectResult> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var requestInfo = ToPostRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<QuickConnectResult>(requestInfo, QuickConnectResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
@@ -50,12 +55,14 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Initiate {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             return requestInfo;
@@ -65,7 +72,8 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Initiate {
         /// </summary>
         /// <returns>A <see cref="InitiateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public InitiateRequestBuilder WithUrl(string rawUrl) {
+        public InitiateRequestBuilder WithUrl(string rawUrl)
+        {
             return new InitiateRequestBuilder(rawUrl, RequestAdapter);
         }
     }

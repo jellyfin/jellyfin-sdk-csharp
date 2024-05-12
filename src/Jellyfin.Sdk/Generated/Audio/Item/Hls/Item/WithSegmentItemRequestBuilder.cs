@@ -11,28 +11,33 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item {
     /// <summary>
     /// Builds and executes requests for operations under \Audio\{itemId}\hls\{segmentId}
     /// </summary>
-    public class WithSegmentItemRequestBuilder : BaseRequestBuilder {
+    public class WithSegmentItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The streamAac property</summary>
-        public StreamAacRequestBuilder StreamAac { get =>
-            new StreamAacRequestBuilder(PathParameters, RequestAdapter);
+        public StreamAacRequestBuilder StreamAac
+        {
+            get => new StreamAacRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The streamMp3 property</summary>
-        public StreamMp3RequestBuilder StreamMp3 { get =>
-            new StreamMp3RequestBuilder(PathParameters, RequestAdapter);
+        public StreamMp3RequestBuilder StreamMp3
+        {
+            get => new StreamMp3RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithSegmentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSegmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls/{segmentId}", pathParameters) {
+        public WithSegmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls/{segmentId}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithSegmentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSegmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls/{segmentId}", rawUrl) {
+        public WithSegmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls/{segmentId}", rawUrl)
+        {
         }
     }
 }

@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Items.Filters2 {
     /// <summary>
     /// Builds and executes requests for operations under \Items\Filters2
     /// </summary>
-    public class Filters2RequestBuilder : BaseRequestBuilder {
+    public class Filters2RequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="Filters2RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Filters2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/Filters2{?includeItemTypes*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,parentId*,recursive*,userId*}", pathParameters) {
+        public Filters2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/Filters2{?includeItemTypes*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,parentId*,recursive*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="Filters2RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Filters2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/Filters2{?includeItemTypes*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,parentId*,recursive*,userId*}", rawUrl) {
+        public Filters2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/Filters2{?includeItemTypes*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,parentId*,recursive*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets query filters.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.Items.Filters2 {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<QueryFilters?> GetAsync(Action<RequestConfiguration<Filters2RequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<QueryFilters?> GetAsync(Action<RequestConfiguration<Filters2RequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<QueryFilters> GetAsync(Action<RequestConfiguration<Filters2RequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<QueryFilters> GetAsync(Action<RequestConfiguration<Filters2RequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<QueryFilters>(requestInfo, QueryFilters.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -50,10 +55,12 @@ namespace Jellyfin.Sdk.Generated.Items.Filters2 {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Filters2RequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Filters2RequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Filters2RequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Filters2RequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -65,13 +72,15 @@ namespace Jellyfin.Sdk.Generated.Items.Filters2 {
         /// </summary>
         /// <returns>A <see cref="Filters2RequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Filters2RequestBuilder WithUrl(string rawUrl) {
+        public Filters2RequestBuilder WithUrl(string rawUrl)
+        {
             return new Filters2RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets query filters.
         /// </summary>
-        public class Filters2RequestBuilderGetQueryParameters {
+        public class Filters2RequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -2,20 +2,37 @@
 using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public enum DayOfWeekObject {
+    #pragma warning disable CS1591
+    public enum DayOfWeekObject
+    #pragma warning restore CS1591
+    {
         [EnumMember(Value = "Sunday")]
+        #pragma warning disable CS1591
         Sunday,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Monday")]
+        #pragma warning disable CS1591
         Monday,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Tuesday")]
+        #pragma warning disable CS1591
         Tuesday,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Wednesday")]
+        #pragma warning disable CS1591
         Wednesday,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Thursday")]
+        #pragma warning disable CS1591
         Thursday,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Friday")]
+        #pragma warning disable CS1591
         Friday,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Saturday")]
+        #pragma warning disable CS1591
         Saturday,
+        #pragma warning restore CS1591
     }
 }

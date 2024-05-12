@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Name {
     /// <summary>
     /// Builds and executes requests for operations under \Library\VirtualFolders\Name
     /// </summary>
-    public class NameRequestBuilder : BaseRequestBuilder {
+    public class NameRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="NameRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/VirtualFolders/Name{?name*,newName*,refreshLibrary*}", pathParameters) {
+        public NameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/VirtualFolders/Name{?name*,newName*,refreshLibrary*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="NameRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/VirtualFolders/Name{?name*,newName*,refreshLibrary*}", rawUrl) {
+        public NameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/VirtualFolders/Name{?name*,newName*,refreshLibrary*}", rawUrl)
+        {
         }
         /// <summary>
         /// Renames a virtual folder.
@@ -36,13 +39,16 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Name {
         /// <exception cref="ProblemDetails">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<NameRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<NameRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<NameRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<NameRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
                 {"409", ProblemDetails.CreateFromDiscriminatorValue},
             };
@@ -55,10 +61,12 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Name {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<NameRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<NameRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<NameRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<NameRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Name {
         /// </summary>
         /// <returns>A <see cref="NameRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public NameRequestBuilder WithUrl(string rawUrl) {
+        public NameRequestBuilder WithUrl(string rawUrl)
+        {
             return new NameRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Renames a virtual folder.
         /// </summary>
-        public class NameRequestBuilderPostQueryParameters {
+        public class NameRequestBuilderPostQueryParameters 
+        {
             /// <summary>The name of the virtual folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

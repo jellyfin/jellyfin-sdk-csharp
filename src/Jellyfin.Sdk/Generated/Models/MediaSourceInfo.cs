@@ -5,7 +5,10 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public class MediaSourceInfo : IParsable {
+    #pragma warning disable CS1591
+    public class MediaSourceInfo : IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>The AnalyzeDurationMs property</summary>
         public int? AnalyzeDurationMs { get; set; }
         /// <summary>The Bitrate property</summary>
@@ -33,7 +36,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string EncoderPath { get; set; }
 #endif
         /// <summary>The EncoderProtocol property</summary>
-        public MediaProtocol? EncoderProtocol { get; set; }
+        public MediaSourceInfo_EncoderProtocol? EncoderProtocol { get; set; }
         /// <summary>The ETag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +70,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The IsInfiniteStream property</summary>
         public bool? IsInfiniteStream { get; set; }
         /// <summary>The IsoType property</summary>
-        public Jellyfin.Sdk.Generated.Models.IsoType? IsoType { get; set; }
+        public MediaSourceInfo_IsoType? IsoType { get; set; }
         /// <summary>Gets or sets a value indicating whether the media is remote.Differentiate internet url vs local network.</summary>
         public bool? IsRemote { get; set; }
         /// <summary>The LiveStreamId property</summary>
@@ -119,7 +122,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Path { get; set; }
 #endif
         /// <summary>The Protocol property</summary>
-        public MediaProtocol? Protocol { get; set; }
+        public MediaSourceInfo_Protocol? Protocol { get; set; }
         /// <summary>The ReadAtNativeFramerate property</summary>
         public bool? ReadAtNativeFramerate { get; set; }
         /// <summary>The RequiredHttpHeaders property</summary>
@@ -149,7 +152,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The SupportsTranscoding property</summary>
         public bool? SupportsTranscoding { get; set; }
         /// <summary>The Timestamp property</summary>
-        public TransportStreamTimestamp? Timestamp { get; set; }
+        public MediaSourceInfo_Timestamp? Timestamp { get; set; }
         /// <summary>The TranscodingContainer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -158,14 +161,8 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string TranscodingContainer { get; set; }
 #endif
-        /// <summary>The TranscodingSubProtocol property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TranscodingSubProtocol { get; set; }
-#nullable restore
-#else
-        public string TranscodingSubProtocol { get; set; }
-#endif
+        /// <summary>Media streaming protocol.Lowercase for backwards compatibility.</summary>
+        public MediaSourceInfo_TranscodingSubProtocol? TranscodingSubProtocol { get; set; }
         /// <summary>The TranscodingUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -175,17 +172,18 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string TranscodingUrl { get; set; }
 #endif
         /// <summary>The Type property</summary>
-        public MediaSourceType? Type { get; set; }
+        public MediaSourceInfo_Type? Type { get; set; }
         /// <summary>The Video3DFormat property</summary>
-        public Jellyfin.Sdk.Generated.Models.Video3DFormat? Video3DFormat { get; set; }
+        public MediaSourceInfo_Video3DFormat? Video3DFormat { get; set; }
         /// <summary>The VideoType property</summary>
-        public Jellyfin.Sdk.Generated.Models.VideoType? VideoType { get; set; }
+        public MediaSourceInfo_VideoType? VideoType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="MediaSourceInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MediaSourceInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static MediaSourceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MediaSourceInfo();
         }
@@ -193,8 +191,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"AnalyzeDurationMs", n => { AnalyzeDurationMs = n.GetIntValue(); } },
                 {"Bitrate", n => { Bitrate = n.GetIntValue(); } },
                 {"BufferMs", n => { BufferMs = n.GetIntValue(); } },
@@ -203,7 +203,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"DefaultSubtitleStreamIndex", n => { DefaultSubtitleStreamIndex = n.GetIntValue(); } },
                 {"ETag", n => { ETag = n.GetStringValue(); } },
                 {"EncoderPath", n => { EncoderPath = n.GetStringValue(); } },
-                {"EncoderProtocol", n => { EncoderProtocol = n.GetEnumValue<MediaProtocol>(); } },
+                {"EncoderProtocol", n => { EncoderProtocol = n.GetEnumValue<MediaSourceInfo_EncoderProtocol>(); } },
                 {"Formats", n => { Formats = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"GenPtsInput", n => { GenPtsInput = n.GetBoolValue(); } },
                 {"Id", n => { Id = n.GetStringValue(); } },
@@ -211,14 +211,14 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"IgnoreIndex", n => { IgnoreIndex = n.GetBoolValue(); } },
                 {"IsInfiniteStream", n => { IsInfiniteStream = n.GetBoolValue(); } },
                 {"IsRemote", n => { IsRemote = n.GetBoolValue(); } },
-                {"IsoType", n => { IsoType = n.GetEnumValue<IsoType>(); } },
+                {"IsoType", n => { IsoType = n.GetEnumValue<MediaSourceInfo_IsoType>(); } },
                 {"LiveStreamId", n => { LiveStreamId = n.GetStringValue(); } },
                 {"MediaAttachments", n => { MediaAttachments = n.GetCollectionOfObjectValues<MediaAttachment>(MediaAttachment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"MediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
                 {"OpenToken", n => { OpenToken = n.GetStringValue(); } },
                 {"Path", n => { Path = n.GetStringValue(); } },
-                {"Protocol", n => { Protocol = n.GetEnumValue<MediaProtocol>(); } },
+                {"Protocol", n => { Protocol = n.GetEnumValue<MediaSourceInfo_Protocol>(); } },
                 {"ReadAtNativeFramerate", n => { ReadAtNativeFramerate = n.GetBoolValue(); } },
                 {"RequiredHttpHeaders", n => { RequiredHttpHeaders = n.GetObjectValue<MediaSourceInfo_RequiredHttpHeaders>(MediaSourceInfo_RequiredHttpHeaders.CreateFromDiscriminatorValue); } },
                 {"RequiresClosing", n => { RequiresClosing = n.GetBoolValue(); } },
@@ -230,20 +230,21 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"SupportsDirectStream", n => { SupportsDirectStream = n.GetBoolValue(); } },
                 {"SupportsProbing", n => { SupportsProbing = n.GetBoolValue(); } },
                 {"SupportsTranscoding", n => { SupportsTranscoding = n.GetBoolValue(); } },
-                {"Timestamp", n => { Timestamp = n.GetEnumValue<TransportStreamTimestamp>(); } },
+                {"Timestamp", n => { Timestamp = n.GetEnumValue<MediaSourceInfo_Timestamp>(); } },
                 {"TranscodingContainer", n => { TranscodingContainer = n.GetStringValue(); } },
-                {"TranscodingSubProtocol", n => { TranscodingSubProtocol = n.GetStringValue(); } },
+                {"TranscodingSubProtocol", n => { TranscodingSubProtocol = n.GetEnumValue<MediaSourceInfo_TranscodingSubProtocol>(); } },
                 {"TranscodingUrl", n => { TranscodingUrl = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<MediaSourceType>(); } },
-                {"Video3DFormat", n => { Video3DFormat = n.GetEnumValue<Video3DFormat>(); } },
-                {"VideoType", n => { VideoType = n.GetEnumValue<VideoType>(); } },
+                {"Type", n => { Type = n.GetEnumValue<MediaSourceInfo_Type>(); } },
+                {"Video3DFormat", n => { Video3DFormat = n.GetEnumValue<MediaSourceInfo_Video3DFormat>(); } },
+                {"VideoType", n => { VideoType = n.GetEnumValue<MediaSourceInfo_VideoType>(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("AnalyzeDurationMs", AnalyzeDurationMs);
             writer.WriteIntValue("Bitrate", Bitrate);
@@ -252,7 +253,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("DefaultAudioStreamIndex", DefaultAudioStreamIndex);
             writer.WriteIntValue("DefaultSubtitleStreamIndex", DefaultSubtitleStreamIndex);
             writer.WriteStringValue("EncoderPath", EncoderPath);
-            writer.WriteEnumValue<MediaProtocol>("EncoderProtocol", EncoderProtocol);
+            writer.WriteEnumValue<MediaSourceInfo_EncoderProtocol>("EncoderProtocol", EncoderProtocol);
             writer.WriteStringValue("ETag", ETag);
             writer.WriteCollectionOfPrimitiveValues<string>("Formats", Formats);
             writer.WriteBoolValue("GenPtsInput", GenPtsInput);
@@ -260,7 +261,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("IgnoreDts", IgnoreDts);
             writer.WriteBoolValue("IgnoreIndex", IgnoreIndex);
             writer.WriteBoolValue("IsInfiniteStream", IsInfiniteStream);
-            writer.WriteEnumValue<IsoType>("IsoType", IsoType);
+            writer.WriteEnumValue<MediaSourceInfo_IsoType>("IsoType", IsoType);
             writer.WriteBoolValue("IsRemote", IsRemote);
             writer.WriteStringValue("LiveStreamId", LiveStreamId);
             writer.WriteCollectionOfObjectValues<MediaAttachment>("MediaAttachments", MediaAttachments);
@@ -268,7 +269,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("OpenToken", OpenToken);
             writer.WriteStringValue("Path", Path);
-            writer.WriteEnumValue<MediaProtocol>("Protocol", Protocol);
+            writer.WriteEnumValue<MediaSourceInfo_Protocol>("Protocol", Protocol);
             writer.WriteBoolValue("ReadAtNativeFramerate", ReadAtNativeFramerate);
             writer.WriteObjectValue<MediaSourceInfo_RequiredHttpHeaders>("RequiredHttpHeaders", RequiredHttpHeaders);
             writer.WriteBoolValue("RequiresClosing", RequiresClosing);
@@ -280,13 +281,13 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("SupportsDirectStream", SupportsDirectStream);
             writer.WriteBoolValue("SupportsProbing", SupportsProbing);
             writer.WriteBoolValue("SupportsTranscoding", SupportsTranscoding);
-            writer.WriteEnumValue<TransportStreamTimestamp>("Timestamp", Timestamp);
+            writer.WriteEnumValue<MediaSourceInfo_Timestamp>("Timestamp", Timestamp);
             writer.WriteStringValue("TranscodingContainer", TranscodingContainer);
-            writer.WriteStringValue("TranscodingSubProtocol", TranscodingSubProtocol);
+            writer.WriteEnumValue<MediaSourceInfo_TranscodingSubProtocol>("TranscodingSubProtocol", TranscodingSubProtocol);
             writer.WriteStringValue("TranscodingUrl", TranscodingUrl);
-            writer.WriteEnumValue<MediaSourceType>("Type", Type);
-            writer.WriteEnumValue<Video3DFormat>("Video3DFormat", Video3DFormat);
-            writer.WriteEnumValue<VideoType>("VideoType", VideoType);
+            writer.WriteEnumValue<MediaSourceInfo_Type>("Type", Type);
+            writer.WriteEnumValue<MediaSourceInfo_Video3DFormat>("Video3DFormat", Video3DFormat);
+            writer.WriteEnumValue<MediaSourceInfo_VideoType>("VideoType", VideoType);
         }
     }
 }

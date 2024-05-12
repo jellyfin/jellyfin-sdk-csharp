@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.SetRepeatMode {
     /// <summary>
     /// Builds and executes requests for operations under \SyncPlay\SetRepeatMode
     /// </summary>
-    public class SetRepeatModeRequestBuilder : BaseRequestBuilder {
+    public class SetRepeatModeRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="SetRepeatModeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SetRepeatModeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay/SetRepeatMode", pathParameters) {
+        public SetRepeatModeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay/SetRepeatMode", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SetRepeatModeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SetRepeatModeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay/SetRepeatMode", rawUrl) {
+        public SetRepeatModeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay/SetRepeatMode", rawUrl)
+        {
         }
         /// <summary>
         /// Request to set repeat mode in SyncPlay group.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.SetRepeatMode {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(SetRepeatModeRequestDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(SetRepeatModeRequestDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(SetRepeatModeRequestDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(SetRepeatModeRequestDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -52,10 +57,12 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.SetRepeatMode {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(SetRepeatModeRequestDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(SetRepeatModeRequestDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(SetRepeatModeRequestDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(SetRepeatModeRequestDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -68,7 +75,8 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.SetRepeatMode {
         /// </summary>
         /// <returns>A <see cref="SetRepeatModeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SetRepeatModeRequestBuilder WithUrl(string rawUrl) {
+        public SetRepeatModeRequestBuilder WithUrl(string rawUrl)
+        {
             return new SetRepeatModeRequestBuilder(rawUrl, RequestAdapter);
         }
     }

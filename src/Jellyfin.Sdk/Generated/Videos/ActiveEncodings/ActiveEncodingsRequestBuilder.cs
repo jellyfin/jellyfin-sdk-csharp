@@ -11,20 +11,23 @@ namespace Jellyfin.Sdk.Generated.Videos.ActiveEncodings {
     /// <summary>
     /// Builds and executes requests for operations under \Videos\ActiveEncodings
     /// </summary>
-    public class ActiveEncodingsRequestBuilder : BaseRequestBuilder {
+    public class ActiveEncodingsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ActiveEncodingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActiveEncodingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/ActiveEncodings?deviceId={deviceId}&playSessionId={playSessionId}", pathParameters) {
+        public ActiveEncodingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/ActiveEncodings?deviceId={deviceId}&playSessionId={playSessionId}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ActiveEncodingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActiveEncodingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/ActiveEncodings?deviceId={deviceId}&playSessionId={playSessionId}", rawUrl) {
+        public ActiveEncodingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/ActiveEncodings?deviceId={deviceId}&playSessionId={playSessionId}", rawUrl)
+        {
         }
         /// <summary>
         /// Stops an active encoding.
@@ -33,10 +36,12 @@ namespace Jellyfin.Sdk.Generated.Videos.ActiveEncodings {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<ActiveEncodingsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<ActiveEncodingsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<ActiveEncodingsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<ActiveEncodingsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -48,10 +53,12 @@ namespace Jellyfin.Sdk.Generated.Videos.ActiveEncodings {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<ActiveEncodingsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<ActiveEncodingsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<ActiveEncodingsRequestBuilderDeleteQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<ActiveEncodingsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -62,13 +69,15 @@ namespace Jellyfin.Sdk.Generated.Videos.ActiveEncodings {
         /// </summary>
         /// <returns>A <see cref="ActiveEncodingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ActiveEncodingsRequestBuilder WithUrl(string rawUrl) {
+        public ActiveEncodingsRequestBuilder WithUrl(string rawUrl)
+        {
             return new ActiveEncodingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Stops an active encoding.
         /// </summary>
-        public class ActiveEncodingsRequestBuilderDeleteQueryParameters {
+        public class ActiveEncodingsRequestBuilderDeleteQueryParameters 
+        {
             /// <summary>The device id of the client requesting. Used to stop encoding processes when needed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

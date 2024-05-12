@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Sessions.Capabilities.Full {
     /// <summary>
     /// Builds and executes requests for operations under \Sessions\Capabilities\Full
     /// </summary>
-    public class FullRequestBuilder : BaseRequestBuilder {
+    public class FullRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="FullRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FullRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Capabilities/Full{?id*}", pathParameters) {
+        public FullRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Capabilities/Full{?id*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="FullRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FullRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Capabilities/Full{?id*}", rawUrl) {
+        public FullRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Capabilities/Full{?id*}", rawUrl)
+        {
         }
         /// <summary>
         /// Updates capabilities for a device.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.Sessions.Capabilities.Full {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(ClientCapabilitiesDto body, Action<RequestConfiguration<FullRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(ClientCapabilitiesDto body, Action<RequestConfiguration<FullRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(ClientCapabilitiesDto body, Action<RequestConfiguration<FullRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(ClientCapabilitiesDto body, Action<RequestConfiguration<FullRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -52,10 +57,12 @@ namespace Jellyfin.Sdk.Generated.Sessions.Capabilities.Full {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ClientCapabilitiesDto body, Action<RequestConfiguration<FullRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(ClientCapabilitiesDto body, Action<RequestConfiguration<FullRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ClientCapabilitiesDto body, Action<RequestConfiguration<FullRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(ClientCapabilitiesDto body, Action<RequestConfiguration<FullRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -68,13 +75,15 @@ namespace Jellyfin.Sdk.Generated.Sessions.Capabilities.Full {
         /// </summary>
         /// <returns>A <see cref="FullRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FullRequestBuilder WithUrl(string rawUrl) {
+        public FullRequestBuilder WithUrl(string rawUrl)
+        {
             return new FullRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Updates capabilities for a device.
         /// </summary>
-        public class FullRequestBuilderPostQueryParameters {
+        public class FullRequestBuilderPostQueryParameters 
+        {
             /// <summary>The session id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -10,24 +10,28 @@ namespace Jellyfin.Sdk.Generated.Collections.Item {
     /// <summary>
     /// Builds and executes requests for operations under \Collections\{collectionId}
     /// </summary>
-    public class WithCollectionItemRequestBuilder : BaseRequestBuilder {
+    public class WithCollectionItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Items property</summary>
-        public ItemsRequestBuilder Items { get =>
-            new ItemsRequestBuilder(PathParameters, RequestAdapter);
+        public ItemsRequestBuilder Items
+        {
+            get => new ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithCollectionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCollectionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections/{collectionId}", pathParameters) {
+        public WithCollectionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections/{collectionId}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithCollectionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCollectionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections/{collectionId}", rawUrl) {
+        public WithCollectionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections/{collectionId}", rawUrl)
+        {
         }
     }
 }

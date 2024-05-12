@@ -5,7 +5,10 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public class GeneralCommand : IParsable {
+    #pragma warning disable CS1591
+    public class GeneralCommand : IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>The Arguments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -17,13 +20,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The ControllingUserId property</summary>
         public Guid? ControllingUserId { get; set; }
         /// <summary>This exists simply to identify a set of known commands.</summary>
-        public GeneralCommandType? Name { get; set; }
+        public GeneralCommand_Name? Name { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GeneralCommand"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GeneralCommand CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static GeneralCommand CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GeneralCommand();
         }
@@ -31,22 +35,25 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"Arguments", n => { Arguments = n.GetObjectValue<GeneralCommand_Arguments>(GeneralCommand_Arguments.CreateFromDiscriminatorValue); } },
                 {"ControllingUserId", n => { ControllingUserId = n.GetGuidValue(); } },
-                {"Name", n => { Name = n.GetEnumValue<GeneralCommandType>(); } },
+                {"Name", n => { Name = n.GetEnumValue<GeneralCommand_Name>(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<GeneralCommand_Arguments>("Arguments", Arguments);
             writer.WriteGuidValue("ControllingUserId", ControllingUserId);
-            writer.WriteEnumValue<GeneralCommandType>("Name", Name);
+            writer.WriteEnumValue<GeneralCommand_Name>("Name", Name);
         }
     }
 }

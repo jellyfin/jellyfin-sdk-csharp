@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.Person {
     /// <summary>
     /// Builds and executes requests for operations under \Items\RemoteSearch\Person
     /// </summary>
-    public class PersonRequestBuilder : BaseRequestBuilder {
+    public class PersonRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="PersonRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch/Person", pathParameters) {
+        public PersonRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch/Person", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="PersonRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch/Person", rawUrl) {
+        public PersonRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch/Person", rawUrl)
+        {
         }
         /// <summary>
         /// Get person remote search.
@@ -36,10 +39,12 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.Person {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<RemoteSearchResult>?> PostAsync(PersonLookupInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RemoteSearchResult>?> PostAsync(PersonLookupInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<RemoteSearchResult>> PostAsync(PersonLookupInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RemoteSearchResult>> PostAsync(PersonLookupInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -54,10 +59,12 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.Person {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(PersonLookupInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(PersonLookupInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(PersonLookupInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(PersonLookupInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -71,7 +78,8 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.Person {
         /// </summary>
         /// <returns>A <see cref="PersonRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PersonRequestBuilder WithUrl(string rawUrl) {
+        public PersonRequestBuilder WithUrl(string rawUrl)
+        {
             return new PersonRequestBuilder(rawUrl, RequestAdapter);
         }
     }

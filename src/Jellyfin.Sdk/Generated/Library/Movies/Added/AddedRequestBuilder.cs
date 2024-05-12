@@ -11,20 +11,23 @@ namespace Jellyfin.Sdk.Generated.Library.Movies.Added {
     /// <summary>
     /// Builds and executes requests for operations under \Library\Movies\Added
     /// </summary>
-    public class AddedRequestBuilder : BaseRequestBuilder {
+    public class AddedRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="AddedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AddedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/Movies/Added{?imdbId*,tmdbId*}", pathParameters) {
+        public AddedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/Movies/Added{?imdbId*,tmdbId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AddedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AddedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/Movies/Added{?imdbId*,tmdbId*}", rawUrl) {
+        public AddedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library/Movies/Added{?imdbId*,tmdbId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Reports that new movies have been added by an external source.
@@ -33,10 +36,12 @@ namespace Jellyfin.Sdk.Generated.Library.Movies.Added {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<AddedRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<AddedRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<AddedRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<AddedRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -48,10 +53,12 @@ namespace Jellyfin.Sdk.Generated.Library.Movies.Added {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<AddedRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<AddedRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<AddedRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<AddedRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -62,13 +69,15 @@ namespace Jellyfin.Sdk.Generated.Library.Movies.Added {
         /// </summary>
         /// <returns>A <see cref="AddedRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AddedRequestBuilder WithUrl(string rawUrl) {
+        public AddedRequestBuilder WithUrl(string rawUrl)
+        {
             return new AddedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Reports that new movies have been added by an external source.
         /// </summary>
-        public class AddedRequestBuilderPostQueryParameters {
+        public class AddedRequestBuilderPostQueryParameters 
+        {
             /// <summary>The imdbId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

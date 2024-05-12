@@ -13,28 +13,35 @@ namespace Jellyfin.Sdk.Generated.Persons {
     /// <summary>
     /// Builds and executes requests for operations under \Persons
     /// </summary>
-    public class PersonsRequestBuilder : BaseRequestBuilder {
+    public class PersonsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Persons.item collection</summary>
         /// <param name="position">Person name.</param>
         /// <returns>A <see cref="WithNameItemRequestBuilder"/></returns>
-        public WithNameItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("name", position);
-            return new WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithNameItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("name", position);
+                return new WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="PersonsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Persons{?appearsInItemId*,enableImageTypes*,enableImages*,enableUserData*,excludePersonTypes*,fields*,filters*,imageTypeLimit*,isFavorite*,limit*,personTypes*,searchTerm*,userId*}", pathParameters) {
+        public PersonsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Persons{?appearsInItemId*,enableImageTypes*,enableImages*,enableUserData*,excludePersonTypes*,fields*,filters*,imageTypeLimit*,isFavorite*,limit*,personTypes*,searchTerm*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="PersonsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Persons{?appearsInItemId*,enableImageTypes*,enableImages*,enableUserData*,excludePersonTypes*,fields*,filters*,imageTypeLimit*,isFavorite*,limit*,personTypes*,searchTerm*,userId*}", rawUrl) {
+        public PersonsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Persons{?appearsInItemId*,enableImageTypes*,enableImages*,enableUserData*,excludePersonTypes*,fields*,filters*,imageTypeLimit*,isFavorite*,limit*,personTypes*,searchTerm*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets all persons.
@@ -44,10 +51,12 @@ namespace Jellyfin.Sdk.Generated.Persons {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<PersonsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<PersonsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<PersonsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<PersonsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -59,10 +68,12 @@ namespace Jellyfin.Sdk.Generated.Persons {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PersonsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PersonsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PersonsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PersonsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -74,13 +85,15 @@ namespace Jellyfin.Sdk.Generated.Persons {
         /// </summary>
         /// <returns>A <see cref="PersonsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PersonsRequestBuilder WithUrl(string rawUrl) {
+        public PersonsRequestBuilder WithUrl(string rawUrl)
+        {
             return new PersonsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets all persons.
         /// </summary>
-        public class PersonsRequestBuilderGetQueryParameters {
+        public class PersonsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. If specified, person results will be filtered on items related to said persons.</summary>
             [QueryParameter("appearsInItemId")]
             public Guid? AppearsInItemId { get; set; }

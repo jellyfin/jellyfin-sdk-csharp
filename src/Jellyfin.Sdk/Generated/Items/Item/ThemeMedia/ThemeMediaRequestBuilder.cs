@@ -10,22 +10,25 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.ThemeMedia {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\ThemeMedia
+    /// Builds and executes requests for operations under \Items\{itemId}\ThemeMedia
     /// </summary>
-    public class ThemeMediaRequestBuilder : BaseRequestBuilder {
+    public class ThemeMediaRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ThemeMediaRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThemeMediaRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ThemeMedia{?inheritFromParent*,userId*}", pathParameters) {
+        public ThemeMediaRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/ThemeMedia{?inheritFromParent*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ThemeMediaRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThemeMediaRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/ThemeMedia{?inheritFromParent*,userId*}", rawUrl) {
+        public ThemeMediaRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/ThemeMedia{?inheritFromParent*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Get theme songs and videos for an item.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ThemeMedia {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AllThemeMediaResult?> GetAsync(Action<RequestConfiguration<ThemeMediaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AllThemeMediaResult?> GetAsync(Action<RequestConfiguration<ThemeMediaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<AllThemeMediaResult> GetAsync(Action<RequestConfiguration<ThemeMediaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AllThemeMediaResult> GetAsync(Action<RequestConfiguration<ThemeMediaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<AllThemeMediaResult>(requestInfo, AllThemeMediaResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -50,10 +55,12 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ThemeMedia {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThemeMediaRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThemeMediaRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThemeMediaRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThemeMediaRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -65,13 +72,15 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ThemeMedia {
         /// </summary>
         /// <returns>A <see cref="ThemeMediaRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ThemeMediaRequestBuilder WithUrl(string rawUrl) {
+        public ThemeMediaRequestBuilder WithUrl(string rawUrl)
+        {
             return new ThemeMediaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get theme songs and videos for an item.
         /// </summary>
-        public class ThemeMediaRequestBuilderGetQueryParameters {
+        public class ThemeMediaRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Determines whether or not parent items should be searched for theme media.</summary>
             [QueryParameter("inheritFromParent")]
             public bool? InheritFromParent { get; set; }

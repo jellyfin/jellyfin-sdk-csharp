@@ -15,38 +15,47 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item {
     /// <summary>
     /// Builds and executes requests for operations under \Plugins\{pluginId}
     /// </summary>
-    public class WithPluginItemRequestBuilder : BaseRequestBuilder {
+    public class WithPluginItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Configuration property</summary>
         [Obsolete("")]
-        public ConfigurationRequestBuilder Configuration { get =>
-            new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        public ConfigurationRequestBuilder Configuration
+        {
+            get => new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Manifest property</summary>
         [Obsolete("")]
-        public ManifestRequestBuilder Manifest { get =>
-            new ManifestRequestBuilder(PathParameters, RequestAdapter);
+        public ManifestRequestBuilder Manifest
+        {
+            get => new ManifestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Plugins.item.item collection</summary>
         /// <param name="position">Plugin version.</param>
         /// <returns>A <see cref="WithVersionItemRequestBuilder"/></returns>
-        public WithVersionItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("version", position);
-            return new WithVersionItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithVersionItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("version", position);
+                return new WithVersionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="WithPluginItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPluginItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Plugins/{pluginId}", pathParameters) {
+        public WithPluginItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Plugins/{pluginId}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithPluginItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPluginItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Plugins/{pluginId}", rawUrl) {
+        public WithPluginItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Plugins/{pluginId}", rawUrl)
+        {
         }
         /// <summary>
         /// Uninstalls a plugin.
@@ -57,13 +66,16 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -76,10 +88,12 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,7 +106,8 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item {
         /// <returns>A <see cref="WithPluginItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public WithPluginItemRequestBuilder WithUrl(string rawUrl) {
+        public WithPluginItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithPluginItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }

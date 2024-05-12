@@ -3,24 +3,43 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>Enum ItemFilter.</summary>
-    public enum ItemFilter {
+    public enum ItemFilter
+    {
         [EnumMember(Value = "IsFolder")]
+        #pragma warning disable CS1591
         IsFolder,
+        #pragma warning restore CS1591
         [EnumMember(Value = "IsNotFolder")]
+        #pragma warning disable CS1591
         IsNotFolder,
+        #pragma warning restore CS1591
         [EnumMember(Value = "IsUnplayed")]
+        #pragma warning disable CS1591
         IsUnplayed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "IsPlayed")]
+        #pragma warning disable CS1591
         IsPlayed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "IsFavorite")]
+        #pragma warning disable CS1591
         IsFavorite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "IsResumable")]
+        #pragma warning disable CS1591
         IsResumable,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Likes")]
+        #pragma warning disable CS1591
         Likes,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Dislikes")]
+        #pragma warning disable CS1591
         Dislikes,
+        #pragma warning restore CS1591
         [EnumMember(Value = "IsFavoriteOrLikes")]
+        #pragma warning disable CS1591
         IsFavoriteOrLikes,
+        #pragma warning restore CS1591
     }
 }

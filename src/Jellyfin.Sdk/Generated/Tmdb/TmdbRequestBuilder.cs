@@ -10,24 +10,28 @@ namespace Jellyfin.Sdk.Generated.Tmdb {
     /// <summary>
     /// Builds and executes requests for operations under \Tmdb
     /// </summary>
-    public class TmdbRequestBuilder : BaseRequestBuilder {
+    public class TmdbRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The ClientConfiguration property</summary>
-        public ClientConfigurationRequestBuilder ClientConfiguration { get =>
-            new ClientConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        public ClientConfigurationRequestBuilder ClientConfiguration
+        {
+            get => new ClientConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="TmdbRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TmdbRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Tmdb", pathParameters) {
+        public TmdbRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Tmdb", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="TmdbRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TmdbRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Tmdb", rawUrl) {
+        public TmdbRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Tmdb", rawUrl)
+        {
         }
     }
 }

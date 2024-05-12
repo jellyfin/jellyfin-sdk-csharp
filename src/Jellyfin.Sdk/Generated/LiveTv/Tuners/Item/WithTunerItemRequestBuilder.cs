@@ -10,24 +10,28 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Tuners.Item {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\Tuners\{tunerId}
     /// </summary>
-    public class WithTunerItemRequestBuilder : BaseRequestBuilder {
+    public class WithTunerItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Reset property</summary>
-        public ResetRequestBuilder Reset { get =>
-            new ResetRequestBuilder(PathParameters, RequestAdapter);
+        public ResetRequestBuilder Reset
+        {
+            get => new ResetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithTunerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTunerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Tuners/{tunerId}", pathParameters) {
+        public WithTunerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Tuners/{tunerId}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithTunerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTunerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Tuners/{tunerId}", rawUrl) {
+        public WithTunerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Tuners/{tunerId}", rawUrl)
+        {
         }
     }
 }

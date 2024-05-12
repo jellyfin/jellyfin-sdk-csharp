@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Class MediaStream.
     /// </summary>
-    public class MediaStream : IParsable {
+    public class MediaStream : IParsable 
+    {
         /// <summary>Gets or sets the aspect ratio.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -17,6 +18,8 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string AspectRatio { get; set; }
 #endif
+        /// <summary>Gets the audio spatial format.</summary>
+        public MediaStream_AudioSpatialFormat? AudioSpatialFormat { get; private set; }
         /// <summary>Gets or sets the average frame rate.</summary>
         public float? AverageFrameRate { get; set; }
         /// <summary>Gets or sets the bit depth.</summary>
@@ -100,7 +103,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Comment { get; set; }
 #endif
         /// <summary>Gets or sets the method.</summary>
-        public SubtitleDeliveryMethod? DeliveryMethod { get; set; }
+        public MediaStream_DeliveryMethod? DeliveryMethod { get; set; }
         /// <summary>Gets or sets the delivery URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,6 +148,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public bool? IsExternalUrl { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance is forced.</summary>
         public bool? IsForced { get; set; }
+        /// <summary>Gets or sets a value indicating whether this instance is for the hearing impaired.</summary>
+        public bool? IsHearingImpaired { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance is interlaced.</summary>
         public bool? IsInterlaced { get; set; }
         /// <summary>The IsTextSubtitleStream property</summary>
@@ -182,6 +187,14 @@ namespace Jellyfin.Sdk.Generated.Models {
 #nullable restore
 #else
         public string LocalizedForced { get; set; }
+#endif
+        /// <summary>The LocalizedHearingImpaired property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LocalizedHearingImpaired { get; set; }
+#nullable restore
+#else
+        public string LocalizedHearingImpaired { get; set; }
 #endif
         /// <summary>The LocalizedUndefined property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -254,7 +267,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Title { get; set; }
 #endif
         /// <summary>Gets or sets the type.</summary>
-        public MediaStreamType? Type { get; set; }
+        public MediaStream_Type? Type { get; set; }
         /// <summary>Gets the video dovi title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -264,29 +277,25 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string VideoDoViTitle { get; private set; }
 #endif
         /// <summary>Gets the video range.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VideoRange { get; private set; }
-#nullable restore
-#else
-        public string VideoRange { get; private set; }
-#endif
+        public MediaStream_VideoRange? VideoRange { get; private set; }
         /// <summary>Gets the video range type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VideoRangeType { get; private set; }
-#nullable restore
-#else
-        public string VideoRangeType { get; private set; }
-#endif
+        public MediaStream_VideoRangeType? VideoRangeType { get; private set; }
         /// <summary>Gets or sets the width.</summary>
         public int? Width { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="MediaStream"/> and sets the default values.
+        /// </summary>
+        public MediaStream()
+        {
+            AudioSpatialFormat = MediaStream_AudioSpatialFormat.None;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="MediaStream"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MediaStream CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static MediaStream CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MediaStream();
         }
@@ -294,9 +303,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"AspectRatio", n => { AspectRatio = n.GetStringValue(); } },
+                {"AudioSpatialFormat", n => { AudioSpatialFormat = n.GetEnumValue<MediaStream_AudioSpatialFormat>(); } },
                 {"AverageFrameRate", n => { AverageFrameRate = n.GetFloatValue(); } },
                 {"BitDepth", n => { BitDepth = n.GetIntValue(); } },
                 {"BitRate", n => { BitRate = n.GetIntValue(); } },
@@ -311,7 +323,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"ColorSpace", n => { ColorSpace = n.GetStringValue(); } },
                 {"ColorTransfer", n => { ColorTransfer = n.GetStringValue(); } },
                 {"Comment", n => { Comment = n.GetStringValue(); } },
-                {"DeliveryMethod", n => { DeliveryMethod = n.GetEnumValue<SubtitleDeliveryMethod>(); } },
+                {"DeliveryMethod", n => { DeliveryMethod = n.GetEnumValue<MediaStream_DeliveryMethod>(); } },
                 {"DeliveryUrl", n => { DeliveryUrl = n.GetStringValue(); } },
                 {"DisplayTitle", n => { DisplayTitle = n.GetStringValue(); } },
                 {"DvBlSignalCompatibilityId", n => { DvBlSignalCompatibilityId = n.GetIntValue(); } },
@@ -328,6 +340,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"IsExternal", n => { IsExternal = n.GetBoolValue(); } },
                 {"IsExternalUrl", n => { IsExternalUrl = n.GetBoolValue(); } },
                 {"IsForced", n => { IsForced = n.GetBoolValue(); } },
+                {"IsHearingImpaired", n => { IsHearingImpaired = n.GetBoolValue(); } },
                 {"IsInterlaced", n => { IsInterlaced = n.GetBoolValue(); } },
                 {"IsTextSubtitleStream", n => { IsTextSubtitleStream = n.GetBoolValue(); } },
                 {"Language", n => { Language = n.GetStringValue(); } },
@@ -335,6 +348,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"LocalizedDefault", n => { LocalizedDefault = n.GetStringValue(); } },
                 {"LocalizedExternal", n => { LocalizedExternal = n.GetStringValue(); } },
                 {"LocalizedForced", n => { LocalizedForced = n.GetStringValue(); } },
+                {"LocalizedHearingImpaired", n => { LocalizedHearingImpaired = n.GetStringValue(); } },
                 {"LocalizedUndefined", n => { LocalizedUndefined = n.GetStringValue(); } },
                 {"NalLengthSize", n => { NalLengthSize = n.GetStringValue(); } },
                 {"PacketLength", n => { PacketLength = n.GetIntValue(); } },
@@ -349,10 +363,10 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"SupportsExternalStream", n => { SupportsExternalStream = n.GetBoolValue(); } },
                 {"TimeBase", n => { TimeBase = n.GetStringValue(); } },
                 {"Title", n => { Title = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<MediaStreamType>(); } },
+                {"Type", n => { Type = n.GetEnumValue<MediaStream_Type>(); } },
                 {"VideoDoViTitle", n => { VideoDoViTitle = n.GetStringValue(); } },
-                {"VideoRange", n => { VideoRange = n.GetStringValue(); } },
-                {"VideoRangeType", n => { VideoRangeType = n.GetStringValue(); } },
+                {"VideoRange", n => { VideoRange = n.GetEnumValue<MediaStream_VideoRange>(); } },
+                {"VideoRangeType", n => { VideoRangeType = n.GetEnumValue<MediaStream_VideoRangeType>(); } },
                 {"Width", n => { Width = n.GetIntValue(); } },
             };
         }
@@ -360,7 +374,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("AspectRatio", AspectRatio);
             writer.WriteFloatValue("AverageFrameRate", AverageFrameRate);
@@ -377,7 +392,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("ColorSpace", ColorSpace);
             writer.WriteStringValue("ColorTransfer", ColorTransfer);
             writer.WriteStringValue("Comment", Comment);
-            writer.WriteEnumValue<SubtitleDeliveryMethod>("DeliveryMethod", DeliveryMethod);
+            writer.WriteEnumValue<MediaStream_DeliveryMethod>("DeliveryMethod", DeliveryMethod);
             writer.WriteStringValue("DeliveryUrl", DeliveryUrl);
             writer.WriteIntValue("DvBlSignalCompatibilityId", DvBlSignalCompatibilityId);
             writer.WriteIntValue("DvLevel", DvLevel);
@@ -393,12 +408,14 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("IsExternal", IsExternal);
             writer.WriteBoolValue("IsExternalUrl", IsExternalUrl);
             writer.WriteBoolValue("IsForced", IsForced);
+            writer.WriteBoolValue("IsHearingImpaired", IsHearingImpaired);
             writer.WriteBoolValue("IsInterlaced", IsInterlaced);
             writer.WriteStringValue("Language", Language);
             writer.WriteDoubleValue("Level", Level);
             writer.WriteStringValue("LocalizedDefault", LocalizedDefault);
             writer.WriteStringValue("LocalizedExternal", LocalizedExternal);
             writer.WriteStringValue("LocalizedForced", LocalizedForced);
+            writer.WriteStringValue("LocalizedHearingImpaired", LocalizedHearingImpaired);
             writer.WriteStringValue("LocalizedUndefined", LocalizedUndefined);
             writer.WriteStringValue("NalLengthSize", NalLengthSize);
             writer.WriteIntValue("PacketLength", PacketLength);
@@ -413,7 +430,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("SupportsExternalStream", SupportsExternalStream);
             writer.WriteStringValue("TimeBase", TimeBase);
             writer.WriteStringValue("Title", Title);
-            writer.WriteEnumValue<MediaStreamType>("Type", Type);
+            writer.WriteEnumValue<MediaStream_Type>("Type", Type);
             writer.WriteIntValue("Width", Width);
         }
     }

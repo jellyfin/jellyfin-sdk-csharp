@@ -16,48 +16,58 @@ namespace Jellyfin.Sdk.Generated.Library {
     /// <summary>
     /// Builds and executes requests for operations under \Library
     /// </summary>
-    public class LibraryRequestBuilder : BaseRequestBuilder {
+    public class LibraryRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Media property</summary>
-        public MediaRequestBuilder Media { get =>
-            new MediaRequestBuilder(PathParameters, RequestAdapter);
+        public MediaRequestBuilder Media
+        {
+            get => new MediaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The MediaFolders property</summary>
-        public MediaFoldersRequestBuilder MediaFolders { get =>
-            new MediaFoldersRequestBuilder(PathParameters, RequestAdapter);
+        public MediaFoldersRequestBuilder MediaFolders
+        {
+            get => new MediaFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Movies property</summary>
-        public MoviesRequestBuilder Movies { get =>
-            new MoviesRequestBuilder(PathParameters, RequestAdapter);
+        public MoviesRequestBuilder Movies
+        {
+            get => new MoviesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The PhysicalPaths property</summary>
-        public PhysicalPathsRequestBuilder PhysicalPaths { get =>
-            new PhysicalPathsRequestBuilder(PathParameters, RequestAdapter);
+        public PhysicalPathsRequestBuilder PhysicalPaths
+        {
+            get => new PhysicalPathsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Refresh property</summary>
-        public RefreshRequestBuilder Refresh { get =>
-            new RefreshRequestBuilder(PathParameters, RequestAdapter);
+        public RefreshRequestBuilder Refresh
+        {
+            get => new RefreshRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Series property</summary>
-        public SeriesRequestBuilder Series { get =>
-            new SeriesRequestBuilder(PathParameters, RequestAdapter);
+        public SeriesRequestBuilder Series
+        {
+            get => new SeriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The VirtualFolders property</summary>
-        public VirtualFoldersRequestBuilder VirtualFolders { get =>
-            new VirtualFoldersRequestBuilder(PathParameters, RequestAdapter);
+        public VirtualFoldersRequestBuilder VirtualFolders
+        {
+            get => new VirtualFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="LibraryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LibraryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library", pathParameters) {
+        public LibraryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LibraryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LibraryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library", rawUrl) {
+        public LibraryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Library", rawUrl)
+        {
         }
     }
 }

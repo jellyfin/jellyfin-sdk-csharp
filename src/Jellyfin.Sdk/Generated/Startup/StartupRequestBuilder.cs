@@ -14,40 +14,48 @@ namespace Jellyfin.Sdk.Generated.Startup {
     /// <summary>
     /// Builds and executes requests for operations under \Startup
     /// </summary>
-    public class StartupRequestBuilder : BaseRequestBuilder {
+    public class StartupRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Complete property</summary>
-        public CompleteRequestBuilder Complete { get =>
-            new CompleteRequestBuilder(PathParameters, RequestAdapter);
+        public CompleteRequestBuilder Complete
+        {
+            get => new CompleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Configuration property</summary>
-        public ConfigurationRequestBuilder Configuration { get =>
-            new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        public ConfigurationRequestBuilder Configuration
+        {
+            get => new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The FirstUser property</summary>
-        public FirstUserRequestBuilder FirstUser { get =>
-            new FirstUserRequestBuilder(PathParameters, RequestAdapter);
+        public FirstUserRequestBuilder FirstUser
+        {
+            get => new FirstUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The RemoteAccess property</summary>
-        public RemoteAccessRequestBuilder RemoteAccess { get =>
-            new RemoteAccessRequestBuilder(PathParameters, RequestAdapter);
+        public RemoteAccessRequestBuilder RemoteAccess
+        {
+            get => new RemoteAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The User property</summary>
-        public UserRequestBuilder User { get =>
-            new UserRequestBuilder(PathParameters, RequestAdapter);
+        public UserRequestBuilder User
+        {
+            get => new UserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="StartupRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StartupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Startup", pathParameters) {
+        public StartupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Startup", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="StartupRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StartupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Startup", rawUrl) {
+        public StartupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Startup", rawUrl)
+        {
         }
     }
 }

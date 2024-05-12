@@ -13,24 +13,28 @@ namespace Jellyfin.Sdk.Generated.Genres.Item {
     /// <summary>
     /// Builds and executes requests for operations under \Genres\{genreName-id}
     /// </summary>
-    public class GenreNameItemRequestBuilder : BaseRequestBuilder {
+    public class GenreNameItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Images property</summary>
-        public ImagesRequestBuilder Images { get =>
-            new ImagesRequestBuilder(PathParameters, RequestAdapter);
+        public ImagesRequestBuilder Images
+        {
+            get => new ImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="GenreNameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GenreNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Genres/{genreName%2Did}{?userId*}", pathParameters) {
+        public GenreNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Genres/{genreName%2Did}{?userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GenreNameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GenreNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Genres/{genreName%2Did}{?userId*}", rawUrl) {
+        public GenreNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Genres/{genreName%2Did}{?userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets a genre, by name.
@@ -40,10 +44,12 @@ namespace Jellyfin.Sdk.Generated.Genres.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDto?> GetAsync(Action<RequestConfiguration<GenreNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDto?> GetAsync(Action<RequestConfiguration<GenreNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDto> GetAsync(Action<RequestConfiguration<GenreNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDto> GetAsync(Action<RequestConfiguration<GenreNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDto>(requestInfo, BaseItemDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Jellyfin.Sdk.Generated.Genres.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenreNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenreNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenreNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenreNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Jellyfin.Sdk.Generated.Genres.Item {
         /// </summary>
         /// <returns>A <see cref="GenreNameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GenreNameItemRequestBuilder WithUrl(string rawUrl) {
+        public GenreNameItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new GenreNameItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets a genre, by name.
         /// </summary>
-        public class GenreNameItemRequestBuilderGetQueryParameters {
+        public class GenreNameItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>The user id.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

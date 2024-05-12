@@ -5,7 +5,10 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public class DeviceInfo : IParsable {
+    #pragma warning disable CS1591
+    public class DeviceInfo : IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>Gets or sets the access token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +40,14 @@ namespace Jellyfin.Sdk.Generated.Models {
 #nullable restore
 #else
         public ClientCapabilities Capabilities { get; set; }
+#endif
+        /// <summary>The CustomName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomName { get; set; }
+#nullable restore
+#else
+        public string CustomName { get; set; }
 #endif
         /// <summary>Gets or sets the date last modified.</summary>
         public DateTimeOffset? DateLastActivity { get; set; }
@@ -79,7 +90,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="DeviceInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static DeviceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DeviceInfo();
         }
@@ -87,12 +99,15 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"AccessToken", n => { AccessToken = n.GetStringValue(); } },
                 {"AppName", n => { AppName = n.GetStringValue(); } },
                 {"AppVersion", n => { AppVersion = n.GetStringValue(); } },
                 {"Capabilities", n => { Capabilities = n.GetObjectValue<ClientCapabilities>(ClientCapabilities.CreateFromDiscriminatorValue); } },
+                {"CustomName", n => { CustomName = n.GetStringValue(); } },
                 {"DateLastActivity", n => { DateLastActivity = n.GetDateTimeOffsetValue(); } },
                 {"IconUrl", n => { IconUrl = n.GetStringValue(); } },
                 {"Id", n => { Id = n.GetStringValue(); } },
@@ -105,12 +120,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("AccessToken", AccessToken);
             writer.WriteStringValue("AppName", AppName);
             writer.WriteStringValue("AppVersion", AppVersion);
             writer.WriteObjectValue<ClientCapabilities>("Capabilities", Capabilities);
+            writer.WriteStringValue("CustomName", CustomName);
             writer.WriteDateTimeOffsetValue("DateLastActivity", DateLastActivity);
             writer.WriteStringValue("IconUrl", IconUrl);
             writer.WriteStringValue("Id", Id);

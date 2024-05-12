@@ -5,7 +5,10 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public class TranscodingInfo : IParsable {
+    #pragma warning disable CS1591
+    public class TranscodingInfo : IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>The AudioChannels property</summary>
         public int? AudioChannels { get; set; }
         /// <summary>The AudioCodec property</summary>
@@ -31,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The Framerate property</summary>
         public float? Framerate { get; set; }
         /// <summary>The HardwareAccelerationType property</summary>
-        public HardwareEncodingType? HardwareAccelerationType { get; set; }
+        public TranscodingInfo_HardwareAccelerationType? HardwareAccelerationType { get; set; }
         /// <summary>The Height property</summary>
         public int? Height { get; set; }
         /// <summary>The IsAudioDirect property</summary>
@@ -61,7 +64,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="TranscodingInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TranscodingInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static TranscodingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new TranscodingInfo();
         }
@@ -69,15 +73,17 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"AudioChannels", n => { AudioChannels = n.GetIntValue(); } },
                 {"AudioCodec", n => { AudioCodec = n.GetStringValue(); } },
                 {"Bitrate", n => { Bitrate = n.GetIntValue(); } },
                 {"CompletionPercentage", n => { CompletionPercentage = n.GetDoubleValue(); } },
                 {"Container", n => { Container = n.GetStringValue(); } },
                 {"Framerate", n => { Framerate = n.GetFloatValue(); } },
-                {"HardwareAccelerationType", n => { HardwareAccelerationType = n.GetEnumValue<HardwareEncodingType>(); } },
+                {"HardwareAccelerationType", n => { HardwareAccelerationType = n.GetEnumValue<TranscodingInfo_HardwareAccelerationType>(); } },
                 {"Height", n => { Height = n.GetIntValue(); } },
                 {"IsAudioDirect", n => { IsAudioDirect = n.GetBoolValue(); } },
                 {"IsVideoDirect", n => { IsVideoDirect = n.GetBoolValue(); } },
@@ -90,7 +96,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("AudioChannels", AudioChannels);
             writer.WriteStringValue("AudioCodec", AudioCodec);
@@ -98,7 +105,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteDoubleValue("CompletionPercentage", CompletionPercentage);
             writer.WriteStringValue("Container", Container);
             writer.WriteFloatValue("Framerate", Framerate);
-            writer.WriteEnumValue<HardwareEncodingType>("HardwareAccelerationType", HardwareAccelerationType);
+            writer.WriteEnumValue<TranscodingInfo_HardwareAccelerationType>("HardwareAccelerationType", HardwareAccelerationType);
             writer.WriteIntValue("Height", Height);
             writer.WriteBoolValue("IsAudioDirect", IsAudioDirect);
             writer.WriteBoolValue("IsVideoDirect", IsVideoDirect);

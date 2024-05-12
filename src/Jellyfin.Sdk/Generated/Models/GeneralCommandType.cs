@@ -3,90 +3,179 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>This exists simply to identify a set of known commands.</summary>
-    public enum GeneralCommandType {
+    public enum GeneralCommandType
+    {
         [EnumMember(Value = "MoveUp")]
+        #pragma warning disable CS1591
         MoveUp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MoveDown")]
+        #pragma warning disable CS1591
         MoveDown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MoveLeft")]
+        #pragma warning disable CS1591
         MoveLeft,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MoveRight")]
+        #pragma warning disable CS1591
         MoveRight,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PageUp")]
+        #pragma warning disable CS1591
         PageUp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PageDown")]
+        #pragma warning disable CS1591
         PageDown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PreviousLetter")]
+        #pragma warning disable CS1591
         PreviousLetter,
+        #pragma warning restore CS1591
         [EnumMember(Value = "NextLetter")]
+        #pragma warning disable CS1591
         NextLetter,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ToggleOsd")]
+        #pragma warning disable CS1591
         ToggleOsd,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ToggleContextMenu")]
+        #pragma warning disable CS1591
         ToggleContextMenu,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Select")]
+        #pragma warning disable CS1591
         Select,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Back")]
+        #pragma warning disable CS1591
         Back,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TakeScreenshot")]
+        #pragma warning disable CS1591
         TakeScreenshot,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SendKey")]
+        #pragma warning disable CS1591
         SendKey,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SendString")]
+        #pragma warning disable CS1591
         SendString,
+        #pragma warning restore CS1591
         [EnumMember(Value = "GoHome")]
+        #pragma warning disable CS1591
         GoHome,
+        #pragma warning restore CS1591
         [EnumMember(Value = "GoToSettings")]
+        #pragma warning disable CS1591
         GoToSettings,
+        #pragma warning restore CS1591
         [EnumMember(Value = "VolumeUp")]
+        #pragma warning disable CS1591
         VolumeUp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "VolumeDown")]
+        #pragma warning disable CS1591
         VolumeDown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Mute")]
+        #pragma warning disable CS1591
         Mute,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Unmute")]
+        #pragma warning disable CS1591
         Unmute,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ToggleMute")]
+        #pragma warning disable CS1591
         ToggleMute,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SetVolume")]
+        #pragma warning disable CS1591
         SetVolume,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SetAudioStreamIndex")]
+        #pragma warning disable CS1591
         SetAudioStreamIndex,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SetSubtitleStreamIndex")]
+        #pragma warning disable CS1591
         SetSubtitleStreamIndex,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ToggleFullscreen")]
+        #pragma warning disable CS1591
         ToggleFullscreen,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DisplayContent")]
+        #pragma warning disable CS1591
         DisplayContent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "GoToSearch")]
+        #pragma warning disable CS1591
         GoToSearch,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DisplayMessage")]
+        #pragma warning disable CS1591
         DisplayMessage,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SetRepeatMode")]
+        #pragma warning disable CS1591
         SetRepeatMode,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ChannelUp")]
+        #pragma warning disable CS1591
         ChannelUp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ChannelDown")]
+        #pragma warning disable CS1591
         ChannelDown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Guide")]
+        #pragma warning disable CS1591
         Guide,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ToggleStats")]
+        #pragma warning disable CS1591
         ToggleStats,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PlayMediaSource")]
+        #pragma warning disable CS1591
         PlayMediaSource,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PlayTrailers")]
+        #pragma warning disable CS1591
         PlayTrailers,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SetShuffleQueue")]
+        #pragma warning disable CS1591
         SetShuffleQueue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PlayState")]
+        #pragma warning disable CS1591
         PlayState,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PlayNext")]
+        #pragma warning disable CS1591
         PlayNext,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ToggleOsdMenu")]
+        #pragma warning disable CS1591
         ToggleOsdMenu,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Play")]
+        #pragma warning disable CS1591
         Play,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SetMaxStreamingBitrate")]
+        #pragma warning disable CS1591
         SetMaxStreamingBitrate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SetPlaybackOrder")]
+        #pragma warning disable CS1591
+        SetPlaybackOrder,
+        #pragma warning restore CS1591
     }
 }

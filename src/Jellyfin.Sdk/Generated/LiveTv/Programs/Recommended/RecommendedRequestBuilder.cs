@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs.Recommended {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\Programs\Recommended
     /// </summary>
-    public class RecommendedRequestBuilder : BaseRequestBuilder {
+    public class RecommendedRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="RecommendedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecommendedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs/Recommended{?enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,limit*,userId*}", pathParameters) {
+        public RecommendedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs/Recommended{?enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,limit*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RecommendedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecommendedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs/Recommended{?enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,limit*,userId*}", rawUrl) {
+        public RecommendedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs/Recommended{?enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,limit*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets recommended live tv epgs.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs.Recommended {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<RecommendedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<RecommendedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<RecommendedRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<RecommendedRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -50,10 +55,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs.Recommended {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RecommendedRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RecommendedRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RecommendedRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RecommendedRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -65,13 +72,15 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs.Recommended {
         /// </summary>
         /// <returns>A <see cref="RecommendedRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RecommendedRequestBuilder WithUrl(string rawUrl) {
+        public RecommendedRequestBuilder WithUrl(string rawUrl)
+        {
             return new RecommendedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets recommended live tv epgs.
         /// </summary>
-        public class RecommendedRequestBuilderGetQueryParameters {
+        public class RecommendedRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Include image information in output.</summary>
             [QueryParameter("enableImages")]
             public bool? EnableImages { get; set; }

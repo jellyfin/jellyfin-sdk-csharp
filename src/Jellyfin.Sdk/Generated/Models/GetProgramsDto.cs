@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Get programs dto.
     /// </summary>
-    public class GetProgramsDto : IParsable {
+    public class GetProgramsDto : IParsable 
+    {
         /// <summary>Gets or sets the channels to return guide information for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,10 +95,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets specify one or more sort orders, comma delimited. Options: Name, StartDate.Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SortBy { get; set; }
+        public List<ItemSortBy?>? SortBy { get; set; }
 #nullable restore
 #else
-        public List<string> SortBy { get; set; }
+        public List<ItemSortBy?> SortBy { get; set; }
 #endif
         /// <summary>Gets or sets sort Order - Ascending,Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +117,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="GetProgramsDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetProgramsDto CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static GetProgramsDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetProgramsDto();
         }
@@ -124,8 +126,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"ChannelIds", n => { ChannelIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
                 {"EnableImageTypes", n => { EnableImageTypes = n.GetCollectionOfEnumValues<ImageType>()?.ToList(); } },
                 {"EnableImages", n => { EnableImages = n.GetBoolValue(); } },
@@ -149,7 +153,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"MinEndDate", n => { MinEndDate = n.GetDateTimeOffsetValue(); } },
                 {"MinStartDate", n => { MinStartDate = n.GetDateTimeOffsetValue(); } },
                 {"SeriesTimerId", n => { SeriesTimerId = n.GetStringValue(); } },
-                {"SortBy", n => { SortBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"SortBy", n => { SortBy = n.GetCollectionOfEnumValues<ItemSortBy>()?.ToList(); } },
                 {"SortOrder", n => { SortOrder = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.SortOrder>()?.ToList(); } },
                 {"StartIndex", n => { StartIndex = n.GetIntValue(); } },
                 {"UserId", n => { UserId = n.GetGuidValue(); } },
@@ -159,7 +163,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<Guid?>("ChannelIds", ChannelIds);
             writer.WriteBoolValue("EnableImages", EnableImages);
@@ -184,7 +189,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteDateTimeOffsetValue("MinEndDate", MinEndDate);
             writer.WriteDateTimeOffsetValue("MinStartDate", MinStartDate);
             writer.WriteStringValue("SeriesTimerId", SeriesTimerId);
-            writer.WriteCollectionOfPrimitiveValues<string>("SortBy", SortBy);
+            writer.WriteCollectionOfEnumValues<ItemSortBy>("SortBy", SortBy);
             writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.SortOrder>("SortOrder", SortOrder);
             writer.WriteIntValue("StartIndex", StartIndex);
             writer.WriteGuidValue("UserId", UserId);

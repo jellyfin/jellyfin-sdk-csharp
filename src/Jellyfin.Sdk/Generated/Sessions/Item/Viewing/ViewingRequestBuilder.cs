@@ -11,20 +11,23 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Viewing {
     /// <summary>
     /// Builds and executes requests for operations under \Sessions\{sessionId}\Viewing
     /// </summary>
-    public class ViewingRequestBuilder : BaseRequestBuilder {
+    public class ViewingRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ViewingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ViewingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/{sessionId}/Viewing?itemId={itemId}&itemName={itemName}&itemType={itemType}", pathParameters) {
+        public ViewingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/{sessionId}/Viewing?itemId={itemId}&itemName={itemName}&itemType={itemType}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ViewingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ViewingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/{sessionId}/Viewing?itemId={itemId}&itemName={itemName}&itemType={itemType}", rawUrl) {
+        public ViewingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/{sessionId}/Viewing?itemId={itemId}&itemName={itemName}&itemType={itemType}", rawUrl)
+        {
         }
         /// <summary>
         /// Instructs a session to browse to an item or view.
@@ -33,10 +36,12 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Viewing {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<ViewingRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<ViewingRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<ViewingRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<ViewingRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -48,10 +53,12 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Viewing {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<ViewingRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<ViewingRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<ViewingRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<ViewingRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -62,13 +69,15 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Viewing {
         /// </summary>
         /// <returns>A <see cref="ViewingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ViewingRequestBuilder WithUrl(string rawUrl) {
+        public ViewingRequestBuilder WithUrl(string rawUrl)
+        {
             return new ViewingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Instructs a session to browse to an item or view.
         /// </summary>
-        public class ViewingRequestBuilderPostQueryParameters {
+        public class ViewingRequestBuilderPostQueryParameters 
+        {
             /// <summary>The Id of the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,15 +99,8 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Viewing {
             public string ItemName { get; set; }
 #endif
             /// <summary>The type of item to browse to.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("itemType")]
-            public string? ItemType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("itemType")]
-            public string ItemType { get; set; }
-#endif
+            public PostItemTypeQueryParameterType? ItemType { get; set; }
         }
     }
 }

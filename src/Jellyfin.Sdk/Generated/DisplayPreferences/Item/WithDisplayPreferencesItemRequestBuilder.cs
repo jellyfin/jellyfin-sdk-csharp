@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.DisplayPreferences.Item {
     /// <summary>
     /// Builds and executes requests for operations under \DisplayPreferences\{displayPreferencesId}
     /// </summary>
-    public class WithDisplayPreferencesItemRequestBuilder : BaseRequestBuilder {
+    public class WithDisplayPreferencesItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="WithDisplayPreferencesItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDisplayPreferencesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/DisplayPreferences/{displayPreferencesId}?client={client}&userId={userId}", pathParameters) {
+        public WithDisplayPreferencesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/DisplayPreferences/{displayPreferencesId}?client={client}{&userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithDisplayPreferencesItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDisplayPreferencesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/DisplayPreferences/{displayPreferencesId}?client={client}&userId={userId}", rawUrl) {
+        public WithDisplayPreferencesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/DisplayPreferences/{displayPreferencesId}?client={client}{&userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Get Display Preferences.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.DisplayPreferences.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DisplayPreferencesDto?> GetAsync(Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DisplayPreferencesDto?> GetAsync(Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DisplayPreferencesDto> GetAsync(Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DisplayPreferencesDto> GetAsync(Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<DisplayPreferencesDto>(requestInfo, DisplayPreferencesDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +56,12 @@ namespace Jellyfin.Sdk.Generated.DisplayPreferences.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(DisplayPreferencesDto body, Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(DisplayPreferencesDto body, Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(DisplayPreferencesDto body, Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(DisplayPreferencesDto body, Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -67,10 +74,12 @@ namespace Jellyfin.Sdk.Generated.DisplayPreferences.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -85,10 +94,12 @@ namespace Jellyfin.Sdk.Generated.DisplayPreferences.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DisplayPreferencesDto body, Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(DisplayPreferencesDto body, Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DisplayPreferencesDto body, Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(DisplayPreferencesDto body, Action<RequestConfiguration<WithDisplayPreferencesItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -101,13 +112,15 @@ namespace Jellyfin.Sdk.Generated.DisplayPreferences.Item {
         /// </summary>
         /// <returns>A <see cref="WithDisplayPreferencesItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithDisplayPreferencesItemRequestBuilder WithUrl(string rawUrl) {
+        public WithDisplayPreferencesItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithDisplayPreferencesItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get Display Preferences.
         /// </summary>
-        public class WithDisplayPreferencesItemRequestBuilderGetQueryParameters {
+        public class WithDisplayPreferencesItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,7 +138,8 @@ namespace Jellyfin.Sdk.Generated.DisplayPreferences.Item {
         /// <summary>
         /// Update Display Preferences.
         /// </summary>
-        public class WithDisplayPreferencesItemRequestBuilderPostQueryParameters {
+        public class WithDisplayPreferencesItemRequestBuilderPostQueryParameters 
+        {
             /// <summary>Client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

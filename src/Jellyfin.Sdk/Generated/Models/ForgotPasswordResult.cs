@@ -5,9 +5,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public class ForgotPasswordResult : IParsable {
+    #pragma warning disable CS1591
+    public class ForgotPasswordResult : IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>Gets or sets the action.</summary>
-        public ForgotPasswordAction? Action { get; set; }
+        public ForgotPasswordResult_Action? Action { get; set; }
         /// <summary>Gets or sets the pin expiration date.</summary>
         public DateTimeOffset? PinExpirationDate { get; set; }
         /// <summary>Gets or sets the pin file.</summary>
@@ -23,7 +26,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="ForgotPasswordResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ForgotPasswordResult CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ForgotPasswordResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ForgotPasswordResult();
         }
@@ -31,9 +35,11 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
-                {"Action", n => { Action = n.GetEnumValue<ForgotPasswordAction>(); } },
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
+                {"Action", n => { Action = n.GetEnumValue<ForgotPasswordResult_Action>(); } },
                 {"PinExpirationDate", n => { PinExpirationDate = n.GetDateTimeOffsetValue(); } },
                 {"PinFile", n => { PinFile = n.GetStringValue(); } },
             };
@@ -42,9 +48,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ForgotPasswordAction>("Action", Action);
+            writer.WriteEnumValue<ForgotPasswordResult_Action>("Action", Action);
             writer.WriteDateTimeOffsetValue("PinExpirationDate", PinExpirationDate);
             writer.WriteStringValue("PinFile", PinFile);
         }

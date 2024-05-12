@@ -8,9 +8,10 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// An entity representing a user&apos;s access schedule.
     /// </summary>
-    public class AccessSchedule : IParsable {
+    public class AccessSchedule : IParsable 
+    {
         /// <summary>Gets or sets the day of week.</summary>
-        public DynamicDayOfWeek? DayOfWeek { get; set; }
+        public AccessSchedule_DayOfWeek? DayOfWeek { get; set; }
         /// <summary>Gets or sets the end hour.</summary>
         public double? EndHour { get; set; }
         /// <summary>Gets the id of this instance.</summary>
@@ -24,7 +25,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="AccessSchedule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessSchedule CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static AccessSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AccessSchedule();
         }
@@ -32,9 +34,11 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
-                {"DayOfWeek", n => { DayOfWeek = n.GetEnumValue<DynamicDayOfWeek>(); } },
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
+                {"DayOfWeek", n => { DayOfWeek = n.GetEnumValue<AccessSchedule_DayOfWeek>(); } },
                 {"EndHour", n => { EndHour = n.GetDoubleValue(); } },
                 {"Id", n => { Id = n.GetIntValue(); } },
                 {"StartHour", n => { StartHour = n.GetDoubleValue(); } },
@@ -45,9 +49,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DynamicDayOfWeek>("DayOfWeek", DayOfWeek);
+            writer.WriteEnumValue<AccessSchedule_DayOfWeek>("DayOfWeek", DayOfWeek);
             writer.WriteDoubleValue("EndHour", EndHour);
             writer.WriteDoubleValue("StartHour", StartHour);
             writer.WriteGuidValue("UserId", UserId);

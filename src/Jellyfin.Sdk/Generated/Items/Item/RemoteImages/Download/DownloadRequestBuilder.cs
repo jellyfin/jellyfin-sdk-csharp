@@ -10,22 +10,25 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Download {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\RemoteImages\Download
+    /// Builds and executes requests for operations under \Items\{itemId}\RemoteImages\Download
     /// </summary>
-    public class DownloadRequestBuilder : BaseRequestBuilder {
+    public class DownloadRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="DownloadRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DownloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteImages/Download?type={type}{&imageUrl*}", pathParameters) {
+        public DownloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteImages/Download?type={type}{&imageUrl*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DownloadRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DownloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteImages/Download?type={type}{&imageUrl*}", rawUrl) {
+        public DownloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteImages/Download?type={type}{&imageUrl*}", rawUrl)
+        {
         }
         /// <summary>
         /// Downloads a remote image for an item.
@@ -35,13 +38,16 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Download {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<DownloadRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<DownloadRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<DownloadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<DownloadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -53,10 +59,12 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Download {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DownloadRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DownloadRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DownloadRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DownloadRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -68,13 +76,15 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Download {
         /// </summary>
         /// <returns>A <see cref="DownloadRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DownloadRequestBuilder WithUrl(string rawUrl) {
+        public DownloadRequestBuilder WithUrl(string rawUrl)
+        {
             return new DownloadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Downloads a remote image for an item.
         /// </summary>
-        public class DownloadRequestBuilderPostQueryParameters {
+        public class DownloadRequestBuilderPostQueryParameters 
+        {
             /// <summary>The image url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,15 +96,8 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Download {
             public string ImageUrl { get; set; }
 #endif
             /// <summary>The image type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public PostTypeQueryParameterType? Type { get; set; }
         }
     }
 }

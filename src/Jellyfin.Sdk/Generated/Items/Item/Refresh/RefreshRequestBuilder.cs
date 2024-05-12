@@ -10,22 +10,25 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.Refresh {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\Refresh
+    /// Builds and executes requests for operations under \Items\{itemId}\Refresh
     /// </summary>
-    public class RefreshRequestBuilder : BaseRequestBuilder {
+    public class RefreshRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="RefreshRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RefreshRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Refresh{?imageRefreshMode*,metadataRefreshMode*,replaceAllImages*,replaceAllMetadata*}", pathParameters) {
+        public RefreshRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Refresh{?imageRefreshMode*,metadataRefreshMode*,replaceAllImages*,replaceAllMetadata*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RefreshRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RefreshRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Refresh{?imageRefreshMode*,metadataRefreshMode*,replaceAllImages*,replaceAllMetadata*}", rawUrl) {
+        public RefreshRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Refresh{?imageRefreshMode*,metadataRefreshMode*,replaceAllImages*,replaceAllMetadata*}", rawUrl)
+        {
         }
         /// <summary>
         /// Refreshes metadata for an item.
@@ -35,13 +38,16 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Refresh {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<RefreshRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<RefreshRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<RefreshRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<RefreshRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -53,10 +59,12 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Refresh {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<RefreshRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<RefreshRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<RefreshRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<RefreshRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -68,33 +76,21 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Refresh {
         /// </summary>
         /// <returns>A <see cref="RefreshRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RefreshRequestBuilder WithUrl(string rawUrl) {
+        public RefreshRequestBuilder WithUrl(string rawUrl)
+        {
             return new RefreshRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Refreshes metadata for an item.
         /// </summary>
-        public class RefreshRequestBuilderPostQueryParameters {
+        public class RefreshRequestBuilderPostQueryParameters 
+        {
             /// <summary>(Optional) Specifies the image refresh mode.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("imageRefreshMode")]
-            public string? ImageRefreshMode { get; set; }
-#nullable restore
-#else
-            [QueryParameter("imageRefreshMode")]
-            public string ImageRefreshMode { get; set; }
-#endif
+            public PostImageRefreshModeQueryParameterType? ImageRefreshMode { get; set; }
             /// <summary>(Optional) Specifies the metadata refresh mode.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("metadataRefreshMode")]
-            public string? MetadataRefreshMode { get; set; }
-#nullable restore
-#else
-            [QueryParameter("metadataRefreshMode")]
-            public string MetadataRefreshMode { get; set; }
-#endif
+            public PostMetadataRefreshModeQueryParameterType? MetadataRefreshMode { get; set; }
             /// <summary>(Optional) Determines if images should be replaced. Only applicable if mode is FullRefresh.</summary>
             [QueryParameter("replaceAllImages")]
             public bool? ReplaceAllImages { get; set; }

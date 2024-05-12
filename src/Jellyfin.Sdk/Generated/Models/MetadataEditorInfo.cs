@@ -5,15 +5,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public class MetadataEditorInfo : IParsable {
+    #pragma warning disable CS1591
+    public class MetadataEditorInfo : IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>The ContentType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ContentType { get; set; }
-#nullable restore
-#else
-        public string ContentType { get; set; }
-#endif
+        public MetadataEditorInfo_ContentType? ContentType { get; set; }
         /// <summary>The ContentTypeOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +56,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="MetadataEditorInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MetadataEditorInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static MetadataEditorInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MetadataEditorInfo();
         }
@@ -67,9 +65,11 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
-                {"ContentType", n => { ContentType = n.GetStringValue(); } },
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
+                {"ContentType", n => { ContentType = n.GetEnumValue<MetadataEditorInfo_ContentType>(); } },
                 {"ContentTypeOptions", n => { ContentTypeOptions = n.GetCollectionOfObjectValues<NameValuePair>(NameValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"Countries", n => { Countries = n.GetCollectionOfObjectValues<CountryInfo>(CountryInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"Cultures", n => { Cultures = n.GetCollectionOfObjectValues<CultureDto>(CultureDto.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -81,9 +81,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("ContentType", ContentType);
+            writer.WriteEnumValue<MetadataEditorInfo_ContentType>("ContentType", ContentType);
             writer.WriteCollectionOfObjectValues<NameValuePair>("ContentTypeOptions", ContentTypeOptions);
             writer.WriteCollectionOfObjectValues<CountryInfo>("Countries", Countries);
             writer.WriteCollectionOfObjectValues<CultureDto>("Cultures", Cultures);

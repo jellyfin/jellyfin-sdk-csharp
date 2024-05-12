@@ -10,24 +10,28 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.Item {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\LiveRecordings\{recordingId}
     /// </summary>
-    public class WithRecordingItemRequestBuilder : BaseRequestBuilder {
+    public class WithRecordingItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The stream property</summary>
-        public StreamRequestBuilder Stream { get =>
-            new StreamRequestBuilder(PathParameters, RequestAdapter);
+        public StreamRequestBuilder Stream
+        {
+            get => new StreamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRecordingItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRecordingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveRecordings/{recordingId}", pathParameters) {
+        public WithRecordingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveRecordings/{recordingId}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRecordingItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRecordingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveRecordings/{recordingId}", rawUrl) {
+        public WithRecordingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveRecordings/{recordingId}", rawUrl)
+        {
         }
     }
 }

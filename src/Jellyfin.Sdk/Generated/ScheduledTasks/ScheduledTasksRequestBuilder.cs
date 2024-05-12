@@ -14,32 +14,40 @@ namespace Jellyfin.Sdk.Generated.ScheduledTasks {
     /// <summary>
     /// Builds and executes requests for operations under \ScheduledTasks
     /// </summary>
-    public class ScheduledTasksRequestBuilder : BaseRequestBuilder {
+    public class ScheduledTasksRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Running property</summary>
-        public RunningRequestBuilder Running { get =>
-            new RunningRequestBuilder(PathParameters, RequestAdapter);
+        public RunningRequestBuilder Running
+        {
+            get => new RunningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.ScheduledTasks.item collection</summary>
         /// <param name="position">Task Id.</param>
         /// <returns>A <see cref="WithTaskItemRequestBuilder"/></returns>
-        public WithTaskItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("taskId", position);
-            return new WithTaskItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithTaskItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("taskId", position);
+                return new WithTaskItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="ScheduledTasksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScheduledTasksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ScheduledTasks{?isEnabled*,isHidden*}", pathParameters) {
+        public ScheduledTasksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ScheduledTasks{?isEnabled*,isHidden*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ScheduledTasksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScheduledTasksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ScheduledTasks{?isEnabled*,isHidden*}", rawUrl) {
+        public ScheduledTasksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ScheduledTasks{?isEnabled*,isHidden*}", rawUrl)
+        {
         }
         /// <summary>
         /// Get tasks.
@@ -49,10 +57,12 @@ namespace Jellyfin.Sdk.Generated.ScheduledTasks {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<TaskInfo>?> GetAsync(Action<RequestConfiguration<ScheduledTasksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<TaskInfo>?> GetAsync(Action<RequestConfiguration<ScheduledTasksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<TaskInfo>> GetAsync(Action<RequestConfiguration<ScheduledTasksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<TaskInfo>> GetAsync(Action<RequestConfiguration<ScheduledTasksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<TaskInfo>(requestInfo, TaskInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -65,10 +75,12 @@ namespace Jellyfin.Sdk.Generated.ScheduledTasks {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ScheduledTasksRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ScheduledTasksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ScheduledTasksRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ScheduledTasksRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -80,13 +92,15 @@ namespace Jellyfin.Sdk.Generated.ScheduledTasks {
         /// </summary>
         /// <returns>A <see cref="ScheduledTasksRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ScheduledTasksRequestBuilder WithUrl(string rawUrl) {
+        public ScheduledTasksRequestBuilder WithUrl(string rawUrl)
+        {
             return new ScheduledTasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get tasks.
         /// </summary>
-        public class ScheduledTasksRequestBuilderGetQueryParameters {
+        public class ScheduledTasksRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional filter tasks that are enabled, or not.</summary>
             [QueryParameter("isEnabled")]
             public bool? IsEnabled { get; set; }

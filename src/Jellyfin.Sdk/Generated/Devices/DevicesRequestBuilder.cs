@@ -14,28 +14,33 @@ namespace Jellyfin.Sdk.Generated.Devices {
     /// <summary>
     /// Builds and executes requests for operations under \Devices
     /// </summary>
-    public class DevicesRequestBuilder : BaseRequestBuilder {
+    public class DevicesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Info property</summary>
-        public InfoRequestBuilder Info { get =>
-            new InfoRequestBuilder(PathParameters, RequestAdapter);
+        public InfoRequestBuilder Info
+        {
+            get => new InfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The OptionsPath property</summary>
-        public OptionsRequestBuilder OptionsPath { get =>
-            new OptionsRequestBuilder(PathParameters, RequestAdapter);
+        public OptionsRequestBuilder OptionsPath
+        {
+            get => new OptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="DevicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices{?supportsSync*,userId*}", pathParameters) {
+        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices?id={id}{&userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DevicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices{?supportsSync*,userId*}", rawUrl) {
+        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices?id={id}{&userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Deletes a device.
@@ -45,13 +50,16 @@ namespace Jellyfin.Sdk.Generated.Devices {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DevicesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DevicesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DevicesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DevicesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -64,10 +72,12 @@ namespace Jellyfin.Sdk.Generated.Devices {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceInfoQueryResult?> GetAsync(Action<RequestConfiguration<DevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceInfoQueryResult?> GetAsync(Action<RequestConfiguration<DevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DeviceInfoQueryResult> GetAsync(Action<RequestConfiguration<DevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceInfoQueryResult> GetAsync(Action<RequestConfiguration<DevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<DeviceInfoQueryResult>(requestInfo, DeviceInfoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -79,10 +89,12 @@ namespace Jellyfin.Sdk.Generated.Devices {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DevicesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DevicesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DevicesRequestBuilderDeleteQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DevicesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/Devices?id={id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -96,12 +108,14 @@ namespace Jellyfin.Sdk.Generated.Devices {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DevicesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DevicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/Devices{?userId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             return requestInfo;
@@ -111,13 +125,15 @@ namespace Jellyfin.Sdk.Generated.Devices {
         /// </summary>
         /// <returns>A <see cref="DevicesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DevicesRequestBuilder WithUrl(string rawUrl) {
+        public DevicesRequestBuilder WithUrl(string rawUrl)
+        {
             return new DevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Deletes a device.
         /// </summary>
-        public class DevicesRequestBuilderDeleteQueryParameters {
+        public class DevicesRequestBuilderDeleteQueryParameters 
+        {
             /// <summary>Device Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,10 +148,8 @@ namespace Jellyfin.Sdk.Generated.Devices {
         /// <summary>
         /// Get Devices.
         /// </summary>
-        public class DevicesRequestBuilderGetQueryParameters {
-            /// <summary>Gets or sets a value indicating whether [supports synchronize].</summary>
-            [QueryParameter("supportsSync")]
-            public bool? SupportsSync { get; set; }
+        public class DevicesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Gets or sets the user identifier.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

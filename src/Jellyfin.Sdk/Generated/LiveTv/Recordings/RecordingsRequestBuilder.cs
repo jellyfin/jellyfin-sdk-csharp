@@ -16,40 +16,50 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\Recordings
     /// </summary>
-    public class RecordingsRequestBuilder : BaseRequestBuilder {
+    public class RecordingsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Folders property</summary>
-        public FoldersRequestBuilder Folders { get =>
-            new FoldersRequestBuilder(PathParameters, RequestAdapter);
+        public FoldersRequestBuilder Folders
+        {
+            get => new FoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Groups property</summary>
-        public GroupsRequestBuilder Groups { get =>
-            new GroupsRequestBuilder(PathParameters, RequestAdapter);
+        public GroupsRequestBuilder Groups
+        {
+            get => new GroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Series property</summary>
-        public SeriesRequestBuilder Series { get =>
-            new SeriesRequestBuilder(PathParameters, RequestAdapter);
+        public SeriesRequestBuilder Series
+        {
+            get => new SeriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.LiveTv.Recordings.item collection</summary>
         /// <param name="position">Recording id.</param>
         /// <returns>A <see cref="WithRecordingItemRequestBuilder"/></returns>
-        public WithRecordingItemRequestBuilder this[Guid position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("recordingId", position);
-            return new WithRecordingItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithRecordingItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("recordingId", position);
+                return new WithRecordingItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="RecordingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecordingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Recordings{?channelId*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,imageTypeLimit*,isInProgress*,isKids*,isLibraryItem*,isMovie*,isNews*,isSeries*,isSports*,limit*,seriesTimerId*,startIndex*,status*,userId*}", pathParameters) {
+        public RecordingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Recordings{?channelId*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,imageTypeLimit*,isInProgress*,isKids*,isLibraryItem*,isMovie*,isNews*,isSeries*,isSports*,limit*,seriesTimerId*,startIndex*,status*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RecordingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecordingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Recordings{?channelId*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,imageTypeLimit*,isInProgress*,isKids*,isLibraryItem*,isMovie*,isNews*,isSeries*,isSports*,limit*,seriesTimerId*,startIndex*,status*,userId*}", rawUrl) {
+        public RecordingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Recordings{?channelId*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,imageTypeLimit*,isInProgress*,isKids*,isLibraryItem*,isMovie*,isNews*,isSeries*,isSports*,limit*,seriesTimerId*,startIndex*,status*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets live tv recordings.
@@ -59,10 +69,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<RecordingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<RecordingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<RecordingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<RecordingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -74,10 +86,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RecordingsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RecordingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RecordingsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RecordingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -89,13 +103,15 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings {
         /// </summary>
         /// <returns>A <see cref="RecordingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RecordingsRequestBuilder WithUrl(string rawUrl) {
+        public RecordingsRequestBuilder WithUrl(string rawUrl)
+        {
             return new RecordingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets live tv recordings.
         /// </summary>
-        public class RecordingsRequestBuilderGetQueryParameters {
+        public class RecordingsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Filter by channel id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,15 +192,8 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings {
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }
             /// <summary>Optional. Filter by recording status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("status")]
-            public string? Status { get; set; }
-#nullable restore
-#else
-            [QueryParameter("status")]
-            public string Status { get; set; }
-#endif
+            public GetStatusQueryParameterType? Status { get; set; }
             /// <summary>Optional. Filter by user and attach user data.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

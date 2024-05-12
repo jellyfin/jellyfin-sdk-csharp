@@ -11,20 +11,23 @@ namespace Jellyfin.Sdk.Generated.Playback.BitrateTest {
     /// <summary>
     /// Builds and executes requests for operations under \Playback\BitrateTest
     /// </summary>
-    public class BitrateTestRequestBuilder : BaseRequestBuilder {
+    public class BitrateTestRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="BitrateTestRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BitrateTestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playback/BitrateTest{?size*}", pathParameters) {
+        public BitrateTestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playback/BitrateTest{?size*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="BitrateTestRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BitrateTestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playback/BitrateTest{?size*}", rawUrl) {
+        public BitrateTestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playback/BitrateTest{?size*}", rawUrl)
+        {
         }
         /// <summary>
         /// Tests the network with a request with the size of the bitrate.
@@ -34,10 +37,12 @@ namespace Jellyfin.Sdk.Generated.Playback.BitrateTest {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<BitrateTestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<BitrateTestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<BitrateTestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<BitrateTestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -49,10 +54,12 @@ namespace Jellyfin.Sdk.Generated.Playback.BitrateTest {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BitrateTestRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BitrateTestRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BitrateTestRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BitrateTestRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -64,13 +71,15 @@ namespace Jellyfin.Sdk.Generated.Playback.BitrateTest {
         /// </summary>
         /// <returns>A <see cref="BitrateTestRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BitrateTestRequestBuilder WithUrl(string rawUrl) {
+        public BitrateTestRequestBuilder WithUrl(string rawUrl)
+        {
             return new BitrateTestRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Tests the network with a request with the size of the bitrate.
         /// </summary>
-        public class BitrateTestRequestBuilderGetQueryParameters {
+        public class BitrateTestRequestBuilderGetQueryParameters 
+        {
             /// <summary>The bitrate. Defaults to 102400.</summary>
             [QueryParameter("size")]
             public int? Size { get; set; }

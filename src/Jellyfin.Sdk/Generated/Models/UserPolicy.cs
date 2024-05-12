@@ -5,7 +5,10 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public class UserPolicy : IParsable {
+    #pragma warning disable CS1591
+    public class UserPolicy : IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>The AccessSchedules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -13,6 +16,14 @@ namespace Jellyfin.Sdk.Generated.Models {
 #nullable restore
 #else
         public List<AccessSchedule> AccessSchedules { get; set; }
+#endif
+        /// <summary>The AllowedTags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AllowedTags { get; set; }
+#nullable restore
+#else
+        public List<string> AllowedTags { get; set; }
 #endif
         /// <summary>The AuthenticationProviderId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,6 +73,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public bool? EnableAllFolders { get; set; }
         /// <summary>The EnableAudioPlaybackTranscoding property</summary>
         public bool? EnableAudioPlaybackTranscoding { get; set; }
+        /// <summary>Gets or sets a value indicating whether this instance can manage collections.</summary>
+        public bool? EnableCollectionManagement { get; set; }
         /// <summary>The EnableContentDeletion property</summary>
         public bool? EnableContentDeletion { get; set; }
         /// <summary>The EnableContentDeletionFromFolders property</summary>
@@ -102,6 +115,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public bool? EnableLiveTvAccess { get; set; }
         /// <summary>The EnableLiveTvManagement property</summary>
         public bool? EnableLiveTvManagement { get; set; }
+        /// <summary>Gets or sets a value indicating whether this user can manage lyrics.</summary>
+        public bool? EnableLyricManagement { get; set; }
         /// <summary>The EnableMediaConversion property</summary>
         public bool? EnableMediaConversion { get; set; }
         /// <summary>The EnableMediaPlayback property</summary>
@@ -116,6 +131,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public bool? EnableRemoteControlOfOtherUsers { get; set; }
         /// <summary>The EnableSharedDeviceControl property</summary>
         public bool? EnableSharedDeviceControl { get; set; }
+        /// <summary>Gets or sets a value indicating whether this instance can manage subtitles.</summary>
+        public bool? EnableSubtitleManagement { get; set; }
         /// <summary>Gets or sets a value indicating whether [enable synchronize].</summary>
         public bool? EnableSyncTranscoding { get; set; }
         /// <summary>The EnableUserPreferenceAccess property</summary>
@@ -149,13 +166,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The RemoteClientBitrateLimit property</summary>
         public int? RemoteClientBitrateLimit { get; set; }
         /// <summary>Gets or sets a value indicating what SyncPlay features the user can access.</summary>
-        public SyncPlayUserAccessType? SyncPlayAccess { get; set; }
+        public UserPolicy_SyncPlayAccess? SyncPlayAccess { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="UserPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static UserPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new UserPolicy();
         }
@@ -163,9 +181,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"AccessSchedules", n => { AccessSchedules = n.GetCollectionOfObjectValues<AccessSchedule>(AccessSchedule.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"AllowedTags", n => { AllowedTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"AuthenticationProviderId", n => { AuthenticationProviderId = n.GetStringValue(); } },
                 {"BlockUnratedItems", n => { BlockUnratedItems = n.GetCollectionOfEnumValues<UnratedItem>()?.ToList(); } },
                 {"BlockedChannels", n => { BlockedChannels = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
@@ -175,11 +196,13 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"EnableAllDevices", n => { EnableAllDevices = n.GetBoolValue(); } },
                 {"EnableAllFolders", n => { EnableAllFolders = n.GetBoolValue(); } },
                 {"EnableAudioPlaybackTranscoding", n => { EnableAudioPlaybackTranscoding = n.GetBoolValue(); } },
+                {"EnableCollectionManagement", n => { EnableCollectionManagement = n.GetBoolValue(); } },
                 {"EnableContentDeletion", n => { EnableContentDeletion = n.GetBoolValue(); } },
                 {"EnableContentDeletionFromFolders", n => { EnableContentDeletionFromFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"EnableContentDownloading", n => { EnableContentDownloading = n.GetBoolValue(); } },
                 {"EnableLiveTvAccess", n => { EnableLiveTvAccess = n.GetBoolValue(); } },
                 {"EnableLiveTvManagement", n => { EnableLiveTvManagement = n.GetBoolValue(); } },
+                {"EnableLyricManagement", n => { EnableLyricManagement = n.GetBoolValue(); } },
                 {"EnableMediaConversion", n => { EnableMediaConversion = n.GetBoolValue(); } },
                 {"EnableMediaPlayback", n => { EnableMediaPlayback = n.GetBoolValue(); } },
                 {"EnablePlaybackRemuxing", n => { EnablePlaybackRemuxing = n.GetBoolValue(); } },
@@ -187,6 +210,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"EnableRemoteAccess", n => { EnableRemoteAccess = n.GetBoolValue(); } },
                 {"EnableRemoteControlOfOtherUsers", n => { EnableRemoteControlOfOtherUsers = n.GetBoolValue(); } },
                 {"EnableSharedDeviceControl", n => { EnableSharedDeviceControl = n.GetBoolValue(); } },
+                {"EnableSubtitleManagement", n => { EnableSubtitleManagement = n.GetBoolValue(); } },
                 {"EnableSyncTranscoding", n => { EnableSyncTranscoding = n.GetBoolValue(); } },
                 {"EnableUserPreferenceAccess", n => { EnableUserPreferenceAccess = n.GetBoolValue(); } },
                 {"EnableVideoPlaybackTranscoding", n => { EnableVideoPlaybackTranscoding = n.GetBoolValue(); } },
@@ -203,16 +227,18 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"MaxParentalRating", n => { MaxParentalRating = n.GetIntValue(); } },
                 {"PasswordResetProviderId", n => { PasswordResetProviderId = n.GetStringValue(); } },
                 {"RemoteClientBitrateLimit", n => { RemoteClientBitrateLimit = n.GetIntValue(); } },
-                {"SyncPlayAccess", n => { SyncPlayAccess = n.GetEnumValue<SyncPlayUserAccessType>(); } },
+                {"SyncPlayAccess", n => { SyncPlayAccess = n.GetEnumValue<UserPolicy_SyncPlayAccess>(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<AccessSchedule>("AccessSchedules", AccessSchedules);
+            writer.WriteCollectionOfPrimitiveValues<string>("AllowedTags", AllowedTags);
             writer.WriteStringValue("AuthenticationProviderId", AuthenticationProviderId);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("BlockedChannels", BlockedChannels);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("BlockedMediaFolders", BlockedMediaFolders);
@@ -222,6 +248,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("EnableAllDevices", EnableAllDevices);
             writer.WriteBoolValue("EnableAllFolders", EnableAllFolders);
             writer.WriteBoolValue("EnableAudioPlaybackTranscoding", EnableAudioPlaybackTranscoding);
+            writer.WriteBoolValue("EnableCollectionManagement", EnableCollectionManagement);
             writer.WriteBoolValue("EnableContentDeletion", EnableContentDeletion);
             writer.WriteCollectionOfPrimitiveValues<string>("EnableContentDeletionFromFolders", EnableContentDeletionFromFolders);
             writer.WriteBoolValue("EnableContentDownloading", EnableContentDownloading);
@@ -230,6 +257,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteCollectionOfPrimitiveValues<Guid?>("EnabledFolders", EnabledFolders);
             writer.WriteBoolValue("EnableLiveTvAccess", EnableLiveTvAccess);
             writer.WriteBoolValue("EnableLiveTvManagement", EnableLiveTvManagement);
+            writer.WriteBoolValue("EnableLyricManagement", EnableLyricManagement);
             writer.WriteBoolValue("EnableMediaConversion", EnableMediaConversion);
             writer.WriteBoolValue("EnableMediaPlayback", EnableMediaPlayback);
             writer.WriteBoolValue("EnablePlaybackRemuxing", EnablePlaybackRemuxing);
@@ -237,6 +265,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("EnableRemoteAccess", EnableRemoteAccess);
             writer.WriteBoolValue("EnableRemoteControlOfOtherUsers", EnableRemoteControlOfOtherUsers);
             writer.WriteBoolValue("EnableSharedDeviceControl", EnableSharedDeviceControl);
+            writer.WriteBoolValue("EnableSubtitleManagement", EnableSubtitleManagement);
             writer.WriteBoolValue("EnableSyncTranscoding", EnableSyncTranscoding);
             writer.WriteBoolValue("EnableUserPreferenceAccess", EnableUserPreferenceAccess);
             writer.WriteBoolValue("EnableVideoPlaybackTranscoding", EnableVideoPlaybackTranscoding);
@@ -250,7 +279,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("MaxParentalRating", MaxParentalRating);
             writer.WriteStringValue("PasswordResetProviderId", PasswordResetProviderId);
             writer.WriteIntValue("RemoteClientBitrateLimit", RemoteClientBitrateLimit);
-            writer.WriteEnumValue<SyncPlayUserAccessType>("SyncPlayAccess", SyncPlayAccess);
+            writer.WriteEnumValue<UserPolicy_SyncPlayAccess>("SyncPlayAccess", SyncPlayAccess);
         }
     }
 }

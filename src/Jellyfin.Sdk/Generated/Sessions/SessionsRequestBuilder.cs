@@ -17,44 +17,55 @@ namespace Jellyfin.Sdk.Generated.Sessions {
     /// <summary>
     /// Builds and executes requests for operations under \Sessions
     /// </summary>
-    public class SessionsRequestBuilder : BaseRequestBuilder {
+    public class SessionsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Capabilities property</summary>
-        public CapabilitiesRequestBuilder Capabilities { get =>
-            new CapabilitiesRequestBuilder(PathParameters, RequestAdapter);
+        public CapabilitiesRequestBuilder Capabilities
+        {
+            get => new CapabilitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Logout property</summary>
-        public LogoutRequestBuilder Logout { get =>
-            new LogoutRequestBuilder(PathParameters, RequestAdapter);
+        public LogoutRequestBuilder Logout
+        {
+            get => new LogoutRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Playing property</summary>
-        public PlayingRequestBuilder Playing { get =>
-            new PlayingRequestBuilder(PathParameters, RequestAdapter);
+        public PlayingRequestBuilder Playing
+        {
+            get => new PlayingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Viewing property</summary>
-        public ViewingRequestBuilder Viewing { get =>
-            new ViewingRequestBuilder(PathParameters, RequestAdapter);
+        public ViewingRequestBuilder Viewing
+        {
+            get => new ViewingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Sessions.item collection</summary>
         /// <param name="position">The session id.</param>
         /// <returns>A <see cref="WithSessionItemRequestBuilder"/></returns>
-        public WithSessionItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("sessionId", position);
-            return new WithSessionItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithSessionItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("sessionId", position);
+                return new WithSessionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="SessionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions{?activeWithinSeconds*,controllableByUserId*,deviceId*}", pathParameters) {
+        public SessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions{?activeWithinSeconds*,controllableByUserId*,deviceId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SessionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions{?activeWithinSeconds*,controllableByUserId*,deviceId*}", rawUrl) {
+        public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions{?activeWithinSeconds*,controllableByUserId*,deviceId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets a list of sessions.
@@ -64,10 +75,12 @@ namespace Jellyfin.Sdk.Generated.Sessions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<SessionInfo>?> GetAsync(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SessionInfo>?> GetAsync(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<SessionInfo>> GetAsync(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SessionInfo>> GetAsync(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<SessionInfo>(requestInfo, SessionInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -80,10 +93,12 @@ namespace Jellyfin.Sdk.Generated.Sessions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -95,13 +110,15 @@ namespace Jellyfin.Sdk.Generated.Sessions {
         /// </summary>
         /// <returns>A <see cref="SessionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SessionsRequestBuilder WithUrl(string rawUrl) {
+        public SessionsRequestBuilder WithUrl(string rawUrl)
+        {
             return new SessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets a list of sessions.
         /// </summary>
-        public class SessionsRequestBuilderGetQueryParameters {
+        public class SessionsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Filter by sessions that were active in the last n seconds.</summary>
             [QueryParameter("activeWithinSeconds")]
             public int? ActiveWithinSeconds { get; set; }

@@ -15,36 +15,45 @@ namespace Jellyfin.Sdk.Generated.Channels {
     /// <summary>
     /// Builds and executes requests for operations under \Channels
     /// </summary>
-    public class ChannelsRequestBuilder : BaseRequestBuilder {
+    public class ChannelsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Features property</summary>
-        public FeaturesRequestBuilder Features { get =>
-            new FeaturesRequestBuilder(PathParameters, RequestAdapter);
+        public FeaturesRequestBuilder Features
+        {
+            get => new FeaturesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Items property</summary>
-        public ItemsRequestBuilder Items { get =>
-            new ItemsRequestBuilder(PathParameters, RequestAdapter);
+        public ItemsRequestBuilder Items
+        {
+            get => new ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Channels.item collection</summary>
         /// <param name="position">Channel id.</param>
         /// <returns>A <see cref="WithChannelItemRequestBuilder"/></returns>
-        public WithChannelItemRequestBuilder this[Guid position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("channelId", position);
-            return new WithChannelItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithChannelItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("channelId", position);
+                return new WithChannelItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="ChannelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChannelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels{?isFavorite*,limit*,startIndex*,supportsLatestItems*,supportsMediaDeletion*,userId*}", pathParameters) {
+        public ChannelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels{?isFavorite*,limit*,startIndex*,supportsLatestItems*,supportsMediaDeletion*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ChannelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChannelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels{?isFavorite*,limit*,startIndex*,supportsLatestItems*,supportsMediaDeletion*,userId*}", rawUrl) {
+        public ChannelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels{?isFavorite*,limit*,startIndex*,supportsLatestItems*,supportsMediaDeletion*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets available channels.
@@ -54,10 +63,12 @@ namespace Jellyfin.Sdk.Generated.Channels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -69,10 +80,12 @@ namespace Jellyfin.Sdk.Generated.Channels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -84,13 +97,15 @@ namespace Jellyfin.Sdk.Generated.Channels {
         /// </summary>
         /// <returns>A <see cref="ChannelsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ChannelsRequestBuilder WithUrl(string rawUrl) {
+        public ChannelsRequestBuilder WithUrl(string rawUrl)
+        {
             return new ChannelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets available channels.
         /// </summary>
-        public class ChannelsRequestBuilderGetQueryParameters {
+        public class ChannelsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Filter by channels that are favorite.</summary>
             [QueryParameter("isFavorite")]
             public bool? IsFavorite { get; set; }

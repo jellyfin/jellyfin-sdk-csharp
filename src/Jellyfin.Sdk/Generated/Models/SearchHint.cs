@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Class SearchHintResult.
     /// </summary>
-    public class SearchHint : IParsable {
+    public class SearchHint : IParsable 
+    {
         /// <summary>Gets or sets the album.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +26,7 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string AlbumArtist { get; set; }
 #endif
-        /// <summary>The AlbumId property</summary>
+        /// <summary>Gets or sets the album id.</summary>
         public Guid? AlbumId { get; set; }
         /// <summary>Gets or sets the artists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,17 +62,18 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string ChannelName { get; set; }
 #endif
-        /// <summary>The EndDate property</summary>
+        /// <summary>Gets or sets the end date.</summary>
         public DateTimeOffset? EndDate { get; set; }
         /// <summary>Gets or sets the episode count.</summary>
         public int? EpisodeCount { get; set; }
-        /// <summary>The Id property</summary>
+        /// <summary>Gets or sets the item id.</summary>
         public Guid? Id { get; set; }
         /// <summary>Gets or sets the index number.</summary>
         public int? IndexNumber { get; set; }
-        /// <summary>The IsFolder property</summary>
+        /// <summary>Gets or sets a value indicating whether this instance is folder.</summary>
         public bool? IsFolder { get; set; }
         /// <summary>Gets or sets the item id.</summary>
+        [Obsolete("")]
         public Guid? ItemId { get; set; }
         /// <summary>Gets or sets the matched term.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,13 +84,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string MatchedTerm { get; set; }
 #endif
         /// <summary>Gets or sets the type of the media.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MediaType { get; set; }
-#nullable restore
-#else
-        public string MediaType { get; set; }
-#endif
+        public SearchHint_MediaType? MediaType { get; set; }
         /// <summary>Gets or sets the name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,9 +119,9 @@ namespace Jellyfin.Sdk.Generated.Models {
 #endif
         /// <summary>Gets or sets the song count.</summary>
         public int? SongCount { get; set; }
-        /// <summary>The StartDate property</summary>
+        /// <summary>Gets or sets the start date.</summary>
         public DateTimeOffset? StartDate { get; set; }
-        /// <summary>The Status property</summary>
+        /// <summary>Gets or sets the status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -150,19 +146,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string ThumbImageTag { get; set; }
 #endif
         /// <summary>Gets or sets the type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public SearchHint_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="SearchHint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SearchHint CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static SearchHint CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SearchHint();
         }
@@ -170,8 +161,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"Album", n => { Album = n.GetStringValue(); } },
                 {"AlbumArtist", n => { AlbumArtist = n.GetStringValue(); } },
                 {"AlbumId", n => { AlbumId = n.GetGuidValue(); } },
@@ -187,7 +180,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"IsFolder", n => { IsFolder = n.GetBoolValue(); } },
                 {"ItemId", n => { ItemId = n.GetGuidValue(); } },
                 {"MatchedTerm", n => { MatchedTerm = n.GetStringValue(); } },
-                {"MediaType", n => { MediaType = n.GetStringValue(); } },
+                {"MediaType", n => { MediaType = n.GetEnumValue<SearchHint_MediaType>(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
                 {"ParentIndexNumber", n => { ParentIndexNumber = n.GetIntValue(); } },
                 {"PrimaryImageAspectRatio", n => { PrimaryImageAspectRatio = n.GetDoubleValue(); } },
@@ -200,14 +193,15 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"Status", n => { Status = n.GetStringValue(); } },
                 {"ThumbImageItemId", n => { ThumbImageItemId = n.GetStringValue(); } },
                 {"ThumbImageTag", n => { ThumbImageTag = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetStringValue(); } },
+                {"Type", n => { Type = n.GetEnumValue<SearchHint_Type>(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Album", Album);
             writer.WriteStringValue("AlbumArtist", AlbumArtist);
@@ -224,7 +218,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("IsFolder", IsFolder);
             writer.WriteGuidValue("ItemId", ItemId);
             writer.WriteStringValue("MatchedTerm", MatchedTerm);
-            writer.WriteStringValue("MediaType", MediaType);
+            writer.WriteEnumValue<SearchHint_MediaType>("MediaType", MediaType);
             writer.WriteStringValue("Name", Name);
             writer.WriteIntValue("ParentIndexNumber", ParentIndexNumber);
             writer.WriteDoubleValue("PrimaryImageAspectRatio", PrimaryImageAspectRatio);
@@ -237,7 +231,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("Status", Status);
             writer.WriteStringValue("ThumbImageItemId", ThumbImageItemId);
             writer.WriteStringValue("ThumbImageTag", ThumbImageTag);
-            writer.WriteStringValue("Type", Type);
+            writer.WriteEnumValue<SearchHint_Type>("Type", Type);
         }
     }
 }

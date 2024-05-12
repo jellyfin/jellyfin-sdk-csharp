@@ -10,24 +10,28 @@ namespace Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions {
     /// <summary>
     /// Builds and executes requests for operations under \System\Configuration\MetadataOptions
     /// </summary>
-    public class MetadataOptionsRequestBuilder : BaseRequestBuilder {
+    public class MetadataOptionsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Default property</summary>
-        public DefaultRequestBuilder Default { get =>
-            new DefaultRequestBuilder(PathParameters, RequestAdapter);
+        public DefaultRequestBuilder Default
+        {
+            get => new DefaultRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="MetadataOptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MetadataOptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/Configuration/MetadataOptions", pathParameters) {
+        public MetadataOptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/Configuration/MetadataOptions", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MetadataOptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MetadataOptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/Configuration/MetadataOptions", rawUrl) {
+        public MetadataOptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/Configuration/MetadataOptions", rawUrl)
+        {
         }
     }
 }

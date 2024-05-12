@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Web.ConfigurationPages {
     /// <summary>
     /// Builds and executes requests for operations under \web\ConfigurationPages
     /// </summary>
-    public class ConfigurationPagesRequestBuilder : BaseRequestBuilder {
+    public class ConfigurationPagesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ConfigurationPagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigurationPagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/web/ConfigurationPages{?enableInMainMenu*}", pathParameters) {
+        public ConfigurationPagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/web/ConfigurationPages{?enableInMainMenu*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ConfigurationPagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigurationPagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/web/ConfigurationPages{?enableInMainMenu*}", rawUrl) {
+        public ConfigurationPagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/web/ConfigurationPages{?enableInMainMenu*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets the configuration pages.
@@ -36,13 +39,16 @@ namespace Jellyfin.Sdk.Generated.Web.ConfigurationPages {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<ConfigurationPageInfo>?> GetAsync(Action<RequestConfiguration<ConfigurationPagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<ConfigurationPageInfo>?> GetAsync(Action<RequestConfiguration<ConfigurationPagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<ConfigurationPageInfo>> GetAsync(Action<RequestConfiguration<ConfigurationPagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<ConfigurationPageInfo>> GetAsync(Action<RequestConfiguration<ConfigurationPagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<ConfigurationPageInfo>(requestInfo, ConfigurationPageInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Jellyfin.Sdk.Generated.Web.ConfigurationPages {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConfigurationPagesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConfigurationPagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConfigurationPagesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConfigurationPagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Jellyfin.Sdk.Generated.Web.ConfigurationPages {
         /// </summary>
         /// <returns>A <see cref="ConfigurationPagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ConfigurationPagesRequestBuilder WithUrl(string rawUrl) {
+        public ConfigurationPagesRequestBuilder WithUrl(string rawUrl)
+        {
             return new ConfigurationPagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets the configuration pages.
         /// </summary>
-        public class ConfigurationPagesRequestBuilderGetQueryParameters {
+        public class ConfigurationPagesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Whether to enable in the main menu.</summary>
             [QueryParameter("enableInMainMenu")]
             public bool? EnableInMainMenu { get; set; }

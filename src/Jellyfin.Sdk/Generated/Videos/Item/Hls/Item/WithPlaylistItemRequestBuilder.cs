@@ -9,34 +9,39 @@ using System.Threading.Tasks;
 using System;
 namespace Jellyfin.Sdk.Generated.Videos.Item.Hls.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Videos\{itemId-id}\hls\{playlistId}
+    /// Builds and executes requests for operations under \Videos\{item-id}\hls\{playlistId}
     /// </summary>
-    public class WithPlaylistItemRequestBuilder : BaseRequestBuilder {
+    public class WithPlaylistItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The streamM3u8 property</summary>
-        public StreamM3u8RequestBuilder StreamM3u8 { get =>
-            new StreamM3u8RequestBuilder(PathParameters, RequestAdapter);
+        public StreamM3u8RequestBuilder StreamM3u8
+        {
+            get => new StreamM3u8RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithPlaylistItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPlaylistItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/hls/{playlistId}", pathParameters) {
+        public WithPlaylistItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/hls/{playlistId}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithPlaylistItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPlaylistItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/hls/{playlistId}", rawUrl) {
+        public WithPlaylistItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/hls/{playlistId}", rawUrl)
+        {
         }
         /// <summary>
-        /// Builds and executes requests for operations under \Videos\{itemId-id}\hls\{playlistId}\{segmentId}.{segmentContainer}
+        /// Builds and executes requests for operations under \Videos\{item-id}\hls\{playlistId}\{segmentId}.{segmentContainer}
         /// </summary>
         /// <returns>A <see cref="WithSegmentIdWithSegmentContainerRequestBuilder"/></returns>
         /// <param name="segmentContainer">The segment container.</param>
         /// <param name="segmentId">The segment id.</param>
-        public WithSegmentIdWithSegmentContainerRequestBuilder WithSegmentIdWithSegmentContainer(string segmentContainer, string segmentId) {
+        public WithSegmentIdWithSegmentContainerRequestBuilder WithSegmentIdWithSegmentContainer(string segmentContainer, string segmentId)
+        {
             if(string.IsNullOrEmpty(segmentContainer)) throw new ArgumentNullException(nameof(segmentContainer));
             if(string.IsNullOrEmpty(segmentId)) throw new ArgumentNullException(nameof(segmentId));
             return new WithSegmentIdWithSegmentContainerRequestBuilder(PathParameters, RequestAdapter, segmentContainer, segmentId);

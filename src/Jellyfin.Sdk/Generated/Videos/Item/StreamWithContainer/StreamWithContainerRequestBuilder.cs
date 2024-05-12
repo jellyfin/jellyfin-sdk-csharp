@@ -9,16 +9,18 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer {
     /// <summary>
-    /// Builds and executes requests for operations under \Videos\{itemId-id}\stream.{container}
+    /// Builds and executes requests for operations under \Videos\{item-id}\stream.{container}
     /// </summary>
-    public class StreamWithContainerRequestBuilder : BaseRequestBuilder {
+    public class StreamWithContainerRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="StreamWithContainerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="container">The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamWithContainerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string container = "") : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/stream.{container}{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", pathParameters) {
+        public StreamWithContainerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string container = "") : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/stream.{container}{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(container)) PathParameters.Add("container", container);
         }
         /// <summary>
@@ -26,7 +28,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamWithContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/stream.{container}{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", rawUrl) {
+        public StreamWithContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/stream.{container}{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets a video stream.
@@ -36,10 +39,12 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -52,10 +57,12 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> HeadAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> HeadAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> HeadAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> HeadAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToHeadRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -67,10 +74,12 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -84,10 +93,12 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.HEAD, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -99,13 +110,15 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer {
         /// </summary>
         /// <returns>A <see cref="StreamWithContainerRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StreamWithContainerRequestBuilder WithUrl(string rawUrl) {
+        public StreamWithContainerRequestBuilder WithUrl(string rawUrl)
+        {
             return new StreamWithContainerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets a video stream.
         /// </summary>
-        public class StreamWithContainerRequestBuilderGetQueryParameters {
+        public class StreamWithContainerRequestBuilderGetQueryParameters 
+        {
             /// <summary>Whether or not to allow copying of the audio stream url.</summary>
             [QueryParameter("allowAudioStreamCopy")]
             public bool? AllowAudioStreamCopy { get; set; }
@@ -138,15 +151,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer {
             [QueryParameter("breakOnNonKeyFrames")]
             public bool? BreakOnNonKeyFrames { get; set; }
             /// <summary>Optional. The MediaBrowser.Model.Dlna.EncodingContext.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("context")]
-            public string? Context { get; set; }
-#nullable restore
-#else
-            [QueryParameter("context")]
-            public string Context { get; set; }
-#endif
+            public GetContextQueryParameterType? Context { get; set; }
             /// <summary>Whether or not to copy timestamps when transcoding with an offset. Defaults to false.</summary>
             [QueryParameter("copyTimestamps")]
             public bool? CopyTimestamps { get; set; }
@@ -318,15 +324,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer {
             public string SubtitleCodec { get; set; }
 #endif
             /// <summary>Optional. Specify the subtitle delivery method.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("subtitleMethod")]
-            public string? SubtitleMethod { get; set; }
-#nullable restore
-#else
-            [QueryParameter("subtitleMethod")]
-            public string SubtitleMethod { get; set; }
-#endif
+            public GetSubtitleMethodQueryParameterType? SubtitleMethod { get; set; }
             /// <summary>Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.</summary>
             [QueryParameter("subtitleStreamIndex")]
             public int? SubtitleStreamIndex { get; set; }
@@ -376,7 +375,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer {
         /// <summary>
         /// Gets a video stream.
         /// </summary>
-        public class StreamWithContainerRequestBuilderHeadQueryParameters {
+        public class StreamWithContainerRequestBuilderHeadQueryParameters 
+        {
             /// <summary>Whether or not to allow copying of the audio stream url.</summary>
             [QueryParameter("allowAudioStreamCopy")]
             public bool? AllowAudioStreamCopy { get; set; }
@@ -409,15 +409,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer {
             [QueryParameter("breakOnNonKeyFrames")]
             public bool? BreakOnNonKeyFrames { get; set; }
             /// <summary>Optional. The MediaBrowser.Model.Dlna.EncodingContext.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("context")]
-            public string? Context { get; set; }
-#nullable restore
-#else
-            [QueryParameter("context")]
-            public string Context { get; set; }
-#endif
+            public HeadContextQueryParameterType? Context { get; set; }
             /// <summary>Whether or not to copy timestamps when transcoding with an offset. Defaults to false.</summary>
             [QueryParameter("copyTimestamps")]
             public bool? CopyTimestamps { get; set; }
@@ -589,15 +582,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer {
             public string SubtitleCodec { get; set; }
 #endif
             /// <summary>Optional. Specify the subtitle delivery method.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("subtitleMethod")]
-            public string? SubtitleMethod { get; set; }
-#nullable restore
-#else
-            [QueryParameter("subtitleMethod")]
-            public string SubtitleMethod { get; set; }
-#endif
+            public HeadSubtitleMethodQueryParameterType? SubtitleMethod { get; set; }
             /// <summary>Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.</summary>
             [QueryParameter("subtitleStreamIndex")]
             public int? SubtitleStreamIndex { get; set; }

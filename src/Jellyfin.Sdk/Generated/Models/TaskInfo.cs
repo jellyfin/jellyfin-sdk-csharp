@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Class TaskInfo.
     /// </summary>
-    public class TaskInfo : IParsable {
+    public class TaskInfo : IParsable 
+    {
         /// <summary>Gets or sets the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +63,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Name { get; set; }
 #endif
         /// <summary>Gets or sets the state of the task.</summary>
-        public TaskState? State { get; set; }
+        public TaskInfo_State? State { get; set; }
         /// <summary>Gets or sets the triggers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +77,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="TaskInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TaskInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static TaskInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new TaskInfo();
         }
@@ -84,8 +86,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"Category", n => { Category = n.GetStringValue(); } },
                 {"CurrentProgressPercentage", n => { CurrentProgressPercentage = n.GetDoubleValue(); } },
                 {"Description", n => { Description = n.GetStringValue(); } },
@@ -94,7 +98,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"Key", n => { Key = n.GetStringValue(); } },
                 {"LastExecutionResult", n => { LastExecutionResult = n.GetObjectValue<TaskResult>(TaskResult.CreateFromDiscriminatorValue); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
-                {"State", n => { State = n.GetEnumValue<TaskState>(); } },
+                {"State", n => { State = n.GetEnumValue<TaskInfo_State>(); } },
                 {"Triggers", n => { Triggers = n.GetCollectionOfObjectValues<TaskTriggerInfo>(TaskTriggerInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -102,7 +106,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Category", Category);
             writer.WriteDoubleValue("CurrentProgressPercentage", CurrentProgressPercentage);
@@ -112,7 +117,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("Key", Key);
             writer.WriteObjectValue<TaskResult>("LastExecutionResult", LastExecutionResult);
             writer.WriteStringValue("Name", Name);
-            writer.WriteEnumValue<TaskState>("State", State);
+            writer.WriteEnumValue<TaskInfo_State>("State", State);
             writer.WriteCollectionOfObjectValues<TaskTriggerInfo>("Triggers", Triggers);
         }
     }

@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.LiveStreams.Open {
     /// <summary>
     /// Builds and executes requests for operations under \LiveStreams\Open
     /// </summary>
-    public class OpenRequestBuilder : BaseRequestBuilder {
+    public class OpenRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="OpenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OpenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveStreams/Open{?audioStreamIndex*,enableDirectPlay*,enableDirectStream*,itemId*,maxAudioChannels*,maxStreamingBitrate*,openToken*,playSessionId*,startTimeTicks*,subtitleStreamIndex*,userId*}", pathParameters) {
+        public OpenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveStreams/Open{?audioStreamIndex*,enableDirectPlay*,enableDirectStream*,itemId*,maxAudioChannels*,maxStreamingBitrate*,openToken*,playSessionId*,startTimeTicks*,subtitleStreamIndex*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="OpenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OpenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveStreams/Open{?audioStreamIndex*,enableDirectPlay*,enableDirectStream*,itemId*,maxAudioChannels*,maxStreamingBitrate*,openToken*,playSessionId*,startTimeTicks*,subtitleStreamIndex*,userId*}", rawUrl) {
+        public OpenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveStreams/Open{?audioStreamIndex*,enableDirectPlay*,enableDirectStream*,itemId*,maxAudioChannels*,maxStreamingBitrate*,openToken*,playSessionId*,startTimeTicks*,subtitleStreamIndex*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Opens a media source.
@@ -36,10 +39,12 @@ namespace Jellyfin.Sdk.Generated.LiveStreams.Open {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LiveStreamResponse?> PostAsync(OpenLiveStreamDto body, Action<RequestConfiguration<OpenRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LiveStreamResponse?> PostAsync(OpenLiveStreamDto body, Action<RequestConfiguration<OpenRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<LiveStreamResponse> PostAsync(OpenLiveStreamDto body, Action<RequestConfiguration<OpenRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LiveStreamResponse> PostAsync(OpenLiveStreamDto body, Action<RequestConfiguration<OpenRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -53,10 +58,12 @@ namespace Jellyfin.Sdk.Generated.LiveStreams.Open {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(OpenLiveStreamDto body, Action<RequestConfiguration<OpenRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(OpenLiveStreamDto body, Action<RequestConfiguration<OpenRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(OpenLiveStreamDto body, Action<RequestConfiguration<OpenRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(OpenLiveStreamDto body, Action<RequestConfiguration<OpenRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -70,13 +77,15 @@ namespace Jellyfin.Sdk.Generated.LiveStreams.Open {
         /// </summary>
         /// <returns>A <see cref="OpenRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OpenRequestBuilder WithUrl(string rawUrl) {
+        public OpenRequestBuilder WithUrl(string rawUrl)
+        {
             return new OpenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Opens a media source.
         /// </summary>
-        public class OpenRequestBuilderPostQueryParameters {
+        public class OpenRequestBuilderPostQueryParameters 
+        {
             /// <summary>The audio stream index.</summary>
             [QueryParameter("audioStreamIndex")]
             public int? AudioStreamIndex { get; set; }

@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Represents the server configuration.
     /// </summary>
-    public class ServerConfiguration : IParsable {
+    public class ServerConfiguration : IParsable 
+    {
         /// <summary>Gets or sets the number of days we should retain activity logs.</summary>
         public int? ActivityLogRetentionDays { get; set; }
         /// <summary>Gets or sets a value indicating whether clients should be allowed to upload logs.</summary>
@@ -21,6 +22,16 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string CachePath { get; set; }
 #endif
+        /// <summary>Gets or sets the list of cast receiver applications.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CastReceiverApplication>? CastReceiverApplications { get; set; }
+#nullable restore
+#else
+        public List<CastReceiverApplication> CastReceiverApplications { get; set; }
+#endif
+        /// <summary>Gets or sets the chapter image resolution.</summary>
+        public ServerConfiguration_ChapterImageResolution? ChapterImageResolution { get; set; }
         /// <summary>The CodecsUsed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +60,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public bool? DisableLiveTvChannelUserDataName { get; set; }
         /// <summary>The DisplaySpecialsWithinSeasons property</summary>
         public bool? DisplaySpecialsWithinSeasons { get; set; }
+        /// <summary>Gets or sets the dummy chapter duration in seconds, use 0 (zero) or less to disable generation alltogether.</summary>
+        public int? DummyChapterDuration { get; set; }
         /// <summary>Gets or sets a value indicating whether [enable case sensitive item ids].</summary>
         public bool? EnableCaseSensitiveItemIds { get; set; }
         /// <summary>The EnableExternalContentInSuggestions property</summary>
@@ -66,7 +79,9 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The ImageExtractionTimeoutMs property</summary>
         public int? ImageExtractionTimeoutMs { get; set; }
         /// <summary>Gets or sets the image saving convention.</summary>
-        public Jellyfin.Sdk.Generated.Models.ImageSavingConvention? ImageSavingConvention { get; set; }
+        public ServerConfiguration_ImageSavingConvention? ImageSavingConvention { get; set; }
+        /// <summary>Gets or sets the threshold in minutes after a inactive session gets closed automatically.If set to 0 the check for inactive sessions gets disabled.</summary>
+        public int? InactiveSessionThreshold { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance is port authorized.</summary>
         public bool? IsPortAuthorized { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance is first run.</summary>
@@ -77,6 +92,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public int? LibraryMonitorDelay { get; set; }
         /// <summary>Gets or sets the how the library scan fans out.</summary>
         public int? LibraryScanFanoutConcurrency { get; set; }
+        /// <summary>Gets or sets the duration in seconds that we will wait after a library updated event before executing the library changed notification.</summary>
+        public int? LibraryUpdateDuration { get; set; }
         /// <summary>Gets or sets the number of days we should retain log files.</summary>
         public int? LogFileRetentionDays { get; set; }
         /// <summary>Gets or sets the remaining minutes of a book that can be played while still saving playstate. If this percentage is crossed playstate will be reset to the beginning and the item will be marked watched.</summary>
@@ -121,6 +138,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public int? MinResumeDurationSeconds { get; set; }
         /// <summary>Gets or sets the minimum percentage of an item that must be played in order for playstate to be updated.</summary>
         public int? MinResumePct { get; set; }
+        /// <summary>Gets or sets the limit for parallel image encoding.</summary>
+        public int? ParallelImageEncodingLimit { get; set; }
         /// <summary>The PathSubstitutions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -205,6 +224,14 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public List<string> SortReplaceCharacters { get; set; }
 #endif
+        /// <summary>Gets or sets the trickplay options.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Jellyfin.Sdk.Generated.Models.TrickplayOptions? TrickplayOptions { get; set; }
+#nullable restore
+#else
+        public Jellyfin.Sdk.Generated.Models.TrickplayOptions TrickplayOptions { get; set; }
+#endif
         /// <summary>The UICulture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -218,7 +245,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="ServerConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ServerConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ServerConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ServerConfiguration();
         }
@@ -226,16 +254,21 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"ActivityLogRetentionDays", n => { ActivityLogRetentionDays = n.GetIntValue(); } },
                 {"AllowClientLogUpload", n => { AllowClientLogUpload = n.GetBoolValue(); } },
                 {"CachePath", n => { CachePath = n.GetStringValue(); } },
+                {"CastReceiverApplications", n => { CastReceiverApplications = n.GetCollectionOfObjectValues<CastReceiverApplication>(CastReceiverApplication.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"ChapterImageResolution", n => { ChapterImageResolution = n.GetEnumValue<ServerConfiguration_ChapterImageResolution>(); } },
                 {"CodecsUsed", n => { CodecsUsed = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"ContentTypes", n => { ContentTypes = n.GetCollectionOfObjectValues<NameValuePair>(NameValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"CorsHosts", n => { CorsHosts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"DisableLiveTvChannelUserDataName", n => { DisableLiveTvChannelUserDataName = n.GetBoolValue(); } },
                 {"DisplaySpecialsWithinSeasons", n => { DisplaySpecialsWithinSeasons = n.GetBoolValue(); } },
+                {"DummyChapterDuration", n => { DummyChapterDuration = n.GetIntValue(); } },
                 {"EnableCaseSensitiveItemIds", n => { EnableCaseSensitiveItemIds = n.GetBoolValue(); } },
                 {"EnableExternalContentInSuggestions", n => { EnableExternalContentInSuggestions = n.GetBoolValue(); } },
                 {"EnableFolderView", n => { EnableFolderView = n.GetBoolValue(); } },
@@ -244,12 +277,14 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"EnableNormalizedItemByNameIds", n => { EnableNormalizedItemByNameIds = n.GetBoolValue(); } },
                 {"EnableSlowResponseWarning", n => { EnableSlowResponseWarning = n.GetBoolValue(); } },
                 {"ImageExtractionTimeoutMs", n => { ImageExtractionTimeoutMs = n.GetIntValue(); } },
-                {"ImageSavingConvention", n => { ImageSavingConvention = n.GetEnumValue<ImageSavingConvention>(); } },
+                {"ImageSavingConvention", n => { ImageSavingConvention = n.GetEnumValue<ServerConfiguration_ImageSavingConvention>(); } },
+                {"InactiveSessionThreshold", n => { InactiveSessionThreshold = n.GetIntValue(); } },
                 {"IsPortAuthorized", n => { IsPortAuthorized = n.GetBoolValue(); } },
                 {"IsStartupWizardCompleted", n => { IsStartupWizardCompleted = n.GetBoolValue(); } },
                 {"LibraryMetadataRefreshConcurrency", n => { LibraryMetadataRefreshConcurrency = n.GetIntValue(); } },
                 {"LibraryMonitorDelay", n => { LibraryMonitorDelay = n.GetIntValue(); } },
                 {"LibraryScanFanoutConcurrency", n => { LibraryScanFanoutConcurrency = n.GetIntValue(); } },
+                {"LibraryUpdateDuration", n => { LibraryUpdateDuration = n.GetIntValue(); } },
                 {"LogFileRetentionDays", n => { LogFileRetentionDays = n.GetIntValue(); } },
                 {"MaxAudiobookResume", n => { MaxAudiobookResume = n.GetIntValue(); } },
                 {"MaxResumePct", n => { MaxResumePct = n.GetIntValue(); } },
@@ -260,6 +295,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"MinAudiobookResume", n => { MinAudiobookResume = n.GetIntValue(); } },
                 {"MinResumeDurationSeconds", n => { MinResumeDurationSeconds = n.GetIntValue(); } },
                 {"MinResumePct", n => { MinResumePct = n.GetIntValue(); } },
+                {"ParallelImageEncodingLimit", n => { ParallelImageEncodingLimit = n.GetIntValue(); } },
                 {"PathSubstitutions", n => { PathSubstitutions = n.GetCollectionOfObjectValues<PathSubstitution>(PathSubstitution.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"PluginRepositories", n => { PluginRepositories = n.GetCollectionOfObjectValues<RepositoryInfo>(RepositoryInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"PreferredMetadataLanguage", n => { PreferredMetadataLanguage = n.GetStringValue(); } },
@@ -275,6 +311,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"SortRemoveCharacters", n => { SortRemoveCharacters = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"SortRemoveWords", n => { SortRemoveWords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"SortReplaceCharacters", n => { SortReplaceCharacters = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"TrickplayOptions", n => { TrickplayOptions = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.TrickplayOptions>(Jellyfin.Sdk.Generated.Models.TrickplayOptions.CreateFromDiscriminatorValue); } },
                 {"UICulture", n => { UICulture = n.GetStringValue(); } },
             };
         }
@@ -282,16 +319,20 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("ActivityLogRetentionDays", ActivityLogRetentionDays);
             writer.WriteBoolValue("AllowClientLogUpload", AllowClientLogUpload);
             writer.WriteStringValue("CachePath", CachePath);
+            writer.WriteCollectionOfObjectValues<CastReceiverApplication>("CastReceiverApplications", CastReceiverApplications);
+            writer.WriteEnumValue<ServerConfiguration_ChapterImageResolution>("ChapterImageResolution", ChapterImageResolution);
             writer.WriteCollectionOfPrimitiveValues<string>("CodecsUsed", CodecsUsed);
             writer.WriteCollectionOfObjectValues<NameValuePair>("ContentTypes", ContentTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("CorsHosts", CorsHosts);
             writer.WriteBoolValue("DisableLiveTvChannelUserDataName", DisableLiveTvChannelUserDataName);
             writer.WriteBoolValue("DisplaySpecialsWithinSeasons", DisplaySpecialsWithinSeasons);
+            writer.WriteIntValue("DummyChapterDuration", DummyChapterDuration);
             writer.WriteBoolValue("EnableCaseSensitiveItemIds", EnableCaseSensitiveItemIds);
             writer.WriteBoolValue("EnableExternalContentInSuggestions", EnableExternalContentInSuggestions);
             writer.WriteBoolValue("EnableFolderView", EnableFolderView);
@@ -300,12 +341,14 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("EnableNormalizedItemByNameIds", EnableNormalizedItemByNameIds);
             writer.WriteBoolValue("EnableSlowResponseWarning", EnableSlowResponseWarning);
             writer.WriteIntValue("ImageExtractionTimeoutMs", ImageExtractionTimeoutMs);
-            writer.WriteEnumValue<ImageSavingConvention>("ImageSavingConvention", ImageSavingConvention);
+            writer.WriteEnumValue<ServerConfiguration_ImageSavingConvention>("ImageSavingConvention", ImageSavingConvention);
+            writer.WriteIntValue("InactiveSessionThreshold", InactiveSessionThreshold);
             writer.WriteBoolValue("IsPortAuthorized", IsPortAuthorized);
             writer.WriteBoolValue("IsStartupWizardCompleted", IsStartupWizardCompleted);
             writer.WriteIntValue("LibraryMetadataRefreshConcurrency", LibraryMetadataRefreshConcurrency);
             writer.WriteIntValue("LibraryMonitorDelay", LibraryMonitorDelay);
             writer.WriteIntValue("LibraryScanFanoutConcurrency", LibraryScanFanoutConcurrency);
+            writer.WriteIntValue("LibraryUpdateDuration", LibraryUpdateDuration);
             writer.WriteIntValue("LogFileRetentionDays", LogFileRetentionDays);
             writer.WriteIntValue("MaxAudiobookResume", MaxAudiobookResume);
             writer.WriteIntValue("MaxResumePct", MaxResumePct);
@@ -316,6 +359,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("MinAudiobookResume", MinAudiobookResume);
             writer.WriteIntValue("MinResumeDurationSeconds", MinResumeDurationSeconds);
             writer.WriteIntValue("MinResumePct", MinResumePct);
+            writer.WriteIntValue("ParallelImageEncodingLimit", ParallelImageEncodingLimit);
             writer.WriteCollectionOfObjectValues<PathSubstitution>("PathSubstitutions", PathSubstitutions);
             writer.WriteCollectionOfObjectValues<RepositoryInfo>("PluginRepositories", PluginRepositories);
             writer.WriteStringValue("PreferredMetadataLanguage", PreferredMetadataLanguage);
@@ -331,6 +375,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("SortRemoveCharacters", SortRemoveCharacters);
             writer.WriteCollectionOfPrimitiveValues<string>("SortRemoveWords", SortRemoveWords);
             writer.WriteCollectionOfPrimitiveValues<string>("SortReplaceCharacters", SortReplaceCharacters);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.TrickplayOptions>("TrickplayOptions", TrickplayOptions);
             writer.WriteStringValue("UICulture", UICulture);
         }
     }

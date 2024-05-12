@@ -8,30 +8,37 @@ using System.Threading.Tasks;
 using System;
 namespace Jellyfin.Sdk.Generated.Artists.Item.Images.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Artists\{id-id}\Images\{imageType}
+    /// Builds and executes requests for operations under \Artists\{item-id}\Images\{imageType}
     /// </summary>
-    public class WithImageTypeItemRequestBuilder : BaseRequestBuilder {
+    public class WithImageTypeItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Artists.item.Images.item.item collection</summary>
         /// <param name="position">Image index.</param>
         /// <returns>A <see cref="WithImageIndexItemRequestBuilder"/></returns>
-        public WithImageIndexItemRequestBuilder this[int position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("imageIndex", position);
-            return new WithImageIndexItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithImageIndexItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("imageIndex", position);
+                return new WithImageIndexItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="WithImageTypeItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithImageTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Artists/{id%2Did}/Images/{imageType}", pathParameters) {
+        public WithImageTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Artists/{item%2Did}/Images/{imageType}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithImageTypeItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithImageTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Artists/{id%2Did}/Images/{imageType}", rawUrl) {
+        public WithImageTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Artists/{item%2Did}/Images/{imageType}", rawUrl)
+        {
         }
     }
 }

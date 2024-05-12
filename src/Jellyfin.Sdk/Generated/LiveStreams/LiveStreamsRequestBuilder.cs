@@ -11,28 +11,33 @@ namespace Jellyfin.Sdk.Generated.LiveStreams {
     /// <summary>
     /// Builds and executes requests for operations under \LiveStreams
     /// </summary>
-    public class LiveStreamsRequestBuilder : BaseRequestBuilder {
+    public class LiveStreamsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Close property</summary>
-        public CloseRequestBuilder Close { get =>
-            new CloseRequestBuilder(PathParameters, RequestAdapter);
+        public CloseRequestBuilder Close
+        {
+            get => new CloseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Open property</summary>
-        public OpenRequestBuilder Open { get =>
-            new OpenRequestBuilder(PathParameters, RequestAdapter);
+        public OpenRequestBuilder Open
+        {
+            get => new OpenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="LiveStreamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LiveStreamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveStreams", pathParameters) {
+        public LiveStreamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveStreams", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LiveStreamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LiveStreamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveStreams", rawUrl) {
+        public LiveStreamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveStreams", rawUrl)
+        {
         }
     }
 }

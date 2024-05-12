@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog.Entries {
     /// <summary>
     /// Builds and executes requests for operations under \System\ActivityLog\Entries
     /// </summary>
-    public class EntriesRequestBuilder : BaseRequestBuilder {
+    public class EntriesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="EntriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog/Entries{?hasUserId*,limit*,minDate*,startIndex*}", pathParameters) {
+        public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog/Entries{?hasUserId*,limit*,minDate*,startIndex*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="EntriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog/Entries{?hasUserId*,limit*,minDate*,startIndex*}", rawUrl) {
+        public EntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog/Entries{?hasUserId*,limit*,minDate*,startIndex*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets activity log entries.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog.Entries {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ActivityLogEntryQueryResult?> GetAsync(Action<RequestConfiguration<EntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ActivityLogEntryQueryResult?> GetAsync(Action<RequestConfiguration<EntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ActivityLogEntryQueryResult> GetAsync(Action<RequestConfiguration<EntriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ActivityLogEntryQueryResult> GetAsync(Action<RequestConfiguration<EntriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<ActivityLogEntryQueryResult>(requestInfo, ActivityLogEntryQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -50,10 +55,12 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog.Entries {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EntriesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EntriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -65,13 +72,15 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog.Entries {
         /// </summary>
         /// <returns>A <see cref="EntriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EntriesRequestBuilder WithUrl(string rawUrl) {
+        public EntriesRequestBuilder WithUrl(string rawUrl)
+        {
             return new EntriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets activity log entries.
         /// </summary>
-        public class EntriesRequestBuilderGetQueryParameters {
+        public class EntriesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Filter log entries if it has user id, or not.</summary>
             [QueryParameter("hasUserId")]
             public bool? HasUserId { get; set; }

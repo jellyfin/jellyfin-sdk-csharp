@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Shows.Upcoming {
     /// <summary>
     /// Builds and executes requests for operations under \Shows\Upcoming
     /// </summary>
-    public class UpcomingRequestBuilder : BaseRequestBuilder {
+    public class UpcomingRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="UpcomingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpcomingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/Upcoming{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,parentId*,startIndex*,userId*}", pathParameters) {
+        public UpcomingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/Upcoming{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,parentId*,startIndex*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="UpcomingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpcomingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/Upcoming{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,parentId*,startIndex*,userId*}", rawUrl) {
+        public UpcomingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/Upcoming{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,parentId*,startIndex*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets a list of upcoming episodes.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.Shows.Upcoming {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<UpcomingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<UpcomingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<UpcomingRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<UpcomingRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -50,10 +55,12 @@ namespace Jellyfin.Sdk.Generated.Shows.Upcoming {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UpcomingRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UpcomingRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UpcomingRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UpcomingRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -65,13 +72,15 @@ namespace Jellyfin.Sdk.Generated.Shows.Upcoming {
         /// </summary>
         /// <returns>A <see cref="UpcomingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UpcomingRequestBuilder WithUrl(string rawUrl) {
+        public UpcomingRequestBuilder WithUrl(string rawUrl)
+        {
             return new UpcomingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets a list of upcoming episodes.
         /// </summary>
-        public class UpcomingRequestBuilderGetQueryParameters {
+        public class UpcomingRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Include image information in output.</summary>
             [QueryParameter("enableImages")]
             public bool? EnableImages { get; set; }

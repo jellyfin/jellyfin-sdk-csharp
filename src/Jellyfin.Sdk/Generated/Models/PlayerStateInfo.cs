@@ -5,7 +5,10 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public class PlayerStateInfo : IParsable {
+    #pragma warning disable CS1591
+    public class PlayerStateInfo : IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>Gets or sets the index of the now playing audio stream.</summary>
         public int? AudioStreamIndex { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance can seek.</summary>
@@ -30,12 +33,14 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string MediaSourceId { get; set; }
 #endif
+        /// <summary>Gets or sets the playback order.</summary>
+        public PlayerStateInfo_PlaybackOrder? PlaybackOrder { get; set; }
         /// <summary>Gets or sets the play method.</summary>
-        public Jellyfin.Sdk.Generated.Models.PlayMethod? PlayMethod { get; set; }
+        public PlayerStateInfo_PlayMethod? PlayMethod { get; set; }
         /// <summary>Gets or sets the now playing position ticks.</summary>
         public long? PositionTicks { get; set; }
         /// <summary>Gets or sets the repeat mode.</summary>
-        public Jellyfin.Sdk.Generated.Models.RepeatMode? RepeatMode { get; set; }
+        public PlayerStateInfo_RepeatMode? RepeatMode { get; set; }
         /// <summary>Gets or sets the index of the now playing subtitle stream.</summary>
         public int? SubtitleStreamIndex { get; set; }
         /// <summary>Gets or sets the volume level.</summary>
@@ -45,7 +50,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="PlayerStateInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlayerStateInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static PlayerStateInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new PlayerStateInfo();
         }
@@ -53,17 +59,20 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"AudioStreamIndex", n => { AudioStreamIndex = n.GetIntValue(); } },
                 {"CanSeek", n => { CanSeek = n.GetBoolValue(); } },
                 {"IsMuted", n => { IsMuted = n.GetBoolValue(); } },
                 {"IsPaused", n => { IsPaused = n.GetBoolValue(); } },
                 {"LiveStreamId", n => { LiveStreamId = n.GetStringValue(); } },
                 {"MediaSourceId", n => { MediaSourceId = n.GetStringValue(); } },
-                {"PlayMethod", n => { PlayMethod = n.GetEnumValue<PlayMethod>(); } },
+                {"PlayMethod", n => { PlayMethod = n.GetEnumValue<PlayerStateInfo_PlayMethod>(); } },
+                {"PlaybackOrder", n => { PlaybackOrder = n.GetEnumValue<PlayerStateInfo_PlaybackOrder>(); } },
                 {"PositionTicks", n => { PositionTicks = n.GetLongValue(); } },
-                {"RepeatMode", n => { RepeatMode = n.GetEnumValue<RepeatMode>(); } },
+                {"RepeatMode", n => { RepeatMode = n.GetEnumValue<PlayerStateInfo_RepeatMode>(); } },
                 {"SubtitleStreamIndex", n => { SubtitleStreamIndex = n.GetIntValue(); } },
                 {"VolumeLevel", n => { VolumeLevel = n.GetIntValue(); } },
             };
@@ -72,7 +81,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("AudioStreamIndex", AudioStreamIndex);
             writer.WriteBoolValue("CanSeek", CanSeek);
@@ -80,9 +90,10 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("IsPaused", IsPaused);
             writer.WriteStringValue("LiveStreamId", LiveStreamId);
             writer.WriteStringValue("MediaSourceId", MediaSourceId);
-            writer.WriteEnumValue<PlayMethod>("PlayMethod", PlayMethod);
+            writer.WriteEnumValue<PlayerStateInfo_PlaybackOrder>("PlaybackOrder", PlaybackOrder);
+            writer.WriteEnumValue<PlayerStateInfo_PlayMethod>("PlayMethod", PlayMethod);
             writer.WriteLongValue("PositionTicks", PositionTicks);
-            writer.WriteEnumValue<RepeatMode>("RepeatMode", RepeatMode);
+            writer.WriteEnumValue<PlayerStateInfo_RepeatMode>("RepeatMode", RepeatMode);
             writer.WriteIntValue("SubtitleStreamIndex", SubtitleStreamIndex);
             writer.WriteIntValue("VolumeLevel", VolumeLevel);
         }

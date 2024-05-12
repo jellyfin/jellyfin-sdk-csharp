@@ -2,11 +2,20 @@
 using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    /// <summary>Enum SeriesStatus.</summary>
-    public enum SeriesStatus {
+    /// <summary>The status of a series.</summary>
+    public enum SeriesStatus
+    {
         [EnumMember(Value = "Continuing")]
+        #pragma warning disable CS1591
         Continuing,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Ended")]
+        #pragma warning disable CS1591
         Ended,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Unreleased")]
+        #pragma warning disable CS1591
+        Unreleased,
+        #pragma warning restore CS1591
     }
 }

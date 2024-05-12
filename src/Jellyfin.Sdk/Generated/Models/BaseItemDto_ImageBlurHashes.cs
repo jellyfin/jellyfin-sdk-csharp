@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Gets or sets the blurhashes for the image tags.Maps image type to dictionary mapping image tag to blurhash value.
     /// </summary>
-    public class BaseItemDto_ImageBlurHashes : IAdditionalDataHolder, IParsable {
+    public class BaseItemDto_ImageBlurHashes : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Art property</summary>
@@ -118,7 +119,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Instantiates a new <see cref="BaseItemDto_ImageBlurHashes"/> and sets the default values.
         /// </summary>
-        public BaseItemDto_ImageBlurHashes() {
+        public BaseItemDto_ImageBlurHashes()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -126,7 +128,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="BaseItemDto_ImageBlurHashes"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BaseItemDto_ImageBlurHashes CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static BaseItemDto_ImageBlurHashes CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new BaseItemDto_ImageBlurHashes();
         }
@@ -134,8 +137,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"Art", n => { Art = n.GetObjectValue<BaseItemDto_ImageBlurHashes_Art>(BaseItemDto_ImageBlurHashes_Art.CreateFromDiscriminatorValue); } },
                 {"Backdrop", n => { Backdrop = n.GetObjectValue<BaseItemDto_ImageBlurHashes_Backdrop>(BaseItemDto_ImageBlurHashes_Backdrop.CreateFromDiscriminatorValue); } },
                 {"Banner", n => { Banner = n.GetObjectValue<BaseItemDto_ImageBlurHashes_Banner>(BaseItemDto_ImageBlurHashes_Banner.CreateFromDiscriminatorValue); } },
@@ -155,7 +160,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<BaseItemDto_ImageBlurHashes_Art>("Art", Art);
             writer.WriteObjectValue<BaseItemDto_ImageBlurHashes_Backdrop>("Backdrop", Backdrop);

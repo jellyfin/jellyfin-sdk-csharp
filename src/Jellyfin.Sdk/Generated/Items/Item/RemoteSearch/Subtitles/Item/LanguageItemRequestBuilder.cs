@@ -10,22 +10,25 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\RemoteSearch\Subtitles\{language-id}
+    /// Builds and executes requests for operations under \Items\{itemId}\RemoteSearch\Subtitles\{language-id}
     /// </summary>
-    public class LanguageItemRequestBuilder : BaseRequestBuilder {
+    public class LanguageItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="LanguageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LanguageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteSearch/Subtitles/{language%2Did}{?isPerfectMatch*}", pathParameters) {
+        public LanguageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteSearch/Subtitles/{language%2Did}{?isPerfectMatch*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LanguageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LanguageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteSearch/Subtitles/{language%2Did}{?isPerfectMatch*}", rawUrl) {
+        public LanguageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteSearch/Subtitles/{language%2Did}{?isPerfectMatch*}", rawUrl)
+        {
         }
         /// <summary>
         /// Search remote subtitles.
@@ -33,15 +36,22 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles.Item {
         /// <returns>A List&lt;RemoteSubtitleInfo&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<RemoteSubtitleInfo>?> GetAsync(Action<RequestConfiguration<LanguageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RemoteSubtitleInfo>?> GetAsync(Action<RequestConfiguration<LanguageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<RemoteSubtitleInfo>> GetAsync(Action<RequestConfiguration<LanguageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RemoteSubtitleInfo>> GetAsync(Action<RequestConfiguration<LanguageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<RemoteSubtitleInfo>(requestInfo, RemoteSubtitleInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+            };
+            var collectionResult = await RequestAdapter.SendCollectionAsync<RemoteSubtitleInfo>(requestInfo, RemoteSubtitleInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -49,15 +59,22 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Search remote subtitles.
@@ -66,10 +83,12 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LanguageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LanguageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LanguageItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LanguageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -83,13 +102,16 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Items/{id%2Did}/RemoteSearch/Subtitles/{language%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             return requestInfo;
         }
         /// <summary>
@@ -97,13 +119,15 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles.Item {
         /// </summary>
         /// <returns>A <see cref="LanguageItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LanguageItemRequestBuilder WithUrl(string rawUrl) {
+        public LanguageItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new LanguageItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Search remote subtitles.
         /// </summary>
-        public class LanguageItemRequestBuilderGetQueryParameters {
+        public class LanguageItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Only show subtitles which are a perfect match.</summary>
             [QueryParameter("isPerfectMatch")]
             public bool? IsPerfectMatch { get; set; }

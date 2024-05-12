@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Genres.Item.Images.Item.Item {
     /// <summary>
     /// Builds and executes requests for operations under \Genres\{genreName-id}\Images\{imageType}\{imageIndex}
     /// </summary>
-    public class WithImageIndexItemRequestBuilder : BaseRequestBuilder {
+    public class WithImageIndexItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="WithImageIndexItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithImageIndexItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Genres/{genreName%2Did}/Images/{imageType}/{imageIndex}{?addPlayedIndicator*,backgroundColor*,blur*,cropWhitespace*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,width*}", pathParameters) {
+        public WithImageIndexItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Genres/{genreName%2Did}/Images/{imageType}/{imageIndex}{?backgroundColor*,blur*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,width*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithImageIndexItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithImageIndexItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Genres/{genreName%2Did}/Images/{imageType}/{imageIndex}{?addPlayedIndicator*,backgroundColor*,blur*,cropWhitespace*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,width*}", rawUrl) {
+        public WithImageIndexItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Genres/{genreName%2Did}/Images/{imageType}/{imageIndex}{?backgroundColor*,blur*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,width*}", rawUrl)
+        {
         }
         /// <summary>
         /// Get genre image by name.
@@ -36,13 +39,16 @@ namespace Jellyfin.Sdk.Generated.Genres.Item.Images.Item.Item {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<WithImageIndexItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<WithImageIndexItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<WithImageIndexItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<WithImageIndexItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -56,13 +62,16 @@ namespace Jellyfin.Sdk.Generated.Genres.Item.Images.Item.Item {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> HeadAsync(Action<RequestConfiguration<WithImageIndexItemRequestBuilderHeadQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> HeadAsync(Action<RequestConfiguration<WithImageIndexItemRequestBuilderHeadQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> HeadAsync(Action<RequestConfiguration<WithImageIndexItemRequestBuilderHeadQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> HeadAsync(Action<RequestConfiguration<WithImageIndexItemRequestBuilderHeadQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToHeadRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -74,10 +83,12 @@ namespace Jellyfin.Sdk.Generated.Genres.Item.Images.Item.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithImageIndexItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithImageIndexItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithImageIndexItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithImageIndexItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -91,10 +102,12 @@ namespace Jellyfin.Sdk.Generated.Genres.Item.Images.Item.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<WithImageIndexItemRequestBuilderHeadQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<WithImageIndexItemRequestBuilderHeadQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<WithImageIndexItemRequestBuilderHeadQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<WithImageIndexItemRequestBuilderHeadQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.HEAD, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -106,16 +119,15 @@ namespace Jellyfin.Sdk.Generated.Genres.Item.Images.Item.Item {
         /// </summary>
         /// <returns>A <see cref="WithImageIndexItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithImageIndexItemRequestBuilder WithUrl(string rawUrl) {
+        public WithImageIndexItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithImageIndexItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get genre image by name.
         /// </summary>
-        public class WithImageIndexItemRequestBuilderGetQueryParameters {
-            /// <summary>Optional. Add a played indicator.</summary>
-            [QueryParameter("addPlayedIndicator")]
-            public bool? AddPlayedIndicator { get; set; }
+        public class WithImageIndexItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Apply a background color for transparent images.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,10 +141,6 @@ namespace Jellyfin.Sdk.Generated.Genres.Item.Images.Item.Item {
             /// <summary>Optional. Blur image.</summary>
             [QueryParameter("blur")]
             public int? Blur { get; set; }
-            /// <summary>Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.</summary>
-            [Obsolete("")]
-            [QueryParameter("cropWhitespace")]
-            public bool? CropWhitespace { get; set; }
             /// <summary>Height of box to fill.</summary>
             [QueryParameter("fillHeight")]
             public int? FillHeight { get; set; }
@@ -150,15 +158,8 @@ namespace Jellyfin.Sdk.Generated.Genres.Item.Images.Item.Item {
             public string ForegroundLayer { get; set; }
 #endif
             /// <summary>Determines the output format of the image - original,gif,jpg,png.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
+            public GetFormatQueryParameterType? Format { get; set; }
             /// <summary>The fixed image height to return.</summary>
             [QueryParameter("height")]
             public int? Height { get; set; }
@@ -194,10 +195,8 @@ namespace Jellyfin.Sdk.Generated.Genres.Item.Images.Item.Item {
         /// <summary>
         /// Get genre image by name.
         /// </summary>
-        public class WithImageIndexItemRequestBuilderHeadQueryParameters {
-            /// <summary>Optional. Add a played indicator.</summary>
-            [QueryParameter("addPlayedIndicator")]
-            public bool? AddPlayedIndicator { get; set; }
+        public class WithImageIndexItemRequestBuilderHeadQueryParameters 
+        {
             /// <summary>Optional. Apply a background color for transparent images.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -211,10 +210,6 @@ namespace Jellyfin.Sdk.Generated.Genres.Item.Images.Item.Item {
             /// <summary>Optional. Blur image.</summary>
             [QueryParameter("blur")]
             public int? Blur { get; set; }
-            /// <summary>Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.</summary>
-            [Obsolete("")]
-            [QueryParameter("cropWhitespace")]
-            public bool? CropWhitespace { get; set; }
             /// <summary>Height of box to fill.</summary>
             [QueryParameter("fillHeight")]
             public int? FillHeight { get; set; }
@@ -232,15 +227,8 @@ namespace Jellyfin.Sdk.Generated.Genres.Item.Images.Item.Item {
             public string ForegroundLayer { get; set; }
 #endif
             /// <summary>Determines the output format of the image - original,gif,jpg,png.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
+            public HeadFormatQueryParameterType? Format { get; set; }
             /// <summary>The fixed image height to return.</summary>
             [QueryParameter("height")]
             public int? Height { get; set; }

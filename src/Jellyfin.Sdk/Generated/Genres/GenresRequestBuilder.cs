@@ -13,28 +13,35 @@ namespace Jellyfin.Sdk.Generated.Genres {
     /// <summary>
     /// Builds and executes requests for operations under \Genres
     /// </summary>
-    public class GenresRequestBuilder : BaseRequestBuilder {
+    public class GenresRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Genres.item collection</summary>
         /// <param name="position">The genre name.</param>
         /// <returns>A <see cref="GenreNameItemRequestBuilder"/></returns>
-        public GenreNameItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("genreName%2Did", position);
-            return new GenreNameItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public GenreNameItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("genreName%2Did", position);
+                return new GenreNameItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="GenresRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GenresRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Genres{?enableImageTypes*,enableImages*,enableTotalRecordCount*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,searchTerm*,sortBy*,sortOrder*,startIndex*,userId*}", pathParameters) {
+        public GenresRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Genres{?enableImageTypes*,enableImages*,enableTotalRecordCount*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,searchTerm*,sortBy*,sortOrder*,startIndex*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GenresRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GenresRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Genres{?enableImageTypes*,enableImages*,enableTotalRecordCount*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,searchTerm*,sortBy*,sortOrder*,startIndex*,userId*}", rawUrl) {
+        public GenresRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Genres{?enableImageTypes*,enableImages*,enableTotalRecordCount*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,searchTerm*,sortBy*,sortOrder*,startIndex*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets all genres from a given item, folder, or the entire library.
@@ -44,10 +51,12 @@ namespace Jellyfin.Sdk.Generated.Genres {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<GenresRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<GenresRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<GenresRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<GenresRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -59,10 +68,12 @@ namespace Jellyfin.Sdk.Generated.Genres {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenresRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenresRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenresRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenresRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -74,13 +85,15 @@ namespace Jellyfin.Sdk.Generated.Genres {
         /// </summary>
         /// <returns>A <see cref="GenresRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GenresRequestBuilder WithUrl(string rawUrl) {
+        public GenresRequestBuilder WithUrl(string rawUrl)
+        {
             return new GenresRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets all genres from a given item, folder, or the entire library.
         /// </summary>
-        public class GenresRequestBuilderGetQueryParameters {
+        public class GenresRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional, include image information in output.</summary>
             [QueryParameter("enableImages")]
             public bool? EnableImages { get; set; }
@@ -183,11 +196,11 @@ namespace Jellyfin.Sdk.Generated.Genres {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
-            public string[]? SortBy { get; set; }
+            public ItemSortBy[]? SortBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortBy")]
-            public string[] SortBy { get; set; }
+            public ItemSortBy[] SortBy { get; set; }
 #endif
             /// <summary>Sort Order - Ascending,Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

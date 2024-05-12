@@ -8,30 +8,37 @@ using System.Threading.Tasks;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.Item.Item.Item.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\Images\{imageType}\{imageIndex}\{tag}\{format}\{maxWidth}\{maxHeight}\{percentPlayed}
+    /// Builds and executes requests for operations under \Items\{itemId}\Images\{imageType}\{imageIndex}\{tag}\{format}\{maxWidth}\{maxHeight}\{percentPlayed}
     /// </summary>
-    public class WithPercentPlayedItemRequestBuilder : BaseRequestBuilder {
+    public class WithPercentPlayedItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Items.item.Images.item.item.item.item.item.item.item.item collection</summary>
         /// <param name="position">Optional. Unplayed count overlay to render.</param>
         /// <returns>A <see cref="WithUnplayedCountItemRequestBuilder"/></returns>
-        public WithUnplayedCountItemRequestBuilder this[int position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("unplayedCount", position);
-            return new WithUnplayedCountItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithUnplayedCountItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("unplayedCount", position);
+                return new WithUnplayedCountItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="WithPercentPlayedItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPercentPlayedItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}/{maxHeight}/{percentPlayed}", pathParameters) {
+        public WithPercentPlayedItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}/{maxHeight}/{percentPlayed}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithPercentPlayedItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPercentPlayedItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}/{maxHeight}/{percentPlayed}", rawUrl) {
+        public WithPercentPlayedItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Images/{imageType}/{imageIndex}/{tag}/{format}/{maxWidth}/{maxHeight}/{percentPlayed}", rawUrl)
+        {
         }
     }
 }

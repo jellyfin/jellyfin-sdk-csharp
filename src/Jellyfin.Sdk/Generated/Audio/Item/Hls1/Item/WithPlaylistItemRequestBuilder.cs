@@ -10,20 +10,23 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls1.Item {
     /// <summary>
     /// Builds and executes requests for operations under \Audio\{itemId}\hls1\{playlistId}
     /// </summary>
-    public class WithPlaylistItemRequestBuilder : BaseRequestBuilder {
+    public class WithPlaylistItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="WithPlaylistItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPlaylistItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls1/{playlistId}", pathParameters) {
+        public WithPlaylistItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls1/{playlistId}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithPlaylistItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPlaylistItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls1/{playlistId}", rawUrl) {
+        public WithPlaylistItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls1/{playlistId}", rawUrl)
+        {
         }
         /// <summary>
         /// Builds and executes requests for operations under \Audio\{itemId}\hls1\{playlistId}\{segmentId}.{container}
@@ -31,7 +34,8 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls1.Item {
         /// <returns>A <see cref="WithSegmentIdWithContainerRequestBuilder"/></returns>
         /// <param name="container">The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.</param>
         /// <param name="segmentId">The segment id.</param>
-        public WithSegmentIdWithContainerRequestBuilder WithSegmentIdWithContainer(string container, int? segmentId) {
+        public WithSegmentIdWithContainerRequestBuilder WithSegmentIdWithContainer(string container, int? segmentId)
+        {
             if(string.IsNullOrEmpty(container)) throw new ArgumentNullException(nameof(container));
             _ = segmentId ?? throw new ArgumentNullException(nameof(segmentId));
             return new WithSegmentIdWithContainerRequestBuilder(PathParameters, RequestAdapter, container, segmentId);

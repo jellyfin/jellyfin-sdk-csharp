@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Open live stream dto.
     /// </summary>
-    public class OpenLiveStreamDto : IParsable {
+    public class OpenLiveStreamDto : IParsable 
+    {
         /// <summary>Gets or sets the audio stream index.</summary>
         public int? AudioStreamIndex { get; set; }
         /// <summary>A MediaBrowser.Model.Dlna.DeviceProfile represents a set of metadata which determines which content a certain device is able to play.&lt;br /&gt;Specifically, it defines the supported &lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.ContainerProfiles&quot;&gt;containers&lt;/see&gt; and&lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.CodecProfiles&quot;&gt;codecs&lt;/see&gt; (video and/or audio, including codec profiles and levels)the device is able to direct play (without transcoding or remuxing),as well as which &lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.TranscodingProfiles&quot;&gt;containers/codecs to transcode to&lt;/see&gt; in case it isn&apos;t.</summary>
@@ -64,7 +65,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="OpenLiveStreamDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OpenLiveStreamDto CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static OpenLiveStreamDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new OpenLiveStreamDto();
         }
@@ -72,8 +74,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"AudioStreamIndex", n => { AudioStreamIndex = n.GetIntValue(); } },
                 {"DeviceProfile", n => { DeviceProfile = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.DeviceProfile>(Jellyfin.Sdk.Generated.Models.DeviceProfile.CreateFromDiscriminatorValue); } },
                 {"DirectPlayProtocols", n => { DirectPlayProtocols = n.GetCollectionOfEnumValues<MediaProtocol>()?.ToList(); } },
@@ -93,7 +97,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("AudioStreamIndex", AudioStreamIndex);
             writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.DeviceProfile>("DeviceProfile", DeviceProfile);

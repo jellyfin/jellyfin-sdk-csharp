@@ -10,24 +10,28 @@ namespace Jellyfin.Sdk.Generated.Movies.Item {
     /// <summary>
     /// Builds and executes requests for operations under \Movies\{itemId}
     /// </summary>
-    public class WithItemItemRequestBuilder : BaseRequestBuilder {
+    public class WithItemItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Similar property</summary>
-        public SimilarRequestBuilder Similar { get =>
-            new SimilarRequestBuilder(PathParameters, RequestAdapter);
+        public SimilarRequestBuilder Similar
+        {
+            get => new SimilarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Movies/{itemId}", pathParameters) {
+        public WithItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Movies/{itemId}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Movies/{itemId}", rawUrl) {
+        public WithItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Movies/{itemId}", rawUrl)
+        {
         }
     }
 }

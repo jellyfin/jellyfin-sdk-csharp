@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicArtist {
     /// <summary>
     /// Builds and executes requests for operations under \Items\RemoteSearch\MusicArtist
     /// </summary>
-    public class MusicArtistRequestBuilder : BaseRequestBuilder {
+    public class MusicArtistRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="MusicArtistRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MusicArtistRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch/MusicArtist", pathParameters) {
+        public MusicArtistRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch/MusicArtist", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MusicArtistRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MusicArtistRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch/MusicArtist", rawUrl) {
+        public MusicArtistRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch/MusicArtist", rawUrl)
+        {
         }
         /// <summary>
         /// Get music artist remote search.
@@ -36,10 +39,12 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicArtist {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<RemoteSearchResult>?> PostAsync(ArtistInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RemoteSearchResult>?> PostAsync(ArtistInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<RemoteSearchResult>> PostAsync(ArtistInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RemoteSearchResult>> PostAsync(ArtistInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -54,10 +59,12 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicArtist {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ArtistInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(ArtistInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ArtistInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(ArtistInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -71,7 +78,8 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicArtist {
         /// </summary>
         /// <returns>A <see cref="MusicArtistRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MusicArtistRequestBuilder WithUrl(string rawUrl) {
+        public MusicArtistRequestBuilder WithUrl(string rawUrl)
+        {
             return new MusicArtistRequestBuilder(rawUrl, RequestAdapter);
         }
     }

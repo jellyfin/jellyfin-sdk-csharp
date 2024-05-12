@@ -3,128 +3,247 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>Used to control the data that gets attached to DtoBaseItems.</summary>
-    public enum ItemFields {
+    public enum ItemFields
+    {
         [EnumMember(Value = "AirTime")]
+        #pragma warning disable CS1591
         AirTime,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CanDelete")]
+        #pragma warning disable CS1591
         CanDelete,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CanDownload")]
+        #pragma warning disable CS1591
         CanDownload,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ChannelInfo")]
+        #pragma warning disable CS1591
         ChannelInfo,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Chapters")]
+        #pragma warning disable CS1591
         Chapters,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Trickplay")]
+        #pragma warning disable CS1591
+        Trickplay,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ChildCount")]
+        #pragma warning disable CS1591
         ChildCount,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CumulativeRunTimeTicks")]
+        #pragma warning disable CS1591
         CumulativeRunTimeTicks,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CustomRating")]
+        #pragma warning disable CS1591
         CustomRating,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DateCreated")]
+        #pragma warning disable CS1591
         DateCreated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DateLastMediaAdded")]
+        #pragma warning disable CS1591
         DateLastMediaAdded,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DisplayPreferencesId")]
+        #pragma warning disable CS1591
         DisplayPreferencesId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Etag")]
+        #pragma warning disable CS1591
         Etag,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ExternalUrls")]
+        #pragma warning disable CS1591
         ExternalUrls,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Genres")]
+        #pragma warning disable CS1591
         Genres,
+        #pragma warning restore CS1591
         [EnumMember(Value = "HomePageUrl")]
+        #pragma warning disable CS1591
         HomePageUrl,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ItemCounts")]
+        #pragma warning disable CS1591
         ItemCounts,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MediaSourceCount")]
+        #pragma warning disable CS1591
         MediaSourceCount,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MediaSources")]
+        #pragma warning disable CS1591
         MediaSources,
+        #pragma warning restore CS1591
         [EnumMember(Value = "OriginalTitle")]
+        #pragma warning disable CS1591
         OriginalTitle,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Overview")]
+        #pragma warning disable CS1591
         Overview,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ParentId")]
+        #pragma warning disable CS1591
         ParentId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Path")]
+        #pragma warning disable CS1591
         Path,
+        #pragma warning restore CS1591
         [EnumMember(Value = "People")]
+        #pragma warning disable CS1591
         People,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PlayAccess")]
+        #pragma warning disable CS1591
         PlayAccess,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ProductionLocations")]
+        #pragma warning disable CS1591
         ProductionLocations,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ProviderIds")]
+        #pragma warning disable CS1591
         ProviderIds,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PrimaryImageAspectRatio")]
+        #pragma warning disable CS1591
         PrimaryImageAspectRatio,
+        #pragma warning restore CS1591
         [EnumMember(Value = "RecursiveItemCount")]
+        #pragma warning disable CS1591
         RecursiveItemCount,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Settings")]
+        #pragma warning disable CS1591
         Settings,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ScreenshotImageTags")]
+        #pragma warning disable CS1591
         ScreenshotImageTags,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SeriesPrimaryImage")]
+        #pragma warning disable CS1591
         SeriesPrimaryImage,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SeriesStudio")]
+        #pragma warning disable CS1591
         SeriesStudio,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SortName")]
+        #pragma warning disable CS1591
         SortName,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SpecialEpisodeNumbers")]
+        #pragma warning disable CS1591
         SpecialEpisodeNumbers,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Studios")]
+        #pragma warning disable CS1591
         Studios,
-        [EnumMember(Value = "BasicSyncInfo")]
-        BasicSyncInfo,
-        [EnumMember(Value = "SyncInfo")]
-        SyncInfo,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Taglines")]
+        #pragma warning disable CS1591
         Taglines,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Tags")]
+        #pragma warning disable CS1591
         Tags,
+        #pragma warning restore CS1591
         [EnumMember(Value = "RemoteTrailers")]
+        #pragma warning disable CS1591
         RemoteTrailers,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MediaStreams")]
+        #pragma warning disable CS1591
         MediaStreams,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SeasonUserData")]
+        #pragma warning disable CS1591
         SeasonUserData,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ServiceName")]
+        #pragma warning disable CS1591
         ServiceName,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ThemeSongIds")]
+        #pragma warning disable CS1591
         ThemeSongIds,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ThemeVideoIds")]
+        #pragma warning disable CS1591
         ThemeVideoIds,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ExternalEtag")]
+        #pragma warning disable CS1591
         ExternalEtag,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PresentationUniqueKey")]
+        #pragma warning disable CS1591
         PresentationUniqueKey,
+        #pragma warning restore CS1591
         [EnumMember(Value = "InheritedParentalRatingValue")]
+        #pragma warning disable CS1591
         InheritedParentalRatingValue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ExternalSeriesId")]
+        #pragma warning disable CS1591
         ExternalSeriesId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SeriesPresentationUniqueKey")]
+        #pragma warning disable CS1591
         SeriesPresentationUniqueKey,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DateLastRefreshed")]
+        #pragma warning disable CS1591
         DateLastRefreshed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DateLastSaved")]
+        #pragma warning disable CS1591
         DateLastSaved,
+        #pragma warning restore CS1591
         [EnumMember(Value = "RefreshState")]
+        #pragma warning disable CS1591
         RefreshState,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ChannelImage")]
+        #pragma warning disable CS1591
         ChannelImage,
+        #pragma warning restore CS1591
         [EnumMember(Value = "EnableMediaSourceDisplay")]
+        #pragma warning disable CS1591
         EnableMediaSourceDisplay,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Width")]
+        #pragma warning disable CS1591
         Width,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Height")]
+        #pragma warning disable CS1591
         Height,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ExtraIds")]
+        #pragma warning disable CS1591
         ExtraIds,
+        #pragma warning restore CS1591
         [EnumMember(Value = "LocalTrailerCount")]
+        #pragma warning disable CS1591
         LocalTrailerCount,
+        #pragma warning restore CS1591
         [EnumMember(Value = "IsHD")]
+        #pragma warning disable CS1591
         IsHD,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SpecialFeatureCount")]
+        #pragma warning disable CS1591
         SpecialFeatureCount,
+        #pragma warning restore CS1591
     }
 }

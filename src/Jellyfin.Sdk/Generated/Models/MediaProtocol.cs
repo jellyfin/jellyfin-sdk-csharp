@@ -2,20 +2,37 @@
 using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public enum MediaProtocol {
+    #pragma warning disable CS1591
+    public enum MediaProtocol
+    #pragma warning restore CS1591
+    {
         [EnumMember(Value = "File")]
+        #pragma warning disable CS1591
         File,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Http")]
+        #pragma warning disable CS1591
         Http,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Rtmp")]
+        #pragma warning disable CS1591
         Rtmp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Rtsp")]
+        #pragma warning disable CS1591
         Rtsp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Udp")]
+        #pragma warning disable CS1591
         Udp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Rtp")]
+        #pragma warning disable CS1591
         Rtp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Ftp")]
+        #pragma warning disable CS1591
         Ftp,
+        #pragma warning restore CS1591
     }
 }

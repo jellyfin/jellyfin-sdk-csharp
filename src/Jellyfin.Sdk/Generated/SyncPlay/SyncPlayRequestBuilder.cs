@@ -30,104 +30,128 @@ namespace Jellyfin.Sdk.Generated.SyncPlay {
     /// <summary>
     /// Builds and executes requests for operations under \SyncPlay
     /// </summary>
-    public class SyncPlayRequestBuilder : BaseRequestBuilder {
+    public class SyncPlayRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Buffering property</summary>
-        public BufferingRequestBuilder Buffering { get =>
-            new BufferingRequestBuilder(PathParameters, RequestAdapter);
+        public BufferingRequestBuilder Buffering
+        {
+            get => new BufferingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Join property</summary>
-        public JoinRequestBuilder Join { get =>
-            new JoinRequestBuilder(PathParameters, RequestAdapter);
+        public JoinRequestBuilder Join
+        {
+            get => new JoinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Leave property</summary>
-        public LeaveRequestBuilder Leave { get =>
-            new LeaveRequestBuilder(PathParameters, RequestAdapter);
+        public LeaveRequestBuilder Leave
+        {
+            get => new LeaveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The List property</summary>
-        public ListRequestBuilder List { get =>
-            new ListRequestBuilder(PathParameters, RequestAdapter);
+        public ListRequestBuilder List
+        {
+            get => new ListRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The MovePlaylistItem property</summary>
-        public MovePlaylistItemRequestBuilder MovePlaylistItem { get =>
-            new MovePlaylistItemRequestBuilder(PathParameters, RequestAdapter);
+        public MovePlaylistItemRequestBuilder MovePlaylistItem
+        {
+            get => new MovePlaylistItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The New property</summary>
-        public NewRequestBuilder New { get =>
-            new NewRequestBuilder(PathParameters, RequestAdapter);
+        public NewRequestBuilder New
+        {
+            get => new NewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The NextItem property</summary>
-        public NextItemRequestBuilder NextItem { get =>
-            new NextItemRequestBuilder(PathParameters, RequestAdapter);
+        public NextItemRequestBuilder NextItem
+        {
+            get => new NextItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Pause property</summary>
-        public PauseRequestBuilder Pause { get =>
-            new PauseRequestBuilder(PathParameters, RequestAdapter);
+        public PauseRequestBuilder Pause
+        {
+            get => new PauseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Ping property</summary>
-        public PingRequestBuilder Ping { get =>
-            new PingRequestBuilder(PathParameters, RequestAdapter);
+        public PingRequestBuilder Ping
+        {
+            get => new PingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The PreviousItem property</summary>
-        public PreviousItemRequestBuilder PreviousItem { get =>
-            new PreviousItemRequestBuilder(PathParameters, RequestAdapter);
+        public PreviousItemRequestBuilder PreviousItem
+        {
+            get => new PreviousItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Queue property</summary>
-        public QueueRequestBuilder Queue { get =>
-            new QueueRequestBuilder(PathParameters, RequestAdapter);
+        public QueueRequestBuilder Queue
+        {
+            get => new QueueRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Ready property</summary>
-        public ReadyRequestBuilder Ready { get =>
-            new ReadyRequestBuilder(PathParameters, RequestAdapter);
+        public ReadyRequestBuilder Ready
+        {
+            get => new ReadyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The RemoveFromPlaylist property</summary>
-        public RemoveFromPlaylistRequestBuilder RemoveFromPlaylist { get =>
-            new RemoveFromPlaylistRequestBuilder(PathParameters, RequestAdapter);
+        public RemoveFromPlaylistRequestBuilder RemoveFromPlaylist
+        {
+            get => new RemoveFromPlaylistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Seek property</summary>
-        public SeekRequestBuilder Seek { get =>
-            new SeekRequestBuilder(PathParameters, RequestAdapter);
+        public SeekRequestBuilder Seek
+        {
+            get => new SeekRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The SetIgnoreWait property</summary>
-        public SetIgnoreWaitRequestBuilder SetIgnoreWait { get =>
-            new SetIgnoreWaitRequestBuilder(PathParameters, RequestAdapter);
+        public SetIgnoreWaitRequestBuilder SetIgnoreWait
+        {
+            get => new SetIgnoreWaitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The SetNewQueue property</summary>
-        public SetNewQueueRequestBuilder SetNewQueue { get =>
-            new SetNewQueueRequestBuilder(PathParameters, RequestAdapter);
+        public SetNewQueueRequestBuilder SetNewQueue
+        {
+            get => new SetNewQueueRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The SetPlaylistItem property</summary>
-        public SetPlaylistItemRequestBuilder SetPlaylistItem { get =>
-            new SetPlaylistItemRequestBuilder(PathParameters, RequestAdapter);
+        public SetPlaylistItemRequestBuilder SetPlaylistItem
+        {
+            get => new SetPlaylistItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The SetRepeatMode property</summary>
-        public SetRepeatModeRequestBuilder SetRepeatMode { get =>
-            new SetRepeatModeRequestBuilder(PathParameters, RequestAdapter);
+        public SetRepeatModeRequestBuilder SetRepeatMode
+        {
+            get => new SetRepeatModeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The SetShuffleMode property</summary>
-        public SetShuffleModeRequestBuilder SetShuffleMode { get =>
-            new SetShuffleModeRequestBuilder(PathParameters, RequestAdapter);
+        public SetShuffleModeRequestBuilder SetShuffleMode
+        {
+            get => new SetShuffleModeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Stop property</summary>
-        public StopRequestBuilder Stop { get =>
-            new StopRequestBuilder(PathParameters, RequestAdapter);
+        public StopRequestBuilder Stop
+        {
+            get => new StopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Unpause property</summary>
-        public UnpauseRequestBuilder Unpause { get =>
-            new UnpauseRequestBuilder(PathParameters, RequestAdapter);
+        public UnpauseRequestBuilder Unpause
+        {
+            get => new UnpauseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="SyncPlayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SyncPlayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay", pathParameters) {
+        public SyncPlayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SyncPlayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SyncPlayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay", rawUrl) {
+        public SyncPlayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay", rawUrl)
+        {
         }
     }
 }

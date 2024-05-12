@@ -10,28 +10,35 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\LiveStreamFiles
     /// </summary>
-    public class LiveStreamFilesRequestBuilder : BaseRequestBuilder {
+    public class LiveStreamFilesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.item collection</summary>
         /// <param name="position">Stream id.</param>
         /// <returns>A <see cref="WithStreamItemRequestBuilder"/></returns>
-        public WithStreamItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("streamId", position);
-            return new WithStreamItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithStreamItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("streamId", position);
+                return new WithStreamItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="LiveStreamFilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LiveStreamFilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveStreamFiles", pathParameters) {
+        public LiveStreamFilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveStreamFiles", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LiveStreamFilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LiveStreamFilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveStreamFiles", rawUrl) {
+        public LiveStreamFilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveStreamFiles", rawUrl)
+        {
         }
     }
 }

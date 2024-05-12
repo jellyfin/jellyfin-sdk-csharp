@@ -10,24 +10,28 @@ namespace Jellyfin.Sdk.Generated.Channels.Items {
     /// <summary>
     /// Builds and executes requests for operations under \Channels\Items
     /// </summary>
-    public class ItemsRequestBuilder : BaseRequestBuilder {
+    public class ItemsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Latest property</summary>
-        public LatestRequestBuilder Latest { get =>
-            new LatestRequestBuilder(PathParameters, RequestAdapter);
+        public LatestRequestBuilder Latest
+        {
+            get => new LatestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels/Items", pathParameters) {
+        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels/Items", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels/Items", rawUrl) {
+        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels/Items", rawUrl)
+        {
         }
     }
 }

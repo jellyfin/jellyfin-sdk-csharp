@@ -4,7 +4,6 @@ using Jellyfin.Sdk.Generated.System.Configuration;
 using Jellyfin.Sdk.Generated.System.Endpoint;
 using Jellyfin.Sdk.Generated.System.Info;
 using Jellyfin.Sdk.Generated.System.Logs;
-using Jellyfin.Sdk.Generated.System.MediaEncoder;
 using Jellyfin.Sdk.Generated.System.Ping;
 using Jellyfin.Sdk.Generated.System.Restart;
 using Jellyfin.Sdk.Generated.System.Shutdown;
@@ -19,60 +18,68 @@ namespace Jellyfin.Sdk.Generated.System {
     /// <summary>
     /// Builds and executes requests for operations under \System
     /// </summary>
-    public class SystemRequestBuilder : BaseRequestBuilder {
+    public class SystemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The ActivityLog property</summary>
-        public ActivityLogRequestBuilder ActivityLog { get =>
-            new ActivityLogRequestBuilder(PathParameters, RequestAdapter);
+        public ActivityLogRequestBuilder ActivityLog
+        {
+            get => new ActivityLogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Configuration property</summary>
-        public ConfigurationRequestBuilder Configuration { get =>
-            new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        public ConfigurationRequestBuilder Configuration
+        {
+            get => new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Endpoint property</summary>
-        public EndpointRequestBuilder Endpoint { get =>
-            new EndpointRequestBuilder(PathParameters, RequestAdapter);
+        public EndpointRequestBuilder Endpoint
+        {
+            get => new EndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Info property</summary>
-        public InfoRequestBuilder Info { get =>
-            new InfoRequestBuilder(PathParameters, RequestAdapter);
+        public InfoRequestBuilder Info
+        {
+            get => new InfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Logs property</summary>
-        public LogsRequestBuilder Logs { get =>
-            new LogsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The MediaEncoder property</summary>
-        public MediaEncoderRequestBuilder MediaEncoder { get =>
-            new MediaEncoderRequestBuilder(PathParameters, RequestAdapter);
+        public LogsRequestBuilder Logs
+        {
+            get => new LogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Ping property</summary>
-        public PingRequestBuilder Ping { get =>
-            new PingRequestBuilder(PathParameters, RequestAdapter);
+        public PingRequestBuilder Ping
+        {
+            get => new PingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Restart property</summary>
-        public RestartRequestBuilder Restart { get =>
-            new RestartRequestBuilder(PathParameters, RequestAdapter);
+        public RestartRequestBuilder Restart
+        {
+            get => new RestartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Shutdown property</summary>
-        public ShutdownRequestBuilder Shutdown { get =>
-            new ShutdownRequestBuilder(PathParameters, RequestAdapter);
+        public ShutdownRequestBuilder Shutdown
+        {
+            get => new ShutdownRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The WakeOnLanInfo property</summary>
-        public WakeOnLanInfoRequestBuilder WakeOnLanInfo { get =>
-            new WakeOnLanInfoRequestBuilder(PathParameters, RequestAdapter);
+        public WakeOnLanInfoRequestBuilder WakeOnLanInfo
+        {
+            get => new WakeOnLanInfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="SystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SystemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System", pathParameters) {
+        public SystemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SystemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System", rawUrl) {
+        public SystemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System", rawUrl)
+        {
         }
     }
 }

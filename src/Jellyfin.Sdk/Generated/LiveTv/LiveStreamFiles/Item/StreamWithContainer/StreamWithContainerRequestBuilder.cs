@@ -12,14 +12,16 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.StreamWithContainer
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\LiveStreamFiles\{streamId}\stream.{container}
     /// </summary>
-    public class StreamWithContainerRequestBuilder : BaseRequestBuilder {
+    public class StreamWithContainerRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="StreamWithContainerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="container">Container type.</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamWithContainerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string container = "") : base(requestAdapter, "{+baseurl}/LiveTv/LiveStreamFiles/{streamId}/stream.{container}", pathParameters) {
+        public StreamWithContainerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string container = "") : base(requestAdapter, "{+baseurl}/LiveTv/LiveStreamFiles/{streamId}/stream.{container}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(container)) PathParameters.Add("container", container);
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.StreamWithContainer
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamWithContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveStreamFiles/{streamId}/stream.{container}", rawUrl) {
+        public StreamWithContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveStreamFiles/{streamId}/stream.{container}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets a live tv channel stream.
@@ -38,13 +41,16 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.StreamWithContainer
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -56,10 +62,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.StreamWithContainer
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -71,7 +79,8 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.StreamWithContainer
         /// </summary>
         /// <returns>A <see cref="StreamWithContainerRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StreamWithContainerRequestBuilder WithUrl(string rawUrl) {
+        public StreamWithContainerRequestBuilder WithUrl(string rawUrl)
+        {
             return new StreamWithContainerRequestBuilder(rawUrl, RequestAdapter);
         }
     }

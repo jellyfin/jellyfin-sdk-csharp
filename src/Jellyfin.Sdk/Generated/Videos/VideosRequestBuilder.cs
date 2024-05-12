@@ -12,36 +12,45 @@ namespace Jellyfin.Sdk.Generated.Videos {
     /// <summary>
     /// Builds and executes requests for operations under \Videos
     /// </summary>
-    public class VideosRequestBuilder : BaseRequestBuilder {
+    public class VideosRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The ActiveEncodings property</summary>
-        public ActiveEncodingsRequestBuilder ActiveEncodings { get =>
-            new ActiveEncodingsRequestBuilder(PathParameters, RequestAdapter);
+        public ActiveEncodingsRequestBuilder ActiveEncodings
+        {
+            get => new ActiveEncodingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The MergeVersions property</summary>
-        public MergeVersionsRequestBuilder MergeVersions { get =>
-            new MergeVersionsRequestBuilder(PathParameters, RequestAdapter);
+        public MergeVersionsRequestBuilder MergeVersions
+        {
+            get => new MergeVersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item collection</summary>
         /// <param name="position">The item id.</param>
-        /// <returns>A <see cref="ItemIdItemRequestBuilder"/></returns>
-        public ItemIdItemRequestBuilder this[Guid position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("itemId%2Did", position);
-            return new ItemIdItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        /// <returns>A <see cref="ItemItemRequestBuilder"/></returns>
+        public ItemItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("item%2Did", position);
+                return new ItemItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="VideosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VideosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos", pathParameters) {
+        public VideosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="VideosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VideosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos", rawUrl) {
+        public VideosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos", rawUrl)
+        {
         }
     }
 }

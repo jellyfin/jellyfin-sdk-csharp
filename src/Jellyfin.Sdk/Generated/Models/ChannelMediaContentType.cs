@@ -2,22 +2,41 @@
 using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public enum ChannelMediaContentType {
+    #pragma warning disable CS1591
+    public enum ChannelMediaContentType
+    #pragma warning restore CS1591
+    {
         [EnumMember(Value = "Clip")]
+        #pragma warning disable CS1591
         Clip,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Podcast")]
+        #pragma warning disable CS1591
         Podcast,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Trailer")]
+        #pragma warning disable CS1591
         Trailer,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Movie")]
+        #pragma warning disable CS1591
         Movie,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Episode")]
+        #pragma warning disable CS1591
         Episode,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Song")]
+        #pragma warning disable CS1591
         Song,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MovieExtra")]
+        #pragma warning disable CS1591
         MovieExtra,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TvExtra")]
+        #pragma warning disable CS1591
         TvExtra,
+        #pragma warning restore CS1591
     }
 }

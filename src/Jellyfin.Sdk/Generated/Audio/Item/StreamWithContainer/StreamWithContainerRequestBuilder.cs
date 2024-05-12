@@ -11,14 +11,16 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
     /// <summary>
     /// Builds and executes requests for operations under \Audio\{itemId}\stream.{container}
     /// </summary>
-    public class StreamWithContainerRequestBuilder : BaseRequestBuilder {
+    public class StreamWithContainerRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="StreamWithContainerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="container">The audio container.</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamWithContainerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string container = "") : base(requestAdapter, "{+baseurl}/Audio/{itemId}/stream.{container}{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxRefFrames*,maxVideoBitDepth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", pathParameters) {
+        public StreamWithContainerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string container = "") : base(requestAdapter, "{+baseurl}/Audio/{itemId}/stream.{container}{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxRefFrames*,maxVideoBitDepth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(container)) PathParameters.Add("container", container);
         }
         /// <summary>
@@ -26,7 +28,8 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamWithContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/stream.{container}{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxRefFrames*,maxVideoBitDepth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", rawUrl) {
+        public StreamWithContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/stream.{container}{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxRefFrames*,maxVideoBitDepth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets an audio stream.
@@ -36,10 +39,12 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -52,10 +57,12 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> HeadAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> HeadAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> HeadAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> HeadAsync(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToHeadRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -67,10 +74,12 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -84,10 +93,12 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<StreamWithContainerRequestBuilderHeadQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.HEAD, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -99,13 +110,15 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
         /// </summary>
         /// <returns>A <see cref="StreamWithContainerRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StreamWithContainerRequestBuilder WithUrl(string rawUrl) {
+        public StreamWithContainerRequestBuilder WithUrl(string rawUrl)
+        {
             return new StreamWithContainerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets an audio stream.
         /// </summary>
-        public class StreamWithContainerRequestBuilderGetQueryParameters {
+        public class StreamWithContainerRequestBuilderGetQueryParameters 
+        {
             /// <summary>Whether or not to allow copying of the audio stream url.</summary>
             [QueryParameter("allowAudioStreamCopy")]
             public bool? AllowAudioStreamCopy { get; set; }
@@ -138,15 +151,8 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
             [QueryParameter("breakOnNonKeyFrames")]
             public bool? BreakOnNonKeyFrames { get; set; }
             /// <summary>Optional. The MediaBrowser.Model.Dlna.EncodingContext.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("context")]
-            public string? Context { get; set; }
-#nullable restore
-#else
-            [QueryParameter("context")]
-            public string Context { get; set; }
-#endif
+            public GetContextQueryParameterType? Context { get; set; }
             /// <summary>Whether or not to copy timestamps when transcoding with an offset. Defaults to false.</summary>
             [QueryParameter("copyTimestamps")]
             public bool? CopyTimestamps { get; set; }
@@ -167,6 +173,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
             public string DeviceId { get; set; }
 #endif
             /// <summary>Optional. The dlna device profile id to utilize.</summary>
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("deviceProfileId")]
@@ -282,7 +289,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
             [QueryParameter("segmentContainer")]
             public string SegmentContainer { get; set; }
 #endif
-            /// <summary>The segment lenght.</summary>
+            /// <summary>The segment length.</summary>
             [QueryParameter("segmentLength")]
             public int? SegmentLength { get; set; }
             /// <summary>Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.</summary>
@@ -312,15 +319,8 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
             public string SubtitleCodec { get; set; }
 #endif
             /// <summary>Optional. Specify the subtitle delivery method.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("subtitleMethod")]
-            public string? SubtitleMethod { get; set; }
-#nullable restore
-#else
-            [QueryParameter("subtitleMethod")]
-            public string SubtitleMethod { get; set; }
-#endif
+            public GetSubtitleMethodQueryParameterType? SubtitleMethod { get; set; }
             /// <summary>Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.</summary>
             [QueryParameter("subtitleStreamIndex")]
             public int? SubtitleStreamIndex { get; set; }
@@ -370,7 +370,8 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
         /// <summary>
         /// Gets an audio stream.
         /// </summary>
-        public class StreamWithContainerRequestBuilderHeadQueryParameters {
+        public class StreamWithContainerRequestBuilderHeadQueryParameters 
+        {
             /// <summary>Whether or not to allow copying of the audio stream url.</summary>
             [QueryParameter("allowAudioStreamCopy")]
             public bool? AllowAudioStreamCopy { get; set; }
@@ -403,15 +404,8 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
             [QueryParameter("breakOnNonKeyFrames")]
             public bool? BreakOnNonKeyFrames { get; set; }
             /// <summary>Optional. The MediaBrowser.Model.Dlna.EncodingContext.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("context")]
-            public string? Context { get; set; }
-#nullable restore
-#else
-            [QueryParameter("context")]
-            public string Context { get; set; }
-#endif
+            public HeadContextQueryParameterType? Context { get; set; }
             /// <summary>Whether or not to copy timestamps when transcoding with an offset. Defaults to false.</summary>
             [QueryParameter("copyTimestamps")]
             public bool? CopyTimestamps { get; set; }
@@ -432,6 +426,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
             public string DeviceId { get; set; }
 #endif
             /// <summary>Optional. The dlna device profile id to utilize.</summary>
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("deviceProfileId")]
@@ -547,7 +542,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
             [QueryParameter("segmentContainer")]
             public string SegmentContainer { get; set; }
 #endif
-            /// <summary>The segment lenght.</summary>
+            /// <summary>The segment length.</summary>
             [QueryParameter("segmentLength")]
             public int? SegmentLength { get; set; }
             /// <summary>Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.</summary>
@@ -577,15 +572,8 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer {
             public string SubtitleCodec { get; set; }
 #endif
             /// <summary>Optional. Specify the subtitle delivery method.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("subtitleMethod")]
-            public string? SubtitleMethod { get; set; }
-#nullable restore
-#else
-            [QueryParameter("subtitleMethod")]
-            public string SubtitleMethod { get; set; }
-#endif
+            public HeadSubtitleMethodQueryParameterType? SubtitleMethod { get; set; }
             /// <summary>Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.</summary>
             [QueryParameter("subtitleStreamIndex")]
             public int? SubtitleStreamIndex { get; set; }

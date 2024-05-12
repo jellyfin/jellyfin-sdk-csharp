@@ -9,16 +9,18 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWithRouteFormat {
     /// <summary>
-    /// Builds and executes requests for operations under \Videos\{itemId-id}\{mediaSourceId-id}\Subtitles\{index-id}\{routeStartPositionTicks}\Stream.{routeFormat}
+    /// Builds and executes requests for operations under \Videos\{item-id}\{mediaSource-id}\Subtitles\{index-id}\{routeStartPositionTicks}\Stream.{routeFormat}
     /// </summary>
-    public class StreamWithRouteFormatRequestBuilder : BaseRequestBuilder {
+    public class StreamWithRouteFormatRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="StreamWithRouteFormatRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="routeFormat">The (route) format of the returned subtitle.</param>
-        public StreamWithRouteFormatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string routeFormat = "") : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/{mediaSourceId%2Did}/Subtitles/{index%2Did}/{routeStartPositionTicks}/Stream.{routeFormat}{?addVttTimeMap*,copyTimestamps*,endPositionTicks*,format*,index*,itemId*,mediaSourceId*,startPositionTicks*}", pathParameters) {
+        public StreamWithRouteFormatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string routeFormat = "") : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/{mediaSource%2Did}/Subtitles/{index%2Did}/{routeStartPositionTicks}/Stream.{routeFormat}{?addVttTimeMap*,copyTimestamps*,endPositionTicks*,format*,index*,itemId*,mediaSourceId*,startPositionTicks*}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(routeFormat)) PathParameters.Add("routeFormat", routeFormat);
         }
         /// <summary>
@@ -26,7 +28,8 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWith
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamWithRouteFormatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/{mediaSourceId%2Did}/Subtitles/{index%2Did}/{routeStartPositionTicks}/Stream.{routeFormat}{?addVttTimeMap*,copyTimestamps*,endPositionTicks*,format*,index*,itemId*,mediaSourceId*,startPositionTicks*}", rawUrl) {
+        public StreamWithRouteFormatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/{mediaSource%2Did}/Subtitles/{index%2Did}/{routeStartPositionTicks}/Stream.{routeFormat}{?addVttTimeMap*,copyTimestamps*,endPositionTicks*,format*,index*,itemId*,mediaSourceId*,startPositionTicks*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets subtitles in a specified format.
@@ -36,10 +39,12 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWith
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<StreamWithRouteFormatRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<StreamWithRouteFormatRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<StreamWithRouteFormatRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<StreamWithRouteFormatRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +56,12 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWith
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithRouteFormatRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithRouteFormatRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithRouteFormatRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithRouteFormatRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -66,13 +73,15 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWith
         /// </summary>
         /// <returns>A <see cref="StreamWithRouteFormatRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StreamWithRouteFormatRequestBuilder WithUrl(string rawUrl) {
+        public StreamWithRouteFormatRequestBuilder WithUrl(string rawUrl)
+        {
             return new StreamWithRouteFormatRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets subtitles in a specified format.
         /// </summary>
-        public class StreamWithRouteFormatRequestBuilderGetQueryParameters {
+        public class StreamWithRouteFormatRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Whether to add a VTT time map.</summary>
             [QueryParameter("addVttTimeMap")]
             public bool? AddVttTimeMap { get; set; }

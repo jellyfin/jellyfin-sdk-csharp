@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.Apply.Item {
     /// <summary>
     /// Builds and executes requests for operations under \Items\RemoteSearch\Apply\{itemId}
     /// </summary>
-    public class WithItemItemRequestBuilder : BaseRequestBuilder {
+    public class WithItemItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch/Apply/{itemId}{?replaceAllImages*}", pathParameters) {
+        public WithItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch/Apply/{itemId}{?replaceAllImages*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch/Apply/{itemId}{?replaceAllImages*}", rawUrl) {
+        public WithItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch/Apply/{itemId}{?replaceAllImages*}", rawUrl)
+        {
         }
         /// <summary>
         /// Applies search criteria to an item and refreshes metadata.
@@ -33,16 +36,23 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.Apply.Item {
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(RemoteSearchResult body, Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(RemoteSearchResult body, Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(RemoteSearchResult body, Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(RemoteSearchResult body, Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Applies search criteria to an item and refreshes metadata.
@@ -52,14 +62,17 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.Apply.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(RemoteSearchResult body, Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(RemoteSearchResult body, Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(RemoteSearchResult body, Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(RemoteSearchResult body, Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -68,13 +81,15 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.Apply.Item {
         /// </summary>
         /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithItemItemRequestBuilder WithUrl(string rawUrl) {
+        public WithItemItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithItemItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Applies search criteria to an item and refreshes metadata.
         /// </summary>
-        public class WithItemItemRequestBuilderPostQueryParameters {
+        public class WithItemItemRequestBuilderPostQueryParameters 
+        {
             /// <summary>Optional. Whether or not to replace all images. Default: True.</summary>
             [QueryParameter("replaceAllImages")]
             public bool? ReplaceAllImages { get; set; }

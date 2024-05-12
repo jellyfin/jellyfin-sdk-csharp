@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders.Lineups {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\ListingProviders\Lineups
     /// </summary>
-    public class LineupsRequestBuilder : BaseRequestBuilder {
+    public class LineupsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="LineupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LineupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/ListingProviders/Lineups{?country*,id*,location*,type*}", pathParameters) {
+        public LineupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/ListingProviders/Lineups{?country*,id*,location*,type*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LineupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LineupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/ListingProviders/Lineups{?country*,id*,location*,type*}", rawUrl) {
+        public LineupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/ListingProviders/Lineups{?country*,id*,location*,type*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets available lineups.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders.Lineups {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<NameIdPair>?> GetAsync(Action<RequestConfiguration<LineupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<NameIdPair>?> GetAsync(Action<RequestConfiguration<LineupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<NameIdPair>> GetAsync(Action<RequestConfiguration<LineupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<NameIdPair>> GetAsync(Action<RequestConfiguration<LineupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<NameIdPair>(requestInfo, NameIdPair.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +56,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders.Lineups {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LineupsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LineupsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LineupsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LineupsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -66,13 +73,15 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders.Lineups {
         /// </summary>
         /// <returns>A <see cref="LineupsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LineupsRequestBuilder WithUrl(string rawUrl) {
+        public LineupsRequestBuilder WithUrl(string rawUrl)
+        {
             return new LineupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets available lineups.
         /// </summary>
-        public class LineupsRequestBuilderGetQueryParameters {
+        public class LineupsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Country.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

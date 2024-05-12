@@ -15,32 +15,38 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item.Item {
     /// <summary>
     /// Builds and executes requests for operations under \Plugins\{pluginId}\{version}
     /// </summary>
-    public class WithVersionItemRequestBuilder : BaseRequestBuilder {
+    public class WithVersionItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Disable property</summary>
-        public DisableRequestBuilder Disable { get =>
-            new DisableRequestBuilder(PathParameters, RequestAdapter);
+        public DisableRequestBuilder Disable
+        {
+            get => new DisableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Enable property</summary>
-        public EnableRequestBuilder Enable { get =>
-            new EnableRequestBuilder(PathParameters, RequestAdapter);
+        public EnableRequestBuilder Enable
+        {
+            get => new EnableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Image property</summary>
-        public ImageRequestBuilder Image { get =>
-            new ImageRequestBuilder(PathParameters, RequestAdapter);
+        public ImageRequestBuilder Image
+        {
+            get => new ImageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithVersionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithVersionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Plugins/{pluginId}/{version}", pathParameters) {
+        public WithVersionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Plugins/{pluginId}/{version}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithVersionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithVersionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Plugins/{pluginId}/{version}", rawUrl) {
+        public WithVersionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Plugins/{pluginId}/{version}", rawUrl)
+        {
         }
         /// <summary>
         /// Uninstalls a plugin by version.
@@ -50,13 +56,16 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item.Item {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -68,10 +77,12 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -83,7 +94,8 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item.Item {
         /// </summary>
         /// <returns>A <see cref="WithVersionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithVersionItemRequestBuilder WithUrl(string rawUrl) {
+        public WithVersionItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithVersionItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }

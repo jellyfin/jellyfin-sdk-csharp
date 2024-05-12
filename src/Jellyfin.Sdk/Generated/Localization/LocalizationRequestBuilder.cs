@@ -13,36 +13,43 @@ namespace Jellyfin.Sdk.Generated.Localization {
     /// <summary>
     /// Builds and executes requests for operations under \Localization
     /// </summary>
-    public class LocalizationRequestBuilder : BaseRequestBuilder {
+    public class LocalizationRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Countries property</summary>
-        public CountriesRequestBuilder Countries { get =>
-            new CountriesRequestBuilder(PathParameters, RequestAdapter);
+        public CountriesRequestBuilder Countries
+        {
+            get => new CountriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Cultures property</summary>
-        public CulturesRequestBuilder Cultures { get =>
-            new CulturesRequestBuilder(PathParameters, RequestAdapter);
+        public CulturesRequestBuilder Cultures
+        {
+            get => new CulturesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The OptionsPath property</summary>
-        public OptionsRequestBuilder OptionsPath { get =>
-            new OptionsRequestBuilder(PathParameters, RequestAdapter);
+        public OptionsRequestBuilder OptionsPath
+        {
+            get => new OptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ParentalRatings property</summary>
-        public ParentalRatingsRequestBuilder ParentalRatings { get =>
-            new ParentalRatingsRequestBuilder(PathParameters, RequestAdapter);
+        public ParentalRatingsRequestBuilder ParentalRatings
+        {
+            get => new ParentalRatingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="LocalizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LocalizationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Localization", pathParameters) {
+        public LocalizationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Localization", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LocalizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LocalizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Localization", rawUrl) {
+        public LocalizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Localization", rawUrl)
+        {
         }
     }
 }

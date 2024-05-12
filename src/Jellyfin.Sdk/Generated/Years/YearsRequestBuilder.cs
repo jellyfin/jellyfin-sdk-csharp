@@ -13,28 +13,35 @@ namespace Jellyfin.Sdk.Generated.Years {
     /// <summary>
     /// Builds and executes requests for operations under \Years
     /// </summary>
-    public class YearsRequestBuilder : BaseRequestBuilder {
+    public class YearsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Years.item collection</summary>
         /// <param name="position">The year.</param>
         /// <returns>A <see cref="WithYearItemRequestBuilder"/></returns>
-        public WithYearItemRequestBuilder this[int position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("year", position);
-            return new WithYearItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithYearItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("year", position);
+                return new WithYearItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="YearsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public YearsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Years{?enableImageTypes*,enableImages*,enableUserData*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,limit*,mediaTypes*,parentId*,recursive*,sortBy*,sortOrder*,startIndex*,userId*}", pathParameters) {
+        public YearsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Years{?enableImageTypes*,enableImages*,enableUserData*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,limit*,mediaTypes*,parentId*,recursive*,sortBy*,sortOrder*,startIndex*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="YearsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public YearsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Years{?enableImageTypes*,enableImages*,enableUserData*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,limit*,mediaTypes*,parentId*,recursive*,sortBy*,sortOrder*,startIndex*,userId*}", rawUrl) {
+        public YearsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Years{?enableImageTypes*,enableImages*,enableUserData*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,limit*,mediaTypes*,parentId*,recursive*,sortBy*,sortOrder*,startIndex*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Get years.
@@ -44,10 +51,12 @@ namespace Jellyfin.Sdk.Generated.Years {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<YearsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<YearsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<YearsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<YearsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -59,10 +68,12 @@ namespace Jellyfin.Sdk.Generated.Years {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<YearsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<YearsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<YearsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<YearsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -74,13 +85,15 @@ namespace Jellyfin.Sdk.Generated.Years {
         /// </summary>
         /// <returns>A <see cref="YearsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public YearsRequestBuilder WithUrl(string rawUrl) {
+        public YearsRequestBuilder WithUrl(string rawUrl)
+        {
             return new YearsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get years.
         /// </summary>
-        public class YearsRequestBuilderGetQueryParameters {
+        public class YearsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Include image information in output.</summary>
             [QueryParameter("enableImages")]
             public bool? EnableImages { get; set; }
@@ -137,11 +150,11 @@ namespace Jellyfin.Sdk.Generated.Years {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mediaTypes")]
-            public string[]? MediaTypes { get; set; }
+            public MediaType[]? MediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("mediaTypes")]
-            public string[] MediaTypes { get; set; }
+            public MediaType[] MediaTypes { get; set; }
 #endif
             /// <summary>Specify this to localize the search to a specific item or folder. Omit to use the root.</summary>
             [QueryParameter("parentId")]
@@ -153,11 +166,11 @@ namespace Jellyfin.Sdk.Generated.Years {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
-            public string[]? SortBy { get; set; }
+            public ItemSortBy[]? SortBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortBy")]
-            public string[] SortBy { get; set; }
+            public ItemSortBy[] SortBy { get; set; }
 #endif
             /// <summary>Sort Order - Ascending,Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

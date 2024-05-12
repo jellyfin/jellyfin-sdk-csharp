@@ -13,24 +13,28 @@ namespace Jellyfin.Sdk.Generated.Persons.Item {
     /// <summary>
     /// Builds and executes requests for operations under \Persons\{name}
     /// </summary>
-    public class WithNameItemRequestBuilder : BaseRequestBuilder {
+    public class WithNameItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Images property</summary>
-        public ImagesRequestBuilder Images { get =>
-            new ImagesRequestBuilder(PathParameters, RequestAdapter);
+        public ImagesRequestBuilder Images
+        {
+            get => new ImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithNameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Persons/{name}{?userId*}", pathParameters) {
+        public WithNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Persons/{name}{?userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithNameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Persons/{name}{?userId*}", rawUrl) {
+        public WithNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Persons/{name}{?userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Get person by name.
@@ -41,13 +45,16 @@ namespace Jellyfin.Sdk.Generated.Persons.Item {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDto?> GetAsync(Action<RequestConfiguration<WithNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDto?> GetAsync(Action<RequestConfiguration<WithNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDto> GetAsync(Action<RequestConfiguration<WithNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDto> GetAsync(Action<RequestConfiguration<WithNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<BaseItemDto>(requestInfo, BaseItemDto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,10 +66,12 @@ namespace Jellyfin.Sdk.Generated.Persons.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -74,13 +83,15 @@ namespace Jellyfin.Sdk.Generated.Persons.Item {
         /// </summary>
         /// <returns>A <see cref="WithNameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithNameItemRequestBuilder WithUrl(string rawUrl) {
+        public WithNameItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithNameItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get person by name.
         /// </summary>
-        public class WithNameItemRequestBuilderGetQueryParameters {
+        public class WithNameItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Filter by user id, and attach user data.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

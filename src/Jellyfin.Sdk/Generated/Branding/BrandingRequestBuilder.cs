@@ -13,36 +13,43 @@ namespace Jellyfin.Sdk.Generated.Branding {
     /// <summary>
     /// Builds and executes requests for operations under \Branding
     /// </summary>
-    public class BrandingRequestBuilder : BaseRequestBuilder {
+    public class BrandingRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Configuration property</summary>
-        public ConfigurationRequestBuilder Configuration { get =>
-            new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        public ConfigurationRequestBuilder Configuration
+        {
+            get => new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Css property</summary>
-        public CssRequestBuilder Css { get =>
-            new CssRequestBuilder(PathParameters, RequestAdapter);
+        public CssRequestBuilder Css
+        {
+            get => new CssRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The CssCss property</summary>
-        public CssCssRequestBuilder CssCss { get =>
-            new CssCssRequestBuilder(PathParameters, RequestAdapter);
+        public CssCssRequestBuilder CssCss
+        {
+            get => new CssCssRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Splashscreen property</summary>
-        public SplashscreenRequestBuilder Splashscreen { get =>
-            new SplashscreenRequestBuilder(PathParameters, RequestAdapter);
+        public SplashscreenRequestBuilder Splashscreen
+        {
+            get => new SplashscreenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="BrandingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrandingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Branding", pathParameters) {
+        public BrandingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Branding", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="BrandingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrandingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Branding", rawUrl) {
+        public BrandingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Branding", rawUrl)
+        {
         }
     }
 }

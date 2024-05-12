@@ -10,22 +10,25 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Albums.Item.InstantMix {
     /// <summary>
-    /// Builds and executes requests for operations under \Albums\{id-id}\InstantMix
+    /// Builds and executes requests for operations under \Albums\{itemId}\InstantMix
     /// </summary>
-    public class InstantMixRequestBuilder : BaseRequestBuilder {
+    public class InstantMixRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="InstantMixRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstantMixRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums/{id%2Did}/InstantMix{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,userId*}", pathParameters) {
+        public InstantMixRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums/{itemId}/InstantMix{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="InstantMixRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstantMixRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums/{id%2Did}/InstantMix{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,userId*}", rawUrl) {
+        public InstantMixRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums/{itemId}/InstantMix{?enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Creates an instant playlist based on a given album.
@@ -33,15 +36,22 @@ namespace Jellyfin.Sdk.Generated.Albums.Item.InstantMix {
         /// <returns>A <see cref="BaseItemDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<InstantMixRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<InstantMixRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<InstantMixRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<InstantMixRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates an instant playlist based on a given album.
@@ -50,10 +60,12 @@ namespace Jellyfin.Sdk.Generated.Albums.Item.InstantMix {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstantMixRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstantMixRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstantMixRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstantMixRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -65,13 +77,15 @@ namespace Jellyfin.Sdk.Generated.Albums.Item.InstantMix {
         /// </summary>
         /// <returns>A <see cref="InstantMixRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public InstantMixRequestBuilder WithUrl(string rawUrl) {
+        public InstantMixRequestBuilder WithUrl(string rawUrl)
+        {
             return new InstantMixRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Creates an instant playlist based on a given album.
         /// </summary>
-        public class InstantMixRequestBuilderGetQueryParameters {
+        public class InstantMixRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Include image information in output.</summary>
             [QueryParameter("enableImages")]
             public bool? EnableImages { get; set; }

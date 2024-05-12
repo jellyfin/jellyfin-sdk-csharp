@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Authorize {
     /// <summary>
     /// Builds and executes requests for operations under \QuickConnect\Authorize
     /// </summary>
-    public class AuthorizeRequestBuilder : BaseRequestBuilder {
+    public class AuthorizeRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="AuthorizeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthorizeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Authorize?code={code}", pathParameters) {
+        public AuthorizeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Authorize?code={code}{&userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AuthorizeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthorizeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Authorize?code={code}", rawUrl) {
+        public AuthorizeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Authorize?code={code}{&userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Authorizes a pending quick connect request.
@@ -36,13 +39,16 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Authorize {
         /// <exception cref="ProblemDetails">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<bool?> PostAsync(Action<RequestConfiguration<AuthorizeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<bool?> PostAsync(Action<RequestConfiguration<AuthorizeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<bool?> PostAsync(Action<RequestConfiguration<AuthorizeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<bool?> PostAsync(Action<RequestConfiguration<AuthorizeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"403", ProblemDetails.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -54,10 +60,12 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Authorize {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<AuthorizeRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<AuthorizeRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<AuthorizeRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<AuthorizeRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -69,13 +77,15 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Authorize {
         /// </summary>
         /// <returns>A <see cref="AuthorizeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthorizeRequestBuilder WithUrl(string rawUrl) {
+        public AuthorizeRequestBuilder WithUrl(string rawUrl)
+        {
             return new AuthorizeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Authorizes a pending quick connect request.
         /// </summary>
-        public class AuthorizeRequestBuilderPostQueryParameters {
+        public class AuthorizeRequestBuilderPostQueryParameters 
+        {
             /// <summary>Quick connect code to authorize.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +96,9 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Authorize {
             [QueryParameter("code")]
             public string Code { get; set; }
 #endif
+            /// <summary>The user the authorize. Access to the requested user is required.</summary>
+            [QueryParameter("userId")]
+            public Guid? UserId { get; set; }
         }
     }
 }

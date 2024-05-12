@@ -8,26 +8,30 @@ using System.Threading.Tasks;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\RemoteSearch
+    /// Builds and executes requests for operations under \Items\{itemId}\RemoteSearch
     /// </summary>
-    public class RemoteSearchRequestBuilder : BaseRequestBuilder {
+    public class RemoteSearchRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Subtitles property</summary>
-        public SubtitlesRequestBuilder Subtitles { get =>
-            new SubtitlesRequestBuilder(PathParameters, RequestAdapter);
+        public SubtitlesRequestBuilder Subtitles
+        {
+            get => new SubtitlesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="RemoteSearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemoteSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteSearch", pathParameters) {
+        public RemoteSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteSearch", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RemoteSearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemoteSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteSearch", rawUrl) {
+        public RemoteSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteSearch", rawUrl)
+        {
         }
     }
 }

@@ -5,9 +5,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public class LibraryOptions : IParsable {
+    #pragma warning disable CS1591
+    public class LibraryOptions : IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>An enum representing the options to disable embedded subs.</summary>
-        public EmbeddedSubtitleOptions? AllowEmbeddedSubtitles { get; set; }
+        public LibraryOptions_AllowEmbeddedSubtitles? AllowEmbeddedSubtitles { get; set; }
         /// <summary>The AutomaticallyAddToCollection property</summary>
         public bool? AutomaticallyAddToCollection { get; set; }
         /// <summary>The AutomaticRefreshIntervalDays property</summary>
@@ -32,19 +35,29 @@ namespace Jellyfin.Sdk.Generated.Models {
         public bool? EnableAutomaticSeriesGrouping { get; set; }
         /// <summary>The EnableChapterImageExtraction property</summary>
         public bool? EnableChapterImageExtraction { get; set; }
+        /// <summary>The Enabled property</summary>
+        public bool? Enabled { get; set; }
         /// <summary>The EnableEmbeddedEpisodeInfos property</summary>
         public bool? EnableEmbeddedEpisodeInfos { get; set; }
+        /// <summary>The EnableEmbeddedExtrasTitles property</summary>
+        public bool? EnableEmbeddedExtrasTitles { get; set; }
         /// <summary>The EnableEmbeddedTitles property</summary>
         public bool? EnableEmbeddedTitles { get; set; }
         /// <summary>The EnableInternetProviders property</summary>
         [Obsolete("")]
         public bool? EnableInternetProviders { get; set; }
+        /// <summary>The EnableLUFSScan property</summary>
+        public bool? EnableLUFSScan { get; set; }
         /// <summary>The EnablePhotos property</summary>
         public bool? EnablePhotos { get; set; }
         /// <summary>The EnableRealtimeMonitor property</summary>
         public bool? EnableRealtimeMonitor { get; set; }
+        /// <summary>The EnableTrickplayImageExtraction property</summary>
+        public bool? EnableTrickplayImageExtraction { get; set; }
         /// <summary>The ExtractChapterImagesDuringLibraryScan property</summary>
         public bool? ExtractChapterImagesDuringLibraryScan { get; set; }
+        /// <summary>The ExtractTrickplayImagesDuringLibraryScan property</summary>
+        public bool? ExtractTrickplayImagesDuringLibraryScan { get; set; }
         /// <summary>The LocalMetadataReaderOrder property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +102,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public bool? RequirePerfectSubtitleMatch { get; set; }
         /// <summary>The SaveLocalMetadata property</summary>
         public bool? SaveLocalMetadata { get; set; }
+        /// <summary>The SaveLyricsWithMedia property</summary>
+        public bool? SaveLyricsWithMedia { get; set; }
         /// <summary>The SaveSubtitlesWithMedia property</summary>
         public bool? SaveSubtitlesWithMedia { get; set; }
         /// <summary>The SeasonZeroDisplayName property</summary>
@@ -132,7 +147,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="LibraryOptions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LibraryOptions CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static LibraryOptions CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new LibraryOptions();
         }
@@ -140,9 +156,11 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
-                {"AllowEmbeddedSubtitles", n => { AllowEmbeddedSubtitles = n.GetEnumValue<EmbeddedSubtitleOptions>(); } },
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
+                {"AllowEmbeddedSubtitles", n => { AllowEmbeddedSubtitles = n.GetEnumValue<LibraryOptions_AllowEmbeddedSubtitles>(); } },
                 {"AutomaticRefreshIntervalDays", n => { AutomaticRefreshIntervalDays = n.GetIntValue(); } },
                 {"AutomaticallyAddToCollection", n => { AutomaticallyAddToCollection = n.GetBoolValue(); } },
                 {"DisabledLocalMetadataReaders", n => { DisabledLocalMetadataReaders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -150,11 +168,16 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"EnableAutomaticSeriesGrouping", n => { EnableAutomaticSeriesGrouping = n.GetBoolValue(); } },
                 {"EnableChapterImageExtraction", n => { EnableChapterImageExtraction = n.GetBoolValue(); } },
                 {"EnableEmbeddedEpisodeInfos", n => { EnableEmbeddedEpisodeInfos = n.GetBoolValue(); } },
+                {"EnableEmbeddedExtrasTitles", n => { EnableEmbeddedExtrasTitles = n.GetBoolValue(); } },
                 {"EnableEmbeddedTitles", n => { EnableEmbeddedTitles = n.GetBoolValue(); } },
                 {"EnableInternetProviders", n => { EnableInternetProviders = n.GetBoolValue(); } },
+                {"EnableLUFSScan", n => { EnableLUFSScan = n.GetBoolValue(); } },
                 {"EnablePhotos", n => { EnablePhotos = n.GetBoolValue(); } },
                 {"EnableRealtimeMonitor", n => { EnableRealtimeMonitor = n.GetBoolValue(); } },
+                {"EnableTrickplayImageExtraction", n => { EnableTrickplayImageExtraction = n.GetBoolValue(); } },
+                {"Enabled", n => { Enabled = n.GetBoolValue(); } },
                 {"ExtractChapterImagesDuringLibraryScan", n => { ExtractChapterImagesDuringLibraryScan = n.GetBoolValue(); } },
+                {"ExtractTrickplayImagesDuringLibraryScan", n => { ExtractTrickplayImagesDuringLibraryScan = n.GetBoolValue(); } },
                 {"LocalMetadataReaderOrder", n => { LocalMetadataReaderOrder = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"MetadataCountryCode", n => { MetadataCountryCode = n.GetStringValue(); } },
                 {"MetadataSavers", n => { MetadataSavers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -162,6 +185,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"PreferredMetadataLanguage", n => { PreferredMetadataLanguage = n.GetStringValue(); } },
                 {"RequirePerfectSubtitleMatch", n => { RequirePerfectSubtitleMatch = n.GetBoolValue(); } },
                 {"SaveLocalMetadata", n => { SaveLocalMetadata = n.GetBoolValue(); } },
+                {"SaveLyricsWithMedia", n => { SaveLyricsWithMedia = n.GetBoolValue(); } },
                 {"SaveSubtitlesWithMedia", n => { SaveSubtitlesWithMedia = n.GetBoolValue(); } },
                 {"SeasonZeroDisplayName", n => { SeasonZeroDisplayName = n.GetStringValue(); } },
                 {"SkipSubtitlesIfAudioTrackMatches", n => { SkipSubtitlesIfAudioTrackMatches = n.GetBoolValue(); } },
@@ -175,21 +199,27 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<EmbeddedSubtitleOptions>("AllowEmbeddedSubtitles", AllowEmbeddedSubtitles);
+            writer.WriteEnumValue<LibraryOptions_AllowEmbeddedSubtitles>("AllowEmbeddedSubtitles", AllowEmbeddedSubtitles);
             writer.WriteBoolValue("AutomaticallyAddToCollection", AutomaticallyAddToCollection);
             writer.WriteIntValue("AutomaticRefreshIntervalDays", AutomaticRefreshIntervalDays);
             writer.WriteCollectionOfPrimitiveValues<string>("DisabledLocalMetadataReaders", DisabledLocalMetadataReaders);
             writer.WriteCollectionOfPrimitiveValues<string>("DisabledSubtitleFetchers", DisabledSubtitleFetchers);
             writer.WriteBoolValue("EnableAutomaticSeriesGrouping", EnableAutomaticSeriesGrouping);
             writer.WriteBoolValue("EnableChapterImageExtraction", EnableChapterImageExtraction);
+            writer.WriteBoolValue("Enabled", Enabled);
             writer.WriteBoolValue("EnableEmbeddedEpisodeInfos", EnableEmbeddedEpisodeInfos);
+            writer.WriteBoolValue("EnableEmbeddedExtrasTitles", EnableEmbeddedExtrasTitles);
             writer.WriteBoolValue("EnableEmbeddedTitles", EnableEmbeddedTitles);
             writer.WriteBoolValue("EnableInternetProviders", EnableInternetProviders);
+            writer.WriteBoolValue("EnableLUFSScan", EnableLUFSScan);
             writer.WriteBoolValue("EnablePhotos", EnablePhotos);
             writer.WriteBoolValue("EnableRealtimeMonitor", EnableRealtimeMonitor);
+            writer.WriteBoolValue("EnableTrickplayImageExtraction", EnableTrickplayImageExtraction);
             writer.WriteBoolValue("ExtractChapterImagesDuringLibraryScan", ExtractChapterImagesDuringLibraryScan);
+            writer.WriteBoolValue("ExtractTrickplayImagesDuringLibraryScan", ExtractTrickplayImagesDuringLibraryScan);
             writer.WriteCollectionOfPrimitiveValues<string>("LocalMetadataReaderOrder", LocalMetadataReaderOrder);
             writer.WriteStringValue("MetadataCountryCode", MetadataCountryCode);
             writer.WriteCollectionOfPrimitiveValues<string>("MetadataSavers", MetadataSavers);
@@ -197,6 +227,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("PreferredMetadataLanguage", PreferredMetadataLanguage);
             writer.WriteBoolValue("RequirePerfectSubtitleMatch", RequirePerfectSubtitleMatch);
             writer.WriteBoolValue("SaveLocalMetadata", SaveLocalMetadata);
+            writer.WriteBoolValue("SaveLyricsWithMedia", SaveLyricsWithMedia);
             writer.WriteBoolValue("SaveSubtitlesWithMedia", SaveSubtitlesWithMedia);
             writer.WriteStringValue("SeasonZeroDisplayName", SeasonZeroDisplayName);
             writer.WriteBoolValue("SkipSubtitlesIfAudioTrackMatches", SkipSubtitlesIfAudioTrackMatches);

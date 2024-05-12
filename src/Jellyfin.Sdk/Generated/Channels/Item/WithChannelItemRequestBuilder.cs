@@ -11,28 +11,33 @@ namespace Jellyfin.Sdk.Generated.Channels.Item {
     /// <summary>
     /// Builds and executes requests for operations under \Channels\{channelId}
     /// </summary>
-    public class WithChannelItemRequestBuilder : BaseRequestBuilder {
+    public class WithChannelItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Features property</summary>
-        public FeaturesRequestBuilder Features { get =>
-            new FeaturesRequestBuilder(PathParameters, RequestAdapter);
+        public FeaturesRequestBuilder Features
+        {
+            get => new FeaturesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Items property</summary>
-        public ItemsRequestBuilder Items { get =>
-            new ItemsRequestBuilder(PathParameters, RequestAdapter);
+        public ItemsRequestBuilder Items
+        {
+            get => new ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithChannelItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithChannelItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels/{channelId}", pathParameters) {
+        public WithChannelItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels/{channelId}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithChannelItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithChannelItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels/{channelId}", rawUrl) {
+        public WithChannelItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Channels/{channelId}", rawUrl)
+        {
         }
     }
 }

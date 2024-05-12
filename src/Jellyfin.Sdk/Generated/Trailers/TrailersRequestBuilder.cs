@@ -13,28 +13,35 @@ namespace Jellyfin.Sdk.Generated.Trailers {
     /// <summary>
     /// Builds and executes requests for operations under \Trailers
     /// </summary>
-    public class TrailersRequestBuilder : BaseRequestBuilder {
+    public class TrailersRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Trailers.item collection</summary>
         /// <param name="position">The item id.</param>
         /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
-        public WithItemItemRequestBuilder this[Guid position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("itemId", position);
-            return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithItemItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("itemId", position);
+                return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="TrailersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrailersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Trailers{?adjacentTo*,albumArtistIds*,albumIds*,albums*,artistIds*,artists*,collapseBoxSetItems*,contributingArtistIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeArtistIds*,excludeItemIds*,excludeItemTypes*,excludeLocationTypes*,fields*,filters*,genreIds*,genres*,hasImdbId*,hasOfficialRating*,hasOverview*,hasParentalRating*,hasSpecialFeature*,hasSubtitles*,hasThemeSong*,hasThemeVideo*,hasTmdbId*,hasTrailer*,hasTvdbId*,ids*,imageTypeLimit*,imageTypes*,is3D*,is4K*,isFavorite*,isHd*,isKids*,isLocked*,isMissing*,isMovie*,isNews*,isPlaceHolder*,isPlayed*,isSeries*,isSports*,isUnaired*,limit*,locationTypes*,maxHeight*,maxOfficialRating*,maxPremiereDate*,maxWidth*,mediaTypes*,minCommunityRating*,minCriticRating*,minDateLastSaved*,minDateLastSavedForUser*,minHeight*,minOfficialRating*,minPremiereDate*,minWidth*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,officialRatings*,parentId*,parentIndexNumber*,person*,personIds*,personTypes*,recursive*,searchTerm*,seriesStatus*,sortBy*,sortOrder*,startIndex*,studioIds*,studios*,tags*,userId*,videoTypes*,years*}", pathParameters) {
+        public TrailersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Trailers{?adjacentTo*,albumArtistIds*,albumIds*,albums*,artistIds*,artists*,collapseBoxSetItems*,contributingArtistIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeArtistIds*,excludeItemIds*,excludeItemTypes*,excludeLocationTypes*,fields*,filters*,genreIds*,genres*,hasImdbId*,hasOfficialRating*,hasOverview*,hasParentalRating*,hasSpecialFeature*,hasSubtitles*,hasThemeSong*,hasThemeVideo*,hasTmdbId*,hasTrailer*,hasTvdbId*,ids*,imageTypeLimit*,imageTypes*,is3D*,is4K*,isFavorite*,isHd*,isKids*,isLocked*,isMissing*,isMovie*,isNews*,isPlaceHolder*,isPlayed*,isSeries*,isSports*,isUnaired*,limit*,locationTypes*,maxHeight*,maxOfficialRating*,maxPremiereDate*,maxWidth*,mediaTypes*,minCommunityRating*,minCriticRating*,minDateLastSaved*,minDateLastSavedForUser*,minHeight*,minOfficialRating*,minPremiereDate*,minWidth*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,officialRatings*,parentId*,parentIndexNumber*,person*,personIds*,personTypes*,recursive*,searchTerm*,seriesStatus*,sortBy*,sortOrder*,startIndex*,studioIds*,studios*,tags*,userId*,videoTypes*,years*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="TrailersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrailersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Trailers{?adjacentTo*,albumArtistIds*,albumIds*,albums*,artistIds*,artists*,collapseBoxSetItems*,contributingArtistIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeArtistIds*,excludeItemIds*,excludeItemTypes*,excludeLocationTypes*,fields*,filters*,genreIds*,genres*,hasImdbId*,hasOfficialRating*,hasOverview*,hasParentalRating*,hasSpecialFeature*,hasSubtitles*,hasThemeSong*,hasThemeVideo*,hasTmdbId*,hasTrailer*,hasTvdbId*,ids*,imageTypeLimit*,imageTypes*,is3D*,is4K*,isFavorite*,isHd*,isKids*,isLocked*,isMissing*,isMovie*,isNews*,isPlaceHolder*,isPlayed*,isSeries*,isSports*,isUnaired*,limit*,locationTypes*,maxHeight*,maxOfficialRating*,maxPremiereDate*,maxWidth*,mediaTypes*,minCommunityRating*,minCriticRating*,minDateLastSaved*,minDateLastSavedForUser*,minHeight*,minOfficialRating*,minPremiereDate*,minWidth*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,officialRatings*,parentId*,parentIndexNumber*,person*,personIds*,personTypes*,recursive*,searchTerm*,seriesStatus*,sortBy*,sortOrder*,startIndex*,studioIds*,studios*,tags*,userId*,videoTypes*,years*}", rawUrl) {
+        public TrailersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Trailers{?adjacentTo*,albumArtistIds*,albumIds*,albums*,artistIds*,artists*,collapseBoxSetItems*,contributingArtistIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeArtistIds*,excludeItemIds*,excludeItemTypes*,excludeLocationTypes*,fields*,filters*,genreIds*,genres*,hasImdbId*,hasOfficialRating*,hasOverview*,hasParentalRating*,hasSpecialFeature*,hasSubtitles*,hasThemeSong*,hasThemeVideo*,hasTmdbId*,hasTrailer*,hasTvdbId*,ids*,imageTypeLimit*,imageTypes*,is3D*,is4K*,isFavorite*,isHd*,isKids*,isLocked*,isMissing*,isMovie*,isNews*,isPlaceHolder*,isPlayed*,isSeries*,isSports*,isUnaired*,limit*,locationTypes*,maxHeight*,maxOfficialRating*,maxPremiereDate*,maxWidth*,mediaTypes*,minCommunityRating*,minCriticRating*,minDateLastSaved*,minDateLastSavedForUser*,minHeight*,minOfficialRating*,minPremiereDate*,minWidth*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,officialRatings*,parentId*,parentIndexNumber*,person*,personIds*,personTypes*,recursive*,searchTerm*,seriesStatus*,sortBy*,sortOrder*,startIndex*,studioIds*,studios*,tags*,userId*,videoTypes*,years*}", rawUrl)
+        {
         }
         /// <summary>
         /// Finds movies and trailers similar to a given trailer.
@@ -44,10 +51,12 @@ namespace Jellyfin.Sdk.Generated.Trailers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<TrailersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<TrailersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<TrailersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<TrailersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -59,10 +68,12 @@ namespace Jellyfin.Sdk.Generated.Trailers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TrailersRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TrailersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TrailersRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TrailersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -74,23 +85,18 @@ namespace Jellyfin.Sdk.Generated.Trailers {
         /// </summary>
         /// <returns>A <see cref="TrailersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TrailersRequestBuilder WithUrl(string rawUrl) {
+        public TrailersRequestBuilder WithUrl(string rawUrl)
+        {
             return new TrailersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Finds movies and trailers similar to a given trailer.
         /// </summary>
-        public class TrailersRequestBuilderGetQueryParameters {
+        public class TrailersRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Return items that are siblings of a supplied item.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("adjacentTo")]
-            public string? AdjacentTo { get; set; }
-#nullable restore
-#else
-            [QueryParameter("adjacentTo")]
-            public string AdjacentTo { get; set; }
-#endif
+            public Guid? AdjacentTo { get; set; }
             /// <summary>Optional. If specified, results will be filtered to include only those containing the specified album artist id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -253,7 +259,7 @@ namespace Jellyfin.Sdk.Generated.Trailers {
             [QueryParameter("genres")]
             public string[] Genres { get; set; }
 #endif
-            /// <summary>Optional filter by items that have an imdb id or not.</summary>
+            /// <summary>Optional filter by items that have an IMDb id or not.</summary>
             [QueryParameter("hasImdbId")]
             public bool? HasImdbId { get; set; }
             /// <summary>Optional filter by items that have official ratings.</summary>
@@ -277,13 +283,13 @@ namespace Jellyfin.Sdk.Generated.Trailers {
             /// <summary>Optional filter by items with theme videos.</summary>
             [QueryParameter("hasThemeVideo")]
             public bool? HasThemeVideo { get; set; }
-            /// <summary>Optional filter by items that have a tmdb id or not.</summary>
+            /// <summary>Optional filter by items that have a TMDb id or not.</summary>
             [QueryParameter("hasTmdbId")]
             public bool? HasTmdbId { get; set; }
             /// <summary>Optional filter by items with trailers.</summary>
             [QueryParameter("hasTrailer")]
             public bool? HasTrailer { get; set; }
-            /// <summary>Optional filter by items that have a tvdb id or not.</summary>
+            /// <summary>Optional filter by items that have a TVDb id or not.</summary>
             [QueryParameter("hasTvdbId")]
             public bool? HasTvdbId { get; set; }
             /// <summary>Optional. If specific items are needed, specify a list of item id&apos;s to retrieve. This allows multiple, comma delimited.</summary>
@@ -387,11 +393,11 @@ namespace Jellyfin.Sdk.Generated.Trailers {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mediaTypes")]
-            public string[]? MediaTypes { get; set; }
+            public MediaType[]? MediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("mediaTypes")]
-            public string[] MediaTypes { get; set; }
+            public MediaType[] MediaTypes { get; set; }
 #endif
             /// <summary>Optional filter by minimum community rating.</summary>
             [QueryParameter("minCommunityRating")]
@@ -527,13 +533,13 @@ namespace Jellyfin.Sdk.Generated.Trailers {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
-            public string[]? SortBy { get; set; }
+            public ItemSortBy[]? SortBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortBy")]
-            public string[] SortBy { get; set; }
+            public ItemSortBy[] SortBy { get; set; }
 #endif
-            /// <summary>Sort Order - Ascending,Descending.</summary>
+            /// <summary>Sort Order - Ascending, Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortOrder")]
@@ -576,7 +582,7 @@ namespace Jellyfin.Sdk.Generated.Trailers {
             [QueryParameter("tags")]
             public string[] Tags { get; set; }
 #endif
-            /// <summary>The user id.</summary>
+            /// <summary>The user id supplied as query parameter; this is required when not using an API key.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }
             /// <summary>Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimited.</summary>

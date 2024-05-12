@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings.Series {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\Recordings\Series
     /// </summary>
-    public class SeriesRequestBuilder : BaseRequestBuilder {
+    public class SeriesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="SeriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SeriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Recordings/Series{?channelId*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,groupId*,imageTypeLimit*,isInProgress*,limit*,seriesTimerId*,startIndex*,status*,userId*}", pathParameters) {
+        public SeriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Recordings/Series{?channelId*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,groupId*,imageTypeLimit*,isInProgress*,limit*,seriesTimerId*,startIndex*,status*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SeriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SeriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Recordings/Series{?channelId*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,groupId*,imageTypeLimit*,isInProgress*,limit*,seriesTimerId*,startIndex*,status*,userId*}", rawUrl) {
+        public SeriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Recordings/Series{?channelId*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,groupId*,imageTypeLimit*,isInProgress*,limit*,seriesTimerId*,startIndex*,status*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets live tv recording series.
@@ -36,10 +39,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings.Series {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<SeriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<SeriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<SeriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<SeriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -52,10 +57,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings.Series {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeriesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeriesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -68,13 +75,15 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings.Series {
         /// <returns>A <see cref="SeriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public SeriesRequestBuilder WithUrl(string rawUrl) {
+        public SeriesRequestBuilder WithUrl(string rawUrl)
+        {
             return new SeriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets live tv recording series.
         /// </summary>
-        public class SeriesRequestBuilderGetQueryParameters {
+        public class SeriesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Filter by channel id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,15 +156,8 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Recordings.Series {
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }
             /// <summary>Optional. Filter by recording status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("status")]
-            public string? Status { get; set; }
-#nullable restore
-#else
-            [QueryParameter("status")]
-            public string Status { get; set; }
-#endif
+            public GetStatusQueryParameterType? Status { get; set; }
             /// <summary>Optional. Filter by user and attach user data.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

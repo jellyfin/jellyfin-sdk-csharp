@@ -10,22 +10,25 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Shows.Item.Episodes {
     /// <summary>
-    /// Builds and executes requests for operations under \Shows\{itemId-id}\Episodes
+    /// Builds and executes requests for operations under \Shows\{item-id}\Episodes
     /// </summary>
-    public class EpisodesRequestBuilder : BaseRequestBuilder {
+    public class EpisodesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="EpisodesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EpisodesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/{itemId%2Did}/Episodes{?adjacentTo*,enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,isMissing*,limit*,season*,seasonId*,sortBy*,startIndex*,startItemId*,userId*}", pathParameters) {
+        public EpisodesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/{item%2Did}/Episodes{?adjacentTo*,enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,isMissing*,limit*,season*,seasonId*,sortBy*,startIndex*,startItemId*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="EpisodesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EpisodesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/{itemId%2Did}/Episodes{?adjacentTo*,enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,isMissing*,limit*,season*,seasonId*,sortBy*,startIndex*,startItemId*,userId*}", rawUrl) {
+        public EpisodesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/{item%2Did}/Episodes{?adjacentTo*,enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,isMissing*,limit*,season*,seasonId*,sortBy*,startIndex*,startItemId*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets episodes for a tv season.
@@ -36,13 +39,16 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Episodes {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<EpisodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<EpisodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<EpisodesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<EpisodesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -54,10 +60,12 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Episodes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EpisodesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EpisodesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EpisodesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EpisodesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -69,23 +77,18 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Episodes {
         /// </summary>
         /// <returns>A <see cref="EpisodesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EpisodesRequestBuilder WithUrl(string rawUrl) {
+        public EpisodesRequestBuilder WithUrl(string rawUrl)
+        {
             return new EpisodesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets episodes for a tv season.
         /// </summary>
-        public class EpisodesRequestBuilderGetQueryParameters {
+        public class EpisodesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Return items that are siblings of a supplied item.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("adjacentTo")]
-            public string? AdjacentTo { get; set; }
-#nullable restore
-#else
-            [QueryParameter("adjacentTo")]
-            public string AdjacentTo { get; set; }
-#endif
+            public Guid? AdjacentTo { get; set; }
             /// <summary>Optional, include image information in output.</summary>
             [QueryParameter("enableImages")]
             public bool? EnableImages { get; set; }
@@ -128,15 +131,8 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Episodes {
             [QueryParameter("seasonId")]
             public Guid? SeasonId { get; set; }
             /// <summary>Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sortBy")]
-            public string? SortBy { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sortBy")]
-            public string SortBy { get; set; }
-#endif
+            public GetSortByQueryParameterType? SortBy { get; set; }
             /// <summary>Optional. The record index to start at. All items with a lower index will be dropped from the results.</summary>
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }

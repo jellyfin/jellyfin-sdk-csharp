@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ChannelMappingOptions {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\ChannelMappingOptions
     /// </summary>
-    public class ChannelMappingOptionsRequestBuilder : BaseRequestBuilder {
+    public class ChannelMappingOptionsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ChannelMappingOptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChannelMappingOptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/ChannelMappingOptions{?providerId*}", pathParameters) {
+        public ChannelMappingOptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/ChannelMappingOptions{?providerId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ChannelMappingOptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChannelMappingOptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/ChannelMappingOptions{?providerId*}", rawUrl) {
+        public ChannelMappingOptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/ChannelMappingOptions{?providerId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Get channel mapping options.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ChannelMappingOptions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ChannelMappingOptionsDto?> GetAsync(Action<RequestConfiguration<ChannelMappingOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ChannelMappingOptionsDto?> GetAsync(Action<RequestConfiguration<ChannelMappingOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ChannelMappingOptionsDto> GetAsync(Action<RequestConfiguration<ChannelMappingOptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ChannelMappingOptionsDto> GetAsync(Action<RequestConfiguration<ChannelMappingOptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<ChannelMappingOptionsDto>(requestInfo, ChannelMappingOptionsDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -50,10 +55,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ChannelMappingOptions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelMappingOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelMappingOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelMappingOptionsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelMappingOptionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -65,13 +72,15 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ChannelMappingOptions {
         /// </summary>
         /// <returns>A <see cref="ChannelMappingOptionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ChannelMappingOptionsRequestBuilder WithUrl(string rawUrl) {
+        public ChannelMappingOptionsRequestBuilder WithUrl(string rawUrl)
+        {
             return new ChannelMappingOptionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get channel mapping options.
         /// </summary>
-        public class ChannelMappingOptionsRequestBuilderGetQueryParameters {
+        public class ChannelMappingOptionsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Provider id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

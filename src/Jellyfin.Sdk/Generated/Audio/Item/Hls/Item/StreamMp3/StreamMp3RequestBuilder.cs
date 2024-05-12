@@ -11,20 +11,23 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3 {
     /// <summary>
     /// Builds and executes requests for operations under \Audio\{itemId}\hls\{segmentId}\stream.mp3
     /// </summary>
-    public class StreamMp3RequestBuilder : BaseRequestBuilder {
+    public class StreamMp3RequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="StreamMp3RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamMp3RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls/{segmentId}/stream.mp3", pathParameters) {
+        public StreamMp3RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls/{segmentId}/stream.mp3", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="StreamMp3RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamMp3RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls/{segmentId}/stream.mp3", rawUrl) {
+        public StreamMp3RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Audio/{itemId}/hls/{segmentId}/stream.mp3", rawUrl)
+        {
         }
         /// <summary>
         /// Gets the specified audio segment for an audio item.
@@ -34,10 +37,12 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3 {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -49,10 +54,12 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3 {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -64,7 +71,8 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3 {
         /// </summary>
         /// <returns>A <see cref="StreamMp3RequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StreamMp3RequestBuilder WithUrl(string rawUrl) {
+        public StreamMp3RequestBuilder WithUrl(string rawUrl)
+        {
             return new StreamMp3RequestBuilder(rawUrl, RequestAdapter);
         }
     }

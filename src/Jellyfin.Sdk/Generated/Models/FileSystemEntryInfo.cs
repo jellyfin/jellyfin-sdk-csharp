@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Class FileSystemEntryInfo.
     /// </summary>
-    public class FileSystemEntryInfo : IParsable {
+    public class FileSystemEntryInfo : IParsable 
+    {
         /// <summary>Gets the name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,13 +27,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Path { get; set; }
 #endif
         /// <summary>Gets the type.</summary>
-        public FileSystemEntryType? Type { get; set; }
+        public FileSystemEntryInfo_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="FileSystemEntryInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static FileSystemEntryInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static FileSystemEntryInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new FileSystemEntryInfo();
         }
@@ -40,22 +42,25 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"Name", n => { Name = n.GetStringValue(); } },
                 {"Path", n => { Path = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<FileSystemEntryType>(); } },
+                {"Type", n => { Type = n.GetEnumValue<FileSystemEntryInfo_Type>(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("Path", Path);
-            writer.WriteEnumValue<FileSystemEntryType>("Type", Type);
+            writer.WriteEnumValue<FileSystemEntryInfo_Type>("Type", Type);
         }
     }
 }

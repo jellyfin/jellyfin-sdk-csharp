@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
     /// <summary>
     /// Builds and executes requests for operations under \Search\Hints
     /// </summary>
-    public class HintsRequestBuilder : BaseRequestBuilder {
+    public class HintsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="HintsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HintsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Search/Hints?searchTerm={searchTerm}{&excludeItemTypes*,includeArtists*,includeGenres*,includeItemTypes*,includeMedia*,includePeople*,includeStudios*,isKids*,isMovie*,isNews*,isSeries*,isSports*,limit*,mediaTypes*,parentId*,startIndex*,userId*}", pathParameters) {
+        public HintsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Search/Hints?searchTerm={searchTerm}{&excludeItemTypes*,includeArtists*,includeGenres*,includeItemTypes*,includeMedia*,includePeople*,includeStudios*,isKids*,isMovie*,isNews*,isSeries*,isSports*,limit*,mediaTypes*,parentId*,startIndex*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="HintsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HintsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Search/Hints?searchTerm={searchTerm}{&excludeItemTypes*,includeArtists*,includeGenres*,includeItemTypes*,includeMedia*,includePeople*,includeStudios*,isKids*,isMovie*,isNews*,isSeries*,isSports*,limit*,mediaTypes*,parentId*,startIndex*,userId*}", rawUrl) {
+        public HintsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Search/Hints?searchTerm={searchTerm}{&excludeItemTypes*,includeArtists*,includeGenres*,includeItemTypes*,includeMedia*,includePeople*,includeStudios*,isKids*,isMovie*,isNews*,isSeries*,isSports*,limit*,mediaTypes*,parentId*,startIndex*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets the search hint result.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SearchHintResult?> GetAsync(Action<RequestConfiguration<HintsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SearchHintResult?> GetAsync(Action<RequestConfiguration<HintsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SearchHintResult> GetAsync(Action<RequestConfiguration<HintsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SearchHintResult> GetAsync(Action<RequestConfiguration<HintsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<SearchHintResult>(requestInfo, SearchHintResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -50,10 +55,12 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HintsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HintsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HintsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HintsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -65,14 +72,16 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
         /// </summary>
         /// <returns>A <see cref="HintsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public HintsRequestBuilder WithUrl(string rawUrl) {
+        public HintsRequestBuilder WithUrl(string rawUrl)
+        {
             return new HintsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets the search hint result.
         /// </summary>
-        public class HintsRequestBuilderGetQueryParameters {
-            /// <summary>If specified, results with these item types are filtered out. This allows multiple, comma delimeted.</summary>
+        public class HintsRequestBuilderGetQueryParameters 
+        {
+            /// <summary>If specified, results with these item types are filtered out. This allows multiple, comma delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("excludeItemTypes")]
@@ -88,7 +97,7 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
             /// <summary>Optional filter whether to include genres.</summary>
             [QueryParameter("includeGenres")]
             public bool? IncludeGenres { get; set; }
-            /// <summary>If specified, only results with the specified item types are returned. This allows multiple, comma delimeted.</summary>
+            /// <summary>If specified, only results with the specified item types are returned. This allows multiple, comma delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("includeItemTypes")]
@@ -125,15 +134,15 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
             /// <summary>Optional. The maximum number of records to return.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>If specified, only results with the specified media types are returned. This allows multiple, comma delimeted.</summary>
+            /// <summary>If specified, only results with the specified media types are returned. This allows multiple, comma delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mediaTypes")]
-            public string[]? MediaTypes { get; set; }
+            public MediaType[]? MediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("mediaTypes")]
-            public string[] MediaTypes { get; set; }
+            public MediaType[] MediaTypes { get; set; }
 #endif
             /// <summary>If specified, only children of the parent are returned.</summary>
             [QueryParameter("parentId")]

@@ -23,76 +23,93 @@ namespace Jellyfin.Sdk.Generated.LiveTv {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv
     /// </summary>
-    public class LiveTvRequestBuilder : BaseRequestBuilder {
+    public class LiveTvRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The ChannelMappingOptions property</summary>
-        public ChannelMappingOptionsRequestBuilder ChannelMappingOptions { get =>
-            new ChannelMappingOptionsRequestBuilder(PathParameters, RequestAdapter);
+        public ChannelMappingOptionsRequestBuilder ChannelMappingOptions
+        {
+            get => new ChannelMappingOptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ChannelMappings property</summary>
-        public ChannelMappingsRequestBuilder ChannelMappings { get =>
-            new ChannelMappingsRequestBuilder(PathParameters, RequestAdapter);
+        public ChannelMappingsRequestBuilder ChannelMappings
+        {
+            get => new ChannelMappingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Channels property</summary>
-        public ChannelsRequestBuilder Channels { get =>
-            new ChannelsRequestBuilder(PathParameters, RequestAdapter);
+        public ChannelsRequestBuilder Channels
+        {
+            get => new ChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The GuideInfo property</summary>
-        public GuideInfoRequestBuilder GuideInfo { get =>
-            new GuideInfoRequestBuilder(PathParameters, RequestAdapter);
+        public GuideInfoRequestBuilder GuideInfo
+        {
+            get => new GuideInfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Info property</summary>
-        public InfoRequestBuilder Info { get =>
-            new InfoRequestBuilder(PathParameters, RequestAdapter);
+        public InfoRequestBuilder Info
+        {
+            get => new InfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ListingProviders property</summary>
-        public ListingProvidersRequestBuilder ListingProviders { get =>
-            new ListingProvidersRequestBuilder(PathParameters, RequestAdapter);
+        public ListingProvidersRequestBuilder ListingProviders
+        {
+            get => new ListingProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The LiveRecordings property</summary>
-        public LiveRecordingsRequestBuilder LiveRecordings { get =>
-            new LiveRecordingsRequestBuilder(PathParameters, RequestAdapter);
+        public LiveRecordingsRequestBuilder LiveRecordings
+        {
+            get => new LiveRecordingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The LiveStreamFiles property</summary>
-        public LiveStreamFilesRequestBuilder LiveStreamFiles { get =>
-            new LiveStreamFilesRequestBuilder(PathParameters, RequestAdapter);
+        public LiveStreamFilesRequestBuilder LiveStreamFiles
+        {
+            get => new LiveStreamFilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Programs property</summary>
-        public ProgramsRequestBuilder Programs { get =>
-            new ProgramsRequestBuilder(PathParameters, RequestAdapter);
+        public ProgramsRequestBuilder Programs
+        {
+            get => new ProgramsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Recordings property</summary>
-        public RecordingsRequestBuilder Recordings { get =>
-            new RecordingsRequestBuilder(PathParameters, RequestAdapter);
+        public RecordingsRequestBuilder Recordings
+        {
+            get => new RecordingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The SeriesTimers property</summary>
-        public SeriesTimersRequestBuilder SeriesTimers { get =>
-            new SeriesTimersRequestBuilder(PathParameters, RequestAdapter);
+        public SeriesTimersRequestBuilder SeriesTimers
+        {
+            get => new SeriesTimersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Timers property</summary>
-        public TimersRequestBuilder Timers { get =>
-            new TimersRequestBuilder(PathParameters, RequestAdapter);
+        public TimersRequestBuilder Timers
+        {
+            get => new TimersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The TunerHosts property</summary>
-        public TunerHostsRequestBuilder TunerHosts { get =>
-            new TunerHostsRequestBuilder(PathParameters, RequestAdapter);
+        public TunerHostsRequestBuilder TunerHosts
+        {
+            get => new TunerHostsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Tuners property</summary>
-        public TunersRequestBuilder Tuners { get =>
-            new TunersRequestBuilder(PathParameters, RequestAdapter);
+        public TunersRequestBuilder Tuners
+        {
+            get => new TunersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="LiveTvRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LiveTvRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv", pathParameters) {
+        public LiveTvRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LiveTvRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LiveTvRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv", rawUrl) {
+        public LiveTvRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv", rawUrl)
+        {
         }
     }
 }

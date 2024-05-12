@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Libraries.AvailableOptions {
     /// <summary>
     /// Builds and executes requests for operations under \Libraries\AvailableOptions
     /// </summary>
-    public class AvailableOptionsRequestBuilder : BaseRequestBuilder {
+    public class AvailableOptionsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="AvailableOptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AvailableOptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Libraries/AvailableOptions{?isNewLibrary*,libraryContentType*}", pathParameters) {
+        public AvailableOptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Libraries/AvailableOptions{?isNewLibrary*,libraryContentType*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AvailableOptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AvailableOptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Libraries/AvailableOptions{?isNewLibrary*,libraryContentType*}", rawUrl) {
+        public AvailableOptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Libraries/AvailableOptions{?isNewLibrary*,libraryContentType*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets the library options info.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.Libraries.AvailableOptions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LibraryOptionsResultDto?> GetAsync(Action<RequestConfiguration<AvailableOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LibraryOptionsResultDto?> GetAsync(Action<RequestConfiguration<AvailableOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<LibraryOptionsResultDto> GetAsync(Action<RequestConfiguration<AvailableOptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LibraryOptionsResultDto> GetAsync(Action<RequestConfiguration<AvailableOptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<LibraryOptionsResultDto>(requestInfo, LibraryOptionsResultDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -50,10 +55,12 @@ namespace Jellyfin.Sdk.Generated.Libraries.AvailableOptions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AvailableOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AvailableOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AvailableOptionsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AvailableOptionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -65,26 +72,21 @@ namespace Jellyfin.Sdk.Generated.Libraries.AvailableOptions {
         /// </summary>
         /// <returns>A <see cref="AvailableOptionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AvailableOptionsRequestBuilder WithUrl(string rawUrl) {
+        public AvailableOptionsRequestBuilder WithUrl(string rawUrl)
+        {
             return new AvailableOptionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets the library options info.
         /// </summary>
-        public class AvailableOptionsRequestBuilderGetQueryParameters {
+        public class AvailableOptionsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Whether this is a new library.</summary>
             [QueryParameter("isNewLibrary")]
             public bool? IsNewLibrary { get; set; }
             /// <summary>Library content type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("libraryContentType")]
-            public string? LibraryContentType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("libraryContentType")]
-            public string LibraryContentType { get; set; }
-#endif
+            public GetLibraryContentTypeQueryParameterType? LibraryContentType { get; set; }
         }
     }
 }

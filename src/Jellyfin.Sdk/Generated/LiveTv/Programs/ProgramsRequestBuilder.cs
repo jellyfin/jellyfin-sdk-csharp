@@ -14,32 +14,40 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\Programs
     /// </summary>
-    public class ProgramsRequestBuilder : BaseRequestBuilder {
+    public class ProgramsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Recommended property</summary>
-        public RecommendedRequestBuilder Recommended { get =>
-            new RecommendedRequestBuilder(PathParameters, RequestAdapter);
+        public RecommendedRequestBuilder Recommended
+        {
+            get => new RecommendedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.LiveTv.Programs.item collection</summary>
         /// <param name="position">Program id.</param>
         /// <returns>A <see cref="WithProgramItemRequestBuilder"/></returns>
-        public WithProgramItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("programId", position);
-            return new WithProgramItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithProgramItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("programId", position);
+                return new WithProgramItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="ProgramsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProgramsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs{?channelIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,genres*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,librarySeriesId*,limit*,maxEndDate*,maxStartDate*,minEndDate*,minStartDate*,seriesTimerId*,sortBy*,sortOrder*,startIndex*,userId*}", pathParameters) {
+        public ProgramsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs{?channelIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,genres*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,librarySeriesId*,limit*,maxEndDate*,maxStartDate*,minEndDate*,minStartDate*,seriesTimerId*,sortBy*,sortOrder*,startIndex*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ProgramsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProgramsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs{?channelIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,genres*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,librarySeriesId*,limit*,maxEndDate*,maxStartDate*,minEndDate*,minStartDate*,seriesTimerId*,sortBy*,sortOrder*,startIndex*,userId*}", rawUrl) {
+        public ProgramsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs{?channelIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,genres*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,librarySeriesId*,limit*,maxEndDate*,maxStartDate*,minEndDate*,minStartDate*,seriesTimerId*,sortBy*,sortOrder*,startIndex*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets available live tv epgs.
@@ -49,10 +57,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<ProgramsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<ProgramsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<ProgramsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<ProgramsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -66,10 +76,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> PostAsync(GetProgramsDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> PostAsync(GetProgramsDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> PostAsync(GetProgramsDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> PostAsync(GetProgramsDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -82,10 +94,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProgramsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProgramsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProgramsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProgramsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -100,13 +114,15 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GetProgramsDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GetProgramsDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GetProgramsDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GetProgramsDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/LiveTv/Programs", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -117,13 +133,15 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
         /// </summary>
         /// <returns>A <see cref="ProgramsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ProgramsRequestBuilder WithUrl(string rawUrl) {
+        public ProgramsRequestBuilder WithUrl(string rawUrl)
+        {
             return new ProgramsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets available live tv epgs.
         /// </summary>
-        public class ProgramsRequestBuilderGetQueryParameters {
+        public class ProgramsRequestBuilderGetQueryParameters 
+        {
             /// <summary>The channels to return guide information for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -239,11 +257,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
-            public string[]? SortBy { get; set; }
+            public ItemSortBy[]? SortBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortBy")]
-            public string[] SortBy { get; set; }
+            public ItemSortBy[] SortBy { get; set; }
 #endif
             /// <summary>Sort Order - Ascending,Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

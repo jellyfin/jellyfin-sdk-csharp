@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// This is a serializable stub class that is used by the api to provide information about installed plugins.
     /// </summary>
-    public class PluginInfo : IParsable {
+    public class PluginInfo : IParsable 
+    {
         /// <summary>Gets or sets a value indicating whether the plugin can be uninstalled.</summary>
         public bool? CanUninstall { get; set; }
         /// <summary>Gets or sets the name of the configuration file.</summary>
@@ -40,7 +41,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Name { get; set; }
 #endif
         /// <summary>Gets or sets a value indicating the status of the plugin.</summary>
-        public PluginStatus? Status { get; set; }
+        public PluginInfo_Status? Status { get; set; }
         /// <summary>Gets or sets the version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,7 +55,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="PluginInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PluginInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static PluginInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new PluginInfo();
         }
@@ -62,15 +64,17 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"CanUninstall", n => { CanUninstall = n.GetBoolValue(); } },
                 {"ConfigurationFileName", n => { ConfigurationFileName = n.GetStringValue(); } },
                 {"Description", n => { Description = n.GetStringValue(); } },
                 {"HasImage", n => { HasImage = n.GetBoolValue(); } },
                 {"Id", n => { Id = n.GetGuidValue(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
-                {"Status", n => { Status = n.GetEnumValue<PluginStatus>(); } },
+                {"Status", n => { Status = n.GetEnumValue<PluginInfo_Status>(); } },
                 {"Version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -78,7 +82,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("CanUninstall", CanUninstall);
             writer.WriteStringValue("ConfigurationFileName", ConfigurationFileName);
@@ -86,7 +91,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("HasImage", HasImage);
             writer.WriteGuidValue("Id", Id);
             writer.WriteStringValue("Name", Name);
-            writer.WriteEnumValue<PluginStatus>("Status", Status);
+            writer.WriteEnumValue<PluginInfo_Status>("Status", Status);
             writer.WriteStringValue("Version", Version);
         }
     }

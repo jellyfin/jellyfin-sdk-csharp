@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Class SessionInfo.
     /// </summary>
-    public class SessionInfo : IParsable {
+    public class SessionInfo : IParsable 
+    {
         /// <summary>The AdditionalUsers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,14 +66,6 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string DeviceType { get; set; }
 #endif
-        /// <summary>Class BaseItem.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public BaseItem? FullNowPlayingItem { get; set; }
-#nullable restore
-#else
-        public BaseItem FullNowPlayingItem { get; set; }
-#endif
         /// <summary>The HasCustomDeviceName property</summary>
         public bool? HasCustomDeviceName { get; set; }
         /// <summary>Gets or sets the id.</summary>
@@ -87,9 +80,11 @@ namespace Jellyfin.Sdk.Generated.Models {
         public bool? IsActive { get; private set; }
         /// <summary>Gets or sets the last activity date.</summary>
         public DateTimeOffset? LastActivityDate { get; set; }
+        /// <summary>Gets or sets the last paused date.</summary>
+        public DateTimeOffset? LastPausedDate { get; set; }
         /// <summary>Gets or sets the last playback check in.</summary>
         public DateTimeOffset? LastPlaybackCheckIn { get; set; }
-        /// <summary>Gets or sets the now playing item.</summary>
+        /// <summary>This is strictly used as a data transfer object from the api layer.This holds information about a BaseItem in a format that is convenient for the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public BaseItemDto? NowPlayingItem { get; set; }
@@ -124,10 +119,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets the playable media types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PlayableMediaTypes { get; private set; }
+        public List<MediaType?>? PlayableMediaTypes { get; private set; }
 #nullable restore
 #else
-        public List<string> PlayableMediaTypes { get; private set; }
+        public List<MediaType?> PlayableMediaTypes { get; private set; }
 #endif
         /// <summary>The PlaylistItemId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -204,7 +199,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="SessionInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SessionInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static SessionInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SessionInfo();
         }
@@ -212,8 +208,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"AdditionalUsers", n => { AdditionalUsers = n.GetCollectionOfObjectValues<SessionUserInfo>(SessionUserInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"ApplicationVersion", n => { ApplicationVersion = n.GetStringValue(); } },
                 {"Capabilities", n => { Capabilities = n.GetObjectValue<ClientCapabilities>(ClientCapabilities.CreateFromDiscriminatorValue); } },
@@ -221,18 +219,18 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"DeviceId", n => { DeviceId = n.GetStringValue(); } },
                 {"DeviceName", n => { DeviceName = n.GetStringValue(); } },
                 {"DeviceType", n => { DeviceType = n.GetStringValue(); } },
-                {"FullNowPlayingItem", n => { FullNowPlayingItem = n.GetObjectValue<BaseItem>(BaseItem.CreateFromDiscriminatorValue); } },
                 {"HasCustomDeviceName", n => { HasCustomDeviceName = n.GetBoolValue(); } },
                 {"Id", n => { Id = n.GetStringValue(); } },
                 {"IsActive", n => { IsActive = n.GetBoolValue(); } },
                 {"LastActivityDate", n => { LastActivityDate = n.GetDateTimeOffsetValue(); } },
+                {"LastPausedDate", n => { LastPausedDate = n.GetDateTimeOffsetValue(); } },
                 {"LastPlaybackCheckIn", n => { LastPlaybackCheckIn = n.GetDateTimeOffsetValue(); } },
                 {"NowPlayingItem", n => { NowPlayingItem = n.GetObjectValue<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue); } },
                 {"NowPlayingQueue", n => { NowPlayingQueue = n.GetCollectionOfObjectValues<QueueItem>(QueueItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"NowPlayingQueueFullItems", n => { NowPlayingQueueFullItems = n.GetCollectionOfObjectValues<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"NowViewingItem", n => { NowViewingItem = n.GetObjectValue<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue); } },
                 {"PlayState", n => { PlayState = n.GetObjectValue<PlayerStateInfo>(PlayerStateInfo.CreateFromDiscriminatorValue); } },
-                {"PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfEnumValues<MediaType>()?.ToList(); } },
                 {"PlaylistItemId", n => { PlaylistItemId = n.GetStringValue(); } },
                 {"RemoteEndPoint", n => { RemoteEndPoint = n.GetStringValue(); } },
                 {"ServerId", n => { ServerId = n.GetStringValue(); } },
@@ -249,7 +247,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<SessionUserInfo>("AdditionalUsers", AdditionalUsers);
             writer.WriteStringValue("ApplicationVersion", ApplicationVersion);
@@ -258,10 +257,10 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("DeviceId", DeviceId);
             writer.WriteStringValue("DeviceName", DeviceName);
             writer.WriteStringValue("DeviceType", DeviceType);
-            writer.WriteObjectValue<BaseItem>("FullNowPlayingItem", FullNowPlayingItem);
             writer.WriteBoolValue("HasCustomDeviceName", HasCustomDeviceName);
             writer.WriteStringValue("Id", Id);
             writer.WriteDateTimeOffsetValue("LastActivityDate", LastActivityDate);
+            writer.WriteDateTimeOffsetValue("LastPausedDate", LastPausedDate);
             writer.WriteDateTimeOffsetValue("LastPlaybackCheckIn", LastPlaybackCheckIn);
             writer.WriteObjectValue<BaseItemDto>("NowPlayingItem", NowPlayingItem);
             writer.WriteCollectionOfObjectValues<QueueItem>("NowPlayingQueue", NowPlayingQueue);

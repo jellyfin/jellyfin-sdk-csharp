@@ -10,24 +10,28 @@ namespace Jellyfin.Sdk.Generated.ClientLog {
     /// <summary>
     /// Builds and executes requests for operations under \ClientLog
     /// </summary>
-    public class ClientLogRequestBuilder : BaseRequestBuilder {
+    public class ClientLogRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Document property</summary>
-        public DocumentRequestBuilder Document { get =>
-            new DocumentRequestBuilder(PathParameters, RequestAdapter);
+        public DocumentRequestBuilder Document
+        {
+            get => new DocumentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ClientLogRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClientLogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ClientLog", pathParameters) {
+        public ClientLogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ClientLog", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ClientLogRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClientLogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ClientLog", rawUrl) {
+        public ClientLogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ClientLog", rawUrl)
+        {
         }
     }
 }

@@ -8,29 +8,33 @@ using System.Threading.Tasks;
 using System;
 namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \Videos\{itemId-id}\{mediaSourceId-id}\Subtitles\{index-id}\{routeStartPositionTicks}
+    /// Builds and executes requests for operations under \Videos\{item-id}\{mediaSource-id}\Subtitles\{index-id}\{routeStartPositionTicks}
     /// </summary>
-    public class WithRouteStartPositionTicksItemRequestBuilder : BaseRequestBuilder {
+    public class WithRouteStartPositionTicksItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="WithRouteStartPositionTicksItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRouteStartPositionTicksItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/{mediaSourceId%2Did}/Subtitles/{index%2Did}/{routeStartPositionTicks}", pathParameters) {
+        public WithRouteStartPositionTicksItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/{mediaSource%2Did}/Subtitles/{index%2Did}/{routeStartPositionTicks}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRouteStartPositionTicksItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRouteStartPositionTicksItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{itemId%2Did}/{mediaSourceId%2Did}/Subtitles/{index%2Did}/{routeStartPositionTicks}", rawUrl) {
+        public WithRouteStartPositionTicksItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/{mediaSource%2Did}/Subtitles/{index%2Did}/{routeStartPositionTicks}", rawUrl)
+        {
         }
         /// <summary>
-        /// Builds and executes requests for operations under \Videos\{itemId-id}\{mediaSourceId-id}\Subtitles\{index-id}\{routeStartPositionTicks}\Stream.{routeFormat}
+        /// Builds and executes requests for operations under \Videos\{item-id}\{mediaSource-id}\Subtitles\{index-id}\{routeStartPositionTicks}\Stream.{routeFormat}
         /// </summary>
         /// <returns>A <see cref="StreamWithRouteFormatRequestBuilder"/></returns>
         /// <param name="routeFormat">The (route) format of the returned subtitle.</param>
-        public StreamWithRouteFormatRequestBuilder StreamWithRouteFormat(string routeFormat) {
+        public StreamWithRouteFormatRequestBuilder StreamWithRouteFormat(string routeFormat)
+        {
             if(string.IsNullOrEmpty(routeFormat)) throw new ArgumentNullException(nameof(routeFormat));
             return new StreamWithRouteFormatRequestBuilder(PathParameters, RequestAdapter, routeFormat);
         }

@@ -10,24 +10,28 @@ namespace Jellyfin.Sdk.Generated.Playback {
     /// <summary>
     /// Builds and executes requests for operations under \Playback
     /// </summary>
-    public class PlaybackRequestBuilder : BaseRequestBuilder {
+    public class PlaybackRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The BitrateTest property</summary>
-        public BitrateTestRequestBuilder BitrateTest { get =>
-            new BitrateTestRequestBuilder(PathParameters, RequestAdapter);
+        public BitrateTestRequestBuilder BitrateTest
+        {
+            get => new BitrateTestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="PlaybackRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PlaybackRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playback", pathParameters) {
+        public PlaybackRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playback", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="PlaybackRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PlaybackRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playback", rawUrl) {
+        public PlaybackRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playback", rawUrl)
+        {
         }
     }
 }

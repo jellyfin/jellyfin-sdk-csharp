@@ -12,32 +12,38 @@ namespace Jellyfin.Sdk.Generated.Auth {
     /// <summary>
     /// Builds and executes requests for operations under \Auth
     /// </summary>
-    public class AuthRequestBuilder : BaseRequestBuilder {
+    public class AuthRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Keys property</summary>
-        public KeysRequestBuilder Keys { get =>
-            new KeysRequestBuilder(PathParameters, RequestAdapter);
+        public KeysRequestBuilder Keys
+        {
+            get => new KeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The PasswordResetProviders property</summary>
-        public PasswordResetProvidersRequestBuilder PasswordResetProviders { get =>
-            new PasswordResetProvidersRequestBuilder(PathParameters, RequestAdapter);
+        public PasswordResetProvidersRequestBuilder PasswordResetProviders
+        {
+            get => new PasswordResetProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Providers property</summary>
-        public ProvidersRequestBuilder Providers { get =>
-            new ProvidersRequestBuilder(PathParameters, RequestAdapter);
+        public ProvidersRequestBuilder Providers
+        {
+            get => new ProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="AuthRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth", pathParameters) {
+        public AuthRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AuthRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth", rawUrl) {
+        public AuthRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth", rawUrl)
+        {
         }
     }
 }

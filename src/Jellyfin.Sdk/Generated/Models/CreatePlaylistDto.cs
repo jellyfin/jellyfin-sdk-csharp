@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// Create new playlist dto.
     /// </summary>
-    public class CreatePlaylistDto : IParsable {
+    public class CreatePlaylistDto : IParsable 
+    {
         /// <summary>Gets or sets item ids to add to the playlist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -17,14 +18,10 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public List<Guid?> Ids { get; set; }
 #endif
+        /// <summary>Gets or sets a value indicating whether the playlist is public.</summary>
+        public bool? IsPublic { get; set; }
         /// <summary>Gets or sets the media type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MediaType { get; set; }
-#nullable restore
-#else
-        public string MediaType { get; set; }
-#endif
+        public CreatePlaylistDto_MediaType? MediaType { get; set; }
         /// <summary>Gets or sets the name of the new playlist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,12 +32,21 @@ namespace Jellyfin.Sdk.Generated.Models {
 #endif
         /// <summary>Gets or sets the user id.</summary>
         public Guid? UserId { get; set; }
+        /// <summary>Gets or sets the playlist users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<PlaylistUserPermissions>? Users { get; set; }
+#nullable restore
+#else
+        public List<PlaylistUserPermissions> Users { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="CreatePlaylistDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CreatePlaylistDto CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static CreatePlaylistDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CreatePlaylistDto();
         }
@@ -48,24 +54,31 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"Ids", n => { Ids = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"MediaType", n => { MediaType = n.GetStringValue(); } },
+                {"IsPublic", n => { IsPublic = n.GetBoolValue(); } },
+                {"MediaType", n => { MediaType = n.GetEnumValue<CreatePlaylistDto_MediaType>(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
                 {"UserId", n => { UserId = n.GetGuidValue(); } },
+                {"Users", n => { Users = n.GetCollectionOfObjectValues<PlaylistUserPermissions>(PlaylistUserPermissions.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<Guid?>("Ids", Ids);
-            writer.WriteStringValue("MediaType", MediaType);
+            writer.WriteBoolValue("IsPublic", IsPublic);
+            writer.WriteEnumValue<CreatePlaylistDto_MediaType>("MediaType", MediaType);
             writer.WriteStringValue("Name", Name);
             writer.WriteGuidValue("UserId", UserId);
+            writer.WriteCollectionOfObjectValues<PlaylistUserPermissions>("Users", Users);
         }
     }
 }

@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Users.AuthenticateByName {
     /// <summary>
     /// Builds and executes requests for operations under \Users\AuthenticateByName
     /// </summary>
-    public class AuthenticateByNameRequestBuilder : BaseRequestBuilder {
+    public class AuthenticateByNameRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="AuthenticateByNameRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthenticateByNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Users/AuthenticateByName", pathParameters) {
+        public AuthenticateByNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Users/AuthenticateByName", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AuthenticateByNameRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthenticateByNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Users/AuthenticateByName", rawUrl) {
+        public AuthenticateByNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Users/AuthenticateByName", rawUrl)
+        {
         }
         /// <summary>
         /// Authenticates a user by name.
@@ -36,10 +39,12 @@ namespace Jellyfin.Sdk.Generated.Users.AuthenticateByName {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationResult?> PostAsync(AuthenticateUserByName body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationResult?> PostAsync(AuthenticateUserByName body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<AuthenticationResult> PostAsync(AuthenticateUserByName body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationResult> PostAsync(AuthenticateUserByName body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -53,10 +58,12 @@ namespace Jellyfin.Sdk.Generated.Users.AuthenticateByName {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AuthenticateUserByName body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(AuthenticateUserByName body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AuthenticateUserByName body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(AuthenticateUserByName body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -70,7 +77,8 @@ namespace Jellyfin.Sdk.Generated.Users.AuthenticateByName {
         /// </summary>
         /// <returns>A <see cref="AuthenticateByNameRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthenticateByNameRequestBuilder WithUrl(string rawUrl) {
+        public AuthenticateByNameRequestBuilder WithUrl(string rawUrl)
+        {
             return new AuthenticateByNameRequestBuilder(rawUrl, RequestAdapter);
         }
     }

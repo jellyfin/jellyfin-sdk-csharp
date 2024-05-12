@@ -10,28 +10,35 @@ namespace Jellyfin.Sdk.Generated.Albums {
     /// <summary>
     /// Builds and executes requests for operations under \Albums
     /// </summary>
-    public class AlbumsRequestBuilder : BaseRequestBuilder {
+    public class AlbumsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Albums.item collection</summary>
         /// <param name="position">The item id.</param>
-        /// <returns>A <see cref="IdItemRequestBuilder"/></returns>
-        public IdItemRequestBuilder this[Guid position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("id%2Did", position);
-            return new IdItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
+        public WithItemItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("itemId", position);
+                return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="AlbumsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlbumsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums", pathParameters) {
+        public AlbumsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AlbumsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlbumsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums", rawUrl) {
+        public AlbumsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Albums", rawUrl)
+        {
         }
     }
 }

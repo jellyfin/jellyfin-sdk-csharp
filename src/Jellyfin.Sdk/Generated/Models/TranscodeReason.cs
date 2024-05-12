@@ -2,56 +2,109 @@
 using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models {
-    public enum TranscodeReason {
+    #pragma warning disable CS1591
+    public enum TranscodeReason
+    #pragma warning restore CS1591
+    {
         [EnumMember(Value = "ContainerNotSupported")]
+        #pragma warning disable CS1591
         ContainerNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "VideoCodecNotSupported")]
+        #pragma warning disable CS1591
         VideoCodecNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "AudioCodecNotSupported")]
+        #pragma warning disable CS1591
         AudioCodecNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SubtitleCodecNotSupported")]
+        #pragma warning disable CS1591
         SubtitleCodecNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "AudioIsExternal")]
+        #pragma warning disable CS1591
         AudioIsExternal,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SecondaryAudioNotSupported")]
+        #pragma warning disable CS1591
         SecondaryAudioNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "VideoProfileNotSupported")]
+        #pragma warning disable CS1591
         VideoProfileNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "VideoLevelNotSupported")]
+        #pragma warning disable CS1591
         VideoLevelNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "VideoResolutionNotSupported")]
+        #pragma warning disable CS1591
         VideoResolutionNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "VideoBitDepthNotSupported")]
+        #pragma warning disable CS1591
         VideoBitDepthNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "VideoFramerateNotSupported")]
+        #pragma warning disable CS1591
         VideoFramerateNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "RefFramesNotSupported")]
+        #pragma warning disable CS1591
         RefFramesNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "AnamorphicVideoNotSupported")]
+        #pragma warning disable CS1591
         AnamorphicVideoNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "InterlacedVideoNotSupported")]
+        #pragma warning disable CS1591
         InterlacedVideoNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "AudioChannelsNotSupported")]
+        #pragma warning disable CS1591
         AudioChannelsNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "AudioProfileNotSupported")]
+        #pragma warning disable CS1591
         AudioProfileNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "AudioSampleRateNotSupported")]
+        #pragma warning disable CS1591
         AudioSampleRateNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "AudioBitDepthNotSupported")]
+        #pragma warning disable CS1591
         AudioBitDepthNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ContainerBitrateExceedsLimit")]
+        #pragma warning disable CS1591
         ContainerBitrateExceedsLimit,
+        #pragma warning restore CS1591
         [EnumMember(Value = "VideoBitrateNotSupported")]
+        #pragma warning disable CS1591
         VideoBitrateNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "AudioBitrateNotSupported")]
+        #pragma warning disable CS1591
         AudioBitrateNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "UnknownVideoStreamInfo")]
+        #pragma warning disable CS1591
         UnknownVideoStreamInfo,
+        #pragma warning restore CS1591
         [EnumMember(Value = "UnknownAudioStreamInfo")]
+        #pragma warning disable CS1591
         UnknownAudioStreamInfo,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DirectPlayError")]
+        #pragma warning disable CS1591
         DirectPlayError,
+        #pragma warning restore CS1591
         [EnumMember(Value = "VideoRangeTypeNotSupported")]
+        #pragma warning disable CS1591
         VideoRangeTypeNotSupported,
+        #pragma warning restore CS1591
     }
 }

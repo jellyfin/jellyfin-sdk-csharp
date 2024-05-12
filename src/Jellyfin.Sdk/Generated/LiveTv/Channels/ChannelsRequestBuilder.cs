@@ -13,28 +13,35 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Channels {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\Channels
     /// </summary>
-    public class ChannelsRequestBuilder : BaseRequestBuilder {
+    public class ChannelsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.LiveTv.Channels.item collection</summary>
         /// <param name="position">Channel id.</param>
         /// <returns>A <see cref="WithChannelItemRequestBuilder"/></returns>
-        public WithChannelItemRequestBuilder this[Guid position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("channelId", position);
-            return new WithChannelItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithChannelItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("channelId", position);
+                return new WithChannelItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="ChannelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChannelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Channels{?addCurrentProgram*,enableFavoriteSorting*,enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,isDisliked*,isFavorite*,isKids*,isLiked*,isMovie*,isNews*,isSeries*,isSports*,limit*,sortBy*,sortOrder*,startIndex*,type*,userId*}", pathParameters) {
+        public ChannelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Channels{?addCurrentProgram*,enableFavoriteSorting*,enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,isDisliked*,isFavorite*,isKids*,isLiked*,isMovie*,isNews*,isSeries*,isSports*,limit*,sortBy*,sortOrder*,startIndex*,type*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ChannelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChannelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Channels{?addCurrentProgram*,enableFavoriteSorting*,enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,isDisliked*,isFavorite*,isKids*,isLiked*,isMovie*,isNews*,isSeries*,isSports*,limit*,sortBy*,sortOrder*,startIndex*,type*,userId*}", rawUrl) {
+        public ChannelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Channels{?addCurrentProgram*,enableFavoriteSorting*,enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,isDisliked*,isFavorite*,isKids*,isLiked*,isMovie*,isNews*,isSeries*,isSports*,limit*,sortBy*,sortOrder*,startIndex*,type*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets available live tv channels.
@@ -44,10 +51,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Channels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -59,10 +68,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Channels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -74,13 +85,15 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Channels {
         /// </summary>
         /// <returns>A <see cref="ChannelsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ChannelsRequestBuilder WithUrl(string rawUrl) {
+        public ChannelsRequestBuilder WithUrl(string rawUrl)
+        {
             return new ChannelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets available live tv channels.
         /// </summary>
-        public class ChannelsRequestBuilderGetQueryParameters {
+        public class ChannelsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Adds current program info to each channel.</summary>
             [QueryParameter("addCurrentProgram")]
             public bool? AddCurrentProgram { get; set; }
@@ -147,35 +160,21 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Channels {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
-            public string[]? SortBy { get; set; }
+            public ItemSortBy[]? SortBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortBy")]
-            public string[] SortBy { get; set; }
+            public ItemSortBy[] SortBy { get; set; }
 #endif
             /// <summary>Optional. Sort order.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sortOrder")]
-            public string? SortOrder { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sortOrder")]
-            public string SortOrder { get; set; }
-#endif
+            public GetSortOrderQueryParameterType? SortOrder { get; set; }
             /// <summary>Optional. The record index to start at. All items with a lower index will be dropped from the results.</summary>
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }
             /// <summary>Optional. Filter by channel type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public GetTypeQueryParameterType? Type { get; set; }
             /// <summary>Optional. Filter by user and attach user data.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

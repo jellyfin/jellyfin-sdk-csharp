@@ -10,28 +10,35 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveRecordings {
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\LiveRecordings
     /// </summary>
-    public class LiveRecordingsRequestBuilder : BaseRequestBuilder {
+    public class LiveRecordingsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.item collection</summary>
         /// <param name="position">Recording id.</param>
         /// <returns>A <see cref="WithRecordingItemRequestBuilder"/></returns>
-        public WithRecordingItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("recordingId", position);
-            return new WithRecordingItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithRecordingItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("recordingId", position);
+                return new WithRecordingItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="LiveRecordingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LiveRecordingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveRecordings", pathParameters) {
+        public LiveRecordingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveRecordings", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LiveRecordingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LiveRecordingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveRecordings", rawUrl) {
+        public LiveRecordingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/LiveRecordings", rawUrl)
+        {
         }
     }
 }

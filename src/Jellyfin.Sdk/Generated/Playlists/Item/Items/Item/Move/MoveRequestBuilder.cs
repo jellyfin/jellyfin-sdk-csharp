@@ -8,30 +8,37 @@ using System.Threading.Tasks;
 using System;
 namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move {
     /// <summary>
-    /// Builds and executes requests for operations under \Playlists\{id-id}\Items\{itemId}\Move
+    /// Builds and executes requests for operations under \Playlists\{item-id}\Items\{itemId}\Move
     /// </summary>
-    public class MoveRequestBuilder : BaseRequestBuilder {
+    public class MoveRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Playlists.item.Items.item.Move.item collection</summary>
         /// <param name="position">The new index.</param>
         /// <returns>A <see cref="WithNewIndexItemRequestBuilder"/></returns>
-        public WithNewIndexItemRequestBuilder this[int position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("newIndex", position);
-            return new WithNewIndexItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithNewIndexItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("newIndex", position);
+                return new WithNewIndexItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="MoveRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MoveRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{id%2Did}/Items/{itemId}/Move", pathParameters) {
+        public MoveRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{item%2Did}/Items/{itemId}/Move", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MoveRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MoveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{id%2Did}/Items/{itemId}/Move", rawUrl) {
+        public MoveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{item%2Did}/Items/{itemId}/Move", rawUrl)
+        {
         }
     }
 }

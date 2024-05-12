@@ -19,60 +19,73 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch {
     /// <summary>
     /// Builds and executes requests for operations under \Items\RemoteSearch
     /// </summary>
-    public class RemoteSearchRequestBuilder : BaseRequestBuilder {
+    public class RemoteSearchRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Apply property</summary>
-        public ApplyRequestBuilder Apply { get =>
-            new ApplyRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyRequestBuilder Apply
+        {
+            get => new ApplyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Book property</summary>
-        public BookRequestBuilder Book { get =>
-            new BookRequestBuilder(PathParameters, RequestAdapter);
+        public BookRequestBuilder Book
+        {
+            get => new BookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The BoxSet property</summary>
-        public BoxSetRequestBuilder BoxSet { get =>
-            new BoxSetRequestBuilder(PathParameters, RequestAdapter);
+        public BoxSetRequestBuilder BoxSet
+        {
+            get => new BoxSetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Movie property</summary>
-        public MovieRequestBuilder Movie { get =>
-            new MovieRequestBuilder(PathParameters, RequestAdapter);
+        public MovieRequestBuilder Movie
+        {
+            get => new MovieRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The MusicAlbum property</summary>
-        public MusicAlbumRequestBuilder MusicAlbum { get =>
-            new MusicAlbumRequestBuilder(PathParameters, RequestAdapter);
+        public MusicAlbumRequestBuilder MusicAlbum
+        {
+            get => new MusicAlbumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The MusicArtist property</summary>
-        public MusicArtistRequestBuilder MusicArtist { get =>
-            new MusicArtistRequestBuilder(PathParameters, RequestAdapter);
+        public MusicArtistRequestBuilder MusicArtist
+        {
+            get => new MusicArtistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The MusicVideo property</summary>
-        public MusicVideoRequestBuilder MusicVideo { get =>
-            new MusicVideoRequestBuilder(PathParameters, RequestAdapter);
+        public MusicVideoRequestBuilder MusicVideo
+        {
+            get => new MusicVideoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Person property</summary>
-        public PersonRequestBuilder Person { get =>
-            new PersonRequestBuilder(PathParameters, RequestAdapter);
+        public PersonRequestBuilder Person
+        {
+            get => new PersonRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Series property</summary>
-        public SeriesRequestBuilder Series { get =>
-            new SeriesRequestBuilder(PathParameters, RequestAdapter);
+        public SeriesRequestBuilder Series
+        {
+            get => new SeriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Trailer property</summary>
-        public TrailerRequestBuilder Trailer { get =>
-            new TrailerRequestBuilder(PathParameters, RequestAdapter);
+        public TrailerRequestBuilder Trailer
+        {
+            get => new TrailerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="RemoteSearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemoteSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch", pathParameters) {
+        public RemoteSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RemoteSearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemoteSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch", rawUrl) {
+        public RemoteSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/RemoteSearch", rawUrl)
+        {
         }
     }
 }

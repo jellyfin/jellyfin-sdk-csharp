@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents {
     /// <summary>
     /// Builds and executes requests for operations under \Environment\DirectoryContents
     /// </summary>
-    public class DirectoryContentsRequestBuilder : BaseRequestBuilder {
+    public class DirectoryContentsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="DirectoryContentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryContentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Environment/DirectoryContents?path={path}{&includeDirectories*,includeFiles*}", pathParameters) {
+        public DirectoryContentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Environment/DirectoryContents?path={path}{&includeDirectories*,includeFiles*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DirectoryContentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryContentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Environment/DirectoryContents?path={path}{&includeDirectories*,includeFiles*}", rawUrl) {
+        public DirectoryContentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Environment/DirectoryContents?path={path}{&includeDirectories*,includeFiles*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets the contents of a given directory in the file system.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<FileSystemEntryInfo>?> GetAsync(Action<RequestConfiguration<DirectoryContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<FileSystemEntryInfo>?> GetAsync(Action<RequestConfiguration<DirectoryContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<FileSystemEntryInfo>> GetAsync(Action<RequestConfiguration<DirectoryContentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<FileSystemEntryInfo>> GetAsync(Action<RequestConfiguration<DirectoryContentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<FileSystemEntryInfo>(requestInfo, FileSystemEntryInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +56,12 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryContentsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryContentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -66,13 +73,15 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents {
         /// </summary>
         /// <returns>A <see cref="DirectoryContentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DirectoryContentsRequestBuilder WithUrl(string rawUrl) {
+        public DirectoryContentsRequestBuilder WithUrl(string rawUrl)
+        {
             return new DirectoryContentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets the contents of a given directory in the file system.
         /// </summary>
-        public class DirectoryContentsRequestBuilderGetQueryParameters {
+        public class DirectoryContentsRequestBuilderGetQueryParameters 
+        {
             /// <summary>An optional filter to include or exclude folders from the results. true/false.</summary>
             [QueryParameter("includeDirectories")]
             public bool? IncludeDirectories { get; set; }

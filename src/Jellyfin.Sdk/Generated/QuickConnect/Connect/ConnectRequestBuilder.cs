@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Connect {
     /// <summary>
     /// Builds and executes requests for operations under \QuickConnect\Connect
     /// </summary>
-    public class ConnectRequestBuilder : BaseRequestBuilder {
+    public class ConnectRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ConnectRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Connect?secret={secret}", pathParameters) {
+        public ConnectRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Connect?secret={secret}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ConnectRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Connect?secret={secret}", rawUrl) {
+        public ConnectRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/QuickConnect/Connect?secret={secret}", rawUrl)
+        {
         }
         /// <summary>
         /// Attempts to retrieve authentication information.
@@ -36,13 +39,16 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Connect {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<QuickConnectResult?> GetAsync(Action<RequestConfiguration<ConnectRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<QuickConnectResult?> GetAsync(Action<RequestConfiguration<ConnectRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<QuickConnectResult> GetAsync(Action<RequestConfiguration<ConnectRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<QuickConnectResult> GetAsync(Action<RequestConfiguration<ConnectRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<QuickConnectResult>(requestInfo, QuickConnectResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -54,10 +60,12 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Connect {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConnectRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConnectRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConnectRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConnectRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -69,13 +77,15 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Connect {
         /// </summary>
         /// <returns>A <see cref="ConnectRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ConnectRequestBuilder WithUrl(string rawUrl) {
+        public ConnectRequestBuilder WithUrl(string rawUrl)
+        {
             return new ConnectRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Attempts to retrieve authentication information.
         /// </summary>
-        public class ConnectRequestBuilderGetQueryParameters {
+        public class ConnectRequestBuilderGetQueryParameters 
+        {
             /// <summary>Secret previously returned from the Initiate endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

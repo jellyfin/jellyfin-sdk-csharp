@@ -12,30 +12,35 @@ using System.Threading;
 using System;
 namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages {
     /// <summary>
-    /// Builds and executes requests for operations under \Items\{id-id}\RemoteImages
+    /// Builds and executes requests for operations under \Items\{itemId}\RemoteImages
     /// </summary>
-    public class RemoteImagesRequestBuilder : BaseRequestBuilder {
+    public class RemoteImagesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Download property</summary>
-        public DownloadRequestBuilder Download { get =>
-            new DownloadRequestBuilder(PathParameters, RequestAdapter);
+        public DownloadRequestBuilder Download
+        {
+            get => new DownloadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Providers property</summary>
-        public ProvidersRequestBuilder Providers { get =>
-            new ProvidersRequestBuilder(PathParameters, RequestAdapter);
+        public ProvidersRequestBuilder Providers
+        {
+            get => new ProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="RemoteImagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemoteImagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteImages{?includeAllLanguages*,limit*,providerName*,startIndex*,type*}", pathParameters) {
+        public RemoteImagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteImages{?includeAllLanguages*,limit*,providerName*,startIndex*,type*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RemoteImagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemoteImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{id%2Did}/RemoteImages{?includeAllLanguages*,limit*,providerName*,startIndex*,type*}", rawUrl) {
+        public RemoteImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/RemoteImages{?includeAllLanguages*,limit*,providerName*,startIndex*,type*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets available remote images for an item.
@@ -46,13 +51,16 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages {
         /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RemoteImageResult?> GetAsync(Action<RequestConfiguration<RemoteImagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RemoteImageResult?> GetAsync(Action<RequestConfiguration<RemoteImagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<RemoteImageResult> GetAsync(Action<RequestConfiguration<RemoteImagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RemoteImageResult> GetAsync(Action<RequestConfiguration<RemoteImagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", ProblemDetails.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RemoteImageResult>(requestInfo, RemoteImageResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -64,10 +72,12 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RemoteImagesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RemoteImagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RemoteImagesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RemoteImagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -79,13 +89,15 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages {
         /// </summary>
         /// <returns>A <see cref="RemoteImagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RemoteImagesRequestBuilder WithUrl(string rawUrl) {
+        public RemoteImagesRequestBuilder WithUrl(string rawUrl)
+        {
             return new RemoteImagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets available remote images for an item.
         /// </summary>
-        public class RemoteImagesRequestBuilderGetQueryParameters {
+        public class RemoteImagesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional. Include all languages.</summary>
             [QueryParameter("includeAllLanguages")]
             public bool? IncludeAllLanguages { get; set; }
@@ -106,15 +118,8 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages {
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }
             /// <summary>The image type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public GetTypeQueryParameterType? Type { get; set; }
         }
     }
 }

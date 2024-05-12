@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.System.WakeOnLanInfo {
     /// <summary>
     /// Builds and executes requests for operations under \System\WakeOnLanInfo
     /// </summary>
-    public class WakeOnLanInfoRequestBuilder : BaseRequestBuilder {
+    public class WakeOnLanInfoRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="WakeOnLanInfoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WakeOnLanInfoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/WakeOnLanInfo", pathParameters) {
+        public WakeOnLanInfoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/WakeOnLanInfo", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WakeOnLanInfoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WakeOnLanInfoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/WakeOnLanInfo", rawUrl) {
+        public WakeOnLanInfoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/WakeOnLanInfo", rawUrl)
+        {
         }
         /// <summary>
         /// Gets wake on lan information.
@@ -36,10 +39,12 @@ namespace Jellyfin.Sdk.Generated.System.WakeOnLanInfo {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Jellyfin.Sdk.Generated.Models.WakeOnLanInfo>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Jellyfin.Sdk.Generated.Models.WakeOnLanInfo>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<Jellyfin.Sdk.Generated.Models.WakeOnLanInfo>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Jellyfin.Sdk.Generated.Models.WakeOnLanInfo>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<Jellyfin.Sdk.Generated.Models.WakeOnLanInfo>(requestInfo, Jellyfin.Sdk.Generated.Models.WakeOnLanInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -53,10 +58,12 @@ namespace Jellyfin.Sdk.Generated.System.WakeOnLanInfo {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -69,7 +76,8 @@ namespace Jellyfin.Sdk.Generated.System.WakeOnLanInfo {
         /// <returns>A <see cref="WakeOnLanInfoRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public WakeOnLanInfoRequestBuilder WithUrl(string rawUrl) {
+        public WakeOnLanInfoRequestBuilder WithUrl(string rawUrl)
+        {
             return new WakeOnLanInfoRequestBuilder(rawUrl, RequestAdapter);
         }
     }

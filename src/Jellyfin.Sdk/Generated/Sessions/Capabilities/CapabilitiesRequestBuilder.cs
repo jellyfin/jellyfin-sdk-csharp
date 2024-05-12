@@ -13,24 +13,28 @@ namespace Jellyfin.Sdk.Generated.Sessions.Capabilities {
     /// <summary>
     /// Builds and executes requests for operations under \Sessions\Capabilities
     /// </summary>
-    public class CapabilitiesRequestBuilder : BaseRequestBuilder {
+    public class CapabilitiesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Full property</summary>
-        public FullRequestBuilder Full { get =>
-            new FullRequestBuilder(PathParameters, RequestAdapter);
+        public FullRequestBuilder Full
+        {
+            get => new FullRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="CapabilitiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CapabilitiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Capabilities{?id*,playableMediaTypes*,supportedCommands*,supportsMediaControl*,supportsPersistentIdentifier*,supportsSync*}", pathParameters) {
+        public CapabilitiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Capabilities{?id*,playableMediaTypes*,supportedCommands*,supportsMediaControl*,supportsPersistentIdentifier*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CapabilitiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CapabilitiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Capabilities{?id*,playableMediaTypes*,supportedCommands*,supportsMediaControl*,supportsPersistentIdentifier*,supportsSync*}", rawUrl) {
+        public CapabilitiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Sessions/Capabilities{?id*,playableMediaTypes*,supportedCommands*,supportsMediaControl*,supportsPersistentIdentifier*}", rawUrl)
+        {
         }
         /// <summary>
         /// Updates capabilities for a device.
@@ -39,10 +43,12 @@ namespace Jellyfin.Sdk.Generated.Sessions.Capabilities {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<CapabilitiesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<CapabilitiesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<CapabilitiesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<CapabilitiesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -54,10 +60,12 @@ namespace Jellyfin.Sdk.Generated.Sessions.Capabilities {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<CapabilitiesRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<CapabilitiesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<CapabilitiesRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<CapabilitiesRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -68,13 +76,15 @@ namespace Jellyfin.Sdk.Generated.Sessions.Capabilities {
         /// </summary>
         /// <returns>A <see cref="CapabilitiesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CapabilitiesRequestBuilder WithUrl(string rawUrl) {
+        public CapabilitiesRequestBuilder WithUrl(string rawUrl)
+        {
             return new CapabilitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Updates capabilities for a device.
         /// </summary>
-        public class CapabilitiesRequestBuilderPostQueryParameters {
+        public class CapabilitiesRequestBuilderPostQueryParameters 
+        {
             /// <summary>The session id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,11 +99,11 @@ namespace Jellyfin.Sdk.Generated.Sessions.Capabilities {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("playableMediaTypes")]
-            public string[]? PlayableMediaTypes { get; set; }
+            public MediaType[]? PlayableMediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("playableMediaTypes")]
-            public string[] PlayableMediaTypes { get; set; }
+            public MediaType[] PlayableMediaTypes { get; set; }
 #endif
             /// <summary>A list of supported remote control commands, comma delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,9 +121,6 @@ namespace Jellyfin.Sdk.Generated.Sessions.Capabilities {
             /// <summary>Determines whether the device supports a unique identifier.</summary>
             [QueryParameter("supportsPersistentIdentifier")]
             public bool? SupportsPersistentIdentifier { get; set; }
-            /// <summary>Determines whether sync is supported.</summary>
-            [QueryParameter("supportsSync")]
-            public bool? SupportsSync { get; set; }
         }
     }
 }

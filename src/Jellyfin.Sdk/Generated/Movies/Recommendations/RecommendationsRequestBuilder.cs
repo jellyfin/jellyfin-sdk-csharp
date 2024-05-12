@@ -12,20 +12,23 @@ namespace Jellyfin.Sdk.Generated.Movies.Recommendations {
     /// <summary>
     /// Builds and executes requests for operations under \Movies\Recommendations
     /// </summary>
-    public class RecommendationsRequestBuilder : BaseRequestBuilder {
+    public class RecommendationsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="RecommendationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecommendationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Movies/Recommendations{?categoryLimit*,fields*,itemLimit*,parentId*,userId*}", pathParameters) {
+        public RecommendationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Movies/Recommendations{?categoryLimit*,fields*,itemLimit*,parentId*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RecommendationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecommendationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Movies/Recommendations{?categoryLimit*,fields*,itemLimit*,parentId*,userId*}", rawUrl) {
+        public RecommendationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Movies/Recommendations{?categoryLimit*,fields*,itemLimit*,parentId*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets movie recommendations.
@@ -35,10 +38,12 @@ namespace Jellyfin.Sdk.Generated.Movies.Recommendations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<RecommendationDto>?> GetAsync(Action<RequestConfiguration<RecommendationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RecommendationDto>?> GetAsync(Action<RequestConfiguration<RecommendationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<RecommendationDto>> GetAsync(Action<RequestConfiguration<RecommendationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RecommendationDto>> GetAsync(Action<RequestConfiguration<RecommendationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<RecommendationDto>(requestInfo, RecommendationDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +56,12 @@ namespace Jellyfin.Sdk.Generated.Movies.Recommendations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RecommendationsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RecommendationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RecommendationsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RecommendationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -66,13 +73,15 @@ namespace Jellyfin.Sdk.Generated.Movies.Recommendations {
         /// </summary>
         /// <returns>A <see cref="RecommendationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RecommendationsRequestBuilder WithUrl(string rawUrl) {
+        public RecommendationsRequestBuilder WithUrl(string rawUrl)
+        {
             return new RecommendationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets movie recommendations.
         /// </summary>
-        public class RecommendationsRequestBuilderGetQueryParameters {
+        public class RecommendationsRequestBuilderGetQueryParameters 
+        {
             /// <summary>The max number of categories to return.</summary>
             [QueryParameter("categoryLimit")]
             public int? CategoryLimit { get; set; }

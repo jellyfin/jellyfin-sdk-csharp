@@ -13,28 +13,35 @@ namespace Jellyfin.Sdk.Generated.Collections {
     /// <summary>
     /// Builds and executes requests for operations under \Collections
     /// </summary>
-    public class CollectionsRequestBuilder : BaseRequestBuilder {
+    public class CollectionsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Collections.item collection</summary>
         /// <param name="position">The collection id.</param>
         /// <returns>A <see cref="WithCollectionItemRequestBuilder"/></returns>
-        public WithCollectionItemRequestBuilder this[Guid position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("collectionId", position);
-            return new WithCollectionItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithCollectionItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("collectionId", position);
+                return new WithCollectionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="CollectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CollectionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections{?ids*,isLocked*,name*,parentId*}", pathParameters) {
+        public CollectionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections{?ids*,isLocked*,name*,parentId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CollectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CollectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections{?ids*,isLocked*,name*,parentId*}", rawUrl) {
+        public CollectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections{?ids*,isLocked*,name*,parentId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Creates a new collection.
@@ -44,10 +51,12 @@ namespace Jellyfin.Sdk.Generated.Collections {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CollectionCreationResult?> PostAsync(Action<RequestConfiguration<CollectionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CollectionCreationResult?> PostAsync(Action<RequestConfiguration<CollectionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<CollectionCreationResult> PostAsync(Action<RequestConfiguration<CollectionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CollectionCreationResult> PostAsync(Action<RequestConfiguration<CollectionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<CollectionCreationResult>(requestInfo, CollectionCreationResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -59,10 +68,12 @@ namespace Jellyfin.Sdk.Generated.Collections {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<CollectionsRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<CollectionsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<CollectionsRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<CollectionsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -74,13 +85,15 @@ namespace Jellyfin.Sdk.Generated.Collections {
         /// </summary>
         /// <returns>A <see cref="CollectionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CollectionsRequestBuilder WithUrl(string rawUrl) {
+        public CollectionsRequestBuilder WithUrl(string rawUrl)
+        {
             return new CollectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Creates a new collection.
         /// </summary>
-        public class CollectionsRequestBuilderPostQueryParameters {
+        public class CollectionsRequestBuilderPostQueryParameters 
+        {
             /// <summary>Item Ids to add to the collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

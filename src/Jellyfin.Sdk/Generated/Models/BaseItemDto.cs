@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// This is strictly used as a data transfer object from the api layer.This holds information about a BaseItem in a format that is convenient for the client.
     /// </summary>
-    public class BaseItemDto : IParsable {
+    public class BaseItemDto : IParsable 
+    {
         /// <summary>Gets or sets the air days.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +99,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string AspectRatio { get; set; }
 #endif
         /// <summary>Gets or sets the audio.</summary>
-        public ProgramAudio? Audio { get; set; }
+        public BaseItemDto_Audio? Audio { get; set; }
         /// <summary>Gets or sets the backdrop image tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,7 +155,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string ChannelPrimaryImageTag { get; set; }
 #endif
         /// <summary>Gets or sets the type of the channel.</summary>
-        public Jellyfin.Sdk.Generated.Models.ChannelType? ChannelType { get; set; }
+        public BaseItemDto_ChannelType? ChannelType { get; set; }
         /// <summary>Gets or sets the chapters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,13 +167,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the child count.</summary>
         public int? ChildCount { get; set; }
         /// <summary>Gets or sets the type of the collection.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CollectionType { get; set; }
-#nullable restore
-#else
-        public string CollectionType { get; set; }
-#endif
+        public BaseItemDto_CollectionType? CollectionType { get; set; }
         /// <summary>Gets or sets the community rating.</summary>
         public float? CommunityRating { get; set; }
         /// <summary>Gets or sets the completion percentage.</summary>
@@ -258,13 +253,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public List<ExternalUrl> ExternalUrls { get; set; }
 #endif
         /// <summary>The ExtraType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExtraType { get; set; }
-#nullable restore
-#else
-        public string ExtraType { get; set; }
-#endif
+        public BaseItemDto_ExtraType? ExtraType { get; set; }
         /// <summary>The FocalLength property</summary>
         public double? FocalLength { get; set; }
         /// <summary>The ForcedSortName property</summary>
@@ -291,6 +280,8 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public List<string> Genres { get; set; }
 #endif
+        /// <summary>The HasLyrics property</summary>
+        public bool? HasLyrics { get; set; }
         /// <summary>The HasSubtitles property</summary>
         public bool? HasSubtitles { get; set; }
         /// <summary>The Height property</summary>
@@ -306,7 +297,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public BaseItemDto_ImageBlurHashes ImageBlurHashes { get; set; }
 #endif
         /// <summary>The ImageOrientation property</summary>
-        public Jellyfin.Sdk.Generated.Models.ImageOrientation? ImageOrientation { get; set; }
+        public BaseItemDto_ImageOrientation? ImageOrientation { get; set; }
         /// <summary>Gets or sets the image tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -334,7 +325,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The IsoSpeedRating property</summary>
         public int? IsoSpeedRating { get; set; }
         /// <summary>Gets or sets the type of the iso.</summary>
-        public Jellyfin.Sdk.Generated.Models.IsoType? IsoType { get; set; }
+        public BaseItemDto_IsoType? IsoType { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance is place holder.</summary>
         public bool? IsPlaceHolder { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance is premiere.</summary>
@@ -350,7 +341,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the local trailer count.</summary>
         public int? LocalTrailerCount { get; set; }
         /// <summary>Gets or sets the type of the location.</summary>
-        public Jellyfin.Sdk.Generated.Models.LocationType? LocationType { get; set; }
+        public BaseItemDto_LocationType? LocationType { get; set; }
         /// <summary>Gets or sets a value indicating whether [enable internet providers].</summary>
         public bool? LockData { get; set; }
         /// <summary>Gets or sets the locked fields.</summary>
@@ -382,13 +373,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public List<MediaStream> MediaStreams { get; set; }
 #endif
         /// <summary>Gets or sets the type of the media.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MediaType { get; set; }
-#nullable restore
-#else
-        public string MediaType { get; set; }
-#endif
+        public BaseItemDto_MediaType? MediaType { get; set; }
         /// <summary>Gets or sets the movie count.</summary>
         public int? MovieCount { get; set; }
         /// <summary>Gets or sets the music video count.</summary>
@@ -401,6 +386,8 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Gets or sets the gain required for audio normalization.</summary>
+        public float? NormalizationGain { get; set; }
         /// <summary>Gets or sets the number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -441,7 +428,7 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string ParentArtImageTag { get; set; }
 #endif
-        /// <summary>Gets or sets wether the item has fan art, this will hold the Id of the Parent that has one.</summary>
+        /// <summary>Gets or sets whether the item has fan art, this will hold the Id of the Parent that has one.</summary>
         public Guid? ParentArtItemId { get; set; }
         /// <summary>Gets or sets the parent backdrop image tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -451,7 +438,7 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public List<string> ParentBackdropImageTags { get; set; }
 #endif
-        /// <summary>Gets or sets wether the item has any backdrops, this will hold the Id of the Parent that has one.</summary>
+        /// <summary>Gets or sets whether the item has any backdrops, this will hold the Id of the Parent that has one.</summary>
         public Guid? ParentBackdropItemId { get; set; }
         /// <summary>Gets or sets the parent id.</summary>
         public Guid? ParentId { get; set; }
@@ -465,7 +452,7 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public string ParentLogoImageTag { get; set; }
 #endif
-        /// <summary>Gets or sets wether the item has a logo, this will hold the Id of the Parent that has one.</summary>
+        /// <summary>Gets or sets whether the item has a logo, this will hold the Id of the Parent that has one.</summary>
         public Guid? ParentLogoItemId { get; set; }
         /// <summary>Gets or sets the parent primary image item identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -512,7 +499,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public List<BaseItemPerson> People { get; set; }
 #endif
         /// <summary>Gets or sets the play access.</summary>
-        public Jellyfin.Sdk.Generated.Models.PlayAccess? PlayAccess { get; set; }
+        public BaseItemDto_PlayAccess? PlayAccess { get; set; }
         /// <summary>Gets or sets the playlist item identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -699,8 +686,6 @@ namespace Jellyfin.Sdk.Generated.Models {
 #else
         public List<NameGuidPair> Studios { get; set; }
 #endif
-        /// <summary>Gets or sets a value indicating whether [supports synchronize].</summary>
-        public bool? SupportsSync { get; set; }
         /// <summary>Gets or sets the taglines.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -727,8 +712,16 @@ namespace Jellyfin.Sdk.Generated.Models {
 #endif
         /// <summary>Gets or sets the trailer count.</summary>
         public int? TrailerCount { get; set; }
+        /// <summary>Gets or sets the trickplay manifest.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public BaseItemDto_Trickplay? Trickplay { get; set; }
+#nullable restore
+#else
+        public BaseItemDto_Trickplay Trickplay { get; set; }
+#endif
         /// <summary>Gets or sets the type.</summary>
-        public BaseItemKind? Type { get; set; }
+        public BaseItemDto_Type? Type { get; set; }
         /// <summary>Gets or sets the user data for this item based on the user it&apos;s being requested for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -738,9 +731,9 @@ namespace Jellyfin.Sdk.Generated.Models {
         public UserItemDataDto UserData { get; set; }
 #endif
         /// <summary>Gets or sets the video3 D format.</summary>
-        public Jellyfin.Sdk.Generated.Models.Video3DFormat? Video3DFormat { get; set; }
+        public BaseItemDto_Video3DFormat? Video3DFormat { get; set; }
         /// <summary>Gets or sets the type of the video.</summary>
-        public Jellyfin.Sdk.Generated.Models.VideoType? VideoType { get; set; }
+        public BaseItemDto_VideoType? VideoType { get; set; }
         /// <summary>The Width property</summary>
         public int? Width { get; set; }
         /// <summary>
@@ -748,7 +741,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="BaseItemDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BaseItemDto CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static BaseItemDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new BaseItemDto();
         }
@@ -756,8 +750,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"AirDays", n => { AirDays = n.GetCollectionOfEnumValues<DayOfWeekObject>()?.ToList(); } },
                 {"AirTime", n => { AirTime = n.GetStringValue(); } },
                 {"AirsAfterSeasonNumber", n => { AirsAfterSeasonNumber = n.GetIntValue(); } },
@@ -775,7 +771,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"ArtistItems", n => { ArtistItems = n.GetCollectionOfObjectValues<NameGuidPair>(NameGuidPair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"Artists", n => { Artists = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"AspectRatio", n => { AspectRatio = n.GetStringValue(); } },
-                {"Audio", n => { Audio = n.GetEnumValue<ProgramAudio>(); } },
+                {"Audio", n => { Audio = n.GetEnumValue<BaseItemDto_Audio>(); } },
                 {"BackdropImageTags", n => { BackdropImageTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"CameraMake", n => { CameraMake = n.GetStringValue(); } },
                 {"CameraModel", n => { CameraModel = n.GetStringValue(); } },
@@ -785,10 +781,10 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"ChannelName", n => { ChannelName = n.GetStringValue(); } },
                 {"ChannelNumber", n => { ChannelNumber = n.GetStringValue(); } },
                 {"ChannelPrimaryImageTag", n => { ChannelPrimaryImageTag = n.GetStringValue(); } },
-                {"ChannelType", n => { ChannelType = n.GetEnumValue<ChannelType>(); } },
+                {"ChannelType", n => { ChannelType = n.GetEnumValue<BaseItemDto_ChannelType>(); } },
                 {"Chapters", n => { Chapters = n.GetCollectionOfObjectValues<ChapterInfo>(ChapterInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"ChildCount", n => { ChildCount = n.GetIntValue(); } },
-                {"CollectionType", n => { CollectionType = n.GetStringValue(); } },
+                {"CollectionType", n => { CollectionType = n.GetEnumValue<BaseItemDto_CollectionType>(); } },
                 {"CommunityRating", n => { CommunityRating = n.GetFloatValue(); } },
                 {"CompletionPercentage", n => { CompletionPercentage = n.GetDoubleValue(); } },
                 {"Container", n => { Container = n.GetStringValue(); } },
@@ -807,16 +803,17 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"Etag", n => { Etag = n.GetStringValue(); } },
                 {"ExposureTime", n => { ExposureTime = n.GetDoubleValue(); } },
                 {"ExternalUrls", n => { ExternalUrls = n.GetCollectionOfObjectValues<ExternalUrl>(ExternalUrl.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"ExtraType", n => { ExtraType = n.GetStringValue(); } },
+                {"ExtraType", n => { ExtraType = n.GetEnumValue<BaseItemDto_ExtraType>(); } },
                 {"FocalLength", n => { FocalLength = n.GetDoubleValue(); } },
                 {"ForcedSortName", n => { ForcedSortName = n.GetStringValue(); } },
                 {"GenreItems", n => { GenreItems = n.GetCollectionOfObjectValues<NameGuidPair>(NameGuidPair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"Genres", n => { Genres = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"HasLyrics", n => { HasLyrics = n.GetBoolValue(); } },
                 {"HasSubtitles", n => { HasSubtitles = n.GetBoolValue(); } },
                 {"Height", n => { Height = n.GetIntValue(); } },
                 {"Id", n => { Id = n.GetGuidValue(); } },
                 {"ImageBlurHashes", n => { ImageBlurHashes = n.GetObjectValue<BaseItemDto_ImageBlurHashes>(BaseItemDto_ImageBlurHashes.CreateFromDiscriminatorValue); } },
-                {"ImageOrientation", n => { ImageOrientation = n.GetEnumValue<ImageOrientation>(); } },
+                {"ImageOrientation", n => { ImageOrientation = n.GetEnumValue<BaseItemDto_ImageOrientation>(); } },
                 {"ImageTags", n => { ImageTags = n.GetObjectValue<BaseItemDto_ImageTags>(BaseItemDto_ImageTags.CreateFromDiscriminatorValue); } },
                 {"IndexNumber", n => { IndexNumber = n.GetIntValue(); } },
                 {"IndexNumberEnd", n => { IndexNumberEnd = n.GetIntValue(); } },
@@ -832,20 +829,21 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"IsSeries", n => { IsSeries = n.GetBoolValue(); } },
                 {"IsSports", n => { IsSports = n.GetBoolValue(); } },
                 {"IsoSpeedRating", n => { IsoSpeedRating = n.GetIntValue(); } },
-                {"IsoType", n => { IsoType = n.GetEnumValue<IsoType>(); } },
+                {"IsoType", n => { IsoType = n.GetEnumValue<BaseItemDto_IsoType>(); } },
                 {"Latitude", n => { Latitude = n.GetDoubleValue(); } },
                 {"LocalTrailerCount", n => { LocalTrailerCount = n.GetIntValue(); } },
-                {"LocationType", n => { LocationType = n.GetEnumValue<LocationType>(); } },
+                {"LocationType", n => { LocationType = n.GetEnumValue<BaseItemDto_LocationType>(); } },
                 {"LockData", n => { LockData = n.GetBoolValue(); } },
                 {"LockedFields", n => { LockedFields = n.GetCollectionOfEnumValues<MetadataField>()?.ToList(); } },
                 {"Longitude", n => { Longitude = n.GetDoubleValue(); } },
                 {"MediaSourceCount", n => { MediaSourceCount = n.GetIntValue(); } },
                 {"MediaSources", n => { MediaSources = n.GetCollectionOfObjectValues<MediaSourceInfo>(MediaSourceInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"MediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"MediaType", n => { MediaType = n.GetStringValue(); } },
+                {"MediaType", n => { MediaType = n.GetEnumValue<BaseItemDto_MediaType>(); } },
                 {"MovieCount", n => { MovieCount = n.GetIntValue(); } },
                 {"MusicVideoCount", n => { MusicVideoCount = n.GetIntValue(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
+                {"NormalizationGain", n => { NormalizationGain = n.GetFloatValue(); } },
                 {"Number", n => { Number = n.GetStringValue(); } },
                 {"OfficialRating", n => { OfficialRating = n.GetStringValue(); } },
                 {"OriginalTitle", n => { OriginalTitle = n.GetStringValue(); } },
@@ -865,7 +863,7 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"PartCount", n => { PartCount = n.GetIntValue(); } },
                 {"Path", n => { Path = n.GetStringValue(); } },
                 {"People", n => { People = n.GetCollectionOfObjectValues<BaseItemPerson>(BaseItemPerson.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"PlayAccess", n => { PlayAccess = n.GetEnumValue<PlayAccess>(); } },
+                {"PlayAccess", n => { PlayAccess = n.GetEnumValue<BaseItemDto_PlayAccess>(); } },
                 {"PlaylistItemId", n => { PlaylistItemId = n.GetStringValue(); } },
                 {"PreferredMetadataCountryCode", n => { PreferredMetadataCountryCode = n.GetStringValue(); } },
                 {"PreferredMetadataLanguage", n => { PreferredMetadataLanguage = n.GetStringValue(); } },
@@ -899,15 +897,15 @@ namespace Jellyfin.Sdk.Generated.Models {
                 {"StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 {"Status", n => { Status = n.GetStringValue(); } },
                 {"Studios", n => { Studios = n.GetCollectionOfObjectValues<NameGuidPair>(NameGuidPair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"SupportsSync", n => { SupportsSync = n.GetBoolValue(); } },
                 {"Taglines", n => { Taglines = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"Tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"TimerId", n => { TimerId = n.GetStringValue(); } },
                 {"TrailerCount", n => { TrailerCount = n.GetIntValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<BaseItemKind>(); } },
+                {"Trickplay", n => { Trickplay = n.GetObjectValue<BaseItemDto_Trickplay>(BaseItemDto_Trickplay.CreateFromDiscriminatorValue); } },
+                {"Type", n => { Type = n.GetEnumValue<BaseItemDto_Type>(); } },
                 {"UserData", n => { UserData = n.GetObjectValue<UserItemDataDto>(UserItemDataDto.CreateFromDiscriminatorValue); } },
-                {"Video3DFormat", n => { Video3DFormat = n.GetEnumValue<Video3DFormat>(); } },
-                {"VideoType", n => { VideoType = n.GetEnumValue<VideoType>(); } },
+                {"Video3DFormat", n => { Video3DFormat = n.GetEnumValue<BaseItemDto_Video3DFormat>(); } },
+                {"VideoType", n => { VideoType = n.GetEnumValue<BaseItemDto_VideoType>(); } },
                 {"Width", n => { Width = n.GetIntValue(); } },
             };
         }
@@ -915,7 +913,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<DayOfWeekObject>("AirDays", AirDays);
             writer.WriteIntValue("AirsAfterSeasonNumber", AirsAfterSeasonNumber);
@@ -934,7 +933,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteCollectionOfObjectValues<NameGuidPair>("ArtistItems", ArtistItems);
             writer.WriteCollectionOfPrimitiveValues<string>("Artists", Artists);
             writer.WriteStringValue("AspectRatio", AspectRatio);
-            writer.WriteEnumValue<ProgramAudio>("Audio", Audio);
+            writer.WriteEnumValue<BaseItemDto_Audio>("Audio", Audio);
             writer.WriteCollectionOfPrimitiveValues<string>("BackdropImageTags", BackdropImageTags);
             writer.WriteStringValue("CameraMake", CameraMake);
             writer.WriteStringValue("CameraModel", CameraModel);
@@ -944,10 +943,10 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("ChannelName", ChannelName);
             writer.WriteStringValue("ChannelNumber", ChannelNumber);
             writer.WriteStringValue("ChannelPrimaryImageTag", ChannelPrimaryImageTag);
-            writer.WriteEnumValue<ChannelType>("ChannelType", ChannelType);
+            writer.WriteEnumValue<BaseItemDto_ChannelType>("ChannelType", ChannelType);
             writer.WriteCollectionOfObjectValues<ChapterInfo>("Chapters", Chapters);
             writer.WriteIntValue("ChildCount", ChildCount);
-            writer.WriteStringValue("CollectionType", CollectionType);
+            writer.WriteEnumValue<BaseItemDto_CollectionType>("CollectionType", CollectionType);
             writer.WriteFloatValue("CommunityRating", CommunityRating);
             writer.WriteDoubleValue("CompletionPercentage", CompletionPercentage);
             writer.WriteStringValue("Container", Container);
@@ -966,16 +965,17 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("Etag", Etag);
             writer.WriteDoubleValue("ExposureTime", ExposureTime);
             writer.WriteCollectionOfObjectValues<ExternalUrl>("ExternalUrls", ExternalUrls);
-            writer.WriteStringValue("ExtraType", ExtraType);
+            writer.WriteEnumValue<BaseItemDto_ExtraType>("ExtraType", ExtraType);
             writer.WriteDoubleValue("FocalLength", FocalLength);
             writer.WriteStringValue("ForcedSortName", ForcedSortName);
             writer.WriteCollectionOfObjectValues<NameGuidPair>("GenreItems", GenreItems);
             writer.WriteCollectionOfPrimitiveValues<string>("Genres", Genres);
+            writer.WriteBoolValue("HasLyrics", HasLyrics);
             writer.WriteBoolValue("HasSubtitles", HasSubtitles);
             writer.WriteIntValue("Height", Height);
             writer.WriteGuidValue("Id", Id);
             writer.WriteObjectValue<BaseItemDto_ImageBlurHashes>("ImageBlurHashes", ImageBlurHashes);
-            writer.WriteEnumValue<ImageOrientation>("ImageOrientation", ImageOrientation);
+            writer.WriteEnumValue<BaseItemDto_ImageOrientation>("ImageOrientation", ImageOrientation);
             writer.WriteObjectValue<BaseItemDto_ImageTags>("ImageTags", ImageTags);
             writer.WriteIntValue("IndexNumber", IndexNumber);
             writer.WriteIntValue("IndexNumberEnd", IndexNumberEnd);
@@ -986,7 +986,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("IsMovie", IsMovie);
             writer.WriteBoolValue("IsNews", IsNews);
             writer.WriteIntValue("IsoSpeedRating", IsoSpeedRating);
-            writer.WriteEnumValue<IsoType>("IsoType", IsoType);
+            writer.WriteEnumValue<BaseItemDto_IsoType>("IsoType", IsoType);
             writer.WriteBoolValue("IsPlaceHolder", IsPlaceHolder);
             writer.WriteBoolValue("IsPremiere", IsPremiere);
             writer.WriteBoolValue("IsRepeat", IsRepeat);
@@ -994,17 +994,18 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("IsSports", IsSports);
             writer.WriteDoubleValue("Latitude", Latitude);
             writer.WriteIntValue("LocalTrailerCount", LocalTrailerCount);
-            writer.WriteEnumValue<LocationType>("LocationType", LocationType);
+            writer.WriteEnumValue<BaseItemDto_LocationType>("LocationType", LocationType);
             writer.WriteBoolValue("LockData", LockData);
             writer.WriteCollectionOfEnumValues<MetadataField>("LockedFields", LockedFields);
             writer.WriteDoubleValue("Longitude", Longitude);
             writer.WriteIntValue("MediaSourceCount", MediaSourceCount);
             writer.WriteCollectionOfObjectValues<MediaSourceInfo>("MediaSources", MediaSources);
             writer.WriteCollectionOfObjectValues<MediaStream>("MediaStreams", MediaStreams);
-            writer.WriteStringValue("MediaType", MediaType);
+            writer.WriteEnumValue<BaseItemDto_MediaType>("MediaType", MediaType);
             writer.WriteIntValue("MovieCount", MovieCount);
             writer.WriteIntValue("MusicVideoCount", MusicVideoCount);
             writer.WriteStringValue("Name", Name);
+            writer.WriteFloatValue("NormalizationGain", NormalizationGain);
             writer.WriteStringValue("Number", Number);
             writer.WriteStringValue("OfficialRating", OfficialRating);
             writer.WriteStringValue("OriginalTitle", OriginalTitle);
@@ -1024,7 +1025,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("PartCount", PartCount);
             writer.WriteStringValue("Path", Path);
             writer.WriteCollectionOfObjectValues<BaseItemPerson>("People", People);
-            writer.WriteEnumValue<PlayAccess>("PlayAccess", PlayAccess);
+            writer.WriteEnumValue<BaseItemDto_PlayAccess>("PlayAccess", PlayAccess);
             writer.WriteStringValue("PlaylistItemId", PlaylistItemId);
             writer.WriteStringValue("PreferredMetadataCountryCode", PreferredMetadataCountryCode);
             writer.WriteStringValue("PreferredMetadataLanguage", PreferredMetadataLanguage);
@@ -1058,15 +1059,15 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
             writer.WriteStringValue("Status", Status);
             writer.WriteCollectionOfObjectValues<NameGuidPair>("Studios", Studios);
-            writer.WriteBoolValue("SupportsSync", SupportsSync);
             writer.WriteCollectionOfPrimitiveValues<string>("Taglines", Taglines);
             writer.WriteCollectionOfPrimitiveValues<string>("Tags", Tags);
             writer.WriteStringValue("TimerId", TimerId);
             writer.WriteIntValue("TrailerCount", TrailerCount);
-            writer.WriteEnumValue<BaseItemKind>("Type", Type);
+            writer.WriteObjectValue<BaseItemDto_Trickplay>("Trickplay", Trickplay);
+            writer.WriteEnumValue<BaseItemDto_Type>("Type", Type);
             writer.WriteObjectValue<UserItemDataDto>("UserData", UserData);
-            writer.WriteEnumValue<Video3DFormat>("Video3DFormat", Video3DFormat);
-            writer.WriteEnumValue<VideoType>("VideoType", VideoType);
+            writer.WriteEnumValue<BaseItemDto_Video3DFormat>("Video3DFormat", Video3DFormat);
+            writer.WriteEnumValue<BaseItemDto_VideoType>("VideoType", VideoType);
             writer.WriteIntValue("Width", Width);
         }
     }

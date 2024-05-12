@@ -8,7 +8,8 @@ namespace Jellyfin.Sdk.Generated.Models {
     /// <summary>
     /// An activity log entry.
     /// </summary>
-    public class ActivityLogEntry : IParsable {
+    public class ActivityLogEntry : IParsable 
+    {
         /// <summary>Gets or sets the date.</summary>
         public DateTimeOffset? Date { get; set; }
         /// <summary>Gets or sets the identifier.</summary>
@@ -38,7 +39,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Overview { get; set; }
 #endif
         /// <summary>Gets or sets the log severity.</summary>
-        public LogLevel? Severity { get; set; }
+        public ActivityLogEntry_Severity? Severity { get; set; }
         /// <summary>Gets or sets the short overview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,7 +72,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// </summary>
         /// <returns>A <see cref="ActivityLogEntry"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ActivityLogEntry CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ActivityLogEntry CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ActivityLogEntry();
         }
@@ -79,14 +81,16 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"Date", n => { Date = n.GetDateTimeOffsetValue(); } },
                 {"Id", n => { Id = n.GetLongValue(); } },
                 {"ItemId", n => { ItemId = n.GetStringValue(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
                 {"Overview", n => { Overview = n.GetStringValue(); } },
-                {"Severity", n => { Severity = n.GetEnumValue<LogLevel>(); } },
+                {"Severity", n => { Severity = n.GetEnumValue<ActivityLogEntry_Severity>(); } },
                 {"ShortOverview", n => { ShortOverview = n.GetStringValue(); } },
                 {"Type", n => { Type = n.GetStringValue(); } },
                 {"UserId", n => { UserId = n.GetGuidValue(); } },
@@ -97,14 +101,15 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("Date", Date);
             writer.WriteLongValue("Id", Id);
             writer.WriteStringValue("ItemId", ItemId);
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("Overview", Overview);
-            writer.WriteEnumValue<LogLevel>("Severity", Severity);
+            writer.WriteEnumValue<ActivityLogEntry_Severity>("Severity", Severity);
             writer.WriteStringValue("ShortOverview", ShortOverview);
             writer.WriteStringValue("Type", Type);
             writer.WriteGuidValue("UserId", UserId);

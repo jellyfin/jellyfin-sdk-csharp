@@ -13,28 +13,35 @@ namespace Jellyfin.Sdk.Generated.Studios {
     /// <summary>
     /// Builds and executes requests for operations under \Studios
     /// </summary>
-    public class StudiosRequestBuilder : BaseRequestBuilder {
+    public class StudiosRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Studios.item collection</summary>
         /// <param name="position">Studio name.</param>
         /// <returns>A <see cref="WithNameItemRequestBuilder"/></returns>
-        public WithNameItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("name", position);
-            return new WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithNameItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("name", position);
+                return new WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="StudiosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StudiosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Studios{?enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,searchTerm*,startIndex*,userId*}", pathParameters) {
+        public StudiosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Studios{?enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,searchTerm*,startIndex*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="StudiosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StudiosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Studios{?enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,searchTerm*,startIndex*,userId*}", rawUrl) {
+        public StudiosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Studios{?enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeItemTypes*,fields*,imageTypeLimit*,includeItemTypes*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,searchTerm*,startIndex*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets all studios from a given item, folder, or the entire library.
@@ -44,10 +51,12 @@ namespace Jellyfin.Sdk.Generated.Studios {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<StudiosRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<StudiosRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<StudiosRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<StudiosRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -59,10 +68,12 @@ namespace Jellyfin.Sdk.Generated.Studios {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StudiosRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StudiosRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StudiosRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StudiosRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -74,13 +85,15 @@ namespace Jellyfin.Sdk.Generated.Studios {
         /// </summary>
         /// <returns>A <see cref="StudiosRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StudiosRequestBuilder WithUrl(string rawUrl) {
+        public StudiosRequestBuilder WithUrl(string rawUrl)
+        {
             return new StudiosRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets all studios from a given item, folder, or the entire library.
         /// </summary>
-        public class StudiosRequestBuilderGetQueryParameters {
+        public class StudiosRequestBuilderGetQueryParameters 
+        {
             /// <summary>Optional, include image information in output.</summary>
             [QueryParameter("enableImages")]
             public bool? EnableImages { get; set; }

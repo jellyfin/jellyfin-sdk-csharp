@@ -10,24 +10,28 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog {
     /// <summary>
     /// Builds and executes requests for operations under \System\ActivityLog
     /// </summary>
-    public class ActivityLogRequestBuilder : BaseRequestBuilder {
+    public class ActivityLogRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The Entries property</summary>
-        public EntriesRequestBuilder Entries { get =>
-            new EntriesRequestBuilder(PathParameters, RequestAdapter);
+        public EntriesRequestBuilder Entries
+        {
+            get => new EntriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ActivityLogRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActivityLogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog", pathParameters) {
+        public ActivityLogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ActivityLogRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActivityLogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog", rawUrl) {
+        public ActivityLogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog", rawUrl)
+        {
         }
     }
 }
