@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Providers {
+namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Providers
+{
     /// <summary>
     /// Builds and executes requests for operations under \Items\{itemId}\RemoteImages\Providers
     /// </summary>
-    public class ProvidersRequestBuilder : BaseRequestBuilder 
+    public class ProvidersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ProvidersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Providers.ProvidersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Providers {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProvidersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Providers.ProvidersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,25 +34,25 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Providers {
         /// <summary>
         /// Gets available remote image providers for an item.
         /// </summary>
-        /// <returns>A List&lt;ImageProviderInfo&gt;</returns>
+        /// <returns>A List&lt;Jellyfin.Sdk.Generated.Models.ImageProviderInfo&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<ImageProviderInfo>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.ImageProviderInfo>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<ImageProviderInfo>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.ImageProviderInfo>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<ImageProviderInfo>(requestInfo, ImageProviderInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Jellyfin.Sdk.Generated.Models.ImageProviderInfo>(requestInfo, Jellyfin.Sdk.Generated.Models.ImageProviderInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -76,11 +77,11 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Providers {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ProvidersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Providers.ProvidersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ProvidersRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Providers.ProvidersRequestBuilder WithUrl(string rawUrl)
         {
-            return new ProvidersRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Items.Item.RemoteImages.Providers.ProvidersRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

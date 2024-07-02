@@ -10,31 +10,32 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.System.Configuration {
+namespace Jellyfin.Sdk.Generated.System.Configuration
+{
     /// <summary>
     /// Builds and executes requests for operations under \System\Configuration
     /// </summary>
-    public class ConfigurationRequestBuilder : BaseRequestBuilder 
+    public class ConfigurationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The MetadataOptions property</summary>
-        public MetadataOptionsRequestBuilder MetadataOptions
+        public Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.MetadataOptionsRequestBuilder MetadataOptions
         {
-            get => new MetadataOptionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.MetadataOptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.System.Configuration.item collection</summary>
         /// <param name="position">Configuration key.</param>
-        /// <returns>A <see cref="WithKeyItemRequestBuilder"/></returns>
-        public WithKeyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.System.Configuration.Item.WithKeyItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.System.Configuration.Item.WithKeyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("key", position);
-                return new WithKeyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.System.Configuration.Item.WithKeyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConfigurationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.Configuration.ConfigurationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -42,7 +43,7 @@ namespace Jellyfin.Sdk.Generated.System.Configuration {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConfigurationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.Configuration.ConfigurationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,20 +53,20 @@ namespace Jellyfin.Sdk.Generated.System.Configuration {
         /// <summary>
         /// Gets application configuration.
         /// </summary>
-        /// <returns>A <see cref="ServerConfiguration"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ServerConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServerConfiguration?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.ServerConfiguration?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ServerConfiguration> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.ServerConfiguration> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<ServerConfiguration>(requestInfo, ServerConfiguration.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.ServerConfiguration>(requestInfo, Jellyfin.Sdk.Generated.Models.ServerConfiguration.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates application configuration.
@@ -75,11 +76,11 @@ namespace Jellyfin.Sdk.Generated.System.Configuration {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(ServerConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.ServerConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(ServerConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.ServerConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -113,11 +114,11 @@ namespace Jellyfin.Sdk.Generated.System.Configuration {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ServerConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.ServerConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ServerConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.ServerConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -129,11 +130,11 @@ namespace Jellyfin.Sdk.Generated.System.Configuration {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ConfigurationRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.System.Configuration.ConfigurationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ConfigurationRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.System.Configuration.ConfigurationRequestBuilder WithUrl(string rawUrl)
         {
-            return new ConfigurationRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.System.Configuration.ConfigurationRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

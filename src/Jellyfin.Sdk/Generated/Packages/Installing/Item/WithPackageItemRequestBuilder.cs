@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Packages.Installing.Item {
+namespace Jellyfin.Sdk.Generated.Packages.Installing.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Packages\Installing\{packageId}
     /// </summary>
-    public class WithPackageItemRequestBuilder : BaseRequestBuilder 
+    public class WithPackageItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="WithPackageItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Packages.Installing.Item.WithPackageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Packages.Installing.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithPackageItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Packages.Installing.Item.WithPackageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,11 +68,11 @@ namespace Jellyfin.Sdk.Generated.Packages.Installing.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithPackageItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Packages.Installing.Item.WithPackageItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithPackageItemRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Packages.Installing.Item.WithPackageItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithPackageItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Packages.Installing.Item.WithPackageItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

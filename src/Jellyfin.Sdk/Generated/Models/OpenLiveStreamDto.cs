@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Open live stream dto.
     /// </summary>
-    public class OpenLiveStreamDto : IParsable 
+    public class OpenLiveStreamDto : IParsable
     {
         /// <summary>Gets or sets the audio stream index.</summary>
         public int? AudioStreamIndex { get; set; }
@@ -23,10 +24,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the device play protocols.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MediaProtocol?>? DirectPlayProtocols { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaProtocol?>? DirectPlayProtocols { get; set; }
 #nullable restore
 #else
-        public List<MediaProtocol?> DirectPlayProtocols { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaProtocol?> DirectPlayProtocols { get; set; }
 #endif
         /// <summary>Gets or sets a value indicating whether to enable direct play.</summary>
         public bool? EnableDirectPlay { get; set; }
@@ -63,12 +64,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OpenLiveStreamDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.OpenLiveStreamDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OpenLiveStreamDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.OpenLiveStreamDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OpenLiveStreamDto();
+            return new Jellyfin.Sdk.Generated.Models.OpenLiveStreamDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,19 +79,19 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AudioStreamIndex", n => { AudioStreamIndex = n.GetIntValue(); } },
-                {"DeviceProfile", n => { DeviceProfile = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.DeviceProfile>(Jellyfin.Sdk.Generated.Models.DeviceProfile.CreateFromDiscriminatorValue); } },
-                {"DirectPlayProtocols", n => { DirectPlayProtocols = n.GetCollectionOfEnumValues<MediaProtocol>()?.ToList(); } },
-                {"EnableDirectPlay", n => { EnableDirectPlay = n.GetBoolValue(); } },
-                {"EnableDirectStream", n => { EnableDirectStream = n.GetBoolValue(); } },
-                {"ItemId", n => { ItemId = n.GetGuidValue(); } },
-                {"MaxAudioChannels", n => { MaxAudioChannels = n.GetIntValue(); } },
-                {"MaxStreamingBitrate", n => { MaxStreamingBitrate = n.GetIntValue(); } },
-                {"OpenToken", n => { OpenToken = n.GetStringValue(); } },
-                {"PlaySessionId", n => { PlaySessionId = n.GetStringValue(); } },
-                {"StartTimeTicks", n => { StartTimeTicks = n.GetLongValue(); } },
-                {"SubtitleStreamIndex", n => { SubtitleStreamIndex = n.GetIntValue(); } },
-                {"UserId", n => { UserId = n.GetGuidValue(); } },
+                { "AudioStreamIndex", n => { AudioStreamIndex = n.GetIntValue(); } },
+                { "DeviceProfile", n => { DeviceProfile = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.DeviceProfile>(Jellyfin.Sdk.Generated.Models.DeviceProfile.CreateFromDiscriminatorValue); } },
+                { "DirectPlayProtocols", n => { DirectPlayProtocols = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.MediaProtocol>()?.ToList(); } },
+                { "EnableDirectPlay", n => { EnableDirectPlay = n.GetBoolValue(); } },
+                { "EnableDirectStream", n => { EnableDirectStream = n.GetBoolValue(); } },
+                { "ItemId", n => { ItemId = n.GetGuidValue(); } },
+                { "MaxAudioChannels", n => { MaxAudioChannels = n.GetIntValue(); } },
+                { "MaxStreamingBitrate", n => { MaxStreamingBitrate = n.GetIntValue(); } },
+                { "OpenToken", n => { OpenToken = n.GetStringValue(); } },
+                { "PlaySessionId", n => { PlaySessionId = n.GetStringValue(); } },
+                { "StartTimeTicks", n => { StartTimeTicks = n.GetLongValue(); } },
+                { "SubtitleStreamIndex", n => { SubtitleStreamIndex = n.GetIntValue(); } },
+                { "UserId", n => { UserId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -102,7 +103,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("AudioStreamIndex", AudioStreamIndex);
             writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.DeviceProfile>("DeviceProfile", DeviceProfile);
-            writer.WriteCollectionOfEnumValues<MediaProtocol>("DirectPlayProtocols", DirectPlayProtocols);
+            writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.MediaProtocol>("DirectPlayProtocols", DirectPlayProtocols);
             writer.WriteBoolValue("EnableDirectPlay", EnableDirectPlay);
             writer.WriteBoolValue("EnableDirectStream", EnableDirectStream);
             writer.WriteGuidValue("ItemId", ItemId);

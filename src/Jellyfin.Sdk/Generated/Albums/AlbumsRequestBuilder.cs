@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Albums {
+namespace Jellyfin.Sdk.Generated.Albums
+{
     /// <summary>
     /// Builds and executes requests for operations under \Albums
     /// </summary>
-    public class AlbumsRequestBuilder : BaseRequestBuilder 
+    public class AlbumsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Albums.item collection</summary>
         /// <param name="position">The item id.</param>
-        /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
-        public WithItemItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Albums.Item.WithItemItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Albums.Item.WithItemItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("itemId", position);
-                return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Albums.Item.WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AlbumsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Albums.AlbumsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Albums {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AlbumsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Albums.AlbumsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

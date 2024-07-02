@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class TranscodingProfile : IParsable 
+    public class TranscodingProfile : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The AudioCodec property</summary>
@@ -22,10 +23,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The Conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProfileCondition>? Conditions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ProfileCondition>? Conditions { get; set; }
 #nullable restore
 #else
-        public List<ProfileCondition> Conditions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ProfileCondition> Conditions { get; set; }
 #endif
         /// <summary>The Container property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,7 +37,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Container { get; set; }
 #endif
         /// <summary>The Context property</summary>
-        public TranscodingProfile_Context? Context { get; set; }
+        public Jellyfin.Sdk.Generated.Models.TranscodingProfile_Context? Context { get; set; }
         /// <summary>The CopyTimestamps property</summary>
         public bool? CopyTimestamps { get; set; }
         /// <summary>The EnableMpegtsM2TsMode property</summary>
@@ -56,13 +57,13 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The MinSegments property</summary>
         public int? MinSegments { get; set; }
         /// <summary>Media streaming protocol.Lowercase for backwards compatibility.</summary>
-        public TranscodingProfile_Protocol? Protocol { get; set; }
+        public Jellyfin.Sdk.Generated.Models.TranscodingProfile_Protocol? Protocol { get; set; }
         /// <summary>The SegmentLength property</summary>
         public int? SegmentLength { get; set; }
         /// <summary>The TranscodeSeekInfo property</summary>
-        public TranscodingProfile_TranscodeSeekInfo? TranscodeSeekInfo { get; set; }
+        public Jellyfin.Sdk.Generated.Models.TranscodingProfile_TranscodeSeekInfo? TranscodeSeekInfo { get; set; }
         /// <summary>The Type property</summary>
-        public TranscodingProfile_Type? Type { get; set; }
+        public Jellyfin.Sdk.Generated.Models.TranscodingProfile_Type? Type { get; set; }
         /// <summary>The VideoCodec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,22 +73,22 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string VideoCodec { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TranscodingProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Models.TranscodingProfile"/> and sets the default values.
         /// </summary>
         public TranscodingProfile()
         {
-            Context = TranscodingProfile_Context.Streaming;
-            TranscodeSeekInfo = TranscodingProfile_TranscodeSeekInfo.Auto;
+            Context = Jellyfin.Sdk.Generated.Models.TranscodingProfile_Context.Streaming;
+            TranscodeSeekInfo = Jellyfin.Sdk.Generated.Models.TranscodingProfile_TranscodeSeekInfo.Auto;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TranscodingProfile"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.TranscodingProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TranscodingProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.TranscodingProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TranscodingProfile();
+            return new Jellyfin.Sdk.Generated.Models.TranscodingProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,22 +98,22 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AudioCodec", n => { AudioCodec = n.GetStringValue(); } },
-                {"BreakOnNonKeyFrames", n => { BreakOnNonKeyFrames = n.GetBoolValue(); } },
-                {"Conditions", n => { Conditions = n.GetCollectionOfObjectValues<ProfileCondition>(ProfileCondition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"Container", n => { Container = n.GetStringValue(); } },
-                {"Context", n => { Context = n.GetEnumValue<TranscodingProfile_Context>(); } },
-                {"CopyTimestamps", n => { CopyTimestamps = n.GetBoolValue(); } },
-                {"EnableMpegtsM2TsMode", n => { EnableMpegtsM2TsMode = n.GetBoolValue(); } },
-                {"EnableSubtitlesInManifest", n => { EnableSubtitlesInManifest = n.GetBoolValue(); } },
-                {"EstimateContentLength", n => { EstimateContentLength = n.GetBoolValue(); } },
-                {"MaxAudioChannels", n => { MaxAudioChannels = n.GetStringValue(); } },
-                {"MinSegments", n => { MinSegments = n.GetIntValue(); } },
-                {"Protocol", n => { Protocol = n.GetEnumValue<TranscodingProfile_Protocol>(); } },
-                {"SegmentLength", n => { SegmentLength = n.GetIntValue(); } },
-                {"TranscodeSeekInfo", n => { TranscodeSeekInfo = n.GetEnumValue<TranscodingProfile_TranscodeSeekInfo>(); } },
-                {"Type", n => { Type = n.GetEnumValue<TranscodingProfile_Type>(); } },
-                {"VideoCodec", n => { VideoCodec = n.GetStringValue(); } },
+                { "AudioCodec", n => { AudioCodec = n.GetStringValue(); } },
+                { "BreakOnNonKeyFrames", n => { BreakOnNonKeyFrames = n.GetBoolValue(); } },
+                { "Conditions", n => { Conditions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ProfileCondition>(Jellyfin.Sdk.Generated.Models.ProfileCondition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "Container", n => { Container = n.GetStringValue(); } },
+                { "Context", n => { Context = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.TranscodingProfile_Context>(); } },
+                { "CopyTimestamps", n => { CopyTimestamps = n.GetBoolValue(); } },
+                { "EnableMpegtsM2TsMode", n => { EnableMpegtsM2TsMode = n.GetBoolValue(); } },
+                { "EnableSubtitlesInManifest", n => { EnableSubtitlesInManifest = n.GetBoolValue(); } },
+                { "EstimateContentLength", n => { EstimateContentLength = n.GetBoolValue(); } },
+                { "MaxAudioChannels", n => { MaxAudioChannels = n.GetStringValue(); } },
+                { "MinSegments", n => { MinSegments = n.GetIntValue(); } },
+                { "Protocol", n => { Protocol = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.TranscodingProfile_Protocol>(); } },
+                { "SegmentLength", n => { SegmentLength = n.GetIntValue(); } },
+                { "TranscodeSeekInfo", n => { TranscodeSeekInfo = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.TranscodingProfile_TranscodeSeekInfo>(); } },
+                { "Type", n => { Type = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.TranscodingProfile_Type>(); } },
+                { "VideoCodec", n => { VideoCodec = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -124,19 +125,19 @@ namespace Jellyfin.Sdk.Generated.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("AudioCodec", AudioCodec);
             writer.WriteBoolValue("BreakOnNonKeyFrames", BreakOnNonKeyFrames);
-            writer.WriteCollectionOfObjectValues<ProfileCondition>("Conditions", Conditions);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ProfileCondition>("Conditions", Conditions);
             writer.WriteStringValue("Container", Container);
-            writer.WriteEnumValue<TranscodingProfile_Context>("Context", Context);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.TranscodingProfile_Context>("Context", Context);
             writer.WriteBoolValue("CopyTimestamps", CopyTimestamps);
             writer.WriteBoolValue("EnableMpegtsM2TsMode", EnableMpegtsM2TsMode);
             writer.WriteBoolValue("EnableSubtitlesInManifest", EnableSubtitlesInManifest);
             writer.WriteBoolValue("EstimateContentLength", EstimateContentLength);
             writer.WriteStringValue("MaxAudioChannels", MaxAudioChannels);
             writer.WriteIntValue("MinSegments", MinSegments);
-            writer.WriteEnumValue<TranscodingProfile_Protocol>("Protocol", Protocol);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.TranscodingProfile_Protocol>("Protocol", Protocol);
             writer.WriteIntValue("SegmentLength", SegmentLength);
-            writer.WriteEnumValue<TranscodingProfile_TranscodeSeekInfo>("TranscodeSeekInfo", TranscodeSeekInfo);
-            writer.WriteEnumValue<TranscodingProfile_Type>("Type", Type);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.TranscodingProfile_TranscodeSeekInfo>("TranscodeSeekInfo", TranscodeSeekInfo);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.TranscodingProfile_Type>("Type", Type);
             writer.WriteStringValue("VideoCodec", VideoCodec);
         }
     }

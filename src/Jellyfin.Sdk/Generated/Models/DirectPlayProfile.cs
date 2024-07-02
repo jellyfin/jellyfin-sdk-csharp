@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class DirectPlayProfile : IParsable 
+    public class DirectPlayProfile : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The AudioCodec property</summary>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Container { get; set; }
 #endif
         /// <summary>The Type property</summary>
-        public DirectPlayProfile_Type? Type { get; set; }
+        public Jellyfin.Sdk.Generated.Models.DirectPlayProfile_Type? Type { get; set; }
         /// <summary>The VideoCodec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,12 +39,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DirectPlayProfile"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.DirectPlayProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DirectPlayProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.DirectPlayProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DirectPlayProfile();
+            return new Jellyfin.Sdk.Generated.Models.DirectPlayProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,10 +54,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AudioCodec", n => { AudioCodec = n.GetStringValue(); } },
-                {"Container", n => { Container = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<DirectPlayProfile_Type>(); } },
-                {"VideoCodec", n => { VideoCodec = n.GetStringValue(); } },
+                { "AudioCodec", n => { AudioCodec = n.GetStringValue(); } },
+                { "Container", n => { Container = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.DirectPlayProfile_Type>(); } },
+                { "VideoCodec", n => { VideoCodec = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +69,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("AudioCodec", AudioCodec);
             writer.WriteStringValue("Container", Container);
-            writer.WriteEnumValue<DirectPlayProfile_Type>("Type", Type);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.DirectPlayProfile_Type>("Type", Type);
             writer.WriteStringValue("VideoCodec", VideoCodec);
         }
     }

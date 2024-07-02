@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Items.Item.Refresh {
+namespace Jellyfin.Sdk.Generated.Items.Item.Refresh
+{
     /// <summary>
     /// Builds and executes requests for operations under \Items\{itemId}\Refresh
     /// </summary>
-    public class RefreshRequestBuilder : BaseRequestBuilder 
+    public class RefreshRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="RefreshRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.Refresh.RefreshRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Refresh {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RefreshRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.Refresh.RefreshRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,20 +36,20 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Refresh {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<RefreshRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.Refresh.RefreshRequestBuilder.RefreshRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<RefreshRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.Refresh.RefreshRequestBuilder.RefreshRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -59,11 +60,11 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Refresh {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<RefreshRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.Refresh.RefreshRequestBuilder.RefreshRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<RefreshRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.Refresh.RefreshRequestBuilder.RefreshRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -74,11 +75,11 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Refresh {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RefreshRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Items.Item.Refresh.RefreshRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RefreshRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Items.Item.Refresh.RefreshRequestBuilder WithUrl(string rawUrl)
         {
-            return new RefreshRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Items.Item.Refresh.RefreshRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Refreshes metadata for an item.
@@ -87,10 +88,10 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Refresh {
         {
             /// <summary>(Optional) Specifies the image refresh mode.</summary>
             [QueryParameter("imageRefreshMode")]
-            public PostImageRefreshModeQueryParameterType? ImageRefreshMode { get; set; }
+            public Jellyfin.Sdk.Generated.Items.Item.Refresh.MetadataRefreshMode? ImageRefreshMode { get; set; }
             /// <summary>(Optional) Specifies the metadata refresh mode.</summary>
             [QueryParameter("metadataRefreshMode")]
-            public PostMetadataRefreshModeQueryParameterType? MetadataRefreshMode { get; set; }
+            public Jellyfin.Sdk.Generated.Items.Item.Refresh.MetadataRefreshMode? MetadataRefreshMode { get; set; }
             /// <summary>(Optional) Determines if images should be replaced. Only applicable if mode is FullRefresh.</summary>
             [QueryParameter("replaceAllImages")]
             public bool? ReplaceAllImages { get; set; }

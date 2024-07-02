@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class FileSystemEntryInfo.
     /// </summary>
-    public class FileSystemEntryInfo : IParsable 
+    public class FileSystemEntryInfo : IParsable
     {
         /// <summary>Gets the name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -27,16 +28,16 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Path { get; set; }
 #endif
         /// <summary>Gets the type.</summary>
-        public FileSystemEntryInfo_Type? Type { get; set; }
+        public Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileSystemEntryInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static FileSystemEntryInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FileSystemEntryInfo();
+            return new Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,9 +47,9 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"Path", n => { Path = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<FileSystemEntryInfo_Type>(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "Path", n => { Path = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo_Type>(); } },
             };
         }
         /// <summary>
@@ -60,7 +61,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("Path", Path);
-            writer.WriteEnumValue<FileSystemEntryInfo_Type>("Type", Type);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo_Type>("Type", Type);
         }
     }
 }

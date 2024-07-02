@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Gets or sets the custom prefs.
     /// </summary>
-    public class DisplayPreferencesDto_CustomPrefs : IAdditionalDataHolder, IParsable 
+    public class DisplayPreferencesDto_CustomPrefs : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="DisplayPreferencesDto_CustomPrefs"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_CustomPrefs"/> and sets the default values.
         /// </summary>
         public DisplayPreferencesDto_CustomPrefs()
         {
@@ -22,12 +23,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DisplayPreferencesDto_CustomPrefs"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_CustomPrefs"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DisplayPreferencesDto_CustomPrefs CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_CustomPrefs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DisplayPreferencesDto_CustomPrefs();
+            return new Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_CustomPrefs();
         }
         /// <summary>
         /// The deserialization information for the current model

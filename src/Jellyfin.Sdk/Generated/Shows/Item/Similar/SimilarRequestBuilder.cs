@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Shows.Item.Similar {
+namespace Jellyfin.Sdk.Generated.Shows.Item.Similar
+{
     /// <summary>
     /// Builds and executes requests for operations under \Shows\{item-id}\Similar
     /// </summary>
-    public class SimilarRequestBuilder : BaseRequestBuilder 
+    public class SimilarRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="SimilarRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Shows.Item.Similar.SimilarRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Similar {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SimilarRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Shows.Item.Similar.SimilarRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Similar {
         /// <summary>
         /// Gets similar items.
         /// </summary>
-        /// <returns>A <see cref="BaseItemDtoQueryResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<SimilarRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Shows.Item.Similar.SimilarRequestBuilder.SimilarRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<SimilarRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Shows.Item.Similar.SimilarRequestBuilder.SimilarRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult>(requestInfo, Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets similar items.
@@ -55,11 +56,11 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Similar {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SimilarRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Shows.Item.Similar.SimilarRequestBuilder.SimilarRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SimilarRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Shows.Item.Similar.SimilarRequestBuilder.SimilarRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -70,11 +71,11 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Similar {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SimilarRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Shows.Item.Similar.SimilarRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SimilarRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Shows.Item.Similar.SimilarRequestBuilder WithUrl(string rawUrl)
         {
-            return new SimilarRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Shows.Item.Similar.SimilarRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets similar items.
@@ -95,11 +96,11 @@ namespace Jellyfin.Sdk.Generated.Shows.Item.Similar {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public ItemFields[]? Fields { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ItemFields[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public ItemFields[] Fields { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ItemFields[] Fields { get; set; }
 #endif
             /// <summary>Optional. The maximum number of records to return.</summary>
             [QueryParameter("limit")]

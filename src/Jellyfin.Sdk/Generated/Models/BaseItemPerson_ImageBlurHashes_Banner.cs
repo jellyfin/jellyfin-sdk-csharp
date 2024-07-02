@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class BaseItemPerson_ImageBlurHashes_Banner : IAdditionalDataHolder, IParsable 
+    public class BaseItemPerson_ImageBlurHashes_Banner : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="BaseItemPerson_ImageBlurHashes_Banner"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Models.BaseItemPerson_ImageBlurHashes_Banner"/> and sets the default values.
         /// </summary>
         public BaseItemPerson_ImageBlurHashes_Banner()
         {
@@ -21,12 +22,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BaseItemPerson_ImageBlurHashes_Banner"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.BaseItemPerson_ImageBlurHashes_Banner"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BaseItemPerson_ImageBlurHashes_Banner CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.BaseItemPerson_ImageBlurHashes_Banner CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BaseItemPerson_ImageBlurHashes_Banner();
+            return new Jellyfin.Sdk.Generated.Models.BaseItemPerson_ImageBlurHashes_Banner();
         }
         /// <summary>
         /// The deserialization information for the current model

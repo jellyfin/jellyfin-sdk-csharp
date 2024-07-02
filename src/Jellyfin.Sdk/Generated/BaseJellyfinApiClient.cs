@@ -61,269 +61,270 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated {
+namespace Jellyfin.Sdk.Generated
+{
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    public class BaseJellyfinApiClient : BaseRequestBuilder 
+    public class BaseJellyfinApiClient : BaseRequestBuilder
     {
         /// <summary>The Albums property</summary>
-        public AlbumsRequestBuilder Albums
+        public Jellyfin.Sdk.Generated.Albums.AlbumsRequestBuilder Albums
         {
-            get => new AlbumsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Albums.AlbumsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Artists property</summary>
-        public ArtistsRequestBuilder Artists
+        public Jellyfin.Sdk.Generated.Artists.ArtistsRequestBuilder Artists
         {
-            get => new ArtistsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Artists.ArtistsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Audio property</summary>
-        public AudioRequestBuilder Audio
+        public Jellyfin.Sdk.Generated.Audio.AudioRequestBuilder Audio
         {
-            get => new AudioRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Audio.AudioRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Auth property</summary>
-        public AuthRequestBuilder Auth
+        public Jellyfin.Sdk.Generated.Auth.AuthRequestBuilder Auth
         {
-            get => new AuthRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Auth.AuthRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Branding property</summary>
-        public BrandingRequestBuilder Branding
+        public Jellyfin.Sdk.Generated.Branding.BrandingRequestBuilder Branding
         {
-            get => new BrandingRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Branding.BrandingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Channels property</summary>
-        public ChannelsRequestBuilder Channels
+        public Jellyfin.Sdk.Generated.Channels.ChannelsRequestBuilder Channels
         {
-            get => new ChannelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Channels.ChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ClientLog property</summary>
-        public ClientLogRequestBuilder ClientLog
+        public Jellyfin.Sdk.Generated.ClientLog.ClientLogRequestBuilder ClientLog
         {
-            get => new ClientLogRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.ClientLog.ClientLogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Collections property</summary>
-        public CollectionsRequestBuilder Collections
+        public Jellyfin.Sdk.Generated.Collections.CollectionsRequestBuilder Collections
         {
-            get => new CollectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Collections.CollectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Devices property</summary>
-        public DevicesRequestBuilder Devices
+        public Jellyfin.Sdk.Generated.Devices.DevicesRequestBuilder Devices
         {
-            get => new DevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Devices.DevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The DisplayPreferences property</summary>
-        public DisplayPreferencesRequestBuilder DisplayPreferences
+        public Jellyfin.Sdk.Generated.DisplayPreferences.DisplayPreferencesRequestBuilder DisplayPreferences
         {
-            get => new DisplayPreferencesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.DisplayPreferences.DisplayPreferencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Environment property</summary>
-        public EnvironmentRequestBuilder Environment
+        public Jellyfin.Sdk.Generated.EnvironmentNamespace.EnvironmentRequestBuilder Environment
         {
-            get => new EnvironmentRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.EnvironmentNamespace.EnvironmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The FallbackFont property</summary>
-        public FallbackFontRequestBuilder FallbackFont
+        public Jellyfin.Sdk.Generated.FallbackFont.FallbackFontRequestBuilder FallbackFont
         {
-            get => new FallbackFontRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.FallbackFont.FallbackFontRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Genres property</summary>
-        public GenresRequestBuilder Genres
+        public Jellyfin.Sdk.Generated.Genres.GenresRequestBuilder Genres
         {
-            get => new GenresRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Genres.GenresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The GetUtcTime property</summary>
-        public GetUtcTimeRequestBuilder GetUtcTime
+        public Jellyfin.Sdk.Generated.GetUtcTime.GetUtcTimeRequestBuilder GetUtcTime
         {
-            get => new GetUtcTimeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.GetUtcTime.GetUtcTimeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Items property</summary>
-        public ItemsRequestBuilder Items
+        public Jellyfin.Sdk.Generated.Items.ItemsRequestBuilder Items
         {
-            get => new ItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Libraries property</summary>
-        public LibrariesRequestBuilder Libraries
+        public Jellyfin.Sdk.Generated.Libraries.LibrariesRequestBuilder Libraries
         {
-            get => new LibrariesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Libraries.LibrariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Library property</summary>
-        public LibraryRequestBuilder Library
+        public Jellyfin.Sdk.Generated.Library.LibraryRequestBuilder Library
         {
-            get => new LibraryRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.LibraryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The LiveStreams property</summary>
-        public LiveStreamsRequestBuilder LiveStreams
+        public Jellyfin.Sdk.Generated.LiveStreams.LiveStreamsRequestBuilder LiveStreams
         {
-            get => new LiveStreamsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.LiveStreams.LiveStreamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The LiveTv property</summary>
-        public LiveTvRequestBuilder LiveTv
+        public Jellyfin.Sdk.Generated.LiveTv.LiveTvRequestBuilder LiveTv
         {
-            get => new LiveTvRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.LiveTv.LiveTvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Localization property</summary>
-        public LocalizationRequestBuilder Localization
+        public Jellyfin.Sdk.Generated.Localization.LocalizationRequestBuilder Localization
         {
-            get => new LocalizationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Localization.LocalizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Movies property</summary>
-        public MoviesRequestBuilder Movies
+        public Jellyfin.Sdk.Generated.Movies.MoviesRequestBuilder Movies
         {
-            get => new MoviesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Movies.MoviesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The MusicGenres property</summary>
-        public MusicGenresRequestBuilder MusicGenres
+        public Jellyfin.Sdk.Generated.MusicGenres.MusicGenresRequestBuilder MusicGenres
         {
-            get => new MusicGenresRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.MusicGenres.MusicGenresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Packages property</summary>
-        public PackagesRequestBuilder Packages
+        public Jellyfin.Sdk.Generated.Packages.PackagesRequestBuilder Packages
         {
-            get => new PackagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Packages.PackagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Persons property</summary>
-        public PersonsRequestBuilder Persons
+        public Jellyfin.Sdk.Generated.Persons.PersonsRequestBuilder Persons
         {
-            get => new PersonsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Persons.PersonsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Playback property</summary>
-        public PlaybackRequestBuilder Playback
+        public Jellyfin.Sdk.Generated.Playback.PlaybackRequestBuilder Playback
         {
-            get => new PlaybackRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Playback.PlaybackRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The PlayingItems property</summary>
-        public PlayingItemsRequestBuilder PlayingItems
+        public Jellyfin.Sdk.Generated.PlayingItems.PlayingItemsRequestBuilder PlayingItems
         {
-            get => new PlayingItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.PlayingItems.PlayingItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Playlists property</summary>
-        public PlaylistsRequestBuilder Playlists
+        public Jellyfin.Sdk.Generated.Playlists.PlaylistsRequestBuilder Playlists
         {
-            get => new PlaylistsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Playlists.PlaylistsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Plugins property</summary>
-        public PluginsRequestBuilder Plugins
+        public Jellyfin.Sdk.Generated.Plugins.PluginsRequestBuilder Plugins
         {
-            get => new PluginsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Plugins.PluginsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Providers property</summary>
-        public ProvidersRequestBuilder Providers
+        public Jellyfin.Sdk.Generated.Providers.ProvidersRequestBuilder Providers
         {
-            get => new ProvidersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Providers.ProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The QuickConnect property</summary>
-        public QuickConnectRequestBuilder QuickConnect
+        public Jellyfin.Sdk.Generated.QuickConnect.QuickConnectRequestBuilder QuickConnect
         {
-            get => new QuickConnectRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.QuickConnect.QuickConnectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Repositories property</summary>
-        public RepositoriesRequestBuilder Repositories
+        public Jellyfin.Sdk.Generated.Repositories.RepositoriesRequestBuilder Repositories
         {
-            get => new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Repositories.RepositoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ScheduledTasks property</summary>
-        public ScheduledTasksRequestBuilder ScheduledTasks
+        public Jellyfin.Sdk.Generated.ScheduledTasks.ScheduledTasksRequestBuilder ScheduledTasks
         {
-            get => new ScheduledTasksRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.ScheduledTasks.ScheduledTasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Search property</summary>
-        public SearchRequestBuilder Search
+        public Jellyfin.Sdk.Generated.Search.SearchRequestBuilder Search
         {
-            get => new SearchRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Sessions property</summary>
-        public SessionsRequestBuilder Sessions
+        public Jellyfin.Sdk.Generated.Sessions.SessionsRequestBuilder Sessions
         {
-            get => new SessionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Shows property</summary>
-        public ShowsRequestBuilder Shows
+        public Jellyfin.Sdk.Generated.Shows.ShowsRequestBuilder Shows
         {
-            get => new ShowsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Shows.ShowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Songs property</summary>
-        public SongsRequestBuilder Songs
+        public Jellyfin.Sdk.Generated.Songs.SongsRequestBuilder Songs
         {
-            get => new SongsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Songs.SongsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Startup property</summary>
-        public StartupRequestBuilder Startup
+        public Jellyfin.Sdk.Generated.Startup.StartupRequestBuilder Startup
         {
-            get => new StartupRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Startup.StartupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Studios property</summary>
-        public StudiosRequestBuilder Studios
+        public Jellyfin.Sdk.Generated.Studios.StudiosRequestBuilder Studios
         {
-            get => new StudiosRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Studios.StudiosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The SyncPlay property</summary>
-        public SyncPlayRequestBuilder SyncPlay
+        public Jellyfin.Sdk.Generated.SyncPlay.SyncPlayRequestBuilder SyncPlay
         {
-            get => new SyncPlayRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.SyncPlay.SyncPlayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The System property</summary>
-        public SystemRequestBuilder System
+        public Jellyfin.Sdk.Generated.System.SystemRequestBuilder System
         {
-            get => new SystemRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.SystemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Tmdb property</summary>
-        public TmdbRequestBuilder Tmdb
+        public Jellyfin.Sdk.Generated.Tmdb.TmdbRequestBuilder Tmdb
         {
-            get => new TmdbRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Tmdb.TmdbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Trailers property</summary>
-        public TrailersRequestBuilder Trailers
+        public Jellyfin.Sdk.Generated.Trailers.TrailersRequestBuilder Trailers
         {
-            get => new TrailersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Trailers.TrailersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The UserFavoriteItems property</summary>
-        public UserFavoriteItemsRequestBuilder UserFavoriteItems
+        public Jellyfin.Sdk.Generated.UserFavoriteItems.UserFavoriteItemsRequestBuilder UserFavoriteItems
         {
-            get => new UserFavoriteItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.UserFavoriteItems.UserFavoriteItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The UserImage property</summary>
-        public UserImageRequestBuilder UserImage
+        public Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder UserImage
         {
-            get => new UserImageRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The UserItems property</summary>
-        public UserItemsRequestBuilder UserItems
+        public Jellyfin.Sdk.Generated.UserItems.UserItemsRequestBuilder UserItems
         {
-            get => new UserItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.UserItems.UserItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The UserPlayedItems property</summary>
-        public UserPlayedItemsRequestBuilder UserPlayedItems
+        public Jellyfin.Sdk.Generated.UserPlayedItems.UserPlayedItemsRequestBuilder UserPlayedItems
         {
-            get => new UserPlayedItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.UserPlayedItems.UserPlayedItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Users property</summary>
-        public UsersRequestBuilder Users
+        public Jellyfin.Sdk.Generated.Users.UsersRequestBuilder Users
         {
-            get => new UsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The UserViews property</summary>
-        public UserViewsRequestBuilder UserViews
+        public Jellyfin.Sdk.Generated.UserViews.UserViewsRequestBuilder UserViews
         {
-            get => new UserViewsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.UserViews.UserViewsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Videos property</summary>
-        public VideosRequestBuilder Videos
+        public Jellyfin.Sdk.Generated.Videos.VideosRequestBuilder Videos
         {
-            get => new VideosRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.VideosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The web property</summary>
-        public WebRequestBuilder Web
+        public Jellyfin.Sdk.Generated.Web.WebRequestBuilder Web
         {
-            get => new WebRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Web.WebRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Years property</summary>
-        public YearsRequestBuilder Years
+        public Jellyfin.Sdk.Generated.Years.YearsRequestBuilder Years
         {
-            get => new YearsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Years.YearsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="BaseJellyfinApiClient"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.BaseJellyfinApiClient"/> and sets the default values.
         /// </summary>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public BaseJellyfinApiClient(IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}", new Dictionary<string, object>())

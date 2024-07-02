@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Library.Refresh {
+namespace Jellyfin.Sdk.Generated.Library.Refresh
+{
     /// <summary>
     /// Builds and executes requests for operations under \Library\Refresh
     /// </summary>
-    public class RefreshRequestBuilder : BaseRequestBuilder 
+    public class RefreshRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="RefreshRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Library.Refresh.RefreshRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Library.Refresh {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RefreshRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Library.Refresh.RefreshRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,11 +68,11 @@ namespace Jellyfin.Sdk.Generated.Library.Refresh {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RefreshRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Library.Refresh.RefreshRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RefreshRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Library.Refresh.RefreshRequestBuilder WithUrl(string rawUrl)
         {
-            return new RefreshRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Library.Refresh.RefreshRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.LiveTv.LiveRecordings {
+namespace Jellyfin.Sdk.Generated.LiveTv.LiveRecordings
+{
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\LiveRecordings
     /// </summary>
-    public class LiveRecordingsRequestBuilder : BaseRequestBuilder 
+    public class LiveRecordingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.item collection</summary>
         /// <param name="position">Recording id.</param>
-        /// <returns>A <see cref="WithRecordingItemRequestBuilder"/></returns>
-        public WithRecordingItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.Item.WithRecordingItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.Item.WithRecordingItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("recordingId", position);
-                return new WithRecordingItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.Item.WithRecordingItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="LiveRecordingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.LiveRecordingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveRecordings {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LiveRecordingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.LiveRecordingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

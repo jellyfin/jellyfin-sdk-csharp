@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class PlaybackInfoResponse.
     /// </summary>
-    public class PlaybackInfoResponse : IParsable 
+    public class PlaybackInfoResponse : IParsable
     {
         /// <summary>Gets or sets the error code.</summary>
-        public PlaybackInfoResponse_ErrorCode? ErrorCode { get; set; }
+        public Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse_ErrorCode? ErrorCode { get; set; }
         /// <summary>Gets or sets the media sources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MediaSourceInfo>? MediaSources { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaSourceInfo>? MediaSources { get; set; }
 #nullable restore
 #else
-        public List<MediaSourceInfo> MediaSources { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaSourceInfo> MediaSources { get; set; }
 #endif
         /// <summary>Gets or sets the play session identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,12 +32,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlaybackInfoResponse"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlaybackInfoResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlaybackInfoResponse();
+            return new Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,9 +47,9 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ErrorCode", n => { ErrorCode = n.GetEnumValue<PlaybackInfoResponse_ErrorCode>(); } },
-                {"MediaSources", n => { MediaSources = n.GetCollectionOfObjectValues<MediaSourceInfo>(MediaSourceInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"PlaySessionId", n => { PlaySessionId = n.GetStringValue(); } },
+                { "ErrorCode", n => { ErrorCode = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse_ErrorCode>(); } },
+                { "MediaSources", n => { MediaSources = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.MediaSourceInfo>(Jellyfin.Sdk.Generated.Models.MediaSourceInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "PlaySessionId", n => { PlaySessionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,8 +59,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<PlaybackInfoResponse_ErrorCode>("ErrorCode", ErrorCode);
-            writer.WriteCollectionOfObjectValues<MediaSourceInfo>("MediaSources", MediaSources);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse_ErrorCode>("ErrorCode", ErrorCode);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.MediaSourceInfo>("MediaSources", MediaSources);
             writer.WriteStringValue("PlaySessionId", PlaySessionId);
         }
     }

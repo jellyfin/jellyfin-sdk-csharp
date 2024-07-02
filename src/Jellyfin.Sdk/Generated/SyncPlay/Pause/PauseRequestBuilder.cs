@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.SyncPlay.Pause {
+namespace Jellyfin.Sdk.Generated.SyncPlay.Pause
+{
     /// <summary>
     /// Builds and executes requests for operations under \SyncPlay\Pause
     /// </summary>
-    public class PauseRequestBuilder : BaseRequestBuilder 
+    public class PauseRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="PauseRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.SyncPlay.Pause.PauseRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.Pause {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PauseRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.SyncPlay.Pause.PauseRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,11 +68,11 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.Pause {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PauseRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.SyncPlay.Pause.PauseRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PauseRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.SyncPlay.Pause.PauseRequestBuilder WithUrl(string rawUrl)
         {
-            return new PauseRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.SyncPlay.Pause.PauseRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

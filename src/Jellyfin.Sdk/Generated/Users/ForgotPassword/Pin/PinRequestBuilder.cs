@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Users.ForgotPassword.Pin {
+namespace Jellyfin.Sdk.Generated.Users.ForgotPassword.Pin
+{
     /// <summary>
     /// Builds and executes requests for operations under \Users\ForgotPassword\Pin
     /// </summary>
-    public class PinRequestBuilder : BaseRequestBuilder 
+    public class PinRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="PinRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Users.ForgotPassword.Pin.PinRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Users.ForgotPassword.Pin {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PinRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Users.ForgotPassword.Pin.PinRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,22 +34,22 @@ namespace Jellyfin.Sdk.Generated.Users.ForgotPassword.Pin {
         /// <summary>
         /// Redeems a forgot password pin.
         /// </summary>
-        /// <returns>A <see cref="PinRedeemResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.PinRedeemResult"/></returns>
         /// <param name="body">Forgot Password Pin enter request body DTO.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PinRedeemResult?> PostAsync(ForgotPasswordPinDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.PinRedeemResult?> PostAsync(Jellyfin.Sdk.Generated.Models.ForgotPasswordPinDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PinRedeemResult> PostAsync(ForgotPasswordPinDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.PinRedeemResult> PostAsync(Jellyfin.Sdk.Generated.Models.ForgotPasswordPinDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<PinRedeemResult>(requestInfo, PinRedeemResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.PinRedeemResult>(requestInfo, Jellyfin.Sdk.Generated.Models.PinRedeemResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Redeems a forgot password pin.
@@ -58,11 +59,11 @@ namespace Jellyfin.Sdk.Generated.Users.ForgotPassword.Pin {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ForgotPasswordPinDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.ForgotPasswordPinDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ForgotPasswordPinDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.ForgotPasswordPinDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -75,11 +76,11 @@ namespace Jellyfin.Sdk.Generated.Users.ForgotPassword.Pin {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PinRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Users.ForgotPassword.Pin.PinRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PinRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Users.ForgotPassword.Pin.PinRequestBuilder WithUrl(string rawUrl)
         {
-            return new PinRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Users.ForgotPassword.Pin.PinRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

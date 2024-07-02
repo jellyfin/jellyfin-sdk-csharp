@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.SyncPlay.Unpause {
+namespace Jellyfin.Sdk.Generated.SyncPlay.Unpause
+{
     /// <summary>
     /// Builds and executes requests for operations under \SyncPlay\Unpause
     /// </summary>
-    public class UnpauseRequestBuilder : BaseRequestBuilder 
+    public class UnpauseRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="UnpauseRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.SyncPlay.Unpause.UnpauseRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.Unpause {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UnpauseRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.SyncPlay.Unpause.UnpauseRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,11 +68,11 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.Unpause {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UnpauseRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.SyncPlay.Unpause.UnpauseRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UnpauseRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.SyncPlay.Unpause.UnpauseRequestBuilder WithUrl(string rawUrl)
         {
-            return new UnpauseRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.SyncPlay.Unpause.UnpauseRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

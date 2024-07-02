@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.System.WakeOnLanInfo {
+namespace Jellyfin.Sdk.Generated.System.WakeOnLanInfo
+{
     /// <summary>
     /// Builds and executes requests for operations under \System\WakeOnLanInfo
     /// </summary>
-    public class WakeOnLanInfoRequestBuilder : BaseRequestBuilder 
+    public class WakeOnLanInfoRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="WakeOnLanInfoRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.System.WakeOnLanInfo {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WakeOnLanInfoRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -73,12 +74,12 @@ namespace Jellyfin.Sdk.Generated.System.WakeOnLanInfo {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WakeOnLanInfoRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public WakeOnLanInfoRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder WithUrl(string rawUrl)
         {
-            return new WakeOnLanInfoRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

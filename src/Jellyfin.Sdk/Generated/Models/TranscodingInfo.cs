@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class TranscodingInfo : IParsable 
+    public class TranscodingInfo : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The AudioChannels property</summary>
@@ -34,7 +35,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The Framerate property</summary>
         public float? Framerate { get; set; }
         /// <summary>The HardwareAccelerationType property</summary>
-        public TranscodingInfo_HardwareAccelerationType? HardwareAccelerationType { get; set; }
+        public Jellyfin.Sdk.Generated.Models.TranscodingInfo_HardwareAccelerationType? HardwareAccelerationType { get; set; }
         /// <summary>The Height property</summary>
         public int? Height { get; set; }
         /// <summary>The IsAudioDirect property</summary>
@@ -44,10 +45,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The TranscodeReasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TranscodeReason?>? TranscodeReasons { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.TranscodeReason?>? TranscodeReasons { get; set; }
 #nullable restore
 #else
-        public List<TranscodeReason?> TranscodeReasons { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.TranscodeReason?> TranscodeReasons { get; set; }
 #endif
         /// <summary>The VideoCodec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,12 +63,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TranscodingInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.TranscodingInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TranscodingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.TranscodingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TranscodingInfo();
+            return new Jellyfin.Sdk.Generated.Models.TranscodingInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,19 +78,19 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AudioChannels", n => { AudioChannels = n.GetIntValue(); } },
-                {"AudioCodec", n => { AudioCodec = n.GetStringValue(); } },
-                {"Bitrate", n => { Bitrate = n.GetIntValue(); } },
-                {"CompletionPercentage", n => { CompletionPercentage = n.GetDoubleValue(); } },
-                {"Container", n => { Container = n.GetStringValue(); } },
-                {"Framerate", n => { Framerate = n.GetFloatValue(); } },
-                {"HardwareAccelerationType", n => { HardwareAccelerationType = n.GetEnumValue<TranscodingInfo_HardwareAccelerationType>(); } },
-                {"Height", n => { Height = n.GetIntValue(); } },
-                {"IsAudioDirect", n => { IsAudioDirect = n.GetBoolValue(); } },
-                {"IsVideoDirect", n => { IsVideoDirect = n.GetBoolValue(); } },
-                {"TranscodeReasons", n => { TranscodeReasons = n.GetCollectionOfEnumValues<TranscodeReason>()?.ToList(); } },
-                {"VideoCodec", n => { VideoCodec = n.GetStringValue(); } },
-                {"Width", n => { Width = n.GetIntValue(); } },
+                { "AudioChannels", n => { AudioChannels = n.GetIntValue(); } },
+                { "AudioCodec", n => { AudioCodec = n.GetStringValue(); } },
+                { "Bitrate", n => { Bitrate = n.GetIntValue(); } },
+                { "CompletionPercentage", n => { CompletionPercentage = n.GetDoubleValue(); } },
+                { "Container", n => { Container = n.GetStringValue(); } },
+                { "Framerate", n => { Framerate = n.GetFloatValue(); } },
+                { "HardwareAccelerationType", n => { HardwareAccelerationType = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.TranscodingInfo_HardwareAccelerationType>(); } },
+                { "Height", n => { Height = n.GetIntValue(); } },
+                { "IsAudioDirect", n => { IsAudioDirect = n.GetBoolValue(); } },
+                { "IsVideoDirect", n => { IsVideoDirect = n.GetBoolValue(); } },
+                { "TranscodeReasons", n => { TranscodeReasons = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.TranscodeReason>()?.ToList(); } },
+                { "VideoCodec", n => { VideoCodec = n.GetStringValue(); } },
+                { "Width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -105,11 +106,11 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteDoubleValue("CompletionPercentage", CompletionPercentage);
             writer.WriteStringValue("Container", Container);
             writer.WriteFloatValue("Framerate", Framerate);
-            writer.WriteEnumValue<TranscodingInfo_HardwareAccelerationType>("HardwareAccelerationType", HardwareAccelerationType);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.TranscodingInfo_HardwareAccelerationType>("HardwareAccelerationType", HardwareAccelerationType);
             writer.WriteIntValue("Height", Height);
             writer.WriteBoolValue("IsAudioDirect", IsAudioDirect);
             writer.WriteBoolValue("IsVideoDirect", IsVideoDirect);
-            writer.WriteCollectionOfEnumValues<TranscodeReason>("TranscodeReasons", TranscodeReasons);
+            writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.TranscodeReason>("TranscodeReasons", TranscodeReasons);
             writer.WriteStringValue("VideoCodec", VideoCodec);
             writer.WriteIntValue("Width", Width);
         }

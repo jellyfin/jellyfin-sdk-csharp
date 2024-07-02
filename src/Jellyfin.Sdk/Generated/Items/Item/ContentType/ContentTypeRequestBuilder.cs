@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Items.Item.ContentType {
+namespace Jellyfin.Sdk.Generated.Items.Item.ContentType
+{
     /// <summary>
     /// Builds and executes requests for operations under \Items\{itemId}\ContentType
     /// </summary>
-    public class ContentTypeRequestBuilder : BaseRequestBuilder 
+    public class ContentTypeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ContentTypeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.ContentType.ContentTypeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ContentType {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ContentTypeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.ContentType.ContentTypeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,20 +36,20 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ContentType {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<ContentTypeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.ContentType.ContentTypeRequestBuilder.ContentTypeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<ContentTypeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.ContentType.ContentTypeRequestBuilder.ContentTypeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -59,11 +60,11 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ContentType {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<ContentTypeRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.ContentType.ContentTypeRequestBuilder.ContentTypeRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<ContentTypeRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.ContentType.ContentTypeRequestBuilder.ContentTypeRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -74,11 +75,11 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ContentType {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ContentTypeRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Items.Item.ContentType.ContentTypeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ContentTypeRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Items.Item.ContentType.ContentTypeRequestBuilder WithUrl(string rawUrl)
         {
-            return new ContentTypeRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Items.Item.ContentType.ContentTypeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Updates an item&apos;s content type.

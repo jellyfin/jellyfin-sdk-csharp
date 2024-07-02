@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Artists.AlbumArtists {
+namespace Jellyfin.Sdk.Generated.Artists.AlbumArtists
+{
     /// <summary>
     /// Builds and executes requests for operations under \Artists\AlbumArtists
     /// </summary>
-    public class AlbumArtistsRequestBuilder : BaseRequestBuilder 
+    public class AlbumArtistsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="AlbumArtistsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Artists.AlbumArtists.AlbumArtistsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Artists.AlbumArtists {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AlbumArtistsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Artists.AlbumArtists.AlbumArtistsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.Artists.AlbumArtists {
         /// <summary>
         /// Gets all album artists from a given item, folder, or the entire library.
         /// </summary>
-        /// <returns>A <see cref="BaseItemDtoQueryResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<AlbumArtistsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Artists.AlbumArtists.AlbumArtistsRequestBuilder.AlbumArtistsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<AlbumArtistsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Artists.AlbumArtists.AlbumArtistsRequestBuilder.AlbumArtistsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult>(requestInfo, Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets all album artists from a given item, folder, or the entire library.
@@ -55,11 +56,11 @@ namespace Jellyfin.Sdk.Generated.Artists.AlbumArtists {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AlbumArtistsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Artists.AlbumArtists.AlbumArtistsRequestBuilder.AlbumArtistsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AlbumArtistsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Artists.AlbumArtists.AlbumArtistsRequestBuilder.AlbumArtistsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -70,11 +71,11 @@ namespace Jellyfin.Sdk.Generated.Artists.AlbumArtists {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AlbumArtistsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Artists.AlbumArtists.AlbumArtistsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AlbumArtistsRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Artists.AlbumArtists.AlbumArtistsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AlbumArtistsRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Artists.AlbumArtists.AlbumArtistsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets all album artists from a given item, folder, or the entire library.
@@ -88,11 +89,11 @@ namespace Jellyfin.Sdk.Generated.Artists.AlbumArtists {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("enableImageTypes")]
-            public ImageType[]? EnableImageTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ImageType[]? EnableImageTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("enableImageTypes")]
-            public ImageType[] EnableImageTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ImageType[] EnableImageTypes { get; set; }
 #endif
             /// <summary>Total record count.</summary>
             [QueryParameter("enableTotalRecordCount")]
@@ -104,31 +105,31 @@ namespace Jellyfin.Sdk.Generated.Artists.AlbumArtists {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("excludeItemTypes")]
-            public BaseItemKind[]? ExcludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[]? ExcludeItemTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("excludeItemTypes")]
-            public BaseItemKind[] ExcludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[] ExcludeItemTypes { get; set; }
 #endif
             /// <summary>Optional. Specify additional fields of information to return in the output.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public ItemFields[]? Fields { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ItemFields[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public ItemFields[] Fields { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ItemFields[] Fields { get; set; }
 #endif
             /// <summary>Optional. Specify additional filters to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filters")]
-            public ItemFilter[]? Filters { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ItemFilter[]? Filters { get; set; }
 #nullable restore
 #else
             [QueryParameter("filters")]
-            public ItemFilter[] Filters { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ItemFilter[] Filters { get; set; }
 #endif
             /// <summary>Optional. If specified, results will be filtered based on genre id. This allows multiple, pipe delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -157,11 +158,11 @@ namespace Jellyfin.Sdk.Generated.Artists.AlbumArtists {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("includeItemTypes")]
-            public BaseItemKind[]? IncludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[]? IncludeItemTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("includeItemTypes")]
-            public BaseItemKind[] IncludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[] IncludeItemTypes { get; set; }
 #endif
             /// <summary>Optional filter by items that are marked as favorite, or not.</summary>
             [QueryParameter("isFavorite")]
@@ -173,11 +174,11 @@ namespace Jellyfin.Sdk.Generated.Artists.AlbumArtists {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mediaTypes")]
-            public MediaType[]? MediaTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.MediaType[]? MediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("mediaTypes")]
-            public MediaType[] MediaTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.MediaType[] MediaTypes { get; set; }
 #endif
             /// <summary>Optional filter by minimum community rating.</summary>
             [QueryParameter("minCommunityRating")]
@@ -269,11 +270,11 @@ namespace Jellyfin.Sdk.Generated.Artists.AlbumArtists {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
-            public ItemSortBy[]? SortBy { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ItemSortBy[]? SortBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("sortBy")]
-            public ItemSortBy[] SortBy { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ItemSortBy[] SortBy { get; set; }
 #endif
             /// <summary>Sort Order - Ascending,Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

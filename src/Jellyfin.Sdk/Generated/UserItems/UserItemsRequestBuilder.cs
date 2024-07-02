@@ -7,31 +7,32 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.UserItems {
+namespace Jellyfin.Sdk.Generated.UserItems
+{
     /// <summary>
     /// Builds and executes requests for operations under \UserItems
     /// </summary>
-    public class UserItemsRequestBuilder : BaseRequestBuilder 
+    public class UserItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Resume property</summary>
-        public ResumeRequestBuilder Resume
+        public Jellyfin.Sdk.Generated.UserItems.Resume.ResumeRequestBuilder Resume
         {
-            get => new ResumeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.UserItems.Resume.ResumeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.UserItems.item collection</summary>
         /// <param name="position">The item id.</param>
-        /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
-        public WithItemItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.UserItems.Item.WithItemItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.UserItems.Item.WithItemItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("itemId", position);
-                return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.UserItems.Item.WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserItemsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserItems.UserItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,7 +40,7 @@ namespace Jellyfin.Sdk.Generated.UserItems {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserItemsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserItems.UserItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

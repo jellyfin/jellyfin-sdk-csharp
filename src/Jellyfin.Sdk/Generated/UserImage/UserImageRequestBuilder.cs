@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.UserImage {
+namespace Jellyfin.Sdk.Generated.UserImage
+{
     /// <summary>
     /// Builds and executes requests for operations under \UserImage
     /// </summary>
-    public class UserImageRequestBuilder : BaseRequestBuilder 
+    public class UserImageRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="UserImageRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.UserImage {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserImageRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,20 +36,20 @@ namespace Jellyfin.Sdk.Generated.UserImage {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 403 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<UserImageRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<UserImageRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", ProblemDetails.CreateFromDiscriminatorValue},
+                { "403", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -58,22 +59,22 @@ namespace Jellyfin.Sdk.Generated.UserImage {
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 400 status code</exception>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 400 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<UserImageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<UserImageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"400", ProblemDetails.CreateFromDiscriminatorValue},
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "400", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -83,22 +84,22 @@ namespace Jellyfin.Sdk.Generated.UserImage {
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 400 status code</exception>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 400 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> HeadAsync(Action<RequestConfiguration<UserImageRequestBuilderHeadQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> HeadAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderHeadQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> HeadAsync(Action<RequestConfiguration<UserImageRequestBuilderHeadQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> HeadAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderHeadQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToHeadRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"400", ProblemDetails.CreateFromDiscriminatorValue},
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "400", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -108,25 +109,25 @@ namespace Jellyfin.Sdk.Generated.UserImage {
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 400 status code</exception>
-        /// <exception cref="ProblemDetails">When receiving a 403 status code</exception>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 400 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 403 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Stream body, Action<RequestConfiguration<UserImageRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Stream body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(Stream body, Action<RequestConfiguration<UserImageRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Stream body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"400", ProblemDetails.CreateFromDiscriminatorValue},
-                {"403", ProblemDetails.CreateFromDiscriminatorValue},
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "400", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "403", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -137,11 +138,11 @@ namespace Jellyfin.Sdk.Generated.UserImage {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<UserImageRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<UserImageRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -156,11 +157,11 @@ namespace Jellyfin.Sdk.Generated.UserImage {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserImageRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserImageRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -175,11 +176,11 @@ namespace Jellyfin.Sdk.Generated.UserImage {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<UserImageRequestBuilderHeadQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderHeadQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<UserImageRequestBuilderHeadQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderHeadQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.HEAD, UrlTemplate, PathParameters);
@@ -195,11 +196,11 @@ namespace Jellyfin.Sdk.Generated.UserImage {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Stream body, Action<RequestConfiguration<UserImageRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Stream body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Stream body, Action<RequestConfiguration<UserImageRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Stream body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -212,11 +213,11 @@ namespace Jellyfin.Sdk.Generated.UserImage {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UserImageRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserImageRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder WithUrl(string rawUrl)
         {
-            return new UserImageRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Delete the user&apos;s image.
@@ -263,7 +264,7 @@ namespace Jellyfin.Sdk.Generated.UserImage {
 #endif
             /// <summary>Determines the output format of the image - original,gif,jpg,png.</summary>
             [QueryParameter("format")]
-            public GetFormatQueryParameterType? Format { get; set; }
+            public Jellyfin.Sdk.Generated.UserImage.ImageFormat? Format { get; set; }
             /// <summary>The fixed image height to return.</summary>
             [QueryParameter("height")]
             public int? Height { get; set; }
@@ -338,7 +339,7 @@ namespace Jellyfin.Sdk.Generated.UserImage {
 #endif
             /// <summary>Determines the output format of the image - original,gif,jpg,png.</summary>
             [QueryParameter("format")]
-            public HeadFormatQueryParameterType? Format { get; set; }
+            public Jellyfin.Sdk.Generated.UserImage.ImageFormat? Format { get; set; }
             /// <summary>The fixed image height to return.</summary>
             [QueryParameter("height")]
             public int? Height { get; set; }

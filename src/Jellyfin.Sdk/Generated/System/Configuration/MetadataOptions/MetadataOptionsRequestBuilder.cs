@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions {
+namespace Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions
+{
     /// <summary>
     /// Builds and executes requests for operations under \System\Configuration\MetadataOptions
     /// </summary>
-    public class MetadataOptionsRequestBuilder : BaseRequestBuilder 
+    public class MetadataOptionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Default property</summary>
-        public DefaultRequestBuilder Default
+        public Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.Default.DefaultRequestBuilder Default
         {
-            get => new DefaultRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.Default.DefaultRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="MetadataOptionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.MetadataOptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MetadataOptionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.MetadataOptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

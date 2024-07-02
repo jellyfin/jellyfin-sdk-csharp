@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class RecommendationDto : IParsable 
+    public class RecommendationDto : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The BaselineItemName property</summary>
@@ -22,22 +23,22 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The Items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BaseItemDto>? Items { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.BaseItemDto>? Items { get; set; }
 #nullable restore
 #else
-        public List<BaseItemDto> Items { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.BaseItemDto> Items { get; set; }
 #endif
         /// <summary>The RecommendationType property</summary>
-        public RecommendationDto_RecommendationType? RecommendationType { get; set; }
+        public Jellyfin.Sdk.Generated.Models.RecommendationDto_RecommendationType? RecommendationType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecommendationDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.RecommendationDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RecommendationDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.RecommendationDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecommendationDto();
+            return new Jellyfin.Sdk.Generated.Models.RecommendationDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,10 +48,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"BaselineItemName", n => { BaselineItemName = n.GetStringValue(); } },
-                {"CategoryId", n => { CategoryId = n.GetGuidValue(); } },
-                {"Items", n => { Items = n.GetCollectionOfObjectValues<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"RecommendationType", n => { RecommendationType = n.GetEnumValue<RecommendationDto_RecommendationType>(); } },
+                { "BaselineItemName", n => { BaselineItemName = n.GetStringValue(); } },
+                { "CategoryId", n => { CategoryId = n.GetGuidValue(); } },
+                { "Items", n => { Items = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.BaseItemDto>(Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "RecommendationType", n => { RecommendationType = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.RecommendationDto_RecommendationType>(); } },
             };
         }
         /// <summary>
@@ -62,8 +63,8 @@ namespace Jellyfin.Sdk.Generated.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("BaselineItemName", BaselineItemName);
             writer.WriteGuidValue("CategoryId", CategoryId);
-            writer.WriteCollectionOfObjectValues<BaseItemDto>("Items", Items);
-            writer.WriteEnumValue<RecommendationDto_RecommendationType>("RecommendationType", RecommendationType);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.BaseItemDto>("Items", Items);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.RecommendationDto_RecommendationType>("RecommendationType", RecommendationType);
         }
     }
 }

@@ -8,31 +8,32 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item {
+namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Videos\{item-id}\{mediaSource-id}\Subtitles\{index-id}
     /// </summary>
-    public class IndexItemRequestBuilder : BaseRequestBuilder 
+    public class IndexItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The subtitlesM3u8 property</summary>
-        public SubtitlesM3u8RequestBuilder SubtitlesM3u8
+        public Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.SubtitlesM3u8.SubtitlesM3u8RequestBuilder SubtitlesM3u8
         {
-            get => new SubtitlesM3u8RequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.SubtitlesM3u8.SubtitlesM3u8RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item.item.Subtitles.item.item collection</summary>
         /// <param name="position">The (route) start position of the subtitle in ticks.</param>
-        /// <returns>A <see cref="WithRouteStartPositionTicksItemRequestBuilder"/></returns>
-        public WithRouteStartPositionTicksItemRequestBuilder this[long position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.WithRouteStartPositionTicksItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.WithRouteStartPositionTicksItemRequestBuilder this[long position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("routeStartPositionTicks", position);
-                return new WithRouteStartPositionTicksItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.WithRouteStartPositionTicksItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IndexItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.IndexItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -40,7 +41,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="IndexItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.IndexItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,12 +51,12 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item {
         /// <summary>
         /// Builds and executes requests for operations under \Videos\{item-id}\{mediaSource-id}\Subtitles\{index-id}\Stream.{routeFormat}
         /// </summary>
-        /// <returns>A <see cref="StreamWithRouteFormatRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.StreamWithRouteFormat.StreamWithRouteFormatRequestBuilder"/></returns>
         /// <param name="routeFormat">The (route) format of the returned subtitle.</param>
-        public StreamWithRouteFormatRequestBuilder StreamWithRouteFormat(string routeFormat)
+        public Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.StreamWithRouteFormat.StreamWithRouteFormatRequestBuilder StreamWithRouteFormat(string routeFormat)
         {
             if(string.IsNullOrEmpty(routeFormat)) throw new ArgumentNullException(nameof(routeFormat));
-            return new StreamWithRouteFormatRequestBuilder(PathParameters, RequestAdapter, routeFormat);
+            return new Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.StreamWithRouteFormat.StreamWithRouteFormatRequestBuilder(PathParameters, RequestAdapter, routeFormat);
         }
     }
 }

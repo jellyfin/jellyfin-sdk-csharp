@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Movies.Item {
+namespace Jellyfin.Sdk.Generated.Movies.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Movies\{itemId}
     /// </summary>
-    public class WithItemItemRequestBuilder : BaseRequestBuilder 
+    public class WithItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Similar property</summary>
-        public SimilarRequestBuilder Similar
+        public Jellyfin.Sdk.Generated.Movies.Item.Similar.SimilarRequestBuilder Similar
         {
-            get => new SimilarRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Movies.Item.Similar.SimilarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Movies.Item.WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.Movies.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Movies.Item.WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.UserItems.Resume {
+namespace Jellyfin.Sdk.Generated.UserItems.Resume
+{
     /// <summary>
     /// Builds and executes requests for operations under \UserItems\Resume
     /// </summary>
-    public class ResumeRequestBuilder : BaseRequestBuilder 
+    public class ResumeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ResumeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserItems.Resume.ResumeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.UserItems.Resume {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResumeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserItems.Resume.ResumeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.UserItems.Resume {
         /// <summary>
         /// Gets items based on a query.
         /// </summary>
-        /// <returns>A <see cref="BaseItemDtoQueryResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<ResumeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserItems.Resume.ResumeRequestBuilder.ResumeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<ResumeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserItems.Resume.ResumeRequestBuilder.ResumeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult>(requestInfo, Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets items based on a query.
@@ -55,11 +56,11 @@ namespace Jellyfin.Sdk.Generated.UserItems.Resume {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResumeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserItems.Resume.ResumeRequestBuilder.ResumeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResumeRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserItems.Resume.ResumeRequestBuilder.ResumeRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -70,11 +71,11 @@ namespace Jellyfin.Sdk.Generated.UserItems.Resume {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ResumeRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.UserItems.Resume.ResumeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ResumeRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.UserItems.Resume.ResumeRequestBuilder WithUrl(string rawUrl)
         {
-            return new ResumeRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.UserItems.Resume.ResumeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets items based on a query.
@@ -88,11 +89,11 @@ namespace Jellyfin.Sdk.Generated.UserItems.Resume {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("enableImageTypes")]
-            public ImageType[]? EnableImageTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ImageType[]? EnableImageTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("enableImageTypes")]
-            public ImageType[] EnableImageTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ImageType[] EnableImageTypes { get; set; }
 #endif
             /// <summary>Optional. Enable the total record count.</summary>
             [QueryParameter("enableTotalRecordCount")]
@@ -107,21 +108,21 @@ namespace Jellyfin.Sdk.Generated.UserItems.Resume {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("excludeItemTypes")]
-            public BaseItemKind[]? ExcludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[]? ExcludeItemTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("excludeItemTypes")]
-            public BaseItemKind[] ExcludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[] ExcludeItemTypes { get; set; }
 #endif
             /// <summary>Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public ItemFields[]? Fields { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ItemFields[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public ItemFields[] Fields { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ItemFields[] Fields { get; set; }
 #endif
             /// <summary>Optional. The max number of images to return, per image type.</summary>
             [QueryParameter("imageTypeLimit")]
@@ -130,11 +131,11 @@ namespace Jellyfin.Sdk.Generated.UserItems.Resume {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("includeItemTypes")]
-            public BaseItemKind[]? IncludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[]? IncludeItemTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("includeItemTypes")]
-            public BaseItemKind[] IncludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[] IncludeItemTypes { get; set; }
 #endif
             /// <summary>The item limit.</summary>
             [QueryParameter("limit")]
@@ -143,11 +144,11 @@ namespace Jellyfin.Sdk.Generated.UserItems.Resume {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mediaTypes")]
-            public MediaType[]? MediaTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.MediaType[]? MediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("mediaTypes")]
-            public MediaType[] MediaTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.MediaType[] MediaTypes { get; set; }
 #endif
             /// <summary>Specify this to localize the search to a specific item or folder. Omit to use the root.</summary>
             [QueryParameter("parentId")]

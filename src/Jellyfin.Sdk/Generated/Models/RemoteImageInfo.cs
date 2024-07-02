@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class RemoteImageInfo.
     /// </summary>
-    public class RemoteImageInfo : IParsable 
+    public class RemoteImageInfo : IParsable
     {
         /// <summary>Gets or sets the community rating.</summary>
         public double? CommunityRating { get; set; }
@@ -31,7 +32,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string ProviderName { get; set; }
 #endif
         /// <summary>Gets or sets the type of the rating.</summary>
-        public RemoteImageInfo_RatingType? RatingType { get; set; }
+        public Jellyfin.Sdk.Generated.Models.RemoteImageInfo_RatingType? RatingType { get; set; }
         /// <summary>Gets or sets a url used for previewing a smaller version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +42,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string ThumbnailUrl { get; set; }
 #endif
         /// <summary>Gets or sets the type.</summary>
-        public RemoteImageInfo_Type? Type { get; set; }
+        public Jellyfin.Sdk.Generated.Models.RemoteImageInfo_Type? Type { get; set; }
         /// <summary>Gets or sets the URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,12 +58,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemoteImageInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.RemoteImageInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RemoteImageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.RemoteImageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemoteImageInfo();
+            return new Jellyfin.Sdk.Generated.Models.RemoteImageInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,16 +73,16 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"CommunityRating", n => { CommunityRating = n.GetDoubleValue(); } },
-                {"Height", n => { Height = n.GetIntValue(); } },
-                {"Language", n => { Language = n.GetStringValue(); } },
-                {"ProviderName", n => { ProviderName = n.GetStringValue(); } },
-                {"RatingType", n => { RatingType = n.GetEnumValue<RemoteImageInfo_RatingType>(); } },
-                {"ThumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<RemoteImageInfo_Type>(); } },
-                {"Url", n => { Url = n.GetStringValue(); } },
-                {"VoteCount", n => { VoteCount = n.GetIntValue(); } },
-                {"Width", n => { Width = n.GetIntValue(); } },
+                { "CommunityRating", n => { CommunityRating = n.GetDoubleValue(); } },
+                { "Height", n => { Height = n.GetIntValue(); } },
+                { "Language", n => { Language = n.GetStringValue(); } },
+                { "ProviderName", n => { ProviderName = n.GetStringValue(); } },
+                { "RatingType", n => { RatingType = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.RemoteImageInfo_RatingType>(); } },
+                { "ThumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.RemoteImageInfo_Type>(); } },
+                { "Url", n => { Url = n.GetStringValue(); } },
+                { "VoteCount", n => { VoteCount = n.GetIntValue(); } },
+                { "Width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -95,9 +96,9 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("Height", Height);
             writer.WriteStringValue("Language", Language);
             writer.WriteStringValue("ProviderName", ProviderName);
-            writer.WriteEnumValue<RemoteImageInfo_RatingType>("RatingType", RatingType);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.RemoteImageInfo_RatingType>("RatingType", RatingType);
             writer.WriteStringValue("ThumbnailUrl", ThumbnailUrl);
-            writer.WriteEnumValue<RemoteImageInfo_Type>("Type", Type);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.RemoteImageInfo_Type>("Type", Type);
             writer.WriteStringValue("Url", Url);
             writer.WriteIntValue("VoteCount", VoteCount);
             writer.WriteIntValue("Width", Width);

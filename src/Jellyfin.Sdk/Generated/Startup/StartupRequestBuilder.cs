@@ -10,39 +10,40 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Startup {
+namespace Jellyfin.Sdk.Generated.Startup
+{
     /// <summary>
     /// Builds and executes requests for operations under \Startup
     /// </summary>
-    public class StartupRequestBuilder : BaseRequestBuilder 
+    public class StartupRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Complete property</summary>
-        public CompleteRequestBuilder Complete
+        public Jellyfin.Sdk.Generated.Startup.Complete.CompleteRequestBuilder Complete
         {
-            get => new CompleteRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Startup.Complete.CompleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Configuration property</summary>
-        public ConfigurationRequestBuilder Configuration
+        public Jellyfin.Sdk.Generated.Startup.Configuration.ConfigurationRequestBuilder Configuration
         {
-            get => new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Startup.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The FirstUser property</summary>
-        public FirstUserRequestBuilder FirstUser
+        public Jellyfin.Sdk.Generated.Startup.FirstUser.FirstUserRequestBuilder FirstUser
         {
-            get => new FirstUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Startup.FirstUser.FirstUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The RemoteAccess property</summary>
-        public RemoteAccessRequestBuilder RemoteAccess
+        public Jellyfin.Sdk.Generated.Startup.RemoteAccess.RemoteAccessRequestBuilder RemoteAccess
         {
-            get => new RemoteAccessRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Startup.RemoteAccess.RemoteAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The User property</summary>
-        public UserRequestBuilder User
+        public Jellyfin.Sdk.Generated.Startup.User.UserRequestBuilder User
         {
-            get => new UserRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Startup.User.UserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="StartupRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Startup.StartupRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +51,7 @@ namespace Jellyfin.Sdk.Generated.Startup {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="StartupRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Startup.StartupRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class ImageInfo.
     /// </summary>
-    public class ImageInfo : IParsable 
+    public class ImageInfo : IParsable
     {
         /// <summary>Gets or sets the blurhash.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,7 +32,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string ImageTag { get; set; }
 #endif
         /// <summary>Gets or sets the type of the image.</summary>
-        public ImageInfo_ImageType? ImageType { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ImageInfo_ImageType? ImageType { get; set; }
         /// <summary>Gets or sets the path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,12 +48,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ImageInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ImageInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ImageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.ImageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ImageInfo();
+            return new Jellyfin.Sdk.Generated.Models.ImageInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,14 +63,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"BlurHash", n => { BlurHash = n.GetStringValue(); } },
-                {"Height", n => { Height = n.GetIntValue(); } },
-                {"ImageIndex", n => { ImageIndex = n.GetIntValue(); } },
-                {"ImageTag", n => { ImageTag = n.GetStringValue(); } },
-                {"ImageType", n => { ImageType = n.GetEnumValue<ImageInfo_ImageType>(); } },
-                {"Path", n => { Path = n.GetStringValue(); } },
-                {"Size", n => { Size = n.GetLongValue(); } },
-                {"Width", n => { Width = n.GetIntValue(); } },
+                { "BlurHash", n => { BlurHash = n.GetStringValue(); } },
+                { "Height", n => { Height = n.GetIntValue(); } },
+                { "ImageIndex", n => { ImageIndex = n.GetIntValue(); } },
+                { "ImageTag", n => { ImageTag = n.GetStringValue(); } },
+                { "ImageType", n => { ImageType = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.ImageInfo_ImageType>(); } },
+                { "Path", n => { Path = n.GetStringValue(); } },
+                { "Size", n => { Size = n.GetLongValue(); } },
+                { "Width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -83,7 +84,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("Height", Height);
             writer.WriteIntValue("ImageIndex", ImageIndex);
             writer.WriteStringValue("ImageTag", ImageTag);
-            writer.WriteEnumValue<ImageInfo_ImageType>("ImageType", ImageType);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.ImageInfo_ImageType>("ImageType", ImageType);
             writer.WriteStringValue("Path", Path);
             writer.WriteLongValue("Size", Size);
             writer.WriteIntValue("Width", Width);

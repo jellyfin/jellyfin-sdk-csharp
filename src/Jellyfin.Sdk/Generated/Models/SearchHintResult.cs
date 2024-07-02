@@ -4,31 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class SearchHintResult.
     /// </summary>
-    public class SearchHintResult : IParsable 
+    public class SearchHintResult : IParsable
     {
         /// <summary>Gets the search hints.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SearchHint>? SearchHints { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.SearchHint>? SearchHints { get; set; }
 #nullable restore
 #else
-        public List<SearchHint> SearchHints { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.SearchHint> SearchHints { get; set; }
 #endif
         /// <summary>Gets the total record count.</summary>
         public int? TotalRecordCount { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SearchHintResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.SearchHintResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SearchHintResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.SearchHintResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SearchHintResult();
+            return new Jellyfin.Sdk.Generated.Models.SearchHintResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -38,8 +39,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"SearchHints", n => { SearchHints = n.GetCollectionOfObjectValues<SearchHint>(SearchHint.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"TotalRecordCount", n => { TotalRecordCount = n.GetIntValue(); } },
+                { "SearchHints", n => { SearchHints = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.SearchHint>(Jellyfin.Sdk.Generated.Models.SearchHint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "TotalRecordCount", n => { TotalRecordCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -49,7 +50,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<SearchHint>("SearchHints", SearchHints);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.SearchHint>("SearchHints", SearchHints);
             writer.WriteIntValue("TotalRecordCount", TotalRecordCount);
         }
     }

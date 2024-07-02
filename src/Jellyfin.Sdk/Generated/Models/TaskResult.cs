@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class TaskExecutionInfo.
     /// </summary>
-    public class TaskResult : IParsable 
+    public class TaskResult : IParsable
     {
         /// <summary>Gets or sets the end time UTC.</summary>
         public DateTimeOffset? EndTimeUtc { get; set; }
@@ -55,16 +56,16 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the start time UTC.</summary>
         public DateTimeOffset? StartTimeUtc { get; set; }
         /// <summary>Gets or sets the status.</summary>
-        public TaskResult_Status? Status { get; set; }
+        public Jellyfin.Sdk.Generated.Models.TaskResult_Status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TaskResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.TaskResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TaskResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.TaskResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TaskResult();
+            return new Jellyfin.Sdk.Generated.Models.TaskResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,14 +75,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"EndTimeUtc", n => { EndTimeUtc = n.GetDateTimeOffsetValue(); } },
-                {"ErrorMessage", n => { ErrorMessage = n.GetStringValue(); } },
-                {"Id", n => { Id = n.GetStringValue(); } },
-                {"Key", n => { Key = n.GetStringValue(); } },
-                {"LongErrorMessage", n => { LongErrorMessage = n.GetStringValue(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"StartTimeUtc", n => { StartTimeUtc = n.GetDateTimeOffsetValue(); } },
-                {"Status", n => { Status = n.GetEnumValue<TaskResult_Status>(); } },
+                { "EndTimeUtc", n => { EndTimeUtc = n.GetDateTimeOffsetValue(); } },
+                { "ErrorMessage", n => { ErrorMessage = n.GetStringValue(); } },
+                { "Id", n => { Id = n.GetStringValue(); } },
+                { "Key", n => { Key = n.GetStringValue(); } },
+                { "LongErrorMessage", n => { LongErrorMessage = n.GetStringValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "StartTimeUtc", n => { StartTimeUtc = n.GetDateTimeOffsetValue(); } },
+                { "Status", n => { Status = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.TaskResult_Status>(); } },
             };
         }
         /// <summary>
@@ -98,7 +99,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("LongErrorMessage", LongErrorMessage);
             writer.WriteStringValue("Name", Name);
             writer.WriteDateTimeOffsetValue("StartTimeUtc", StartTimeUtc);
-            writer.WriteEnumValue<TaskResult_Status>("Status", Status);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.TaskResult_Status>("Status", Status);
         }
     }
 }

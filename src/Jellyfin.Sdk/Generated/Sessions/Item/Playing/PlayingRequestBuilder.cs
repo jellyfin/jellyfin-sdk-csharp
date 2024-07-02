@@ -8,26 +8,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Sessions.Item.Playing {
+namespace Jellyfin.Sdk.Generated.Sessions.Item.Playing
+{
     /// <summary>
     /// Builds and executes requests for operations under \Sessions\{sessionId}\Playing
     /// </summary>
-    public class PlayingRequestBuilder : BaseRequestBuilder 
+    public class PlayingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Sessions.item.Playing.item collection</summary>
         /// <param name="position">The MediaBrowser.Model.Session.PlaystateCommand.</param>
-        /// <returns>A <see cref="WithCommandItemRequestBuilder"/></returns>
-        public WithCommandItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Sessions.Item.Playing.Item.WithCommandItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Sessions.Item.Playing.Item.WithCommandItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("command", position);
-                return new WithCommandItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Sessions.Item.Playing.Item.WithCommandItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlayingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.Item.Playing.PlayingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +36,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Playing {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlayingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.Item.Playing.PlayingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,11 +50,11 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Playing {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<PlayingRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Sessions.Item.Playing.PlayingRequestBuilder.PlayingRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<PlayingRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Sessions.Item.Playing.PlayingRequestBuilder.PlayingRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -66,11 +67,11 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Playing {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<PlayingRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Sessions.Item.Playing.PlayingRequestBuilder.PlayingRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<PlayingRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Sessions.Item.Playing.PlayingRequestBuilder.PlayingRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -80,11 +81,11 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Playing {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PlayingRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Sessions.Item.Playing.PlayingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PlayingRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Sessions.Item.Playing.PlayingRequestBuilder WithUrl(string rawUrl)
         {
-            return new PlayingRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Sessions.Item.Playing.PlayingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Instructs a session to play an item.
@@ -116,7 +117,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Playing {
 #endif
             /// <summary>The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now.</summary>
             [QueryParameter("playCommand")]
-            public PostPlayCommandQueryParameterType? PlayCommand { get; set; }
+            public Jellyfin.Sdk.Generated.Sessions.Item.Playing.PlayCommand? PlayCommand { get; set; }
             /// <summary>Optional. The start index.</summary>
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class DeviceInfo : IParsable 
+    public class DeviceInfo : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Gets or sets the access token.</summary>
@@ -36,10 +37,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the capabilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ClientCapabilities? Capabilities { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ClientCapabilities? Capabilities { get; set; }
 #nullable restore
 #else
-        public ClientCapabilities Capabilities { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ClientCapabilities Capabilities { get; set; }
 #endif
         /// <summary>The CustomName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,12 +89,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.DeviceInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.DeviceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceInfo();
+            return new Jellyfin.Sdk.Generated.Models.DeviceInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,17 +104,17 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AccessToken", n => { AccessToken = n.GetStringValue(); } },
-                {"AppName", n => { AppName = n.GetStringValue(); } },
-                {"AppVersion", n => { AppVersion = n.GetStringValue(); } },
-                {"Capabilities", n => { Capabilities = n.GetObjectValue<ClientCapabilities>(ClientCapabilities.CreateFromDiscriminatorValue); } },
-                {"CustomName", n => { CustomName = n.GetStringValue(); } },
-                {"DateLastActivity", n => { DateLastActivity = n.GetDateTimeOffsetValue(); } },
-                {"IconUrl", n => { IconUrl = n.GetStringValue(); } },
-                {"Id", n => { Id = n.GetStringValue(); } },
-                {"LastUserId", n => { LastUserId = n.GetGuidValue(); } },
-                {"LastUserName", n => { LastUserName = n.GetStringValue(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
+                { "AccessToken", n => { AccessToken = n.GetStringValue(); } },
+                { "AppName", n => { AppName = n.GetStringValue(); } },
+                { "AppVersion", n => { AppVersion = n.GetStringValue(); } },
+                { "Capabilities", n => { Capabilities = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.ClientCapabilities>(Jellyfin.Sdk.Generated.Models.ClientCapabilities.CreateFromDiscriminatorValue); } },
+                { "CustomName", n => { CustomName = n.GetStringValue(); } },
+                { "DateLastActivity", n => { DateLastActivity = n.GetDateTimeOffsetValue(); } },
+                { "IconUrl", n => { IconUrl = n.GetStringValue(); } },
+                { "Id", n => { Id = n.GetStringValue(); } },
+                { "LastUserId", n => { LastUserId = n.GetGuidValue(); } },
+                { "LastUserName", n => { LastUserName = n.GetStringValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -126,7 +127,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("AccessToken", AccessToken);
             writer.WriteStringValue("AppName", AppName);
             writer.WriteStringValue("AppVersion", AppVersion);
-            writer.WriteObjectValue<ClientCapabilities>("Capabilities", Capabilities);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.ClientCapabilities>("Capabilities", Capabilities);
             writer.WriteStringValue("CustomName", CustomName);
             writer.WriteDateTimeOffsetValue("DateLastActivity", DateLastActivity);
             writer.WriteStringValue("IconUrl", IconUrl);

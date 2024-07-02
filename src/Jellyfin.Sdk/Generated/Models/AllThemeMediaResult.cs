@@ -4,44 +4,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class AllThemeMediaResult : IParsable 
+    public class AllThemeMediaResult : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Class ThemeMediaResult.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ThemeMediaResult? SoundtrackSongsResult { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ThemeMediaResult? SoundtrackSongsResult { get; set; }
 #nullable restore
 #else
-        public ThemeMediaResult SoundtrackSongsResult { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ThemeMediaResult SoundtrackSongsResult { get; set; }
 #endif
         /// <summary>Class ThemeMediaResult.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ThemeMediaResult? ThemeSongsResult { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ThemeMediaResult? ThemeSongsResult { get; set; }
 #nullable restore
 #else
-        public ThemeMediaResult ThemeSongsResult { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ThemeMediaResult ThemeSongsResult { get; set; }
 #endif
         /// <summary>Class ThemeMediaResult.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ThemeMediaResult? ThemeVideosResult { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ThemeMediaResult? ThemeVideosResult { get; set; }
 #nullable restore
 #else
-        public ThemeMediaResult ThemeVideosResult { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ThemeMediaResult ThemeVideosResult { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AllThemeMediaResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.AllThemeMediaResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AllThemeMediaResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.AllThemeMediaResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AllThemeMediaResult();
+            return new Jellyfin.Sdk.Generated.Models.AllThemeMediaResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,9 +52,9 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"SoundtrackSongsResult", n => { SoundtrackSongsResult = n.GetObjectValue<ThemeMediaResult>(ThemeMediaResult.CreateFromDiscriminatorValue); } },
-                {"ThemeSongsResult", n => { ThemeSongsResult = n.GetObjectValue<ThemeMediaResult>(ThemeMediaResult.CreateFromDiscriminatorValue); } },
-                {"ThemeVideosResult", n => { ThemeVideosResult = n.GetObjectValue<ThemeMediaResult>(ThemeMediaResult.CreateFromDiscriminatorValue); } },
+                { "SoundtrackSongsResult", n => { SoundtrackSongsResult = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.ThemeMediaResult>(Jellyfin.Sdk.Generated.Models.ThemeMediaResult.CreateFromDiscriminatorValue); } },
+                { "ThemeSongsResult", n => { ThemeSongsResult = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.ThemeMediaResult>(Jellyfin.Sdk.Generated.Models.ThemeMediaResult.CreateFromDiscriminatorValue); } },
+                { "ThemeVideosResult", n => { ThemeVideosResult = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.ThemeMediaResult>(Jellyfin.Sdk.Generated.Models.ThemeMediaResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,9 +64,9 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ThemeMediaResult>("SoundtrackSongsResult", SoundtrackSongsResult);
-            writer.WriteObjectValue<ThemeMediaResult>("ThemeSongsResult", ThemeSongsResult);
-            writer.WriteObjectValue<ThemeMediaResult>("ThemeVideosResult", ThemeVideosResult);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.ThemeMediaResult>("SoundtrackSongsResult", SoundtrackSongsResult);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.ThemeMediaResult>("ThemeSongsResult", ThemeSongsResult);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.ThemeMediaResult>("ThemeVideosResult", ThemeVideosResult);
         }
     }
 }

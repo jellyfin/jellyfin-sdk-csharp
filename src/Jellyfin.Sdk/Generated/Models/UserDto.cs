@@ -4,19 +4,20 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class UserDto.
     /// </summary>
-    public class UserDto : IParsable 
+    public class UserDto : IParsable
     {
         /// <summary>Gets or sets the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserConfiguration? Configuration { get; set; }
+        public Jellyfin.Sdk.Generated.Models.UserConfiguration? Configuration { get; set; }
 #nullable restore
 #else
-        public UserConfiguration Configuration { get; set; }
+        public Jellyfin.Sdk.Generated.Models.UserConfiguration Configuration { get; set; }
 #endif
         /// <summary>Gets or sets whether async login is enabled or not.</summary>
         public bool? EnableAutoLogin { get; set; }
@@ -44,10 +45,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserPolicy? Policy { get; set; }
+        public Jellyfin.Sdk.Generated.Models.UserPolicy? Policy { get; set; }
 #nullable restore
 #else
-        public UserPolicy Policy { get; set; }
+        public Jellyfin.Sdk.Generated.Models.UserPolicy Policy { get; set; }
 #endif
         /// <summary>Gets or sets the primary image aspect ratio.</summary>
         public double? PrimaryImageAspectRatio { get; set; }
@@ -78,12 +79,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.UserDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.UserDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserDto();
+            return new Jellyfin.Sdk.Generated.Models.UserDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,20 +94,20 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Configuration", n => { Configuration = n.GetObjectValue<UserConfiguration>(UserConfiguration.CreateFromDiscriminatorValue); } },
-                {"EnableAutoLogin", n => { EnableAutoLogin = n.GetBoolValue(); } },
-                {"HasConfiguredEasyPassword", n => { HasConfiguredEasyPassword = n.GetBoolValue(); } },
-                {"HasConfiguredPassword", n => { HasConfiguredPassword = n.GetBoolValue(); } },
-                {"HasPassword", n => { HasPassword = n.GetBoolValue(); } },
-                {"Id", n => { Id = n.GetGuidValue(); } },
-                {"LastActivityDate", n => { LastActivityDate = n.GetDateTimeOffsetValue(); } },
-                {"LastLoginDate", n => { LastLoginDate = n.GetDateTimeOffsetValue(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"Policy", n => { Policy = n.GetObjectValue<UserPolicy>(UserPolicy.CreateFromDiscriminatorValue); } },
-                {"PrimaryImageAspectRatio", n => { PrimaryImageAspectRatio = n.GetDoubleValue(); } },
-                {"PrimaryImageTag", n => { PrimaryImageTag = n.GetStringValue(); } },
-                {"ServerId", n => { ServerId = n.GetStringValue(); } },
-                {"ServerName", n => { ServerName = n.GetStringValue(); } },
+                { "Configuration", n => { Configuration = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.UserConfiguration>(Jellyfin.Sdk.Generated.Models.UserConfiguration.CreateFromDiscriminatorValue); } },
+                { "EnableAutoLogin", n => { EnableAutoLogin = n.GetBoolValue(); } },
+                { "HasConfiguredEasyPassword", n => { HasConfiguredEasyPassword = n.GetBoolValue(); } },
+                { "HasConfiguredPassword", n => { HasConfiguredPassword = n.GetBoolValue(); } },
+                { "HasPassword", n => { HasPassword = n.GetBoolValue(); } },
+                { "Id", n => { Id = n.GetGuidValue(); } },
+                { "LastActivityDate", n => { LastActivityDate = n.GetDateTimeOffsetValue(); } },
+                { "LastLoginDate", n => { LastLoginDate = n.GetDateTimeOffsetValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "Policy", n => { Policy = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.UserPolicy>(Jellyfin.Sdk.Generated.Models.UserPolicy.CreateFromDiscriminatorValue); } },
+                { "PrimaryImageAspectRatio", n => { PrimaryImageAspectRatio = n.GetDoubleValue(); } },
+                { "PrimaryImageTag", n => { PrimaryImageTag = n.GetStringValue(); } },
+                { "ServerId", n => { ServerId = n.GetStringValue(); } },
+                { "ServerName", n => { ServerName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -116,7 +117,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UserConfiguration>("Configuration", Configuration);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.UserConfiguration>("Configuration", Configuration);
             writer.WriteBoolValue("EnableAutoLogin", EnableAutoLogin);
             writer.WriteBoolValue("HasConfiguredEasyPassword", HasConfiguredEasyPassword);
             writer.WriteBoolValue("HasConfiguredPassword", HasConfiguredPassword);
@@ -125,7 +126,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteDateTimeOffsetValue("LastActivityDate", LastActivityDate);
             writer.WriteDateTimeOffsetValue("LastLoginDate", LastLoginDate);
             writer.WriteStringValue("Name", Name);
-            writer.WriteObjectValue<UserPolicy>("Policy", Policy);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.UserPolicy>("Policy", Policy);
             writer.WriteDoubleValue("PrimaryImageAspectRatio", PrimaryImageAspectRatio);
             writer.WriteStringValue("PrimaryImageTag", PrimaryImageTag);
             writer.WriteStringValue("ServerId", ServerId);

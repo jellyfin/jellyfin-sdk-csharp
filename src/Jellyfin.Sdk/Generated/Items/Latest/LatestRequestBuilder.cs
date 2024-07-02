@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Items.Latest {
+namespace Jellyfin.Sdk.Generated.Items.Latest
+{
     /// <summary>
     /// Builds and executes requests for operations under \Items\Latest
     /// </summary>
-    public class LatestRequestBuilder : BaseRequestBuilder 
+    public class LatestRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="LatestRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Latest.LatestRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Items.Latest {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LatestRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Latest.LatestRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.Items.Latest {
         /// <summary>
         /// Gets latest media.
         /// </summary>
-        /// <returns>A List&lt;BaseItemDto&gt;</returns>
+        /// <returns>A List&lt;Jellyfin.Sdk.Generated.Models.BaseItemDto&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<BaseItemDto>?> GetAsync(Action<RequestConfiguration<LatestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.BaseItemDto>?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Latest.LatestRequestBuilder.LatestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<BaseItemDto>> GetAsync(Action<RequestConfiguration<LatestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.BaseItemDto>> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Latest.LatestRequestBuilder.LatestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<BaseItemDto>(requestInfo, BaseItemDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Jellyfin.Sdk.Generated.Models.BaseItemDto>(requestInfo, Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -56,11 +57,11 @@ namespace Jellyfin.Sdk.Generated.Items.Latest {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LatestRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Latest.LatestRequestBuilder.LatestRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LatestRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Latest.LatestRequestBuilder.LatestRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -71,11 +72,11 @@ namespace Jellyfin.Sdk.Generated.Items.Latest {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LatestRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Items.Latest.LatestRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LatestRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Items.Latest.LatestRequestBuilder WithUrl(string rawUrl)
         {
-            return new LatestRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Items.Latest.LatestRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets latest media.
@@ -89,11 +90,11 @@ namespace Jellyfin.Sdk.Generated.Items.Latest {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("enableImageTypes")]
-            public ImageType[]? EnableImageTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ImageType[]? EnableImageTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("enableImageTypes")]
-            public ImageType[] EnableImageTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ImageType[] EnableImageTypes { get; set; }
 #endif
             /// <summary>Optional. include user data.</summary>
             [QueryParameter("enableUserData")]
@@ -102,11 +103,11 @@ namespace Jellyfin.Sdk.Generated.Items.Latest {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
-            public ItemFields[]? Fields { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ItemFields[]? Fields { get; set; }
 #nullable restore
 #else
             [QueryParameter("fields")]
-            public ItemFields[] Fields { get; set; }
+            public Jellyfin.Sdk.Generated.Models.ItemFields[] Fields { get; set; }
 #endif
             /// <summary>Whether or not to group items into a parent container.</summary>
             [QueryParameter("groupItems")]
@@ -118,11 +119,11 @@ namespace Jellyfin.Sdk.Generated.Items.Latest {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("includeItemTypes")]
-            public BaseItemKind[]? IncludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[]? IncludeItemTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("includeItemTypes")]
-            public BaseItemKind[] IncludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[] IncludeItemTypes { get; set; }
 #endif
             /// <summary>Filter by items that are played, or not.</summary>
             [QueryParameter("isPlayed")]

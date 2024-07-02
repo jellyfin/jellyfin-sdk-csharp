@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class LibraryOptions : IParsable 
+    public class LibraryOptions : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>An enum representing the options to disable embedded subs.</summary>
-        public LibraryOptions_AllowEmbeddedSubtitles? AllowEmbeddedSubtitles { get; set; }
+        public Jellyfin.Sdk.Generated.Models.LibraryOptions_AllowEmbeddedSubtitles? AllowEmbeddedSubtitles { get; set; }
         /// <summary>The AutomaticallyAddToCollection property</summary>
         public bool? AutomaticallyAddToCollection { get; set; }
         /// <summary>The AutomaticRefreshIntervalDays property</summary>
@@ -85,10 +86,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The PathInfos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MediaPathInfo>? PathInfos { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaPathInfo>? PathInfos { get; set; }
 #nullable restore
 #else
-        public List<MediaPathInfo> PathInfos { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaPathInfo> PathInfos { get; set; }
 #endif
         /// <summary>Gets or sets the preferred metadata language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,12 +146,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LibraryOptions"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.LibraryOptions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LibraryOptions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.LibraryOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LibraryOptions();
+            return new Jellyfin.Sdk.Generated.Models.LibraryOptions();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -160,39 +161,39 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AllowEmbeddedSubtitles", n => { AllowEmbeddedSubtitles = n.GetEnumValue<LibraryOptions_AllowEmbeddedSubtitles>(); } },
-                {"AutomaticRefreshIntervalDays", n => { AutomaticRefreshIntervalDays = n.GetIntValue(); } },
-                {"AutomaticallyAddToCollection", n => { AutomaticallyAddToCollection = n.GetBoolValue(); } },
-                {"DisabledLocalMetadataReaders", n => { DisabledLocalMetadataReaders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"DisabledSubtitleFetchers", n => { DisabledSubtitleFetchers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"EnableAutomaticSeriesGrouping", n => { EnableAutomaticSeriesGrouping = n.GetBoolValue(); } },
-                {"EnableChapterImageExtraction", n => { EnableChapterImageExtraction = n.GetBoolValue(); } },
-                {"EnableEmbeddedEpisodeInfos", n => { EnableEmbeddedEpisodeInfos = n.GetBoolValue(); } },
-                {"EnableEmbeddedExtrasTitles", n => { EnableEmbeddedExtrasTitles = n.GetBoolValue(); } },
-                {"EnableEmbeddedTitles", n => { EnableEmbeddedTitles = n.GetBoolValue(); } },
-                {"EnableInternetProviders", n => { EnableInternetProviders = n.GetBoolValue(); } },
-                {"EnableLUFSScan", n => { EnableLUFSScan = n.GetBoolValue(); } },
-                {"EnablePhotos", n => { EnablePhotos = n.GetBoolValue(); } },
-                {"EnableRealtimeMonitor", n => { EnableRealtimeMonitor = n.GetBoolValue(); } },
-                {"EnableTrickplayImageExtraction", n => { EnableTrickplayImageExtraction = n.GetBoolValue(); } },
-                {"Enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"ExtractChapterImagesDuringLibraryScan", n => { ExtractChapterImagesDuringLibraryScan = n.GetBoolValue(); } },
-                {"ExtractTrickplayImagesDuringLibraryScan", n => { ExtractTrickplayImagesDuringLibraryScan = n.GetBoolValue(); } },
-                {"LocalMetadataReaderOrder", n => { LocalMetadataReaderOrder = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"MetadataCountryCode", n => { MetadataCountryCode = n.GetStringValue(); } },
-                {"MetadataSavers", n => { MetadataSavers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"PathInfos", n => { PathInfos = n.GetCollectionOfObjectValues<MediaPathInfo>(MediaPathInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"PreferredMetadataLanguage", n => { PreferredMetadataLanguage = n.GetStringValue(); } },
-                {"RequirePerfectSubtitleMatch", n => { RequirePerfectSubtitleMatch = n.GetBoolValue(); } },
-                {"SaveLocalMetadata", n => { SaveLocalMetadata = n.GetBoolValue(); } },
-                {"SaveLyricsWithMedia", n => { SaveLyricsWithMedia = n.GetBoolValue(); } },
-                {"SaveSubtitlesWithMedia", n => { SaveSubtitlesWithMedia = n.GetBoolValue(); } },
-                {"SeasonZeroDisplayName", n => { SeasonZeroDisplayName = n.GetStringValue(); } },
-                {"SkipSubtitlesIfAudioTrackMatches", n => { SkipSubtitlesIfAudioTrackMatches = n.GetBoolValue(); } },
-                {"SkipSubtitlesIfEmbeddedSubtitlesPresent", n => { SkipSubtitlesIfEmbeddedSubtitlesPresent = n.GetBoolValue(); } },
-                {"SubtitleDownloadLanguages", n => { SubtitleDownloadLanguages = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"SubtitleFetcherOrder", n => { SubtitleFetcherOrder = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"TypeOptions", n => { TypeOptions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.TypeOptions>(Jellyfin.Sdk.Generated.Models.TypeOptions.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "AllowEmbeddedSubtitles", n => { AllowEmbeddedSubtitles = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.LibraryOptions_AllowEmbeddedSubtitles>(); } },
+                { "AutomaticRefreshIntervalDays", n => { AutomaticRefreshIntervalDays = n.GetIntValue(); } },
+                { "AutomaticallyAddToCollection", n => { AutomaticallyAddToCollection = n.GetBoolValue(); } },
+                { "DisabledLocalMetadataReaders", n => { DisabledLocalMetadataReaders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "DisabledSubtitleFetchers", n => { DisabledSubtitleFetchers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "EnableAutomaticSeriesGrouping", n => { EnableAutomaticSeriesGrouping = n.GetBoolValue(); } },
+                { "EnableChapterImageExtraction", n => { EnableChapterImageExtraction = n.GetBoolValue(); } },
+                { "EnableEmbeddedEpisodeInfos", n => { EnableEmbeddedEpisodeInfos = n.GetBoolValue(); } },
+                { "EnableEmbeddedExtrasTitles", n => { EnableEmbeddedExtrasTitles = n.GetBoolValue(); } },
+                { "EnableEmbeddedTitles", n => { EnableEmbeddedTitles = n.GetBoolValue(); } },
+                { "EnableInternetProviders", n => { EnableInternetProviders = n.GetBoolValue(); } },
+                { "EnableLUFSScan", n => { EnableLUFSScan = n.GetBoolValue(); } },
+                { "EnablePhotos", n => { EnablePhotos = n.GetBoolValue(); } },
+                { "EnableRealtimeMonitor", n => { EnableRealtimeMonitor = n.GetBoolValue(); } },
+                { "EnableTrickplayImageExtraction", n => { EnableTrickplayImageExtraction = n.GetBoolValue(); } },
+                { "Enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "ExtractChapterImagesDuringLibraryScan", n => { ExtractChapterImagesDuringLibraryScan = n.GetBoolValue(); } },
+                { "ExtractTrickplayImagesDuringLibraryScan", n => { ExtractTrickplayImagesDuringLibraryScan = n.GetBoolValue(); } },
+                { "LocalMetadataReaderOrder", n => { LocalMetadataReaderOrder = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "MetadataCountryCode", n => { MetadataCountryCode = n.GetStringValue(); } },
+                { "MetadataSavers", n => { MetadataSavers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "PathInfos", n => { PathInfos = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.MediaPathInfo>(Jellyfin.Sdk.Generated.Models.MediaPathInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "PreferredMetadataLanguage", n => { PreferredMetadataLanguage = n.GetStringValue(); } },
+                { "RequirePerfectSubtitleMatch", n => { RequirePerfectSubtitleMatch = n.GetBoolValue(); } },
+                { "SaveLocalMetadata", n => { SaveLocalMetadata = n.GetBoolValue(); } },
+                { "SaveLyricsWithMedia", n => { SaveLyricsWithMedia = n.GetBoolValue(); } },
+                { "SaveSubtitlesWithMedia", n => { SaveSubtitlesWithMedia = n.GetBoolValue(); } },
+                { "SeasonZeroDisplayName", n => { SeasonZeroDisplayName = n.GetStringValue(); } },
+                { "SkipSubtitlesIfAudioTrackMatches", n => { SkipSubtitlesIfAudioTrackMatches = n.GetBoolValue(); } },
+                { "SkipSubtitlesIfEmbeddedSubtitlesPresent", n => { SkipSubtitlesIfEmbeddedSubtitlesPresent = n.GetBoolValue(); } },
+                { "SubtitleDownloadLanguages", n => { SubtitleDownloadLanguages = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "SubtitleFetcherOrder", n => { SubtitleFetcherOrder = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "TypeOptions", n => { TypeOptions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.TypeOptions>(Jellyfin.Sdk.Generated.Models.TypeOptions.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -202,7 +203,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<LibraryOptions_AllowEmbeddedSubtitles>("AllowEmbeddedSubtitles", AllowEmbeddedSubtitles);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.LibraryOptions_AllowEmbeddedSubtitles>("AllowEmbeddedSubtitles", AllowEmbeddedSubtitles);
             writer.WriteBoolValue("AutomaticallyAddToCollection", AutomaticallyAddToCollection);
             writer.WriteIntValue("AutomaticRefreshIntervalDays", AutomaticRefreshIntervalDays);
             writer.WriteCollectionOfPrimitiveValues<string>("DisabledLocalMetadataReaders", DisabledLocalMetadataReaders);
@@ -223,7 +224,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("LocalMetadataReaderOrder", LocalMetadataReaderOrder);
             writer.WriteStringValue("MetadataCountryCode", MetadataCountryCode);
             writer.WriteCollectionOfPrimitiveValues<string>("MetadataSavers", MetadataSavers);
-            writer.WriteCollectionOfObjectValues<MediaPathInfo>("PathInfos", PathInfos);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.MediaPathInfo>("PathInfos", PathInfos);
             writer.WriteStringValue("PreferredMetadataLanguage", PreferredMetadataLanguage);
             writer.WriteBoolValue("RequirePerfectSubtitleMatch", RequirePerfectSubtitleMatch);
             writer.WriteBoolValue("SaveLocalMetadata", SaveLocalMetadata);

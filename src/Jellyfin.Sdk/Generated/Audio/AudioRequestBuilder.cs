@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Audio {
+namespace Jellyfin.Sdk.Generated.Audio
+{
     /// <summary>
     /// Builds and executes requests for operations under \Audio
     /// </summary>
-    public class AudioRequestBuilder : BaseRequestBuilder 
+    public class AudioRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Audio.item collection</summary>
         /// <param name="position">The item id.</param>
-        /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
-        public WithItemItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Audio.Item.WithItemItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Audio.Item.WithItemItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("itemId", position);
-                return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Audio.Item.WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AudioRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Audio.AudioRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Audio {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AudioRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Audio.AudioRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

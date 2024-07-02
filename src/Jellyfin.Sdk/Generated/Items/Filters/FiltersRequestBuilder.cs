@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Items.Filters {
+namespace Jellyfin.Sdk.Generated.Items.Filters
+{
     /// <summary>
     /// Builds and executes requests for operations under \Items\Filters
     /// </summary>
-    public class FiltersRequestBuilder : BaseRequestBuilder 
+    public class FiltersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="FiltersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Filters.FiltersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Items.Filters {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FiltersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Filters.FiltersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.Items.Filters {
         /// <summary>
         /// Gets legacy query filters.
         /// </summary>
-        /// <returns>A <see cref="QueryFiltersLegacy"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.QueryFiltersLegacy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<QueryFiltersLegacy?> GetAsync(Action<RequestConfiguration<FiltersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.QueryFiltersLegacy?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Filters.FiltersRequestBuilder.FiltersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<QueryFiltersLegacy> GetAsync(Action<RequestConfiguration<FiltersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.QueryFiltersLegacy> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Filters.FiltersRequestBuilder.FiltersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<QueryFiltersLegacy>(requestInfo, QueryFiltersLegacy.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.QueryFiltersLegacy>(requestInfo, Jellyfin.Sdk.Generated.Models.QueryFiltersLegacy.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets legacy query filters.
@@ -55,11 +56,11 @@ namespace Jellyfin.Sdk.Generated.Items.Filters {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FiltersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Filters.FiltersRequestBuilder.FiltersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FiltersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Filters.FiltersRequestBuilder.FiltersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -70,11 +71,11 @@ namespace Jellyfin.Sdk.Generated.Items.Filters {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FiltersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Items.Filters.FiltersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FiltersRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Items.Filters.FiltersRequestBuilder WithUrl(string rawUrl)
         {
-            return new FiltersRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Items.Filters.FiltersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets legacy query filters.
@@ -85,21 +86,21 @@ namespace Jellyfin.Sdk.Generated.Items.Filters {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("includeItemTypes")]
-            public BaseItemKind[]? IncludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[]? IncludeItemTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("includeItemTypes")]
-            public BaseItemKind[] IncludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[] IncludeItemTypes { get; set; }
 #endif
             /// <summary>Optional. Filter by MediaType. Allows multiple, comma delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mediaTypes")]
-            public MediaType[]? MediaTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.MediaType[]? MediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("mediaTypes")]
-            public MediaType[] MediaTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.MediaType[] MediaTypes { get; set; }
 #endif
             /// <summary>Optional. Parent id.</summary>
             [QueryParameter("parentId")]

@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Devices.Options {
+namespace Jellyfin.Sdk.Generated.Devices.Options
+{
     /// <summary>
     /// Builds and executes requests for operations under \Devices\Options
     /// </summary>
-    public class OptionsRequestBuilder : BaseRequestBuilder 
+    public class OptionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="OptionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="OptionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,25 +34,25 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
         /// <summary>
         /// Get options for a device.
         /// </summary>
-        /// <returns>A <see cref="DeviceOptions"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.DeviceOptions"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceOptions?> GetAsync(Action<RequestConfiguration<OptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.DeviceOptions?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder.OptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DeviceOptions> GetAsync(Action<RequestConfiguration<OptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.DeviceOptions> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder.OptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DeviceOptions>(requestInfo, DeviceOptions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.DeviceOptions>(requestInfo, Jellyfin.Sdk.Generated.Models.DeviceOptions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update device options.
@@ -61,11 +62,11 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(DeviceOptionsDto body, Action<RequestConfiguration<OptionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.DeviceOptionsDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder.OptionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(DeviceOptionsDto body, Action<RequestConfiguration<OptionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.DeviceOptionsDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder.OptionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -79,11 +80,11 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder.OptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OptionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder.OptionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -99,11 +100,11 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeviceOptionsDto body, Action<RequestConfiguration<OptionsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.DeviceOptionsDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder.OptionsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeviceOptionsDto body, Action<RequestConfiguration<OptionsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.DeviceOptionsDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder.OptionsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -115,11 +116,11 @@ namespace Jellyfin.Sdk.Generated.Devices.Options {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="OptionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OptionsRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new OptionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Devices.Options.OptionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get options for a device.

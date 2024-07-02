@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.QuickConnect.Initiate {
+namespace Jellyfin.Sdk.Generated.QuickConnect.Initiate
+{
     /// <summary>
     /// Builds and executes requests for operations under \QuickConnect\Initiate
     /// </summary>
-    public class InitiateRequestBuilder : BaseRequestBuilder 
+    public class InitiateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="InitiateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.QuickConnect.Initiate.InitiateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Initiate {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="InitiateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.QuickConnect.Initiate.InitiateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Initiate {
         /// <summary>
         /// Initiate a new quick connect request.
         /// </summary>
-        /// <returns>A <see cref="QuickConnectResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.QuickConnectResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<QuickConnectResult?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.QuickConnectResult?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<QuickConnectResult> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.QuickConnectResult> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<QuickConnectResult>(requestInfo, QuickConnectResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.QuickConnectResult>(requestInfo, Jellyfin.Sdk.Generated.Models.QuickConnectResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Initiate a new quick connect request.
@@ -70,11 +71,11 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Initiate {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="InitiateRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.QuickConnect.Initiate.InitiateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public InitiateRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.QuickConnect.Initiate.InitiateRequestBuilder WithUrl(string rawUrl)
         {
-            return new InitiateRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.QuickConnect.Initiate.InitiateRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

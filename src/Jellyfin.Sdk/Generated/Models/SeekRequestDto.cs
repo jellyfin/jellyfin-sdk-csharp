@@ -4,23 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class SeekRequestDto.
     /// </summary>
-    public class SeekRequestDto : IParsable 
+    public class SeekRequestDto : IParsable
     {
         /// <summary>Gets or sets the position ticks.</summary>
         public long? PositionTicks { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SeekRequestDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.SeekRequestDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SeekRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.SeekRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SeekRequestDto();
+            return new Jellyfin.Sdk.Generated.Models.SeekRequestDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -30,7 +31,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"PositionTicks", n => { PositionTicks = n.GetLongValue(); } },
+                { "PositionTicks", n => { PositionTicks = n.GetLongValue(); } },
             };
         }
         /// <summary>

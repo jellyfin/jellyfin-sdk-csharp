@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.Countries {
+namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.Countries
+{
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\ListingProviders\SchedulesDirect\Countries
     /// </summary>
-    public class CountriesRequestBuilder : BaseRequestBuilder 
+    public class CountriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CountriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.Countries.CountriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.Countri
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CountriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.Countries.CountriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -69,11 +70,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.Countri
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CountriesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.Countries.CountriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CountriesRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.Countries.CountriesRequestBuilder WithUrl(string rawUrl)
         {
-            return new CountriesRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.Countries.CountriesRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

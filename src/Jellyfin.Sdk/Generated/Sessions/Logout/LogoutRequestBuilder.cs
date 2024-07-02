@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Sessions.Logout {
+namespace Jellyfin.Sdk.Generated.Sessions.Logout
+{
     /// <summary>
     /// Builds and executes requests for operations under \Sessions\Logout
     /// </summary>
-    public class LogoutRequestBuilder : BaseRequestBuilder 
+    public class LogoutRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="LogoutRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.Logout.LogoutRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Logout {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LogoutRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.Logout.LogoutRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,11 +68,11 @@ namespace Jellyfin.Sdk.Generated.Sessions.Logout {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LogoutRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Sessions.Logout.LogoutRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LogoutRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Sessions.Logout.LogoutRequestBuilder WithUrl(string rawUrl)
         {
-            return new LogoutRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Sessions.Logout.LogoutRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

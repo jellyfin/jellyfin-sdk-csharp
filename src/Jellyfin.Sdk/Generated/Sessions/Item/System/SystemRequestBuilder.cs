@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Sessions.Item.System {
+namespace Jellyfin.Sdk.Generated.Sessions.Item.System
+{
     /// <summary>
     /// Builds and executes requests for operations under \Sessions\{sessionId}\System
     /// </summary>
-    public class SystemRequestBuilder : BaseRequestBuilder 
+    public class SystemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Sessions.item.System.item collection</summary>
         /// <param name="position">The command to send.</param>
-        /// <returns>A <see cref="WithCommandItemRequestBuilder"/></returns>
-        public WithCommandItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Sessions.Item.System.Item.WithCommandItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Sessions.Item.System.Item.WithCommandItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("command", position);
-                return new WithCommandItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Sessions.Item.System.Item.WithCommandItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SystemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.Item.System.SystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.System {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SystemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.Item.System.SystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

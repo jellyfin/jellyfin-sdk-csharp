@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class PlaybackProgressInfo.
     /// </summary>
-    public class PlaybackProgressInfo : IParsable 
+    public class PlaybackProgressInfo : IParsable
     {
         /// <summary>The AspectRatio property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,10 +32,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BaseItemDto? Item { get; set; }
+        public Jellyfin.Sdk.Generated.Models.BaseItemDto? Item { get; set; }
 #nullable restore
 #else
-        public BaseItemDto Item { get; set; }
+        public Jellyfin.Sdk.Generated.Models.BaseItemDto Item { get; set; }
 #endif
         /// <summary>Gets or sets the item identifier.</summary>
         public Guid? ItemId { get; set; }
@@ -57,13 +58,13 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The NowPlayingQueue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<QueueItem>? NowPlayingQueue { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.QueueItem>? NowPlayingQueue { get; set; }
 #nullable restore
 #else
-        public List<QueueItem> NowPlayingQueue { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.QueueItem> NowPlayingQueue { get; set; }
 #endif
         /// <summary>Gets or sets the playback order.</summary>
-        public PlaybackProgressInfo_PlaybackOrder? PlaybackOrder { get; set; }
+        public Jellyfin.Sdk.Generated.Models.PlaybackProgressInfo_PlaybackOrder? PlaybackOrder { get; set; }
         /// <summary>The PlaybackStartTimeTicks property</summary>
         public long? PlaybackStartTimeTicks { get; set; }
         /// <summary>The PlaylistItemId property</summary>
@@ -75,7 +76,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string PlaylistItemId { get; set; }
 #endif
         /// <summary>Gets or sets the play method.</summary>
-        public PlaybackProgressInfo_PlayMethod? PlayMethod { get; set; }
+        public Jellyfin.Sdk.Generated.Models.PlaybackProgressInfo_PlayMethod? PlayMethod { get; set; }
         /// <summary>Gets or sets the play session identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +88,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the position ticks.</summary>
         public long? PositionTicks { get; set; }
         /// <summary>Gets or sets the repeat mode.</summary>
-        public PlaybackProgressInfo_RepeatMode? RepeatMode { get; set; }
+        public Jellyfin.Sdk.Generated.Models.PlaybackProgressInfo_RepeatMode? RepeatMode { get; set; }
         /// <summary>Gets or sets the session id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,12 +104,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlaybackProgressInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.PlaybackProgressInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlaybackProgressInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.PlaybackProgressInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlaybackProgressInfo();
+            return new Jellyfin.Sdk.Generated.Models.PlaybackProgressInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,27 +119,27 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AspectRatio", n => { AspectRatio = n.GetStringValue(); } },
-                {"AudioStreamIndex", n => { AudioStreamIndex = n.GetIntValue(); } },
-                {"Brightness", n => { Brightness = n.GetIntValue(); } },
-                {"CanSeek", n => { CanSeek = n.GetBoolValue(); } },
-                {"IsMuted", n => { IsMuted = n.GetBoolValue(); } },
-                {"IsPaused", n => { IsPaused = n.GetBoolValue(); } },
-                {"Item", n => { Item = n.GetObjectValue<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue); } },
-                {"ItemId", n => { ItemId = n.GetGuidValue(); } },
-                {"LiveStreamId", n => { LiveStreamId = n.GetStringValue(); } },
-                {"MediaSourceId", n => { MediaSourceId = n.GetStringValue(); } },
-                {"NowPlayingQueue", n => { NowPlayingQueue = n.GetCollectionOfObjectValues<QueueItem>(QueueItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"PlayMethod", n => { PlayMethod = n.GetEnumValue<PlaybackProgressInfo_PlayMethod>(); } },
-                {"PlaySessionId", n => { PlaySessionId = n.GetStringValue(); } },
-                {"PlaybackOrder", n => { PlaybackOrder = n.GetEnumValue<PlaybackProgressInfo_PlaybackOrder>(); } },
-                {"PlaybackStartTimeTicks", n => { PlaybackStartTimeTicks = n.GetLongValue(); } },
-                {"PlaylistItemId", n => { PlaylistItemId = n.GetStringValue(); } },
-                {"PositionTicks", n => { PositionTicks = n.GetLongValue(); } },
-                {"RepeatMode", n => { RepeatMode = n.GetEnumValue<PlaybackProgressInfo_RepeatMode>(); } },
-                {"SessionId", n => { SessionId = n.GetStringValue(); } },
-                {"SubtitleStreamIndex", n => { SubtitleStreamIndex = n.GetIntValue(); } },
-                {"VolumeLevel", n => { VolumeLevel = n.GetIntValue(); } },
+                { "AspectRatio", n => { AspectRatio = n.GetStringValue(); } },
+                { "AudioStreamIndex", n => { AudioStreamIndex = n.GetIntValue(); } },
+                { "Brightness", n => { Brightness = n.GetIntValue(); } },
+                { "CanSeek", n => { CanSeek = n.GetBoolValue(); } },
+                { "IsMuted", n => { IsMuted = n.GetBoolValue(); } },
+                { "IsPaused", n => { IsPaused = n.GetBoolValue(); } },
+                { "Item", n => { Item = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.BaseItemDto>(Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue); } },
+                { "ItemId", n => { ItemId = n.GetGuidValue(); } },
+                { "LiveStreamId", n => { LiveStreamId = n.GetStringValue(); } },
+                { "MediaSourceId", n => { MediaSourceId = n.GetStringValue(); } },
+                { "NowPlayingQueue", n => { NowPlayingQueue = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.QueueItem>(Jellyfin.Sdk.Generated.Models.QueueItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "PlayMethod", n => { PlayMethod = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.PlaybackProgressInfo_PlayMethod>(); } },
+                { "PlaySessionId", n => { PlaySessionId = n.GetStringValue(); } },
+                { "PlaybackOrder", n => { PlaybackOrder = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.PlaybackProgressInfo_PlaybackOrder>(); } },
+                { "PlaybackStartTimeTicks", n => { PlaybackStartTimeTicks = n.GetLongValue(); } },
+                { "PlaylistItemId", n => { PlaylistItemId = n.GetStringValue(); } },
+                { "PositionTicks", n => { PositionTicks = n.GetLongValue(); } },
+                { "RepeatMode", n => { RepeatMode = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.PlaybackProgressInfo_RepeatMode>(); } },
+                { "SessionId", n => { SessionId = n.GetStringValue(); } },
+                { "SubtitleStreamIndex", n => { SubtitleStreamIndex = n.GetIntValue(); } },
+                { "VolumeLevel", n => { VolumeLevel = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -154,18 +155,18 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("CanSeek", CanSeek);
             writer.WriteBoolValue("IsMuted", IsMuted);
             writer.WriteBoolValue("IsPaused", IsPaused);
-            writer.WriteObjectValue<BaseItemDto>("Item", Item);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.BaseItemDto>("Item", Item);
             writer.WriteGuidValue("ItemId", ItemId);
             writer.WriteStringValue("LiveStreamId", LiveStreamId);
             writer.WriteStringValue("MediaSourceId", MediaSourceId);
-            writer.WriteCollectionOfObjectValues<QueueItem>("NowPlayingQueue", NowPlayingQueue);
-            writer.WriteEnumValue<PlaybackProgressInfo_PlaybackOrder>("PlaybackOrder", PlaybackOrder);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.QueueItem>("NowPlayingQueue", NowPlayingQueue);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.PlaybackProgressInfo_PlaybackOrder>("PlaybackOrder", PlaybackOrder);
             writer.WriteLongValue("PlaybackStartTimeTicks", PlaybackStartTimeTicks);
             writer.WriteStringValue("PlaylistItemId", PlaylistItemId);
-            writer.WriteEnumValue<PlaybackProgressInfo_PlayMethod>("PlayMethod", PlayMethod);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.PlaybackProgressInfo_PlayMethod>("PlayMethod", PlayMethod);
             writer.WriteStringValue("PlaySessionId", PlaySessionId);
             writer.WriteLongValue("PositionTicks", PositionTicks);
-            writer.WriteEnumValue<PlaybackProgressInfo_RepeatMode>("RepeatMode", RepeatMode);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.PlaybackProgressInfo_RepeatMode>("RepeatMode", RepeatMode);
             writer.WriteStringValue("SessionId", SessionId);
             writer.WriteIntValue("SubtitleStreamIndex", SubtitleStreamIndex);
             writer.WriteIntValue("VolumeLevel", VolumeLevel);

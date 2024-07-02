@@ -9,19 +9,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.ScheduledTasks.Item {
+namespace Jellyfin.Sdk.Generated.ScheduledTasks.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \ScheduledTasks\{taskId}
     /// </summary>
-    public class WithTaskItemRequestBuilder : BaseRequestBuilder 
+    public class WithTaskItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Triggers property</summary>
-        public TriggersRequestBuilder Triggers
+        public Jellyfin.Sdk.Generated.ScheduledTasks.Item.Triggers.TriggersRequestBuilder Triggers
         {
-            get => new TriggersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.ScheduledTasks.Item.Triggers.TriggersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithTaskItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.ScheduledTasks.Item.WithTaskItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.ScheduledTasks.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithTaskItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.ScheduledTasks.Item.WithTaskItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,25 +40,25 @@ namespace Jellyfin.Sdk.Generated.ScheduledTasks.Item {
         /// <summary>
         /// Get task by id.
         /// </summary>
-        /// <returns>A <see cref="TaskInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.TaskInfo"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TaskInfo?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.TaskInfo?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TaskInfo> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.TaskInfo> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TaskInfo>(requestInfo, TaskInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.TaskInfo>(requestInfo, Jellyfin.Sdk.Generated.Models.TaskInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get task by id.
@@ -81,11 +82,11 @@ namespace Jellyfin.Sdk.Generated.ScheduledTasks.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithTaskItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.ScheduledTasks.Item.WithTaskItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithTaskItemRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.ScheduledTasks.Item.WithTaskItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithTaskItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.ScheduledTasks.Item.WithTaskItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move {
+namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move
+{
     /// <summary>
     /// Builds and executes requests for operations under \Playlists\{item-id}\Items\{itemId}\Move
     /// </summary>
-    public class MoveRequestBuilder : BaseRequestBuilder 
+    public class MoveRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Playlists.item.Items.item.Move.item collection</summary>
         /// <param name="position">The new index.</param>
-        /// <returns>A <see cref="WithNewIndexItemRequestBuilder"/></returns>
-        public WithNewIndexItemRequestBuilder this[int position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move.Item.WithNewIndexItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move.Item.WithNewIndexItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("newIndex", position);
-                return new WithNewIndexItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move.Item.WithNewIndexItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MoveRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move.MoveRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MoveRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move.MoveRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

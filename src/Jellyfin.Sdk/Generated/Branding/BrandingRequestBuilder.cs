@@ -9,34 +9,35 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Branding {
+namespace Jellyfin.Sdk.Generated.Branding
+{
     /// <summary>
     /// Builds and executes requests for operations under \Branding
     /// </summary>
-    public class BrandingRequestBuilder : BaseRequestBuilder 
+    public class BrandingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Configuration property</summary>
-        public ConfigurationRequestBuilder Configuration
+        public Jellyfin.Sdk.Generated.Branding.Configuration.ConfigurationRequestBuilder Configuration
         {
-            get => new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Branding.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Css property</summary>
-        public CssRequestBuilder Css
+        public Jellyfin.Sdk.Generated.Branding.Css.CssRequestBuilder Css
         {
-            get => new CssRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Branding.Css.CssRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The CssCss property</summary>
-        public CssCssRequestBuilder CssCss
+        public Jellyfin.Sdk.Generated.Branding.CssCss.CssCssRequestBuilder CssCss
         {
-            get => new CssCssRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Branding.CssCss.CssCssRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Splashscreen property</summary>
-        public SplashscreenRequestBuilder Splashscreen
+        public Jellyfin.Sdk.Generated.Branding.Splashscreen.SplashscreenRequestBuilder Splashscreen
         {
-            get => new SplashscreenRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Branding.Splashscreen.SplashscreenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="BrandingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Branding.BrandingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Jellyfin.Sdk.Generated.Branding {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="BrandingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Branding.BrandingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

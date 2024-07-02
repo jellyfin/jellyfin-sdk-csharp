@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.ClientLog.Document {
+namespace Jellyfin.Sdk.Generated.ClientLog.Document
+{
     /// <summary>
     /// Builds and executes requests for operations under \ClientLog\Document
     /// </summary>
-    public class DocumentRequestBuilder : BaseRequestBuilder 
+    public class DocumentRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="DocumentRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.ClientLog.Document.DocumentRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.ClientLog.Document {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DocumentRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.ClientLog.Document.DocumentRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,29 +34,29 @@ namespace Jellyfin.Sdk.Generated.ClientLog.Document {
         /// <summary>
         /// Upload a document.
         /// </summary>
-        /// <returns>A <see cref="ClientLogDocumentResponseDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ClientLogDocumentResponseDto"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 403 status code</exception>
-        /// <exception cref="ProblemDetails">When receiving a 413 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 403 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 413 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ClientLogDocumentResponseDto?> PostAsync(string body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.ClientLogDocumentResponseDto?> PostAsync(string body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ClientLogDocumentResponseDto> PostAsync(string body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.ClientLogDocumentResponseDto> PostAsync(string body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", ProblemDetails.CreateFromDiscriminatorValue},
-                {"413", ProblemDetails.CreateFromDiscriminatorValue},
+                { "403", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "413", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ClientLogDocumentResponseDto>(requestInfo, ClientLogDocumentResponseDto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.ClientLogDocumentResponseDto>(requestInfo, Jellyfin.Sdk.Generated.Models.ClientLogDocumentResponseDto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Upload a document.
@@ -82,11 +83,11 @@ namespace Jellyfin.Sdk.Generated.ClientLog.Document {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DocumentRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.ClientLog.Document.DocumentRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DocumentRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.ClientLog.Document.DocumentRequestBuilder WithUrl(string rawUrl)
         {
-            return new DocumentRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.ClientLog.Document.DocumentRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

@@ -9,19 +9,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.LiveTv.TunerHosts {
+namespace Jellyfin.Sdk.Generated.LiveTv.TunerHosts
+{
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\TunerHosts
     /// </summary>
-    public class TunerHostsRequestBuilder : BaseRequestBuilder 
+    public class TunerHostsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Types property</summary>
-        public TypesRequestBuilder Types
+        public Jellyfin.Sdk.Generated.LiveTv.TunerHosts.Types.TypesRequestBuilder Types
         {
-            get => new TypesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.LiveTv.TunerHosts.Types.TypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="TunerHostsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.TunerHosts.TunerHostsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.TunerHosts {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TunerHostsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.TunerHosts.TunerHostsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,11 +44,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.TunerHosts {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<TunerHostsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.LiveTv.TunerHosts.TunerHostsRequestBuilder.TunerHostsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<TunerHostsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.LiveTv.TunerHosts.TunerHostsRequestBuilder.TunerHostsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -56,22 +57,22 @@ namespace Jellyfin.Sdk.Generated.LiveTv.TunerHosts {
         /// <summary>
         /// Adds a tuner host.
         /// </summary>
-        /// <returns>A <see cref="TunerHostInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.TunerHostInfo"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TunerHostInfo?> PostAsync(TunerHostInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.TunerHostInfo?> PostAsync(Jellyfin.Sdk.Generated.Models.TunerHostInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TunerHostInfo> PostAsync(TunerHostInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.TunerHostInfo> PostAsync(Jellyfin.Sdk.Generated.Models.TunerHostInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<TunerHostInfo>(requestInfo, TunerHostInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.TunerHostInfo>(requestInfo, Jellyfin.Sdk.Generated.Models.TunerHostInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a tuner host.
@@ -80,11 +81,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.TunerHosts {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<TunerHostsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.LiveTv.TunerHosts.TunerHostsRequestBuilder.TunerHostsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<TunerHostsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.LiveTv.TunerHosts.TunerHostsRequestBuilder.TunerHostsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -99,11 +100,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.TunerHosts {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(TunerHostInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.TunerHostInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(TunerHostInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.TunerHostInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -116,11 +117,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.TunerHosts {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TunerHostsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.LiveTv.TunerHosts.TunerHostsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TunerHostsRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.LiveTv.TunerHosts.TunerHostsRequestBuilder WithUrl(string rawUrl)
         {
-            return new TunerHostsRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.LiveTv.TunerHosts.TunerHostsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Deletes a tuner host.

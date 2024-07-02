@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class ServiceInfo.
     /// </summary>
-    public class LiveTvServiceInfo : IParsable 
+    public class LiveTvServiceInfo : IParsable
     {
         /// <summary>Gets or sets a value indicating whether this instance has update available.</summary>
         public bool? HasUpdateAvailable { get; set; }
@@ -31,7 +32,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Name { get; set; }
 #endif
         /// <summary>Gets or sets the status.</summary>
-        public LiveTvServiceInfo_Status? Status { get; set; }
+        public Jellyfin.Sdk.Generated.Models.LiveTvServiceInfo_Status? Status { get; set; }
         /// <summary>Gets or sets the status message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,12 +60,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LiveTvServiceInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.LiveTvServiceInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LiveTvServiceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.LiveTvServiceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LiveTvServiceInfo();
+            return new Jellyfin.Sdk.Generated.Models.LiveTvServiceInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,14 +75,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"HasUpdateAvailable", n => { HasUpdateAvailable = n.GetBoolValue(); } },
-                {"HomePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
-                {"IsVisible", n => { IsVisible = n.GetBoolValue(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"Status", n => { Status = n.GetEnumValue<LiveTvServiceInfo_Status>(); } },
-                {"StatusMessage", n => { StatusMessage = n.GetStringValue(); } },
-                {"Tuners", n => { Tuners = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"Version", n => { Version = n.GetStringValue(); } },
+                { "HasUpdateAvailable", n => { HasUpdateAvailable = n.GetBoolValue(); } },
+                { "HomePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
+                { "IsVisible", n => { IsVisible = n.GetBoolValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "Status", n => { Status = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.LiveTvServiceInfo_Status>(); } },
+                { "StatusMessage", n => { StatusMessage = n.GetStringValue(); } },
+                { "Tuners", n => { Tuners = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "Version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -95,7 +96,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("HomePageUrl", HomePageUrl);
             writer.WriteBoolValue("IsVisible", IsVisible);
             writer.WriteStringValue("Name", Name);
-            writer.WriteEnumValue<LiveTvServiceInfo_Status>("Status", Status);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.LiveTvServiceInfo_Status>("Status", Status);
             writer.WriteStringValue("StatusMessage", StatusMessage);
             writer.WriteCollectionOfPrimitiveValues<string>("Tuners", Tuners);
             writer.WriteStringValue("Version", Version);

@@ -6,14 +6,15 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item {
+namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\LiveStreamFiles\{streamId}
     /// </summary>
-    public class WithStreamItemRequestBuilder : BaseRequestBuilder 
+    public class WithStreamItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="WithStreamItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.WithStreamItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -21,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithStreamItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.WithStreamItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,12 +32,12 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item {
         /// <summary>
         /// Builds and executes requests for operations under \LiveTv\LiveStreamFiles\{streamId}\stream.{container}
         /// </summary>
-        /// <returns>A <see cref="StreamWithContainerRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.StreamWithContainer.StreamWithContainerRequestBuilder"/></returns>
         /// <param name="container">Container type.</param>
-        public StreamWithContainerRequestBuilder StreamWithContainer(string container)
+        public Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.StreamWithContainer.StreamWithContainerRequestBuilder StreamWithContainer(string container)
         {
             if(string.IsNullOrEmpty(container)) throw new ArgumentNullException(nameof(container));
-            return new StreamWithContainerRequestBuilder(PathParameters, RequestAdapter, container);
+            return new Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.StreamWithContainer.StreamWithContainerRequestBuilder(PathParameters, RequestAdapter, container);
         }
     }
 }

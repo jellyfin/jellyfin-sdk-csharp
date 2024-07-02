@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class BasePluginConfiguration.
     /// </summary>
-    public class BasePluginConfiguration : IParsable 
+    public class BasePluginConfiguration : IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BasePluginConfiguration"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.BasePluginConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BasePluginConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.BasePluginConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BasePluginConfiguration();
+            return new Jellyfin.Sdk.Generated.Models.BasePluginConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

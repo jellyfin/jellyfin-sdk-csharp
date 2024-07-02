@@ -7,24 +7,25 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Library.Movies {
+namespace Jellyfin.Sdk.Generated.Library.Movies
+{
     /// <summary>
     /// Builds and executes requests for operations under \Library\Movies
     /// </summary>
-    public class MoviesRequestBuilder : BaseRequestBuilder 
+    public class MoviesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Added property</summary>
-        public AddedRequestBuilder Added
+        public Jellyfin.Sdk.Generated.Library.Movies.Added.AddedRequestBuilder Added
         {
-            get => new AddedRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.Movies.Added.AddedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Updated property</summary>
-        public UpdatedRequestBuilder Updated
+        public Jellyfin.Sdk.Generated.Library.Movies.Updated.UpdatedRequestBuilder Updated
         {
-            get => new UpdatedRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.Movies.Updated.UpdatedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="MoviesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Library.Movies.MoviesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,7 +33,7 @@ namespace Jellyfin.Sdk.Generated.Library.Movies {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MoviesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Library.Movies.MoviesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

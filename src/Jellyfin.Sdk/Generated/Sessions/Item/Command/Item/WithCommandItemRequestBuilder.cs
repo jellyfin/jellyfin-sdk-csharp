@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Sessions.Item.Command.Item {
+namespace Jellyfin.Sdk.Generated.Sessions.Item.Command.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Sessions\{sessionId}\Command\{command}
     /// </summary>
-    public class WithCommandItemRequestBuilder : BaseRequestBuilder 
+    public class WithCommandItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="WithCommandItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.Item.Command.Item.WithCommandItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Command.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithCommandItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.Item.Command.Item.WithCommandItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,11 +68,11 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.Command.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithCommandItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Sessions.Item.Command.Item.WithCommandItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithCommandItemRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Sessions.Item.Command.Item.WithCommandItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithCommandItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Sessions.Item.Command.Item.WithCommandItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

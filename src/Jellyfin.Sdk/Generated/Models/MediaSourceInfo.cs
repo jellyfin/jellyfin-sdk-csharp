@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class MediaSourceInfo : IParsable 
+    public class MediaSourceInfo : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The AnalyzeDurationMs property</summary>
@@ -36,7 +37,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string EncoderPath { get; set; }
 #endif
         /// <summary>The EncoderProtocol property</summary>
-        public MediaSourceInfo_EncoderProtocol? EncoderProtocol { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MediaSourceInfo_EncoderProtocol? EncoderProtocol { get; set; }
         /// <summary>The ETag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +71,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The IsInfiniteStream property</summary>
         public bool? IsInfiniteStream { get; set; }
         /// <summary>The IsoType property</summary>
-        public MediaSourceInfo_IsoType? IsoType { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MediaSourceInfo_IsoType? IsoType { get; set; }
         /// <summary>Gets or sets a value indicating whether the media is remote.Differentiate internet url vs local network.</summary>
         public bool? IsRemote { get; set; }
         /// <summary>The LiveStreamId property</summary>
@@ -84,18 +85,18 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The MediaAttachments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MediaAttachment>? MediaAttachments { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaAttachment>? MediaAttachments { get; set; }
 #nullable restore
 #else
-        public List<MediaAttachment> MediaAttachments { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaAttachment> MediaAttachments { get; set; }
 #endif
         /// <summary>The MediaStreams property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MediaStream>? MediaStreams { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaStream>? MediaStreams { get; set; }
 #nullable restore
 #else
-        public List<MediaStream> MediaStreams { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaStream> MediaStreams { get; set; }
 #endif
         /// <summary>The Name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,16 +123,16 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Path { get; set; }
 #endif
         /// <summary>The Protocol property</summary>
-        public MediaSourceInfo_Protocol? Protocol { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Protocol? Protocol { get; set; }
         /// <summary>The ReadAtNativeFramerate property</summary>
         public bool? ReadAtNativeFramerate { get; set; }
         /// <summary>The RequiredHttpHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MediaSourceInfo_RequiredHttpHeaders? RequiredHttpHeaders { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MediaSourceInfo_RequiredHttpHeaders? RequiredHttpHeaders { get; set; }
 #nullable restore
 #else
-        public MediaSourceInfo_RequiredHttpHeaders RequiredHttpHeaders { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MediaSourceInfo_RequiredHttpHeaders RequiredHttpHeaders { get; set; }
 #endif
         /// <summary>The RequiresClosing property</summary>
         public bool? RequiresClosing { get; set; }
@@ -152,7 +153,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The SupportsTranscoding property</summary>
         public bool? SupportsTranscoding { get; set; }
         /// <summary>The Timestamp property</summary>
-        public MediaSourceInfo_Timestamp? Timestamp { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Timestamp? Timestamp { get; set; }
         /// <summary>The TranscodingContainer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -162,7 +163,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string TranscodingContainer { get; set; }
 #endif
         /// <summary>Media streaming protocol.Lowercase for backwards compatibility.</summary>
-        public MediaSourceInfo_TranscodingSubProtocol? TranscodingSubProtocol { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MediaSourceInfo_TranscodingSubProtocol? TranscodingSubProtocol { get; set; }
         /// <summary>The TranscodingUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -172,20 +173,20 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string TranscodingUrl { get; set; }
 #endif
         /// <summary>The Type property</summary>
-        public MediaSourceInfo_Type? Type { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Type? Type { get; set; }
         /// <summary>The Video3DFormat property</summary>
-        public MediaSourceInfo_Video3DFormat? Video3DFormat { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Video3DFormat? Video3DFormat { get; set; }
         /// <summary>The VideoType property</summary>
-        public MediaSourceInfo_VideoType? VideoType { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MediaSourceInfo_VideoType? VideoType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MediaSourceInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.MediaSourceInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MediaSourceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.MediaSourceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MediaSourceInfo();
+            return new Jellyfin.Sdk.Generated.Models.MediaSourceInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -195,48 +196,48 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AnalyzeDurationMs", n => { AnalyzeDurationMs = n.GetIntValue(); } },
-                {"Bitrate", n => { Bitrate = n.GetIntValue(); } },
-                {"BufferMs", n => { BufferMs = n.GetIntValue(); } },
-                {"Container", n => { Container = n.GetStringValue(); } },
-                {"DefaultAudioStreamIndex", n => { DefaultAudioStreamIndex = n.GetIntValue(); } },
-                {"DefaultSubtitleStreamIndex", n => { DefaultSubtitleStreamIndex = n.GetIntValue(); } },
-                {"ETag", n => { ETag = n.GetStringValue(); } },
-                {"EncoderPath", n => { EncoderPath = n.GetStringValue(); } },
-                {"EncoderProtocol", n => { EncoderProtocol = n.GetEnumValue<MediaSourceInfo_EncoderProtocol>(); } },
-                {"Formats", n => { Formats = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"GenPtsInput", n => { GenPtsInput = n.GetBoolValue(); } },
-                {"Id", n => { Id = n.GetStringValue(); } },
-                {"IgnoreDts", n => { IgnoreDts = n.GetBoolValue(); } },
-                {"IgnoreIndex", n => { IgnoreIndex = n.GetBoolValue(); } },
-                {"IsInfiniteStream", n => { IsInfiniteStream = n.GetBoolValue(); } },
-                {"IsRemote", n => { IsRemote = n.GetBoolValue(); } },
-                {"IsoType", n => { IsoType = n.GetEnumValue<MediaSourceInfo_IsoType>(); } },
-                {"LiveStreamId", n => { LiveStreamId = n.GetStringValue(); } },
-                {"MediaAttachments", n => { MediaAttachments = n.GetCollectionOfObjectValues<MediaAttachment>(MediaAttachment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"MediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"OpenToken", n => { OpenToken = n.GetStringValue(); } },
-                {"Path", n => { Path = n.GetStringValue(); } },
-                {"Protocol", n => { Protocol = n.GetEnumValue<MediaSourceInfo_Protocol>(); } },
-                {"ReadAtNativeFramerate", n => { ReadAtNativeFramerate = n.GetBoolValue(); } },
-                {"RequiredHttpHeaders", n => { RequiredHttpHeaders = n.GetObjectValue<MediaSourceInfo_RequiredHttpHeaders>(MediaSourceInfo_RequiredHttpHeaders.CreateFromDiscriminatorValue); } },
-                {"RequiresClosing", n => { RequiresClosing = n.GetBoolValue(); } },
-                {"RequiresLooping", n => { RequiresLooping = n.GetBoolValue(); } },
-                {"RequiresOpening", n => { RequiresOpening = n.GetBoolValue(); } },
-                {"RunTimeTicks", n => { RunTimeTicks = n.GetLongValue(); } },
-                {"Size", n => { Size = n.GetLongValue(); } },
-                {"SupportsDirectPlay", n => { SupportsDirectPlay = n.GetBoolValue(); } },
-                {"SupportsDirectStream", n => { SupportsDirectStream = n.GetBoolValue(); } },
-                {"SupportsProbing", n => { SupportsProbing = n.GetBoolValue(); } },
-                {"SupportsTranscoding", n => { SupportsTranscoding = n.GetBoolValue(); } },
-                {"Timestamp", n => { Timestamp = n.GetEnumValue<MediaSourceInfo_Timestamp>(); } },
-                {"TranscodingContainer", n => { TranscodingContainer = n.GetStringValue(); } },
-                {"TranscodingSubProtocol", n => { TranscodingSubProtocol = n.GetEnumValue<MediaSourceInfo_TranscodingSubProtocol>(); } },
-                {"TranscodingUrl", n => { TranscodingUrl = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<MediaSourceInfo_Type>(); } },
-                {"Video3DFormat", n => { Video3DFormat = n.GetEnumValue<MediaSourceInfo_Video3DFormat>(); } },
-                {"VideoType", n => { VideoType = n.GetEnumValue<MediaSourceInfo_VideoType>(); } },
+                { "AnalyzeDurationMs", n => { AnalyzeDurationMs = n.GetIntValue(); } },
+                { "Bitrate", n => { Bitrate = n.GetIntValue(); } },
+                { "BufferMs", n => { BufferMs = n.GetIntValue(); } },
+                { "Container", n => { Container = n.GetStringValue(); } },
+                { "DefaultAudioStreamIndex", n => { DefaultAudioStreamIndex = n.GetIntValue(); } },
+                { "DefaultSubtitleStreamIndex", n => { DefaultSubtitleStreamIndex = n.GetIntValue(); } },
+                { "ETag", n => { ETag = n.GetStringValue(); } },
+                { "EncoderPath", n => { EncoderPath = n.GetStringValue(); } },
+                { "EncoderProtocol", n => { EncoderProtocol = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_EncoderProtocol>(); } },
+                { "Formats", n => { Formats = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "GenPtsInput", n => { GenPtsInput = n.GetBoolValue(); } },
+                { "Id", n => { Id = n.GetStringValue(); } },
+                { "IgnoreDts", n => { IgnoreDts = n.GetBoolValue(); } },
+                { "IgnoreIndex", n => { IgnoreIndex = n.GetBoolValue(); } },
+                { "IsInfiniteStream", n => { IsInfiniteStream = n.GetBoolValue(); } },
+                { "IsRemote", n => { IsRemote = n.GetBoolValue(); } },
+                { "IsoType", n => { IsoType = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_IsoType>(); } },
+                { "LiveStreamId", n => { LiveStreamId = n.GetStringValue(); } },
+                { "MediaAttachments", n => { MediaAttachments = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.MediaAttachment>(Jellyfin.Sdk.Generated.Models.MediaAttachment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "MediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.MediaStream>(Jellyfin.Sdk.Generated.Models.MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "OpenToken", n => { OpenToken = n.GetStringValue(); } },
+                { "Path", n => { Path = n.GetStringValue(); } },
+                { "Protocol", n => { Protocol = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Protocol>(); } },
+                { "ReadAtNativeFramerate", n => { ReadAtNativeFramerate = n.GetBoolValue(); } },
+                { "RequiredHttpHeaders", n => { RequiredHttpHeaders = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_RequiredHttpHeaders>(Jellyfin.Sdk.Generated.Models.MediaSourceInfo_RequiredHttpHeaders.CreateFromDiscriminatorValue); } },
+                { "RequiresClosing", n => { RequiresClosing = n.GetBoolValue(); } },
+                { "RequiresLooping", n => { RequiresLooping = n.GetBoolValue(); } },
+                { "RequiresOpening", n => { RequiresOpening = n.GetBoolValue(); } },
+                { "RunTimeTicks", n => { RunTimeTicks = n.GetLongValue(); } },
+                { "Size", n => { Size = n.GetLongValue(); } },
+                { "SupportsDirectPlay", n => { SupportsDirectPlay = n.GetBoolValue(); } },
+                { "SupportsDirectStream", n => { SupportsDirectStream = n.GetBoolValue(); } },
+                { "SupportsProbing", n => { SupportsProbing = n.GetBoolValue(); } },
+                { "SupportsTranscoding", n => { SupportsTranscoding = n.GetBoolValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Timestamp>(); } },
+                { "TranscodingContainer", n => { TranscodingContainer = n.GetStringValue(); } },
+                { "TranscodingSubProtocol", n => { TranscodingSubProtocol = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_TranscodingSubProtocol>(); } },
+                { "TranscodingUrl", n => { TranscodingUrl = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Type>(); } },
+                { "Video3DFormat", n => { Video3DFormat = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Video3DFormat>(); } },
+                { "VideoType", n => { VideoType = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_VideoType>(); } },
             };
         }
         /// <summary>
@@ -253,7 +254,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("DefaultAudioStreamIndex", DefaultAudioStreamIndex);
             writer.WriteIntValue("DefaultSubtitleStreamIndex", DefaultSubtitleStreamIndex);
             writer.WriteStringValue("EncoderPath", EncoderPath);
-            writer.WriteEnumValue<MediaSourceInfo_EncoderProtocol>("EncoderProtocol", EncoderProtocol);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_EncoderProtocol>("EncoderProtocol", EncoderProtocol);
             writer.WriteStringValue("ETag", ETag);
             writer.WriteCollectionOfPrimitiveValues<string>("Formats", Formats);
             writer.WriteBoolValue("GenPtsInput", GenPtsInput);
@@ -261,17 +262,17 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("IgnoreDts", IgnoreDts);
             writer.WriteBoolValue("IgnoreIndex", IgnoreIndex);
             writer.WriteBoolValue("IsInfiniteStream", IsInfiniteStream);
-            writer.WriteEnumValue<MediaSourceInfo_IsoType>("IsoType", IsoType);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_IsoType>("IsoType", IsoType);
             writer.WriteBoolValue("IsRemote", IsRemote);
             writer.WriteStringValue("LiveStreamId", LiveStreamId);
-            writer.WriteCollectionOfObjectValues<MediaAttachment>("MediaAttachments", MediaAttachments);
-            writer.WriteCollectionOfObjectValues<MediaStream>("MediaStreams", MediaStreams);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.MediaAttachment>("MediaAttachments", MediaAttachments);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.MediaStream>("MediaStreams", MediaStreams);
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("OpenToken", OpenToken);
             writer.WriteStringValue("Path", Path);
-            writer.WriteEnumValue<MediaSourceInfo_Protocol>("Protocol", Protocol);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Protocol>("Protocol", Protocol);
             writer.WriteBoolValue("ReadAtNativeFramerate", ReadAtNativeFramerate);
-            writer.WriteObjectValue<MediaSourceInfo_RequiredHttpHeaders>("RequiredHttpHeaders", RequiredHttpHeaders);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_RequiredHttpHeaders>("RequiredHttpHeaders", RequiredHttpHeaders);
             writer.WriteBoolValue("RequiresClosing", RequiresClosing);
             writer.WriteBoolValue("RequiresLooping", RequiresLooping);
             writer.WriteBoolValue("RequiresOpening", RequiresOpening);
@@ -281,13 +282,13 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("SupportsDirectStream", SupportsDirectStream);
             writer.WriteBoolValue("SupportsProbing", SupportsProbing);
             writer.WriteBoolValue("SupportsTranscoding", SupportsTranscoding);
-            writer.WriteEnumValue<MediaSourceInfo_Timestamp>("Timestamp", Timestamp);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Timestamp>("Timestamp", Timestamp);
             writer.WriteStringValue("TranscodingContainer", TranscodingContainer);
-            writer.WriteEnumValue<MediaSourceInfo_TranscodingSubProtocol>("TranscodingSubProtocol", TranscodingSubProtocol);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_TranscodingSubProtocol>("TranscodingSubProtocol", TranscodingSubProtocol);
             writer.WriteStringValue("TranscodingUrl", TranscodingUrl);
-            writer.WriteEnumValue<MediaSourceInfo_Type>("Type", Type);
-            writer.WriteEnumValue<MediaSourceInfo_Video3DFormat>("Video3DFormat", Video3DFormat);
-            writer.WriteEnumValue<MediaSourceInfo_VideoType>("VideoType", VideoType);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Type>("Type", Type);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Video3DFormat>("Video3DFormat", Video3DFormat);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.MediaSourceInfo_VideoType>("VideoType", VideoType);
         }
     }
 }

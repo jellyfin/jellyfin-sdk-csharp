@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class ClientCapabilities : IParsable 
+    public class ClientCapabilities : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The AppStoreUrl property</summary>
@@ -36,18 +37,18 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The PlayableMediaTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MediaType?>? PlayableMediaTypes { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaType?>? PlayableMediaTypes { get; set; }
 #nullable restore
 #else
-        public List<MediaType?> PlayableMediaTypes { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaType?> PlayableMediaTypes { get; set; }
 #endif
         /// <summary>The SupportedCommands property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GeneralCommandType?>? SupportedCommands { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.GeneralCommandType?>? SupportedCommands { get; set; }
 #nullable restore
 #else
-        public List<GeneralCommandType?> SupportedCommands { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.GeneralCommandType?> SupportedCommands { get; set; }
 #endif
         /// <summary>The SupportsContentUploading property</summary>
         [Obsolete("")]
@@ -62,12 +63,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClientCapabilities"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ClientCapabilities"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ClientCapabilities CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.ClientCapabilities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ClientCapabilities();
+            return new Jellyfin.Sdk.Generated.Models.ClientCapabilities();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,15 +78,15 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AppStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
-                {"DeviceProfile", n => { DeviceProfile = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.DeviceProfile>(Jellyfin.Sdk.Generated.Models.DeviceProfile.CreateFromDiscriminatorValue); } },
-                {"IconUrl", n => { IconUrl = n.GetStringValue(); } },
-                {"PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfEnumValues<MediaType>()?.ToList(); } },
-                {"SupportedCommands", n => { SupportedCommands = n.GetCollectionOfEnumValues<GeneralCommandType>()?.ToList(); } },
-                {"SupportsContentUploading", n => { SupportsContentUploading = n.GetBoolValue(); } },
-                {"SupportsMediaControl", n => { SupportsMediaControl = n.GetBoolValue(); } },
-                {"SupportsPersistentIdentifier", n => { SupportsPersistentIdentifier = n.GetBoolValue(); } },
-                {"SupportsSync", n => { SupportsSync = n.GetBoolValue(); } },
+                { "AppStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
+                { "DeviceProfile", n => { DeviceProfile = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.DeviceProfile>(Jellyfin.Sdk.Generated.Models.DeviceProfile.CreateFromDiscriminatorValue); } },
+                { "IconUrl", n => { IconUrl = n.GetStringValue(); } },
+                { "PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.MediaType>()?.ToList(); } },
+                { "SupportedCommands", n => { SupportedCommands = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.GeneralCommandType>()?.ToList(); } },
+                { "SupportsContentUploading", n => { SupportsContentUploading = n.GetBoolValue(); } },
+                { "SupportsMediaControl", n => { SupportsMediaControl = n.GetBoolValue(); } },
+                { "SupportsPersistentIdentifier", n => { SupportsPersistentIdentifier = n.GetBoolValue(); } },
+                { "SupportsSync", n => { SupportsSync = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -98,8 +99,8 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("AppStoreUrl", AppStoreUrl);
             writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.DeviceProfile>("DeviceProfile", DeviceProfile);
             writer.WriteStringValue("IconUrl", IconUrl);
-            writer.WriteCollectionOfEnumValues<MediaType>("PlayableMediaTypes", PlayableMediaTypes);
-            writer.WriteCollectionOfEnumValues<GeneralCommandType>("SupportedCommands", SupportedCommands);
+            writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.MediaType>("PlayableMediaTypes", PlayableMediaTypes);
+            writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.GeneralCommandType>("SupportedCommands", SupportedCommands);
             writer.WriteBoolValue("SupportsContentUploading", SupportsContentUploading);
             writer.WriteBoolValue("SupportsMediaControl", SupportsMediaControl);
             writer.WriteBoolValue("SupportsPersistentIdentifier", SupportsPersistentIdentifier);

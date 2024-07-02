@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum {
+namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum
+{
     /// <summary>
     /// Builds and executes requests for operations under \Items\RemoteSearch\MusicAlbum
     /// </summary>
-    public class MusicAlbumRequestBuilder : BaseRequestBuilder 
+    public class MusicAlbumRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="MusicAlbumRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum.MusicAlbumRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MusicAlbumRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum.MusicAlbumRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,22 +34,22 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum {
         /// <summary>
         /// Get music album remote search.
         /// </summary>
-        /// <returns>A List&lt;RemoteSearchResult&gt;</returns>
+        /// <returns>A List&lt;Jellyfin.Sdk.Generated.Models.RemoteSearchResult&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<RemoteSearchResult>?> PostAsync(AlbumInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.RemoteSearchResult>?> PostAsync(Jellyfin.Sdk.Generated.Models.AlbumInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<RemoteSearchResult>> PostAsync(AlbumInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.RemoteSearchResult>> PostAsync(Jellyfin.Sdk.Generated.Models.AlbumInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<RemoteSearchResult>(requestInfo, RemoteSearchResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Jellyfin.Sdk.Generated.Models.RemoteSearchResult>(requestInfo, Jellyfin.Sdk.Generated.Models.RemoteSearchResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -59,11 +60,11 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AlbumInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.AlbumInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AlbumInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.AlbumInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -76,11 +77,11 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MusicAlbumRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum.MusicAlbumRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MusicAlbumRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum.MusicAlbumRequestBuilder WithUrl(string rawUrl)
         {
-            return new MusicAlbumRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum.MusicAlbumRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

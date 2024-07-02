@@ -7,24 +7,25 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Albums.Item {
+namespace Jellyfin.Sdk.Generated.Albums.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Albums\{itemId}
     /// </summary>
-    public class WithItemItemRequestBuilder : BaseRequestBuilder 
+    public class WithItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The InstantMix property</summary>
-        public InstantMixRequestBuilder InstantMix
+        public Jellyfin.Sdk.Generated.Albums.Item.InstantMix.InstantMixRequestBuilder InstantMix
         {
-            get => new InstantMixRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Albums.Item.InstantMix.InstantMixRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Similar property</summary>
-        public SimilarRequestBuilder Similar
+        public Jellyfin.Sdk.Generated.Albums.Item.Similar.SimilarRequestBuilder Similar
         {
-            get => new SimilarRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Albums.Item.Similar.SimilarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Albums.Item.WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,7 +33,7 @@ namespace Jellyfin.Sdk.Generated.Albums.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Albums.Item.WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

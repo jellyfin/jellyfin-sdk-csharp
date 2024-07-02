@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Upload subtitles dto.
     /// </summary>
-    public class UploadSubtitleDto : IParsable 
+    public class UploadSubtitleDto : IParsable
     {
         /// <summary>Gets or sets the subtitle data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,12 +42,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UploadSubtitleDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.UploadSubtitleDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UploadSubtitleDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.UploadSubtitleDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UploadSubtitleDto();
+            return new Jellyfin.Sdk.Generated.Models.UploadSubtitleDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,11 +57,11 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Data", n => { Data = n.GetStringValue(); } },
-                {"Format", n => { Format = n.GetStringValue(); } },
-                {"IsForced", n => { IsForced = n.GetBoolValue(); } },
-                {"IsHearingImpaired", n => { IsHearingImpaired = n.GetBoolValue(); } },
-                {"Language", n => { Language = n.GetStringValue(); } },
+                { "Data", n => { Data = n.GetStringValue(); } },
+                { "Format", n => { Format = n.GetStringValue(); } },
+                { "IsForced", n => { IsForced = n.GetBoolValue(); } },
+                { "IsHearingImpaired", n => { IsHearingImpaired = n.GetBoolValue(); } },
+                { "Language", n => { Language = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -9,26 +9,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Collections {
+namespace Jellyfin.Sdk.Generated.Collections
+{
     /// <summary>
     /// Builds and executes requests for operations under \Collections
     /// </summary>
-    public class CollectionsRequestBuilder : BaseRequestBuilder 
+    public class CollectionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Collections.item collection</summary>
         /// <param name="position">The collection id.</param>
-        /// <returns>A <see cref="WithCollectionItemRequestBuilder"/></returns>
-        public WithCollectionItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Collections.Item.WithCollectionItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Collections.Item.WithCollectionItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("collectionId", position);
-                return new WithCollectionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Collections.Item.WithCollectionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CollectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Collections.CollectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +37,7 @@ namespace Jellyfin.Sdk.Generated.Collections {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CollectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Collections.CollectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,20 +47,20 @@ namespace Jellyfin.Sdk.Generated.Collections {
         /// <summary>
         /// Creates a new collection.
         /// </summary>
-        /// <returns>A <see cref="CollectionCreationResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.CollectionCreationResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CollectionCreationResult?> PostAsync(Action<RequestConfiguration<CollectionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.CollectionCreationResult?> PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CollectionCreationResult> PostAsync(Action<RequestConfiguration<CollectionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.CollectionCreationResult> PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<CollectionCreationResult>(requestInfo, CollectionCreationResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.CollectionCreationResult>(requestInfo, Jellyfin.Sdk.Generated.Models.CollectionCreationResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new collection.
@@ -68,11 +69,11 @@ namespace Jellyfin.Sdk.Generated.Collections {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<CollectionsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<CollectionsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -83,11 +84,11 @@ namespace Jellyfin.Sdk.Generated.Collections {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CollectionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Collections.CollectionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CollectionsRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Collections.CollectionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new CollectionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Collections.CollectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Creates a new collection.

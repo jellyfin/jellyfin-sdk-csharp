@@ -4,23 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class PingRequestDto.
     /// </summary>
-    public class PingRequestDto : IParsable 
+    public class PingRequestDto : IParsable
     {
         /// <summary>Gets or sets the ping time.</summary>
         public long? Ping { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PingRequestDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.PingRequestDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PingRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.PingRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PingRequestDto();
+            return new Jellyfin.Sdk.Generated.Models.PingRequestDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -30,7 +31,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Ping", n => { Ping = n.GetLongValue(); } },
+                { "Ping", n => { Ping = n.GetLongValue(); } },
             };
         }
         /// <summary>

@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3 {
+namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3
+{
     /// <summary>
     /// Builds and executes requests for operations under \Audio\{itemId}\hls\{segmentId}\stream.mp3
     /// </summary>
-    public class StreamMp3RequestBuilder : BaseRequestBuilder 
+    public class StreamMp3RequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="StreamMp3RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3.StreamMp3RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3 {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="StreamMp3RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3.StreamMp3RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -69,11 +70,11 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3 {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="StreamMp3RequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3.StreamMp3RequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StreamMp3RequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3.StreamMp3RequestBuilder WithUrl(string rawUrl)
         {
-            return new StreamMp3RequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamMp3.StreamMp3RequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

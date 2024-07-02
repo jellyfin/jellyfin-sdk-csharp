@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.System.Ping {
+namespace Jellyfin.Sdk.Generated.System.Ping
+{
     /// <summary>
     /// Builds and executes requests for operations under \System\Ping
     /// </summary>
-    public class PingRequestBuilder : BaseRequestBuilder 
+    public class PingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="PingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.Ping.PingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.System.Ping {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.Ping.PingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -106,11 +107,11 @@ namespace Jellyfin.Sdk.Generated.System.Ping {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PingRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.System.Ping.PingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PingRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.System.Ping.PingRequestBuilder WithUrl(string rawUrl)
         {
-            return new PingRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.System.Ping.PingRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

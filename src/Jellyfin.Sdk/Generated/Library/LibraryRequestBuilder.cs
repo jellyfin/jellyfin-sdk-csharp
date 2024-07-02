@@ -12,49 +12,50 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Library {
+namespace Jellyfin.Sdk.Generated.Library
+{
     /// <summary>
     /// Builds and executes requests for operations under \Library
     /// </summary>
-    public class LibraryRequestBuilder : BaseRequestBuilder 
+    public class LibraryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Media property</summary>
-        public MediaRequestBuilder Media
+        public Jellyfin.Sdk.Generated.Library.Media.MediaRequestBuilder Media
         {
-            get => new MediaRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.Media.MediaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The MediaFolders property</summary>
-        public MediaFoldersRequestBuilder MediaFolders
+        public Jellyfin.Sdk.Generated.Library.MediaFolders.MediaFoldersRequestBuilder MediaFolders
         {
-            get => new MediaFoldersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.MediaFolders.MediaFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Movies property</summary>
-        public MoviesRequestBuilder Movies
+        public Jellyfin.Sdk.Generated.Library.Movies.MoviesRequestBuilder Movies
         {
-            get => new MoviesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.Movies.MoviesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The PhysicalPaths property</summary>
-        public PhysicalPathsRequestBuilder PhysicalPaths
+        public Jellyfin.Sdk.Generated.Library.PhysicalPaths.PhysicalPathsRequestBuilder PhysicalPaths
         {
-            get => new PhysicalPathsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.PhysicalPaths.PhysicalPathsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Refresh property</summary>
-        public RefreshRequestBuilder Refresh
+        public Jellyfin.Sdk.Generated.Library.Refresh.RefreshRequestBuilder Refresh
         {
-            get => new RefreshRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.Refresh.RefreshRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Series property</summary>
-        public SeriesRequestBuilder Series
+        public Jellyfin.Sdk.Generated.Library.Series.SeriesRequestBuilder Series
         {
-            get => new SeriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.Series.SeriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The VirtualFolders property</summary>
-        public VirtualFoldersRequestBuilder VirtualFolders
+        public Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder VirtualFolders
         {
-            get => new VirtualFoldersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="LibraryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Library.LibraryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,7 +63,7 @@ namespace Jellyfin.Sdk.Generated.Library {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LibraryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Library.LibraryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

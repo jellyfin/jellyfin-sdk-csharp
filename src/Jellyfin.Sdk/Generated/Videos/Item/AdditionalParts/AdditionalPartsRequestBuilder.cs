@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts {
+namespace Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts
+{
     /// <summary>
     /// Builds and executes requests for operations under \Videos\{item-id}\AdditionalParts
     /// </summary>
-    public class AdditionalPartsRequestBuilder : BaseRequestBuilder 
+    public class AdditionalPartsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="AdditionalPartsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts.AdditionalPartsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AdditionalPartsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts.AdditionalPartsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts {
         /// <summary>
         /// Gets additional parts for a video.
         /// </summary>
-        /// <returns>A <see cref="BaseItemDtoQueryResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<AdditionalPartsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts.AdditionalPartsRequestBuilder.AdditionalPartsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<AdditionalPartsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts.AdditionalPartsRequestBuilder.AdditionalPartsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult>(requestInfo, Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets additional parts for a video.
@@ -55,11 +56,11 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdditionalPartsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts.AdditionalPartsRequestBuilder.AdditionalPartsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdditionalPartsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts.AdditionalPartsRequestBuilder.AdditionalPartsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -70,11 +71,11 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AdditionalPartsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts.AdditionalPartsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AdditionalPartsRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts.AdditionalPartsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AdditionalPartsRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts.AdditionalPartsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets additional parts for a video.

@@ -7,31 +7,32 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Movies {
+namespace Jellyfin.Sdk.Generated.Movies
+{
     /// <summary>
     /// Builds and executes requests for operations under \Movies
     /// </summary>
-    public class MoviesRequestBuilder : BaseRequestBuilder 
+    public class MoviesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Recommendations property</summary>
-        public RecommendationsRequestBuilder Recommendations
+        public Jellyfin.Sdk.Generated.Movies.Recommendations.RecommendationsRequestBuilder Recommendations
         {
-            get => new RecommendationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Movies.Recommendations.RecommendationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Movies.item collection</summary>
         /// <param name="position">The item id.</param>
-        /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
-        public WithItemItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Movies.Item.WithItemItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Movies.Item.WithItemItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("itemId", position);
-                return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Movies.Item.WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MoviesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Movies.MoviesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,7 +40,7 @@ namespace Jellyfin.Sdk.Generated.Movies {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MoviesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Movies.MoviesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

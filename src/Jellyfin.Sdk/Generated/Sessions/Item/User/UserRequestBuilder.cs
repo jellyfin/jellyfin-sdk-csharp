@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Sessions.Item.User {
+namespace Jellyfin.Sdk.Generated.Sessions.Item.User
+{
     /// <summary>
     /// Builds and executes requests for operations under \Sessions\{sessionId}\User
     /// </summary>
-    public class UserRequestBuilder : BaseRequestBuilder 
+    public class UserRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Sessions.item.User.item collection</summary>
         /// <param name="position">The user id.</param>
-        /// <returns>A <see cref="WithUserItemRequestBuilder"/></returns>
-        public WithUserItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Sessions.Item.User.Item.WithUserItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Sessions.Item.User.Item.WithUserItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("userId", position);
-                return new WithUserItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Sessions.Item.User.Item.WithUserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.Item.User.UserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item.User {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.Item.User.UserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

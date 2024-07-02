@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class UserPolicy : IParsable 
+    public class UserPolicy : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The AccessSchedules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessSchedule>? AccessSchedules { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.AccessSchedule>? AccessSchedules { get; set; }
 #nullable restore
 #else
-        public List<AccessSchedule> AccessSchedules { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.AccessSchedule> AccessSchedules { get; set; }
 #endif
         /// <summary>The AllowedTags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,10 +61,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The BlockUnratedItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnratedItem?>? BlockUnratedItems { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.UnratedItem?>? BlockUnratedItems { get; set; }
 #nullable restore
 #else
-        public List<UnratedItem?> BlockUnratedItems { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.UnratedItem?> BlockUnratedItems { get; set; }
 #endif
         /// <summary>The EnableAllChannels property</summary>
         public bool? EnableAllChannels { get; set; }
@@ -166,16 +167,16 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The RemoteClientBitrateLimit property</summary>
         public int? RemoteClientBitrateLimit { get; set; }
         /// <summary>Gets or sets a value indicating what SyncPlay features the user can access.</summary>
-        public UserPolicy_SyncPlayAccess? SyncPlayAccess { get; set; }
+        public Jellyfin.Sdk.Generated.Models.UserPolicy_SyncPlayAccess? SyncPlayAccess { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserPolicy"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.UserPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.UserPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserPolicy();
+            return new Jellyfin.Sdk.Generated.Models.UserPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -185,49 +186,49 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AccessSchedules", n => { AccessSchedules = n.GetCollectionOfObjectValues<AccessSchedule>(AccessSchedule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"AllowedTags", n => { AllowedTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"AuthenticationProviderId", n => { AuthenticationProviderId = n.GetStringValue(); } },
-                {"BlockUnratedItems", n => { BlockUnratedItems = n.GetCollectionOfEnumValues<UnratedItem>()?.ToList(); } },
-                {"BlockedChannels", n => { BlockedChannels = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"BlockedMediaFolders", n => { BlockedMediaFolders = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"BlockedTags", n => { BlockedTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"EnableAllChannels", n => { EnableAllChannels = n.GetBoolValue(); } },
-                {"EnableAllDevices", n => { EnableAllDevices = n.GetBoolValue(); } },
-                {"EnableAllFolders", n => { EnableAllFolders = n.GetBoolValue(); } },
-                {"EnableAudioPlaybackTranscoding", n => { EnableAudioPlaybackTranscoding = n.GetBoolValue(); } },
-                {"EnableCollectionManagement", n => { EnableCollectionManagement = n.GetBoolValue(); } },
-                {"EnableContentDeletion", n => { EnableContentDeletion = n.GetBoolValue(); } },
-                {"EnableContentDeletionFromFolders", n => { EnableContentDeletionFromFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"EnableContentDownloading", n => { EnableContentDownloading = n.GetBoolValue(); } },
-                {"EnableLiveTvAccess", n => { EnableLiveTvAccess = n.GetBoolValue(); } },
-                {"EnableLiveTvManagement", n => { EnableLiveTvManagement = n.GetBoolValue(); } },
-                {"EnableLyricManagement", n => { EnableLyricManagement = n.GetBoolValue(); } },
-                {"EnableMediaConversion", n => { EnableMediaConversion = n.GetBoolValue(); } },
-                {"EnableMediaPlayback", n => { EnableMediaPlayback = n.GetBoolValue(); } },
-                {"EnablePlaybackRemuxing", n => { EnablePlaybackRemuxing = n.GetBoolValue(); } },
-                {"EnablePublicSharing", n => { EnablePublicSharing = n.GetBoolValue(); } },
-                {"EnableRemoteAccess", n => { EnableRemoteAccess = n.GetBoolValue(); } },
-                {"EnableRemoteControlOfOtherUsers", n => { EnableRemoteControlOfOtherUsers = n.GetBoolValue(); } },
-                {"EnableSharedDeviceControl", n => { EnableSharedDeviceControl = n.GetBoolValue(); } },
-                {"EnableSubtitleManagement", n => { EnableSubtitleManagement = n.GetBoolValue(); } },
-                {"EnableSyncTranscoding", n => { EnableSyncTranscoding = n.GetBoolValue(); } },
-                {"EnableUserPreferenceAccess", n => { EnableUserPreferenceAccess = n.GetBoolValue(); } },
-                {"EnableVideoPlaybackTranscoding", n => { EnableVideoPlaybackTranscoding = n.GetBoolValue(); } },
-                {"EnabledChannels", n => { EnabledChannels = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"EnabledDevices", n => { EnabledDevices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"EnabledFolders", n => { EnabledFolders = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"ForceRemoteSourceTranscoding", n => { ForceRemoteSourceTranscoding = n.GetBoolValue(); } },
-                {"InvalidLoginAttemptCount", n => { InvalidLoginAttemptCount = n.GetIntValue(); } },
-                {"IsAdministrator", n => { IsAdministrator = n.GetBoolValue(); } },
-                {"IsDisabled", n => { IsDisabled = n.GetBoolValue(); } },
-                {"IsHidden", n => { IsHidden = n.GetBoolValue(); } },
-                {"LoginAttemptsBeforeLockout", n => { LoginAttemptsBeforeLockout = n.GetIntValue(); } },
-                {"MaxActiveSessions", n => { MaxActiveSessions = n.GetIntValue(); } },
-                {"MaxParentalRating", n => { MaxParentalRating = n.GetIntValue(); } },
-                {"PasswordResetProviderId", n => { PasswordResetProviderId = n.GetStringValue(); } },
-                {"RemoteClientBitrateLimit", n => { RemoteClientBitrateLimit = n.GetIntValue(); } },
-                {"SyncPlayAccess", n => { SyncPlayAccess = n.GetEnumValue<UserPolicy_SyncPlayAccess>(); } },
+                { "AccessSchedules", n => { AccessSchedules = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.AccessSchedule>(Jellyfin.Sdk.Generated.Models.AccessSchedule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "AllowedTags", n => { AllowedTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "AuthenticationProviderId", n => { AuthenticationProviderId = n.GetStringValue(); } },
+                { "BlockUnratedItems", n => { BlockUnratedItems = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.UnratedItem>()?.ToList(); } },
+                { "BlockedChannels", n => { BlockedChannels = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
+                { "BlockedMediaFolders", n => { BlockedMediaFolders = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
+                { "BlockedTags", n => { BlockedTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "EnableAllChannels", n => { EnableAllChannels = n.GetBoolValue(); } },
+                { "EnableAllDevices", n => { EnableAllDevices = n.GetBoolValue(); } },
+                { "EnableAllFolders", n => { EnableAllFolders = n.GetBoolValue(); } },
+                { "EnableAudioPlaybackTranscoding", n => { EnableAudioPlaybackTranscoding = n.GetBoolValue(); } },
+                { "EnableCollectionManagement", n => { EnableCollectionManagement = n.GetBoolValue(); } },
+                { "EnableContentDeletion", n => { EnableContentDeletion = n.GetBoolValue(); } },
+                { "EnableContentDeletionFromFolders", n => { EnableContentDeletionFromFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "EnableContentDownloading", n => { EnableContentDownloading = n.GetBoolValue(); } },
+                { "EnableLiveTvAccess", n => { EnableLiveTvAccess = n.GetBoolValue(); } },
+                { "EnableLiveTvManagement", n => { EnableLiveTvManagement = n.GetBoolValue(); } },
+                { "EnableLyricManagement", n => { EnableLyricManagement = n.GetBoolValue(); } },
+                { "EnableMediaConversion", n => { EnableMediaConversion = n.GetBoolValue(); } },
+                { "EnableMediaPlayback", n => { EnableMediaPlayback = n.GetBoolValue(); } },
+                { "EnablePlaybackRemuxing", n => { EnablePlaybackRemuxing = n.GetBoolValue(); } },
+                { "EnablePublicSharing", n => { EnablePublicSharing = n.GetBoolValue(); } },
+                { "EnableRemoteAccess", n => { EnableRemoteAccess = n.GetBoolValue(); } },
+                { "EnableRemoteControlOfOtherUsers", n => { EnableRemoteControlOfOtherUsers = n.GetBoolValue(); } },
+                { "EnableSharedDeviceControl", n => { EnableSharedDeviceControl = n.GetBoolValue(); } },
+                { "EnableSubtitleManagement", n => { EnableSubtitleManagement = n.GetBoolValue(); } },
+                { "EnableSyncTranscoding", n => { EnableSyncTranscoding = n.GetBoolValue(); } },
+                { "EnableUserPreferenceAccess", n => { EnableUserPreferenceAccess = n.GetBoolValue(); } },
+                { "EnableVideoPlaybackTranscoding", n => { EnableVideoPlaybackTranscoding = n.GetBoolValue(); } },
+                { "EnabledChannels", n => { EnabledChannels = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
+                { "EnabledDevices", n => { EnabledDevices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "EnabledFolders", n => { EnabledFolders = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
+                { "ForceRemoteSourceTranscoding", n => { ForceRemoteSourceTranscoding = n.GetBoolValue(); } },
+                { "InvalidLoginAttemptCount", n => { InvalidLoginAttemptCount = n.GetIntValue(); } },
+                { "IsAdministrator", n => { IsAdministrator = n.GetBoolValue(); } },
+                { "IsDisabled", n => { IsDisabled = n.GetBoolValue(); } },
+                { "IsHidden", n => { IsHidden = n.GetBoolValue(); } },
+                { "LoginAttemptsBeforeLockout", n => { LoginAttemptsBeforeLockout = n.GetIntValue(); } },
+                { "MaxActiveSessions", n => { MaxActiveSessions = n.GetIntValue(); } },
+                { "MaxParentalRating", n => { MaxParentalRating = n.GetIntValue(); } },
+                { "PasswordResetProviderId", n => { PasswordResetProviderId = n.GetStringValue(); } },
+                { "RemoteClientBitrateLimit", n => { RemoteClientBitrateLimit = n.GetIntValue(); } },
+                { "SyncPlayAccess", n => { SyncPlayAccess = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.UserPolicy_SyncPlayAccess>(); } },
             };
         }
         /// <summary>
@@ -237,13 +238,13 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AccessSchedule>("AccessSchedules", AccessSchedules);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.AccessSchedule>("AccessSchedules", AccessSchedules);
             writer.WriteCollectionOfPrimitiveValues<string>("AllowedTags", AllowedTags);
             writer.WriteStringValue("AuthenticationProviderId", AuthenticationProviderId);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("BlockedChannels", BlockedChannels);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("BlockedMediaFolders", BlockedMediaFolders);
             writer.WriteCollectionOfPrimitiveValues<string>("BlockedTags", BlockedTags);
-            writer.WriteCollectionOfEnumValues<UnratedItem>("BlockUnratedItems", BlockUnratedItems);
+            writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.UnratedItem>("BlockUnratedItems", BlockUnratedItems);
             writer.WriteBoolValue("EnableAllChannels", EnableAllChannels);
             writer.WriteBoolValue("EnableAllDevices", EnableAllDevices);
             writer.WriteBoolValue("EnableAllFolders", EnableAllFolders);
@@ -279,7 +280,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("MaxParentalRating", MaxParentalRating);
             writer.WriteStringValue("PasswordResetProviderId", PasswordResetProviderId);
             writer.WriteIntValue("RemoteClientBitrateLimit", RemoteClientBitrateLimit);
-            writer.WriteEnumValue<UserPolicy_SyncPlayAccess>("SyncPlayAccess", SyncPlayAccess);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.UserPolicy_SyncPlayAccess>("SyncPlayAccess", SyncPlayAccess);
         }
     }
 }

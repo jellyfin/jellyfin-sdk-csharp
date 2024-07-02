@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Videos.Item.Hls.Item.StreamM3u8 {
+namespace Jellyfin.Sdk.Generated.Videos.Item.Hls.Item.StreamM3u8
+{
     /// <summary>
     /// Builds and executes requests for operations under \Videos\{item-id}\hls\{playlistId}\stream.m3u8
     /// </summary>
-    public class StreamM3u8RequestBuilder : BaseRequestBuilder 
+    public class StreamM3u8RequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="StreamM3u8RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Hls.Item.StreamM3u8.StreamM3u8RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Hls.Item.StreamM3u8 {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="StreamM3u8RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Hls.Item.StreamM3u8.StreamM3u8RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -69,11 +70,11 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Hls.Item.StreamM3u8 {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="StreamM3u8RequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.Hls.Item.StreamM3u8.StreamM3u8RequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StreamM3u8RequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Videos.Item.Hls.Item.StreamM3u8.StreamM3u8RequestBuilder WithUrl(string rawUrl)
         {
-            return new StreamM3u8RequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Videos.Item.Hls.Item.StreamM3u8.StreamM3u8RequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

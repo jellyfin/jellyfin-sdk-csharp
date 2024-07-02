@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.FallbackFont {
+namespace Jellyfin.Sdk.Generated.FallbackFont
+{
     /// <summary>
     /// Builds and executes requests for operations under \FallbackFont
     /// </summary>
-    public class FallbackFontRequestBuilder : BaseRequestBuilder 
+    public class FallbackFontRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Fonts property</summary>
-        public FontsRequestBuilder Fonts
+        public Jellyfin.Sdk.Generated.FallbackFont.Fonts.FontsRequestBuilder Fonts
         {
-            get => new FontsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.FallbackFont.Fonts.FontsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="FallbackFontRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.FallbackFont.FallbackFontRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.FallbackFont {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FallbackFontRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.FallbackFont.FallbackFontRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

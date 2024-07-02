@@ -4,26 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class RemoteSearchResult : IParsable 
+    public class RemoteSearchResult : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The AlbumArtist property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RemoteSearchResult? AlbumArtist { get; set; }
+        public Jellyfin.Sdk.Generated.Models.RemoteSearchResult? AlbumArtist { get; set; }
 #nullable restore
 #else
-        public RemoteSearchResult AlbumArtist { get; set; }
+        public Jellyfin.Sdk.Generated.Models.RemoteSearchResult AlbumArtist { get; set; }
 #endif
         /// <summary>The Artists property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RemoteSearchResult>? Artists { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.RemoteSearchResult>? Artists { get; set; }
 #nullable restore
 #else
-        public List<RemoteSearchResult> Artists { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.RemoteSearchResult> Artists { get; set; }
 #endif
         /// <summary>The ImageUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,10 +63,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the provider ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RemoteSearchResult_ProviderIds? ProviderIds { get; set; }
+        public Jellyfin.Sdk.Generated.Models.RemoteSearchResult_ProviderIds? ProviderIds { get; set; }
 #nullable restore
 #else
-        public RemoteSearchResult_ProviderIds ProviderIds { get; set; }
+        public Jellyfin.Sdk.Generated.Models.RemoteSearchResult_ProviderIds ProviderIds { get; set; }
 #endif
         /// <summary>The SearchProviderName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,12 +79,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemoteSearchResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.RemoteSearchResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RemoteSearchResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.RemoteSearchResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemoteSearchResult();
+            return new Jellyfin.Sdk.Generated.Models.RemoteSearchResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,18 +94,18 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AlbumArtist", n => { AlbumArtist = n.GetObjectValue<RemoteSearchResult>(RemoteSearchResult.CreateFromDiscriminatorValue); } },
-                {"Artists", n => { Artists = n.GetCollectionOfObjectValues<RemoteSearchResult>(RemoteSearchResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"ImageUrl", n => { ImageUrl = n.GetStringValue(); } },
-                {"IndexNumber", n => { IndexNumber = n.GetIntValue(); } },
-                {"IndexNumberEnd", n => { IndexNumberEnd = n.GetIntValue(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"Overview", n => { Overview = n.GetStringValue(); } },
-                {"ParentIndexNumber", n => { ParentIndexNumber = n.GetIntValue(); } },
-                {"PremiereDate", n => { PremiereDate = n.GetDateTimeOffsetValue(); } },
-                {"ProductionYear", n => { ProductionYear = n.GetIntValue(); } },
-                {"ProviderIds", n => { ProviderIds = n.GetObjectValue<RemoteSearchResult_ProviderIds>(RemoteSearchResult_ProviderIds.CreateFromDiscriminatorValue); } },
-                {"SearchProviderName", n => { SearchProviderName = n.GetStringValue(); } },
+                { "AlbumArtist", n => { AlbumArtist = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.RemoteSearchResult>(Jellyfin.Sdk.Generated.Models.RemoteSearchResult.CreateFromDiscriminatorValue); } },
+                { "Artists", n => { Artists = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.RemoteSearchResult>(Jellyfin.Sdk.Generated.Models.RemoteSearchResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ImageUrl", n => { ImageUrl = n.GetStringValue(); } },
+                { "IndexNumber", n => { IndexNumber = n.GetIntValue(); } },
+                { "IndexNumberEnd", n => { IndexNumberEnd = n.GetIntValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "Overview", n => { Overview = n.GetStringValue(); } },
+                { "ParentIndexNumber", n => { ParentIndexNumber = n.GetIntValue(); } },
+                { "PremiereDate", n => { PremiereDate = n.GetDateTimeOffsetValue(); } },
+                { "ProductionYear", n => { ProductionYear = n.GetIntValue(); } },
+                { "ProviderIds", n => { ProviderIds = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.RemoteSearchResult_ProviderIds>(Jellyfin.Sdk.Generated.Models.RemoteSearchResult_ProviderIds.CreateFromDiscriminatorValue); } },
+                { "SearchProviderName", n => { SearchProviderName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -114,8 +115,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<RemoteSearchResult>("AlbumArtist", AlbumArtist);
-            writer.WriteCollectionOfObjectValues<RemoteSearchResult>("Artists", Artists);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.RemoteSearchResult>("AlbumArtist", AlbumArtist);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.RemoteSearchResult>("Artists", Artists);
             writer.WriteStringValue("ImageUrl", ImageUrl);
             writer.WriteIntValue("IndexNumber", IndexNumber);
             writer.WriteIntValue("IndexNumberEnd", IndexNumberEnd);
@@ -124,7 +125,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("ParentIndexNumber", ParentIndexNumber);
             writer.WriteDateTimeOffsetValue("PremiereDate", PremiereDate);
             writer.WriteIntValue("ProductionYear", ProductionYear);
-            writer.WriteObjectValue<RemoteSearchResult_ProviderIds>("ProviderIds", ProviderIds);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.RemoteSearchResult_ProviderIds>("ProviderIds", ProviderIds);
             writer.WriteStringValue("SearchProviderName", SearchProviderName);
         }
     }

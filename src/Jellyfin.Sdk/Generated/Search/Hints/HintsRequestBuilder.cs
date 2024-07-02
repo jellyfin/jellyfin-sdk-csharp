@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Search.Hints {
+namespace Jellyfin.Sdk.Generated.Search.Hints
+{
     /// <summary>
     /// Builds and executes requests for operations under \Search\Hints
     /// </summary>
-    public class HintsRequestBuilder : BaseRequestBuilder 
+    public class HintsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="HintsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Search.Hints.HintsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="HintsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Search.Hints.HintsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
         /// <summary>
         /// Gets the search hint result.
         /// </summary>
-        /// <returns>A <see cref="SearchHintResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.SearchHintResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SearchHintResult?> GetAsync(Action<RequestConfiguration<HintsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.SearchHintResult?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Search.Hints.HintsRequestBuilder.HintsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SearchHintResult> GetAsync(Action<RequestConfiguration<HintsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.SearchHintResult> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Search.Hints.HintsRequestBuilder.HintsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<SearchHintResult>(requestInfo, SearchHintResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.SearchHintResult>(requestInfo, Jellyfin.Sdk.Generated.Models.SearchHintResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets the search hint result.
@@ -55,11 +56,11 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HintsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Search.Hints.HintsRequestBuilder.HintsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HintsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Search.Hints.HintsRequestBuilder.HintsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -70,11 +71,11 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="HintsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Search.Hints.HintsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public HintsRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Search.Hints.HintsRequestBuilder WithUrl(string rawUrl)
         {
-            return new HintsRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Search.Hints.HintsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets the search hint result.
@@ -85,11 +86,11 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("excludeItemTypes")]
-            public BaseItemKind[]? ExcludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[]? ExcludeItemTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("excludeItemTypes")]
-            public BaseItemKind[] ExcludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[] ExcludeItemTypes { get; set; }
 #endif
             /// <summary>Optional filter whether to include artists.</summary>
             [QueryParameter("includeArtists")]
@@ -101,11 +102,11 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("includeItemTypes")]
-            public BaseItemKind[]? IncludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[]? IncludeItemTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("includeItemTypes")]
-            public BaseItemKind[] IncludeItemTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.BaseItemKind[] IncludeItemTypes { get; set; }
 #endif
             /// <summary>Optional filter whether to include media.</summary>
             [QueryParameter("includeMedia")]
@@ -138,11 +139,11 @@ namespace Jellyfin.Sdk.Generated.Search.Hints {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mediaTypes")]
-            public MediaType[]? MediaTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.MediaType[]? MediaTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("mediaTypes")]
-            public MediaType[] MediaTypes { get; set; }
+            public Jellyfin.Sdk.Generated.Models.MediaType[] MediaTypes { get; set; }
 #endif
             /// <summary>If specified, only children of the parent are returned.</summary>
             [QueryParameter("parentId")]

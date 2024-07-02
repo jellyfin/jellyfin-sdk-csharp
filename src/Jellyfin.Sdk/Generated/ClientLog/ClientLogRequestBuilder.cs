@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.ClientLog {
+namespace Jellyfin.Sdk.Generated.ClientLog
+{
     /// <summary>
     /// Builds and executes requests for operations under \ClientLog
     /// </summary>
-    public class ClientLogRequestBuilder : BaseRequestBuilder 
+    public class ClientLogRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Document property</summary>
-        public DocumentRequestBuilder Document
+        public Jellyfin.Sdk.Generated.ClientLog.Document.DocumentRequestBuilder Document
         {
-            get => new DocumentRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.ClientLog.Document.DocumentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ClientLogRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.ClientLog.ClientLogRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.ClientLog {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ClientLogRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.ClientLog.ClientLogRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

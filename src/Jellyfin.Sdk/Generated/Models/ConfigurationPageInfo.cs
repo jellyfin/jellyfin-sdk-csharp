@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// The configuration page info.
     /// </summary>
-    public class ConfigurationPageInfo : IParsable 
+    public class ConfigurationPageInfo : IParsable
     {
         /// <summary>Gets or sets the display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,12 +50,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConfigurationPageInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ConfigurationPageInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConfigurationPageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.ConfigurationPageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConfigurationPageInfo();
+            return new Jellyfin.Sdk.Generated.Models.ConfigurationPageInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,12 +65,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"DisplayName", n => { DisplayName = n.GetStringValue(); } },
-                {"EnableInMainMenu", n => { EnableInMainMenu = n.GetBoolValue(); } },
-                {"MenuIcon", n => { MenuIcon = n.GetStringValue(); } },
-                {"MenuSection", n => { MenuSection = n.GetStringValue(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"PluginId", n => { PluginId = n.GetGuidValue(); } },
+                { "DisplayName", n => { DisplayName = n.GetStringValue(); } },
+                { "EnableInMainMenu", n => { EnableInMainMenu = n.GetBoolValue(); } },
+                { "MenuIcon", n => { MenuIcon = n.GetStringValue(); } },
+                { "MenuSection", n => { MenuSection = n.GetStringValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "PluginId", n => { PluginId = n.GetGuidValue(); } },
             };
         }
         /// <summary>

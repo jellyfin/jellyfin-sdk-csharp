@@ -7,24 +7,25 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Channels.Item {
+namespace Jellyfin.Sdk.Generated.Channels.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Channels\{channelId}
     /// </summary>
-    public class WithChannelItemRequestBuilder : BaseRequestBuilder 
+    public class WithChannelItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Features property</summary>
-        public FeaturesRequestBuilder Features
+        public Jellyfin.Sdk.Generated.Channels.Item.Features.FeaturesRequestBuilder Features
         {
-            get => new FeaturesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Channels.Item.Features.FeaturesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Items property</summary>
-        public ItemsRequestBuilder Items
+        public Jellyfin.Sdk.Generated.Channels.Item.Items.ItemsRequestBuilder Items
         {
-            get => new ItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Channels.Item.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithChannelItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Channels.Item.WithChannelItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,7 +33,7 @@ namespace Jellyfin.Sdk.Generated.Channels.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithChannelItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Channels.Item.WithChannelItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

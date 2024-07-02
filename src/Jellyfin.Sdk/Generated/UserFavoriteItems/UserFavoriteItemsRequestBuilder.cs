@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.UserFavoriteItems {
+namespace Jellyfin.Sdk.Generated.UserFavoriteItems
+{
     /// <summary>
     /// Builds and executes requests for operations under \UserFavoriteItems
     /// </summary>
-    public class UserFavoriteItemsRequestBuilder : BaseRequestBuilder 
+    public class UserFavoriteItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.UserFavoriteItems.item collection</summary>
         /// <param name="position">Item id.</param>
-        /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
-        public WithItemItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("itemId", position);
-                return new WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserFavoriteItemsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserFavoriteItems.UserFavoriteItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.UserFavoriteItems {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserFavoriteItemsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserFavoriteItems.UserFavoriteItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

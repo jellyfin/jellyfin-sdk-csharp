@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class MediaSourceInfo_RequiredHttpHeaders : IAdditionalDataHolder, IParsable 
+    public class MediaSourceInfo_RequiredHttpHeaders : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="MediaSourceInfo_RequiredHttpHeaders"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Models.MediaSourceInfo_RequiredHttpHeaders"/> and sets the default values.
         /// </summary>
         public MediaSourceInfo_RequiredHttpHeaders()
         {
@@ -21,12 +22,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MediaSourceInfo_RequiredHttpHeaders"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.MediaSourceInfo_RequiredHttpHeaders"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MediaSourceInfo_RequiredHttpHeaders CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.MediaSourceInfo_RequiredHttpHeaders CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MediaSourceInfo_RequiredHttpHeaders();
+            return new Jellyfin.Sdk.Generated.Models.MediaSourceInfo_RequiredHttpHeaders();
         }
         /// <summary>
         /// The deserialization information for the current model

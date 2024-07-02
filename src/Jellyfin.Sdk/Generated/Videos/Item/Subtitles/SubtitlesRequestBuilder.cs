@@ -9,26 +9,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Videos.Item.Subtitles {
+namespace Jellyfin.Sdk.Generated.Videos.Item.Subtitles
+{
     /// <summary>
     /// Builds and executes requests for operations under \Videos\{item-id}\Subtitles
     /// </summary>
-    public class SubtitlesRequestBuilder : BaseRequestBuilder 
+    public class SubtitlesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item.Subtitles.item collection</summary>
         /// <param name="position">The index of the subtitle file.</param>
-        /// <returns>A <see cref="WithIndexItemRequestBuilder"/></returns>
-        public WithIndexItemRequestBuilder this[int position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.Subtitles.Item.WithIndexItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Videos.Item.Subtitles.Item.WithIndexItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("index", position);
-                return new WithIndexItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Videos.Item.Subtitles.Item.WithIndexItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubtitlesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Subtitles.SubtitlesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +37,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Subtitles {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubtitlesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Subtitles.SubtitlesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,21 +50,21 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Subtitles {
         /// <param name="body">Upload subtitles dto.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(UploadSubtitleDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.UploadSubtitleDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(UploadSubtitleDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.UploadSubtitleDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -75,11 +76,11 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Subtitles {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(UploadSubtitleDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.UploadSubtitleDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(UploadSubtitleDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.UploadSubtitleDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -92,11 +93,11 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Subtitles {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SubtitlesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.Subtitles.SubtitlesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SubtitlesRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Videos.Item.Subtitles.SubtitlesRequestBuilder WithUrl(string rawUrl)
         {
-            return new SubtitlesRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Videos.Item.Subtitles.SubtitlesRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

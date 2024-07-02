@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Playback {
+namespace Jellyfin.Sdk.Generated.Playback
+{
     /// <summary>
     /// Builds and executes requests for operations under \Playback
     /// </summary>
-    public class PlaybackRequestBuilder : BaseRequestBuilder 
+    public class PlaybackRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The BitrateTest property</summary>
-        public BitrateTestRequestBuilder BitrateTest
+        public Jellyfin.Sdk.Generated.Playback.BitrateTest.BitrateTestRequestBuilder BitrateTest
         {
-            get => new BitrateTestRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Playback.BitrateTest.BitrateTestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlaybackRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Playback.PlaybackRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.Playback {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlaybackRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Playback.PlaybackRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

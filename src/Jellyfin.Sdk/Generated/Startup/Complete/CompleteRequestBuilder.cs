@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Startup.Complete {
+namespace Jellyfin.Sdk.Generated.Startup.Complete
+{
     /// <summary>
     /// Builds and executes requests for operations under \Startup\Complete
     /// </summary>
-    public class CompleteRequestBuilder : BaseRequestBuilder 
+    public class CompleteRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CompleteRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Startup.Complete.CompleteRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Startup.Complete {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CompleteRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Startup.Complete.CompleteRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,11 +68,11 @@ namespace Jellyfin.Sdk.Generated.Startup.Complete {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CompleteRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Startup.Complete.CompleteRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CompleteRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Startup.Complete.CompleteRequestBuilder WithUrl(string rawUrl)
         {
-            return new CompleteRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Startup.Complete.CompleteRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

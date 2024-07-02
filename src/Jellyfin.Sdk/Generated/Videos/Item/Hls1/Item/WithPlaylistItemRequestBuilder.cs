@@ -6,14 +6,15 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Videos.Item.Hls1.Item {
+namespace Jellyfin.Sdk.Generated.Videos.Item.Hls1.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Videos\{item-id}\hls1\{playlistId}
     /// </summary>
-    public class WithPlaylistItemRequestBuilder : BaseRequestBuilder 
+    public class WithPlaylistItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="WithPlaylistItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Hls1.Item.WithPlaylistItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -21,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Hls1.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithPlaylistItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Hls1.Item.WithPlaylistItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,14 +32,14 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Hls1.Item {
         /// <summary>
         /// Builds and executes requests for operations under \Videos\{item-id}\hls1\{playlistId}\{segmentId}.{container}
         /// </summary>
-        /// <returns>A <see cref="WithSegmentIdWithContainerRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.Hls1.Item.WithSegmentIdWithContainer.WithSegmentIdWithContainerRequestBuilder"/></returns>
         /// <param name="container">The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.</param>
         /// <param name="segmentId">The segment id.</param>
-        public WithSegmentIdWithContainerRequestBuilder WithSegmentIdWithContainer(string container, int? segmentId)
+        public Jellyfin.Sdk.Generated.Videos.Item.Hls1.Item.WithSegmentIdWithContainer.WithSegmentIdWithContainerRequestBuilder WithSegmentIdWithContainer(string container, int? segmentId)
         {
             if(string.IsNullOrEmpty(container)) throw new ArgumentNullException(nameof(container));
             _ = segmentId ?? throw new ArgumentNullException(nameof(segmentId));
-            return new WithSegmentIdWithContainerRequestBuilder(PathParameters, RequestAdapter, container, segmentId);
+            return new Jellyfin.Sdk.Generated.Videos.Item.Hls1.Item.WithSegmentIdWithContainer.WithSegmentIdWithContainerRequestBuilder(PathParameters, RequestAdapter, container, segmentId);
         }
     }
 }

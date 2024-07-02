@@ -4,19 +4,20 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class ThemeMediaResult.
     /// </summary>
-    public class ThemeMediaResult : IParsable 
+    public class ThemeMediaResult : IParsable
     {
         /// <summary>Gets or sets the items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BaseItemDto>? Items { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.BaseItemDto>? Items { get; set; }
 #nullable restore
 #else
-        public List<BaseItemDto> Items { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.BaseItemDto> Items { get; set; }
 #endif
         /// <summary>Gets or sets the owner id.</summary>
         public Guid? OwnerId { get; set; }
@@ -27,12 +28,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ThemeMediaResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ThemeMediaResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ThemeMediaResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.ThemeMediaResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ThemeMediaResult();
+            return new Jellyfin.Sdk.Generated.Models.ThemeMediaResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,10 +43,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Items", n => { Items = n.GetCollectionOfObjectValues<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"OwnerId", n => { OwnerId = n.GetGuidValue(); } },
-                {"StartIndex", n => { StartIndex = n.GetIntValue(); } },
-                {"TotalRecordCount", n => { TotalRecordCount = n.GetIntValue(); } },
+                { "Items", n => { Items = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.BaseItemDto>(Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "OwnerId", n => { OwnerId = n.GetGuidValue(); } },
+                { "StartIndex", n => { StartIndex = n.GetIntValue(); } },
+                { "TotalRecordCount", n => { TotalRecordCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -55,7 +56,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<BaseItemDto>("Items", Items);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.BaseItemDto>("Items", Items);
             writer.WriteGuidValue("OwnerId", OwnerId);
             writer.WriteIntValue("StartIndex", StartIndex);
             writer.WriteIntValue("TotalRecordCount", TotalRecordCount);
