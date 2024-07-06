@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item {
+namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Items\{itemId}\Images\{imageType}\{imageIndex}\{tag}
     /// </summary>
-    public class WithTagItemRequestBuilder : BaseRequestBuilder 
+    public class WithTagItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Items.item.Images.item.item.item.item collection</summary>
         /// <param name="position">Determines the output format of the image - original,gif,jpg,png.</param>
-        /// <returns>A <see cref="WithFormatItemRequestBuilder"/></returns>
-        public WithFormatItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.Item.WithFormatItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.Item.WithFormatItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("format", position);
-                return new WithFormatItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.Item.WithFormatItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithTagItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.WithTagItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithTagItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.Images.Item.Item.Item.WithTagItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

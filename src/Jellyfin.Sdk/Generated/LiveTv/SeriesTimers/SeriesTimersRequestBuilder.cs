@@ -9,26 +9,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
+namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers
+{
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\SeriesTimers
     /// </summary>
-    public class SeriesTimersRequestBuilder : BaseRequestBuilder 
+    public class SeriesTimersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.item collection</summary>
         /// <param name="position">Timer id.</param>
-        /// <returns>A <see cref="WithTimerItemRequestBuilder"/></returns>
-        public WithTimerItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.Item.WithTimerItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.Item.WithTimerItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("timerId", position);
-                return new WithTimerItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.Item.WithTimerItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SeriesTimersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.SeriesTimersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +37,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SeriesTimersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.SeriesTimersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,20 +47,20 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
         /// <summary>
         /// Gets live tv series timers.
         /// </summary>
-        /// <returns>A <see cref="SeriesTimerInfoDtoQueryResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.SeriesTimerInfoDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SeriesTimerInfoDtoQueryResult?> GetAsync(Action<RequestConfiguration<SeriesTimersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.SeriesTimerInfoDtoQueryResult?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.SeriesTimersRequestBuilder.SeriesTimersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SeriesTimerInfoDtoQueryResult> GetAsync(Action<RequestConfiguration<SeriesTimersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.SeriesTimerInfoDtoQueryResult> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.SeriesTimersRequestBuilder.SeriesTimersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<SeriesTimerInfoDtoQueryResult>(requestInfo, SeriesTimerInfoDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.SeriesTimerInfoDtoQueryResult>(requestInfo, Jellyfin.Sdk.Generated.Models.SeriesTimerInfoDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a live tv series timer.
@@ -69,11 +70,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(SeriesTimerInfoDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.SeriesTimerInfoDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(SeriesTimerInfoDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.SeriesTimerInfoDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -87,11 +88,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeriesTimersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.SeriesTimersRequestBuilder.SeriesTimersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeriesTimersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.SeriesTimersRequestBuilder.SeriesTimersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -107,11 +108,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(SeriesTimerInfoDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.SeriesTimerInfoDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(SeriesTimerInfoDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.SeriesTimerInfoDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -123,11 +124,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SeriesTimersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.SeriesTimersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SeriesTimersRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.SeriesTimersRequestBuilder WithUrl(string rawUrl)
         {
-            return new SeriesTimersRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.SeriesTimersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets live tv series timers.
@@ -146,7 +147,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.SeriesTimers {
 #endif
             /// <summary>Optional. Sort in Ascending or Descending order.</summary>
             [QueryParameter("sortOrder")]
-            public GetSortOrderQueryParameterType? SortOrder { get; set; }
+            public Jellyfin.Sdk.Generated.LiveTv.SeriesTimers.SortOrder? SortOrder { get; set; }
         }
     }
 }

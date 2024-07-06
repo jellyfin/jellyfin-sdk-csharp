@@ -9,19 +9,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths {
+namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths
+{
     /// <summary>
     /// Builds and executes requests for operations under \Library\VirtualFolders\Paths
     /// </summary>
-    public class PathsRequestBuilder : BaseRequestBuilder 
+    public class PathsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Update property</summary>
-        public UpdateRequestBuilder Update
+        public Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.Update.UpdateRequestBuilder Update
         {
-            get => new UpdateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.Update.UpdateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PathsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PathsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,11 +44,11 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<PathsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder.PathsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<PathsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder.PathsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -61,11 +62,11 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(MediaPathDto body, Action<RequestConfiguration<PathsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.MediaPathDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder.PathsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(MediaPathDto body, Action<RequestConfiguration<PathsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.MediaPathDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder.PathsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -79,11 +80,11 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<PathsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder.PathsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<PathsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder.PathsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -98,11 +99,11 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MediaPathDto body, Action<RequestConfiguration<PathsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.MediaPathDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder.PathsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MediaPathDto body, Action<RequestConfiguration<PathsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.MediaPathDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder.PathsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -114,11 +115,11 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PathsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PathsRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder WithUrl(string rawUrl)
         {
-            return new PathsRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Remove a media path.

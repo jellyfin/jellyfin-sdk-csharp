@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Get programs dto.
     /// </summary>
-    public class GetProgramsDto : IParsable 
+    public class GetProgramsDto : IParsable
     {
         /// <summary>Gets or sets the channels to return guide information for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -23,10 +24,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the image types to include in the output.Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImageType?>? EnableImageTypes { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ImageType?>? EnableImageTypes { get; set; }
 #nullable restore
 #else
-        public List<ImageType?> EnableImageTypes { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ImageType?> EnableImageTypes { get; set; }
 #endif
         /// <summary>Gets or sets a value indicating whether retrieve total record count.</summary>
         public bool? EnableTotalRecordCount { get; set; }
@@ -35,10 +36,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines.Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemFields?>? Fields { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ItemFields?>? Fields { get; set; }
 #nullable restore
 #else
-        public List<ItemFields?> Fields { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ItemFields?> Fields { get; set; }
 #endif
         /// <summary>Gets or sets the genre ids to return guide information for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,10 +96,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets specify one or more sort orders, comma delimited. Options: Name, StartDate.Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemSortBy?>? SortBy { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ItemSortBy?>? SortBy { get; set; }
 #nullable restore
 #else
-        public List<ItemSortBy?> SortBy { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ItemSortBy?> SortBy { get; set; }
 #endif
         /// <summary>Gets or sets sort Order - Ascending,Descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,12 +116,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetProgramsDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.GetProgramsDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetProgramsDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.GetProgramsDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetProgramsDto();
+            return new Jellyfin.Sdk.Generated.Models.GetProgramsDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,33 +131,33 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ChannelIds", n => { ChannelIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"EnableImageTypes", n => { EnableImageTypes = n.GetCollectionOfEnumValues<ImageType>()?.ToList(); } },
-                {"EnableImages", n => { EnableImages = n.GetBoolValue(); } },
-                {"EnableTotalRecordCount", n => { EnableTotalRecordCount = n.GetBoolValue(); } },
-                {"EnableUserData", n => { EnableUserData = n.GetBoolValue(); } },
-                {"Fields", n => { Fields = n.GetCollectionOfEnumValues<ItemFields>()?.ToList(); } },
-                {"GenreIds", n => { GenreIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"Genres", n => { Genres = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"HasAired", n => { HasAired = n.GetBoolValue(); } },
-                {"ImageTypeLimit", n => { ImageTypeLimit = n.GetIntValue(); } },
-                {"IsAiring", n => { IsAiring = n.GetBoolValue(); } },
-                {"IsKids", n => { IsKids = n.GetBoolValue(); } },
-                {"IsMovie", n => { IsMovie = n.GetBoolValue(); } },
-                {"IsNews", n => { IsNews = n.GetBoolValue(); } },
-                {"IsSeries", n => { IsSeries = n.GetBoolValue(); } },
-                {"IsSports", n => { IsSports = n.GetBoolValue(); } },
-                {"LibrarySeriesId", n => { LibrarySeriesId = n.GetGuidValue(); } },
-                {"Limit", n => { Limit = n.GetIntValue(); } },
-                {"MaxEndDate", n => { MaxEndDate = n.GetDateTimeOffsetValue(); } },
-                {"MaxStartDate", n => { MaxStartDate = n.GetDateTimeOffsetValue(); } },
-                {"MinEndDate", n => { MinEndDate = n.GetDateTimeOffsetValue(); } },
-                {"MinStartDate", n => { MinStartDate = n.GetDateTimeOffsetValue(); } },
-                {"SeriesTimerId", n => { SeriesTimerId = n.GetStringValue(); } },
-                {"SortBy", n => { SortBy = n.GetCollectionOfEnumValues<ItemSortBy>()?.ToList(); } },
-                {"SortOrder", n => { SortOrder = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.SortOrder>()?.ToList(); } },
-                {"StartIndex", n => { StartIndex = n.GetIntValue(); } },
-                {"UserId", n => { UserId = n.GetGuidValue(); } },
+                { "ChannelIds", n => { ChannelIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
+                { "EnableImageTypes", n => { EnableImageTypes = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ImageType>()?.ToList(); } },
+                { "EnableImages", n => { EnableImages = n.GetBoolValue(); } },
+                { "EnableTotalRecordCount", n => { EnableTotalRecordCount = n.GetBoolValue(); } },
+                { "EnableUserData", n => { EnableUserData = n.GetBoolValue(); } },
+                { "Fields", n => { Fields = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ItemFields>()?.ToList(); } },
+                { "GenreIds", n => { GenreIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
+                { "Genres", n => { Genres = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "HasAired", n => { HasAired = n.GetBoolValue(); } },
+                { "ImageTypeLimit", n => { ImageTypeLimit = n.GetIntValue(); } },
+                { "IsAiring", n => { IsAiring = n.GetBoolValue(); } },
+                { "IsKids", n => { IsKids = n.GetBoolValue(); } },
+                { "IsMovie", n => { IsMovie = n.GetBoolValue(); } },
+                { "IsNews", n => { IsNews = n.GetBoolValue(); } },
+                { "IsSeries", n => { IsSeries = n.GetBoolValue(); } },
+                { "IsSports", n => { IsSports = n.GetBoolValue(); } },
+                { "LibrarySeriesId", n => { LibrarySeriesId = n.GetGuidValue(); } },
+                { "Limit", n => { Limit = n.GetIntValue(); } },
+                { "MaxEndDate", n => { MaxEndDate = n.GetDateTimeOffsetValue(); } },
+                { "MaxStartDate", n => { MaxStartDate = n.GetDateTimeOffsetValue(); } },
+                { "MinEndDate", n => { MinEndDate = n.GetDateTimeOffsetValue(); } },
+                { "MinStartDate", n => { MinStartDate = n.GetDateTimeOffsetValue(); } },
+                { "SeriesTimerId", n => { SeriesTimerId = n.GetStringValue(); } },
+                { "SortBy", n => { SortBy = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ItemSortBy>()?.ToList(); } },
+                { "SortOrder", n => { SortOrder = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.SortOrder>()?.ToList(); } },
+                { "StartIndex", n => { StartIndex = n.GetIntValue(); } },
+                { "UserId", n => { UserId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -168,10 +169,10 @@ namespace Jellyfin.Sdk.Generated.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<Guid?>("ChannelIds", ChannelIds);
             writer.WriteBoolValue("EnableImages", EnableImages);
-            writer.WriteCollectionOfEnumValues<ImageType>("EnableImageTypes", EnableImageTypes);
+            writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ImageType>("EnableImageTypes", EnableImageTypes);
             writer.WriteBoolValue("EnableTotalRecordCount", EnableTotalRecordCount);
             writer.WriteBoolValue("EnableUserData", EnableUserData);
-            writer.WriteCollectionOfEnumValues<ItemFields>("Fields", Fields);
+            writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ItemFields>("Fields", Fields);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("GenreIds", GenreIds);
             writer.WriteCollectionOfPrimitiveValues<string>("Genres", Genres);
             writer.WriteBoolValue("HasAired", HasAired);
@@ -189,7 +190,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteDateTimeOffsetValue("MinEndDate", MinEndDate);
             writer.WriteDateTimeOffsetValue("MinStartDate", MinStartDate);
             writer.WriteStringValue("SeriesTimerId", SeriesTimerId);
-            writer.WriteCollectionOfEnumValues<ItemSortBy>("SortBy", SortBy);
+            writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ItemSortBy>("SortBy", SortBy);
             writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.SortOrder>("SortOrder", SortOrder);
             writer.WriteIntValue("StartIndex", StartIndex);
             writer.WriteGuidValue("UserId", UserId);

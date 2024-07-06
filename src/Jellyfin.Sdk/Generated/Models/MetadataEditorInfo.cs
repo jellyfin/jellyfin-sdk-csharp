@@ -4,62 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class MetadataEditorInfo : IParsable 
+    public class MetadataEditorInfo : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ContentType property</summary>
-        public MetadataEditorInfo_ContentType? ContentType { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MetadataEditorInfo_ContentType? ContentType { get; set; }
         /// <summary>The ContentTypeOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NameValuePair>? ContentTypeOptions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.NameValuePair>? ContentTypeOptions { get; set; }
 #nullable restore
 #else
-        public List<NameValuePair> ContentTypeOptions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.NameValuePair> ContentTypeOptions { get; set; }
 #endif
         /// <summary>The Countries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CountryInfo>? Countries { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.CountryInfo>? Countries { get; set; }
 #nullable restore
 #else
-        public List<CountryInfo> Countries { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.CountryInfo> Countries { get; set; }
 #endif
         /// <summary>The Cultures property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CultureDto>? Cultures { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.CultureDto>? Cultures { get; set; }
 #nullable restore
 #else
-        public List<CultureDto> Cultures { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.CultureDto> Cultures { get; set; }
 #endif
         /// <summary>The ExternalIdInfos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalIdInfo>? ExternalIdInfos { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ExternalIdInfo>? ExternalIdInfos { get; set; }
 #nullable restore
 #else
-        public List<ExternalIdInfo> ExternalIdInfos { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ExternalIdInfo> ExternalIdInfos { get; set; }
 #endif
         /// <summary>The ParentalRatingOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ParentalRating>? ParentalRatingOptions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ParentalRating>? ParentalRatingOptions { get; set; }
 #nullable restore
 #else
-        public List<ParentalRating> ParentalRatingOptions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ParentalRating> ParentalRatingOptions { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MetadataEditorInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.MetadataEditorInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MetadataEditorInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.MetadataEditorInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MetadataEditorInfo();
+            return new Jellyfin.Sdk.Generated.Models.MetadataEditorInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,12 +70,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ContentType", n => { ContentType = n.GetEnumValue<MetadataEditorInfo_ContentType>(); } },
-                {"ContentTypeOptions", n => { ContentTypeOptions = n.GetCollectionOfObjectValues<NameValuePair>(NameValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"Countries", n => { Countries = n.GetCollectionOfObjectValues<CountryInfo>(CountryInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"Cultures", n => { Cultures = n.GetCollectionOfObjectValues<CultureDto>(CultureDto.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"ExternalIdInfos", n => { ExternalIdInfos = n.GetCollectionOfObjectValues<ExternalIdInfo>(ExternalIdInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"ParentalRatingOptions", n => { ParentalRatingOptions = n.GetCollectionOfObjectValues<ParentalRating>(ParentalRating.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ContentType", n => { ContentType = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.MetadataEditorInfo_ContentType>(); } },
+                { "ContentTypeOptions", n => { ContentTypeOptions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.NameValuePair>(Jellyfin.Sdk.Generated.Models.NameValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "Countries", n => { Countries = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.CountryInfo>(Jellyfin.Sdk.Generated.Models.CountryInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "Cultures", n => { Cultures = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.CultureDto>(Jellyfin.Sdk.Generated.Models.CultureDto.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ExternalIdInfos", n => { ExternalIdInfos = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ExternalIdInfo>(Jellyfin.Sdk.Generated.Models.ExternalIdInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ParentalRatingOptions", n => { ParentalRatingOptions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ParentalRating>(Jellyfin.Sdk.Generated.Models.ParentalRating.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -84,12 +85,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<MetadataEditorInfo_ContentType>("ContentType", ContentType);
-            writer.WriteCollectionOfObjectValues<NameValuePair>("ContentTypeOptions", ContentTypeOptions);
-            writer.WriteCollectionOfObjectValues<CountryInfo>("Countries", Countries);
-            writer.WriteCollectionOfObjectValues<CultureDto>("Cultures", Cultures);
-            writer.WriteCollectionOfObjectValues<ExternalIdInfo>("ExternalIdInfos", ExternalIdInfos);
-            writer.WriteCollectionOfObjectValues<ParentalRating>("ParentalRatingOptions", ParentalRatingOptions);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.MetadataEditorInfo_ContentType>("ContentType", ContentType);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.NameValuePair>("ContentTypeOptions", ContentTypeOptions);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.CountryInfo>("Countries", Countries);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.CultureDto>("Cultures", Cultures);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ExternalIdInfo>("ExternalIdInfos", ExternalIdInfos);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ParentalRating>("ParentalRatingOptions", ParentalRatingOptions);
         }
     }
 }

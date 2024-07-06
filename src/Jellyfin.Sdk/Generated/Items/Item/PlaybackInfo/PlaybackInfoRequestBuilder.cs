@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo {
+namespace Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo
+{
     /// <summary>
     /// Builds and executes requests for operations under \Items\{itemId}\PlaybackInfo
     /// </summary>
-    public class PlaybackInfoRequestBuilder : BaseRequestBuilder 
+    public class PlaybackInfoRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="PlaybackInfoRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlaybackInfoRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,50 +34,50 @@ namespace Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo {
         /// <summary>
         /// Gets live playback media info for an item.
         /// </summary>
-        /// <returns>A <see cref="PlaybackInfoResponse"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlaybackInfoResponse?> GetAsync(Action<RequestConfiguration<PlaybackInfoRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder.PlaybackInfoRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PlaybackInfoResponse> GetAsync(Action<RequestConfiguration<PlaybackInfoRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder.PlaybackInfoRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PlaybackInfoResponse>(requestInfo, PlaybackInfoResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse>(requestInfo, Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// For backwards compatibility parameters can be sent via Query or Body, with Query having higher precedence.Query parameters are obsolete.
         /// </summary>
-        /// <returns>A <see cref="PlaybackInfoResponse"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse"/></returns>
         /// <param name="body">Plabyback info dto.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlaybackInfoResponse?> PostAsync(PlaybackInfoDto body, Action<RequestConfiguration<PlaybackInfoRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse?> PostAsync(Jellyfin.Sdk.Generated.Models.PlaybackInfoDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder.PlaybackInfoRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PlaybackInfoResponse> PostAsync(PlaybackInfoDto body, Action<RequestConfiguration<PlaybackInfoRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse> PostAsync(Jellyfin.Sdk.Generated.Models.PlaybackInfoDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder.PlaybackInfoRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PlaybackInfoResponse>(requestInfo, PlaybackInfoResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse>(requestInfo, Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets live playback media info for an item.
@@ -85,11 +86,11 @@ namespace Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PlaybackInfoRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder.PlaybackInfoRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PlaybackInfoRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder.PlaybackInfoRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -105,11 +106,11 @@ namespace Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(PlaybackInfoDto body, Action<RequestConfiguration<PlaybackInfoRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.PlaybackInfoDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder.PlaybackInfoRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(PlaybackInfoDto body, Action<RequestConfiguration<PlaybackInfoRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.PlaybackInfoDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder.PlaybackInfoRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -122,11 +123,11 @@ namespace Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PlaybackInfoRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PlaybackInfoRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder WithUrl(string rawUrl)
         {
-            return new PlaybackInfoRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets live playback media info for an item.

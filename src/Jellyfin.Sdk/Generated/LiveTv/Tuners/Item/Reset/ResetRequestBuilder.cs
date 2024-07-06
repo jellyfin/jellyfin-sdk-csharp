@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.Reset {
+namespace Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.Reset
+{
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\Tuners\{tunerId}\Reset
     /// </summary>
-    public class ResetRequestBuilder : BaseRequestBuilder 
+    public class ResetRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ResetRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.Reset.ResetRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.Reset {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ResetRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.Reset.ResetRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,11 +68,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.Reset {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ResetRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.Reset.ResetRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ResetRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.Reset.ResetRequestBuilder WithUrl(string rawUrl)
         {
-            return new ResetRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.Reset.ResetRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

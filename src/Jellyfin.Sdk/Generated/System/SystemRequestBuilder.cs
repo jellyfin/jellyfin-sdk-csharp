@@ -14,59 +14,60 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.System {
+namespace Jellyfin.Sdk.Generated.System
+{
     /// <summary>
     /// Builds and executes requests for operations under \System
     /// </summary>
-    public class SystemRequestBuilder : BaseRequestBuilder 
+    public class SystemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The ActivityLog property</summary>
-        public ActivityLogRequestBuilder ActivityLog
+        public Jellyfin.Sdk.Generated.System.ActivityLog.ActivityLogRequestBuilder ActivityLog
         {
-            get => new ActivityLogRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.ActivityLog.ActivityLogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Configuration property</summary>
-        public ConfigurationRequestBuilder Configuration
+        public Jellyfin.Sdk.Generated.System.Configuration.ConfigurationRequestBuilder Configuration
         {
-            get => new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Endpoint property</summary>
-        public EndpointRequestBuilder Endpoint
+        public Jellyfin.Sdk.Generated.System.Endpoint.EndpointRequestBuilder Endpoint
         {
-            get => new EndpointRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.Endpoint.EndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Info property</summary>
-        public InfoRequestBuilder Info
+        public Jellyfin.Sdk.Generated.System.Info.InfoRequestBuilder Info
         {
-            get => new InfoRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.Info.InfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Logs property</summary>
-        public LogsRequestBuilder Logs
+        public Jellyfin.Sdk.Generated.System.Logs.LogsRequestBuilder Logs
         {
-            get => new LogsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Ping property</summary>
-        public PingRequestBuilder Ping
+        public Jellyfin.Sdk.Generated.System.Ping.PingRequestBuilder Ping
         {
-            get => new PingRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.Ping.PingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Restart property</summary>
-        public RestartRequestBuilder Restart
+        public Jellyfin.Sdk.Generated.System.Restart.RestartRequestBuilder Restart
         {
-            get => new RestartRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.Restart.RestartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Shutdown property</summary>
-        public ShutdownRequestBuilder Shutdown
+        public Jellyfin.Sdk.Generated.System.Shutdown.ShutdownRequestBuilder Shutdown
         {
-            get => new ShutdownRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.Shutdown.ShutdownRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The WakeOnLanInfo property</summary>
-        public WakeOnLanInfoRequestBuilder WakeOnLanInfo
+        public Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder WakeOnLanInfo
         {
-            get => new WakeOnLanInfoRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="SystemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.SystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -74,7 +75,7 @@ namespace Jellyfin.Sdk.Generated.System {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SystemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.SystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

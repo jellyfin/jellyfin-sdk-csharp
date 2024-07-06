@@ -4,23 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class JoinGroupRequestDto.
     /// </summary>
-    public class JoinGroupRequestDto : IParsable 
+    public class JoinGroupRequestDto : IParsable
     {
         /// <summary>Gets or sets the group identifier.</summary>
         public Guid? GroupId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="JoinGroupRequestDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.JoinGroupRequestDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static JoinGroupRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.JoinGroupRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new JoinGroupRequestDto();
+            return new Jellyfin.Sdk.Generated.Models.JoinGroupRequestDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -30,7 +31,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"GroupId", n => { GroupId = n.GetGuidValue(); } },
+                { "GroupId", n => { GroupId = n.GetGuidValue(); } },
             };
         }
         /// <summary>

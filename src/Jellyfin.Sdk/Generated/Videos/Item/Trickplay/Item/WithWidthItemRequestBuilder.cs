@@ -7,19 +7,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item {
+namespace Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Videos\{item-id}\Trickplay\{width}
     /// </summary>
-    public class WithWidthItemRequestBuilder : BaseRequestBuilder 
+    public class WithWidthItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The tilesM3u8 property</summary>
-        public TilesM3u8RequestBuilder TilesM3u8
+        public Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item.TilesM3u8.TilesM3u8RequestBuilder TilesM3u8
         {
-            get => new TilesM3u8RequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item.TilesM3u8.TilesM3u8RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithWidthItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item.WithWidthItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -27,7 +28,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithWidthItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item.WithWidthItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,12 +38,12 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item {
         /// <summary>
         /// Builds and executes requests for operations under \Videos\{item-id}\Trickplay\{width}\{index}.jpg
         /// </summary>
-        /// <returns>A <see cref="WithIndexJpgRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item.WithIndexJpg.WithIndexJpgRequestBuilder"/></returns>
         /// <param name="index">The index of the desired tile.</param>
-        public WithIndexJpgRequestBuilder WithIndexJpg(int? index)
+        public Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item.WithIndexJpg.WithIndexJpgRequestBuilder WithIndexJpg(int? index)
         {
             _ = index ?? throw new ArgumentNullException(nameof(index));
-            return new WithIndexJpgRequestBuilder(PathParameters, RequestAdapter, index);
+            return new Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item.WithIndexJpg.WithIndexJpgRequestBuilder(PathParameters, RequestAdapter, index);
         }
     }
 }

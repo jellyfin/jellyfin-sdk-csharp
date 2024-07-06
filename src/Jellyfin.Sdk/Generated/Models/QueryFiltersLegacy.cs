@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class QueryFiltersLegacy : IParsable 
+    public class QueryFiltersLegacy : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Genres property</summary>
@@ -44,12 +45,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="QueryFiltersLegacy"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.QueryFiltersLegacy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static QueryFiltersLegacy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.QueryFiltersLegacy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new QueryFiltersLegacy();
+            return new Jellyfin.Sdk.Generated.Models.QueryFiltersLegacy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,10 +60,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Genres", n => { Genres = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"OfficialRatings", n => { OfficialRatings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"Tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"Years", n => { Years = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
+                { "Genres", n => { Genres = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "OfficialRatings", n => { OfficialRatings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "Tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "Years", n => { Years = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Channels.Items {
+namespace Jellyfin.Sdk.Generated.Channels.Items
+{
     /// <summary>
     /// Builds and executes requests for operations under \Channels\Items
     /// </summary>
-    public class ItemsRequestBuilder : BaseRequestBuilder 
+    public class ItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Latest property</summary>
-        public LatestRequestBuilder Latest
+        public Jellyfin.Sdk.Generated.Channels.Items.Latest.LatestRequestBuilder Latest
         {
-            get => new LatestRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Channels.Items.Latest.LatestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Channels.Items.ItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.Channels.Items {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Channels.Items.ItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

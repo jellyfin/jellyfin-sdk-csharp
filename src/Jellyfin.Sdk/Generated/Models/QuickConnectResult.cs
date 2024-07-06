@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Stores the state of an quick connect request.
     /// </summary>
-    public class QuickConnectResult : IParsable 
+    public class QuickConnectResult : IParsable
     {
         /// <summary>Gets the requesting app name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,12 +66,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="QuickConnectResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.QuickConnectResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static QuickConnectResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.QuickConnectResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new QuickConnectResult();
+            return new Jellyfin.Sdk.Generated.Models.QuickConnectResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,14 +81,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AppName", n => { AppName = n.GetStringValue(); } },
-                {"AppVersion", n => { AppVersion = n.GetStringValue(); } },
-                {"Authenticated", n => { Authenticated = n.GetBoolValue(); } },
-                {"Code", n => { Code = n.GetStringValue(); } },
-                {"DateAdded", n => { DateAdded = n.GetDateTimeOffsetValue(); } },
-                {"DeviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"DeviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"Secret", n => { Secret = n.GetStringValue(); } },
+                { "AppName", n => { AppName = n.GetStringValue(); } },
+                { "AppVersion", n => { AppVersion = n.GetStringValue(); } },
+                { "Authenticated", n => { Authenticated = n.GetBoolValue(); } },
+                { "Code", n => { Code = n.GetStringValue(); } },
+                { "DateAdded", n => { DateAdded = n.GetDateTimeOffsetValue(); } },
+                { "DeviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "DeviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "Secret", n => { Secret = n.GetStringValue(); } },
             };
         }
         /// <summary>

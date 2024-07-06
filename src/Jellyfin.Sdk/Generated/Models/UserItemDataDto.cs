@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class UserItemDataDto.
     /// </summary>
-    public class UserItemDataDto : IParsable 
+    public class UserItemDataDto : IParsable
     {
         /// <summary>Gets or sets a value indicating whether this instance is favorite.</summary>
         public bool? IsFavorite { get; set; }
@@ -47,12 +48,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserItemDataDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.UserItemDataDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserItemDataDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.UserItemDataDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserItemDataDto();
+            return new Jellyfin.Sdk.Generated.Models.UserItemDataDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,17 +63,17 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"IsFavorite", n => { IsFavorite = n.GetBoolValue(); } },
-                {"ItemId", n => { ItemId = n.GetStringValue(); } },
-                {"Key", n => { Key = n.GetStringValue(); } },
-                {"LastPlayedDate", n => { LastPlayedDate = n.GetDateTimeOffsetValue(); } },
-                {"Likes", n => { Likes = n.GetBoolValue(); } },
-                {"PlayCount", n => { PlayCount = n.GetIntValue(); } },
-                {"PlaybackPositionTicks", n => { PlaybackPositionTicks = n.GetLongValue(); } },
-                {"Played", n => { Played = n.GetBoolValue(); } },
-                {"PlayedPercentage", n => { PlayedPercentage = n.GetDoubleValue(); } },
-                {"Rating", n => { Rating = n.GetDoubleValue(); } },
-                {"UnplayedItemCount", n => { UnplayedItemCount = n.GetIntValue(); } },
+                { "IsFavorite", n => { IsFavorite = n.GetBoolValue(); } },
+                { "ItemId", n => { ItemId = n.GetStringValue(); } },
+                { "Key", n => { Key = n.GetStringValue(); } },
+                { "LastPlayedDate", n => { LastPlayedDate = n.GetDateTimeOffsetValue(); } },
+                { "Likes", n => { Likes = n.GetBoolValue(); } },
+                { "PlayCount", n => { PlayCount = n.GetIntValue(); } },
+                { "PlaybackPositionTicks", n => { PlaybackPositionTicks = n.GetLongValue(); } },
+                { "Played", n => { Played = n.GetBoolValue(); } },
+                { "PlayedPercentage", n => { PlayedPercentage = n.GetDoubleValue(); } },
+                { "Rating", n => { Rating = n.GetDoubleValue(); } },
+                { "UnplayedItemCount", n => { UnplayedItemCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,23 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class SetRepeatModeRequestDto.
     /// </summary>
-    public class SetRepeatModeRequestDto : IParsable 
+    public class SetRepeatModeRequestDto : IParsable
     {
         /// <summary>Enum GroupRepeatMode.</summary>
-        public SetRepeatModeRequestDto_Mode? Mode { get; set; }
+        public Jellyfin.Sdk.Generated.Models.SetRepeatModeRequestDto_Mode? Mode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SetRepeatModeRequestDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.SetRepeatModeRequestDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SetRepeatModeRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.SetRepeatModeRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SetRepeatModeRequestDto();
+            return new Jellyfin.Sdk.Generated.Models.SetRepeatModeRequestDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -30,7 +31,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Mode", n => { Mode = n.GetEnumValue<SetRepeatModeRequestDto_Mode>(); } },
+                { "Mode", n => { Mode = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.SetRepeatModeRequestDto_Mode>(); } },
             };
         }
         /// <summary>
@@ -40,7 +41,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<SetRepeatModeRequestDto_Mode>("Mode", Mode);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.SetRepeatModeRequestDto_Mode>("Mode", Mode);
         }
     }
 }

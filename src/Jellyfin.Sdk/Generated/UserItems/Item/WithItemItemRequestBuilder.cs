@@ -7,24 +7,25 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.UserItems.Item {
+namespace Jellyfin.Sdk.Generated.UserItems.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \UserItems\{itemId}
     /// </summary>
-    public class WithItemItemRequestBuilder : BaseRequestBuilder 
+    public class WithItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Rating property</summary>
-        public RatingRequestBuilder Rating
+        public Jellyfin.Sdk.Generated.UserItems.Item.Rating.RatingRequestBuilder Rating
         {
-            get => new RatingRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.UserItems.Item.Rating.RatingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The UserData property</summary>
-        public UserDataRequestBuilder UserData
+        public Jellyfin.Sdk.Generated.UserItems.Item.UserData.UserDataRequestBuilder UserData
         {
-            get => new UserDataRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.UserItems.Item.UserData.UserDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserItems.Item.WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,7 +33,7 @@ namespace Jellyfin.Sdk.Generated.UserItems.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserItems.Item.WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

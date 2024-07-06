@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class TunerHostInfo : IParsable 
+    public class TunerHostInfo : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The AllowHWTranscoding property</summary>
@@ -78,12 +79,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TunerHostInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.TunerHostInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TunerHostInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.TunerHostInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TunerHostInfo();
+            return new Jellyfin.Sdk.Generated.Models.TunerHostInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,18 +94,18 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AllowHWTranscoding", n => { AllowHWTranscoding = n.GetBoolValue(); } },
-                {"DeviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"EnableStreamLooping", n => { EnableStreamLooping = n.GetBoolValue(); } },
-                {"FriendlyName", n => { FriendlyName = n.GetStringValue(); } },
-                {"Id", n => { Id = n.GetStringValue(); } },
-                {"IgnoreDts", n => { IgnoreDts = n.GetBoolValue(); } },
-                {"ImportFavoritesOnly", n => { ImportFavoritesOnly = n.GetBoolValue(); } },
-                {"Source", n => { Source = n.GetStringValue(); } },
-                {"TunerCount", n => { TunerCount = n.GetIntValue(); } },
-                {"Type", n => { Type = n.GetStringValue(); } },
-                {"Url", n => { Url = n.GetStringValue(); } },
-                {"UserAgent", n => { UserAgent = n.GetStringValue(); } },
+                { "AllowHWTranscoding", n => { AllowHWTranscoding = n.GetBoolValue(); } },
+                { "DeviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "EnableStreamLooping", n => { EnableStreamLooping = n.GetBoolValue(); } },
+                { "FriendlyName", n => { FriendlyName = n.GetStringValue(); } },
+                { "Id", n => { Id = n.GetStringValue(); } },
+                { "IgnoreDts", n => { IgnoreDts = n.GetBoolValue(); } },
+                { "ImportFavoritesOnly", n => { ImportFavoritesOnly = n.GetBoolValue(); } },
+                { "Source", n => { Source = n.GetStringValue(); } },
+                { "TunerCount", n => { TunerCount = n.GetIntValue(); } },
+                { "Type", n => { Type = n.GetStringValue(); } },
+                { "Url", n => { Url = n.GetStringValue(); } },
+                { "UserAgent", n => { UserAgent = n.GetStringValue(); } },
             };
         }
         /// <summary>

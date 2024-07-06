@@ -17,76 +17,77 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Videos.Item {
+namespace Jellyfin.Sdk.Generated.Videos.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Videos\{item-id}
     /// </summary>
-    public class ItemItemRequestBuilder : BaseRequestBuilder 
+    public class ItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The AdditionalParts property</summary>
-        public AdditionalPartsRequestBuilder AdditionalParts
+        public Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts.AdditionalPartsRequestBuilder AdditionalParts
         {
-            get => new AdditionalPartsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts.AdditionalPartsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The AlternateSources property</summary>
-        public AlternateSourcesRequestBuilder AlternateSources
+        public Jellyfin.Sdk.Generated.Videos.Item.AlternateSources.AlternateSourcesRequestBuilder AlternateSources
         {
-            get => new AlternateSourcesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.Item.AlternateSources.AlternateSourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The hls property</summary>
-        public HlsRequestBuilder Hls
+        public Jellyfin.Sdk.Generated.Videos.Item.Hls.HlsRequestBuilder Hls
         {
-            get => new HlsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.Item.Hls.HlsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The hls1 property</summary>
-        public Hls1RequestBuilder Hls1
+        public Jellyfin.Sdk.Generated.Videos.Item.Hls1.Hls1RequestBuilder Hls1
         {
-            get => new Hls1RequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.Item.Hls1.Hls1RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The liveM3u8 property</summary>
-        public LiveM3u8RequestBuilder LiveM3u8
+        public Jellyfin.Sdk.Generated.Videos.Item.LiveM3u8.LiveM3u8RequestBuilder LiveM3u8
         {
-            get => new LiveM3u8RequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.Item.LiveM3u8.LiveM3u8RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mainM3u8 property</summary>
-        public MainM3u8RequestBuilder MainM3u8
+        public Jellyfin.Sdk.Generated.Videos.Item.MainM3u8.MainM3u8RequestBuilder MainM3u8
         {
-            get => new MainM3u8RequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.Item.MainM3u8.MainM3u8RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The masterM3u8 property</summary>
-        public MasterM3u8RequestBuilder MasterM3u8
+        public Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8.MasterM3u8RequestBuilder MasterM3u8
         {
-            get => new MasterM3u8RequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8.MasterM3u8RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stream property</summary>
-        public StreamRequestBuilder Stream
+        public Jellyfin.Sdk.Generated.Videos.Item.StreamNamespace.StreamRequestBuilder Stream
         {
-            get => new StreamRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.Item.StreamNamespace.StreamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Subtitles property</summary>
-        public SubtitlesRequestBuilder Subtitles
+        public Jellyfin.Sdk.Generated.Videos.Item.Subtitles.SubtitlesRequestBuilder Subtitles
         {
-            get => new SubtitlesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.Item.Subtitles.SubtitlesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Trickplay property</summary>
-        public TrickplayRequestBuilder Trickplay
+        public Jellyfin.Sdk.Generated.Videos.Item.Trickplay.TrickplayRequestBuilder Trickplay
         {
-            get => new TrickplayRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.Item.Trickplay.TrickplayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item.item collection</summary>
         /// <param name="position">The media source id.</param>
-        /// <returns>A <see cref="MediaSourceItemRequestBuilder"/></returns>
-        public MediaSourceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.Item.MediaSourceItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Videos.Item.Item.MediaSourceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("mediaSource%2Did", position);
-                return new MediaSourceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Videos.Item.Item.MediaSourceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.ItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -94,7 +95,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.ItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -104,12 +105,12 @@ namespace Jellyfin.Sdk.Generated.Videos.Item {
         /// <summary>
         /// Builds and executes requests for operations under \Videos\{item-id}\stream.{container}
         /// </summary>
-        /// <returns>A <see cref="StreamWithContainerRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer.StreamWithContainerRequestBuilder"/></returns>
         /// <param name="container">The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.</param>
-        public StreamWithContainerRequestBuilder StreamWithContainer(string container)
+        public Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer.StreamWithContainerRequestBuilder StreamWithContainer(string container)
         {
             if(string.IsNullOrEmpty(container)) throw new ArgumentNullException(nameof(container));
-            return new StreamWithContainerRequestBuilder(PathParameters, RequestAdapter, container);
+            return new Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer.StreamWithContainerRequestBuilder(PathParameters, RequestAdapter, container);
         }
     }
 }

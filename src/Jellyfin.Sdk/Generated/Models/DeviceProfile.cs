@@ -4,35 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// A MediaBrowser.Model.Dlna.DeviceProfile represents a set of metadata which determines which content a certain device is able to play.&lt;br /&gt;Specifically, it defines the supported &lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.ContainerProfiles&quot;&gt;containers&lt;/see&gt; and&lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.CodecProfiles&quot;&gt;codecs&lt;/see&gt; (video and/or audio, including codec profiles and levels)the device is able to direct play (without transcoding or remuxing),as well as which &lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.TranscodingProfiles&quot;&gt;containers/codecs to transcode to&lt;/see&gt; in case it isn&apos;t.
     /// </summary>
-    public class DeviceProfile : IParsable 
+    public class DeviceProfile : IParsable
     {
         /// <summary>Gets or sets the codec profiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CodecProfile>? CodecProfiles { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.CodecProfile>? CodecProfiles { get; set; }
 #nullable restore
 #else
-        public List<CodecProfile> CodecProfiles { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.CodecProfile> CodecProfiles { get; set; }
 #endif
         /// <summary>Gets or sets the container profiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContainerProfile>? ContainerProfiles { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ContainerProfile>? ContainerProfiles { get; set; }
 #nullable restore
 #else
-        public List<ContainerProfile> ContainerProfiles { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ContainerProfile> ContainerProfiles { get; set; }
 #endif
         /// <summary>Gets or sets the direct play profiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectPlayProfile>? DirectPlayProfiles { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.DirectPlayProfile>? DirectPlayProfiles { get; set; }
 #nullable restore
 #else
-        public List<DirectPlayProfile> DirectPlayProfiles { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.DirectPlayProfile> DirectPlayProfiles { get; set; }
 #endif
         /// <summary>Gets or sets the Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,28 +62,28 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the subtitle profiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubtitleProfile>? SubtitleProfiles { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.SubtitleProfile>? SubtitleProfiles { get; set; }
 #nullable restore
 #else
-        public List<SubtitleProfile> SubtitleProfiles { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.SubtitleProfile> SubtitleProfiles { get; set; }
 #endif
         /// <summary>Gets or sets the transcoding profiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TranscodingProfile>? TranscodingProfiles { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.TranscodingProfile>? TranscodingProfiles { get; set; }
 #nullable restore
 #else
-        public List<TranscodingProfile> TranscodingProfiles { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.TranscodingProfile> TranscodingProfiles { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceProfile"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.DeviceProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.DeviceProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceProfile();
+            return new Jellyfin.Sdk.Generated.Models.DeviceProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,17 +93,17 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"CodecProfiles", n => { CodecProfiles = n.GetCollectionOfObjectValues<CodecProfile>(CodecProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"ContainerProfiles", n => { ContainerProfiles = n.GetCollectionOfObjectValues<ContainerProfile>(ContainerProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"DirectPlayProfiles", n => { DirectPlayProfiles = n.GetCollectionOfObjectValues<DirectPlayProfile>(DirectPlayProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"Id", n => { Id = n.GetStringValue(); } },
-                {"MaxStaticBitrate", n => { MaxStaticBitrate = n.GetIntValue(); } },
-                {"MaxStaticMusicBitrate", n => { MaxStaticMusicBitrate = n.GetIntValue(); } },
-                {"MaxStreamingBitrate", n => { MaxStreamingBitrate = n.GetIntValue(); } },
-                {"MusicStreamingTranscodingBitrate", n => { MusicStreamingTranscodingBitrate = n.GetIntValue(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"SubtitleProfiles", n => { SubtitleProfiles = n.GetCollectionOfObjectValues<SubtitleProfile>(SubtitleProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"TranscodingProfiles", n => { TranscodingProfiles = n.GetCollectionOfObjectValues<TranscodingProfile>(TranscodingProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "CodecProfiles", n => { CodecProfiles = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.CodecProfile>(Jellyfin.Sdk.Generated.Models.CodecProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ContainerProfiles", n => { ContainerProfiles = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ContainerProfile>(Jellyfin.Sdk.Generated.Models.ContainerProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "DirectPlayProfiles", n => { DirectPlayProfiles = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.DirectPlayProfile>(Jellyfin.Sdk.Generated.Models.DirectPlayProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "Id", n => { Id = n.GetStringValue(); } },
+                { "MaxStaticBitrate", n => { MaxStaticBitrate = n.GetIntValue(); } },
+                { "MaxStaticMusicBitrate", n => { MaxStaticMusicBitrate = n.GetIntValue(); } },
+                { "MaxStreamingBitrate", n => { MaxStreamingBitrate = n.GetIntValue(); } },
+                { "MusicStreamingTranscodingBitrate", n => { MusicStreamingTranscodingBitrate = n.GetIntValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "SubtitleProfiles", n => { SubtitleProfiles = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.SubtitleProfile>(Jellyfin.Sdk.Generated.Models.SubtitleProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "TranscodingProfiles", n => { TranscodingProfiles = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.TranscodingProfile>(Jellyfin.Sdk.Generated.Models.TranscodingProfile.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -112,17 +113,17 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<CodecProfile>("CodecProfiles", CodecProfiles);
-            writer.WriteCollectionOfObjectValues<ContainerProfile>("ContainerProfiles", ContainerProfiles);
-            writer.WriteCollectionOfObjectValues<DirectPlayProfile>("DirectPlayProfiles", DirectPlayProfiles);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.CodecProfile>("CodecProfiles", CodecProfiles);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ContainerProfile>("ContainerProfiles", ContainerProfiles);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.DirectPlayProfile>("DirectPlayProfiles", DirectPlayProfiles);
             writer.WriteStringValue("Id", Id);
             writer.WriteIntValue("MaxStaticBitrate", MaxStaticBitrate);
             writer.WriteIntValue("MaxStaticMusicBitrate", MaxStaticMusicBitrate);
             writer.WriteIntValue("MaxStreamingBitrate", MaxStreamingBitrate);
             writer.WriteIntValue("MusicStreamingTranscodingBitrate", MusicStreamingTranscodingBitrate);
             writer.WriteStringValue("Name", Name);
-            writer.WriteCollectionOfObjectValues<SubtitleProfile>("SubtitleProfiles", SubtitleProfiles);
-            writer.WriteCollectionOfObjectValues<TranscodingProfile>("TranscodingProfiles", TranscodingProfiles);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.SubtitleProfile>("SubtitleProfiles", SubtitleProfiles);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.TranscodingProfile>("TranscodingProfiles", TranscodingProfiles);
         }
     }
 }

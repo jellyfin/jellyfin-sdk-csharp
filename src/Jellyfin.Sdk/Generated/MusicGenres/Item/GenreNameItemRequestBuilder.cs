@@ -10,24 +10,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.MusicGenres.Item {
+namespace Jellyfin.Sdk.Generated.MusicGenres.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \MusicGenres\{genreName-id}
     /// </summary>
-    public class GenreNameItemRequestBuilder : BaseRequestBuilder 
+    public class GenreNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Images property</summary>
-        public ImagesRequestBuilder Images
+        public Jellyfin.Sdk.Generated.MusicGenres.Item.Images.ImagesRequestBuilder Images
         {
-            get => new ImagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.MusicGenres.Item.Images.ImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The InstantMix property</summary>
-        public InstantMixRequestBuilder InstantMix
+        public Jellyfin.Sdk.Generated.MusicGenres.Item.InstantMix.InstantMixRequestBuilder InstantMix
         {
-            get => new InstantMixRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.MusicGenres.Item.InstantMix.InstantMixRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GenreNameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +36,7 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GenreNameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,20 +46,20 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item {
         /// <summary>
         /// Gets a music genre, by name.
         /// </summary>
-        /// <returns>A <see cref="BaseItemDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.BaseItemDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDto?> GetAsync(Action<RequestConfiguration<GenreNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDto?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder.GenreNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BaseItemDto> GetAsync(Action<RequestConfiguration<GenreNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDto> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder.GenreNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<BaseItemDto>(requestInfo, BaseItemDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.BaseItemDto>(requestInfo, Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a music genre, by name.
@@ -67,11 +68,11 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenreNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder.GenreNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenreNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder.GenreNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -82,11 +83,11 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GenreNameItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GenreNameItemRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new GenreNameItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets a music genre, by name.

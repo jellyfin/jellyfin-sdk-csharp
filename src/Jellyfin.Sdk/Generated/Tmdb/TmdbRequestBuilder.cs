@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Tmdb {
+namespace Jellyfin.Sdk.Generated.Tmdb
+{
     /// <summary>
     /// Builds and executes requests for operations under \Tmdb
     /// </summary>
-    public class TmdbRequestBuilder : BaseRequestBuilder 
+    public class TmdbRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The ClientConfiguration property</summary>
-        public ClientConfigurationRequestBuilder ClientConfiguration
+        public Jellyfin.Sdk.Generated.Tmdb.ClientConfiguration.ClientConfigurationRequestBuilder ClientConfiguration
         {
-            get => new ClientConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Tmdb.ClientConfiguration.ClientConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="TmdbRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Tmdb.TmdbRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.Tmdb {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TmdbRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Tmdb.TmdbRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

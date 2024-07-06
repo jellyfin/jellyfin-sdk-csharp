@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Packages.Installing {
+namespace Jellyfin.Sdk.Generated.Packages.Installing
+{
     /// <summary>
     /// Builds and executes requests for operations under \Packages\Installing
     /// </summary>
-    public class InstallingRequestBuilder : BaseRequestBuilder 
+    public class InstallingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Packages.Installing.item collection</summary>
         /// <param name="position">Installation Id.</param>
-        /// <returns>A <see cref="WithPackageItemRequestBuilder"/></returns>
-        public WithPackageItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Packages.Installing.Item.WithPackageItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Packages.Installing.Item.WithPackageItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("packageId", position);
-                return new WithPackageItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Packages.Installing.Item.WithPackageItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="InstallingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Packages.Installing.InstallingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Packages.Installing {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="InstallingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Packages.Installing.InstallingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

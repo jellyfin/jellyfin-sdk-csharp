@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.SyncPlay.Stop {
+namespace Jellyfin.Sdk.Generated.SyncPlay.Stop
+{
     /// <summary>
     /// Builds and executes requests for operations under \SyncPlay\Stop
     /// </summary>
-    public class StopRequestBuilder : BaseRequestBuilder 
+    public class StopRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="StopRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.SyncPlay.Stop.StopRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.Stop {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="StopRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.SyncPlay.Stop.StopRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,11 +68,11 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.Stop {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="StopRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.SyncPlay.Stop.StopRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StopRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.SyncPlay.Stop.StopRequestBuilder WithUrl(string rawUrl)
         {
-            return new StopRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.SyncPlay.Stop.StopRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

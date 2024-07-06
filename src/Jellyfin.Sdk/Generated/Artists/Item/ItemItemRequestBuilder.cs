@@ -11,29 +11,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Artists.Item {
+namespace Jellyfin.Sdk.Generated.Artists.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Artists\{item-id}
     /// </summary>
-    public class ItemItemRequestBuilder : BaseRequestBuilder 
+    public class ItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Images property</summary>
-        public ImagesRequestBuilder Images
+        public Jellyfin.Sdk.Generated.Artists.Item.Images.ImagesRequestBuilder Images
         {
-            get => new ImagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Artists.Item.Images.ImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The InstantMix property</summary>
-        public InstantMixRequestBuilder InstantMix
+        public Jellyfin.Sdk.Generated.Artists.Item.InstantMix.InstantMixRequestBuilder InstantMix
         {
-            get => new InstantMixRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Artists.Item.InstantMix.InstantMixRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Similar property</summary>
-        public SimilarRequestBuilder Similar
+        public Jellyfin.Sdk.Generated.Artists.Item.Similar.SimilarRequestBuilder Similar
         {
-            get => new SimilarRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Artists.Item.Similar.SimilarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +42,7 @@ namespace Jellyfin.Sdk.Generated.Artists.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -51,20 +52,20 @@ namespace Jellyfin.Sdk.Generated.Artists.Item {
         /// <summary>
         /// Gets an artist by name.
         /// </summary>
-        /// <returns>A <see cref="BaseItemDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.BaseItemDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDto?> GetAsync(Action<RequestConfiguration<ItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDto?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder.ItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BaseItemDto> GetAsync(Action<RequestConfiguration<ItemItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDto> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder.ItemItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<BaseItemDto>(requestInfo, BaseItemDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.BaseItemDto>(requestInfo, Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets an artist by name.
@@ -73,11 +74,11 @@ namespace Jellyfin.Sdk.Generated.Artists.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder.ItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ItemItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder.ItemItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -88,11 +89,11 @@ namespace Jellyfin.Sdk.Generated.Artists.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ItemItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ItemItemRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new ItemItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets an artist by name.

@@ -15,64 +15,65 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Items.RemoteSearch {
+namespace Jellyfin.Sdk.Generated.Items.RemoteSearch
+{
     /// <summary>
     /// Builds and executes requests for operations under \Items\RemoteSearch
     /// </summary>
-    public class RemoteSearchRequestBuilder : BaseRequestBuilder 
+    public class RemoteSearchRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Apply property</summary>
-        public ApplyRequestBuilder Apply
+        public Jellyfin.Sdk.Generated.Items.RemoteSearch.Apply.ApplyRequestBuilder Apply
         {
-            get => new ApplyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Items.RemoteSearch.Apply.ApplyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Book property</summary>
-        public BookRequestBuilder Book
+        public Jellyfin.Sdk.Generated.Items.RemoteSearch.Book.BookRequestBuilder Book
         {
-            get => new BookRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Items.RemoteSearch.Book.BookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The BoxSet property</summary>
-        public BoxSetRequestBuilder BoxSet
+        public Jellyfin.Sdk.Generated.Items.RemoteSearch.BoxSet.BoxSetRequestBuilder BoxSet
         {
-            get => new BoxSetRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Items.RemoteSearch.BoxSet.BoxSetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Movie property</summary>
-        public MovieRequestBuilder Movie
+        public Jellyfin.Sdk.Generated.Items.RemoteSearch.Movie.MovieRequestBuilder Movie
         {
-            get => new MovieRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Items.RemoteSearch.Movie.MovieRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The MusicAlbum property</summary>
-        public MusicAlbumRequestBuilder MusicAlbum
+        public Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum.MusicAlbumRequestBuilder MusicAlbum
         {
-            get => new MusicAlbumRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicAlbum.MusicAlbumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The MusicArtist property</summary>
-        public MusicArtistRequestBuilder MusicArtist
+        public Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicArtist.MusicArtistRequestBuilder MusicArtist
         {
-            get => new MusicArtistRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicArtist.MusicArtistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The MusicVideo property</summary>
-        public MusicVideoRequestBuilder MusicVideo
+        public Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicVideo.MusicVideoRequestBuilder MusicVideo
         {
-            get => new MusicVideoRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Items.RemoteSearch.MusicVideo.MusicVideoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Person property</summary>
-        public PersonRequestBuilder Person
+        public Jellyfin.Sdk.Generated.Items.RemoteSearch.Person.PersonRequestBuilder Person
         {
-            get => new PersonRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Items.RemoteSearch.Person.PersonRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Series property</summary>
-        public SeriesRequestBuilder Series
+        public Jellyfin.Sdk.Generated.Items.RemoteSearch.Series.SeriesRequestBuilder Series
         {
-            get => new SeriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Items.RemoteSearch.Series.SeriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Trailer property</summary>
-        public TrailerRequestBuilder Trailer
+        public Jellyfin.Sdk.Generated.Items.RemoteSearch.Trailer.TrailerRequestBuilder Trailer
         {
-            get => new TrailerRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Items.RemoteSearch.Trailer.TrailerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="RemoteSearchRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.RemoteSearch.RemoteSearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -80,7 +81,7 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RemoteSearchRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.RemoteSearch.RemoteSearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

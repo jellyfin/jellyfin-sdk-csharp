@@ -13,46 +13,47 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Sessions {
+namespace Jellyfin.Sdk.Generated.Sessions
+{
     /// <summary>
     /// Builds and executes requests for operations under \Sessions
     /// </summary>
-    public class SessionsRequestBuilder : BaseRequestBuilder 
+    public class SessionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Capabilities property</summary>
-        public CapabilitiesRequestBuilder Capabilities
+        public Jellyfin.Sdk.Generated.Sessions.Capabilities.CapabilitiesRequestBuilder Capabilities
         {
-            get => new CapabilitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Sessions.Capabilities.CapabilitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Logout property</summary>
-        public LogoutRequestBuilder Logout
+        public Jellyfin.Sdk.Generated.Sessions.Logout.LogoutRequestBuilder Logout
         {
-            get => new LogoutRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Sessions.Logout.LogoutRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Playing property</summary>
-        public PlayingRequestBuilder Playing
+        public Jellyfin.Sdk.Generated.Sessions.Playing.PlayingRequestBuilder Playing
         {
-            get => new PlayingRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Sessions.Playing.PlayingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Viewing property</summary>
-        public ViewingRequestBuilder Viewing
+        public Jellyfin.Sdk.Generated.Sessions.Viewing.ViewingRequestBuilder Viewing
         {
-            get => new ViewingRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Sessions.Viewing.ViewingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Sessions.item collection</summary>
         /// <param name="position">The session id.</param>
-        /// <returns>A <see cref="WithSessionItemRequestBuilder"/></returns>
-        public WithSessionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Sessions.Item.WithSessionItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Sessions.Item.WithSessionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("sessionId", position);
-                return new WithSessionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Sessions.Item.WithSessionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SessionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.SessionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -60,7 +61,7 @@ namespace Jellyfin.Sdk.Generated.Sessions {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SessionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.SessionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -70,20 +71,20 @@ namespace Jellyfin.Sdk.Generated.Sessions {
         /// <summary>
         /// Gets a list of sessions.
         /// </summary>
-        /// <returns>A List&lt;SessionInfo&gt;</returns>
+        /// <returns>A List&lt;Jellyfin.Sdk.Generated.Models.SessionInfo&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<SessionInfo>?> GetAsync(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.SessionInfo>?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<SessionInfo>> GetAsync(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.SessionInfo>> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<SessionInfo>(requestInfo, SessionInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Jellyfin.Sdk.Generated.Models.SessionInfo>(requestInfo, Jellyfin.Sdk.Generated.Models.SessionInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -93,11 +94,11 @@ namespace Jellyfin.Sdk.Generated.Sessions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -108,11 +109,11 @@ namespace Jellyfin.Sdk.Generated.Sessions {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SessionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Sessions.SessionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SessionsRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Sessions.SessionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new SessionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Sessions.SessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets a list of sessions.

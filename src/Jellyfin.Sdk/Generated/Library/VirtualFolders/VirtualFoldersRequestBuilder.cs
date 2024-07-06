@@ -11,29 +11,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
+namespace Jellyfin.Sdk.Generated.Library.VirtualFolders
+{
     /// <summary>
     /// Builds and executes requests for operations under \Library\VirtualFolders
     /// </summary>
-    public class VirtualFoldersRequestBuilder : BaseRequestBuilder 
+    public class VirtualFoldersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The LibraryOptions property</summary>
-        public LibraryOptionsRequestBuilder LibraryOptions
+        public Jellyfin.Sdk.Generated.Library.VirtualFolders.LibraryOptions.LibraryOptionsRequestBuilder LibraryOptions
         {
-            get => new LibraryOptionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.VirtualFolders.LibraryOptions.LibraryOptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Name property</summary>
-        public NameRequestBuilder Name
+        public Jellyfin.Sdk.Generated.Library.VirtualFolders.Name.NameRequestBuilder Name
         {
-            get => new NameRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.VirtualFolders.Name.NameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Paths property</summary>
-        public PathsRequestBuilder Paths
+        public Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder Paths
         {
-            get => new PathsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Library.VirtualFolders.Paths.PathsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="VirtualFoldersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +42,7 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="VirtualFoldersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,11 +56,11 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<VirtualFoldersRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder.VirtualFoldersRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<VirtualFoldersRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder.VirtualFoldersRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -68,20 +69,20 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         /// <summary>
         /// Gets all virtual folders.
         /// </summary>
-        /// <returns>A List&lt;VirtualFolderInfo&gt;</returns>
+        /// <returns>A List&lt;Jellyfin.Sdk.Generated.Models.VirtualFolderInfo&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<VirtualFolderInfo>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.VirtualFolderInfo>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<VirtualFolderInfo>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.VirtualFolderInfo>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<VirtualFolderInfo>(requestInfo, VirtualFolderInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Jellyfin.Sdk.Generated.Models.VirtualFolderInfo>(requestInfo, Jellyfin.Sdk.Generated.Models.VirtualFolderInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -92,11 +93,11 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(AddVirtualFolderDto body, Action<RequestConfiguration<VirtualFoldersRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.AddVirtualFolderDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder.VirtualFoldersRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(AddVirtualFolderDto body, Action<RequestConfiguration<VirtualFoldersRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.AddVirtualFolderDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder.VirtualFoldersRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -110,11 +111,11 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<VirtualFoldersRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder.VirtualFoldersRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<VirtualFoldersRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder.VirtualFoldersRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -148,11 +149,11 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AddVirtualFolderDto body, Action<RequestConfiguration<VirtualFoldersRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.AddVirtualFolderDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder.VirtualFoldersRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AddVirtualFolderDto body, Action<RequestConfiguration<VirtualFoldersRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.AddVirtualFolderDto body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder.VirtualFoldersRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -164,11 +165,11 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="VirtualFoldersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public VirtualFoldersRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder WithUrl(string rawUrl)
         {
-            return new VirtualFoldersRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Library.VirtualFolders.VirtualFoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Removes a virtual folder.
@@ -196,7 +197,7 @@ namespace Jellyfin.Sdk.Generated.Library.VirtualFolders {
         {
             /// <summary>The type of the collection.</summary>
             [QueryParameter("collectionType")]
-            public PostCollectionTypeQueryParameterType? CollectionType { get; set; }
+            public Jellyfin.Sdk.Generated.Library.VirtualFolders.CollectionTypeOptions? CollectionType { get; set; }
             /// <summary>The name of the virtual folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Collections.Item {
+namespace Jellyfin.Sdk.Generated.Collections.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Collections\{collectionId}
     /// </summary>
-    public class WithCollectionItemRequestBuilder : BaseRequestBuilder 
+    public class WithCollectionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Items property</summary>
-        public ItemsRequestBuilder Items
+        public Jellyfin.Sdk.Generated.Collections.Item.Items.ItemsRequestBuilder Items
         {
-            get => new ItemsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Collections.Item.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithCollectionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Collections.Item.WithCollectionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.Collections.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithCollectionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Collections.Item.WithCollectionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

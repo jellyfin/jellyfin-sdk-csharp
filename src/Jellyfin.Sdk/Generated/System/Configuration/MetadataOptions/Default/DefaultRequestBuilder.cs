@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.Default {
+namespace Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.Default
+{
     /// <summary>
     /// Builds and executes requests for operations under \System\Configuration\MetadataOptions\Default
     /// </summary>
-    public class DefaultRequestBuilder : BaseRequestBuilder 
+    public class DefaultRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="DefaultRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.Default.DefaultRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.Default {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DefaultRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.Default.DefaultRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -70,11 +71,11 @@ namespace Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.Default {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DefaultRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.Default.DefaultRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DefaultRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.Default.DefaultRequestBuilder WithUrl(string rawUrl)
         {
-            return new DefaultRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.System.Configuration.MetadataOptions.Default.DefaultRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

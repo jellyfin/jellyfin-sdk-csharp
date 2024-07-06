@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Users.Password {
+namespace Jellyfin.Sdk.Generated.Users.Password
+{
     /// <summary>
     /// Builds and executes requests for operations under \Users\Password
     /// </summary>
-    public class PasswordRequestBuilder : BaseRequestBuilder 
+    public class PasswordRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="PasswordRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Users.Password.PasswordRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Users.Password {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PasswordRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Users.Password.PasswordRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,23 +37,23 @@ namespace Jellyfin.Sdk.Generated.Users.Password {
         /// <param name="body">The update user password request body.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 403 status code</exception>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 403 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(UpdateUserPassword body, Action<RequestConfiguration<PasswordRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.UpdateUserPassword body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Users.Password.PasswordRequestBuilder.PasswordRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(UpdateUserPassword body, Action<RequestConfiguration<PasswordRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Jellyfin.Sdk.Generated.Models.UpdateUserPassword body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Users.Password.PasswordRequestBuilder.PasswordRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", ProblemDetails.CreateFromDiscriminatorValue},
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "403", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -64,11 +65,11 @@ namespace Jellyfin.Sdk.Generated.Users.Password {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(UpdateUserPassword body, Action<RequestConfiguration<PasswordRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.UpdateUserPassword body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Users.Password.PasswordRequestBuilder.PasswordRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(UpdateUserPassword body, Action<RequestConfiguration<PasswordRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.UpdateUserPassword body, Action<RequestConfiguration<Jellyfin.Sdk.Generated.Users.Password.PasswordRequestBuilder.PasswordRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -81,11 +82,11 @@ namespace Jellyfin.Sdk.Generated.Users.Password {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PasswordRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Users.Password.PasswordRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PasswordRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Users.Password.PasswordRequestBuilder WithUrl(string rawUrl)
         {
-            return new PasswordRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Users.Password.PasswordRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Updates a user&apos;s password.

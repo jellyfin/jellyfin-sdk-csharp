@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Search {
+namespace Jellyfin.Sdk.Generated.Search
+{
     /// <summary>
     /// Builds and executes requests for operations under \Search
     /// </summary>
-    public class SearchRequestBuilder : BaseRequestBuilder 
+    public class SearchRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Hints property</summary>
-        public HintsRequestBuilder Hints
+        public Jellyfin.Sdk.Generated.Search.Hints.HintsRequestBuilder Hints
         {
-            get => new HintsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Search.Hints.HintsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="SearchRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Search.SearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.Search {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SearchRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Search.SearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

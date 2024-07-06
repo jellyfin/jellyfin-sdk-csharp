@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Playback.BitrateTest {
+namespace Jellyfin.Sdk.Generated.Playback.BitrateTest
+{
     /// <summary>
     /// Builds and executes requests for operations under \Playback\BitrateTest
     /// </summary>
-    public class BitrateTestRequestBuilder : BaseRequestBuilder 
+    public class BitrateTestRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="BitrateTestRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Playback.BitrateTest.BitrateTestRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Playback.BitrateTest {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="BitrateTestRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Playback.BitrateTest.BitrateTestRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,11 +38,11 @@ namespace Jellyfin.Sdk.Generated.Playback.BitrateTest {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<BitrateTestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Playback.BitrateTest.BitrateTestRequestBuilder.BitrateTestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<BitrateTestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Playback.BitrateTest.BitrateTestRequestBuilder.BitrateTestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,11 +55,11 @@ namespace Jellyfin.Sdk.Generated.Playback.BitrateTest {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BitrateTestRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Playback.BitrateTest.BitrateTestRequestBuilder.BitrateTestRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BitrateTestRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Playback.BitrateTest.BitrateTestRequestBuilder.BitrateTestRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -69,11 +70,11 @@ namespace Jellyfin.Sdk.Generated.Playback.BitrateTest {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="BitrateTestRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Playback.BitrateTest.BitrateTestRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BitrateTestRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Playback.BitrateTest.BitrateTestRequestBuilder WithUrl(string rawUrl)
         {
-            return new BitrateTestRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Playback.BitrateTest.BitrateTestRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Tests the network with a request with the size of the bitrate.

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class TrailerInfoRemoteSearchQuery : IParsable 
+    public class TrailerInfoRemoteSearchQuery : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Gets or sets a value indicating whether disabled providers should be included.</summary>
@@ -16,10 +17,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The SearchInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TrailerInfo? SearchInfo { get; set; }
+        public Jellyfin.Sdk.Generated.Models.TrailerInfo? SearchInfo { get; set; }
 #nullable restore
 #else
-        public TrailerInfo SearchInfo { get; set; }
+        public Jellyfin.Sdk.Generated.Models.TrailerInfo SearchInfo { get; set; }
 #endif
         /// <summary>Gets or sets the provider name to search within if set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,12 +33,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TrailerInfoRemoteSearchQuery"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.TrailerInfoRemoteSearchQuery"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TrailerInfoRemoteSearchQuery CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.TrailerInfoRemoteSearchQuery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TrailerInfoRemoteSearchQuery();
+            return new Jellyfin.Sdk.Generated.Models.TrailerInfoRemoteSearchQuery();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,10 +48,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"IncludeDisabledProviders", n => { IncludeDisabledProviders = n.GetBoolValue(); } },
-                {"ItemId", n => { ItemId = n.GetGuidValue(); } },
-                {"SearchInfo", n => { SearchInfo = n.GetObjectValue<TrailerInfo>(TrailerInfo.CreateFromDiscriminatorValue); } },
-                {"SearchProviderName", n => { SearchProviderName = n.GetStringValue(); } },
+                { "IncludeDisabledProviders", n => { IncludeDisabledProviders = n.GetBoolValue(); } },
+                { "ItemId", n => { ItemId = n.GetGuidValue(); } },
+                { "SearchInfo", n => { SearchInfo = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.TrailerInfo>(Jellyfin.Sdk.Generated.Models.TrailerInfo.CreateFromDiscriminatorValue); } },
+                { "SearchProviderName", n => { SearchProviderName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,7 +63,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("IncludeDisabledProviders", IncludeDisabledProviders);
             writer.WriteGuidValue("ItemId", ItemId);
-            writer.WriteObjectValue<TrailerInfo>("SearchInfo", SearchInfo);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.TrailerInfo>("SearchInfo", SearchInfo);
             writer.WriteStringValue("SearchProviderName", SearchProviderName);
         }
     }

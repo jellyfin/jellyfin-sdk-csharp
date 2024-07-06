@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class UtcTimeResponse.
     /// </summary>
-    public class UtcTimeResponse : IParsable 
+    public class UtcTimeResponse : IParsable
     {
         /// <summary>Gets the UTC time when request has been received.</summary>
         public DateTimeOffset? RequestReceptionTime { get; set; }
@@ -17,12 +18,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UtcTimeResponse"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.UtcTimeResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UtcTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.UtcTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UtcTimeResponse();
+            return new Jellyfin.Sdk.Generated.Models.UtcTimeResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -32,8 +33,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"RequestReceptionTime", n => { RequestReceptionTime = n.GetDateTimeOffsetValue(); } },
-                {"ResponseTransmissionTime", n => { ResponseTransmissionTime = n.GetDateTimeOffsetValue(); } },
+                { "RequestReceptionTime", n => { RequestReceptionTime = n.GetDateTimeOffsetValue(); } },
+                { "ResponseTransmissionTime", n => { ResponseTransmissionTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

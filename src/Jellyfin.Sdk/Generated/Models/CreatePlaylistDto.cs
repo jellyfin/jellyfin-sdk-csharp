@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Create new playlist dto.
     /// </summary>
-    public class CreatePlaylistDto : IParsable 
+    public class CreatePlaylistDto : IParsable
     {
         /// <summary>Gets or sets item ids to add to the playlist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets a value indicating whether the playlist is public.</summary>
         public bool? IsPublic { get; set; }
         /// <summary>Gets or sets the media type.</summary>
-        public CreatePlaylistDto_MediaType? MediaType { get; set; }
+        public Jellyfin.Sdk.Generated.Models.CreatePlaylistDto_MediaType? MediaType { get; set; }
         /// <summary>Gets or sets the name of the new playlist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,20 +36,20 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the playlist users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlaylistUserPermissions>? Users { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.PlaylistUserPermissions>? Users { get; set; }
 #nullable restore
 #else
-        public List<PlaylistUserPermissions> Users { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.PlaylistUserPermissions> Users { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CreatePlaylistDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.CreatePlaylistDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CreatePlaylistDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.CreatePlaylistDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CreatePlaylistDto();
+            return new Jellyfin.Sdk.Generated.Models.CreatePlaylistDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,12 +59,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Ids", n => { Ids = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"IsPublic", n => { IsPublic = n.GetBoolValue(); } },
-                {"MediaType", n => { MediaType = n.GetEnumValue<CreatePlaylistDto_MediaType>(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"UserId", n => { UserId = n.GetGuidValue(); } },
-                {"Users", n => { Users = n.GetCollectionOfObjectValues<PlaylistUserPermissions>(PlaylistUserPermissions.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "Ids", n => { Ids = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
+                { "IsPublic", n => { IsPublic = n.GetBoolValue(); } },
+                { "MediaType", n => { MediaType = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.CreatePlaylistDto_MediaType>(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "UserId", n => { UserId = n.GetGuidValue(); } },
+                { "Users", n => { Users = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.PlaylistUserPermissions>(Jellyfin.Sdk.Generated.Models.PlaylistUserPermissions.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -75,10 +76,10 @@ namespace Jellyfin.Sdk.Generated.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<Guid?>("Ids", Ids);
             writer.WriteBoolValue("IsPublic", IsPublic);
-            writer.WriteEnumValue<CreatePlaylistDto_MediaType>("MediaType", MediaType);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.CreatePlaylistDto_MediaType>("MediaType", MediaType);
             writer.WriteStringValue("Name", Name);
             writer.WriteGuidValue("UserId", UserId);
-            writer.WriteCollectionOfObjectValues<PlaylistUserPermissions>("Users", Users);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.PlaylistUserPermissions>("Users", Users);
         }
     }
 }

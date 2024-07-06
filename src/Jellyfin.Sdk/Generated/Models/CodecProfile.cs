@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class CodecProfile : IParsable 
+    public class CodecProfile : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ApplyConditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProfileCondition>? ApplyConditions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ProfileCondition>? ApplyConditions { get; set; }
 #nullable restore
 #else
-        public List<ProfileCondition> ApplyConditions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ProfileCondition> ApplyConditions { get; set; }
 #endif
         /// <summary>The Codec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,10 +29,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The Conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProfileCondition>? Conditions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ProfileCondition>? Conditions { get; set; }
 #nullable restore
 #else
-        public List<ProfileCondition> Conditions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ProfileCondition> Conditions { get; set; }
 #endif
         /// <summary>The Container property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,16 +43,16 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Container { get; set; }
 #endif
         /// <summary>The Type property</summary>
-        public CodecProfile_Type? Type { get; set; }
+        public Jellyfin.Sdk.Generated.Models.CodecProfile_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CodecProfile"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.CodecProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CodecProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.CodecProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CodecProfile();
+            return new Jellyfin.Sdk.Generated.Models.CodecProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,11 +62,11 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ApplyConditions", n => { ApplyConditions = n.GetCollectionOfObjectValues<ProfileCondition>(ProfileCondition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"Codec", n => { Codec = n.GetStringValue(); } },
-                {"Conditions", n => { Conditions = n.GetCollectionOfObjectValues<ProfileCondition>(ProfileCondition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"Container", n => { Container = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<CodecProfile_Type>(); } },
+                { "ApplyConditions", n => { ApplyConditions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ProfileCondition>(Jellyfin.Sdk.Generated.Models.ProfileCondition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "Codec", n => { Codec = n.GetStringValue(); } },
+                { "Conditions", n => { Conditions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ProfileCondition>(Jellyfin.Sdk.Generated.Models.ProfileCondition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "Container", n => { Container = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.CodecProfile_Type>(); } },
             };
         }
         /// <summary>
@@ -75,11 +76,11 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ProfileCondition>("ApplyConditions", ApplyConditions);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ProfileCondition>("ApplyConditions", ApplyConditions);
             writer.WriteStringValue("Codec", Codec);
-            writer.WriteCollectionOfObjectValues<ProfileCondition>("Conditions", Conditions);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ProfileCondition>("Conditions", Conditions);
             writer.WriteStringValue("Container", Container);
-            writer.WriteEnumValue<CodecProfile_Type>("Type", Type);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.CodecProfile_Type>("Type", Type);
         }
     }
 }

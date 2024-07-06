@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Audio.Item.Hls {
+namespace Jellyfin.Sdk.Generated.Audio.Item.Hls
+{
     /// <summary>
     /// Builds and executes requests for operations under \Audio\{itemId}\hls
     /// </summary>
-    public class HlsRequestBuilder : BaseRequestBuilder 
+    public class HlsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Audio.item.hls.item collection</summary>
         /// <param name="position">The segment id.</param>
-        /// <returns>A <see cref="WithSegmentItemRequestBuilder"/></returns>
-        public WithSegmentItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.WithSegmentItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.WithSegmentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("segmentId", position);
-                return new WithSegmentItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.WithSegmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="HlsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Audio.Item.Hls.HlsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="HlsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Audio.Item.Hls.HlsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

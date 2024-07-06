@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// The startup user DTO.
     /// </summary>
-    public class StartupUserDto : IParsable 
+    public class StartupUserDto : IParsable
     {
         /// <summary>Gets or sets the username.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,12 +30,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="StartupUserDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.StartupUserDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static StartupUserDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.StartupUserDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new StartupUserDto();
+            return new Jellyfin.Sdk.Generated.Models.StartupUserDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,8 +45,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"Password", n => { Password = n.GetStringValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "Password", n => { Password = n.GetStringValue(); } },
             };
         }
         /// <summary>

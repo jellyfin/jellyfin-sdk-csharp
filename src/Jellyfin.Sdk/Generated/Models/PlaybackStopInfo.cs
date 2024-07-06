@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class PlaybackStopInfo.
     /// </summary>
-    public class PlaybackStopInfo : IParsable 
+    public class PlaybackStopInfo : IParsable
     {
         /// <summary>Gets or sets a value indicating whether this MediaBrowser.Model.Session.PlaybackStopInfo is failed.</summary>
         public bool? Failed { get; set; }
         /// <summary>Gets or sets the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BaseItemDto? Item { get; set; }
+        public Jellyfin.Sdk.Generated.Models.BaseItemDto? Item { get; set; }
 #nullable restore
 #else
-        public BaseItemDto Item { get; set; }
+        public Jellyfin.Sdk.Generated.Models.BaseItemDto Item { get; set; }
 #endif
         /// <summary>Gets or sets the item identifier.</summary>
         public Guid? ItemId { get; set; }
@@ -49,10 +50,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The NowPlayingQueue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<QueueItem>? NowPlayingQueue { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.QueueItem>? NowPlayingQueue { get; set; }
 #nullable restore
 #else
-        public List<QueueItem> NowPlayingQueue { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.QueueItem> NowPlayingQueue { get; set; }
 #endif
         /// <summary>The PlaylistItemId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,12 +84,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlaybackStopInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.PlaybackStopInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlaybackStopInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.PlaybackStopInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlaybackStopInfo();
+            return new Jellyfin.Sdk.Generated.Models.PlaybackStopInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,17 +99,17 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Failed", n => { Failed = n.GetBoolValue(); } },
-                {"Item", n => { Item = n.GetObjectValue<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue); } },
-                {"ItemId", n => { ItemId = n.GetGuidValue(); } },
-                {"LiveStreamId", n => { LiveStreamId = n.GetStringValue(); } },
-                {"MediaSourceId", n => { MediaSourceId = n.GetStringValue(); } },
-                {"NextMediaType", n => { NextMediaType = n.GetStringValue(); } },
-                {"NowPlayingQueue", n => { NowPlayingQueue = n.GetCollectionOfObjectValues<QueueItem>(QueueItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"PlaySessionId", n => { PlaySessionId = n.GetStringValue(); } },
-                {"PlaylistItemId", n => { PlaylistItemId = n.GetStringValue(); } },
-                {"PositionTicks", n => { PositionTicks = n.GetLongValue(); } },
-                {"SessionId", n => { SessionId = n.GetStringValue(); } },
+                { "Failed", n => { Failed = n.GetBoolValue(); } },
+                { "Item", n => { Item = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.BaseItemDto>(Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue); } },
+                { "ItemId", n => { ItemId = n.GetGuidValue(); } },
+                { "LiveStreamId", n => { LiveStreamId = n.GetStringValue(); } },
+                { "MediaSourceId", n => { MediaSourceId = n.GetStringValue(); } },
+                { "NextMediaType", n => { NextMediaType = n.GetStringValue(); } },
+                { "NowPlayingQueue", n => { NowPlayingQueue = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.QueueItem>(Jellyfin.Sdk.Generated.Models.QueueItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "PlaySessionId", n => { PlaySessionId = n.GetStringValue(); } },
+                { "PlaylistItemId", n => { PlaylistItemId = n.GetStringValue(); } },
+                { "PositionTicks", n => { PositionTicks = n.GetLongValue(); } },
+                { "SessionId", n => { SessionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -119,12 +120,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("Failed", Failed);
-            writer.WriteObjectValue<BaseItemDto>("Item", Item);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.BaseItemDto>("Item", Item);
             writer.WriteGuidValue("ItemId", ItemId);
             writer.WriteStringValue("LiveStreamId", LiveStreamId);
             writer.WriteStringValue("MediaSourceId", MediaSourceId);
             writer.WriteStringValue("NextMediaType", NextMediaType);
-            writer.WriteCollectionOfObjectValues<QueueItem>("NowPlayingQueue", NowPlayingQueue);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.QueueItem>("NowPlayingQueue", NowPlayingQueue);
             writer.WriteStringValue("PlaylistItemId", PlaylistItemId);
             writer.WriteStringValue("PlaySessionId", PlaySessionId);
             writer.WriteLongValue("PositionTicks", PositionTicks);

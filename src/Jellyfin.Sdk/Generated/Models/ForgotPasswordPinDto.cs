@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Forgot Password Pin enter request body DTO.
     /// </summary>
-    public class ForgotPasswordPinDto : IParsable 
+    public class ForgotPasswordPinDto : IParsable
     {
         /// <summary>Gets or sets the entered pin to have the password reset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,12 +22,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ForgotPasswordPinDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ForgotPasswordPinDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ForgotPasswordPinDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.ForgotPasswordPinDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ForgotPasswordPinDto();
+            return new Jellyfin.Sdk.Generated.Models.ForgotPasswordPinDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -36,7 +37,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Pin", n => { Pin = n.GetStringValue(); } },
+                { "Pin", n => { Pin = n.GetStringValue(); } },
             };
         }
         /// <summary>

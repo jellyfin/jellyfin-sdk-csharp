@@ -1,14 +1,15 @@
 {
-  "descriptionHash": "35ADACC9EA05470A75FCB36337DE73944A2EE6942410595152331C2F92863A096FB7F2C4F22FF9CB81A45CC64CA851AE789611A6B98173A271C999EAC589F3D6",
-  "descriptionLocation": "https://api.jellyfin.org/openapi/jellyfin-openapi-stable.json",
+  "descriptionHash": "B98CA14B286D266EFBEB95E370B4E56CF634612A176982EAD8C4F31A57E7DE8E23B1BF9667DF5AA26731BA40B031C75A05410F1C14F039168E062A4F70B67F1F",
+  "descriptionLocation": "https://api.jellyfin.org/openapi/jellyfin-openapi-unstable.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.14.0",
+  "kiotaVersion": "1.15.0",
   "clientClassName": "BaseJellyfinApiClient",
   "clientNamespaceName": "Jellyfin.Sdk.Generated",
   "language": "CSharp",
   "usesBackingStore": false,
   "excludeBackwardCompatible": true,
   "includeAdditionalData": true,
+  "disableSSLValidation": false,
   "serializers": [
     "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
     "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",

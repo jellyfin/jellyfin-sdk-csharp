@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class ChannelFeatures : IParsable 
+    public class ChannelFeatures : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Gets or sets the automatic refresh levels.</summary>
@@ -18,18 +19,18 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the content types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChannelMediaContentType?>? ContentTypes { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ChannelMediaContentType?>? ContentTypes { get; set; }
 #nullable restore
 #else
-        public List<ChannelMediaContentType?> ContentTypes { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ChannelMediaContentType?> ContentTypes { get; set; }
 #endif
         /// <summary>Gets or sets the default sort orders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChannelItemSortField?>? DefaultSortFields { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ChannelItemSortField?>? DefaultSortFields { get; set; }
 #nullable restore
 #else
-        public List<ChannelItemSortField?> DefaultSortFields { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ChannelItemSortField?> DefaultSortFields { get; set; }
 #endif
         /// <summary>Gets or sets the identifier.</summary>
         public Guid? Id { get; set; }
@@ -38,10 +39,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the media types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChannelMediaType?>? MediaTypes { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ChannelMediaType?>? MediaTypes { get; set; }
 #nullable restore
 #else
-        public List<ChannelMediaType?> MediaTypes { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ChannelMediaType?> MediaTypes { get; set; }
 #endif
         /// <summary>Gets or sets the name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,12 +61,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChannelFeatures"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ChannelFeatures"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ChannelFeatures CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.ChannelFeatures CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChannelFeatures();
+            return new Jellyfin.Sdk.Generated.Models.ChannelFeatures();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,18 +76,18 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AutoRefreshLevels", n => { AutoRefreshLevels = n.GetIntValue(); } },
-                {"CanFilter", n => { CanFilter = n.GetBoolValue(); } },
-                {"CanSearch", n => { CanSearch = n.GetBoolValue(); } },
-                {"ContentTypes", n => { ContentTypes = n.GetCollectionOfEnumValues<ChannelMediaContentType>()?.ToList(); } },
-                {"DefaultSortFields", n => { DefaultSortFields = n.GetCollectionOfEnumValues<ChannelItemSortField>()?.ToList(); } },
-                {"Id", n => { Id = n.GetGuidValue(); } },
-                {"MaxPageSize", n => { MaxPageSize = n.GetIntValue(); } },
-                {"MediaTypes", n => { MediaTypes = n.GetCollectionOfEnumValues<ChannelMediaType>()?.ToList(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"SupportsContentDownloading", n => { SupportsContentDownloading = n.GetBoolValue(); } },
-                {"SupportsLatestMedia", n => { SupportsLatestMedia = n.GetBoolValue(); } },
-                {"SupportsSortOrderToggle", n => { SupportsSortOrderToggle = n.GetBoolValue(); } },
+                { "AutoRefreshLevels", n => { AutoRefreshLevels = n.GetIntValue(); } },
+                { "CanFilter", n => { CanFilter = n.GetBoolValue(); } },
+                { "CanSearch", n => { CanSearch = n.GetBoolValue(); } },
+                { "ContentTypes", n => { ContentTypes = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ChannelMediaContentType>()?.ToList(); } },
+                { "DefaultSortFields", n => { DefaultSortFields = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ChannelItemSortField>()?.ToList(); } },
+                { "Id", n => { Id = n.GetGuidValue(); } },
+                { "MaxPageSize", n => { MaxPageSize = n.GetIntValue(); } },
+                { "MediaTypes", n => { MediaTypes = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ChannelMediaType>()?.ToList(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "SupportsContentDownloading", n => { SupportsContentDownloading = n.GetBoolValue(); } },
+                { "SupportsLatestMedia", n => { SupportsLatestMedia = n.GetBoolValue(); } },
+                { "SupportsSortOrderToggle", n => { SupportsSortOrderToggle = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -99,11 +100,11 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("AutoRefreshLevels", AutoRefreshLevels);
             writer.WriteBoolValue("CanFilter", CanFilter);
             writer.WriteBoolValue("CanSearch", CanSearch);
-            writer.WriteCollectionOfEnumValues<ChannelMediaContentType>("ContentTypes", ContentTypes);
-            writer.WriteCollectionOfEnumValues<ChannelItemSortField>("DefaultSortFields", DefaultSortFields);
+            writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ChannelMediaContentType>("ContentTypes", ContentTypes);
+            writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ChannelItemSortField>("DefaultSortFields", DefaultSortFields);
             writer.WriteGuidValue("Id", Id);
             writer.WriteIntValue("MaxPageSize", MaxPageSize);
-            writer.WriteCollectionOfEnumValues<ChannelMediaType>("MediaTypes", MediaTypes);
+            writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ChannelMediaType>("MediaTypes", MediaTypes);
             writer.WriteStringValue("Name", Name);
             writer.WriteBoolValue("SupportsContentDownloading", SupportsContentDownloading);
             writer.WriteBoolValue("SupportsLatestMedia", SupportsLatestMedia);

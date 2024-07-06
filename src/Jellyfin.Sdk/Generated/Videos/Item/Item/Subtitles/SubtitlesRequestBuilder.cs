@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles {
+namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles
+{
     /// <summary>
     /// Builds and executes requests for operations under \Videos\{item-id}\{mediaSource-id}\Subtitles
     /// </summary>
-    public class SubtitlesRequestBuilder : BaseRequestBuilder 
+    public class SubtitlesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item.item.Subtitles.item collection</summary>
         /// <param name="position">The subtitle stream index.</param>
-        /// <returns>A <see cref="IndexItemRequestBuilder"/></returns>
-        public IndexItemRequestBuilder this[int position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.IndexItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.IndexItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("index%2Did", position);
-                return new IndexItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.IndexItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubtitlesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.SubtitlesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubtitlesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.SubtitlesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

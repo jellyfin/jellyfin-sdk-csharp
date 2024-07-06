@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Add virtual folder dto.
     /// </summary>
-    public class AddVirtualFolderDto : IParsable 
+    public class AddVirtualFolderDto : IParsable
     {
         /// <summary>Gets or sets library options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,12 +22,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AddVirtualFolderDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.AddVirtualFolderDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AddVirtualFolderDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.AddVirtualFolderDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AddVirtualFolderDto();
+            return new Jellyfin.Sdk.Generated.Models.AddVirtualFolderDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -36,7 +37,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"LibraryOptions", n => { LibraryOptions = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.LibraryOptions>(Jellyfin.Sdk.Generated.Models.LibraryOptions.CreateFromDiscriminatorValue); } },
+                { "LibraryOptions", n => { LibraryOptions = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.LibraryOptions>(Jellyfin.Sdk.Generated.Models.LibraryOptions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

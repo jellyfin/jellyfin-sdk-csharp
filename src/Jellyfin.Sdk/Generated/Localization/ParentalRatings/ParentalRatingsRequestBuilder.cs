@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Localization.ParentalRatings {
+namespace Jellyfin.Sdk.Generated.Localization.ParentalRatings
+{
     /// <summary>
     /// Builds and executes requests for operations under \Localization\ParentalRatings
     /// </summary>
-    public class ParentalRatingsRequestBuilder : BaseRequestBuilder 
+    public class ParentalRatingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ParentalRatingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Localization.ParentalRatings.ParentalRatingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Localization.ParentalRatings {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ParentalRatingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Localization.ParentalRatings.ParentalRatingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.Localization.ParentalRatings {
         /// <summary>
         /// Gets known parental ratings.
         /// </summary>
-        /// <returns>A List&lt;ParentalRating&gt;</returns>
+        /// <returns>A List&lt;Jellyfin.Sdk.Generated.Models.ParentalRating&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<ParentalRating>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.ParentalRating>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<ParentalRating>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.ParentalRating>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<ParentalRating>(requestInfo, ParentalRating.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Jellyfin.Sdk.Generated.Models.ParentalRating>(requestInfo, Jellyfin.Sdk.Generated.Models.ParentalRating.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -71,11 +72,11 @@ namespace Jellyfin.Sdk.Generated.Localization.ParentalRatings {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ParentalRatingsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Localization.ParentalRatings.ParentalRatingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ParentalRatingsRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Localization.ParentalRatings.ParentalRatingsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ParentalRatingsRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Localization.ParentalRatings.ParentalRatingsRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

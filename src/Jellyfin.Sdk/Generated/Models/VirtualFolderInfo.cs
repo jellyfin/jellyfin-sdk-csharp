@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Used to hold information about a user&apos;s list of configured virtual folders.
     /// </summary>
-    public class VirtualFolderInfo : IParsable 
+    public class VirtualFolderInfo : IParsable
     {
         /// <summary>Gets or sets the type of the collection.</summary>
-        public VirtualFolderInfo_CollectionType? CollectionType { get; set; }
+        public Jellyfin.Sdk.Generated.Models.VirtualFolderInfo_CollectionType? CollectionType { get; set; }
         /// <summary>Gets or sets the item identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,12 +66,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VirtualFolderInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.VirtualFolderInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VirtualFolderInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.VirtualFolderInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VirtualFolderInfo();
+            return new Jellyfin.Sdk.Generated.Models.VirtualFolderInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,14 +81,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"CollectionType", n => { CollectionType = n.GetEnumValue<VirtualFolderInfo_CollectionType>(); } },
-                {"ItemId", n => { ItemId = n.GetStringValue(); } },
-                {"LibraryOptions", n => { LibraryOptions = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.LibraryOptions>(Jellyfin.Sdk.Generated.Models.LibraryOptions.CreateFromDiscriminatorValue); } },
-                {"Locations", n => { Locations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"PrimaryImageItemId", n => { PrimaryImageItemId = n.GetStringValue(); } },
-                {"RefreshProgress", n => { RefreshProgress = n.GetDoubleValue(); } },
-                {"RefreshStatus", n => { RefreshStatus = n.GetStringValue(); } },
+                { "CollectionType", n => { CollectionType = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.VirtualFolderInfo_CollectionType>(); } },
+                { "ItemId", n => { ItemId = n.GetStringValue(); } },
+                { "LibraryOptions", n => { LibraryOptions = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.LibraryOptions>(Jellyfin.Sdk.Generated.Models.LibraryOptions.CreateFromDiscriminatorValue); } },
+                { "Locations", n => { Locations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "PrimaryImageItemId", n => { PrimaryImageItemId = n.GetStringValue(); } },
+                { "RefreshProgress", n => { RefreshProgress = n.GetDoubleValue(); } },
+                { "RefreshStatus", n => { RefreshStatus = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -97,7 +98,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<VirtualFolderInfo_CollectionType>("CollectionType", CollectionType);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.VirtualFolderInfo_CollectionType>("CollectionType", CollectionType);
             writer.WriteStringValue("ItemId", ItemId);
             writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.LibraryOptions>("LibraryOptions", LibraryOptions);
             writer.WriteCollectionOfPrimitiveValues<string>("Locations", Locations);

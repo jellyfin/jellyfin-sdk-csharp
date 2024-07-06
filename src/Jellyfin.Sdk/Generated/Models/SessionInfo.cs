@@ -4,19 +4,20 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class SessionInfo.
     /// </summary>
-    public class SessionInfo : IParsable 
+    public class SessionInfo : IParsable
     {
         /// <summary>The AdditionalUsers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SessionUserInfo>? AdditionalUsers { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.SessionUserInfo>? AdditionalUsers { get; set; }
 #nullable restore
 #else
-        public List<SessionUserInfo> AdditionalUsers { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.SessionUserInfo> AdditionalUsers { get; set; }
 #endif
         /// <summary>Gets or sets the application version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,10 +30,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The Capabilities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ClientCapabilities? Capabilities { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ClientCapabilities? Capabilities { get; set; }
 #nullable restore
 #else
-        public ClientCapabilities Capabilities { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ClientCapabilities Capabilities { get; set; }
 #endif
         /// <summary>Gets or sets the type of the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,45 +85,45 @@ namespace Jellyfin.Sdk.Generated.Models {
         public DateTimeOffset? LastPausedDate { get; set; }
         /// <summary>Gets or sets the last playback check in.</summary>
         public DateTimeOffset? LastPlaybackCheckIn { get; set; }
-        /// <summary>This is strictly used as a data transfer object from the api layer.This holds information about a BaseItem in a format that is convenient for the client.</summary>
+        /// <summary>Gets or sets the now playing item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BaseItemDto? NowPlayingItem { get; set; }
+        public Jellyfin.Sdk.Generated.Models.BaseItemDto? NowPlayingItem { get; set; }
 #nullable restore
 #else
-        public BaseItemDto NowPlayingItem { get; set; }
+        public Jellyfin.Sdk.Generated.Models.BaseItemDto NowPlayingItem { get; set; }
 #endif
         /// <summary>The NowPlayingQueue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<QueueItem>? NowPlayingQueue { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.QueueItem>? NowPlayingQueue { get; set; }
 #nullable restore
 #else
-        public List<QueueItem> NowPlayingQueue { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.QueueItem> NowPlayingQueue { get; set; }
 #endif
         /// <summary>The NowPlayingQueueFullItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BaseItemDto>? NowPlayingQueueFullItems { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.BaseItemDto>? NowPlayingQueueFullItems { get; set; }
 #nullable restore
 #else
-        public List<BaseItemDto> NowPlayingQueueFullItems { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.BaseItemDto> NowPlayingQueueFullItems { get; set; }
 #endif
         /// <summary>This is strictly used as a data transfer object from the api layer.This holds information about a BaseItem in a format that is convenient for the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BaseItemDto? NowViewingItem { get; set; }
+        public Jellyfin.Sdk.Generated.Models.BaseItemDto? NowViewingItem { get; set; }
 #nullable restore
 #else
-        public BaseItemDto NowViewingItem { get; set; }
+        public Jellyfin.Sdk.Generated.Models.BaseItemDto NowViewingItem { get; set; }
 #endif
         /// <summary>Gets the playable media types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MediaType?>? PlayableMediaTypes { get; private set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaType?>? PlayableMediaTypes { get; private set; }
 #nullable restore
 #else
-        public List<MediaType?> PlayableMediaTypes { get; private set; }
+        public List<Jellyfin.Sdk.Generated.Models.MediaType?> PlayableMediaTypes { get; private set; }
 #endif
         /// <summary>The PlaylistItemId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,10 +136,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The PlayState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlayerStateInfo? PlayState { get; set; }
+        public Jellyfin.Sdk.Generated.Models.PlayerStateInfo? PlayState { get; set; }
 #nullable restore
 #else
-        public PlayerStateInfo PlayState { get; set; }
+        public Jellyfin.Sdk.Generated.Models.PlayerStateInfo PlayState { get; set; }
 #endif
         /// <summary>Gets or sets the remote end point.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,10 +160,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets the supported commands.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GeneralCommandType?>? SupportedCommands { get; private set; }
+        public List<Jellyfin.Sdk.Generated.Models.GeneralCommandType?>? SupportedCommands { get; private set; }
 #nullable restore
 #else
-        public List<GeneralCommandType?> SupportedCommands { get; private set; }
+        public List<Jellyfin.Sdk.Generated.Models.GeneralCommandType?> SupportedCommands { get; private set; }
 #endif
         /// <summary>The SupportsMediaControl property</summary>
         public bool? SupportsMediaControl { get; private set; }
@@ -197,12 +198,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SessionInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.SessionInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SessionInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.SessionInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SessionInfo();
+            return new Jellyfin.Sdk.Generated.Models.SessionInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -212,35 +213,35 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AdditionalUsers", n => { AdditionalUsers = n.GetCollectionOfObjectValues<SessionUserInfo>(SessionUserInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"ApplicationVersion", n => { ApplicationVersion = n.GetStringValue(); } },
-                {"Capabilities", n => { Capabilities = n.GetObjectValue<ClientCapabilities>(ClientCapabilities.CreateFromDiscriminatorValue); } },
-                {"Client", n => { Client = n.GetStringValue(); } },
-                {"DeviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"DeviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"DeviceType", n => { DeviceType = n.GetStringValue(); } },
-                {"HasCustomDeviceName", n => { HasCustomDeviceName = n.GetBoolValue(); } },
-                {"Id", n => { Id = n.GetStringValue(); } },
-                {"IsActive", n => { IsActive = n.GetBoolValue(); } },
-                {"LastActivityDate", n => { LastActivityDate = n.GetDateTimeOffsetValue(); } },
-                {"LastPausedDate", n => { LastPausedDate = n.GetDateTimeOffsetValue(); } },
-                {"LastPlaybackCheckIn", n => { LastPlaybackCheckIn = n.GetDateTimeOffsetValue(); } },
-                {"NowPlayingItem", n => { NowPlayingItem = n.GetObjectValue<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue); } },
-                {"NowPlayingQueue", n => { NowPlayingQueue = n.GetCollectionOfObjectValues<QueueItem>(QueueItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"NowPlayingQueueFullItems", n => { NowPlayingQueueFullItems = n.GetCollectionOfObjectValues<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"NowViewingItem", n => { NowViewingItem = n.GetObjectValue<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue); } },
-                {"PlayState", n => { PlayState = n.GetObjectValue<PlayerStateInfo>(PlayerStateInfo.CreateFromDiscriminatorValue); } },
-                {"PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfEnumValues<MediaType>()?.ToList(); } },
-                {"PlaylistItemId", n => { PlaylistItemId = n.GetStringValue(); } },
-                {"RemoteEndPoint", n => { RemoteEndPoint = n.GetStringValue(); } },
-                {"ServerId", n => { ServerId = n.GetStringValue(); } },
-                {"SupportedCommands", n => { SupportedCommands = n.GetCollectionOfEnumValues<GeneralCommandType>()?.ToList(); } },
-                {"SupportsMediaControl", n => { SupportsMediaControl = n.GetBoolValue(); } },
-                {"SupportsRemoteControl", n => { SupportsRemoteControl = n.GetBoolValue(); } },
-                {"TranscodingInfo", n => { TranscodingInfo = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.TranscodingInfo>(Jellyfin.Sdk.Generated.Models.TranscodingInfo.CreateFromDiscriminatorValue); } },
-                {"UserId", n => { UserId = n.GetGuidValue(); } },
-                {"UserName", n => { UserName = n.GetStringValue(); } },
-                {"UserPrimaryImageTag", n => { UserPrimaryImageTag = n.GetStringValue(); } },
+                { "AdditionalUsers", n => { AdditionalUsers = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.SessionUserInfo>(Jellyfin.Sdk.Generated.Models.SessionUserInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ApplicationVersion", n => { ApplicationVersion = n.GetStringValue(); } },
+                { "Capabilities", n => { Capabilities = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.ClientCapabilities>(Jellyfin.Sdk.Generated.Models.ClientCapabilities.CreateFromDiscriminatorValue); } },
+                { "Client", n => { Client = n.GetStringValue(); } },
+                { "DeviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "DeviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "DeviceType", n => { DeviceType = n.GetStringValue(); } },
+                { "HasCustomDeviceName", n => { HasCustomDeviceName = n.GetBoolValue(); } },
+                { "Id", n => { Id = n.GetStringValue(); } },
+                { "IsActive", n => { IsActive = n.GetBoolValue(); } },
+                { "LastActivityDate", n => { LastActivityDate = n.GetDateTimeOffsetValue(); } },
+                { "LastPausedDate", n => { LastPausedDate = n.GetDateTimeOffsetValue(); } },
+                { "LastPlaybackCheckIn", n => { LastPlaybackCheckIn = n.GetDateTimeOffsetValue(); } },
+                { "NowPlayingItem", n => { NowPlayingItem = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.BaseItemDto>(Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue); } },
+                { "NowPlayingQueue", n => { NowPlayingQueue = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.QueueItem>(Jellyfin.Sdk.Generated.Models.QueueItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "NowPlayingQueueFullItems", n => { NowPlayingQueueFullItems = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.BaseItemDto>(Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "NowViewingItem", n => { NowViewingItem = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.BaseItemDto>(Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue); } },
+                { "PlayState", n => { PlayState = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.PlayerStateInfo>(Jellyfin.Sdk.Generated.Models.PlayerStateInfo.CreateFromDiscriminatorValue); } },
+                { "PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.MediaType>()?.ToList(); } },
+                { "PlaylistItemId", n => { PlaylistItemId = n.GetStringValue(); } },
+                { "RemoteEndPoint", n => { RemoteEndPoint = n.GetStringValue(); } },
+                { "ServerId", n => { ServerId = n.GetStringValue(); } },
+                { "SupportedCommands", n => { SupportedCommands = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.GeneralCommandType>()?.ToList(); } },
+                { "SupportsMediaControl", n => { SupportsMediaControl = n.GetBoolValue(); } },
+                { "SupportsRemoteControl", n => { SupportsRemoteControl = n.GetBoolValue(); } },
+                { "TranscodingInfo", n => { TranscodingInfo = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.TranscodingInfo>(Jellyfin.Sdk.Generated.Models.TranscodingInfo.CreateFromDiscriminatorValue); } },
+                { "UserId", n => { UserId = n.GetGuidValue(); } },
+                { "UserName", n => { UserName = n.GetStringValue(); } },
+                { "UserPrimaryImageTag", n => { UserPrimaryImageTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -250,9 +251,9 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<SessionUserInfo>("AdditionalUsers", AdditionalUsers);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.SessionUserInfo>("AdditionalUsers", AdditionalUsers);
             writer.WriteStringValue("ApplicationVersion", ApplicationVersion);
-            writer.WriteObjectValue<ClientCapabilities>("Capabilities", Capabilities);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.ClientCapabilities>("Capabilities", Capabilities);
             writer.WriteStringValue("Client", Client);
             writer.WriteStringValue("DeviceId", DeviceId);
             writer.WriteStringValue("DeviceName", DeviceName);
@@ -262,12 +263,12 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteDateTimeOffsetValue("LastActivityDate", LastActivityDate);
             writer.WriteDateTimeOffsetValue("LastPausedDate", LastPausedDate);
             writer.WriteDateTimeOffsetValue("LastPlaybackCheckIn", LastPlaybackCheckIn);
-            writer.WriteObjectValue<BaseItemDto>("NowPlayingItem", NowPlayingItem);
-            writer.WriteCollectionOfObjectValues<QueueItem>("NowPlayingQueue", NowPlayingQueue);
-            writer.WriteCollectionOfObjectValues<BaseItemDto>("NowPlayingQueueFullItems", NowPlayingQueueFullItems);
-            writer.WriteObjectValue<BaseItemDto>("NowViewingItem", NowViewingItem);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.BaseItemDto>("NowPlayingItem", NowPlayingItem);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.QueueItem>("NowPlayingQueue", NowPlayingQueue);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.BaseItemDto>("NowPlayingQueueFullItems", NowPlayingQueueFullItems);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.BaseItemDto>("NowViewingItem", NowViewingItem);
             writer.WriteStringValue("PlaylistItemId", PlaylistItemId);
-            writer.WriteObjectValue<PlayerStateInfo>("PlayState", PlayState);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.PlayerStateInfo>("PlayState", PlayState);
             writer.WriteStringValue("RemoteEndPoint", RemoteEndPoint);
             writer.WriteStringValue("ServerId", ServerId);
             writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.TranscodingInfo>("TranscodingInfo", TranscodingInfo);

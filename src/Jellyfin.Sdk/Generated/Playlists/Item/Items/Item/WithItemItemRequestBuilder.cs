@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item {
+namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Playlists\{item-id}\Items\{itemId}
     /// </summary>
-    public class WithItemItemRequestBuilder : BaseRequestBuilder 
+    public class WithItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Move property</summary>
-        public MoveRequestBuilder Move
+        public Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move.MoveRequestBuilder Move
         {
-            get => new MoveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.Move.MoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Playlists.Item.Items.Item.WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

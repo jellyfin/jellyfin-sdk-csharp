@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives {
+namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives
+{
     /// <summary>
     /// Builds and executes requests for operations under \Environment\Drives
     /// </summary>
-    public class DrivesRequestBuilder : BaseRequestBuilder 
+    public class DrivesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="DrivesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives.DrivesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DrivesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives.DrivesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives {
         /// <summary>
         /// Gets available drives from the server&apos;s file system.
         /// </summary>
-        /// <returns>A List&lt;FileSystemEntryInfo&gt;</returns>
+        /// <returns>A List&lt;Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<FileSystemEntryInfo>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<FileSystemEntryInfo>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<FileSystemEntryInfo>(requestInfo, FileSystemEntryInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo>(requestInfo, Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -71,11 +72,11 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DrivesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives.DrivesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DrivesRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives.DrivesRequestBuilder WithUrl(string rawUrl)
         {
-            return new DrivesRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives.DrivesRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

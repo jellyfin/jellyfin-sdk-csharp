@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Items.Item.ThemeMedia {
+namespace Jellyfin.Sdk.Generated.Items.Item.ThemeMedia
+{
     /// <summary>
     /// Builds and executes requests for operations under \Items\{itemId}\ThemeMedia
     /// </summary>
-    public class ThemeMediaRequestBuilder : BaseRequestBuilder 
+    public class ThemeMediaRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ThemeMediaRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.ThemeMedia.ThemeMediaRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ThemeMedia {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ThemeMediaRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.ThemeMedia.ThemeMediaRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ThemeMedia {
         /// <summary>
         /// Get theme songs and videos for an item.
         /// </summary>
-        /// <returns>A <see cref="AllThemeMediaResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.AllThemeMediaResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AllThemeMediaResult?> GetAsync(Action<RequestConfiguration<ThemeMediaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.AllThemeMediaResult?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.ThemeMedia.ThemeMediaRequestBuilder.ThemeMediaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AllThemeMediaResult> GetAsync(Action<RequestConfiguration<ThemeMediaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.AllThemeMediaResult> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.ThemeMedia.ThemeMediaRequestBuilder.ThemeMediaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<AllThemeMediaResult>(requestInfo, AllThemeMediaResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.AllThemeMediaResult>(requestInfo, Jellyfin.Sdk.Generated.Models.AllThemeMediaResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get theme songs and videos for an item.
@@ -55,11 +56,11 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ThemeMedia {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThemeMediaRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.ThemeMedia.ThemeMediaRequestBuilder.ThemeMediaRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThemeMediaRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.ThemeMedia.ThemeMediaRequestBuilder.ThemeMediaRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -70,11 +71,11 @@ namespace Jellyfin.Sdk.Generated.Items.Item.ThemeMedia {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ThemeMediaRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Items.Item.ThemeMedia.ThemeMediaRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ThemeMediaRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Items.Item.ThemeMedia.ThemeMediaRequestBuilder WithUrl(string rawUrl)
         {
-            return new ThemeMediaRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Items.Item.ThemeMedia.ThemeMediaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get theme songs and videos for an item.

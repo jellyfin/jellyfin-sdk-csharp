@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamAac {
+namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamAac
+{
     /// <summary>
     /// Builds and executes requests for operations under \Audio\{itemId}\hls\{segmentId}\stream.aac
     /// </summary>
-    public class StreamAacRequestBuilder : BaseRequestBuilder 
+    public class StreamAacRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="StreamAacRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamAac.StreamAacRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamAac {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="StreamAacRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamAac.StreamAacRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -69,11 +70,11 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamAac {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="StreamAacRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamAac.StreamAacRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StreamAacRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamAac.StreamAacRequestBuilder WithUrl(string rawUrl)
         {
-            return new StreamAacRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Audio.Item.Hls.Item.StreamAac.StreamAacRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

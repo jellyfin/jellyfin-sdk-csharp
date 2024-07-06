@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class PackageInfo.
     /// </summary>
-    public class PackageInfo : IParsable 
+    public class PackageInfo : IParsable
     {
         /// <summary>Gets or sets the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,20 +64,20 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the versions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VersionInfo>? Versions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.VersionInfo>? Versions { get; set; }
 #nullable restore
 #else
-        public List<VersionInfo> Versions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.VersionInfo> Versions { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PackageInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.PackageInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PackageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.PackageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PackageInfo();
+            return new Jellyfin.Sdk.Generated.Models.PackageInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,14 +87,14 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"category", n => { Category = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"guid", n => { Guid = n.GetGuidValue(); } },
-                {"imageUrl", n => { ImageUrl = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"overview", n => { Overview = n.GetStringValue(); } },
-                {"owner", n => { Owner = n.GetStringValue(); } },
-                {"versions", n => { Versions = n.GetCollectionOfObjectValues<VersionInfo>(VersionInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "category", n => { Category = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "guid", n => { Guid = n.GetGuidValue(); } },
+                { "imageUrl", n => { ImageUrl = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "overview", n => { Overview = n.GetStringValue(); } },
+                { "owner", n => { Owner = n.GetStringValue(); } },
+                { "versions", n => { Versions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.VersionInfo>(Jellyfin.Sdk.Generated.Models.VersionInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -110,7 +111,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("overview", Overview);
             writer.WriteStringValue("owner", Owner);
-            writer.WriteCollectionOfObjectValues<VersionInfo>("versions", Versions);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.VersionInfo>("versions", Versions);
         }
     }
 }

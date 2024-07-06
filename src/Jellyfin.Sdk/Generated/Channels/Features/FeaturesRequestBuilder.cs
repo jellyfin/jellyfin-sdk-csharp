@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Channels.Features {
+namespace Jellyfin.Sdk.Generated.Channels.Features
+{
     /// <summary>
     /// Builds and executes requests for operations under \Channels\Features
     /// </summary>
-    public class FeaturesRequestBuilder : BaseRequestBuilder 
+    public class FeaturesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="FeaturesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Channels.Features.FeaturesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Channels.Features {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FeaturesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Channels.Features.FeaturesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.Channels.Features {
         /// <summary>
         /// Get all channel features.
         /// </summary>
-        /// <returns>A List&lt;ChannelFeatures&gt;</returns>
+        /// <returns>A List&lt;Jellyfin.Sdk.Generated.Models.ChannelFeatures&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<ChannelFeatures>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.ChannelFeatures>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<ChannelFeatures>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.ChannelFeatures>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<ChannelFeatures>(requestInfo, ChannelFeatures.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Jellyfin.Sdk.Generated.Models.ChannelFeatures>(requestInfo, Jellyfin.Sdk.Generated.Models.ChannelFeatures.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -71,11 +72,11 @@ namespace Jellyfin.Sdk.Generated.Channels.Features {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FeaturesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Channels.Features.FeaturesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FeaturesRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Channels.Features.FeaturesRequestBuilder WithUrl(string rawUrl)
         {
-            return new FeaturesRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Channels.Features.FeaturesRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

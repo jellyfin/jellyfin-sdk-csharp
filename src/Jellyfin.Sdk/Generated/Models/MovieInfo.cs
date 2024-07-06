@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class MovieInfo : IParsable 
+    public class MovieInfo : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The IndexNumber property</summary>
@@ -60,22 +61,22 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the provider ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MovieInfo_ProviderIds? ProviderIds { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MovieInfo_ProviderIds? ProviderIds { get; set; }
 #nullable restore
 #else
-        public MovieInfo_ProviderIds ProviderIds { get; set; }
+        public Jellyfin.Sdk.Generated.Models.MovieInfo_ProviderIds ProviderIds { get; set; }
 #endif
         /// <summary>Gets or sets the year.</summary>
         public int? Year { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MovieInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.MovieInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MovieInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.MovieInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MovieInfo();
+            return new Jellyfin.Sdk.Generated.Models.MovieInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,17 +86,17 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"IndexNumber", n => { IndexNumber = n.GetIntValue(); } },
-                {"IsAutomated", n => { IsAutomated = n.GetBoolValue(); } },
-                {"MetadataCountryCode", n => { MetadataCountryCode = n.GetStringValue(); } },
-                {"MetadataLanguage", n => { MetadataLanguage = n.GetStringValue(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"OriginalTitle", n => { OriginalTitle = n.GetStringValue(); } },
-                {"ParentIndexNumber", n => { ParentIndexNumber = n.GetIntValue(); } },
-                {"Path", n => { Path = n.GetStringValue(); } },
-                {"PremiereDate", n => { PremiereDate = n.GetDateTimeOffsetValue(); } },
-                {"ProviderIds", n => { ProviderIds = n.GetObjectValue<MovieInfo_ProviderIds>(MovieInfo_ProviderIds.CreateFromDiscriminatorValue); } },
-                {"Year", n => { Year = n.GetIntValue(); } },
+                { "IndexNumber", n => { IndexNumber = n.GetIntValue(); } },
+                { "IsAutomated", n => { IsAutomated = n.GetBoolValue(); } },
+                { "MetadataCountryCode", n => { MetadataCountryCode = n.GetStringValue(); } },
+                { "MetadataLanguage", n => { MetadataLanguage = n.GetStringValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "OriginalTitle", n => { OriginalTitle = n.GetStringValue(); } },
+                { "ParentIndexNumber", n => { ParentIndexNumber = n.GetIntValue(); } },
+                { "Path", n => { Path = n.GetStringValue(); } },
+                { "PremiereDate", n => { PremiereDate = n.GetDateTimeOffsetValue(); } },
+                { "ProviderIds", n => { ProviderIds = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.MovieInfo_ProviderIds>(Jellyfin.Sdk.Generated.Models.MovieInfo_ProviderIds.CreateFromDiscriminatorValue); } },
+                { "Year", n => { Year = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -114,7 +115,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("ParentIndexNumber", ParentIndexNumber);
             writer.WriteStringValue("Path", Path);
             writer.WriteDateTimeOffsetValue("PremiereDate", PremiereDate);
-            writer.WriteObjectValue<MovieInfo_ProviderIds>("ProviderIds", ProviderIds);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.MovieInfo_ProviderIds>("ProviderIds", ProviderIds);
             writer.WriteIntValue("Year", Year);
         }
     }

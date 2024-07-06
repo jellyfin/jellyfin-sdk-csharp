@@ -8,19 +8,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.PlayingItems.Item {
+namespace Jellyfin.Sdk.Generated.PlayingItems.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \PlayingItems\{itemId}
     /// </summary>
-    public class WithItemItemRequestBuilder : BaseRequestBuilder 
+    public class WithItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Progress property</summary>
-        public ProgressRequestBuilder Progress
+        public Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder Progress
         {
-            get => new ProgressRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -28,7 +29,7 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -42,11 +43,11 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<WithItemItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<WithItemItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -59,11 +60,11 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -76,11 +77,11 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<WithItemItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<WithItemItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -94,11 +95,11 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -108,11 +109,11 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithItemItemRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithItemItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Reports that a session has stopped playing an item.
@@ -196,7 +197,7 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item {
 #endif
             /// <summary>The play method.</summary>
             [QueryParameter("playMethod")]
-            public PostPlayMethodQueryParameterType? PlayMethod { get; set; }
+            public Jellyfin.Sdk.Generated.PlayingItems.Item.PlayMethod? PlayMethod { get; set; }
             /// <summary>The play session id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

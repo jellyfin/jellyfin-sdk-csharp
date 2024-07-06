@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Videos.Item.Trickplay {
+namespace Jellyfin.Sdk.Generated.Videos.Item.Trickplay
+{
     /// <summary>
     /// Builds and executes requests for operations under \Videos\{item-id}\Trickplay
     /// </summary>
-    public class TrickplayRequestBuilder : BaseRequestBuilder 
+    public class TrickplayRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item.Trickplay.item collection</summary>
         /// <param name="position">The width of a single tile.</param>
-        /// <returns>A <see cref="WithWidthItemRequestBuilder"/></returns>
-        public WithWidthItemRequestBuilder this[int position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item.WithWidthItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item.WithWidthItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("width", position);
-                return new WithWidthItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item.WithWidthItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TrickplayRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Trickplay.TrickplayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Trickplay {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TrickplayRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Trickplay.TrickplayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

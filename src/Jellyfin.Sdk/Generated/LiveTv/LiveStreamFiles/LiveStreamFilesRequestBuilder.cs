@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles {
+namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles
+{
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\LiveStreamFiles
     /// </summary>
-    public class LiveStreamFilesRequestBuilder : BaseRequestBuilder 
+    public class LiveStreamFilesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.item collection</summary>
         /// <param name="position">Stream id.</param>
-        /// <returns>A <see cref="WithStreamItemRequestBuilder"/></returns>
-        public WithStreamItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.WithStreamItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.WithStreamItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("streamId", position);
-                return new WithStreamItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.Item.WithStreamItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="LiveStreamFilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.LiveStreamFilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LiveStreamFilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.LiveStreamFiles.LiveStreamFilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

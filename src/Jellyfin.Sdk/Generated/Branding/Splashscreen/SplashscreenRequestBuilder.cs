@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
+namespace Jellyfin.Sdk.Generated.Branding.Splashscreen
+{
     /// <summary>
     /// Builds and executes requests for operations under \Branding\Splashscreen
     /// </summary>
-    public class SplashscreenRequestBuilder : BaseRequestBuilder 
+    public class SplashscreenRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="SplashscreenRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Branding.Splashscreen.SplashscreenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SplashscreenRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Branding.Splashscreen.SplashscreenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,11 +56,11 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<SplashscreenRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Branding.Splashscreen.SplashscreenRequestBuilder.SplashscreenRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<SplashscreenRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Branding.Splashscreen.SplashscreenRequestBuilder.SplashscreenRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -71,8 +72,8 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 400 status code</exception>
-        /// <exception cref="ProblemDetails">When receiving a 403 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 400 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(Stream body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,8 +87,8 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"400", ProblemDetails.CreateFromDiscriminatorValue},
-                {"403", ProblemDetails.CreateFromDiscriminatorValue},
+                { "400", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "403", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -116,11 +117,11 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SplashscreenRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Branding.Splashscreen.SplashscreenRequestBuilder.SplashscreenRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SplashscreenRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Branding.Splashscreen.SplashscreenRequestBuilder.SplashscreenRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -153,11 +154,11 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SplashscreenRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Branding.Splashscreen.SplashscreenRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SplashscreenRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Branding.Splashscreen.SplashscreenRequestBuilder WithUrl(string rawUrl)
         {
-            return new SplashscreenRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Branding.Splashscreen.SplashscreenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Generates or gets the splashscreen.
@@ -195,7 +196,7 @@ namespace Jellyfin.Sdk.Generated.Branding.Splashscreen {
 #endif
             /// <summary>Determines the output format of the image - original,gif,jpg,png.</summary>
             [QueryParameter("format")]
-            public GetFormatQueryParameterType? Format { get; set; }
+            public Jellyfin.Sdk.Generated.Branding.Splashscreen.ImageFormat? Format { get; set; }
             /// <summary>The fixed image height to return.</summary>
             [QueryParameter("height")]
             public int? Height { get; set; }

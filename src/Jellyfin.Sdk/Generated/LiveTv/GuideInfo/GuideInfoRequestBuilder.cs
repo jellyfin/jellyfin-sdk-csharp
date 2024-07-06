@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.LiveTv.GuideInfo {
+namespace Jellyfin.Sdk.Generated.LiveTv.GuideInfo
+{
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\GuideInfo
     /// </summary>
-    public class GuideInfoRequestBuilder : BaseRequestBuilder 
+    public class GuideInfoRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GuideInfoRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.GuideInfo.GuideInfoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.GuideInfo {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GuideInfoRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.GuideInfo.GuideInfoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -70,11 +71,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.GuideInfo {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GuideInfoRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.LiveTv.GuideInfo.GuideInfoRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GuideInfoRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.LiveTv.GuideInfo.GuideInfoRequestBuilder WithUrl(string rawUrl)
         {
-            return new GuideInfoRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.LiveTv.GuideInfo.GuideInfoRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

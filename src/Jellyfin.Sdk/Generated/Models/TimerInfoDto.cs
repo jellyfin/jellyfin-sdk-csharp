@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class TimerInfoDto : IParsable 
+    public class TimerInfoDto : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Gets or sets the channel id of the recording.</summary>
@@ -74,7 +75,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets a value indicating whether this instance is pre padding required.</summary>
         public bool? IsPrePaddingRequired { get; set; }
         /// <summary>The KeepUntil property</summary>
-        public TimerInfoDto_KeepUntil? KeepUntil { get; set; }
+        public Jellyfin.Sdk.Generated.Models.TimerInfoDto_KeepUntil? KeepUntil { get; set; }
         /// <summary>Gets or sets the name of the recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,10 +125,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the program information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BaseItemDto? ProgramInfo { get; set; }
+        public Jellyfin.Sdk.Generated.Models.BaseItemDto? ProgramInfo { get; set; }
 #nullable restore
 #else
-        public BaseItemDto ProgramInfo { get; set; }
+        public Jellyfin.Sdk.Generated.Models.BaseItemDto ProgramInfo { get; set; }
 #endif
         /// <summary>Gets or sets the run time ticks.</summary>
         public long? RunTimeTicks { get; set; }
@@ -158,7 +159,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the start date of the recording, in UTC.</summary>
         public DateTimeOffset? StartDate { get; set; }
         /// <summary>Gets or sets the status.</summary>
-        public TimerInfoDto_Status? Status { get; set; }
+        public Jellyfin.Sdk.Generated.Models.TimerInfoDto_Status? Status { get; set; }
         /// <summary>The Type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -170,12 +171,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TimerInfoDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.TimerInfoDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TimerInfoDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.TimerInfoDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TimerInfoDto();
+            return new Jellyfin.Sdk.Generated.Models.TimerInfoDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -185,34 +186,34 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ChannelId", n => { ChannelId = n.GetGuidValue(); } },
-                {"ChannelName", n => { ChannelName = n.GetStringValue(); } },
-                {"ChannelPrimaryImageTag", n => { ChannelPrimaryImageTag = n.GetStringValue(); } },
-                {"EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
-                {"ExternalChannelId", n => { ExternalChannelId = n.GetStringValue(); } },
-                {"ExternalId", n => { ExternalId = n.GetStringValue(); } },
-                {"ExternalProgramId", n => { ExternalProgramId = n.GetStringValue(); } },
-                {"ExternalSeriesTimerId", n => { ExternalSeriesTimerId = n.GetStringValue(); } },
-                {"Id", n => { Id = n.GetStringValue(); } },
-                {"IsPostPaddingRequired", n => { IsPostPaddingRequired = n.GetBoolValue(); } },
-                {"IsPrePaddingRequired", n => { IsPrePaddingRequired = n.GetBoolValue(); } },
-                {"KeepUntil", n => { KeepUntil = n.GetEnumValue<TimerInfoDto_KeepUntil>(); } },
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"Overview", n => { Overview = n.GetStringValue(); } },
-                {"ParentBackdropImageTags", n => { ParentBackdropImageTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"ParentBackdropItemId", n => { ParentBackdropItemId = n.GetStringValue(); } },
-                {"PostPaddingSeconds", n => { PostPaddingSeconds = n.GetIntValue(); } },
-                {"PrePaddingSeconds", n => { PrePaddingSeconds = n.GetIntValue(); } },
-                {"Priority", n => { Priority = n.GetIntValue(); } },
-                {"ProgramId", n => { ProgramId = n.GetStringValue(); } },
-                {"ProgramInfo", n => { ProgramInfo = n.GetObjectValue<BaseItemDto>(BaseItemDto.CreateFromDiscriminatorValue); } },
-                {"RunTimeTicks", n => { RunTimeTicks = n.GetLongValue(); } },
-                {"SeriesTimerId", n => { SeriesTimerId = n.GetStringValue(); } },
-                {"ServerId", n => { ServerId = n.GetStringValue(); } },
-                {"ServiceName", n => { ServiceName = n.GetStringValue(); } },
-                {"StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                {"Status", n => { Status = n.GetEnumValue<TimerInfoDto_Status>(); } },
-                {"Type", n => { Type = n.GetStringValue(); } },
+                { "ChannelId", n => { ChannelId = n.GetGuidValue(); } },
+                { "ChannelName", n => { ChannelName = n.GetStringValue(); } },
+                { "ChannelPrimaryImageTag", n => { ChannelPrimaryImageTag = n.GetStringValue(); } },
+                { "EndDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
+                { "ExternalChannelId", n => { ExternalChannelId = n.GetStringValue(); } },
+                { "ExternalId", n => { ExternalId = n.GetStringValue(); } },
+                { "ExternalProgramId", n => { ExternalProgramId = n.GetStringValue(); } },
+                { "ExternalSeriesTimerId", n => { ExternalSeriesTimerId = n.GetStringValue(); } },
+                { "Id", n => { Id = n.GetStringValue(); } },
+                { "IsPostPaddingRequired", n => { IsPostPaddingRequired = n.GetBoolValue(); } },
+                { "IsPrePaddingRequired", n => { IsPrePaddingRequired = n.GetBoolValue(); } },
+                { "KeepUntil", n => { KeepUntil = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.TimerInfoDto_KeepUntil>(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "Overview", n => { Overview = n.GetStringValue(); } },
+                { "ParentBackdropImageTags", n => { ParentBackdropImageTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "ParentBackdropItemId", n => { ParentBackdropItemId = n.GetStringValue(); } },
+                { "PostPaddingSeconds", n => { PostPaddingSeconds = n.GetIntValue(); } },
+                { "PrePaddingSeconds", n => { PrePaddingSeconds = n.GetIntValue(); } },
+                { "Priority", n => { Priority = n.GetIntValue(); } },
+                { "ProgramId", n => { ProgramId = n.GetStringValue(); } },
+                { "ProgramInfo", n => { ProgramInfo = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.BaseItemDto>(Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue); } },
+                { "RunTimeTicks", n => { RunTimeTicks = n.GetLongValue(); } },
+                { "SeriesTimerId", n => { SeriesTimerId = n.GetStringValue(); } },
+                { "ServerId", n => { ServerId = n.GetStringValue(); } },
+                { "ServiceName", n => { ServiceName = n.GetStringValue(); } },
+                { "StartDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
+                { "Status", n => { Status = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.TimerInfoDto_Status>(); } },
+                { "Type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -233,7 +234,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("Id", Id);
             writer.WriteBoolValue("IsPostPaddingRequired", IsPostPaddingRequired);
             writer.WriteBoolValue("IsPrePaddingRequired", IsPrePaddingRequired);
-            writer.WriteEnumValue<TimerInfoDto_KeepUntil>("KeepUntil", KeepUntil);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.TimerInfoDto_KeepUntil>("KeepUntil", KeepUntil);
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("Overview", Overview);
             writer.WriteCollectionOfPrimitiveValues<string>("ParentBackdropImageTags", ParentBackdropImageTags);
@@ -242,13 +243,13 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("PrePaddingSeconds", PrePaddingSeconds);
             writer.WriteIntValue("Priority", Priority);
             writer.WriteStringValue("ProgramId", ProgramId);
-            writer.WriteObjectValue<BaseItemDto>("ProgramInfo", ProgramInfo);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.BaseItemDto>("ProgramInfo", ProgramInfo);
             writer.WriteLongValue("RunTimeTicks", RunTimeTicks);
             writer.WriteStringValue("SeriesTimerId", SeriesTimerId);
             writer.WriteStringValue("ServerId", ServerId);
             writer.WriteStringValue("ServiceName", ServiceName);
             writer.WriteDateTimeOffsetValue("StartDate", StartDate);
-            writer.WriteEnumValue<TimerInfoDto_Status>("Status", Status);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.TimerInfoDto_Status>("Status", Status);
             writer.WriteStringValue("Type", Type);
         }
     }

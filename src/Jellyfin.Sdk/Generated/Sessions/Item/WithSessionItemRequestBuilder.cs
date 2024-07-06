@@ -11,44 +11,45 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Sessions.Item {
+namespace Jellyfin.Sdk.Generated.Sessions.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Sessions\{sessionId}
     /// </summary>
-    public class WithSessionItemRequestBuilder : BaseRequestBuilder 
+    public class WithSessionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Command property</summary>
-        public CommandRequestBuilder Command
+        public Jellyfin.Sdk.Generated.Sessions.Item.Command.CommandRequestBuilder Command
         {
-            get => new CommandRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Sessions.Item.Command.CommandRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Message property</summary>
-        public MessageRequestBuilder Message
+        public Jellyfin.Sdk.Generated.Sessions.Item.Message.MessageRequestBuilder Message
         {
-            get => new MessageRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Sessions.Item.Message.MessageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Playing property</summary>
-        public PlayingRequestBuilder Playing
+        public Jellyfin.Sdk.Generated.Sessions.Item.Playing.PlayingRequestBuilder Playing
         {
-            get => new PlayingRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Sessions.Item.Playing.PlayingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The System property</summary>
-        public SystemRequestBuilder System
+        public Jellyfin.Sdk.Generated.Sessions.Item.System.SystemRequestBuilder System
         {
-            get => new SystemRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Sessions.Item.System.SystemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The User property</summary>
-        public UserRequestBuilder User
+        public Jellyfin.Sdk.Generated.Sessions.Item.User.UserRequestBuilder User
         {
-            get => new UserRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Sessions.Item.User.UserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Viewing property</summary>
-        public ViewingRequestBuilder Viewing
+        public Jellyfin.Sdk.Generated.Sessions.Item.Viewing.ViewingRequestBuilder Viewing
         {
-            get => new ViewingRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Sessions.Item.Viewing.ViewingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithSessionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.Item.WithSessionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +57,7 @@ namespace Jellyfin.Sdk.Generated.Sessions.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithSessionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Sessions.Item.WithSessionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

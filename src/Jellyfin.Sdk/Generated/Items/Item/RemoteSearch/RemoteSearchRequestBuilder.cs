@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch {
+namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch
+{
     /// <summary>
     /// Builds and executes requests for operations under \Items\{itemId}\RemoteSearch
     /// </summary>
-    public class RemoteSearchRequestBuilder : BaseRequestBuilder 
+    public class RemoteSearchRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Subtitles property</summary>
-        public SubtitlesRequestBuilder Subtitles
+        public Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles.SubtitlesRequestBuilder Subtitles
         {
-            get => new SubtitlesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.Subtitles.SubtitlesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="RemoteSearchRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.RemoteSearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.RemoteSearch {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RemoteSearchRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.RemoteSearch.RemoteSearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

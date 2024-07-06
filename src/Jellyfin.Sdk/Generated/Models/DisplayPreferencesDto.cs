@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Defines the display preferences for any item that supports them (usually Folders).
     /// </summary>
-    public class DisplayPreferencesDto : IParsable 
+    public class DisplayPreferencesDto : IParsable
     {
         /// <summary>Gets or sets the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,10 +22,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the custom prefs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DisplayPreferencesDto_CustomPrefs? CustomPrefs { get; set; }
+        public Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_CustomPrefs? CustomPrefs { get; set; }
 #nullable restore
 #else
-        public DisplayPreferencesDto_CustomPrefs CustomPrefs { get; set; }
+        public Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_CustomPrefs CustomPrefs { get; set; }
 #endif
         /// <summary>Gets or sets the user id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,7 +52,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets a value indicating whether [remember sorting].</summary>
         public bool? RememberSorting { get; set; }
         /// <summary>Gets or sets the scroll direction.</summary>
-        public DisplayPreferencesDto_ScrollDirection? ScrollDirection { get; set; }
+        public Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_ScrollDirection? ScrollDirection { get; set; }
         /// <summary>Gets or sets a value indicating whether to show backdrops on this item.</summary>
         public bool? ShowBackdrop { get; set; }
         /// <summary>Gets or sets a value indicating whether [show sidebar].</summary>
@@ -65,7 +66,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string SortBy { get; set; }
 #endif
         /// <summary>Gets or sets the sort order.</summary>
-        public DisplayPreferencesDto_SortOrder? SortOrder { get; set; }
+        public Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_SortOrder? SortOrder { get; set; }
         /// <summary>Gets or sets the type of the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,12 +78,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DisplayPreferencesDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DisplayPreferencesDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DisplayPreferencesDto();
+            return new Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,20 +93,20 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Client", n => { Client = n.GetStringValue(); } },
-                {"CustomPrefs", n => { CustomPrefs = n.GetObjectValue<DisplayPreferencesDto_CustomPrefs>(DisplayPreferencesDto_CustomPrefs.CreateFromDiscriminatorValue); } },
-                {"Id", n => { Id = n.GetStringValue(); } },
-                {"IndexBy", n => { IndexBy = n.GetStringValue(); } },
-                {"PrimaryImageHeight", n => { PrimaryImageHeight = n.GetIntValue(); } },
-                {"PrimaryImageWidth", n => { PrimaryImageWidth = n.GetIntValue(); } },
-                {"RememberIndexing", n => { RememberIndexing = n.GetBoolValue(); } },
-                {"RememberSorting", n => { RememberSorting = n.GetBoolValue(); } },
-                {"ScrollDirection", n => { ScrollDirection = n.GetEnumValue<DisplayPreferencesDto_ScrollDirection>(); } },
-                {"ShowBackdrop", n => { ShowBackdrop = n.GetBoolValue(); } },
-                {"ShowSidebar", n => { ShowSidebar = n.GetBoolValue(); } },
-                {"SortBy", n => { SortBy = n.GetStringValue(); } },
-                {"SortOrder", n => { SortOrder = n.GetEnumValue<DisplayPreferencesDto_SortOrder>(); } },
-                {"ViewType", n => { ViewType = n.GetStringValue(); } },
+                { "Client", n => { Client = n.GetStringValue(); } },
+                { "CustomPrefs", n => { CustomPrefs = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_CustomPrefs>(Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_CustomPrefs.CreateFromDiscriminatorValue); } },
+                { "Id", n => { Id = n.GetStringValue(); } },
+                { "IndexBy", n => { IndexBy = n.GetStringValue(); } },
+                { "PrimaryImageHeight", n => { PrimaryImageHeight = n.GetIntValue(); } },
+                { "PrimaryImageWidth", n => { PrimaryImageWidth = n.GetIntValue(); } },
+                { "RememberIndexing", n => { RememberIndexing = n.GetBoolValue(); } },
+                { "RememberSorting", n => { RememberSorting = n.GetBoolValue(); } },
+                { "ScrollDirection", n => { ScrollDirection = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_ScrollDirection>(); } },
+                { "ShowBackdrop", n => { ShowBackdrop = n.GetBoolValue(); } },
+                { "ShowSidebar", n => { ShowSidebar = n.GetBoolValue(); } },
+                { "SortBy", n => { SortBy = n.GetStringValue(); } },
+                { "SortOrder", n => { SortOrder = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_SortOrder>(); } },
+                { "ViewType", n => { ViewType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -116,18 +117,18 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Client", Client);
-            writer.WriteObjectValue<DisplayPreferencesDto_CustomPrefs>("CustomPrefs", CustomPrefs);
+            writer.WriteObjectValue<Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_CustomPrefs>("CustomPrefs", CustomPrefs);
             writer.WriteStringValue("Id", Id);
             writer.WriteStringValue("IndexBy", IndexBy);
             writer.WriteIntValue("PrimaryImageHeight", PrimaryImageHeight);
             writer.WriteIntValue("PrimaryImageWidth", PrimaryImageWidth);
             writer.WriteBoolValue("RememberIndexing", RememberIndexing);
             writer.WriteBoolValue("RememberSorting", RememberSorting);
-            writer.WriteEnumValue<DisplayPreferencesDto_ScrollDirection>("ScrollDirection", ScrollDirection);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_ScrollDirection>("ScrollDirection", ScrollDirection);
             writer.WriteBoolValue("ShowBackdrop", ShowBackdrop);
             writer.WriteBoolValue("ShowSidebar", ShowSidebar);
             writer.WriteStringValue("SortBy", SortBy);
-            writer.WriteEnumValue<DisplayPreferencesDto_SortOrder>("SortOrder", SortOrder);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_SortOrder>("SortOrder", SortOrder);
             writer.WriteStringValue("ViewType", ViewType);
         }
     }

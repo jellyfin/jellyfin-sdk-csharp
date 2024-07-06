@@ -4,23 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Update existing playlist user dto. Fields set to `null` will not be updated and keep their current values.
     /// </summary>
-    public class UpdatePlaylistUserDto : IParsable 
+    public class UpdatePlaylistUserDto : IParsable
     {
         /// <summary>Gets or sets a value indicating whether the user can edit the playlist.</summary>
         public bool? CanEdit { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdatePlaylistUserDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.UpdatePlaylistUserDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdatePlaylistUserDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.UpdatePlaylistUserDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdatePlaylistUserDto();
+            return new Jellyfin.Sdk.Generated.Models.UpdatePlaylistUserDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -30,7 +31,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"CanEdit", n => { CanEdit = n.GetBoolValue(); } },
+                { "CanEdit", n => { CanEdit = n.GetBoolValue(); } },
             };
         }
         /// <summary>

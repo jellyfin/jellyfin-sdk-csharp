@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Genres.Item.Images {
+namespace Jellyfin.Sdk.Generated.Genres.Item.Images
+{
     /// <summary>
     /// Builds and executes requests for operations under \Genres\{genreName-id}\Images
     /// </summary>
-    public class ImagesRequestBuilder : BaseRequestBuilder 
+    public class ImagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Genres.item.Images.item collection</summary>
         /// <param name="position">Image type.</param>
-        /// <returns>A <see cref="WithImageTypeItemRequestBuilder"/></returns>
-        public WithImageTypeItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Genres.Item.Images.Item.WithImageTypeItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Genres.Item.Images.Item.WithImageTypeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("imageType", position);
-                return new WithImageTypeItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Genres.Item.Images.Item.WithImageTypeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ImagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Genres.Item.Images.ImagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Genres.Item.Images {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ImagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Genres.Item.Images.ImagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class to hold data on user permissions for playlists.
     /// </summary>
-    public class PlaylistUserPermissions : IParsable 
+    public class PlaylistUserPermissions : IParsable
     {
         /// <summary>Gets or sets a value indicating whether the user has edit permissions.</summary>
         public bool? CanEdit { get; set; }
@@ -17,12 +18,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlaylistUserPermissions"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.PlaylistUserPermissions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlaylistUserPermissions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.PlaylistUserPermissions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlaylistUserPermissions();
+            return new Jellyfin.Sdk.Generated.Models.PlaylistUserPermissions();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -32,8 +33,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"CanEdit", n => { CanEdit = n.GetBoolValue(); } },
-                {"UserId", n => { UserId = n.GetGuidValue(); } },
+                { "CanEdit", n => { CanEdit = n.GetBoolValue(); } },
+                { "UserId", n => { UserId = n.GetGuidValue(); } },
             };
         }
         /// <summary>

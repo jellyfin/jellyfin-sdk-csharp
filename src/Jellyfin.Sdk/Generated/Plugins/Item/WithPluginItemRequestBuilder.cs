@@ -11,38 +11,39 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Plugins.Item {
+namespace Jellyfin.Sdk.Generated.Plugins.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Plugins\{pluginId}
     /// </summary>
-    public class WithPluginItemRequestBuilder : BaseRequestBuilder 
+    public class WithPluginItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Configuration property</summary>
         [Obsolete("")]
-        public ConfigurationRequestBuilder Configuration
+        public Jellyfin.Sdk.Generated.Plugins.Item.Configuration.ConfigurationRequestBuilder Configuration
         {
-            get => new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Plugins.Item.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Manifest property</summary>
         [Obsolete("")]
-        public ManifestRequestBuilder Manifest
+        public Jellyfin.Sdk.Generated.Plugins.Item.Manifest.ManifestRequestBuilder Manifest
         {
-            get => new ManifestRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Plugins.Item.Manifest.ManifestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Plugins.item.item collection</summary>
         /// <param name="position">Plugin version.</param>
-        /// <returns>A <see cref="WithVersionItemRequestBuilder"/></returns>
-        public WithVersionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Plugins.Item.Item.WithVersionItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Plugins.Item.Item.WithVersionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("version", position);
-                return new WithVersionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Plugins.Item.Item.WithVersionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithPluginItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Plugins.Item.WithPluginItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +51,7 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithPluginItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Plugins.Item.WithPluginItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,7 +63,7 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +77,7 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", ProblemDetails.CreateFromDiscriminatorValue},
+                { "404", Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -103,12 +104,12 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithPluginItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Plugins.Item.WithPluginItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public WithPluginItemRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Plugins.Item.WithPluginItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithPluginItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Plugins.Item.WithPluginItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

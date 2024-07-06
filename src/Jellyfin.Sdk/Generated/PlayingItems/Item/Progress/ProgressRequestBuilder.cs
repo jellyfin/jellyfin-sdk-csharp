@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.PlayingItems.Item.Progress {
+namespace Jellyfin.Sdk.Generated.PlayingItems.Item.Progress
+{
     /// <summary>
     /// Builds and executes requests for operations under \PlayingItems\{itemId}\Progress
     /// </summary>
-    public class ProgressRequestBuilder : BaseRequestBuilder 
+    public class ProgressRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ProgressRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item.Progress {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProgressRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,11 +37,11 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item.Progress {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<ProgressRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder.ProgressRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<ProgressRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder.ProgressRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -53,11 +54,11 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item.Progress {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<ProgressRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder.ProgressRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<ProgressRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder.ProgressRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -67,11 +68,11 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item.Progress {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ProgressRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ProgressRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder WithUrl(string rawUrl)
         {
-            return new ProgressRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Reports a session&apos;s playback progress.
@@ -109,7 +110,7 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item.Progress {
 #endif
             /// <summary>The play method.</summary>
             [QueryParameter("playMethod")]
-            public PostPlayMethodQueryParameterType? PlayMethod { get; set; }
+            public Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.PlayMethod? PlayMethod { get; set; }
             /// <summary>The play session id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,7 +126,7 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item.Progress {
             public long? PositionTicks { get; set; }
             /// <summary>The repeat mode.</summary>
             [QueryParameter("repeatMode")]
-            public PostRepeatModeQueryParameterType? RepeatMode { get; set; }
+            public Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.RepeatMode? RepeatMode { get; set; }
             /// <summary>The subtitle stream index.</summary>
             [QueryParameter("subtitleStreamIndex")]
             public int? SubtitleStreamIndex { get; set; }

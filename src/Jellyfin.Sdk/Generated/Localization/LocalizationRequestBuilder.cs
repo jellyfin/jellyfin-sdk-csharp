@@ -9,34 +9,35 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Localization {
+namespace Jellyfin.Sdk.Generated.Localization
+{
     /// <summary>
     /// Builds and executes requests for operations under \Localization
     /// </summary>
-    public class LocalizationRequestBuilder : BaseRequestBuilder 
+    public class LocalizationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Countries property</summary>
-        public CountriesRequestBuilder Countries
+        public Jellyfin.Sdk.Generated.Localization.Countries.CountriesRequestBuilder Countries
         {
-            get => new CountriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Localization.Countries.CountriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Cultures property</summary>
-        public CulturesRequestBuilder Cultures
+        public Jellyfin.Sdk.Generated.Localization.Cultures.CulturesRequestBuilder Cultures
         {
-            get => new CulturesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Localization.Cultures.CulturesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The OptionsPath property</summary>
-        public OptionsRequestBuilder OptionsPath
+        public Jellyfin.Sdk.Generated.Localization.Options.OptionsRequestBuilder OptionsPath
         {
-            get => new OptionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Localization.Options.OptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ParentalRatings property</summary>
-        public ParentalRatingsRequestBuilder ParentalRatings
+        public Jellyfin.Sdk.Generated.Localization.ParentalRatings.ParentalRatingsRequestBuilder ParentalRatings
         {
-            get => new ParentalRatingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Localization.ParentalRatings.ParentalRatingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="LocalizationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Localization.LocalizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Jellyfin.Sdk.Generated.Localization {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LocalizationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Localization.LocalizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -11,36 +11,37 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Packages {
+namespace Jellyfin.Sdk.Generated.Packages
+{
     /// <summary>
     /// Builds and executes requests for operations under \Packages
     /// </summary>
-    public class PackagesRequestBuilder : BaseRequestBuilder 
+    public class PackagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Installed property</summary>
-        public InstalledRequestBuilder Installed
+        public Jellyfin.Sdk.Generated.Packages.Installed.InstalledRequestBuilder Installed
         {
-            get => new InstalledRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Packages.Installed.InstalledRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Installing property</summary>
-        public InstallingRequestBuilder Installing
+        public Jellyfin.Sdk.Generated.Packages.Installing.InstallingRequestBuilder Installing
         {
-            get => new InstallingRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Packages.Installing.InstallingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Packages.item collection</summary>
         /// <param name="position">The name of the package.</param>
-        /// <returns>A <see cref="WithNameItemRequestBuilder"/></returns>
-        public WithNameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Packages.Item.WithNameItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Packages.Item.WithNameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("name", position);
-                return new WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Packages.Item.WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PackagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Packages.PackagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,7 +49,7 @@ namespace Jellyfin.Sdk.Generated.Packages {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PackagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Packages.PackagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -58,20 +59,20 @@ namespace Jellyfin.Sdk.Generated.Packages {
         /// <summary>
         /// Gets available packages.
         /// </summary>
-        /// <returns>A List&lt;PackageInfo&gt;</returns>
+        /// <returns>A List&lt;Jellyfin.Sdk.Generated.Models.PackageInfo&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<PackageInfo>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.PackageInfo>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<PackageInfo>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.PackageInfo>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<PackageInfo>(requestInfo, PackageInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Jellyfin.Sdk.Generated.Models.PackageInfo>(requestInfo, Jellyfin.Sdk.Generated.Models.PackageInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -96,11 +97,11 @@ namespace Jellyfin.Sdk.Generated.Packages {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PackagesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Packages.PackagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PackagesRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Packages.PackagesRequestBuilder WithUrl(string rawUrl)
         {
-            return new PackagesRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Packages.PackagesRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

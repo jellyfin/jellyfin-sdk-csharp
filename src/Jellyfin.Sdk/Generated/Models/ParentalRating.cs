@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class ParentalRating.
     /// </summary>
-    public class ParentalRating : IParsable 
+    public class ParentalRating : IParsable
     {
         /// <summary>Gets or sets the name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -23,12 +24,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ParentalRating"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ParentalRating"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ParentalRating CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.ParentalRating CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ParentalRating();
+            return new Jellyfin.Sdk.Generated.Models.ParentalRating();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -38,8 +39,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Name", n => { Name = n.GetStringValue(); } },
-                {"Value", n => { Value = n.GetIntValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "Value", n => { Value = n.GetIntValue(); } },
             };
         }
         /// <summary>

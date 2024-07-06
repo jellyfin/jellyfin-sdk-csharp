@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Libraries {
+namespace Jellyfin.Sdk.Generated.Libraries
+{
     /// <summary>
     /// Builds and executes requests for operations under \Libraries
     /// </summary>
-    public class LibrariesRequestBuilder : BaseRequestBuilder 
+    public class LibrariesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The AvailableOptions property</summary>
-        public AvailableOptionsRequestBuilder AvailableOptions
+        public Jellyfin.Sdk.Generated.Libraries.AvailableOptions.AvailableOptionsRequestBuilder AvailableOptions
         {
-            get => new AvailableOptionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Libraries.AvailableOptions.AvailableOptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="LibrariesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Libraries.LibrariesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.Libraries {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LibrariesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Libraries.LibrariesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

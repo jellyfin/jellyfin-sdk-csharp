@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Users.AuthenticateWithQuickConnect {
+namespace Jellyfin.Sdk.Generated.Users.AuthenticateWithQuickConnect
+{
     /// <summary>
     /// Builds and executes requests for operations under \Users\AuthenticateWithQuickConnect
     /// </summary>
-    public class AuthenticateWithQuickConnectRequestBuilder : BaseRequestBuilder 
+    public class AuthenticateWithQuickConnectRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticateWithQuickConnectRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Users.AuthenticateWithQuickConnect.AuthenticateWithQuickConnectRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Users.AuthenticateWithQuickConnect {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticateWithQuickConnectRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Users.AuthenticateWithQuickConnect.AuthenticateWithQuickConnectRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,22 +34,22 @@ namespace Jellyfin.Sdk.Generated.Users.AuthenticateWithQuickConnect {
         /// <summary>
         /// Authenticates a user with quick connect.
         /// </summary>
-        /// <returns>A <see cref="AuthenticationResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.AuthenticationResult"/></returns>
         /// <param name="body">The quick connect request body.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationResult?> PostAsync(QuickConnectDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.AuthenticationResult?> PostAsync(Jellyfin.Sdk.Generated.Models.QuickConnectDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthenticationResult> PostAsync(QuickConnectDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.AuthenticationResult> PostAsync(Jellyfin.Sdk.Generated.Models.QuickConnectDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<AuthenticationResult>(requestInfo, AuthenticationResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.AuthenticationResult>(requestInfo, Jellyfin.Sdk.Generated.Models.AuthenticationResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Authenticates a user with quick connect.
@@ -58,11 +59,11 @@ namespace Jellyfin.Sdk.Generated.Users.AuthenticateWithQuickConnect {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(QuickConnectDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.QuickConnectDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(QuickConnectDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Jellyfin.Sdk.Generated.Models.QuickConnectDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -75,11 +76,11 @@ namespace Jellyfin.Sdk.Generated.Users.AuthenticateWithQuickConnect {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuthenticateWithQuickConnectRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Users.AuthenticateWithQuickConnect.AuthenticateWithQuickConnectRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthenticateWithQuickConnectRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Users.AuthenticateWithQuickConnect.AuthenticateWithQuickConnectRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuthenticateWithQuickConnectRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Users.AuthenticateWithQuickConnect.AuthenticateWithQuickConnectRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

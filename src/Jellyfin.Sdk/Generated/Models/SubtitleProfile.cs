@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class SubtitleProfile : IParsable 
+    public class SubtitleProfile : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Container property</summary>
@@ -42,16 +43,16 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Language { get; set; }
 #endif
         /// <summary>Delivery method to use during playback of a specific subtitle format.</summary>
-        public SubtitleProfile_Method? Method { get; set; }
+        public Jellyfin.Sdk.Generated.Models.SubtitleProfile_Method? Method { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubtitleProfile"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.SubtitleProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SubtitleProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.SubtitleProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubtitleProfile();
+            return new Jellyfin.Sdk.Generated.Models.SubtitleProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,11 +62,11 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Container", n => { Container = n.GetStringValue(); } },
-                {"DidlMode", n => { DidlMode = n.GetStringValue(); } },
-                {"Format", n => { Format = n.GetStringValue(); } },
-                {"Language", n => { Language = n.GetStringValue(); } },
-                {"Method", n => { Method = n.GetEnumValue<SubtitleProfile_Method>(); } },
+                { "Container", n => { Container = n.GetStringValue(); } },
+                { "DidlMode", n => { DidlMode = n.GetStringValue(); } },
+                { "Format", n => { Format = n.GetStringValue(); } },
+                { "Language", n => { Language = n.GetStringValue(); } },
+                { "Method", n => { Method = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.SubtitleProfile_Method>(); } },
             };
         }
         /// <summary>
@@ -79,7 +80,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteStringValue("DidlMode", DidlMode);
             writer.WriteStringValue("Format", Format);
             writer.WriteStringValue("Language", Language);
-            writer.WriteEnumValue<SubtitleProfile_Method>("Method", Method);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.SubtitleProfile_Method>("Method", Method);
         }
     }
 }

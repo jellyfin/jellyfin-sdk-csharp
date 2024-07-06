@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Branding.Css {
+namespace Jellyfin.Sdk.Generated.Branding.Css
+{
     /// <summary>
     /// Builds and executes requests for operations under \Branding\Css
     /// </summary>
-    public class CssRequestBuilder : BaseRequestBuilder 
+    public class CssRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CssRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Branding.Css.CssRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Branding.Css {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CssRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Branding.Css.CssRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -69,11 +70,11 @@ namespace Jellyfin.Sdk.Generated.Branding.Css {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CssRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Branding.Css.CssRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CssRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Branding.Css.CssRequestBuilder WithUrl(string rawUrl)
         {
-            return new CssRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Branding.Css.CssRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

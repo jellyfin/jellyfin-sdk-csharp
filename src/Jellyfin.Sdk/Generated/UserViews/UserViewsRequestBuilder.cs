@@ -9,19 +9,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.UserViews {
+namespace Jellyfin.Sdk.Generated.UserViews
+{
     /// <summary>
     /// Builds and executes requests for operations under \UserViews
     /// </summary>
-    public class UserViewsRequestBuilder : BaseRequestBuilder 
+    public class UserViewsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The GroupingOptions property</summary>
-        public GroupingOptionsRequestBuilder GroupingOptions
+        public Jellyfin.Sdk.Generated.UserViews.GroupingOptions.GroupingOptionsRequestBuilder GroupingOptions
         {
-            get => new GroupingOptionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.UserViews.GroupingOptions.GroupingOptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserViewsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserViews.UserViewsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.UserViews {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserViewsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserViews.UserViewsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,20 +40,20 @@ namespace Jellyfin.Sdk.Generated.UserViews {
         /// <summary>
         /// Get user views.
         /// </summary>
-        /// <returns>A <see cref="BaseItemDtoQueryResult"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<UserViewsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserViews.UserViewsRequestBuilder.UserViewsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<UserViewsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserViews.UserViewsRequestBuilder.UserViewsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<BaseItemDtoQueryResult>(requestInfo, BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult>(requestInfo, Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get user views.
@@ -61,11 +62,11 @@ namespace Jellyfin.Sdk.Generated.UserViews {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserViewsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserViews.UserViewsRequestBuilder.UserViewsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserViewsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserViews.UserViewsRequestBuilder.UserViewsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -76,11 +77,11 @@ namespace Jellyfin.Sdk.Generated.UserViews {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UserViewsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.UserViews.UserViewsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserViewsRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.UserViews.UserViewsRequestBuilder WithUrl(string rawUrl)
         {
-            return new UserViewsRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.UserViews.UserViewsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get user views.
@@ -97,11 +98,11 @@ namespace Jellyfin.Sdk.Generated.UserViews {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("presetViews")]
-            public CollectionType[]? PresetViews { get; set; }
+            public Jellyfin.Sdk.Generated.Models.CollectionType[]? PresetViews { get; set; }
 #nullable restore
 #else
             [QueryParameter("presetViews")]
-            public CollectionType[] PresetViews { get; set; }
+            public Jellyfin.Sdk.Generated.Models.CollectionType[] PresetViews { get; set; }
 #endif
             /// <summary>User id.</summary>
             [QueryParameter("userId")]

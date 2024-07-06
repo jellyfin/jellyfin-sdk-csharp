@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class ConfigImageTypes : IParsable 
+    public class ConfigImageTypes : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The BackdropSizes property</summary>
@@ -68,12 +69,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConfigImageTypes"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ConfigImageTypes"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConfigImageTypes CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.ConfigImageTypes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConfigImageTypes();
+            return new Jellyfin.Sdk.Generated.Models.ConfigImageTypes();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,13 +84,13 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"BackdropSizes", n => { BackdropSizes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"BaseUrl", n => { BaseUrl = n.GetStringValue(); } },
-                {"LogoSizes", n => { LogoSizes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"PosterSizes", n => { PosterSizes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"ProfileSizes", n => { ProfileSizes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"SecureBaseUrl", n => { SecureBaseUrl = n.GetStringValue(); } },
-                {"StillSizes", n => { StillSizes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "BackdropSizes", n => { BackdropSizes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "BaseUrl", n => { BaseUrl = n.GetStringValue(); } },
+                { "LogoSizes", n => { LogoSizes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "PosterSizes", n => { PosterSizes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "ProfileSizes", n => { ProfileSizes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "SecureBaseUrl", n => { SecureBaseUrl = n.GetStringValue(); } },
+                { "StillSizes", n => { StillSizes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

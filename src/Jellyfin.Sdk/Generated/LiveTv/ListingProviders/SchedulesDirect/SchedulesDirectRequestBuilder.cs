@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect {
+namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect
+{
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\ListingProviders\SchedulesDirect
     /// </summary>
-    public class SchedulesDirectRequestBuilder : BaseRequestBuilder 
+    public class SchedulesDirectRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Countries property</summary>
-        public CountriesRequestBuilder Countries
+        public Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.Countries.CountriesRequestBuilder Countries
         {
-            get => new CountriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.Countries.CountriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="SchedulesDirectRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.SchedulesDirectRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SchedulesDirectRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.ListingProviders.SchedulesDirect.SchedulesDirectRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

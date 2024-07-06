@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.UserFavoriteItems.Item {
+namespace Jellyfin.Sdk.Generated.UserFavoriteItems.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \UserFavoriteItems\{itemId}
     /// </summary>
-    public class WithItemItemRequestBuilder : BaseRequestBuilder 
+    public class WithItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.UserFavoriteItems.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,38 +34,38 @@ namespace Jellyfin.Sdk.Generated.UserFavoriteItems.Item {
         /// <summary>
         /// Unmarks item as a favorite.
         /// </summary>
-        /// <returns>A <see cref="UserItemDataDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.UserItemDataDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserItemDataDto?> DeleteAsync(Action<RequestConfiguration<WithItemItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.UserItemDataDto?> DeleteAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserItemDataDto> DeleteAsync(Action<RequestConfiguration<WithItemItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.UserItemDataDto> DeleteAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<UserItemDataDto>(requestInfo, UserItemDataDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.UserItemDataDto>(requestInfo, Jellyfin.Sdk.Generated.Models.UserItemDataDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Marks an item as a favorite.
         /// </summary>
-        /// <returns>A <see cref="UserItemDataDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.UserItemDataDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserItemDataDto?> PostAsync(Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.UserItemDataDto?> PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserItemDataDto> PostAsync(Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.UserItemDataDto> PostAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<UserItemDataDto>(requestInfo, UserItemDataDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.UserItemDataDto>(requestInfo, Jellyfin.Sdk.Generated.Models.UserItemDataDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Unmarks item as a favorite.
@@ -73,11 +74,11 @@ namespace Jellyfin.Sdk.Generated.UserFavoriteItems.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<WithItemItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<WithItemItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -92,11 +93,11 @@ namespace Jellyfin.Sdk.Generated.UserFavoriteItems.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<WithItemItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -107,11 +108,11 @@ namespace Jellyfin.Sdk.Generated.UserFavoriteItems.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithItemItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithItemItemRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithItemItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.UserFavoriteItems.Item.WithItemItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Unmarks item as a favorite.

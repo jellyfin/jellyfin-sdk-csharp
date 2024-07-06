@@ -8,36 +8,37 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Videos {
+namespace Jellyfin.Sdk.Generated.Videos
+{
     /// <summary>
     /// Builds and executes requests for operations under \Videos
     /// </summary>
-    public class VideosRequestBuilder : BaseRequestBuilder 
+    public class VideosRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The ActiveEncodings property</summary>
-        public ActiveEncodingsRequestBuilder ActiveEncodings
+        public Jellyfin.Sdk.Generated.Videos.ActiveEncodings.ActiveEncodingsRequestBuilder ActiveEncodings
         {
-            get => new ActiveEncodingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.ActiveEncodings.ActiveEncodingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The MergeVersions property</summary>
-        public MergeVersionsRequestBuilder MergeVersions
+        public Jellyfin.Sdk.Generated.Videos.MergeVersions.MergeVersionsRequestBuilder MergeVersions
         {
-            get => new MergeVersionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Videos.MergeVersions.MergeVersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Videos.item collection</summary>
         /// <param name="position">The item id.</param>
-        /// <returns>A <see cref="ItemItemRequestBuilder"/></returns>
-        public ItemItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.ItemItemRequestBuilder"/></returns>
+        public Jellyfin.Sdk.Generated.Videos.Item.ItemItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("item%2Did", position);
-                return new ItemItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Jellyfin.Sdk.Generated.Videos.Item.ItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="VideosRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.VideosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,7 +46,7 @@ namespace Jellyfin.Sdk.Generated.Videos {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="VideosRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.VideosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

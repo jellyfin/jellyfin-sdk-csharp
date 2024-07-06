@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Items.Item.LocalTrailers {
+namespace Jellyfin.Sdk.Generated.Items.Item.LocalTrailers
+{
     /// <summary>
     /// Builds and executes requests for operations under \Items\{itemId}\LocalTrailers
     /// </summary>
-    public class LocalTrailersRequestBuilder : BaseRequestBuilder 
+    public class LocalTrailersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="LocalTrailersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.LocalTrailers.LocalTrailersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.LocalTrailers {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LocalTrailersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Items.Item.LocalTrailers.LocalTrailersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.Items.Item.LocalTrailers {
         /// <summary>
         /// Gets local trailers for an item.
         /// </summary>
-        /// <returns>A List&lt;BaseItemDto&gt;</returns>
+        /// <returns>A List&lt;Jellyfin.Sdk.Generated.Models.BaseItemDto&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<BaseItemDto>?> GetAsync(Action<RequestConfiguration<LocalTrailersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.BaseItemDto>?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.LocalTrailers.LocalTrailersRequestBuilder.LocalTrailersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<BaseItemDto>> GetAsync(Action<RequestConfiguration<LocalTrailersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.BaseItemDto>> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.LocalTrailers.LocalTrailersRequestBuilder.LocalTrailersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<BaseItemDto>(requestInfo, BaseItemDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Jellyfin.Sdk.Generated.Models.BaseItemDto>(requestInfo, Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -56,11 +57,11 @@ namespace Jellyfin.Sdk.Generated.Items.Item.LocalTrailers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LocalTrailersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.LocalTrailers.LocalTrailersRequestBuilder.LocalTrailersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LocalTrailersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Items.Item.LocalTrailers.LocalTrailersRequestBuilder.LocalTrailersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -71,11 +72,11 @@ namespace Jellyfin.Sdk.Generated.Items.Item.LocalTrailers {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LocalTrailersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Items.Item.LocalTrailers.LocalTrailersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LocalTrailersRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Items.Item.LocalTrailers.LocalTrailersRequestBuilder WithUrl(string rawUrl)
         {
-            return new LocalTrailersRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Items.Item.LocalTrailers.LocalTrailersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets local trailers for an item.

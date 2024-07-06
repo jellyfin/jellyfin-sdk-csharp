@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class ProblemDetails : ApiException, IAdditionalDataHolder, IParsable 
+    public class ProblemDetails : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -49,7 +50,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Type { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ProblemDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Models.ProblemDetails"/> and sets the default values.
         /// </summary>
         public ProblemDetails()
         {
@@ -58,12 +59,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProblemDetails"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ProblemDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ProblemDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.ProblemDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProblemDetails();
+            return new Jellyfin.Sdk.Generated.Models.ProblemDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,11 +74,11 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"detail", n => { Detail = n.GetStringValue(); } },
-                {"instance", n => { Instance = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetIntValue(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
+                { "detail", n => { Detail = n.GetStringValue(); } },
+                { "instance", n => { Instance = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetIntValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

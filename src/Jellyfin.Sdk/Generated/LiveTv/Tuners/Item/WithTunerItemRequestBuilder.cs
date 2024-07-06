@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.LiveTv.Tuners.Item {
+namespace Jellyfin.Sdk.Generated.LiveTv.Tuners.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\Tuners\{tunerId}
     /// </summary>
-    public class WithTunerItemRequestBuilder : BaseRequestBuilder 
+    public class WithTunerItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Reset property</summary>
-        public ResetRequestBuilder Reset
+        public Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.Reset.ResetRequestBuilder Reset
         {
-            get => new ResetRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.Reset.ResetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithTunerItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.WithTunerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Tuners.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithTunerItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.Tuners.Item.WithTunerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

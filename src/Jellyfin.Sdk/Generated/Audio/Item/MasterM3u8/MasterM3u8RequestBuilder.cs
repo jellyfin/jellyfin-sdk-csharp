@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8 {
+namespace Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8
+{
     /// <summary>
     /// Builds and executes requests for operations under \Audio\{itemId}\master.m3u8
     /// </summary>
-    public class MasterM3u8RequestBuilder : BaseRequestBuilder 
+    public class MasterM3u8RequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="MasterM3u8RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8 {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MasterM3u8RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,11 +38,11 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8 {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<MasterM3u8RequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder.MasterM3u8RequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<MasterM3u8RequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder.MasterM3u8RequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,11 +56,11 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8 {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> HeadAsync(Action<RequestConfiguration<MasterM3u8RequestBuilderHeadQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> HeadAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder.MasterM3u8RequestBuilderHeadQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> HeadAsync(Action<RequestConfiguration<MasterM3u8RequestBuilderHeadQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> HeadAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder.MasterM3u8RequestBuilderHeadQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToHeadRequestInformation(requestConfiguration);
@@ -72,11 +73,11 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8 {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MasterM3u8RequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder.MasterM3u8RequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MasterM3u8RequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder.MasterM3u8RequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -91,11 +92,11 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8 {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<MasterM3u8RequestBuilderHeadQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder.MasterM3u8RequestBuilderHeadQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<MasterM3u8RequestBuilderHeadQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToHeadRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder.MasterM3u8RequestBuilderHeadQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.HEAD, UrlTemplate, PathParameters);
@@ -106,11 +107,11 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8 {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MasterM3u8RequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MasterM3u8RequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder WithUrl(string rawUrl)
         {
-            return new MasterM3u8RequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.MasterM3u8RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets an audio hls playlist stream.
@@ -150,7 +151,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8 {
             public bool? BreakOnNonKeyFrames { get; set; }
             /// <summary>Optional. The MediaBrowser.Model.Dlna.EncodingContext.</summary>
             [QueryParameter("context")]
-            public GetContextQueryParameterType? Context { get; set; }
+            public Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.EncodingContext? Context { get; set; }
             /// <summary>Whether or not to copy timestamps when transcoding with an offset. Defaults to false.</summary>
             [QueryParameter("copyTimestamps")]
             public bool? CopyTimestamps { get; set; }
@@ -324,7 +325,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8 {
 #endif
             /// <summary>Optional. Specify the subtitle delivery method.</summary>
             [QueryParameter("subtitleMethod")]
-            public GetSubtitleMethodQueryParameterType? SubtitleMethod { get; set; }
+            public Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.SubtitleDeliveryMethod? SubtitleMethod { get; set; }
             /// <summary>Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.</summary>
             [QueryParameter("subtitleStreamIndex")]
             public int? SubtitleStreamIndex { get; set; }
@@ -409,7 +410,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8 {
             public bool? BreakOnNonKeyFrames { get; set; }
             /// <summary>Optional. The MediaBrowser.Model.Dlna.EncodingContext.</summary>
             [QueryParameter("context")]
-            public HeadContextQueryParameterType? Context { get; set; }
+            public Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.EncodingContext? Context { get; set; }
             /// <summary>Whether or not to copy timestamps when transcoding with an offset. Defaults to false.</summary>
             [QueryParameter("copyTimestamps")]
             public bool? CopyTimestamps { get; set; }
@@ -583,7 +584,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8 {
 #endif
             /// <summary>Optional. Specify the subtitle delivery method.</summary>
             [QueryParameter("subtitleMethod")]
-            public HeadSubtitleMethodQueryParameterType? SubtitleMethod { get; set; }
+            public Jellyfin.Sdk.Generated.Audio.Item.MasterM3u8.SubtitleDeliveryMethod? SubtitleMethod { get; set; }
             /// <summary>Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.</summary>
             [QueryParameter("subtitleStreamIndex")]
             public int? SubtitleStreamIndex { get; set; }

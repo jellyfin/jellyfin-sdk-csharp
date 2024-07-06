@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.Item {
+namespace Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \LiveTv\LiveRecordings\{recordingId}
     /// </summary>
-    public class WithRecordingItemRequestBuilder : BaseRequestBuilder 
+    public class WithRecordingItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The stream property</summary>
-        public StreamRequestBuilder Stream
+        public Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.Item.StreamNamespace.StreamRequestBuilder Stream
         {
-            get => new StreamRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.Item.StreamNamespace.StreamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithRecordingItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.Item.WithRecordingItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithRecordingItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveTv.LiveRecordings.Item.WithRecordingItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

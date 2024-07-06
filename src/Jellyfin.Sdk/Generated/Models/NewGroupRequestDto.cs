@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class NewGroupRequestDto.
     /// </summary>
-    public class NewGroupRequestDto : IParsable 
+    public class NewGroupRequestDto : IParsable
     {
         /// <summary>Gets or sets the group name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,12 +22,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="NewGroupRequestDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.NewGroupRequestDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static NewGroupRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.NewGroupRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new NewGroupRequestDto();
+            return new Jellyfin.Sdk.Generated.Models.NewGroupRequestDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -36,7 +37,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"GroupName", n => { GroupName = n.GetStringValue(); } },
+                { "GroupName", n => { GroupName = n.GetStringValue(); } },
             };
         }
         /// <summary>

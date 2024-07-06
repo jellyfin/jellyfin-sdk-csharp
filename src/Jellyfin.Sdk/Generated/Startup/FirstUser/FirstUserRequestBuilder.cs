@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Startup.FirstUser {
+namespace Jellyfin.Sdk.Generated.Startup.FirstUser
+{
     /// <summary>
     /// Builds and executes requests for operations under \Startup\FirstUser
     /// </summary>
-    public class FirstUserRequestBuilder : BaseRequestBuilder 
+    public class FirstUserRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="FirstUserRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Startup.FirstUser.FirstUserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Startup.FirstUser {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="FirstUserRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Startup.FirstUser.FirstUserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.Startup.FirstUser {
         /// <summary>
         /// Gets the first user.
         /// </summary>
-        /// <returns>A <see cref="StartupUserDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.StartupUserDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<StartupUserDto?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.StartupUserDto?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<StartupUserDto> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.StartupUserDto> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<StartupUserDto>(requestInfo, StartupUserDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.StartupUserDto>(requestInfo, Jellyfin.Sdk.Generated.Models.StartupUserDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets the first user.
@@ -70,11 +71,11 @@ namespace Jellyfin.Sdk.Generated.Startup.FirstUser {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FirstUserRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Startup.FirstUser.FirstUserRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FirstUserRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Startup.FirstUser.FirstUserRequestBuilder WithUrl(string rawUrl)
         {
-            return new FirstUserRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Startup.FirstUser.FirstUserRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

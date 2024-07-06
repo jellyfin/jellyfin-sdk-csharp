@@ -4,43 +4,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Library type options dto.
     /// </summary>
-    public class LibraryTypeOptionsDto : IParsable 
+    public class LibraryTypeOptionsDto : IParsable
     {
         /// <summary>Gets or sets the default image options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImageOption>? DefaultImageOptions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ImageOption>? DefaultImageOptions { get; set; }
 #nullable restore
 #else
-        public List<ImageOption> DefaultImageOptions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ImageOption> DefaultImageOptions { get; set; }
 #endif
         /// <summary>Gets or sets the image fetchers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LibraryOptionInfoDto>? ImageFetchers { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>? ImageFetchers { get; set; }
 #nullable restore
 #else
-        public List<LibraryOptionInfoDto> ImageFetchers { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto> ImageFetchers { get; set; }
 #endif
         /// <summary>Gets or sets the metadata fetchers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LibraryOptionInfoDto>? MetadataFetchers { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>? MetadataFetchers { get; set; }
 #nullable restore
 #else
-        public List<LibraryOptionInfoDto> MetadataFetchers { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto> MetadataFetchers { get; set; }
 #endif
         /// <summary>Gets or sets the supported image types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImageType?>? SupportedImageTypes { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ImageType?>? SupportedImageTypes { get; set; }
 #nullable restore
 #else
-        public List<ImageType?> SupportedImageTypes { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ImageType?> SupportedImageTypes { get; set; }
 #endif
         /// <summary>Gets or sets the type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,12 +54,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LibraryTypeOptionsDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.LibraryTypeOptionsDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LibraryTypeOptionsDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.LibraryTypeOptionsDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LibraryTypeOptionsDto();
+            return new Jellyfin.Sdk.Generated.Models.LibraryTypeOptionsDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,11 +69,11 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"DefaultImageOptions", n => { DefaultImageOptions = n.GetCollectionOfObjectValues<ImageOption>(ImageOption.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"ImageFetchers", n => { ImageFetchers = n.GetCollectionOfObjectValues<LibraryOptionInfoDto>(LibraryOptionInfoDto.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"MetadataFetchers", n => { MetadataFetchers = n.GetCollectionOfObjectValues<LibraryOptionInfoDto>(LibraryOptionInfoDto.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"SupportedImageTypes", n => { SupportedImageTypes = n.GetCollectionOfEnumValues<ImageType>()?.ToList(); } },
-                {"Type", n => { Type = n.GetStringValue(); } },
+                { "DefaultImageOptions", n => { DefaultImageOptions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ImageOption>(Jellyfin.Sdk.Generated.Models.ImageOption.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ImageFetchers", n => { ImageFetchers = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>(Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "MetadataFetchers", n => { MetadataFetchers = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>(Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "SupportedImageTypes", n => { SupportedImageTypes = n.GetCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ImageType>()?.ToList(); } },
+                { "Type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,10 +83,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ImageOption>("DefaultImageOptions", DefaultImageOptions);
-            writer.WriteCollectionOfObjectValues<LibraryOptionInfoDto>("ImageFetchers", ImageFetchers);
-            writer.WriteCollectionOfObjectValues<LibraryOptionInfoDto>("MetadataFetchers", MetadataFetchers);
-            writer.WriteCollectionOfEnumValues<ImageType>("SupportedImageTypes", SupportedImageTypes);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ImageOption>("DefaultImageOptions", DefaultImageOptions);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>("ImageFetchers", ImageFetchers);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>("MetadataFetchers", MetadataFetchers);
+            writer.WriteCollectionOfEnumValues<Jellyfin.Sdk.Generated.Models.ImageType>("SupportedImageTypes", SupportedImageTypes);
             writer.WriteStringValue("Type", Type);
         }
     }

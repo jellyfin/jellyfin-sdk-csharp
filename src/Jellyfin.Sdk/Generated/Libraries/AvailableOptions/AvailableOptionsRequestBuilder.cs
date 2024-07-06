@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Libraries.AvailableOptions {
+namespace Jellyfin.Sdk.Generated.Libraries.AvailableOptions
+{
     /// <summary>
     /// Builds and executes requests for operations under \Libraries\AvailableOptions
     /// </summary>
-    public class AvailableOptionsRequestBuilder : BaseRequestBuilder 
+    public class AvailableOptionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="AvailableOptionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Libraries.AvailableOptions.AvailableOptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.Libraries.AvailableOptions {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AvailableOptionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Libraries.AvailableOptions.AvailableOptionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.Libraries.AvailableOptions {
         /// <summary>
         /// Gets the library options info.
         /// </summary>
-        /// <returns>A <see cref="LibraryOptionsResultDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.LibraryOptionsResultDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LibraryOptionsResultDto?> GetAsync(Action<RequestConfiguration<AvailableOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.LibraryOptionsResultDto?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Libraries.AvailableOptions.AvailableOptionsRequestBuilder.AvailableOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LibraryOptionsResultDto> GetAsync(Action<RequestConfiguration<AvailableOptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Jellyfin.Sdk.Generated.Models.LibraryOptionsResultDto> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Libraries.AvailableOptions.AvailableOptionsRequestBuilder.AvailableOptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<LibraryOptionsResultDto>(requestInfo, LibraryOptionsResultDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Jellyfin.Sdk.Generated.Models.LibraryOptionsResultDto>(requestInfo, Jellyfin.Sdk.Generated.Models.LibraryOptionsResultDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets the library options info.
@@ -55,11 +56,11 @@ namespace Jellyfin.Sdk.Generated.Libraries.AvailableOptions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AvailableOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Libraries.AvailableOptions.AvailableOptionsRequestBuilder.AvailableOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AvailableOptionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Libraries.AvailableOptions.AvailableOptionsRequestBuilder.AvailableOptionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -70,11 +71,11 @@ namespace Jellyfin.Sdk.Generated.Libraries.AvailableOptions {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AvailableOptionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Libraries.AvailableOptions.AvailableOptionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AvailableOptionsRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Libraries.AvailableOptions.AvailableOptionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AvailableOptionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Libraries.AvailableOptions.AvailableOptionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets the library options info.
@@ -86,7 +87,7 @@ namespace Jellyfin.Sdk.Generated.Libraries.AvailableOptions {
             public bool? IsNewLibrary { get; set; }
             /// <summary>Library content type.</summary>
             [QueryParameter("libraryContentType")]
-            public GetLibraryContentTypeQueryParameterType? LibraryContentType { get; set; }
+            public Jellyfin.Sdk.Generated.Libraries.AvailableOptions.CollectionType? LibraryContentType { get; set; }
         }
     }
 }

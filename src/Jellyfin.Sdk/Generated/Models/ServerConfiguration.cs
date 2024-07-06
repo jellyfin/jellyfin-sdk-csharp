@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Represents the server configuration.
     /// </summary>
-    public class ServerConfiguration : IParsable 
+    public class ServerConfiguration : IParsable
     {
         /// <summary>Gets or sets the number of days we should retain activity logs.</summary>
         public int? ActivityLogRetentionDays { get; set; }
@@ -25,13 +26,13 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>Gets or sets the list of cast receiver applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CastReceiverApplication>? CastReceiverApplications { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.CastReceiverApplication>? CastReceiverApplications { get; set; }
 #nullable restore
 #else
-        public List<CastReceiverApplication> CastReceiverApplications { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.CastReceiverApplication> CastReceiverApplications { get; set; }
 #endif
         /// <summary>Gets or sets the chapter image resolution.</summary>
-        public ServerConfiguration_ChapterImageResolution? ChapterImageResolution { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ServerConfiguration_ChapterImageResolution? ChapterImageResolution { get; set; }
         /// <summary>The CodecsUsed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,10 +44,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The ContentTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NameValuePair>? ContentTypes { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.NameValuePair>? ContentTypes { get; set; }
 #nullable restore
 #else
-        public List<NameValuePair> ContentTypes { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.NameValuePair> ContentTypes { get; set; }
 #endif
         /// <summary>Gets or sets the cors hosts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +80,7 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The ImageExtractionTimeoutMs property</summary>
         public int? ImageExtractionTimeoutMs { get; set; }
         /// <summary>Gets or sets the image saving convention.</summary>
-        public ServerConfiguration_ImageSavingConvention? ImageSavingConvention { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ServerConfiguration_ImageSavingConvention? ImageSavingConvention { get; set; }
         /// <summary>Gets or sets the threshold in minutes after a inactive session gets closed automatically.If set to 0 the check for inactive sessions gets disabled.</summary>
         public int? InactiveSessionThreshold { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance is port authorized.</summary>
@@ -143,18 +144,18 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>The PathSubstitutions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PathSubstitution>? PathSubstitutions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.PathSubstitution>? PathSubstitutions { get; set; }
 #nullable restore
 #else
-        public List<PathSubstitution> PathSubstitutions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.PathSubstitution> PathSubstitutions { get; set; }
 #endif
         /// <summary>The PluginRepositories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RepositoryInfo>? PluginRepositories { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.RepositoryInfo>? PluginRepositories { get; set; }
 #nullable restore
 #else
-        public List<RepositoryInfo> PluginRepositories { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.RepositoryInfo> PluginRepositories { get; set; }
 #endif
         /// <summary>Gets or sets the preferred metadata language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -243,12 +244,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServerConfiguration"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ServerConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ServerConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.ServerConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ServerConfiguration();
+            return new Jellyfin.Sdk.Generated.Models.ServerConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -258,61 +259,61 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ActivityLogRetentionDays", n => { ActivityLogRetentionDays = n.GetIntValue(); } },
-                {"AllowClientLogUpload", n => { AllowClientLogUpload = n.GetBoolValue(); } },
-                {"CachePath", n => { CachePath = n.GetStringValue(); } },
-                {"CastReceiverApplications", n => { CastReceiverApplications = n.GetCollectionOfObjectValues<CastReceiverApplication>(CastReceiverApplication.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"ChapterImageResolution", n => { ChapterImageResolution = n.GetEnumValue<ServerConfiguration_ChapterImageResolution>(); } },
-                {"CodecsUsed", n => { CodecsUsed = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"ContentTypes", n => { ContentTypes = n.GetCollectionOfObjectValues<NameValuePair>(NameValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"CorsHosts", n => { CorsHosts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"DisableLiveTvChannelUserDataName", n => { DisableLiveTvChannelUserDataName = n.GetBoolValue(); } },
-                {"DisplaySpecialsWithinSeasons", n => { DisplaySpecialsWithinSeasons = n.GetBoolValue(); } },
-                {"DummyChapterDuration", n => { DummyChapterDuration = n.GetIntValue(); } },
-                {"EnableCaseSensitiveItemIds", n => { EnableCaseSensitiveItemIds = n.GetBoolValue(); } },
-                {"EnableExternalContentInSuggestions", n => { EnableExternalContentInSuggestions = n.GetBoolValue(); } },
-                {"EnableFolderView", n => { EnableFolderView = n.GetBoolValue(); } },
-                {"EnableGroupingIntoCollections", n => { EnableGroupingIntoCollections = n.GetBoolValue(); } },
-                {"EnableMetrics", n => { EnableMetrics = n.GetBoolValue(); } },
-                {"EnableNormalizedItemByNameIds", n => { EnableNormalizedItemByNameIds = n.GetBoolValue(); } },
-                {"EnableSlowResponseWarning", n => { EnableSlowResponseWarning = n.GetBoolValue(); } },
-                {"ImageExtractionTimeoutMs", n => { ImageExtractionTimeoutMs = n.GetIntValue(); } },
-                {"ImageSavingConvention", n => { ImageSavingConvention = n.GetEnumValue<ServerConfiguration_ImageSavingConvention>(); } },
-                {"InactiveSessionThreshold", n => { InactiveSessionThreshold = n.GetIntValue(); } },
-                {"IsPortAuthorized", n => { IsPortAuthorized = n.GetBoolValue(); } },
-                {"IsStartupWizardCompleted", n => { IsStartupWizardCompleted = n.GetBoolValue(); } },
-                {"LibraryMetadataRefreshConcurrency", n => { LibraryMetadataRefreshConcurrency = n.GetIntValue(); } },
-                {"LibraryMonitorDelay", n => { LibraryMonitorDelay = n.GetIntValue(); } },
-                {"LibraryScanFanoutConcurrency", n => { LibraryScanFanoutConcurrency = n.GetIntValue(); } },
-                {"LibraryUpdateDuration", n => { LibraryUpdateDuration = n.GetIntValue(); } },
-                {"LogFileRetentionDays", n => { LogFileRetentionDays = n.GetIntValue(); } },
-                {"MaxAudiobookResume", n => { MaxAudiobookResume = n.GetIntValue(); } },
-                {"MaxResumePct", n => { MaxResumePct = n.GetIntValue(); } },
-                {"MetadataCountryCode", n => { MetadataCountryCode = n.GetStringValue(); } },
-                {"MetadataNetworkPath", n => { MetadataNetworkPath = n.GetStringValue(); } },
-                {"MetadataOptions", n => { MetadataOptions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.MetadataOptions>(Jellyfin.Sdk.Generated.Models.MetadataOptions.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"MetadataPath", n => { MetadataPath = n.GetStringValue(); } },
-                {"MinAudiobookResume", n => { MinAudiobookResume = n.GetIntValue(); } },
-                {"MinResumeDurationSeconds", n => { MinResumeDurationSeconds = n.GetIntValue(); } },
-                {"MinResumePct", n => { MinResumePct = n.GetIntValue(); } },
-                {"ParallelImageEncodingLimit", n => { ParallelImageEncodingLimit = n.GetIntValue(); } },
-                {"PathSubstitutions", n => { PathSubstitutions = n.GetCollectionOfObjectValues<PathSubstitution>(PathSubstitution.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"PluginRepositories", n => { PluginRepositories = n.GetCollectionOfObjectValues<RepositoryInfo>(RepositoryInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"PreferredMetadataLanguage", n => { PreferredMetadataLanguage = n.GetStringValue(); } },
-                {"PreviousVersion", n => { PreviousVersion = n.GetStringValue(); } },
-                {"PreviousVersionStr", n => { PreviousVersionStr = n.GetStringValue(); } },
-                {"QuickConnectAvailable", n => { QuickConnectAvailable = n.GetBoolValue(); } },
-                {"RemoteClientBitrateLimit", n => { RemoteClientBitrateLimit = n.GetIntValue(); } },
-                {"RemoveOldPlugins", n => { RemoveOldPlugins = n.GetBoolValue(); } },
-                {"SaveMetadataHidden", n => { SaveMetadataHidden = n.GetBoolValue(); } },
-                {"ServerName", n => { ServerName = n.GetStringValue(); } },
-                {"SkipDeserializationForBasicTypes", n => { SkipDeserializationForBasicTypes = n.GetBoolValue(); } },
-                {"SlowResponseThresholdMs", n => { SlowResponseThresholdMs = n.GetLongValue(); } },
-                {"SortRemoveCharacters", n => { SortRemoveCharacters = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"SortRemoveWords", n => { SortRemoveWords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"SortReplaceCharacters", n => { SortReplaceCharacters = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"TrickplayOptions", n => { TrickplayOptions = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.TrickplayOptions>(Jellyfin.Sdk.Generated.Models.TrickplayOptions.CreateFromDiscriminatorValue); } },
-                {"UICulture", n => { UICulture = n.GetStringValue(); } },
+                { "ActivityLogRetentionDays", n => { ActivityLogRetentionDays = n.GetIntValue(); } },
+                { "AllowClientLogUpload", n => { AllowClientLogUpload = n.GetBoolValue(); } },
+                { "CachePath", n => { CachePath = n.GetStringValue(); } },
+                { "CastReceiverApplications", n => { CastReceiverApplications = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.CastReceiverApplication>(Jellyfin.Sdk.Generated.Models.CastReceiverApplication.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ChapterImageResolution", n => { ChapterImageResolution = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.ServerConfiguration_ChapterImageResolution>(); } },
+                { "CodecsUsed", n => { CodecsUsed = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "ContentTypes", n => { ContentTypes = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.NameValuePair>(Jellyfin.Sdk.Generated.Models.NameValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "CorsHosts", n => { CorsHosts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "DisableLiveTvChannelUserDataName", n => { DisableLiveTvChannelUserDataName = n.GetBoolValue(); } },
+                { "DisplaySpecialsWithinSeasons", n => { DisplaySpecialsWithinSeasons = n.GetBoolValue(); } },
+                { "DummyChapterDuration", n => { DummyChapterDuration = n.GetIntValue(); } },
+                { "EnableCaseSensitiveItemIds", n => { EnableCaseSensitiveItemIds = n.GetBoolValue(); } },
+                { "EnableExternalContentInSuggestions", n => { EnableExternalContentInSuggestions = n.GetBoolValue(); } },
+                { "EnableFolderView", n => { EnableFolderView = n.GetBoolValue(); } },
+                { "EnableGroupingIntoCollections", n => { EnableGroupingIntoCollections = n.GetBoolValue(); } },
+                { "EnableMetrics", n => { EnableMetrics = n.GetBoolValue(); } },
+                { "EnableNormalizedItemByNameIds", n => { EnableNormalizedItemByNameIds = n.GetBoolValue(); } },
+                { "EnableSlowResponseWarning", n => { EnableSlowResponseWarning = n.GetBoolValue(); } },
+                { "ImageExtractionTimeoutMs", n => { ImageExtractionTimeoutMs = n.GetIntValue(); } },
+                { "ImageSavingConvention", n => { ImageSavingConvention = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.ServerConfiguration_ImageSavingConvention>(); } },
+                { "InactiveSessionThreshold", n => { InactiveSessionThreshold = n.GetIntValue(); } },
+                { "IsPortAuthorized", n => { IsPortAuthorized = n.GetBoolValue(); } },
+                { "IsStartupWizardCompleted", n => { IsStartupWizardCompleted = n.GetBoolValue(); } },
+                { "LibraryMetadataRefreshConcurrency", n => { LibraryMetadataRefreshConcurrency = n.GetIntValue(); } },
+                { "LibraryMonitorDelay", n => { LibraryMonitorDelay = n.GetIntValue(); } },
+                { "LibraryScanFanoutConcurrency", n => { LibraryScanFanoutConcurrency = n.GetIntValue(); } },
+                { "LibraryUpdateDuration", n => { LibraryUpdateDuration = n.GetIntValue(); } },
+                { "LogFileRetentionDays", n => { LogFileRetentionDays = n.GetIntValue(); } },
+                { "MaxAudiobookResume", n => { MaxAudiobookResume = n.GetIntValue(); } },
+                { "MaxResumePct", n => { MaxResumePct = n.GetIntValue(); } },
+                { "MetadataCountryCode", n => { MetadataCountryCode = n.GetStringValue(); } },
+                { "MetadataNetworkPath", n => { MetadataNetworkPath = n.GetStringValue(); } },
+                { "MetadataOptions", n => { MetadataOptions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.MetadataOptions>(Jellyfin.Sdk.Generated.Models.MetadataOptions.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "MetadataPath", n => { MetadataPath = n.GetStringValue(); } },
+                { "MinAudiobookResume", n => { MinAudiobookResume = n.GetIntValue(); } },
+                { "MinResumeDurationSeconds", n => { MinResumeDurationSeconds = n.GetIntValue(); } },
+                { "MinResumePct", n => { MinResumePct = n.GetIntValue(); } },
+                { "ParallelImageEncodingLimit", n => { ParallelImageEncodingLimit = n.GetIntValue(); } },
+                { "PathSubstitutions", n => { PathSubstitutions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.PathSubstitution>(Jellyfin.Sdk.Generated.Models.PathSubstitution.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "PluginRepositories", n => { PluginRepositories = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.RepositoryInfo>(Jellyfin.Sdk.Generated.Models.RepositoryInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "PreferredMetadataLanguage", n => { PreferredMetadataLanguage = n.GetStringValue(); } },
+                { "PreviousVersion", n => { PreviousVersion = n.GetStringValue(); } },
+                { "PreviousVersionStr", n => { PreviousVersionStr = n.GetStringValue(); } },
+                { "QuickConnectAvailable", n => { QuickConnectAvailable = n.GetBoolValue(); } },
+                { "RemoteClientBitrateLimit", n => { RemoteClientBitrateLimit = n.GetIntValue(); } },
+                { "RemoveOldPlugins", n => { RemoveOldPlugins = n.GetBoolValue(); } },
+                { "SaveMetadataHidden", n => { SaveMetadataHidden = n.GetBoolValue(); } },
+                { "ServerName", n => { ServerName = n.GetStringValue(); } },
+                { "SkipDeserializationForBasicTypes", n => { SkipDeserializationForBasicTypes = n.GetBoolValue(); } },
+                { "SlowResponseThresholdMs", n => { SlowResponseThresholdMs = n.GetLongValue(); } },
+                { "SortRemoveCharacters", n => { SortRemoveCharacters = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "SortRemoveWords", n => { SortRemoveWords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "SortReplaceCharacters", n => { SortReplaceCharacters = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "TrickplayOptions", n => { TrickplayOptions = n.GetObjectValue<Jellyfin.Sdk.Generated.Models.TrickplayOptions>(Jellyfin.Sdk.Generated.Models.TrickplayOptions.CreateFromDiscriminatorValue); } },
+                { "UICulture", n => { UICulture = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -325,10 +326,10 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("ActivityLogRetentionDays", ActivityLogRetentionDays);
             writer.WriteBoolValue("AllowClientLogUpload", AllowClientLogUpload);
             writer.WriteStringValue("CachePath", CachePath);
-            writer.WriteCollectionOfObjectValues<CastReceiverApplication>("CastReceiverApplications", CastReceiverApplications);
-            writer.WriteEnumValue<ServerConfiguration_ChapterImageResolution>("ChapterImageResolution", ChapterImageResolution);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.CastReceiverApplication>("CastReceiverApplications", CastReceiverApplications);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.ServerConfiguration_ChapterImageResolution>("ChapterImageResolution", ChapterImageResolution);
             writer.WriteCollectionOfPrimitiveValues<string>("CodecsUsed", CodecsUsed);
-            writer.WriteCollectionOfObjectValues<NameValuePair>("ContentTypes", ContentTypes);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.NameValuePair>("ContentTypes", ContentTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("CorsHosts", CorsHosts);
             writer.WriteBoolValue("DisableLiveTvChannelUserDataName", DisableLiveTvChannelUserDataName);
             writer.WriteBoolValue("DisplaySpecialsWithinSeasons", DisplaySpecialsWithinSeasons);
@@ -341,7 +342,7 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteBoolValue("EnableNormalizedItemByNameIds", EnableNormalizedItemByNameIds);
             writer.WriteBoolValue("EnableSlowResponseWarning", EnableSlowResponseWarning);
             writer.WriteIntValue("ImageExtractionTimeoutMs", ImageExtractionTimeoutMs);
-            writer.WriteEnumValue<ServerConfiguration_ImageSavingConvention>("ImageSavingConvention", ImageSavingConvention);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.ServerConfiguration_ImageSavingConvention>("ImageSavingConvention", ImageSavingConvention);
             writer.WriteIntValue("InactiveSessionThreshold", InactiveSessionThreshold);
             writer.WriteBoolValue("IsPortAuthorized", IsPortAuthorized);
             writer.WriteBoolValue("IsStartupWizardCompleted", IsStartupWizardCompleted);
@@ -360,8 +361,8 @@ namespace Jellyfin.Sdk.Generated.Models {
             writer.WriteIntValue("MinResumeDurationSeconds", MinResumeDurationSeconds);
             writer.WriteIntValue("MinResumePct", MinResumePct);
             writer.WriteIntValue("ParallelImageEncodingLimit", ParallelImageEncodingLimit);
-            writer.WriteCollectionOfObjectValues<PathSubstitution>("PathSubstitutions", PathSubstitutions);
-            writer.WriteCollectionOfObjectValues<RepositoryInfo>("PluginRepositories", PluginRepositories);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.PathSubstitution>("PathSubstitutions", PathSubstitutions);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.RepositoryInfo>("PluginRepositories", PluginRepositories);
             writer.WriteStringValue("PreferredMetadataLanguage", PreferredMetadataLanguage);
             writer.WriteStringValue("PreviousVersion", PreviousVersion);
             writer.WriteStringValue("PreviousVersionStr", PreviousVersionStr);

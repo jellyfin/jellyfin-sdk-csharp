@@ -7,24 +7,25 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Web {
+namespace Jellyfin.Sdk.Generated.Web
+{
     /// <summary>
     /// Builds and executes requests for operations under \web
     /// </summary>
-    public class WebRequestBuilder : BaseRequestBuilder 
+    public class WebRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The ConfigurationPage property</summary>
-        public ConfigurationPageRequestBuilder ConfigurationPage
+        public Jellyfin.Sdk.Generated.Web.ConfigurationPage.ConfigurationPageRequestBuilder ConfigurationPage
         {
-            get => new ConfigurationPageRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Web.ConfigurationPage.ConfigurationPageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ConfigurationPages property</summary>
-        public ConfigurationPagesRequestBuilder ConfigurationPages
+        public Jellyfin.Sdk.Generated.Web.ConfigurationPages.ConfigurationPagesRequestBuilder ConfigurationPages
         {
-            get => new ConfigurationPagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Web.ConfigurationPages.ConfigurationPagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WebRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Web.WebRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,7 +33,7 @@ namespace Jellyfin.Sdk.Generated.Web {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WebRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Web.WebRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

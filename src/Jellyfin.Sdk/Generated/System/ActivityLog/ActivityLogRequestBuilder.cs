@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.System.ActivityLog {
+namespace Jellyfin.Sdk.Generated.System.ActivityLog
+{
     /// <summary>
     /// Builds and executes requests for operations under \System\ActivityLog
     /// </summary>
-    public class ActivityLogRequestBuilder : BaseRequestBuilder 
+    public class ActivityLogRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Entries property</summary>
-        public EntriesRequestBuilder Entries
+        public Jellyfin.Sdk.Generated.System.ActivityLog.Entries.EntriesRequestBuilder Entries
         {
-            get => new EntriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.System.ActivityLog.Entries.EntriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ActivityLogRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.ActivityLog.ActivityLogRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ActivityLogRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.System.ActivityLog.ActivityLogRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

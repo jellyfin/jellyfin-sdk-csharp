@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Audio.Item.RemoteSearch {
+namespace Jellyfin.Sdk.Generated.Audio.Item.RemoteSearch
+{
     /// <summary>
     /// Builds and executes requests for operations under \Audio\{itemId}\RemoteSearch
     /// </summary>
-    public class RemoteSearchRequestBuilder : BaseRequestBuilder 
+    public class RemoteSearchRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Lyrics property</summary>
-        public LyricsRequestBuilder Lyrics
+        public Jellyfin.Sdk.Generated.Audio.Item.RemoteSearch.Lyrics.LyricsRequestBuilder Lyrics
         {
-            get => new LyricsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Audio.Item.RemoteSearch.Lyrics.LyricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="RemoteSearchRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Audio.Item.RemoteSearch.RemoteSearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.RemoteSearch {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RemoteSearchRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Audio.Item.RemoteSearch.RemoteSearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

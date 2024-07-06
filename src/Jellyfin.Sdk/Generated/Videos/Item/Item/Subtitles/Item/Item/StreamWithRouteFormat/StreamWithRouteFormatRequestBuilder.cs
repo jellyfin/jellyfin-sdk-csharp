@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWithRouteFormat {
+namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWithRouteFormat
+{
     /// <summary>
     /// Builds and executes requests for operations under \Videos\{item-id}\{mediaSource-id}\Subtitles\{index-id}\{routeStartPositionTicks}\Stream.{routeFormat}
     /// </summary>
-    public class StreamWithRouteFormatRequestBuilder : BaseRequestBuilder 
+    public class StreamWithRouteFormatRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="StreamWithRouteFormatRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWithRouteFormat.StreamWithRouteFormatRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +25,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWith
             if (!string.IsNullOrWhiteSpace(routeFormat)) PathParameters.Add("routeFormat", routeFormat);
         }
         /// <summary>
-        /// Instantiates a new <see cref="StreamWithRouteFormatRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWithRouteFormat.StreamWithRouteFormatRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,11 +40,11 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWith
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<StreamWithRouteFormatRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWithRouteFormat.StreamWithRouteFormatRequestBuilder.StreamWithRouteFormatRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<StreamWithRouteFormatRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWithRouteFormat.StreamWithRouteFormatRequestBuilder.StreamWithRouteFormatRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,11 +57,11 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWith
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithRouteFormatRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWithRouteFormat.StreamWithRouteFormatRequestBuilder.StreamWithRouteFormatRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StreamWithRouteFormatRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWithRouteFormat.StreamWithRouteFormatRequestBuilder.StreamWithRouteFormatRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -71,11 +72,11 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWith
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="StreamWithRouteFormatRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWithRouteFormat.StreamWithRouteFormatRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StreamWithRouteFormatRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWithRouteFormat.StreamWithRouteFormatRequestBuilder WithUrl(string rawUrl)
         {
-            return new StreamWithRouteFormatRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.Item.StreamWithRouteFormat.StreamWithRouteFormatRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets subtitles in a specified format.

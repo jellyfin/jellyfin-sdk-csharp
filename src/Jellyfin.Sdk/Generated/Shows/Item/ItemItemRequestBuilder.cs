@@ -8,29 +8,30 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.Shows.Item {
+namespace Jellyfin.Sdk.Generated.Shows.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \Shows\{item-id}
     /// </summary>
-    public class ItemItemRequestBuilder : BaseRequestBuilder 
+    public class ItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Episodes property</summary>
-        public EpisodesRequestBuilder Episodes
+        public Jellyfin.Sdk.Generated.Shows.Item.Episodes.EpisodesRequestBuilder Episodes
         {
-            get => new EpisodesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Shows.Item.Episodes.EpisodesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Seasons property</summary>
-        public SeasonsRequestBuilder Seasons
+        public Jellyfin.Sdk.Generated.Shows.Item.Seasons.SeasonsRequestBuilder Seasons
         {
-            get => new SeasonsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Shows.Item.Seasons.SeasonsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Similar property</summary>
-        public SimilarRequestBuilder Similar
+        public Jellyfin.Sdk.Generated.Shows.Item.Similar.SimilarRequestBuilder Similar
         {
-            get => new SimilarRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.Shows.Item.Similar.SimilarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Shows.Item.ItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +39,7 @@ namespace Jellyfin.Sdk.Generated.Shows.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.Shows.Item.ItemItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

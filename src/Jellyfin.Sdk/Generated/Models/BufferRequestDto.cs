@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Class BufferRequestDto.
     /// </summary>
-    public class BufferRequestDto : IParsable 
+    public class BufferRequestDto : IParsable
     {
         /// <summary>Gets or sets a value indicating whether the client playback is unpaused.</summary>
         public bool? IsPlaying { get; set; }
@@ -21,12 +22,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BufferRequestDto"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.BufferRequestDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BufferRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.BufferRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BufferRequestDto();
+            return new Jellyfin.Sdk.Generated.Models.BufferRequestDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -36,10 +37,10 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"IsPlaying", n => { IsPlaying = n.GetBoolValue(); } },
-                {"PlaylistItemId", n => { PlaylistItemId = n.GetGuidValue(); } },
-                {"PositionTicks", n => { PositionTicks = n.GetLongValue(); } },
-                {"When", n => { When = n.GetDateTimeOffsetValue(); } },
+                { "IsPlaying", n => { IsPlaying = n.GetBoolValue(); } },
+                { "PlaylistItemId", n => { PlaylistItemId = n.GetGuidValue(); } },
+                { "PositionTicks", n => { PositionTicks = n.GetLongValue(); } },
+                { "When", n => { When = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     /// <summary>
     /// Provides the MAC address and port for wake-on-LAN functionality.
     /// </summary>
-    public class WakeOnLanInfo : IParsable 
+    public class WakeOnLanInfo : IParsable
     {
         /// <summary>Gets the MAC address of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -23,12 +24,12 @@ namespace Jellyfin.Sdk.Generated.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WakeOnLanInfo"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.WakeOnLanInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WakeOnLanInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.WakeOnLanInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WakeOnLanInfo();
+            return new Jellyfin.Sdk.Generated.Models.WakeOnLanInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -38,8 +39,8 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"MacAddress", n => { MacAddress = n.GetStringValue(); } },
-                {"Port", n => { Port = n.GetIntValue(); } },
+                { "MacAddress", n => { MacAddress = n.GetStringValue(); } },
+                { "Port", n => { Port = n.GetIntValue(); } },
             };
         }
         /// <summary>

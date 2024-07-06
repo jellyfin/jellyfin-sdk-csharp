@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents {
+namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents
+{
     /// <summary>
     /// Builds and executes requests for operations under \Environment\DirectoryContents
     /// </summary>
-    public class DirectoryContentsRequestBuilder : BaseRequestBuilder 
+    public class DirectoryContentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="DirectoryContentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents.DirectoryContentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DirectoryContentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents.DirectoryContentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents {
         /// <summary>
         /// Gets the contents of a given directory in the file system.
         /// </summary>
-        /// <returns>A List&lt;FileSystemEntryInfo&gt;</returns>
+        /// <returns>A List&lt;Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<FileSystemEntryInfo>?> GetAsync(Action<RequestConfiguration<DirectoryContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo>?> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents.DirectoryContentsRequestBuilder.DirectoryContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<FileSystemEntryInfo>> GetAsync(Action<RequestConfiguration<DirectoryContentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo>> GetAsync(Action<RequestConfiguration<Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents.DirectoryContentsRequestBuilder.DirectoryContentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<FileSystemEntryInfo>(requestInfo, FileSystemEntryInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo>(requestInfo, Jellyfin.Sdk.Generated.Models.FileSystemEntryInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -56,11 +57,11 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents.DirectoryContentsRequestBuilder.DirectoryContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryContentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents.DirectoryContentsRequestBuilder.DirectoryContentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -71,11 +72,11 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DirectoryContentsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents.DirectoryContentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DirectoryContentsRequestBuilder WithUrl(string rawUrl)
+        public Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents.DirectoryContentsRequestBuilder WithUrl(string rawUrl)
         {
-            return new DirectoryContentsRequestBuilder(rawUrl, RequestAdapter);
+            return new Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents.DirectoryContentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets the contents of a given directory in the file system.

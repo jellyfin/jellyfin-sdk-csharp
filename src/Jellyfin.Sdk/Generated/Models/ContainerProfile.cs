@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Jellyfin.Sdk.Generated.Models {
+namespace Jellyfin.Sdk.Generated.Models
+{
     #pragma warning disable CS1591
-    public class ContainerProfile : IParsable 
+    public class ContainerProfile : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProfileCondition>? Conditions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ProfileCondition>? Conditions { get; set; }
 #nullable restore
 #else
-        public List<ProfileCondition> Conditions { get; set; }
+        public List<Jellyfin.Sdk.Generated.Models.ProfileCondition> Conditions { get; set; }
 #endif
         /// <summary>The Container property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -26,16 +27,16 @@ namespace Jellyfin.Sdk.Generated.Models {
         public string Container { get; set; }
 #endif
         /// <summary>The Type property</summary>
-        public ContainerProfile_Type? Type { get; set; }
+        public Jellyfin.Sdk.Generated.Models.ContainerProfile_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ContainerProfile"/></returns>
+        /// <returns>A <see cref="Jellyfin.Sdk.Generated.Models.ContainerProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ContainerProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Jellyfin.Sdk.Generated.Models.ContainerProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ContainerProfile();
+            return new Jellyfin.Sdk.Generated.Models.ContainerProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,9 +46,9 @@ namespace Jellyfin.Sdk.Generated.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Conditions", n => { Conditions = n.GetCollectionOfObjectValues<ProfileCondition>(ProfileCondition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"Container", n => { Container = n.GetStringValue(); } },
-                {"Type", n => { Type = n.GetEnumValue<ContainerProfile_Type>(); } },
+                { "Conditions", n => { Conditions = n.GetCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ProfileCondition>(Jellyfin.Sdk.Generated.Models.ProfileCondition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "Container", n => { Container = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetEnumValue<Jellyfin.Sdk.Generated.Models.ContainerProfile_Type>(); } },
             };
         }
         /// <summary>
@@ -57,9 +58,9 @@ namespace Jellyfin.Sdk.Generated.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ProfileCondition>("Conditions", Conditions);
+            writer.WriteCollectionOfObjectValues<Jellyfin.Sdk.Generated.Models.ProfileCondition>("Conditions", Conditions);
             writer.WriteStringValue("Container", Container);
-            writer.WriteEnumValue<ContainerProfile_Type>("Type", Type);
+            writer.WriteEnumValue<Jellyfin.Sdk.Generated.Models.ContainerProfile_Type>("Type", Type);
         }
     }
 }

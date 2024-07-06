@@ -7,24 +7,25 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Jellyfin.Sdk.Generated.LiveStreams {
+namespace Jellyfin.Sdk.Generated.LiveStreams
+{
     /// <summary>
     /// Builds and executes requests for operations under \LiveStreams
     /// </summary>
-    public class LiveStreamsRequestBuilder : BaseRequestBuilder 
+    public class LiveStreamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Close property</summary>
-        public CloseRequestBuilder Close
+        public Jellyfin.Sdk.Generated.LiveStreams.Close.CloseRequestBuilder Close
         {
-            get => new CloseRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.LiveStreams.Close.CloseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Open property</summary>
-        public OpenRequestBuilder Open
+        public Jellyfin.Sdk.Generated.LiveStreams.Open.OpenRequestBuilder Open
         {
-            get => new OpenRequestBuilder(PathParameters, RequestAdapter);
+            get => new Jellyfin.Sdk.Generated.LiveStreams.Open.OpenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="LiveStreamsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveStreams.LiveStreamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,7 +33,7 @@ namespace Jellyfin.Sdk.Generated.LiveStreams {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LiveStreamsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Jellyfin.Sdk.Generated.LiveStreams.LiveStreamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
