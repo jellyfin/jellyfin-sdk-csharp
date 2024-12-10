@@ -179,8 +179,6 @@ namespace Jellyfin.Sdk.Generated.Models
         public bool? QuickConnectAvailable { get; set; }
         /// <summary>The RemoteClientBitrateLimit property</summary>
         public int? RemoteClientBitrateLimit { get; set; }
-        /// <summary>Gets or sets a value indicating whether older plugins should automatically be deleted from the plugin folder.</summary>
-        public bool? RemoveOldPlugins { get; set; }
         /// <summary>The SaveMetadataHidden property</summary>
         public bool? SaveMetadataHidden { get; set; }
         /// <summary>The ServerName property</summary>
@@ -297,7 +295,6 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "PreviousVersionStr", n => { PreviousVersionStr = n.GetStringValue(); } },
                 { "QuickConnectAvailable", n => { QuickConnectAvailable = n.GetBoolValue(); } },
                 { "RemoteClientBitrateLimit", n => { RemoteClientBitrateLimit = n.GetIntValue(); } },
-                { "RemoveOldPlugins", n => { RemoveOldPlugins = n.GetBoolValue(); } },
                 { "SaveMetadataHidden", n => { SaveMetadataHidden = n.GetBoolValue(); } },
                 { "ServerName", n => { ServerName = n.GetStringValue(); } },
                 { "SkipDeserializationForBasicTypes", n => { SkipDeserializationForBasicTypes = n.GetBoolValue(); } },
@@ -360,7 +357,6 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteStringValue("PreviousVersionStr", PreviousVersionStr);
             writer.WriteBoolValue("QuickConnectAvailable", QuickConnectAvailable);
             writer.WriteIntValue("RemoteClientBitrateLimit", RemoteClientBitrateLimit);
-            writer.WriteBoolValue("RemoveOldPlugins", RemoveOldPlugins);
             writer.WriteBoolValue("SaveMetadataHidden", SaveMetadataHidden);
             writer.WriteStringValue("ServerName", ServerName);
             writer.WriteBoolValue("SkipDeserializationForBasicTypes", SkipDeserializationForBasicTypes);
