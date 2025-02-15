@@ -63,9 +63,9 @@ namespace Jellyfin.Sdk.Generated.Models
         public bool? DisableLiveTvChannelUserDataName { get; set; }
         /// <summary>The DisplaySpecialsWithinSeasons property</summary>
         public bool? DisplaySpecialsWithinSeasons { get; set; }
-        /// <summary>Gets or sets the dummy chapter duration in seconds, use 0 (zero) or less to disable generation alltogether.</summary>
+        /// <summary>Gets or sets the dummy chapter duration in seconds, use 0 (zero) or less to disable generation altogether.</summary>
         public int? DummyChapterDuration { get; set; }
-        /// <summary>Gets or sets a value indicating whether [enable case sensitive item ids].</summary>
+        /// <summary>Gets or sets a value indicating whether [enable case-sensitive item ids].</summary>
         public bool? EnableCaseSensitiveItemIds { get; set; }
         /// <summary>The EnableExternalContentInSuggestions property</summary>
         public bool? EnableExternalContentInSuggestions { get; set; }
@@ -73,6 +73,8 @@ namespace Jellyfin.Sdk.Generated.Models
         public bool? EnableFolderView { get; set; }
         /// <summary>The EnableGroupingIntoCollections property</summary>
         public bool? EnableGroupingIntoCollections { get; set; }
+        /// <summary>Gets or sets a value indicating whether old authorization methods are allowed.</summary>
+        public bool? EnableLegacyAuthorization { get; set; }
         /// <summary>Gets or sets a value indicating whether to enable prometheus metrics exporting.</summary>
         public bool? EnableMetrics { get; set; }
         /// <summary>The EnableNormalizedItemByNameIds property</summary>
@@ -179,8 +181,6 @@ namespace Jellyfin.Sdk.Generated.Models
         public bool? QuickConnectAvailable { get; set; }
         /// <summary>The RemoteClientBitrateLimit property</summary>
         public int? RemoteClientBitrateLimit { get; set; }
-        /// <summary>Gets or sets a value indicating whether older plugins should automatically be deleted from the plugin folder.</summary>
-        public bool? RemoveOldPlugins { get; set; }
         /// <summary>The SaveMetadataHidden property</summary>
         public bool? SaveMetadataHidden { get; set; }
         /// <summary>The ServerName property</summary>
@@ -268,6 +268,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "EnableExternalContentInSuggestions", n => { EnableExternalContentInSuggestions = n.GetBoolValue(); } },
                 { "EnableFolderView", n => { EnableFolderView = n.GetBoolValue(); } },
                 { "EnableGroupingIntoCollections", n => { EnableGroupingIntoCollections = n.GetBoolValue(); } },
+                { "EnableLegacyAuthorization", n => { EnableLegacyAuthorization = n.GetBoolValue(); } },
                 { "EnableMetrics", n => { EnableMetrics = n.GetBoolValue(); } },
                 { "EnableNormalizedItemByNameIds", n => { EnableNormalizedItemByNameIds = n.GetBoolValue(); } },
                 { "EnableSlowResponseWarning", n => { EnableSlowResponseWarning = n.GetBoolValue(); } },
@@ -297,7 +298,6 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "PreviousVersionStr", n => { PreviousVersionStr = n.GetStringValue(); } },
                 { "QuickConnectAvailable", n => { QuickConnectAvailable = n.GetBoolValue(); } },
                 { "RemoteClientBitrateLimit", n => { RemoteClientBitrateLimit = n.GetIntValue(); } },
-                { "RemoveOldPlugins", n => { RemoveOldPlugins = n.GetBoolValue(); } },
                 { "SaveMetadataHidden", n => { SaveMetadataHidden = n.GetBoolValue(); } },
                 { "ServerName", n => { ServerName = n.GetStringValue(); } },
                 { "SkipDeserializationForBasicTypes", n => { SkipDeserializationForBasicTypes = n.GetBoolValue(); } },
@@ -331,6 +331,7 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteBoolValue("EnableExternalContentInSuggestions", EnableExternalContentInSuggestions);
             writer.WriteBoolValue("EnableFolderView", EnableFolderView);
             writer.WriteBoolValue("EnableGroupingIntoCollections", EnableGroupingIntoCollections);
+            writer.WriteBoolValue("EnableLegacyAuthorization", EnableLegacyAuthorization);
             writer.WriteBoolValue("EnableMetrics", EnableMetrics);
             writer.WriteBoolValue("EnableNormalizedItemByNameIds", EnableNormalizedItemByNameIds);
             writer.WriteBoolValue("EnableSlowResponseWarning", EnableSlowResponseWarning);
@@ -360,7 +361,6 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteStringValue("PreviousVersionStr", PreviousVersionStr);
             writer.WriteBoolValue("QuickConnectAvailable", QuickConnectAvailable);
             writer.WriteIntValue("RemoteClientBitrateLimit", RemoteClientBitrateLimit);
-            writer.WriteBoolValue("RemoveOldPlugins", RemoveOldPlugins);
             writer.WriteBoolValue("SaveMetadataHidden", SaveMetadataHidden);
             writer.WriteStringValue("ServerName", ServerName);
             writer.WriteBoolValue("SkipDeserializationForBasicTypes", SkipDeserializationForBasicTypes);

@@ -8,7 +8,7 @@ using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
     /// <summary>
-    /// Plabyback info dto.
+    /// Playback info dto.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PlaybackInfoDto : IParsable

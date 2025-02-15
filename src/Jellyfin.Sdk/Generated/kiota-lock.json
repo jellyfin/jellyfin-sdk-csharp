@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "6BCC764CF12A1D4E9E2E1F1A822BC67F3D5786B12D5CDADC6D7FF93D02F23AB38EEAD041F65067577C9436B325E7122397CD21F70B2A93F1BDDBB33B7CEFCD9D",
-  "descriptionLocation": "https://api.jellyfin.org/openapi/jellyfin-openapi-stable.json",
+  "descriptionHash": "D4FE4AC9CCAE3AA6429CC6385E50E016D7E89B01516C3EDFD6C54C58269118472E9A3ACE43EDC09A48C63E0DE4B489D7AEFE41C6CA9496FE0DAC555E367FCC01",
+  "descriptionLocation": "https://api.jellyfin.org/openapi/jellyfin-openapi-unstable.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.22.3",
   "clientClassName": "BaseJellyfinApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Jellyfin.Sdk.Generated",

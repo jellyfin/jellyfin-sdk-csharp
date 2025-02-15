@@ -35,7 +35,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #endif
         /// <summary>Gets or sets a value indicating whether to enable direct play.</summary>
         public bool? EnableDirectPlay { get; set; }
-        /// <summary>Gets or sets a value indicating whether to enale direct stream.</summary>
+        /// <summary>Gets or sets a value indicating whether to enable direct stream.</summary>
         public bool? EnableDirectStream { get; set; }
         /// <summary>Gets or sets the item id.</summary>
         public Guid? ItemId { get; set; }

@@ -8,7 +8,7 @@ using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
     /// <summary>
-    /// Class holding information on a runnning transcode.
+    /// Class holding information on a running transcode.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TranscodingInfo : IParsable
