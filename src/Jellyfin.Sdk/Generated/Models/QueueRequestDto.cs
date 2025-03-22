@@ -21,7 +21,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public List<Guid?> ItemIds { get; set; }
 #endif
-        /// <summary>Gets or sets the mode in which to add the new items.</summary>
+        /// <summary>Enum GroupQueueMode.</summary>
         public global::Jellyfin.Sdk.Generated.Models.QueueRequestDto_Mode? Mode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -13,7 +13,7 @@ namespace Jellyfin.Sdk.Generated.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SetShuffleModeRequestDto : IParsable
     {
-        /// <summary>Gets or sets the shuffle mode.</summary>
+        /// <summary>Enum GroupShuffleMode.</summary>
         public global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto_Mode? Mode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

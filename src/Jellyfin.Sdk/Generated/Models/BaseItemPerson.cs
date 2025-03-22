@@ -47,7 +47,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string Role { get; set; }
 #endif
-        /// <summary>The person kind.</summary>
+        /// <summary>Gets or sets the type.</summary>
         public global::Jellyfin.Sdk.Generated.Models.BaseItemPerson_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

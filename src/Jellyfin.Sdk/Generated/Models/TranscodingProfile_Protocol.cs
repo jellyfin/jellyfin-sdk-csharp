@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
-    /// <summary>Media streaming protocol.Lowercase for backwards compatibility.</summary>
+    /// <summary>Gets or sets the protocol.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TranscodingProfile_Protocol
     {

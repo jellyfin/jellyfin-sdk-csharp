@@ -14,6 +14,7 @@ namespace Jellyfin.Sdk.Generated.Models
     public partial class StartupRemoteAccessDto : IParsable
     {
         /// <summary>Gets or sets a value indicating whether enable automatic port mapping.</summary>
+        [Obsolete("")]
         public bool? EnableAutomaticPortMapping { get; set; }
         /// <summary>Gets or sets a value indicating whether enable remote access.</summary>
         public bool? EnableRemoteAccess { get; set; }

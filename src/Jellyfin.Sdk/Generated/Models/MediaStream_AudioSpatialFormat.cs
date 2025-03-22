@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
-    /// <summary>An enum representing formats of spatial audio.</summary>
+    /// <summary>Gets the audio spatial format.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MediaStream_AudioSpatialFormat
     {

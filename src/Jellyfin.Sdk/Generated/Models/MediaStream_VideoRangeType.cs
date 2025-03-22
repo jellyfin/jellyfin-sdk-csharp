@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
-    /// <summary>An enum representing types of video ranges.</summary>
+    /// <summary>Gets the video range type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MediaStream_VideoRangeType
     {

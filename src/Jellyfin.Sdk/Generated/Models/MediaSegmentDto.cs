@@ -21,7 +21,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public Guid? ItemId { get; set; }
         /// <summary>Gets or sets the start of the segment.</summary>
         public long? StartTicks { get; set; }
-        /// <summary>Defines the types of content an individual Jellyfin.Data.Entities.MediaSegment represents.</summary>
+        /// <summary>Gets or sets the type of content this segment defines.</summary>
         public global::Jellyfin.Sdk.Generated.Models.MediaSegmentDto_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

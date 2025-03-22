@@ -375,7 +375,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public List<global::Jellyfin.Sdk.Generated.Models.MediaStream> MediaStreams { get; set; }
 #endif
-        /// <summary>Media types.</summary>
+        /// <summary>Gets or sets the type of the media.</summary>
         public global::Jellyfin.Sdk.Generated.Models.BaseItemDto_MediaType? MediaType { get; set; }
         /// <summary>Gets or sets the movie count.</summary>
         public int? MovieCount { get; set; }
@@ -723,7 +723,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public global::Jellyfin.Sdk.Generated.Models.BaseItemDto_Trickplay Trickplay { get; set; }
 #endif
-        /// <summary>The base item kind.</summary>
+        /// <summary>Gets or sets the type.</summary>
         public global::Jellyfin.Sdk.Generated.Models.BaseItemDto_Type? Type { get; set; }
         /// <summary>Gets or sets the user data for this item based on the user it&apos;s being requested for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -8,7 +8,7 @@ using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
     /// <summary>
-    /// Class holding information on a runnning transcode.
+    /// Class holding information on a running transcode.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TranscodingInfo : IParsable
@@ -46,13 +46,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <summary>Gets or sets a value indicating whether the video is passed through.</summary>
         public bool? IsVideoDirect { get; set; }
         /// <summary>Gets or sets the transcode reasons.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Jellyfin.Sdk.Generated.Models.TranscodeReason?>? TranscodeReasons { get; set; }
-#nullable restore
-#else
-        public List<global::Jellyfin.Sdk.Generated.Models.TranscodeReason?> TranscodeReasons { get; set; }
-#endif
+        public global::Jellyfin.Sdk.Generated.Models.TranscodingInfo_TranscodeReasons? TranscodeReasons { get; set; }
         /// <summary>Gets or sets the thread count used for encoding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,7 +85,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "Height", n => { Height = n.GetIntValue(); } },
                 { "IsAudioDirect", n => { IsAudioDirect = n.GetBoolValue(); } },
                 { "IsVideoDirect", n => { IsVideoDirect = n.GetBoolValue(); } },
-                { "TranscodeReasons", n => { TranscodeReasons = n.GetCollectionOfEnumValues<global::Jellyfin.Sdk.Generated.Models.TranscodeReason>()?.AsList(); } },
+                { "TranscodeReasons", n => { TranscodeReasons = n.GetEnumValue<global::Jellyfin.Sdk.Generated.Models.TranscodingInfo_TranscodeReasons>(); } },
                 { "VideoCodec", n => { VideoCodec = n.GetStringValue(); } },
                 { "Width", n => { Width = n.GetIntValue(); } },
             };
@@ -113,7 +107,7 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteIntValue("Height", Height);
             writer.WriteBoolValue("IsAudioDirect", IsAudioDirect);
             writer.WriteBoolValue("IsVideoDirect", IsVideoDirect);
-            writer.WriteCollectionOfEnumValues<global::Jellyfin.Sdk.Generated.Models.TranscodeReason>("TranscodeReasons", TranscodeReasons);
+            writer.WriteEnumValue<global::Jellyfin.Sdk.Generated.Models.TranscodingInfo_TranscodeReasons>("TranscodeReasons", TranscodeReasons);
             writer.WriteStringValue("VideoCodec", VideoCodec);
             writer.WriteIntValue("Width", Width);
         }

@@ -21,7 +21,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string AspectRatio { get; set; }
 #endif
-        /// <summary>An enum representing formats of spatial audio.</summary>
+        /// <summary>Gets the audio spatial format.</summary>
         public global::Jellyfin.Sdk.Generated.Models.MediaStream_AudioSpatialFormat? AudioSpatialFormat { get; private set; }
         /// <summary>Gets or sets the average frame rate.</summary>
         public float? AverageFrameRate { get; set; }
@@ -283,9 +283,9 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string VideoDoViTitle { get; private set; }
 #endif
-        /// <summary>An enum representing video ranges.</summary>
+        /// <summary>Gets the video range.</summary>
         public global::Jellyfin.Sdk.Generated.Models.MediaStream_VideoRange? VideoRange { get; private set; }
-        /// <summary>An enum representing types of video ranges.</summary>
+        /// <summary>Gets the video range type.</summary>
         public global::Jellyfin.Sdk.Generated.Models.MediaStream_VideoRangeType? VideoRangeType { get; private set; }
         /// <summary>Gets or sets the width.</summary>
         public int? Width { get; set; }

@@ -89,14 +89,14 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Lyrics
         /// <exception cref="global::Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Jellyfin.Sdk.Generated.Models.LyricDto?> PostAsync(string body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Audio.Item.Lyrics.LyricsRequestBuilder.LyricsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.LyricDto?> PostAsync(Stream body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Audio.Item.Lyrics.LyricsRequestBuilder.LyricsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Jellyfin.Sdk.Generated.Models.LyricDto> PostAsync(string body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Audio.Item.Lyrics.LyricsRequestBuilder.LyricsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.LyricDto> PostAsync(Stream body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Audio.Item.Lyrics.LyricsRequestBuilder.LyricsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            if(string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -151,18 +151,18 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.Lyrics
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(string body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Audio.Item.Lyrics.LyricsRequestBuilder.LyricsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Stream body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Audio.Item.Lyrics.LyricsRequestBuilder.LyricsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(string body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Audio.Item.Lyrics.LyricsRequestBuilder.LyricsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Stream body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Audio.Item.Lyrics.LyricsRequestBuilder.LyricsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            if(string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
-            requestInfo.SetContentFromScalar(RequestAdapter, "text/plain", body);
+            requestInfo.SetStreamContent(body, "text/plain");
             return requestInfo;
         }
         /// <summary>
