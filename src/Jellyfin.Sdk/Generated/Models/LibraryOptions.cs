@@ -109,13 +109,13 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public List<string> LyricFetcherOrder { get; set; }
 #endif
-        /// <summary>The MediaSegmentProvideOrder property</summary>
+        /// <summary>The MediaSegmentProviderOrder property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaSegmentProvideOrder { get; set; }
+        public List<string>? MediaSegmentProviderOrder { get; set; }
 #nullable restore
 #else
-        public List<string> MediaSegmentProvideOrder { get; set; }
+        public List<string> MediaSegmentProviderOrder { get; set; }
 #endif
         /// <summary>Gets or sets the metadata country code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -241,7 +241,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "ExtractTrickplayImagesDuringLibraryScan", n => { ExtractTrickplayImagesDuringLibraryScan = n.GetBoolValue(); } },
                 { "LocalMetadataReaderOrder", n => { LocalMetadataReaderOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "LyricFetcherOrder", n => { LyricFetcherOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "MediaSegmentProvideOrder", n => { MediaSegmentProvideOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "MediaSegmentProviderOrder", n => { MediaSegmentProviderOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "MetadataCountryCode", n => { MetadataCountryCode = n.GetStringValue(); } },
                 { "MetadataSavers", n => { MetadataSavers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "PathInfos", n => { PathInfos = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.MediaPathInfo>(global::Jellyfin.Sdk.Generated.Models.MediaPathInfo.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -292,7 +292,7 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteBoolValue("ExtractTrickplayImagesDuringLibraryScan", ExtractTrickplayImagesDuringLibraryScan);
             writer.WriteCollectionOfPrimitiveValues<string>("LocalMetadataReaderOrder", LocalMetadataReaderOrder);
             writer.WriteCollectionOfPrimitiveValues<string>("LyricFetcherOrder", LyricFetcherOrder);
-            writer.WriteCollectionOfPrimitiveValues<string>("MediaSegmentProvideOrder", MediaSegmentProvideOrder);
+            writer.WriteCollectionOfPrimitiveValues<string>("MediaSegmentProviderOrder", MediaSegmentProviderOrder);
             writer.WriteStringValue("MetadataCountryCode", MetadataCountryCode);
             writer.WriteCollectionOfPrimitiveValues<string>("MetadataSavers", MetadataSavers);
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.MediaPathInfo>("PathInfos", PathInfos);

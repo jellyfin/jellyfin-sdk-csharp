@@ -375,7 +375,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public List<global::Jellyfin.Sdk.Generated.Models.MediaStream> MediaStreams { get; set; }
 #endif
-        /// <summary>Media types.</summary>
+        /// <summary>Gets or sets the type of the media.</summary>
         public global::Jellyfin.Sdk.Generated.Models.BaseItemDto_MediaType? MediaType { get; set; }
         /// <summary>Gets or sets the movie count.</summary>
         public int? MovieCount { get; set; }
@@ -458,13 +458,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <summary>Gets or sets whether the item has a logo, this will hold the Id of the Parent that has one.</summary>
         public Guid? ParentLogoItemId { get; set; }
         /// <summary>Gets or sets the parent primary image item identifier.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ParentPrimaryImageItemId { get; set; }
-#nullable restore
-#else
-        public string ParentPrimaryImageItemId { get; set; }
-#endif
+        public Guid? ParentPrimaryImageItemId { get; set; }
         /// <summary>Gets or sets the parent primary image tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -723,7 +717,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public global::Jellyfin.Sdk.Generated.Models.BaseItemDto_Trickplay Trickplay { get; set; }
 #endif
-        /// <summary>The base item kind.</summary>
+        /// <summary>Gets or sets the type.</summary>
         public global::Jellyfin.Sdk.Generated.Models.BaseItemDto_Type? Type { get; set; }
         /// <summary>Gets or sets the user data for this item based on the user it&apos;s being requested for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -739,6 +733,13 @@ namespace Jellyfin.Sdk.Generated.Models
         public global::Jellyfin.Sdk.Generated.Models.BaseItemDto_VideoType? VideoType { get; set; }
         /// <summary>The Width property</summary>
         public int? Width { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Models.BaseItemDto"/> and sets the default values.
+        /// </summary>
+        public BaseItemDto()
+        {
+            MediaType = global::Jellyfin.Sdk.Generated.Models.BaseItemDto_MediaType.Unknown;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -859,7 +860,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "ParentIndexNumber", n => { ParentIndexNumber = n.GetIntValue(); } },
                 { "ParentLogoImageTag", n => { ParentLogoImageTag = n.GetStringValue(); } },
                 { "ParentLogoItemId", n => { ParentLogoItemId = n.GetGuidValue(); } },
-                { "ParentPrimaryImageItemId", n => { ParentPrimaryImageItemId = n.GetStringValue(); } },
+                { "ParentPrimaryImageItemId", n => { ParentPrimaryImageItemId = n.GetGuidValue(); } },
                 { "ParentPrimaryImageTag", n => { ParentPrimaryImageTag = n.GetStringValue(); } },
                 { "ParentThumbImageTag", n => { ParentThumbImageTag = n.GetStringValue(); } },
                 { "ParentThumbItemId", n => { ParentThumbItemId = n.GetGuidValue(); } },
@@ -1021,7 +1022,7 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteIntValue("ParentIndexNumber", ParentIndexNumber);
             writer.WriteStringValue("ParentLogoImageTag", ParentLogoImageTag);
             writer.WriteGuidValue("ParentLogoItemId", ParentLogoItemId);
-            writer.WriteStringValue("ParentPrimaryImageItemId", ParentPrimaryImageItemId);
+            writer.WriteGuidValue("ParentPrimaryImageItemId", ParentPrimaryImageItemId);
             writer.WriteStringValue("ParentPrimaryImageTag", ParentPrimaryImageTag);
             writer.WriteStringValue("ParentThumbImageTag", ParentThumbImageTag);
             writer.WriteGuidValue("ParentThumbItemId", ParentThumbItemId);

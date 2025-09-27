@@ -3,29 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
-    /// <summary>Gets or sets the type of the media.</summary>
+    /// <summary>Gets or sets the type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum SearchHint_MediaType
+    public enum TaskTriggerInfo_Type
     {
-        [EnumMember(Value = "Unknown")]
+        [EnumMember(Value = "DailyTrigger")]
         #pragma warning disable CS1591
-        Unknown,
+        DailyTrigger,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Video")]
+        [EnumMember(Value = "WeeklyTrigger")]
         #pragma warning disable CS1591
-        Video,
+        WeeklyTrigger,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Audio")]
+        [EnumMember(Value = "IntervalTrigger")]
         #pragma warning disable CS1591
-        Audio,
+        IntervalTrigger,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Photo")]
+        [EnumMember(Value = "StartupTrigger")]
         #pragma warning disable CS1591
-        Photo,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Book")]
-        #pragma warning disable CS1591
-        Book,
+        StartupTrigger,
         #pragma warning restore CS1591
     }
 }

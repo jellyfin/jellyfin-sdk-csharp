@@ -21,6 +21,14 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Gets or sets the rating score.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Jellyfin.Sdk.Generated.Models.ParentalRatingScore? RatingScore { get; set; }
+#nullable restore
+#else
+        public global::Jellyfin.Sdk.Generated.Models.ParentalRatingScore RatingScore { get; set; }
+#endif
         /// <summary>Gets or sets the value.</summary>
         public int? Value { get; set; }
         /// <summary>
@@ -42,6 +50,7 @@ namespace Jellyfin.Sdk.Generated.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "Name", n => { Name = n.GetStringValue(); } },
+                { "RatingScore", n => { RatingScore = n.GetObjectValue<global::Jellyfin.Sdk.Generated.Models.ParentalRatingScore>(global::Jellyfin.Sdk.Generated.Models.ParentalRatingScore.CreateFromDiscriminatorValue); } },
                 { "Value", n => { Value = n.GetIntValue(); } },
             };
         }
@@ -53,6 +62,7 @@ namespace Jellyfin.Sdk.Generated.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Name", Name);
+            writer.WriteObjectValue<global::Jellyfin.Sdk.Generated.Models.ParentalRatingScore>("RatingScore", RatingScore);
             writer.WriteIntValue("Value", Value);
         }
     }

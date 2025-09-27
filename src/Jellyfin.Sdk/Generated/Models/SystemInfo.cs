@@ -14,6 +14,7 @@ namespace Jellyfin.Sdk.Generated.Models
     public partial class SystemInfo : IParsable
     {
         /// <summary>Gets or sets the cache path.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CachePath { get; set; }
@@ -66,6 +67,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public string Id { get; set; }
 #endif
         /// <summary>Gets or sets the internal metadata path.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InternalMetadataPath { get; set; }
@@ -76,6 +78,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <summary>The IsShuttingDown property</summary>
         public bool? IsShuttingDown { get; set; }
         /// <summary>Gets or sets the items by name path.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemsByNamePath { get; set; }
@@ -92,6 +95,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public string LocalAddress { get; set; }
 #endif
         /// <summary>Gets or sets the log path.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogPath { get; set; }
@@ -134,6 +138,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public string ProductName { get; set; }
 #endif
         /// <summary>Gets or sets the program data path.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProgramDataPath { get; set; }
@@ -163,6 +168,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public string SystemArchitecture { get; set; }
 #endif
         /// <summary>Gets or sets the transcode path.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TranscodingTempPath { get; set; }
@@ -179,6 +185,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public string Version { get; set; }
 #endif
         /// <summary>Gets or sets the web UI resources path.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebPath { get; set; }

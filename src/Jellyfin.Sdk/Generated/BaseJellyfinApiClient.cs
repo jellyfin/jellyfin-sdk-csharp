@@ -4,6 +4,7 @@ using Jellyfin.Sdk.Generated.Albums;
 using Jellyfin.Sdk.Generated.Artists;
 using Jellyfin.Sdk.Generated.Audio;
 using Jellyfin.Sdk.Generated.Auth;
+using Jellyfin.Sdk.Generated.Backup;
 using Jellyfin.Sdk.Generated.Branding;
 using Jellyfin.Sdk.Generated.Channels;
 using Jellyfin.Sdk.Generated.ClientLog;
@@ -89,6 +90,11 @@ namespace Jellyfin.Sdk.Generated
         public global::Jellyfin.Sdk.Generated.Auth.AuthRequestBuilder Auth
         {
             get => new global::Jellyfin.Sdk.Generated.Auth.AuthRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The Backup property</summary>
+        public global::Jellyfin.Sdk.Generated.Backup.BackupRequestBuilder Backup
+        {
+            get => new global::Jellyfin.Sdk.Generated.Backup.BackupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Branding property</summary>
         public global::Jellyfin.Sdk.Generated.Branding.BrandingRequestBuilder Branding

@@ -283,7 +283,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer
             /// <summary>Optional. Whether to require avc.</summary>
             [QueryParameter("requireAvc")]
             public bool? RequireAvc { get; set; }
-            /// <summary>Optional. Whether to require a non anamporphic stream.</summary>
+            /// <summary>Optional. Whether to require a non anamorphic stream.</summary>
             [QueryParameter("requireNonAnamorphic")]
             public bool? RequireNonAnamorphic { get; set; }
             /// <summary>The segment container.</summary>
@@ -540,7 +540,7 @@ namespace Jellyfin.Sdk.Generated.Audio.Item.StreamWithContainer
             /// <summary>Optional. Whether to require avc.</summary>
             [QueryParameter("requireAvc")]
             public bool? RequireAvc { get; set; }
-            /// <summary>Optional. Whether to require a non anamporphic stream.</summary>
+            /// <summary>Optional. Whether to require a non anamorphic stream.</summary>
             [QueryParameter("requireNonAnamorphic")]
             public bool? RequireNonAnamorphic { get; set; }
             /// <summary>The segment container.</summary>

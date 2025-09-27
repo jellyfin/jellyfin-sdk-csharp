@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Jellyfin.Sdk.Generated.Models;
 using Jellyfin.Sdk.Generated.System.Info.Public;
+using Jellyfin.Sdk.Generated.System.Info.Storage;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -22,6 +23,11 @@ namespace Jellyfin.Sdk.Generated.System.Info
         public global::Jellyfin.Sdk.Generated.System.Info.Public.PublicRequestBuilder Public
         {
             get => new global::Jellyfin.Sdk.Generated.System.Info.Public.PublicRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The Storage property</summary>
+        public global::Jellyfin.Sdk.Generated.System.Info.Storage.StorageRequestBuilder Storage
+        {
+            get => new global::Jellyfin.Sdk.Generated.System.Info.Storage.StorageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.System.Info.InfoRequestBuilder"/> and sets the default values.

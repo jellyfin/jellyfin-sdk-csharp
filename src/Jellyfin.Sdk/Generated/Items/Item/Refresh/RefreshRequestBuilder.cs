@@ -22,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Refresh
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RefreshRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Refresh{?imageRefreshMode*,metadataRefreshMode*,replaceAllImages*,replaceAllMetadata*}", pathParameters)
+        public RefreshRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Refresh{?imageRefreshMode*,metadataRefreshMode*,regenerateTrickplay*,replaceAllImages*,replaceAllMetadata*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Refresh
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RefreshRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Refresh{?imageRefreshMode*,metadataRefreshMode*,replaceAllImages*,replaceAllMetadata*}", rawUrl)
+        public RefreshRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Refresh{?imageRefreshMode*,metadataRefreshMode*,regenerateTrickplay*,replaceAllImages*,replaceAllMetadata*}", rawUrl)
         {
         }
         /// <summary>
@@ -95,6 +95,9 @@ namespace Jellyfin.Sdk.Generated.Items.Item.Refresh
             /// <summary>(Optional) Specifies the metadata refresh mode.</summary>
             [QueryParameter("metadataRefreshMode")]
             public global::Jellyfin.Sdk.Generated.Items.Item.Refresh.MetadataRefreshMode? MetadataRefreshMode { get; set; }
+            /// <summary>(Optional) Determines if trickplay images should be replaced. Only applicable if mode is FullRefresh.</summary>
+            [QueryParameter("regenerateTrickplay")]
+            public bool? RegenerateTrickplay { get; set; }
             /// <summary>(Optional) Determines if images should be replaced. Only applicable if mode is FullRefresh.</summary>
             [QueryParameter("replaceAllImages")]
             public bool? ReplaceAllImages { get; set; }

@@ -8,7 +8,7 @@ using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
     /// <summary>
-    /// Plabyback info dto.
+    /// Playback info dto.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PlaybackInfoDto : IParsable
@@ -23,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public int? AudioStreamIndex { get; set; }
         /// <summary>Gets or sets a value indicating whether to auto open the live stream.</summary>
         public bool? AutoOpenLiveStream { get; set; }
-        /// <summary>Gets or sets the device profile.</summary>
+        /// <summary>A MediaBrowser.Model.Dlna.DeviceProfile represents a set of metadata which determines which content a certain device is able to play.&lt;br /&gt;Specifically, it defines the supported &lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.ContainerProfiles&quot;&gt;containers&lt;/see&gt; and&lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.CodecProfiles&quot;&gt;codecs&lt;/see&gt; (video and/or audio, including codec profiles and levels)the device is able to direct play (without transcoding or remuxing),as well as which &lt;see cref=&quot;P:MediaBrowser.Model.Dlna.DeviceProfile.TranscodingProfiles&quot;&gt;containers/codecs to transcode to&lt;/see&gt; in case it isn&apos;t.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Jellyfin.Sdk.Generated.Models.DeviceProfile? DeviceProfile { get; set; }

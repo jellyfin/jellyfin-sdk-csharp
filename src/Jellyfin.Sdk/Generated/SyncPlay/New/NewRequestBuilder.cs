@@ -36,21 +36,22 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.New
         /// <summary>
         /// Create a new SyncPlay group.
         /// </summary>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.GroupInfoDto"/></returns>
         /// <param name="body">Class NewGroupRequestDto.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(global::Jellyfin.Sdk.Generated.Models.NewGroupRequestDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.GroupInfoDto?> PostAsync(global::Jellyfin.Sdk.Generated.Models.NewGroupRequestDto body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(global::Jellyfin.Sdk.Generated.Models.NewGroupRequestDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.GroupInfoDto> PostAsync(global::Jellyfin.Sdk.Generated.Models.NewGroupRequestDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.GroupInfoDto>(requestInfo, global::Jellyfin.Sdk.Generated.Models.GroupInfoDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new SyncPlay group.
@@ -70,6 +71,7 @@ namespace Jellyfin.Sdk.Generated.SyncPlay.New
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

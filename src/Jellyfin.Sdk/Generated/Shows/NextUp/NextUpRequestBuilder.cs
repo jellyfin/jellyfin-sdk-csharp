@@ -86,6 +86,7 @@ namespace Jellyfin.Sdk.Generated.Shows.NextUp
         public partial class NextUpRequestBuilderGetQueryParameters 
         {
             /// <summary>Whether to disable sending the first episode in a series as next up.</summary>
+            [Obsolete("")]
             [QueryParameter("disableFirstEpisode")]
             public bool? DisableFirstEpisode { get; set; }
             /// <summary>Optional. Include image information in output.</summary>

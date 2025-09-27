@@ -8,38 +8,38 @@ using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
     /// <summary>
-    /// Lyric model.
+    /// Contains informations about a libraries storage informations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LyricLine : IParsable
+    public partial class LibraryStorageDto : IParsable
     {
-        /// <summary>Gets the time-aligned cues for the song&apos;s lyrics.</summary>
+        /// <summary>Gets or sets the storage informations about the folders used in a library.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Jellyfin.Sdk.Generated.Models.LyricLineCue>? Cues { get; set; }
+        public List<global::Jellyfin.Sdk.Generated.Models.FolderStorageDto>? Folders { get; set; }
 #nullable restore
 #else
-        public List<global::Jellyfin.Sdk.Generated.Models.LyricLineCue> Cues { get; set; }
+        public List<global::Jellyfin.Sdk.Generated.Models.FolderStorageDto> Folders { get; set; }
 #endif
-        /// <summary>Gets the start time in ticks.</summary>
-        public long? Start { get; set; }
-        /// <summary>Gets the text of this lyric line.</summary>
+        /// <summary>Gets or sets the Library Id.</summary>
+        public Guid? Id { get; set; }
+        /// <summary>Gets or sets the name of the library.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string Text { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.LyricLine"/></returns>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.LibraryStorageDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Jellyfin.Sdk.Generated.Models.LyricLine CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Jellyfin.Sdk.Generated.Models.LibraryStorageDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Jellyfin.Sdk.Generated.Models.LyricLine();
+            return new global::Jellyfin.Sdk.Generated.Models.LibraryStorageDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,9 +49,9 @@ namespace Jellyfin.Sdk.Generated.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Cues", n => { Cues = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LyricLineCue>(global::Jellyfin.Sdk.Generated.Models.LyricLineCue.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "Start", n => { Start = n.GetLongValue(); } },
-                { "Text", n => { Text = n.GetStringValue(); } },
+                { "Folders", n => { Folders = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.FolderStorageDto>(global::Jellyfin.Sdk.Generated.Models.FolderStorageDto.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "Id", n => { Id = n.GetGuidValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,9 +61,9 @@ namespace Jellyfin.Sdk.Generated.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LyricLineCue>("Cues", Cues);
-            writer.WriteLongValue("Start", Start);
-            writer.WriteStringValue("Text", Text);
+            writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.FolderStorageDto>("Folders", Folders);
+            writer.WriteGuidValue("Id", Id);
+            writer.WriteStringValue("Name", Name);
         }
     }
 }

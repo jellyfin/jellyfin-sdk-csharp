@@ -127,13 +127,5 @@ namespace Jellyfin.Sdk.Generated.Models
         #pragma warning disable CS1591
         IndexNumber,
         #pragma warning restore CS1591
-        [EnumMember(Value = "SimilarityScore")]
-        #pragma warning disable CS1591
-        SimilarityScore,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SearchScore")]
-        #pragma warning disable CS1591
-        SearchScore,
-        #pragma warning restore CS1591
     }
 }

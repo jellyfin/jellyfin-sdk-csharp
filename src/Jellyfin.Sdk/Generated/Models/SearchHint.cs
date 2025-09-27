@@ -86,7 +86,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string MatchedTerm { get; set; }
 #endif
-        /// <summary>Media types.</summary>
+        /// <summary>Gets or sets the type of the media.</summary>
         public global::Jellyfin.Sdk.Generated.Models.SearchHint_MediaType? MediaType { get; set; }
         /// <summary>Gets or sets the name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,8 +148,15 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string ThumbImageTag { get; set; }
 #endif
-        /// <summary>The base item kind.</summary>
+        /// <summary>Gets or sets the type.</summary>
         public global::Jellyfin.Sdk.Generated.Models.SearchHint_Type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Models.SearchHint"/> and sets the default values.
+        /// </summary>
+        public SearchHint()
+        {
+            MediaType = global::Jellyfin.Sdk.Generated.Models.SearchHint_MediaType.Unknown;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
-    /// <summary>An enum representing types of video ranges.</summary>
+    /// <summary>Gets the video range type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MediaStream_VideoRangeType
     {
@@ -38,6 +38,22 @@ namespace Jellyfin.Sdk.Generated.Models
         [EnumMember(Value = "DOVIWithSDR")]
         #pragma warning disable CS1591
         DOVIWithSDR,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DOVIWithEL")]
+        #pragma warning disable CS1591
+        DOVIWithEL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DOVIWithHDR10Plus")]
+        #pragma warning disable CS1591
+        DOVIWithHDR10Plus,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DOVIWithELHDR10Plus")]
+        #pragma warning disable CS1591
+        DOVIWithELHDR10Plus,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DOVIInvalid")]
+        #pragma warning disable CS1591
+        DOVIInvalid,
         #pragma warning restore CS1591
         [EnumMember(Value = "HDR10Plus")]
         #pragma warning disable CS1591

@@ -22,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs.Recommended
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecommendedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs/Recommended{?enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,limit*,userId*}", pathParameters)
+        public RecommendedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs/Recommended{?enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,limit*,startIndex*,userId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs.Recommended
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecommendedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs/Recommended{?enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,limit*,userId*}", rawUrl)
+        public RecommendedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/LiveTv/Programs/Recommended{?enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,fields*,genreIds*,hasAired*,imageTypeLimit*,isAiring*,isKids*,isMovie*,isNews*,isSeries*,isSports*,limit*,startIndex*,userId*}", rawUrl)
         {
         }
         /// <summary>
@@ -151,6 +151,9 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs.Recommended
             /// <summary>Optional. The maximum number of records to return.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Optional. The record index to start at. All items with a lower index will be dropped from the results.</summary>
+            [QueryParameter("startIndex")]
+            public int? StartIndex { get; set; }
             /// <summary>Optional. filter by user id.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

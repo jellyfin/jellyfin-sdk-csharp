@@ -67,10 +67,6 @@ namespace Jellyfin.Sdk.Generated.Models
         #pragma warning disable CS1591
         Genres,
         #pragma warning restore CS1591
-        [EnumMember(Value = "HomePageUrl")]
-        #pragma warning disable CS1591
-        HomePageUrl,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ItemCounts")]
         #pragma warning disable CS1591
         ItemCounts,
@@ -127,14 +123,6 @@ namespace Jellyfin.Sdk.Generated.Models
         #pragma warning disable CS1591
         Settings,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ScreenshotImageTags")]
-        #pragma warning disable CS1591
-        ScreenshotImageTags,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SeriesPrimaryImage")]
-        #pragma warning disable CS1591
-        SeriesPrimaryImage,
-        #pragma warning restore CS1591
         [EnumMember(Value = "SeriesStudio")]
         #pragma warning disable CS1591
         SeriesStudio,
@@ -170,38 +158,6 @@ namespace Jellyfin.Sdk.Generated.Models
         [EnumMember(Value = "SeasonUserData")]
         #pragma warning disable CS1591
         SeasonUserData,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ServiceName")]
-        #pragma warning disable CS1591
-        ServiceName,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ThemeSongIds")]
-        #pragma warning disable CS1591
-        ThemeSongIds,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ThemeVideoIds")]
-        #pragma warning disable CS1591
-        ThemeVideoIds,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ExternalEtag")]
-        #pragma warning disable CS1591
-        ExternalEtag,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "PresentationUniqueKey")]
-        #pragma warning disable CS1591
-        PresentationUniqueKey,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "InheritedParentalRatingValue")]
-        #pragma warning disable CS1591
-        InheritedParentalRatingValue,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ExternalSeriesId")]
-        #pragma warning disable CS1591
-        ExternalSeriesId,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SeriesPresentationUniqueKey")]
-        #pragma warning disable CS1591
-        SeriesPresentationUniqueKey,
         #pragma warning restore CS1591
         [EnumMember(Value = "DateLastRefreshed")]
         #pragma warning disable CS1591

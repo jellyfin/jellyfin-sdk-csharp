@@ -18,6 +18,7 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item
     public partial class WithItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Progress property</summary>
+        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder Progress
         {
             get => new global::Jellyfin.Sdk.Generated.PlayingItems.Item.Progress.ProgressRequestBuilder(PathParameters, RequestAdapter);
@@ -43,6 +44,7 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -60,6 +62,7 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -77,6 +80,7 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
@@ -95,6 +99,7 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder.WithItemItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
@@ -113,6 +118,7 @@ namespace Jellyfin.Sdk.Generated.PlayingItems.Item
         /// </summary>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder(rawUrl, RequestAdapter);

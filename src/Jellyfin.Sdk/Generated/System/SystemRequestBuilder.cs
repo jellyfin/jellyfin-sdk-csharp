@@ -8,7 +8,6 @@ using Jellyfin.Sdk.Generated.System.Logs;
 using Jellyfin.Sdk.Generated.System.Ping;
 using Jellyfin.Sdk.Generated.System.Restart;
 using Jellyfin.Sdk.Generated.System.Shutdown;
-using Jellyfin.Sdk.Generated.System.WakeOnLanInfo;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -62,11 +61,6 @@ namespace Jellyfin.Sdk.Generated.System
         public global::Jellyfin.Sdk.Generated.System.Shutdown.ShutdownRequestBuilder Shutdown
         {
             get => new global::Jellyfin.Sdk.Generated.System.Shutdown.ShutdownRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The WakeOnLanInfo property</summary>
-        public global::Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder WakeOnLanInfo
-        {
-            get => new global::Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.System.SystemRequestBuilder"/> and sets the default values.

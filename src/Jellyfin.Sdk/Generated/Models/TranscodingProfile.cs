@@ -8,7 +8,7 @@ using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
     /// <summary>
-    /// A class for transcoding profile information.
+    /// A class for transcoding profile information.Note for client developers: Conditions defined in MediaBrowser.Model.Dlna.CodecProfile has higher priority and can override values defined here.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TranscodingProfile : IParsable
@@ -61,7 +61,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #endif
         /// <summary>Gets or sets the minimum amount of segments.</summary>
         public int? MinSegments { get; set; }
-        /// <summary>Media streaming protocol.Lowercase for backwards compatibility.</summary>
+        /// <summary>Gets or sets the protocol.</summary>
         public global::Jellyfin.Sdk.Generated.Models.TranscodingProfile_Protocol? Protocol { get; set; }
         /// <summary>Gets or sets the segment length.</summary>
         public int? SegmentLength { get; set; }

@@ -50,6 +50,8 @@ namespace Jellyfin.Sdk.Generated.Models
         public bool? IgnoreDts { get; set; }
         /// <summary>The ImportFavoritesOnly property</summary>
         public bool? ImportFavoritesOnly { get; set; }
+        /// <summary>The ReadAtNativeFramerate property</summary>
+        public bool? ReadAtNativeFramerate { get; set; }
         /// <summary>The Source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +114,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "Id", n => { Id = n.GetStringValue(); } },
                 { "IgnoreDts", n => { IgnoreDts = n.GetBoolValue(); } },
                 { "ImportFavoritesOnly", n => { ImportFavoritesOnly = n.GetBoolValue(); } },
+                { "ReadAtNativeFramerate", n => { ReadAtNativeFramerate = n.GetBoolValue(); } },
                 { "Source", n => { Source = n.GetStringValue(); } },
                 { "TunerCount", n => { TunerCount = n.GetIntValue(); } },
                 { "Type", n => { Type = n.GetStringValue(); } },
@@ -136,6 +139,7 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteStringValue("Id", Id);
             writer.WriteBoolValue("IgnoreDts", IgnoreDts);
             writer.WriteBoolValue("ImportFavoritesOnly", ImportFavoritesOnly);
+            writer.WriteBoolValue("ReadAtNativeFramerate", ReadAtNativeFramerate);
             writer.WriteStringValue("Source", Source);
             writer.WriteIntValue("TunerCount", TunerCount);
             writer.WriteStringValue("Type", Type);

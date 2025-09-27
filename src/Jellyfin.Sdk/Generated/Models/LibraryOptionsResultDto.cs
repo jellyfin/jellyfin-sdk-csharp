@@ -21,6 +21,14 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public List<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto> LyricFetchers { get; set; }
 #endif
+        /// <summary>Gets or sets the list of MediaSegment Providers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>? MediaSegmentProviders { get; set; }
+#nullable restore
+#else
+        public List<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto> MediaSegmentProviders { get; set; }
+#endif
         /// <summary>Gets or sets the metadata readers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +80,7 @@ namespace Jellyfin.Sdk.Generated.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "LyricFetchers", n => { LyricFetchers = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>(global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "MediaSegmentProviders", n => { MediaSegmentProviders = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>(global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "MetadataReaders", n => { MetadataReaders = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>(global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "MetadataSavers", n => { MetadataSavers = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>(global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "SubtitleFetchers", n => { SubtitleFetchers = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>(global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -86,6 +95,7 @@ namespace Jellyfin.Sdk.Generated.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>("LyricFetchers", LyricFetchers);
+            writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>("MediaSegmentProviders", MediaSegmentProviders);
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>("MetadataReaders", MetadataReaders);
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>("MetadataSavers", MetadataSavers);
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>("SubtitleFetchers", SubtitleFetchers);
