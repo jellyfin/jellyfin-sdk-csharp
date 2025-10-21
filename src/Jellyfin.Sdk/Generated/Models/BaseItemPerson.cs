@@ -50,6 +50,13 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <summary>The person kind.</summary>
         public global::Jellyfin.Sdk.Generated.Models.BaseItemPerson_Type? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Models.BaseItemPerson"/> and sets the default values.
+        /// </summary>
+        public BaseItemPerson()
+        {
+            Type = global::Jellyfin.Sdk.Generated.Models.BaseItemPerson_Type.Unknown;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.BaseItemPerson"/></returns>

@@ -18,6 +18,7 @@ namespace Jellyfin.Sdk.Generated.PlayingItems
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.PlayingItems.item collection</summary>
         /// <param name="position">Item id.</param>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.PlayingItems.Item.WithItemItemRequestBuilder this[Guid position]
         {
             get

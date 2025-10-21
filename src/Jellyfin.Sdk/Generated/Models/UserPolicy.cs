@@ -158,6 +158,8 @@ namespace Jellyfin.Sdk.Generated.Models
         public int? MaxActiveSessions { get; set; }
         /// <summary>Gets or sets the max parental rating.</summary>
         public int? MaxParentalRating { get; set; }
+        /// <summary>The MaxParentalSubRating property</summary>
+        public int? MaxParentalSubRating { get; set; }
         /// <summary>The PasswordResetProviderId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -228,6 +230,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "LoginAttemptsBeforeLockout", n => { LoginAttemptsBeforeLockout = n.GetIntValue(); } },
                 { "MaxActiveSessions", n => { MaxActiveSessions = n.GetIntValue(); } },
                 { "MaxParentalRating", n => { MaxParentalRating = n.GetIntValue(); } },
+                { "MaxParentalSubRating", n => { MaxParentalSubRating = n.GetIntValue(); } },
                 { "PasswordResetProviderId", n => { PasswordResetProviderId = n.GetStringValue(); } },
                 { "RemoteClientBitrateLimit", n => { RemoteClientBitrateLimit = n.GetIntValue(); } },
                 { "SyncPlayAccess", n => { SyncPlayAccess = n.GetEnumValue<global::Jellyfin.Sdk.Generated.Models.UserPolicy_SyncPlayAccess>(); } },
@@ -280,6 +283,7 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteIntValue("LoginAttemptsBeforeLockout", LoginAttemptsBeforeLockout);
             writer.WriteIntValue("MaxActiveSessions", MaxActiveSessions);
             writer.WriteIntValue("MaxParentalRating", MaxParentalRating);
+            writer.WriteIntValue("MaxParentalSubRating", MaxParentalSubRating);
             writer.WriteStringValue("PasswordResetProviderId", PasswordResetProviderId);
             writer.WriteIntValue("RemoteClientBitrateLimit", RemoteClientBitrateLimit);
             writer.WriteEnumValue<global::Jellyfin.Sdk.Generated.Models.UserPolicy_SyncPlayAccess>("SyncPlayAccess", SyncPlayAccess);

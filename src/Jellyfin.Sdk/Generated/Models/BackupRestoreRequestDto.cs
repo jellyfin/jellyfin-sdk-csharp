@@ -8,22 +8,28 @@ using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
     /// <summary>
-    /// Class SetShuffleModeRequestDto.
+    /// Defines properties used to start a restore process.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SetShuffleModeRequestDto : IParsable
+    public partial class BackupRestoreRequestDto : IParsable
     {
-        /// <summary>Enum GroupShuffleMode.</summary>
-        public global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto_Mode? Mode { get; set; }
+        /// <summary>Gets or Sets the name of the backup archive to restore from. Must be present in MediaBrowser.Common.Configuration.IApplicationPaths.BackupPath.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ArchiveFileName { get; set; }
+#nullable restore
+#else
+        public string ArchiveFileName { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto"/></returns>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.BackupRestoreRequestDto"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Jellyfin.Sdk.Generated.Models.BackupRestoreRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto();
+            return new global::Jellyfin.Sdk.Generated.Models.BackupRestoreRequestDto();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -33,7 +39,7 @@ namespace Jellyfin.Sdk.Generated.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Mode", n => { Mode = n.GetEnumValue<global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto_Mode>(); } },
+                { "ArchiveFileName", n => { ArchiveFileName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -43,7 +49,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto_Mode>("Mode", Mode);
+            writer.WriteStringValue("ArchiveFileName", ArchiveFileName);
         }
     }
 }

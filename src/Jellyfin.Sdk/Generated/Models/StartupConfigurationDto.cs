@@ -29,6 +29,14 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string PreferredMetadataLanguage { get; set; }
 #endif
+        /// <summary>Gets or sets the server name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServerName { get; set; }
+#nullable restore
+#else
+        public string ServerName { get; set; }
+#endif
         /// <summary>Gets or sets UI language culture.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +65,7 @@ namespace Jellyfin.Sdk.Generated.Models
             {
                 { "MetadataCountryCode", n => { MetadataCountryCode = n.GetStringValue(); } },
                 { "PreferredMetadataLanguage", n => { PreferredMetadataLanguage = n.GetStringValue(); } },
+                { "ServerName", n => { ServerName = n.GetStringValue(); } },
                 { "UICulture", n => { UICulture = n.GetStringValue(); } },
             };
         }
@@ -69,6 +78,7 @@ namespace Jellyfin.Sdk.Generated.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("MetadataCountryCode", MetadataCountryCode);
             writer.WriteStringValue("PreferredMetadataLanguage", PreferredMetadataLanguage);
+            writer.WriteStringValue("ServerName", ServerName);
             writer.WriteStringValue("UICulture", UICulture);
         }
     }

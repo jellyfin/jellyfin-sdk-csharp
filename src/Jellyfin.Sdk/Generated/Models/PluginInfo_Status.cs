@@ -19,6 +19,10 @@ namespace Jellyfin.Sdk.Generated.Models
         #pragma warning disable CS1591
         Deleted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "Superseded")]
+        #pragma warning disable CS1591
+        Superseded,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Superceded")]
         #pragma warning disable CS1591
         Superceded,

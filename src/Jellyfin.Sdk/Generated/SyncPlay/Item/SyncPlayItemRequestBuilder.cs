@@ -9,56 +9,58 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.System.WakeOnLanInfo
+namespace Jellyfin.Sdk.Generated.SyncPlay.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \System\WakeOnLanInfo
+    /// Builds and executes requests for operations under \SyncPlay\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WakeOnLanInfoRequestBuilder : BaseRequestBuilder
+    public partial class SyncPlayItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.SyncPlay.Item.SyncPlayItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WakeOnLanInfoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/WakeOnLanInfo", pathParameters)
+        public SyncPlayItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay/{id}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.SyncPlay.Item.SyncPlayItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WakeOnLanInfoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/WakeOnLanInfo", rawUrl)
+        public SyncPlayItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/SyncPlay/{id}", rawUrl)
         {
         }
         /// <summary>
-        /// Gets wake on lan information.
+        /// Gets a SyncPlay group by id.
         /// </summary>
-        /// <returns>A List&lt;global::Jellyfin.Sdk.Generated.Models.WakeOnLanInfo&gt;</returns>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.GroupInfoDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
+        /// <exception cref="global::Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Jellyfin.Sdk.Generated.Models.WakeOnLanInfo>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.GroupInfoDto?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Jellyfin.Sdk.Generated.Models.WakeOnLanInfo>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.GroupInfoDto> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Jellyfin.Sdk.Generated.Models.WakeOnLanInfo>(requestInfo, global::Jellyfin.Sdk.Generated.Models.WakeOnLanInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "404", global::Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.GroupInfoDto>(requestInfo, global::Jellyfin.Sdk.Generated.Models.GroupInfoDto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets wake on lan information.
+        /// Gets a SyncPlay group by id.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -70,18 +72,17 @@ namespace Jellyfin.Sdk.Generated.System.WakeOnLanInfo
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             return requestInfo;
         }
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.SyncPlay.Item.SyncPlayItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("")]
-        public global::Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder WithUrl(string rawUrl)
+        public global::Jellyfin.Sdk.Generated.SyncPlay.Item.SyncPlayItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Jellyfin.Sdk.Generated.System.WakeOnLanInfo.WakeOnLanInfoRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Jellyfin.Sdk.Generated.SyncPlay.Item.SyncPlayItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

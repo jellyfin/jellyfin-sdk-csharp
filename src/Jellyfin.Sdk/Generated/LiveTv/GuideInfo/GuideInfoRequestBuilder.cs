@@ -34,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.GuideInfo
         {
         }
         /// <summary>
-        /// Get guid info.
+        /// Get guide info.
         /// </summary>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.GuideInfo"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.GuideInfo
             return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.GuideInfo>(requestInfo, global::Jellyfin.Sdk.Generated.Models.GuideInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get guid info.
+        /// Get guide info.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

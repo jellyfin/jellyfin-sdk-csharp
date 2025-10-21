@@ -135,6 +135,8 @@ namespace Jellyfin.Sdk.Generated.Models
         public int? DvVersionMinor { get; set; }
         /// <summary>Gets or sets the Dolby Vision el present flag.</summary>
         public int? ElPresentFlag { get; set; }
+        /// <summary>The Hdr10PlusPresentFlag property</summary>
+        public bool? Hdr10PlusPresentFlag { get; set; }
         /// <summary>Gets or sets the height.</summary>
         public int? Height { get; set; }
         /// <summary>Gets or sets the index.</summary>
@@ -295,6 +297,8 @@ namespace Jellyfin.Sdk.Generated.Models
         public MediaStream()
         {
             AudioSpatialFormat = global::Jellyfin.Sdk.Generated.Models.MediaStream_AudioSpatialFormat.None;
+            VideoRange = global::Jellyfin.Sdk.Generated.Models.MediaStream_VideoRange.Unknown;
+            VideoRangeType = global::Jellyfin.Sdk.Generated.Models.MediaStream_VideoRangeType.Unknown;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -339,6 +343,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "DvVersionMajor", n => { DvVersionMajor = n.GetIntValue(); } },
                 { "DvVersionMinor", n => { DvVersionMinor = n.GetIntValue(); } },
                 { "ElPresentFlag", n => { ElPresentFlag = n.GetIntValue(); } },
+                { "Hdr10PlusPresentFlag", n => { Hdr10PlusPresentFlag = n.GetBoolValue(); } },
                 { "Height", n => { Height = n.GetIntValue(); } },
                 { "Index", n => { Index = n.GetIntValue(); } },
                 { "IsAVC", n => { IsAVC = n.GetBoolValue(); } },
@@ -409,6 +414,7 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteIntValue("DvVersionMajor", DvVersionMajor);
             writer.WriteIntValue("DvVersionMinor", DvVersionMinor);
             writer.WriteIntValue("ElPresentFlag", ElPresentFlag);
+            writer.WriteBoolValue("Hdr10PlusPresentFlag", Hdr10PlusPresentFlag);
             writer.WriteIntValue("Height", Height);
             writer.WriteIntValue("Index", Index);
             writer.WriteBoolValue("IsAnamorphic", IsAnamorphic);

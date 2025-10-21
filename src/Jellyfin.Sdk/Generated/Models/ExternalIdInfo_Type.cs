@@ -59,5 +59,9 @@ namespace Jellyfin.Sdk.Generated.Models
         #pragma warning disable CS1591
         Book,
         #pragma warning restore CS1591
+        [EnumMember(Value = "Recording")]
+        #pragma warning disable CS1591
+        Recording,
+        #pragma warning restore CS1591
     }
 }

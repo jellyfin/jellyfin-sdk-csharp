@@ -22,13 +22,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <summary>Gets or sets the time of day.</summary>
         public long? TimeOfDayTicks { get; set; }
         /// <summary>Gets or sets the type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Jellyfin.Sdk.Generated.Models.TaskTriggerInfo_Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,7 +45,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "IntervalTicks", n => { IntervalTicks = n.GetLongValue(); } },
                 { "MaxRuntimeTicks", n => { MaxRuntimeTicks = n.GetLongValue(); } },
                 { "TimeOfDayTicks", n => { TimeOfDayTicks = n.GetLongValue(); } },
-                { "Type", n => { Type = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetEnumValue<global::Jellyfin.Sdk.Generated.Models.TaskTriggerInfo_Type>(); } },
             };
         }
         /// <summary>
@@ -65,7 +59,7 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteLongValue("IntervalTicks", IntervalTicks);
             writer.WriteLongValue("MaxRuntimeTicks", MaxRuntimeTicks);
             writer.WriteLongValue("TimeOfDayTicks", TimeOfDayTicks);
-            writer.WriteStringValue("Type", Type);
+            writer.WriteEnumValue<global::Jellyfin.Sdk.Generated.Models.TaskTriggerInfo_Type>("Type", Type);
         }
     }
 }

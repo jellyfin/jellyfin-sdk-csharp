@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
-    /// <summary>Gets or sets the mode in which to add the new items.</summary>
+    /// <summary>Enum GroupQueueMode.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum QueueRequestDto_Mode
     {

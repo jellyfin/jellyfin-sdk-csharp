@@ -124,13 +124,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public string ParentBackdropItemId { get; set; }
 #endif
         /// <summary>Gets or sets the parent primary image item identifier.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ParentPrimaryImageItemId { get; set; }
-#nullable restore
-#else
-        public string ParentPrimaryImageItemId { get; set; }
-#endif
+        public Guid? ParentPrimaryImageItemId { get; set; }
         /// <summary>Gets or sets the parent primary image tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -240,7 +234,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "Overview", n => { Overview = n.GetStringValue(); } },
                 { "ParentBackdropImageTags", n => { ParentBackdropImageTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ParentBackdropItemId", n => { ParentBackdropItemId = n.GetStringValue(); } },
-                { "ParentPrimaryImageItemId", n => { ParentPrimaryImageItemId = n.GetStringValue(); } },
+                { "ParentPrimaryImageItemId", n => { ParentPrimaryImageItemId = n.GetGuidValue(); } },
                 { "ParentPrimaryImageTag", n => { ParentPrimaryImageTag = n.GetStringValue(); } },
                 { "ParentThumbImageTag", n => { ParentThumbImageTag = n.GetStringValue(); } },
                 { "ParentThumbItemId", n => { ParentThumbItemId = n.GetStringValue(); } },
@@ -284,7 +278,7 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteStringValue("Overview", Overview);
             writer.WriteCollectionOfPrimitiveValues<string>("ParentBackdropImageTags", ParentBackdropImageTags);
             writer.WriteStringValue("ParentBackdropItemId", ParentBackdropItemId);
-            writer.WriteStringValue("ParentPrimaryImageItemId", ParentPrimaryImageItemId);
+            writer.WriteGuidValue("ParentPrimaryImageItemId", ParentPrimaryImageItemId);
             writer.WriteStringValue("ParentPrimaryImageTag", ParentPrimaryImageTag);
             writer.WriteStringValue("ParentThumbImageTag", ParentThumbImageTag);
             writer.WriteStringValue("ParentThumbItemId", ParentThumbItemId);

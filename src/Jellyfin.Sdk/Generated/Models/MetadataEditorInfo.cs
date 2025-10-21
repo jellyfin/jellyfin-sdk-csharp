@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
+    /// <summary>
+    /// A class representing metadata editor information.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class MetadataEditorInfo : IParsable
-    #pragma warning restore CS1591
     {
-        /// <summary>The ContentType property</summary>
+        /// <summary>Gets or sets the content type.</summary>
         public global::Jellyfin.Sdk.Generated.Models.MetadataEditorInfo_ContentType? ContentType { get; set; }
-        /// <summary>The ContentTypeOptions property</summary>
+        /// <summary>Gets or sets the content type options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Jellyfin.Sdk.Generated.Models.NameValuePair>? ContentTypeOptions { get; set; }
@@ -22,7 +23,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public List<global::Jellyfin.Sdk.Generated.Models.NameValuePair> ContentTypeOptions { get; set; }
 #endif
-        /// <summary>The Countries property</summary>
+        /// <summary>Gets or sets the countries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Jellyfin.Sdk.Generated.Models.CountryInfo>? Countries { get; set; }
@@ -30,7 +31,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public List<global::Jellyfin.Sdk.Generated.Models.CountryInfo> Countries { get; set; }
 #endif
-        /// <summary>The Cultures property</summary>
+        /// <summary>Gets or sets the cultures.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Jellyfin.Sdk.Generated.Models.CultureDto>? Cultures { get; set; }
@@ -38,7 +39,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public List<global::Jellyfin.Sdk.Generated.Models.CultureDto> Cultures { get; set; }
 #endif
-        /// <summary>The ExternalIdInfos property</summary>
+        /// <summary>Gets or sets the external id infos.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Jellyfin.Sdk.Generated.Models.ExternalIdInfo>? ExternalIdInfos { get; set; }
@@ -46,7 +47,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public List<global::Jellyfin.Sdk.Generated.Models.ExternalIdInfo> ExternalIdInfos { get; set; }
 #endif
-        /// <summary>The ParentalRatingOptions property</summary>
+        /// <summary>Gets or sets the parental rating options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Jellyfin.Sdk.Generated.Models.ParentalRating>? ParentalRatingOptions { get; set; }

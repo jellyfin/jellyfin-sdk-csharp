@@ -151,6 +151,13 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <summary>The base item kind.</summary>
         public global::Jellyfin.Sdk.Generated.Models.SearchHint_Type? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Models.SearchHint"/> and sets the default values.
+        /// </summary>
+        public SearchHint()
+        {
+            MediaType = global::Jellyfin.Sdk.Generated.Models.SearchHint_MediaType.Unknown;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.SearchHint"/></returns>

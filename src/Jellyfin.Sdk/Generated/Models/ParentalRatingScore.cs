@@ -8,30 +8,24 @@ using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
     /// <summary>
-    /// Provides the MAC address and port for wake-on-LAN functionality.
+    /// A class representing an parental rating score.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WakeOnLanInfo : IParsable
+    public partial class ParentalRatingScore : IParsable
     {
-        /// <summary>Gets the MAC address of the device.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MacAddress { get; set; }
-#nullable restore
-#else
-        public string MacAddress { get; set; }
-#endif
-        /// <summary>Gets or sets the wake-on-LAN port.</summary>
-        public int? Port { get; set; }
+        /// <summary>Gets or sets the score.</summary>
+        public int? Score { get; set; }
+        /// <summary>Gets or sets the sub score.</summary>
+        public int? SubScore { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.WakeOnLanInfo"/></returns>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.ParentalRatingScore"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Jellyfin.Sdk.Generated.Models.WakeOnLanInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Jellyfin.Sdk.Generated.Models.ParentalRatingScore CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Jellyfin.Sdk.Generated.Models.WakeOnLanInfo();
+            return new global::Jellyfin.Sdk.Generated.Models.ParentalRatingScore();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,8 +35,8 @@ namespace Jellyfin.Sdk.Generated.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "MacAddress", n => { MacAddress = n.GetStringValue(); } },
-                { "Port", n => { Port = n.GetIntValue(); } },
+                { "score", n => { Score = n.GetIntValue(); } },
+                { "subScore", n => { SubScore = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -52,8 +46,8 @@ namespace Jellyfin.Sdk.Generated.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("MacAddress", MacAddress);
-            writer.WriteIntValue("Port", Port);
+            writer.WriteIntValue("score", Score);
+            writer.WriteIntValue("subScore", SubScore);
         }
     }
 }

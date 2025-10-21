@@ -8,22 +8,28 @@ using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
     /// <summary>
-    /// Class SetShuffleModeRequestDto.
+    /// LyricLineCue model, holds information about the timing of words within a LyricLine.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SetShuffleModeRequestDto : IParsable
+    public partial class LyricLineCue : IParsable
     {
-        /// <summary>Enum GroupShuffleMode.</summary>
-        public global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto_Mode? Mode { get; set; }
+        /// <summary>Gets the end timestamp the lyric is synced to in ticks.</summary>
+        public long? End { get; set; }
+        /// <summary>Gets the end character index of the cue.</summary>
+        public int? EndPosition { get; set; }
+        /// <summary>Gets the start character index of the cue.</summary>
+        public int? Position { get; set; }
+        /// <summary>Gets the timestamp the lyric is synced to in ticks.</summary>
+        public long? Start { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto"/></returns>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.LyricLineCue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Jellyfin.Sdk.Generated.Models.LyricLineCue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto();
+            return new global::Jellyfin.Sdk.Generated.Models.LyricLineCue();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -33,7 +39,10 @@ namespace Jellyfin.Sdk.Generated.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Mode", n => { Mode = n.GetEnumValue<global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto_Mode>(); } },
+                { "End", n => { End = n.GetLongValue(); } },
+                { "EndPosition", n => { EndPosition = n.GetIntValue(); } },
+                { "Position", n => { Position = n.GetIntValue(); } },
+                { "Start", n => { Start = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -43,7 +52,10 @@ namespace Jellyfin.Sdk.Generated.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto_Mode>("Mode", Mode);
+            writer.WriteLongValue("End", End);
+            writer.WriteIntValue("EndPosition", EndPosition);
+            writer.WriteIntValue("Position", Position);
+            writer.WriteLongValue("Start", Start);
         }
     }
 }

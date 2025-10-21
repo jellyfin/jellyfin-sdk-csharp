@@ -31,15 +31,6 @@ namespace Jellyfin.Sdk.Generated.Models
 #endif
         /// <summary>Gets or sets the specific media type for this id. This is used to distinguish between the differentexternal id types for providers with multiple ids.A null value indicates there is no specific media type associated with the external id, or this is thedefault id for the external provider so there is no need to specify a type.</summary>
         public global::Jellyfin.Sdk.Generated.Models.ExternalIdInfo_Type? Type { get; set; }
-        /// <summary>Gets or sets the URL format string.</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UrlFormatString { get; set; }
-#nullable restore
-#else
-        public string UrlFormatString { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,7 +52,6 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "Key", n => { Key = n.GetStringValue(); } },
                 { "Name", n => { Name = n.GetStringValue(); } },
                 { "Type", n => { Type = n.GetEnumValue<global::Jellyfin.Sdk.Generated.Models.ExternalIdInfo_Type>(); } },
-                { "UrlFormatString", n => { UrlFormatString = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -74,7 +64,6 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteStringValue("Key", Key);
             writer.WriteStringValue("Name", Name);
             writer.WriteEnumValue<global::Jellyfin.Sdk.Generated.Models.ExternalIdInfo_Type>("Type", Type);
-            writer.WriteStringValue("UrlFormatString", UrlFormatString);
         }
     }
 }

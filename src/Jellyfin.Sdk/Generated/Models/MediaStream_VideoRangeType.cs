@@ -39,6 +39,22 @@ namespace Jellyfin.Sdk.Generated.Models
         #pragma warning disable CS1591
         DOVIWithSDR,
         #pragma warning restore CS1591
+        [EnumMember(Value = "DOVIWithEL")]
+        #pragma warning disable CS1591
+        DOVIWithEL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DOVIWithHDR10Plus")]
+        #pragma warning disable CS1591
+        DOVIWithHDR10Plus,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DOVIWithELHDR10Plus")]
+        #pragma warning disable CS1591
+        DOVIWithELHDR10Plus,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DOVIInvalid")]
+        #pragma warning disable CS1591
+        DOVIInvalid,
+        #pragma warning restore CS1591
         [EnumMember(Value = "HDR10Plus")]
         #pragma warning disable CS1591
         HDR10Plus,

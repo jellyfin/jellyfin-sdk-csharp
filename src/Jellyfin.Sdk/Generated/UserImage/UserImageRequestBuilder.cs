@@ -22,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.UserImage
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserImageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/UserImage{?backgroundColor*,blur*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,imageIndex*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,userId*,width*}", pathParameters)
+        public UserImageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/UserImage{?format*,tag*,userId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.UserImage
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserImageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/UserImage{?backgroundColor*,blur*,fillHeight*,fillWidth*,foregroundLayer*,format*,height*,imageIndex*,maxHeight*,maxWidth*,percentPlayed*,quality*,tag*,unplayedCount*,userId*,width*}", rawUrl)
+        public UserImageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/UserImage{?format*,tag*,userId*}", rawUrl)
         {
         }
         /// <summary>
@@ -237,56 +237,9 @@ namespace Jellyfin.Sdk.Generated.UserImage
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserImageRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional. Apply a background color for transparent images.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("backgroundColor")]
-            public string? BackgroundColor { get; set; }
-#nullable restore
-#else
-            [QueryParameter("backgroundColor")]
-            public string BackgroundColor { get; set; }
-#endif
-            /// <summary>Optional. Blur image.</summary>
-            [QueryParameter("blur")]
-            public int? Blur { get; set; }
-            /// <summary>Height of box to fill.</summary>
-            [QueryParameter("fillHeight")]
-            public int? FillHeight { get; set; }
-            /// <summary>Width of box to fill.</summary>
-            [QueryParameter("fillWidth")]
-            public int? FillWidth { get; set; }
-            /// <summary>Optional. Apply a foreground layer on top of the image.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("foregroundLayer")]
-            public string? ForegroundLayer { get; set; }
-#nullable restore
-#else
-            [QueryParameter("foregroundLayer")]
-            public string ForegroundLayer { get; set; }
-#endif
             /// <summary>Determines the output format of the image - original,gif,jpg,png.</summary>
             [QueryParameter("format")]
             public global::Jellyfin.Sdk.Generated.UserImage.ImageFormat? Format { get; set; }
-            /// <summary>The fixed image height to return.</summary>
-            [QueryParameter("height")]
-            public int? Height { get; set; }
-            /// <summary>Image index.</summary>
-            [QueryParameter("imageIndex")]
-            public int? ImageIndex { get; set; }
-            /// <summary>The maximum image height to return.</summary>
-            [QueryParameter("maxHeight")]
-            public int? MaxHeight { get; set; }
-            /// <summary>The maximum image width to return.</summary>
-            [QueryParameter("maxWidth")]
-            public int? MaxWidth { get; set; }
-            /// <summary>Optional. Percent to render for the percent played overlay.</summary>
-            [QueryParameter("percentPlayed")]
-            public double? PercentPlayed { get; set; }
-            /// <summary>Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.</summary>
-            [QueryParameter("quality")]
-            public int? Quality { get; set; }
             /// <summary>Optional. Supply the cache tag from the item object to receive strong caching headers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -297,15 +250,9 @@ namespace Jellyfin.Sdk.Generated.UserImage
             [QueryParameter("tag")]
             public string Tag { get; set; }
 #endif
-            /// <summary>Optional. Unplayed count overlay to render.</summary>
-            [QueryParameter("unplayedCount")]
-            public int? UnplayedCount { get; set; }
             /// <summary>User id.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }
-            /// <summary>The fixed image width to return.</summary>
-            [QueryParameter("width")]
-            public int? Width { get; set; }
         }
         /// <summary>
         /// Get user profile image.
@@ -313,56 +260,9 @@ namespace Jellyfin.Sdk.Generated.UserImage
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserImageRequestBuilderHeadQueryParameters 
         {
-            /// <summary>Optional. Apply a background color for transparent images.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("backgroundColor")]
-            public string? BackgroundColor { get; set; }
-#nullable restore
-#else
-            [QueryParameter("backgroundColor")]
-            public string BackgroundColor { get; set; }
-#endif
-            /// <summary>Optional. Blur image.</summary>
-            [QueryParameter("blur")]
-            public int? Blur { get; set; }
-            /// <summary>Height of box to fill.</summary>
-            [QueryParameter("fillHeight")]
-            public int? FillHeight { get; set; }
-            /// <summary>Width of box to fill.</summary>
-            [QueryParameter("fillWidth")]
-            public int? FillWidth { get; set; }
-            /// <summary>Optional. Apply a foreground layer on top of the image.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("foregroundLayer")]
-            public string? ForegroundLayer { get; set; }
-#nullable restore
-#else
-            [QueryParameter("foregroundLayer")]
-            public string ForegroundLayer { get; set; }
-#endif
             /// <summary>Determines the output format of the image - original,gif,jpg,png.</summary>
             [QueryParameter("format")]
             public global::Jellyfin.Sdk.Generated.UserImage.ImageFormat? Format { get; set; }
-            /// <summary>The fixed image height to return.</summary>
-            [QueryParameter("height")]
-            public int? Height { get; set; }
-            /// <summary>Image index.</summary>
-            [QueryParameter("imageIndex")]
-            public int? ImageIndex { get; set; }
-            /// <summary>The maximum image height to return.</summary>
-            [QueryParameter("maxHeight")]
-            public int? MaxHeight { get; set; }
-            /// <summary>The maximum image width to return.</summary>
-            [QueryParameter("maxWidth")]
-            public int? MaxWidth { get; set; }
-            /// <summary>Optional. Percent to render for the percent played overlay.</summary>
-            [QueryParameter("percentPlayed")]
-            public double? PercentPlayed { get; set; }
-            /// <summary>Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.</summary>
-            [QueryParameter("quality")]
-            public int? Quality { get; set; }
             /// <summary>Optional. Supply the cache tag from the item object to receive strong caching headers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -373,15 +273,9 @@ namespace Jellyfin.Sdk.Generated.UserImage
             [QueryParameter("tag")]
             public string Tag { get; set; }
 #endif
-            /// <summary>Optional. Unplayed count overlay to render.</summary>
-            [QueryParameter("unplayedCount")]
-            public int? UnplayedCount { get; set; }
             /// <summary>User id.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }
-            /// <summary>The fixed image width to return.</summary>
-            [QueryParameter("width")]
-            public int? Width { get; set; }
         }
         /// <summary>
         /// Sets the user image.

@@ -9,50 +9,55 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Branding.Configuration
+namespace Jellyfin.Sdk.Generated.System.Info.Storage
 {
     /// <summary>
-    /// Builds and executes requests for operations under \Branding\Configuration
+    /// Builds and executes requests for operations under \System\Info\Storage
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ConfigurationRequestBuilder : BaseRequestBuilder
+    public partial class StorageRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Branding.Configuration.ConfigurationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.System.Info.Storage.StorageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigurationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Branding/Configuration", pathParameters)
+        public StorageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/Info/Storage", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Branding.Configuration.ConfigurationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.System.Info.Storage.StorageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigurationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Branding/Configuration", rawUrl)
+        public StorageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/Info/Storage", rawUrl)
         {
         }
         /// <summary>
-        /// Gets branding configuration.
+        /// Gets information about the server.
         /// </summary>
-        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.BrandingOptionsDto"/></returns>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.SystemStorageDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Jellyfin.Sdk.Generated.Models.BrandingOptionsDto?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.SystemStorageDto?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Jellyfin.Sdk.Generated.Models.BrandingOptionsDto> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.SystemStorageDto> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.BrandingOptionsDto>(requestInfo, global::Jellyfin.Sdk.Generated.Models.BrandingOptionsDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "403", global::Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.SystemStorageDto>(requestInfo, global::Jellyfin.Sdk.Generated.Models.SystemStorageDto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets branding configuration.
+        /// Gets information about the server.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,11 +78,11 @@ namespace Jellyfin.Sdk.Generated.Branding.Configuration
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Branding.Configuration.ConfigurationRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.System.Info.Storage.StorageRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Jellyfin.Sdk.Generated.Branding.Configuration.ConfigurationRequestBuilder WithUrl(string rawUrl)
+        public global::Jellyfin.Sdk.Generated.System.Info.Storage.StorageRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Jellyfin.Sdk.Generated.Branding.Configuration.ConfigurationRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Jellyfin.Sdk.Generated.System.Info.Storage.StorageRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }
