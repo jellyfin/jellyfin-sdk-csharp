@@ -9,7 +9,7 @@
       ]
     },
     "nuke.globaltool": {
-      "version": "9.0.4",
+      "version": "10.1.0",
       "commands": [
         "nuke"
       ]
