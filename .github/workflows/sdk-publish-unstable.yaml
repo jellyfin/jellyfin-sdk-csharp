@@ -9,61 +9,22 @@ on:
       - master
 
 jobs:
-  publish:
+  version:
     runs-on: ubuntu-24.04
-    env:
-      DOTNET_NOLOGO: true
-      DOTNET_CLI_TELEMETRY_OPTOUT: true
-    defaults:
-      run:
-        working-directory: ./src
+    outputs:
+      number: ${{ steps.version.outputs.number }}
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-        with:
-          ref: "master"
-          fetch-depth: 0
+      - id: version
+        run: echo "number=$(date +'%Y.%m.%d')-unstable.$(date +'%Y%m%d%H%M')" >> "$GITHUB_OUTPUT"
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5
-        with:
-          dotnet-version: |
-            8.0.x
-
-      - name: Install dotnet-setversion
-        run: |
-          dotnet tool install -g dotnet-setversion
-
-      - name: Restore packages
-        run: |
-          dotnet restore
-          dotnet tool restore
-
-      - name: Create new version string
-        id: version
-        run: |
-          echo "number=$(echo $(date +'%Y.%m.%d')-unstable.$(date +'%Y%m%d%H%M'))" >> $GITHUB_OUTPUT
-
-      - name: Set project version
-        run: |
-          setversion ${{ steps.version.outputs.number }} Jellyfin.Sdk/Jellyfin.Sdk.csproj
-
-      - name: Generate sdk
-        run: |
-          dotnet nuke --configuration unstable
-
-      - name: Build packages
-        run: |
-          dotnet build -c Release Jellyfin.Sdk
-
-      - name: Publish to nuget
-        run: |
-          dotnet nuget push artifacts/package/release/*.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
-
-      - name: Commit new changes to the repo
-        run: |
-          git config user.name jellyfin-bot
-          git config user.email team@jellyfin.org
-          git checkout -B openapi-unstable
-          git add .
-          git commit --allow-empty -m "Update unstable OpenAPI client"
-          git push --force origin openapi-unstable
+  publish:
+    needs: version
+    uses: ./.github/workflows/sdk-publish-reusable.yaml
+    with:
+      configuration: unstable
+      version: ${{ needs.version.outputs.number }}
+      target-branch: openapi-unstable
+      commit-message: Update unstable OpenAPI client
+      force-push: true
+    secrets:
+      NUGET_APIKEY: ${{ secrets.NUGET_APIKEY }}
