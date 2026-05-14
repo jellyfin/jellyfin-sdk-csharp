@@ -74,22 +74,6 @@ public partial class Generate : NukeBuild
             DotNetTasks.DotNet(
                 arguments: "kiota update --output Generated",
                 workingDirectory: Solution.Jellyfin_Sdk.Directory);
-            
-            // TODO remove when Kiota 1.1.2 is released.
-            var outputPath = Path.Combine(Solution.Jellyfin_Sdk.Directory, "Generated");
-            foreach (var file in Directory.EnumerateFiles(outputPath, "*.cs", SearchOption.AllDirectories))
-            {
-                var contents = File.ReadAllText(file);
-                contents = contents
-                    .Replace(
-                        "application/json;profile=\"CamelCase\"",
-                        "application/json;profile=\\\"CamelCase\\\"")
-                    .Replace(
-                        "application/json;profile=\"PascalCase\"",
-                        "application/json;profile=\\\"PascalCase\\\"");
-
-                File.WriteAllText(file, contents);
-            }
         });
 
     [GeneratedRegex("""

@@ -1,0 +1,90 @@
+name: SDK Publish (Reusable)
+
+on:
+  workflow_call:
+    inputs:
+      configuration:
+        description: "Nuke configuration: stable or unstable"
+        type: string
+        required: true
+      version:
+        description: "Package version to set on Jellyfin.Sdk.csproj"
+        type: string
+        required: true
+      target-branch:
+        description: "Branch to commit and push regenerated sources to"
+        type: string
+        required: true
+      commit-message:
+        description: "Commit message for regenerated sources"
+        type: string
+        required: true
+      force-push:
+        description: "Force push the target branch (used for the rolling unstable branch)"
+        type: boolean
+        default: false
+    secrets:
+      NUGET_APIKEY:
+        required: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+    defaults:
+      run:
+        working-directory: ./src
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+          cache: true
+          cache-dependency-path: src/**/packages.lock.json
+
+      - name: Restore packages
+        run: |
+          dotnet restore
+          dotnet tool restore
+
+      - name: Set project version
+        run: dotnet setversion ${{ inputs.version }} Jellyfin.Sdk/Jellyfin.Sdk.csproj
+
+      - name: Generate sdk
+        run: dotnet nuke --configuration ${{ inputs.configuration }}
+
+      - name: Build packages
+        run: dotnet build -c Release Jellyfin.Sdk/Jellyfin.Sdk.csproj
+
+      - name: Publish to nuget
+        run: dotnet nuget push artifacts/package/release/*.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+      - name: Commit new changes to the repo
+        env:
+          TARGET_BRANCH: ${{ inputs.target-branch }}
+          COMMIT_MESSAGE: ${{ inputs.commit-message }}
+          FORCE_PUSH: ${{ inputs.force-push }}
+        run: |
+          git config user.name jellyfin-bot
+          git config user.email team@jellyfin.org
+          if [[ "$FORCE_PUSH" == "true" ]]; then
+            git checkout -B "$TARGET_BRANCH"
+          else
+            git pull --ff-only origin "$TARGET_BRANCH"
+          fi
+          git add Jellyfin.Sdk/Generated Jellyfin.Sdk/Jellyfin.Sdk.csproj
+          git commit --allow-empty -m "$COMMIT_MESSAGE"
+          if [[ "$FORCE_PUSH" == "true" ]]; then
+            git push --force origin "$TARGET_BRANCH"
+          else
+            git push origin "$TARGET_BRANCH"
+          fi
