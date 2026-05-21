@@ -35,7 +35,7 @@ namespace Jellyfin.Sdk.Generated.Persons
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Persons{?appearsInItemId*,enableImageTypes*,enableImages*,enableUserData*,excludePersonTypes*,fields*,filters*,imageTypeLimit*,isFavorite*,limit*,personTypes*,searchTerm*,userId*}", pathParameters)
+        public PersonsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Persons{?appearsInItemId*,enableImageTypes*,enableImages*,enableUserData*,excludePersonTypes*,fields*,filters*,imageTypeLimit*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,personTypes*,searchTerm*,startIndex*,userId*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Jellyfin.Sdk.Generated.Persons
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Persons{?appearsInItemId*,enableImageTypes*,enableImages*,enableUserData*,excludePersonTypes*,fields*,filters*,imageTypeLimit*,isFavorite*,limit*,personTypes*,searchTerm*,userId*}", rawUrl)
+        public PersonsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Persons{?appearsInItemId*,enableImageTypes*,enableImages*,enableUserData*,excludePersonTypes*,fields*,filters*,imageTypeLimit*,isFavorite*,limit*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,parentId*,personTypes*,searchTerm*,startIndex*,userId*}", rawUrl)
         {
         }
         /// <summary>
@@ -156,6 +156,39 @@ namespace Jellyfin.Sdk.Generated.Persons
             /// <summary>Optional. The maximum number of records to return.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Optional. Filter by items whose name will appear before this value when sorted alphabetically.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("nameLessThan")]
+            public string? NameLessThan { get; set; }
+#nullable restore
+#else
+            [QueryParameter("nameLessThan")]
+            public string NameLessThan { get; set; }
+#endif
+            /// <summary>Optional. Filter by items whose name starts with the given input string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("nameStartsWith")]
+            public string? NameStartsWith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("nameStartsWith")]
+            public string NameStartsWith { get; set; }
+#endif
+            /// <summary>Optional. Filter by items whose name will appear after this value when sorted alphabetically.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("nameStartsWithOrGreater")]
+            public string? NameStartsWithOrGreater { get; set; }
+#nullable restore
+#else
+            [QueryParameter("nameStartsWithOrGreater")]
+            public string NameStartsWithOrGreater { get; set; }
+#endif
+            /// <summary>Optional. Specify this to localize the search to a specific library. Omit to use the root.</summary>
+            [QueryParameter("parentId")]
+            public Guid? ParentId { get; set; }
             /// <summary>Optional. If specified results will be filtered to include only those containing the specified PersonType. Allows multiple, comma-delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,6 +209,9 @@ namespace Jellyfin.Sdk.Generated.Persons
             [QueryParameter("searchTerm")]
             public string SearchTerm { get; set; }
 #endif
+            /// <summary>Optional. All items with a lower index will be dropped from the response.</summary>
+            [QueryParameter("startIndex")]
+            public int? StartIndex { get; set; }
             /// <summary>User id.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

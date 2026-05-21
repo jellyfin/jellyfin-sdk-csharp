@@ -84,7 +84,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders
         public async Task<global::Jellyfin.Sdk.Generated.Models.ListingsProviderInfo> PostAsync(global::Jellyfin.Sdk.Generated.Models.ListingsProviderInfo body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.LiveTv.ListingProviders.ListingProvidersRequestBuilder.ListingProvidersRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.ListingsProviderInfo>(requestInfo, global::Jellyfin.Sdk.Generated.Models.ListingsProviderInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -121,7 +121,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ListingProviders
         public RequestInformation ToPostRequestInformation(global::Jellyfin.Sdk.Generated.Models.ListingsProviderInfo body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.LiveTv.ListingProviders.ListingProvidersRequestBuilder.ListingProvidersRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");

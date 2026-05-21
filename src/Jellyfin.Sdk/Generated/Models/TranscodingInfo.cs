@@ -46,7 +46,13 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <summary>Gets or sets a value indicating whether the video is passed through.</summary>
         public bool? IsVideoDirect { get; set; }
         /// <summary>Gets or sets the transcode reasons.</summary>
-        public global::Jellyfin.Sdk.Generated.Models.TranscodingInfo_TranscodeReasons? TranscodeReasons { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Jellyfin.Sdk.Generated.Models.TranscodeReason?>? TranscodeReasons { get; set; }
+#nullable restore
+#else
+        public List<global::Jellyfin.Sdk.Generated.Models.TranscodeReason?> TranscodeReasons { get; set; }
+#endif
         /// <summary>Gets or sets the thread count used for encoding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +70,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.TranscodingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.TranscodingInfo();
         }
         /// <summary>
@@ -85,7 +91,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "Height", n => { Height = n.GetIntValue(); } },
                 { "IsAudioDirect", n => { IsAudioDirect = n.GetBoolValue(); } },
                 { "IsVideoDirect", n => { IsVideoDirect = n.GetBoolValue(); } },
-                { "TranscodeReasons", n => { TranscodeReasons = n.GetEnumValue<global::Jellyfin.Sdk.Generated.Models.TranscodingInfo_TranscodeReasons>(); } },
+                { "TranscodeReasons", n => { TranscodeReasons = n.GetCollectionOfEnumValues<global::Jellyfin.Sdk.Generated.Models.TranscodeReason>()?.AsList(); } },
                 { "VideoCodec", n => { VideoCodec = n.GetStringValue(); } },
                 { "Width", n => { Width = n.GetIntValue(); } },
             };
@@ -96,7 +102,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("AudioChannels", AudioChannels);
             writer.WriteStringValue("AudioCodec", AudioCodec);
             writer.WriteIntValue("Bitrate", Bitrate);
@@ -107,7 +113,7 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteIntValue("Height", Height);
             writer.WriteBoolValue("IsAudioDirect", IsAudioDirect);
             writer.WriteBoolValue("IsVideoDirect", IsVideoDirect);
-            writer.WriteEnumValue<global::Jellyfin.Sdk.Generated.Models.TranscodingInfo_TranscodeReasons>("TranscodeReasons", TranscodeReasons);
+            writer.WriteCollectionOfEnumValues<global::Jellyfin.Sdk.Generated.Models.TranscodeReason>("TranscodeReasons", TranscodeReasons);
             writer.WriteStringValue("VideoCodec", VideoCodec);
             writer.WriteIntValue("Width", Width);
         }

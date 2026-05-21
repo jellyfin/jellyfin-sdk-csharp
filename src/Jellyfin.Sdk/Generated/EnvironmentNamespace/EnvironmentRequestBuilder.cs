@@ -3,7 +3,6 @@
 using Jellyfin.Sdk.Generated.EnvironmentNamespace.DefaultDirectoryBrowser;
 using Jellyfin.Sdk.Generated.EnvironmentNamespace.DirectoryContents;
 using Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives;
-using Jellyfin.Sdk.Generated.EnvironmentNamespace.NetworkShares;
 using Jellyfin.Sdk.Generated.EnvironmentNamespace.ParentPath;
 using Jellyfin.Sdk.Generated.EnvironmentNamespace.ValidatePath;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -34,11 +33,6 @@ namespace Jellyfin.Sdk.Generated.EnvironmentNamespace
         public global::Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives.DrivesRequestBuilder Drives
         {
             get => new global::Jellyfin.Sdk.Generated.EnvironmentNamespace.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The NetworkShares property</summary>
-        public global::Jellyfin.Sdk.Generated.EnvironmentNamespace.NetworkShares.NetworkSharesRequestBuilder NetworkShares
-        {
-            get => new global::Jellyfin.Sdk.Generated.EnvironmentNamespace.NetworkShares.NetworkSharesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ParentPath property</summary>
         public global::Jellyfin.Sdk.Generated.EnvironmentNamespace.ParentPath.ParentPathRequestBuilder ParentPath

@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
-    /// <summary>Gets or sets the transcode reasons.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum TranscodingInfo_TranscodeReasons
+    #pragma warning disable CS1591
+    public enum TranscodeReason
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ContainerNotSupported")]
         #pragma warning disable CS1591
@@ -114,6 +115,10 @@ namespace Jellyfin.Sdk.Generated.Models
         [EnumMember(Value = "StreamCountExceedsLimit")]
         #pragma warning disable CS1591
         StreamCountExceedsLimit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VideoRotationNotSupported")]
+        #pragma warning disable CS1591
+        VideoRotationNotSupported,
         #pragma warning restore CS1591
     }
 }

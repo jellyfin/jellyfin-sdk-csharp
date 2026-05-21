@@ -20,11 +20,13 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item
     public partial class GenreNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Images property</summary>
+        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.MusicGenres.Item.Images.ImagesRequestBuilder Images
         {
             get => new global::Jellyfin.Sdk.Generated.MusicGenres.Item.Images.ImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The InstantMix property</summary>
+        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.MusicGenres.Item.InstantMix.InstantMixRequestBuilder InstantMix
         {
             get => new global::Jellyfin.Sdk.Generated.MusicGenres.Item.InstantMix.InstantMixRequestBuilder(PathParameters, RequestAdapter);
@@ -51,6 +53,7 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.BaseItemDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Jellyfin.Sdk.Generated.Models.BaseItemDto?> GetAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder.GenreNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -68,6 +71,7 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder.GenreNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -87,6 +91,7 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item
         /// </summary>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Jellyfin.Sdk.Generated.MusicGenres.Item.GenreNameItemRequestBuilder(rawUrl, RequestAdapter);

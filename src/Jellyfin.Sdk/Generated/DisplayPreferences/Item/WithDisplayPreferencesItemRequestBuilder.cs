@@ -66,7 +66,7 @@ namespace Jellyfin.Sdk.Generated.DisplayPreferences.Item
         public async Task PostAsync(global::Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.DisplayPreferences.Item.WithDisplayPreferencesItemRequestBuilder.WithDisplayPreferencesItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
@@ -104,7 +104,7 @@ namespace Jellyfin.Sdk.Generated.DisplayPreferences.Item
         public RequestInformation ToPostRequestInformation(global::Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.DisplayPreferences.Item.WithDisplayPreferencesItemRequestBuilder.WithDisplayPreferencesItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

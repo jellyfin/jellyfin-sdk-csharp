@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
-    /// <summary>Enum GroupRepeatMode.</summary>
+    /// <summary>Gets or sets the repeat mode.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SetRepeatModeRequestDto_Mode
     {

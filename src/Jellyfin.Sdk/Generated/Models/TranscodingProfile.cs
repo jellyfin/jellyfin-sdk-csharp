@@ -22,6 +22,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public string AudioCodec { get; set; }
 #endif
         /// <summary>Gets or sets a value indicating whether breaking the video stream on non-keyframes is supported.</summary>
+        [Obsolete("")]
         public bool? BreakOnNonKeyFrames { get; set; }
         /// <summary>Gets or sets the profile conditions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +93,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.TranscodingProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.TranscodingProfile();
         }
         /// <summary>
@@ -128,7 +129,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("AudioCodec", AudioCodec);
             writer.WriteBoolValue("BreakOnNonKeyFrames", BreakOnNonKeyFrames);
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.ProfileCondition>("Conditions", Conditions);

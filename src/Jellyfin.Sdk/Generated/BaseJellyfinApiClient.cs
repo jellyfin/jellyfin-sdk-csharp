@@ -27,7 +27,6 @@ using Jellyfin.Sdk.Generated.MusicGenres;
 using Jellyfin.Sdk.Generated.Packages;
 using Jellyfin.Sdk.Generated.Persons;
 using Jellyfin.Sdk.Generated.Playback;
-using Jellyfin.Sdk.Generated.PlayingItems;
 using Jellyfin.Sdk.Generated.Playlists;
 using Jellyfin.Sdk.Generated.Plugins;
 using Jellyfin.Sdk.Generated.Providers;
@@ -42,7 +41,6 @@ using Jellyfin.Sdk.Generated.Startup;
 using Jellyfin.Sdk.Generated.Studios;
 using Jellyfin.Sdk.Generated.SyncPlay;
 using Jellyfin.Sdk.Generated.System;
-using Jellyfin.Sdk.Generated.Tmdb;
 using Jellyfin.Sdk.Generated.Trailers;
 using Jellyfin.Sdk.Generated.UserFavoriteItems;
 using Jellyfin.Sdk.Generated.UserImage;
@@ -206,11 +204,6 @@ namespace Jellyfin.Sdk.Generated
         {
             get => new global::Jellyfin.Sdk.Generated.Playback.PlaybackRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The PlayingItems property</summary>
-        public global::Jellyfin.Sdk.Generated.PlayingItems.PlayingItemsRequestBuilder PlayingItems
-        {
-            get => new global::Jellyfin.Sdk.Generated.PlayingItems.PlayingItemsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The Playlists property</summary>
         public global::Jellyfin.Sdk.Generated.Playlists.PlaylistsRequestBuilder Playlists
         {
@@ -280,11 +273,6 @@ namespace Jellyfin.Sdk.Generated
         public global::Jellyfin.Sdk.Generated.System.SystemRequestBuilder System
         {
             get => new global::Jellyfin.Sdk.Generated.System.SystemRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The Tmdb property</summary>
-        public global::Jellyfin.Sdk.Generated.Tmdb.TmdbRequestBuilder Tmdb
-        {
-            get => new global::Jellyfin.Sdk.Generated.Tmdb.TmdbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Trailers property</summary>
         public global::Jellyfin.Sdk.Generated.Trailers.TrailersRequestBuilder Trailers

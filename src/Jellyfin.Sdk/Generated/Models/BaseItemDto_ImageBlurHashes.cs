@@ -11,10 +11,8 @@ namespace Jellyfin.Sdk.Generated.Models
     /// Gets or sets the blurhashes for the image tags.Maps image type to dictionary mapping image tag to blurhash value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BaseItemDto_ImageBlurHashes : IAdditionalDataHolder, IParsable
+    public partial class BaseItemDto_ImageBlurHashes : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Art property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,20 +118,13 @@ namespace Jellyfin.Sdk.Generated.Models
         public global::Jellyfin.Sdk.Generated.Models.BaseItemDto_ImageBlurHashes_Thumb Thumb { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Models.BaseItemDto_ImageBlurHashes"/> and sets the default values.
-        /// </summary>
-        public BaseItemDto_ImageBlurHashes()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.BaseItemDto_ImageBlurHashes"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.BaseItemDto_ImageBlurHashes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.BaseItemDto_ImageBlurHashes();
         }
         /// <summary>
@@ -165,7 +156,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Jellyfin.Sdk.Generated.Models.BaseItemDto_ImageBlurHashes_Art>("Art", Art);
             writer.WriteObjectValue<global::Jellyfin.Sdk.Generated.Models.BaseItemDto_ImageBlurHashes_Backdrop>("Backdrop", Backdrop);
             writer.WriteObjectValue<global::Jellyfin.Sdk.Generated.Models.BaseItemDto_ImageBlurHashes_Banner>("Banner", Banner);
@@ -179,7 +170,6 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteObjectValue<global::Jellyfin.Sdk.Generated.Models.BaseItemDto_ImageBlurHashes_Profile>("Profile", Profile);
             writer.WriteObjectValue<global::Jellyfin.Sdk.Generated.Models.BaseItemDto_ImageBlurHashes_Screenshot>("Screenshot", Screenshot);
             writer.WriteObjectValue<global::Jellyfin.Sdk.Generated.Models.BaseItemDto_ImageBlurHashes_Thumb>("Thumb", Thumb);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

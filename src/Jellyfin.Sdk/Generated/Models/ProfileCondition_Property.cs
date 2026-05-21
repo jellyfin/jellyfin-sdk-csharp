@@ -108,5 +108,9 @@ namespace Jellyfin.Sdk.Generated.Models
         #pragma warning disable CS1591
         NumStreams,
         #pragma warning restore CS1591
+        [EnumMember(Value = "VideoRotation")]
+        #pragma warning disable CS1591
+        VideoRotation,
+        #pragma warning restore CS1591
     }
 }

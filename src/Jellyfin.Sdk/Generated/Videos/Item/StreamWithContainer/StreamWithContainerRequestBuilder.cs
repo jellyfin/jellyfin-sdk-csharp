@@ -22,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer
         /// <param name="container">The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamWithContainerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string container = "") : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/stream.{container}{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAudioVbrEncoding*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", pathParameters)
+        public StreamWithContainerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string container = "") : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/stream.{container}{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAudioVbrEncoding*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(container)) PathParameters.Add("container", container);
         }
@@ -31,7 +31,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamWithContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/stream.{container}{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,breakOnNonKeyFrames*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAudioVbrEncoding*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions*,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", rawUrl)
+        public StreamWithContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/stream.{container}{?allowAudioStreamCopy*,allowVideoStreamCopy*,audioBitRate*,audioChannels*,audioCodec*,audioSampleRate*,audioStreamIndex*,context*,copyTimestamps*,cpuCoreLimit*,deInterlace*,deviceId*,deviceProfileId*,enableAudioVbrEncoding*,enableAutoStreamCopy*,enableMpegtsM2TsMode*,framerate*,height*,level*,liveStreamId*,maxAudioBitDepth*,maxAudioChannels*,maxFramerate*,maxHeight*,maxRefFrames*,maxVideoBitDepth*,maxWidth*,mediaSourceId*,minSegments*,params*,playSessionId*,profile*,requireAvc*,requireNonAnamorphic*,segmentContainer*,segmentLength*,startTimeTicks*,static*,streamOptions,subtitleCodec*,subtitleMethod*,subtitleStreamIndex*,tag*,transcodeReasons*,transcodingMaxAudioChannels*,videoBitRate*,videoCodec*,videoStreamIndex*,width*}", rawUrl)
         {
         }
         /// <summary>
@@ -151,9 +151,6 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer
             /// <summary>Optional. The index of the audio stream to use. If omitted the first audio stream will be used.</summary>
             [QueryParameter("audioStreamIndex")]
             public int? AudioStreamIndex { get; set; }
-            /// <summary>Optional. Whether to break on non key frames.</summary>
-            [QueryParameter("breakOnNonKeyFrames")]
-            public bool? BreakOnNonKeyFrames { get; set; }
             /// <summary>Optional. The MediaBrowser.Model.Dlna.EncodingContext.</summary>
             [QueryParameter("context")]
             public global::Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer.EncodingContext? Context { get; set; }
@@ -413,9 +410,6 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer
             /// <summary>Optional. The index of the audio stream to use. If omitted the first audio stream will be used.</summary>
             [QueryParameter("audioStreamIndex")]
             public int? AudioStreamIndex { get; set; }
-            /// <summary>Optional. Whether to break on non key frames.</summary>
-            [QueryParameter("breakOnNonKeyFrames")]
-            public bool? BreakOnNonKeyFrames { get; set; }
             /// <summary>Optional. The MediaBrowser.Model.Dlna.EncodingContext.</summary>
             [QueryParameter("context")]
             public global::Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer.EncodingContext? Context { get; set; }

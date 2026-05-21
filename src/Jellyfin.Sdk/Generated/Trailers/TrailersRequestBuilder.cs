@@ -35,7 +35,7 @@ namespace Jellyfin.Sdk.Generated.Trailers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrailersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Trailers{?adjacentTo*,albumArtistIds*,albumIds*,albums*,artistIds*,artists*,collapseBoxSetItems*,contributingArtistIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeArtistIds*,excludeItemIds*,excludeItemTypes*,excludeLocationTypes*,fields*,filters*,genreIds*,genres*,hasImdbId*,hasOfficialRating*,hasOverview*,hasParentalRating*,hasSpecialFeature*,hasSubtitles*,hasThemeSong*,hasThemeVideo*,hasTmdbId*,hasTrailer*,hasTvdbId*,ids*,imageTypeLimit*,imageTypes*,is3D*,is4K*,isFavorite*,isHd*,isKids*,isLocked*,isMissing*,isMovie*,isNews*,isPlaceHolder*,isPlayed*,isSeries*,isSports*,isUnaired*,limit*,locationTypes*,maxHeight*,maxOfficialRating*,maxPremiereDate*,maxWidth*,mediaTypes*,minCommunityRating*,minCriticRating*,minDateLastSaved*,minDateLastSavedForUser*,minHeight*,minOfficialRating*,minPremiereDate*,minWidth*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,officialRatings*,parentId*,parentIndexNumber*,person*,personIds*,personTypes*,recursive*,searchTerm*,seriesStatus*,sortBy*,sortOrder*,startIndex*,studioIds*,studios*,tags*,userId*,videoTypes*,years*}", pathParameters)
+        public TrailersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Trailers{?adjacentTo*,albumArtistIds*,albumIds*,albums*,artistIds*,artists*,audioLanguages*,collapseBoxSetItems*,contributingArtistIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeArtistIds*,excludeItemIds*,excludeItemTypes*,excludeLocationTypes*,fields*,filters*,genreIds*,genres*,hasImdbId*,hasOfficialRating*,hasOverview*,hasParentalRating*,hasSpecialFeature*,hasSubtitles*,hasThemeSong*,hasThemeVideo*,hasTmdbId*,hasTrailer*,hasTvdbId*,ids*,imageTypeLimit*,imageTypes*,is3D*,is4K*,isFavorite*,isHd*,isKids*,isLocked*,isMissing*,isMovie*,isNews*,isPlaceHolder*,isPlayed*,isSeries*,isSports*,isUnaired*,limit*,locationTypes*,maxHeight*,maxOfficialRating*,maxPremiereDate*,maxWidth*,mediaTypes*,minCommunityRating*,minCriticRating*,minDateLastSaved*,minDateLastSavedForUser*,minHeight*,minOfficialRating*,minPremiereDate*,minWidth*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,officialRatings*,parentId*,parentIndexNumber*,person*,personIds*,personTypes*,recursive*,searchTerm*,seriesStatus*,sortBy*,sortOrder*,startIndex*,studioIds*,studios*,subtitleLanguages*,tags*,userId*,videoTypes*,years*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Jellyfin.Sdk.Generated.Trailers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrailersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Trailers{?adjacentTo*,albumArtistIds*,albumIds*,albums*,artistIds*,artists*,collapseBoxSetItems*,contributingArtistIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeArtistIds*,excludeItemIds*,excludeItemTypes*,excludeLocationTypes*,fields*,filters*,genreIds*,genres*,hasImdbId*,hasOfficialRating*,hasOverview*,hasParentalRating*,hasSpecialFeature*,hasSubtitles*,hasThemeSong*,hasThemeVideo*,hasTmdbId*,hasTrailer*,hasTvdbId*,ids*,imageTypeLimit*,imageTypes*,is3D*,is4K*,isFavorite*,isHd*,isKids*,isLocked*,isMissing*,isMovie*,isNews*,isPlaceHolder*,isPlayed*,isSeries*,isSports*,isUnaired*,limit*,locationTypes*,maxHeight*,maxOfficialRating*,maxPremiereDate*,maxWidth*,mediaTypes*,minCommunityRating*,minCriticRating*,minDateLastSaved*,minDateLastSavedForUser*,minHeight*,minOfficialRating*,minPremiereDate*,minWidth*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,officialRatings*,parentId*,parentIndexNumber*,person*,personIds*,personTypes*,recursive*,searchTerm*,seriesStatus*,sortBy*,sortOrder*,startIndex*,studioIds*,studios*,tags*,userId*,videoTypes*,years*}", rawUrl)
+        public TrailersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Trailers{?adjacentTo*,albumArtistIds*,albumIds*,albums*,artistIds*,artists*,audioLanguages*,collapseBoxSetItems*,contributingArtistIds*,enableImageTypes*,enableImages*,enableTotalRecordCount*,enableUserData*,excludeArtistIds*,excludeItemIds*,excludeItemTypes*,excludeLocationTypes*,fields*,filters*,genreIds*,genres*,hasImdbId*,hasOfficialRating*,hasOverview*,hasParentalRating*,hasSpecialFeature*,hasSubtitles*,hasThemeSong*,hasThemeVideo*,hasTmdbId*,hasTrailer*,hasTvdbId*,ids*,imageTypeLimit*,imageTypes*,is3D*,is4K*,isFavorite*,isHd*,isKids*,isLocked*,isMissing*,isMovie*,isNews*,isPlaceHolder*,isPlayed*,isSeries*,isSports*,isUnaired*,limit*,locationTypes*,maxHeight*,maxOfficialRating*,maxPremiereDate*,maxWidth*,mediaTypes*,minCommunityRating*,minCriticRating*,minDateLastSaved*,minDateLastSavedForUser*,minHeight*,minOfficialRating*,minPremiereDate*,minWidth*,nameLessThan*,nameStartsWith*,nameStartsWithOrGreater*,officialRatings*,parentId*,parentIndexNumber*,person*,personIds*,personTypes*,recursive*,searchTerm*,seriesStatus*,sortBy*,sortOrder*,startIndex*,studioIds*,studios*,subtitleLanguages*,tags*,userId*,videoTypes*,years*}", rawUrl)
         {
         }
         /// <summary>
@@ -150,6 +150,16 @@ namespace Jellyfin.Sdk.Generated.Trailers
 #else
             [QueryParameter("artists")]
             public string[] Artists { get; set; }
+#endif
+            /// <summary>Optional. If specified, results will be filtered based on audio language. This allows multiple, comma delimited values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("audioLanguages")]
+            public string[]? AudioLanguages { get; set; }
+#nullable restore
+#else
+            [QueryParameter("audioLanguages")]
+            public string[] AudioLanguages { get; set; }
 #endif
             /// <summary>Whether or not to hide items behind their boxsets.</summary>
             [QueryParameter("collapseBoxSetItems")]
@@ -575,6 +585,16 @@ namespace Jellyfin.Sdk.Generated.Trailers
 #else
             [QueryParameter("studios")]
             public string[] Studios { get; set; }
+#endif
+            /// <summary>Optional. If specified, results will be filtered based on subtitale language. This allows multiple, comma delimited values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("subtitleLanguages")]
+            public string[]? SubtitleLanguages { get; set; }
+#nullable restore
+#else
+            [QueryParameter("subtitleLanguages")]
+            public string[] SubtitleLanguages { get; set; }
 #endif
             /// <summary>Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

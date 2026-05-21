@@ -12,6 +12,14 @@ namespace Jellyfin.Sdk.Generated.Models
     public partial class QueryFilters : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The AudioLanguages property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Jellyfin.Sdk.Generated.Models.NameValuePair>? AudioLanguages { get; set; }
+#nullable restore
+#else
+        public List<global::Jellyfin.Sdk.Generated.Models.NameValuePair> AudioLanguages { get; set; }
+#endif
         /// <summary>The Genres property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -19,6 +27,14 @@ namespace Jellyfin.Sdk.Generated.Models
 #nullable restore
 #else
         public List<global::Jellyfin.Sdk.Generated.Models.NameGuidPair> Genres { get; set; }
+#endif
+        /// <summary>The SubtitleLanguages property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Jellyfin.Sdk.Generated.Models.NameValuePair>? SubtitleLanguages { get; set; }
+#nullable restore
+#else
+        public List<global::Jellyfin.Sdk.Generated.Models.NameValuePair> SubtitleLanguages { get; set; }
 #endif
         /// <summary>The Tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,7 +51,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.QueryFilters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.QueryFilters();
         }
         /// <summary>
@@ -46,7 +62,9 @@ namespace Jellyfin.Sdk.Generated.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "AudioLanguages", n => { AudioLanguages = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.NameValuePair>(global::Jellyfin.Sdk.Generated.Models.NameValuePair.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Genres", n => { Genres = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.NameGuidPair>(global::Jellyfin.Sdk.Generated.Models.NameGuidPair.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "SubtitleLanguages", n => { SubtitleLanguages = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.NameValuePair>(global::Jellyfin.Sdk.Generated.Models.NameValuePair.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -56,8 +74,10 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.NameValuePair>("AudioLanguages", AudioLanguages);
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.NameGuidPair>("Genres", Genres);
+            writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.NameValuePair>("SubtitleLanguages", SubtitleLanguages);
             writer.WriteCollectionOfPrimitiveValues<string>("Tags", Tags);
         }
     }

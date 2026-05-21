@@ -13,7 +13,7 @@ namespace Jellyfin.Sdk.Generated.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SetShuffleModeRequestDto : IParsable
     {
-        /// <summary>Enum GroupShuffleMode.</summary>
+        /// <summary>Gets or sets the shuffle mode.</summary>
         public global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto_Mode? Mode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -22,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto();
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Jellyfin.Sdk.Generated.Models.SetShuffleModeRequestDto_Mode>("Mode", Mode);
         }
     }
