@@ -49,7 +49,7 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.Book
         public async Task<List<global::Jellyfin.Sdk.Generated.Models.RemoteSearchResult>> PostAsync(global::Jellyfin.Sdk.Generated.Models.BookInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Jellyfin.Sdk.Generated.Models.RemoteSearchResult>(requestInfo, global::Jellyfin.Sdk.Generated.Models.RemoteSearchResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
@@ -69,7 +69,7 @@ namespace Jellyfin.Sdk.Generated.Items.RemoteSearch.Book
         public RequestInformation ToPostRequestInformation(global::Jellyfin.Sdk.Generated.Models.BookInfoRemoteSearchQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

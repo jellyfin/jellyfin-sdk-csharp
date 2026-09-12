@@ -123,7 +123,7 @@ namespace Jellyfin.Sdk.Generated.UserImage
         public async Task PostAsync(Stream body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -205,7 +205,7 @@ namespace Jellyfin.Sdk.Generated.UserImage
         public RequestInformation ToPostRequestInformation(Stream body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.UserImage.UserImageRequestBuilder.UserImageRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");

@@ -39,6 +39,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs.Item
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.BaseItemDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Jellyfin.Sdk.Generated.Models.BaseItemDto?> GetAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.LiveTv.Programs.Item.WithProgramItemRequestBuilder.WithProgramItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -49,7 +50,11 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.BaseItemDto>(requestInfo, global::Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "404", global::Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.BaseItemDto>(requestInfo, global::Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a live tv program.

@@ -52,6 +52,22 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public List<string> MetadataFetchers { get; set; }
 #endif
+        /// <summary>The SimilarItemProviderOrder property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SimilarItemProviderOrder { get; set; }
+#nullable restore
+#else
+        public List<string> SimilarItemProviderOrder { get; set; }
+#endif
+        /// <summary>The SimilarItemProviders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SimilarItemProviders { get; set; }
+#nullable restore
+#else
+        public List<string> SimilarItemProviders { get; set; }
+#endif
         /// <summary>The Type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +83,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.TypeOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.TypeOptions();
         }
         /// <summary>
@@ -83,6 +99,8 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "ImageOptions", n => { ImageOptions = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.ImageOption>(global::Jellyfin.Sdk.Generated.Models.ImageOption.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "MetadataFetcherOrder", n => { MetadataFetcherOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "MetadataFetchers", n => { MetadataFetchers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "SimilarItemProviderOrder", n => { SimilarItemProviderOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "SimilarItemProviders", n => { SimilarItemProviders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "Type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -92,12 +110,14 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("ImageFetcherOrder", ImageFetcherOrder);
             writer.WriteCollectionOfPrimitiveValues<string>("ImageFetchers", ImageFetchers);
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.ImageOption>("ImageOptions", ImageOptions);
             writer.WriteCollectionOfPrimitiveValues<string>("MetadataFetcherOrder", MetadataFetcherOrder);
             writer.WriteCollectionOfPrimitiveValues<string>("MetadataFetchers", MetadataFetchers);
+            writer.WriteCollectionOfPrimitiveValues<string>("SimilarItemProviderOrder", SimilarItemProviderOrder);
+            writer.WriteCollectionOfPrimitiveValues<string>("SimilarItemProviders", SimilarItemProviders);
             writer.WriteStringValue("Type", Type);
         }
     }

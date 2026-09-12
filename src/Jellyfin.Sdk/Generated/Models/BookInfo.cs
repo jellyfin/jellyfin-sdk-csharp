@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
+    /// <summary>
+    /// The lookup info for books.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class BookInfo : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The IndexNumber property</summary>
         public int? IndexNumber { get; set; }
@@ -68,7 +69,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public global::Jellyfin.Sdk.Generated.Models.BookInfo_ProviderIds ProviderIds { get; set; }
 #endif
-        /// <summary>The SeriesName property</summary>
+        /// <summary>Gets or sets the name of the series the book belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SeriesName { get; set; }
@@ -85,7 +86,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.BookInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.BookInfo();
         }
         /// <summary>
@@ -116,7 +117,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("IndexNumber", IndexNumber);
             writer.WriteBoolValue("IsAutomated", IsAutomated);
             writer.WriteStringValue("MetadataCountryCode", MetadataCountryCode);
