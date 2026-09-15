@@ -35,7 +35,7 @@ namespace Jellyfin.Sdk.Generated.Auth.Keys
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/Keys?app={app}", pathParameters)
+        public KeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/Keys", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Jellyfin.Sdk.Generated.Auth.Keys
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/Keys?app={app}", rawUrl)
+        public KeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/Keys", rawUrl)
         {
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Jellyfin.Sdk.Generated.Auth.Keys
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/Auth/Keys", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             return requestInfo;
@@ -114,7 +114,7 @@ namespace Jellyfin.Sdk.Generated.Auth.Keys
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Auth.Keys.KeysRequestBuilder.KeysRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Auth/Keys?app={app}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

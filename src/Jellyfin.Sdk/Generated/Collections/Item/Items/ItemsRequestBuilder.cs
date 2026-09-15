@@ -21,7 +21,7 @@ namespace Jellyfin.Sdk.Generated.Collections.Item.Items
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections/{collectionId}/Items?ids={ids}", pathParameters)
+        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections/{collectionId}/Items{?ids*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Jellyfin.Sdk.Generated.Collections.Item.Items
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections/{collectionId}/Items?ids={ids}", rawUrl)
+        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Collections/{collectionId}/Items{?ids*}", rawUrl)
         {
         }
         /// <summary>

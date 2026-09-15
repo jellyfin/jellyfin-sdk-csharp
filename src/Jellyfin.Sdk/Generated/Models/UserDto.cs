@@ -27,8 +27,10 @@ namespace Jellyfin.Sdk.Generated.Models
         [Obsolete("")]
         public bool? HasConfiguredEasyPassword { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance has configured password.</summary>
+        [Obsolete("")]
         public bool? HasConfiguredPassword { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance has password.</summary>
+        [Obsolete("")]
         public bool? HasPassword { get; set; }
         /// <summary>Gets or sets the id.</summary>
         public Guid? Id { get; set; }
@@ -85,7 +87,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.UserDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.UserDto();
         }
         /// <summary>
@@ -118,7 +120,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Jellyfin.Sdk.Generated.Models.UserConfiguration>("Configuration", Configuration);
             writer.WriteBoolValue("EnableAutoLogin", EnableAutoLogin);
             writer.WriteBoolValue("HasConfiguredEasyPassword", HasConfiguredEasyPassword);

@@ -34,7 +34,7 @@ namespace Jellyfin.Sdk.Generated.Devices
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices?id={id}{&userId*}", pathParameters)
+        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices{?id*,userId*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,15 +42,15 @@ namespace Jellyfin.Sdk.Generated.Devices
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices?id={id}{&userId*}", rawUrl)
+        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Devices{?id*,userId*}", rawUrl)
         {
         }
         /// <summary>
-        /// Deletes a device.
+        /// Deletes devices.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="global::Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Devices.DevicesRequestBuilder.DevicesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,7 +63,7 @@ namespace Jellyfin.Sdk.Generated.Devices
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "400", global::Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -86,7 +86,7 @@ namespace Jellyfin.Sdk.Generated.Devices
             return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.DeviceInfoDtoQueryResult>(requestInfo, global::Jellyfin.Sdk.Generated.Models.DeviceInfoDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a device.
+        /// Deletes devices.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,7 +99,7 @@ namespace Jellyfin.Sdk.Generated.Devices
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Devices.DevicesRequestBuilder.DevicesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/Devices?id={id}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             return requestInfo;
@@ -118,7 +118,7 @@ namespace Jellyfin.Sdk.Generated.Devices
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/Devices{?userId*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             return requestInfo;
@@ -133,20 +133,20 @@ namespace Jellyfin.Sdk.Generated.Devices
             return new global::Jellyfin.Sdk.Generated.Devices.DevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Deletes a device.
+        /// Deletes devices.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DevicesRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Device Id.</summary>
+            /// <summary>Device Ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("id")]
-            public string? Id { get; set; }
+            public string[]? Id { get; set; }
 #nullable restore
 #else
             [QueryParameter("id")]
-            public string Id { get; set; }
+            public string[] Id { get; set; }
 #endif
         }
         /// <summary>

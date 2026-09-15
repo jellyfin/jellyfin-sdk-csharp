@@ -86,7 +86,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs
         public async Task<global::Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult> PostAsync(global::Jellyfin.Sdk.Generated.Models.GetProgramsDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult>(requestInfo, global::Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -124,7 +124,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.Programs
         public RequestInformation ToPostRequestInformation(global::Jellyfin.Sdk.Generated.Models.GetProgramsDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");

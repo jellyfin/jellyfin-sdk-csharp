@@ -107,5 +107,9 @@ namespace Jellyfin.Sdk.Generated.Models
         #pragma warning disable CS1591
         Translator,
         #pragma warning restore CS1591
+        [EnumMember(Value = "Narrator")]
+        #pragma warning disable CS1591
+        Narrator,
+        #pragma warning restore CS1591
     }
 }

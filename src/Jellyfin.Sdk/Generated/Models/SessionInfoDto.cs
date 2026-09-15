@@ -69,7 +69,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string DeviceType { get; set; }
 #endif
-        /// <summary>Gets or sets a value indicating whether the session has a custom device name.</summary>
+        /// <summary>Gets or sets a value indicating whether this session has a custom device name.</summary>
         public bool? HasCustomDeviceName { get; set; }
         /// <summary>Gets or sets the id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,14 +102,6 @@ namespace Jellyfin.Sdk.Generated.Models
 #nullable restore
 #else
         public List<global::Jellyfin.Sdk.Generated.Models.QueueItem> NowPlayingQueue { get; set; }
-#endif
-        /// <summary>Gets or sets the now playing queue full items.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Jellyfin.Sdk.Generated.Models.BaseItemDto>? NowPlayingQueueFullItems { get; set; }
-#nullable restore
-#else
-        public List<global::Jellyfin.Sdk.Generated.Models.BaseItemDto> NowPlayingQueueFullItems { get; set; }
 #endif
         /// <summary>Gets or sets the now viewing item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -204,7 +196,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.SessionInfoDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.SessionInfoDto();
         }
         /// <summary>
@@ -230,7 +222,6 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "LastPlaybackCheckIn", n => { LastPlaybackCheckIn = n.GetDateTimeOffsetValue(); } },
                 { "NowPlayingItem", n => { NowPlayingItem = n.GetObjectValue<global::Jellyfin.Sdk.Generated.Models.BaseItemDto>(global::Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue); } },
                 { "NowPlayingQueue", n => { NowPlayingQueue = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.QueueItem>(global::Jellyfin.Sdk.Generated.Models.QueueItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "NowPlayingQueueFullItems", n => { NowPlayingQueueFullItems = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.BaseItemDto>(global::Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "NowViewingItem", n => { NowViewingItem = n.GetObjectValue<global::Jellyfin.Sdk.Generated.Models.BaseItemDto>(global::Jellyfin.Sdk.Generated.Models.BaseItemDto.CreateFromDiscriminatorValue); } },
                 { "PlayState", n => { PlayState = n.GetObjectValue<global::Jellyfin.Sdk.Generated.Models.PlayerStateInfo>(global::Jellyfin.Sdk.Generated.Models.PlayerStateInfo.CreateFromDiscriminatorValue); } },
                 { "PlayableMediaTypes", n => { PlayableMediaTypes = n.GetCollectionOfEnumValues<global::Jellyfin.Sdk.Generated.Models.MediaType>()?.AsList(); } },
@@ -252,7 +243,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.SessionUserInfo>("AdditionalUsers", AdditionalUsers);
             writer.WriteStringValue("ApplicationVersion", ApplicationVersion);
             writer.WriteObjectValue<global::Jellyfin.Sdk.Generated.Models.ClientCapabilitiesDto>("Capabilities", Capabilities);
@@ -268,7 +259,6 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteDateTimeOffsetValue("LastPlaybackCheckIn", LastPlaybackCheckIn);
             writer.WriteObjectValue<global::Jellyfin.Sdk.Generated.Models.BaseItemDto>("NowPlayingItem", NowPlayingItem);
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.QueueItem>("NowPlayingQueue", NowPlayingQueue);
-            writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.BaseItemDto>("NowPlayingQueueFullItems", NowPlayingQueueFullItems);
             writer.WriteObjectValue<global::Jellyfin.Sdk.Generated.Models.BaseItemDto>("NowViewingItem", NowViewingItem);
             writer.WriteCollectionOfEnumValues<global::Jellyfin.Sdk.Generated.Models.MediaType>("PlayableMediaTypes", PlayableMediaTypes);
             writer.WriteStringValue("PlaylistItemId", PlaylistItemId);
