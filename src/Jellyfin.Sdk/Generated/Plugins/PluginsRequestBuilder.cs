@@ -21,7 +21,6 @@ namespace Jellyfin.Sdk.Generated.Plugins
         /// <summary>Gets an item from the Jellyfin.Sdk.Generated.Plugins.item collection</summary>
         /// <param name="position">Plugin id.</param>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Plugins.Item.WithPluginItemRequestBuilder"/></returns>
-        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.Plugins.Item.WithPluginItemRequestBuilder this[Guid position]
         {
             get

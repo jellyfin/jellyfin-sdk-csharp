@@ -22,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog.Entries
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog/Entries{?hasUserId*,limit*,minDate*,startIndex*}", pathParameters)
+        public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog/Entries{?hasUserId*,itemId*,limit*,maxDate*,minDate*,name*,overview*,severity*,shortOverview*,sortBy*,sortOrder*,startIndex*,type*,username*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog.Entries
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog/Entries{?hasUserId*,limit*,minDate*,startIndex*}", rawUrl)
+        public EntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/System/ActivityLog/Entries{?hasUserId*,itemId*,limit*,maxDate*,minDate*,name*,overview*,severity*,shortOverview*,sortBy*,sortOrder*,startIndex*,type*,username*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,18 +85,97 @@ namespace Jellyfin.Sdk.Generated.System.ActivityLog.Entries
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EntriesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional. Filter log entries if it has user id, or not.</summary>
+            /// <summary>Filter log entries if it has user id, or not.</summary>
             [QueryParameter("hasUserId")]
             public bool? HasUserId { get; set; }
-            /// <summary>Optional. The maximum number of records to return.</summary>
+            /// <summary>Filter by item id.</summary>
+            [QueryParameter("itemId")]
+            public Guid? ItemId { get; set; }
+            /// <summary>The maximum number of records to return.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Optional. The minimum date. Format = ISO.</summary>
+            /// <summary>The maximum date.</summary>
+            [QueryParameter("maxDate")]
+            public DateTimeOffset? MaxDate { get; set; }
+            /// <summary>The minimum date.</summary>
             [QueryParameter("minDate")]
             public DateTimeOffset? MinDate { get; set; }
-            /// <summary>Optional. The record index to start at. All items with a lower index will be dropped from the results.</summary>
+            /// <summary>Filter by name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string Name { get; set; }
+#endif
+            /// <summary>Filter by overview.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("overview")]
+            public string? Overview { get; set; }
+#nullable restore
+#else
+            [QueryParameter("overview")]
+            public string Overview { get; set; }
+#endif
+            /// <summary>Filter by log severity.</summary>
+            [QueryParameter("severity")]
+            public global::Jellyfin.Sdk.Generated.System.ActivityLog.Entries.LogLevel? Severity { get; set; }
+            /// <summary>Filter by short overview.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("shortOverview")]
+            public string? ShortOverview { get; set; }
+#nullable restore
+#else
+            [QueryParameter("shortOverview")]
+            public string ShortOverview { get; set; }
+#endif
+            /// <summary>Specify one or more sort orders. Format: SortBy=Name,Type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sortBy")]
+            public global::Jellyfin.Sdk.Generated.Models.ActivityLogSortBy[]? SortBy { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sortBy")]
+            public global::Jellyfin.Sdk.Generated.Models.ActivityLogSortBy[] SortBy { get; set; }
+#endif
+            /// <summary>Sort Order..</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sortOrder")]
+            public global::Jellyfin.Sdk.Generated.Models.SortOrder[]? SortOrder { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sortOrder")]
+            public global::Jellyfin.Sdk.Generated.Models.SortOrder[] SortOrder { get; set; }
+#endif
+            /// <summary>The record index to start at. All items with a lower index will be dropped from the results.</summary>
             [QueryParameter("startIndex")]
             public int? StartIndex { get; set; }
+            /// <summary>Filter by type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("type")]
+            public string? Type { get; set; }
+#nullable restore
+#else
+            [QueryParameter("type")]
+            public string Type { get; set; }
+#endif
+            /// <summary>Filter by username.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("username")]
+            public string? Username { get; set; }
+#nullable restore
+#else
+            [QueryParameter("username")]
+            public string Username { get; set; }
+#endif
         }
     }
 }

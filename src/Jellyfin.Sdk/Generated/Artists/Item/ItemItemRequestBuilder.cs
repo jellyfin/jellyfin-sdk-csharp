@@ -21,16 +21,19 @@ namespace Jellyfin.Sdk.Generated.Artists.Item
     public partial class ItemItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Images property</summary>
+        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.Artists.Item.Images.ImagesRequestBuilder Images
         {
             get => new global::Jellyfin.Sdk.Generated.Artists.Item.Images.ImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The InstantMix property</summary>
+        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.Artists.Item.InstantMix.InstantMixRequestBuilder InstantMix
         {
             get => new global::Jellyfin.Sdk.Generated.Artists.Item.InstantMix.InstantMixRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Similar property</summary>
+        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.Artists.Item.Similar.SimilarRequestBuilder Similar
         {
             get => new global::Jellyfin.Sdk.Generated.Artists.Item.Similar.SimilarRequestBuilder(PathParameters, RequestAdapter);
@@ -57,6 +60,7 @@ namespace Jellyfin.Sdk.Generated.Artists.Item
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.BaseItemDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Jellyfin.Sdk.Generated.Models.BaseItemDto?> GetAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder.ItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,6 +78,7 @@ namespace Jellyfin.Sdk.Generated.Artists.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder.ItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -93,6 +98,7 @@ namespace Jellyfin.Sdk.Generated.Artists.Item
         /// </summary>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Jellyfin.Sdk.Generated.Artists.Item.ItemItemRequestBuilder(rawUrl, RequestAdapter);

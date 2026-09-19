@@ -39,6 +39,7 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item.InstantMix
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.MusicGenres.Item.InstantMix.InstantMixRequestBuilder.InstantMixRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,6 +57,7 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item.InstantMix
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.MusicGenres.Item.InstantMix.InstantMixRequestBuilder.InstantMixRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -75,6 +77,7 @@ namespace Jellyfin.Sdk.Generated.MusicGenres.Item.InstantMix
         /// </summary>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.MusicGenres.Item.InstantMix.InstantMixRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.MusicGenres.Item.InstantMix.InstantMixRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Jellyfin.Sdk.Generated.MusicGenres.Item.InstantMix.InstantMixRequestBuilder(rawUrl, RequestAdapter);

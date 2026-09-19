@@ -178,7 +178,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string TranscodingUrl { get; set; }
 #endif
-        /// <summary>The Type property</summary>
+        /// <summary>The type of a media source.</summary>
         public global::Jellyfin.Sdk.Generated.Models.MediaSourceInfo_Type? Type { get; set; }
         /// <summary>The UseMostCompatibleTranscodingProfile property</summary>
         public bool? UseMostCompatibleTranscodingProfile { get; set; }
@@ -187,13 +187,20 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <summary>The VideoType property</summary>
         public global::Jellyfin.Sdk.Generated.Models.MediaSourceInfo_VideoType? VideoType { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Models.MediaSourceInfo"/> and sets the default values.
+        /// </summary>
+        public MediaSourceInfo()
+        {
+            UseMostCompatibleTranscodingProfile = false;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.MediaSourceInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.MediaSourceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.MediaSourceInfo();
         }
         /// <summary>
@@ -257,7 +264,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("AnalyzeDurationMs", AnalyzeDurationMs);
             writer.WriteIntValue("Bitrate", Bitrate);
             writer.WriteIntValue("BufferMs", BufferMs);
