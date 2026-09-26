@@ -170,8 +170,17 @@ namespace Jellyfin.Sdk.Generated.Models
 #endif
         /// <summary>The RemoteClientBitrateLimit property</summary>
         public int? RemoteClientBitrateLimit { get; set; }
-        /// <summary>Enum SyncPlayUserAccessType.</summary>
+        /// <summary>Gets or sets a value indicating what SyncPlay features the user can access.</summary>
         public global::Jellyfin.Sdk.Generated.Models.UserPolicy_SyncPlayAccess? SyncPlayAccess { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Models.UserPolicy"/> and sets the default values.
+        /// </summary>
+        public UserPolicy()
+        {
+            EnableCollectionManagement = false;
+            EnableLyricManagement = false;
+            EnableSubtitleManagement = false;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -179,7 +188,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.UserPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.UserPolicy();
         }
         /// <summary>
@@ -242,7 +251,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.AccessSchedule>("AccessSchedules", AccessSchedules);
             writer.WriteCollectionOfPrimitiveValues<string>("AllowedTags", AllowedTags);
             writer.WriteStringValue("AuthenticationProviderId", AuthenticationProviderId);

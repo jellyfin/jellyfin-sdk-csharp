@@ -37,6 +37,14 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public List<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto> MetadataFetchers { get; set; }
 #endif
+        /// <summary>Gets or sets the similar item providers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>? SimilarItemProviders { get; set; }
+#nullable restore
+#else
+        public List<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto> SimilarItemProviders { get; set; }
+#endif
         /// <summary>Gets or sets the supported image types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,7 +68,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.LibraryTypeOptionsDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.LibraryTypeOptionsDto();
         }
         /// <summary>
@@ -74,6 +82,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "DefaultImageOptions", n => { DefaultImageOptions = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.ImageOption>(global::Jellyfin.Sdk.Generated.Models.ImageOption.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ImageFetchers", n => { ImageFetchers = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>(global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "MetadataFetchers", n => { MetadataFetchers = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>(global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "SimilarItemProviders", n => { SimilarItemProviders = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>(global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "SupportedImageTypes", n => { SupportedImageTypes = n.GetCollectionOfEnumValues<global::Jellyfin.Sdk.Generated.Models.ImageType>()?.AsList(); } },
                 { "Type", n => { Type = n.GetStringValue(); } },
             };
@@ -84,10 +93,11 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.ImageOption>("DefaultImageOptions", DefaultImageOptions);
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>("ImageFetchers", ImageFetchers);
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>("MetadataFetchers", MetadataFetchers);
+            writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.LibraryOptionInfoDto>("SimilarItemProviders", SimilarItemProviders);
             writer.WriteCollectionOfEnumValues<global::Jellyfin.Sdk.Generated.Models.ImageType>("SupportedImageTypes", SupportedImageTypes);
             writer.WriteStringValue("Type", Type);
         }

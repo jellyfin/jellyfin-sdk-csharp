@@ -49,7 +49,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ChannelMappings
         public async Task<global::Jellyfin.Sdk.Generated.Models.TunerChannelMapping> PostAsync(global::Jellyfin.Sdk.Generated.Models.SetChannelMappingDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.TunerChannelMapping>(requestInfo, global::Jellyfin.Sdk.Generated.Models.TunerChannelMapping.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -68,7 +68,7 @@ namespace Jellyfin.Sdk.Generated.LiveTv.ChannelMappings
         public RequestInformation ToPostRequestInformation(global::Jellyfin.Sdk.Generated.Models.SetChannelMappingDto body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");

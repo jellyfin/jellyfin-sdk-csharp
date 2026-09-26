@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
-    /// <summary>Enum SyncPlayUserAccessType.</summary>
+    /// <summary>Gets or sets a value indicating what SyncPlay features the user can access.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UserPolicy_SyncPlayAccess
     {

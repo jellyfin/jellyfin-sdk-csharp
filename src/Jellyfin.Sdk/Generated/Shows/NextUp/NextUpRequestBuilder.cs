@@ -22,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.Shows.NextUp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NextUpRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/NextUp{?disableFirstEpisode*,enableImageTypes*,enableImages*,enableResumable*,enableRewatching*,enableTotalRecordCount*,enableUserData*,fields*,imageTypeLimit*,limit*,nextUpDateCutoff*,parentId*,seriesId*,startIndex*,userId*}", pathParameters)
+        public NextUpRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/NextUp{?enableImageTypes*,enableImages*,enableResumable*,enableRewatching*,enableTotalRecordCount*,enableUserData*,fields*,imageTypeLimit*,limit*,nextUpDateCutoff*,parentId*,seriesId*,startIndex*,userId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.Shows.NextUp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NextUpRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/NextUp{?disableFirstEpisode*,enableImageTypes*,enableImages*,enableResumable*,enableRewatching*,enableTotalRecordCount*,enableUserData*,fields*,imageTypeLimit*,limit*,nextUpDateCutoff*,parentId*,seriesId*,startIndex*,userId*}", rawUrl)
+        public NextUpRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Shows/NextUp{?enableImageTypes*,enableImages*,enableResumable*,enableRewatching*,enableTotalRecordCount*,enableUserData*,fields*,imageTypeLimit*,limit*,nextUpDateCutoff*,parentId*,seriesId*,startIndex*,userId*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,10 +85,6 @@ namespace Jellyfin.Sdk.Generated.Shows.NextUp
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NextUpRequestBuilderGetQueryParameters 
         {
-            /// <summary>Whether to disable sending the first episode in a series as next up.</summary>
-            [Obsolete("")]
-            [QueryParameter("disableFirstEpisode")]
-            public bool? DisableFirstEpisode { get; set; }
             /// <summary>Optional. Include image information in output.</summary>
             [QueryParameter("enableImages")]
             public bool? EnableImages { get; set; }

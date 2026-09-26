@@ -53,7 +53,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public bool? RememberIndexing { get; set; }
         /// <summary>Gets or sets a value indicating whether [remember sorting].</summary>
         public bool? RememberSorting { get; set; }
-        /// <summary>An enum representing the axis that should be scrolled.</summary>
+        /// <summary>Gets or sets the scroll direction.</summary>
         public global::Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_ScrollDirection? ScrollDirection { get; set; }
         /// <summary>Gets or sets a value indicating whether to show backdrops on this item.</summary>
         public bool? ShowBackdrop { get; set; }
@@ -67,7 +67,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string SortBy { get; set; }
 #endif
-        /// <summary>An enum representing the sorting order.</summary>
+        /// <summary>Gets or sets the sort order.</summary>
         public global::Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_SortOrder? SortOrder { get; set; }
         /// <summary>Gets or sets the type of the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +84,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto();
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Client", Client);
             writer.WriteObjectValue<global::Jellyfin.Sdk.Generated.Models.DisplayPreferencesDto_CustomPrefs>("CustomPrefs", CustomPrefs);
             writer.WriteStringValue("Id", Id);

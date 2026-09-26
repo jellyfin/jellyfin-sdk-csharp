@@ -13,9 +13,6 @@ namespace Jellyfin.Sdk.Generated.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StartupRemoteAccessDto : IParsable
     {
-        /// <summary>Gets or sets a value indicating whether enable automatic port mapping.</summary>
-        [Obsolete("")]
-        public bool? EnableAutomaticPortMapping { get; set; }
         /// <summary>Gets or sets a value indicating whether enable remote access.</summary>
         public bool? EnableRemoteAccess { get; set; }
         /// <summary>
@@ -25,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.StartupRemoteAccessDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.StartupRemoteAccessDto();
         }
         /// <summary>
@@ -36,7 +33,6 @@ namespace Jellyfin.Sdk.Generated.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "EnableAutomaticPortMapping", n => { EnableAutomaticPortMapping = n.GetBoolValue(); } },
                 { "EnableRemoteAccess", n => { EnableRemoteAccess = n.GetBoolValue(); } },
             };
         }
@@ -46,8 +42,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("EnableAutomaticPortMapping", EnableAutomaticPortMapping);
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("EnableRemoteAccess", EnableRemoteAccess);
         }
     }
