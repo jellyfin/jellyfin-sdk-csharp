@@ -39,6 +39,7 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Initiate
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.QuickConnectResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Jellyfin.Sdk.Generated.Models.QuickConnectResult?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -49,7 +50,11 @@ namespace Jellyfin.Sdk.Generated.QuickConnect.Initiate
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.QuickConnectResult>(requestInfo, global::Jellyfin.Sdk.Generated.Models.QuickConnectResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Jellyfin.Sdk.Generated.Models.ProblemDetails.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.QuickConnectResult>(requestInfo, global::Jellyfin.Sdk.Generated.Models.QuickConnectResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Initiate a new quick connect request.

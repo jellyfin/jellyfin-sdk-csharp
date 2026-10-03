@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
+    /// <summary>
+    /// The lookup info for movies.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class MovieInfo : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The IndexNumber property</summary>
         public int? IndexNumber { get; set; }
@@ -77,7 +78,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.MovieInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.MovieInfo();
         }
         /// <summary>
@@ -107,7 +108,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("IndexNumber", IndexNumber);
             writer.WriteBoolValue("IsAutomated", IsAutomated);
             writer.WriteStringValue("MetadataCountryCode", MetadataCountryCode);

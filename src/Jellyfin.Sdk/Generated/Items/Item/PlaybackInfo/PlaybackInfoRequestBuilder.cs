@@ -73,7 +73,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo
         public async Task<global::Jellyfin.Sdk.Generated.Models.PlaybackInfoResponse> PostAsync(global::Jellyfin.Sdk.Generated.Models.PlaybackInfoDto body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder.PlaybackInfoRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -115,7 +115,7 @@ namespace Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo
         public RequestInformation ToPostRequestInformation(global::Jellyfin.Sdk.Generated.Models.PlaybackInfoDto body, Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Items.Item.PlaybackInfo.PlaybackInfoRequestBuilder.PlaybackInfoRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");

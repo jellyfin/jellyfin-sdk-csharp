@@ -63,6 +63,8 @@ namespace Jellyfin.Sdk.Generated.Models
         public int? AlbumCount { get; set; }
         /// <summary>Gets or sets the album id.</summary>
         public Guid? AlbumId { get; set; }
+        /// <summary>Gets or sets the gain required for audio normalization. This field is inherited from music album normalization gain.</summary>
+        public float? AlbumNormalizationGain { get; set; }
         /// <summary>Gets or sets the album image tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -407,6 +409,14 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string OfficialRating { get; set; }
 #endif
+        /// <summary>The OriginalLanguage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginalLanguage { get; set; }
+#nullable restore
+#else
+        public string OriginalLanguage { get; set; }
+#endif
         /// <summary>The OriginalTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -747,7 +757,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.BaseItemDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.BaseItemDto();
         }
         /// <summary>
@@ -768,6 +778,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "AlbumArtists", n => { AlbumArtists = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.NameGuidPair>(global::Jellyfin.Sdk.Generated.Models.NameGuidPair.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "AlbumCount", n => { AlbumCount = n.GetIntValue(); } },
                 { "AlbumId", n => { AlbumId = n.GetGuidValue(); } },
+                { "AlbumNormalizationGain", n => { AlbumNormalizationGain = n.GetFloatValue(); } },
                 { "AlbumPrimaryImageTag", n => { AlbumPrimaryImageTag = n.GetStringValue(); } },
                 { "Altitude", n => { Altitude = n.GetDoubleValue(); } },
                 { "Aperture", n => { Aperture = n.GetDoubleValue(); } },
@@ -850,6 +861,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "NormalizationGain", n => { NormalizationGain = n.GetFloatValue(); } },
                 { "Number", n => { Number = n.GetStringValue(); } },
                 { "OfficialRating", n => { OfficialRating = n.GetStringValue(); } },
+                { "OriginalLanguage", n => { OriginalLanguage = n.GetStringValue(); } },
                 { "OriginalTitle", n => { OriginalTitle = n.GetStringValue(); } },
                 { "Overview", n => { Overview = n.GetStringValue(); } },
                 { "ParentArtImageTag", n => { ParentArtImageTag = n.GetStringValue(); } },
@@ -919,7 +931,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Jellyfin.Sdk.Generated.Models.DayOfWeekObject>("AirDays", AirDays);
             writer.WriteIntValue("AirsAfterSeasonNumber", AirsAfterSeasonNumber);
             writer.WriteIntValue("AirsBeforeEpisodeNumber", AirsBeforeEpisodeNumber);
@@ -930,6 +942,7 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.NameGuidPair>("AlbumArtists", AlbumArtists);
             writer.WriteIntValue("AlbumCount", AlbumCount);
             writer.WriteGuidValue("AlbumId", AlbumId);
+            writer.WriteFloatValue("AlbumNormalizationGain", AlbumNormalizationGain);
             writer.WriteStringValue("AlbumPrimaryImageTag", AlbumPrimaryImageTag);
             writer.WriteDoubleValue("Altitude", Altitude);
             writer.WriteDoubleValue("Aperture", Aperture);
@@ -1012,6 +1025,7 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteFloatValue("NormalizationGain", NormalizationGain);
             writer.WriteStringValue("Number", Number);
             writer.WriteStringValue("OfficialRating", OfficialRating);
+            writer.WriteStringValue("OriginalLanguage", OriginalLanguage);
             writer.WriteStringValue("OriginalTitle", OriginalTitle);
             writer.WriteStringValue("Overview", Overview);
             writer.WriteStringValue("ParentArtImageTag", ParentArtImageTag);

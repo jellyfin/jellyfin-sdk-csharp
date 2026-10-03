@@ -7,12 +7,13 @@ using System.IO;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
+    /// <summary>
+    /// A command to display a message on a client.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class MessageCommand : IParsable
-    #pragma warning restore CS1591
     {
-        /// <summary>The Header property</summary>
+        /// <summary>Gets or sets the message header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Header { get; set; }
@@ -20,7 +21,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string Header { get; set; }
 #endif
-        /// <summary>The Text property</summary>
+        /// <summary>Gets or sets the message text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }
@@ -28,7 +29,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>The TimeoutMs property</summary>
+        /// <summary>Gets or sets the timeout in milliseconds after which the message should be dismissed.</summary>
         public long? TimeoutMs { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +38,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.MessageCommand CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.MessageCommand();
         }
         /// <summary>
@@ -59,7 +60,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Header", Header);
             writer.WriteStringValue("Text", Text);
             writer.WriteLongValue("TimeoutMs", TimeoutMs);
