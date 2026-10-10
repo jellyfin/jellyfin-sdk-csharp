@@ -7,11 +7,20 @@ using System.IO;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
+    /// <summary>
+    /// The lookup info for series.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class SeriesInfo : IParsable
-    #pragma warning restore CS1591
     {
+        /// <summary>Gets or sets the canned display order group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayOrder { get; set; }
+#nullable restore
+#else
+        public string DisplayOrder { get; set; }
+#endif
         /// <summary>The IndexNumber property</summary>
         public int? IndexNumber { get; set; }
         /// <summary>The IsAutomated property</summary>
@@ -77,7 +86,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.SeriesInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.SeriesInfo();
         }
         /// <summary>
@@ -88,6 +97,7 @@ namespace Jellyfin.Sdk.Generated.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "DisplayOrder", n => { DisplayOrder = n.GetStringValue(); } },
                 { "IndexNumber", n => { IndexNumber = n.GetIntValue(); } },
                 { "IsAutomated", n => { IsAutomated = n.GetBoolValue(); } },
                 { "MetadataCountryCode", n => { MetadataCountryCode = n.GetStringValue(); } },
@@ -107,7 +117,8 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("DisplayOrder", DisplayOrder);
             writer.WriteIntValue("IndexNumber", IndexNumber);
             writer.WriteBoolValue("IsAutomated", IsAutomated);
             writer.WriteStringValue("MetadataCountryCode", MetadataCountryCode);

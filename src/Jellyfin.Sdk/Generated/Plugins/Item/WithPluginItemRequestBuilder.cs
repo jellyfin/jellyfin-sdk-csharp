@@ -21,13 +21,11 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item
     public partial class WithPluginItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Configuration property</summary>
-        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.Plugins.Item.Configuration.ConfigurationRequestBuilder Configuration
         {
             get => new global::Jellyfin.Sdk.Generated.Plugins.Item.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Manifest property</summary>
-        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.Plugins.Item.Manifest.ManifestRequestBuilder Manifest
         {
             get => new global::Jellyfin.Sdk.Generated.Plugins.Item.Manifest.ManifestRequestBuilder(PathParameters, RequestAdapter);
@@ -66,7 +64,6 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
-        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,7 +85,6 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -108,7 +104,6 @@ namespace Jellyfin.Sdk.Generated.Plugins.Item
         /// </summary>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Plugins.Item.WithPluginItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("")]
         public global::Jellyfin.Sdk.Generated.Plugins.Item.WithPluginItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Jellyfin.Sdk.Generated.Plugins.Item.WithPluginItemRequestBuilder(rawUrl, RequestAdapter);

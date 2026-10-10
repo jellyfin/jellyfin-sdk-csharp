@@ -21,7 +21,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public Guid? ItemId { get; set; }
         /// <summary>Gets or sets the start of the segment.</summary>
         public long? StartTicks { get; set; }
-        /// <summary>Defines the types of content an individual Jellyfin.Database.Implementations.Entities.MediaSegment represents.</summary>
+        /// <summary>Gets or sets the type of content this segment defines.</summary>
         public global::Jellyfin.Sdk.Generated.Models.MediaSegmentDto_Type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Models.MediaSegmentDto"/> and sets the default values.
@@ -37,7 +37,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.MediaSegmentDto CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.MediaSegmentDto();
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("EndTicks", EndTicks);
             writer.WriteGuidValue("Id", Id);
             writer.WriteGuidValue("ItemId", ItemId);

@@ -44,7 +44,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item
         /// <param name="index">The index of the desired tile.</param>
         public global::Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item.WithIndexJpg.WithIndexJpgRequestBuilder WithIndexJpg(int? index)
         {
-            _ = index ?? throw new ArgumentNullException(nameof(index));
+            if(ReferenceEquals(index, null)) throw new ArgumentNullException(nameof(index));
             return new global::Jellyfin.Sdk.Generated.Videos.Item.Trickplay.Item.WithIndexJpg.WithIndexJpgRequestBuilder(PathParameters, RequestAdapter, index);
         }
     }

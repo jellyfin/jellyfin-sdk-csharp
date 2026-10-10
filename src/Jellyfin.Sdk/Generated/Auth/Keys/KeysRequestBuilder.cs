@@ -35,7 +35,7 @@ namespace Jellyfin.Sdk.Generated.Auth.Keys
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/Keys?app={app}", pathParameters)
+        public KeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/Keys", pathParameters)
         {
         }
         /// <summary>
@@ -43,43 +43,44 @@ namespace Jellyfin.Sdk.Generated.Auth.Keys
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/Keys?app={app}", rawUrl)
+        public KeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Auth/Keys", rawUrl)
         {
         }
         /// <summary>
         /// Get all keys.
         /// </summary>
-        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoQueryResult"/></returns>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoQueryResult?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDtoQueryResult?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoQueryResult> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDtoQueryResult> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoQueryResult>(requestInfo, global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDtoQueryResult>(requestInfo, global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDtoQueryResult.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new api key.
         /// </summary>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Auth.Keys.KeysRequestBuilder.KeysRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDto?> PostAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Auth.Keys.KeysRequestBuilder.KeysRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Auth.Keys.KeysRequestBuilder.KeysRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDto> PostAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Auth.Keys.KeysRequestBuilder.KeysRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDto>(requestInfo, global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDto.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all keys.
@@ -95,7 +96,7 @@ namespace Jellyfin.Sdk.Generated.Auth.Keys
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/Auth/Keys", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             return requestInfo;
@@ -114,8 +115,9 @@ namespace Jellyfin.Sdk.Generated.Auth.Keys
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Auth.Keys.KeysRequestBuilder.KeysRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/Auth/Keys?app={app}", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json;profile=\"CamelCase\", application/json;profile=\"PascalCase\"");
             return requestInfo;
         }
         /// <summary>

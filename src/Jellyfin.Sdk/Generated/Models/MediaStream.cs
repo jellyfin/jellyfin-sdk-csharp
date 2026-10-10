@@ -157,6 +157,8 @@ namespace Jellyfin.Sdk.Generated.Models
         public bool? IsHearingImpaired { get; set; }
         /// <summary>Gets or sets a value indicating whether this instance is interlaced.</summary>
         public bool? IsInterlaced { get; set; }
+        /// <summary>Gets or sets a value indicating whether this instance is original.</summary>
+        public bool? IsOriginal { get; set; }
         /// <summary>The IsTextSubtitleStream property</summary>
         public bool? IsTextSubtitleStream { get; private set; }
         /// <summary>Gets or sets the language.</summary>
@@ -200,6 +202,22 @@ namespace Jellyfin.Sdk.Generated.Models
 #nullable restore
 #else
         public string LocalizedHearingImpaired { get; set; }
+#endif
+        /// <summary>The LocalizedLanguage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LocalizedLanguage { get; set; }
+#nullable restore
+#else
+        public string LocalizedLanguage { get; set; }
+#endif
+        /// <summary>The LocalizedOriginal property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LocalizedOriginal { get; set; }
+#nullable restore
+#else
+        public string LocalizedOriginal { get; set; }
 #endif
         /// <summary>The LocalizedUndefined property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -307,7 +325,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Jellyfin.Sdk.Generated.Models.MediaStream CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Jellyfin.Sdk.Generated.Models.MediaStream();
         }
         /// <summary>
@@ -354,6 +372,7 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "IsForced", n => { IsForced = n.GetBoolValue(); } },
                 { "IsHearingImpaired", n => { IsHearingImpaired = n.GetBoolValue(); } },
                 { "IsInterlaced", n => { IsInterlaced = n.GetBoolValue(); } },
+                { "IsOriginal", n => { IsOriginal = n.GetBoolValue(); } },
                 { "IsTextSubtitleStream", n => { IsTextSubtitleStream = n.GetBoolValue(); } },
                 { "Language", n => { Language = n.GetStringValue(); } },
                 { "Level", n => { Level = n.GetDoubleValue(); } },
@@ -361,6 +380,8 @@ namespace Jellyfin.Sdk.Generated.Models
                 { "LocalizedExternal", n => { LocalizedExternal = n.GetStringValue(); } },
                 { "LocalizedForced", n => { LocalizedForced = n.GetStringValue(); } },
                 { "LocalizedHearingImpaired", n => { LocalizedHearingImpaired = n.GetStringValue(); } },
+                { "LocalizedLanguage", n => { LocalizedLanguage = n.GetStringValue(); } },
+                { "LocalizedOriginal", n => { LocalizedOriginal = n.GetStringValue(); } },
                 { "LocalizedUndefined", n => { LocalizedUndefined = n.GetStringValue(); } },
                 { "NalLengthSize", n => { NalLengthSize = n.GetStringValue(); } },
                 { "PacketLength", n => { PacketLength = n.GetIntValue(); } },
@@ -390,7 +411,7 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("AspectRatio", AspectRatio);
             writer.WriteFloatValue("AverageFrameRate", AverageFrameRate);
             writer.WriteIntValue("BitDepth", BitDepth);
@@ -425,12 +446,15 @@ namespace Jellyfin.Sdk.Generated.Models
             writer.WriteBoolValue("IsForced", IsForced);
             writer.WriteBoolValue("IsHearingImpaired", IsHearingImpaired);
             writer.WriteBoolValue("IsInterlaced", IsInterlaced);
+            writer.WriteBoolValue("IsOriginal", IsOriginal);
             writer.WriteStringValue("Language", Language);
             writer.WriteDoubleValue("Level", Level);
             writer.WriteStringValue("LocalizedDefault", LocalizedDefault);
             writer.WriteStringValue("LocalizedExternal", LocalizedExternal);
             writer.WriteStringValue("LocalizedForced", LocalizedForced);
             writer.WriteStringValue("LocalizedHearingImpaired", LocalizedHearingImpaired);
+            writer.WriteStringValue("LocalizedLanguage", LocalizedLanguage);
+            writer.WriteStringValue("LocalizedOriginal", LocalizedOriginal);
             writer.WriteStringValue("LocalizedUndefined", LocalizedUndefined);
             writer.WriteStringValue("NalLengthSize", NalLengthSize);
             writer.WriteIntValue("PacketLength", PacketLength);

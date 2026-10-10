@@ -9,45 +9,44 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Jellyfin.Sdk.Generated.Artists.InstantMix
+namespace Jellyfin.Sdk.Generated.Items.Item.Collections
 {
     /// <summary>
-    /// Builds and executes requests for operations under \Artists\InstantMix
+    /// Builds and executes requests for operations under \Items\{itemId}\Collections
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InstantMixRequestBuilder : BaseRequestBuilder
+    public partial class CollectionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Artists.InstantMix.InstantMixRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Items.Item.Collections.CollectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstantMixRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Artists/InstantMix?id={id}{&enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,userId*}", pathParameters)
+        public CollectionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Collections{?fields*,limit*,startIndex*,userId*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Artists.InstantMix.InstantMixRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Items.Item.Collections.CollectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstantMixRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Artists/InstantMix?id={id}{&enableImageTypes*,enableImages*,enableUserData*,fields*,imageTypeLimit*,limit*,userId*}", rawUrl)
+        public CollectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Items/{itemId}/Collections{?fields*,limit*,startIndex*,userId*}", rawUrl)
         {
         }
         /// <summary>
-        /// Creates an instant playlist based on a given artist.
+        /// Gets the collections that include the specified item.
         /// </summary>
         /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Jellyfin.Sdk.Generated.Models.ProblemDetails">When receiving a 404 status code</exception>
-        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Artists.InstantMix.InstantMixRequestBuilder.InstantMixRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult?> GetAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Items.Item.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Artists.InstantMix.InstantMixRequestBuilder.InstantMixRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult> GetAsync(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Items.Item.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,18 +57,17 @@ namespace Jellyfin.Sdk.Generated.Artists.InstantMix
             return await RequestAdapter.SendAsync<global::Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult>(requestInfo, global::Jellyfin.Sdk.Generated.Models.BaseItemDtoQueryResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates an instant playlist based on a given artist.
+        /// Gets the collections that include the specified item.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Artists.InstantMix.InstantMixRequestBuilder.InstantMixRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Items.Item.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Artists.InstantMix.InstantMixRequestBuilder.InstantMixRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Jellyfin.Sdk.Generated.Items.Item.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -80,35 +78,18 @@ namespace Jellyfin.Sdk.Generated.Artists.InstantMix
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Artists.InstantMix.InstantMixRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Items.Item.Collections.CollectionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("")]
-        public global::Jellyfin.Sdk.Generated.Artists.InstantMix.InstantMixRequestBuilder WithUrl(string rawUrl)
+        public global::Jellyfin.Sdk.Generated.Items.Item.Collections.CollectionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Jellyfin.Sdk.Generated.Artists.InstantMix.InstantMixRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Jellyfin.Sdk.Generated.Items.Item.Collections.CollectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Creates an instant playlist based on a given artist.
+        /// Gets the collections that include the specified item.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class InstantMixRequestBuilderGetQueryParameters 
+        public partial class CollectionsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional. Include image information in output.</summary>
-            [QueryParameter("enableImages")]
-            public bool? EnableImages { get; set; }
-            /// <summary>Optional. The image types to include in the output.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("enableImageTypes")]
-            public global::Jellyfin.Sdk.Generated.Models.ImageType[]? EnableImageTypes { get; set; }
-#nullable restore
-#else
-            [QueryParameter("enableImageTypes")]
-            public global::Jellyfin.Sdk.Generated.Models.ImageType[] EnableImageTypes { get; set; }
-#endif
-            /// <summary>Optional. Include user data.</summary>
-            [QueryParameter("enableUserData")]
-            public bool? EnableUserData { get; set; }
             /// <summary>Optional. Specify additional fields of information to return in the output.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,15 +100,12 @@ namespace Jellyfin.Sdk.Generated.Artists.InstantMix
             [QueryParameter("fields")]
             public global::Jellyfin.Sdk.Generated.Models.ItemFields[] Fields { get; set; }
 #endif
-            /// <summary>The item id.</summary>
-            [QueryParameter("id")]
-            public Guid? Id { get; set; }
-            /// <summary>Optional. The max number of images to return, per image type.</summary>
-            [QueryParameter("imageTypeLimit")]
-            public int? ImageTypeLimit { get; set; }
             /// <summary>Optional. The maximum number of records to return.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Optional. The index of the first record in the output.</summary>
+            [QueryParameter("startIndex")]
+            public int? StartIndex { get; set; }
             /// <summary>Optional. Filter by user id, and attach user data.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

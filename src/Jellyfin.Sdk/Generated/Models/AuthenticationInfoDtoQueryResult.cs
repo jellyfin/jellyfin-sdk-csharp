@@ -11,15 +11,15 @@ namespace Jellyfin.Sdk.Generated.Models
     /// Query result container.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AuthenticationInfoQueryResult : IParsable
+    public partial class AuthenticationInfoDtoQueryResult : IParsable
     {
         /// <summary>Gets or sets the items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfo>? Items { get; set; }
+        public List<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDto>? Items { get; set; }
 #nullable restore
 #else
-        public List<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfo> Items { get; set; }
+        public List<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDto> Items { get; set; }
 #endif
         /// <summary>Gets or sets the index of the first record in Items.</summary>
         public int? StartIndex { get; set; }
@@ -28,12 +28,12 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoQueryResult"/></returns>
+        /// <returns>A <see cref="global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDtoQueryResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoQueryResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDtoQueryResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoQueryResult();
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            return new global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDtoQueryResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,7 +43,7 @@ namespace Jellyfin.Sdk.Generated.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Items", n => { Items = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfo>(global::Jellyfin.Sdk.Generated.Models.AuthenticationInfo.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "Items", n => { Items = n.GetCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDto>(global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDto.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "StartIndex", n => { StartIndex = n.GetIntValue(); } },
                 { "TotalRecordCount", n => { TotalRecordCount = n.GetIntValue(); } },
             };
@@ -54,8 +54,8 @@ namespace Jellyfin.Sdk.Generated.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfo>("Items", Items);
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Jellyfin.Sdk.Generated.Models.AuthenticationInfoDto>("Items", Items);
             writer.WriteIntValue("StartIndex", StartIndex);
             writer.WriteIntValue("TotalRecordCount", TotalRecordCount);
         }
