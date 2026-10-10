@@ -35,7 +35,7 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{item%2Did}/Items{?enableImageTypes*,enableImages*,enableUserData*,entryIds*,fields*,ids*,imageTypeLimit*,limit*,startIndex*,userId*}", pathParameters)
+        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{item%2Did}/Items{?enableImageTypes*,enableImages*,enableUserData*,entryIds*,fields*,ids*,imageTypeLimit*,limit*,position*,startIndex*,userId*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{item%2Did}/Items{?enableImageTypes*,enableImages*,enableUserData*,entryIds*,fields*,ids*,imageTypeLimit*,limit*,startIndex*,userId*}", rawUrl)
+        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Playlists/{item%2Did}/Items{?enableImageTypes*,enableImages*,enableUserData*,entryIds*,fields*,ids*,imageTypeLimit*,limit*,position*,startIndex*,userId*}", rawUrl)
         {
         }
         /// <summary>
@@ -263,6 +263,9 @@ namespace Jellyfin.Sdk.Generated.Playlists.Item.Items
             [QueryParameter("ids")]
             public Guid?[] Ids { get; set; }
 #endif
+            /// <summary>Optional. 0-based index where to place the items or at the end if `null`.</summary>
+            [QueryParameter("position")]
+            public int? Position { get; set; }
             /// <summary>The userId.</summary>
             [QueryParameter("userId")]
             public Guid? UserId { get; set; }

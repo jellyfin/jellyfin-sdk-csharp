@@ -2,12 +2,7 @@
 #pragma warning disable CS0618
 using Jellyfin.Sdk.Generated.Videos.Item.AdditionalParts;
 using Jellyfin.Sdk.Generated.Videos.Item.AlternateSources;
-using Jellyfin.Sdk.Generated.Videos.Item.Hls1;
-using Jellyfin.Sdk.Generated.Videos.Item.Hls;
 using Jellyfin.Sdk.Generated.Videos.Item.Item;
-using Jellyfin.Sdk.Generated.Videos.Item.LiveM3u8;
-using Jellyfin.Sdk.Generated.Videos.Item.MainM3u8;
-using Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8;
 using Jellyfin.Sdk.Generated.Videos.Item.StreamNamespace;
 using Jellyfin.Sdk.Generated.Videos.Item.StreamWithContainer;
 using Jellyfin.Sdk.Generated.Videos.Item.Subtitles;
@@ -35,31 +30,6 @@ namespace Jellyfin.Sdk.Generated.Videos.Item
         public global::Jellyfin.Sdk.Generated.Videos.Item.AlternateSources.AlternateSourcesRequestBuilder AlternateSources
         {
             get => new global::Jellyfin.Sdk.Generated.Videos.Item.AlternateSources.AlternateSourcesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The hls property</summary>
-        public global::Jellyfin.Sdk.Generated.Videos.Item.Hls.HlsRequestBuilder Hls
-        {
-            get => new global::Jellyfin.Sdk.Generated.Videos.Item.Hls.HlsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The hls1 property</summary>
-        public global::Jellyfin.Sdk.Generated.Videos.Item.Hls1.Hls1RequestBuilder Hls1
-        {
-            get => new global::Jellyfin.Sdk.Generated.Videos.Item.Hls1.Hls1RequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The liveM3u8 property</summary>
-        public global::Jellyfin.Sdk.Generated.Videos.Item.LiveM3u8.LiveM3u8RequestBuilder LiveM3u8
-        {
-            get => new global::Jellyfin.Sdk.Generated.Videos.Item.LiveM3u8.LiveM3u8RequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The mainM3u8 property</summary>
-        public global::Jellyfin.Sdk.Generated.Videos.Item.MainM3u8.MainM3u8RequestBuilder MainM3u8
-        {
-            get => new global::Jellyfin.Sdk.Generated.Videos.Item.MainM3u8.MainM3u8RequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The masterM3u8 property</summary>
-        public global::Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8.MasterM3u8RequestBuilder MasterM3u8
-        {
-            get => new global::Jellyfin.Sdk.Generated.Videos.Item.MasterM3u8.MasterM3u8RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stream property</summary>
         public global::Jellyfin.Sdk.Generated.Videos.Item.StreamNamespace.StreamRequestBuilder Stream
