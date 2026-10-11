@@ -9,7 +9,7 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.14.0" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.15.8" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Jellyfin.Sdk\Jellyfin.Sdk.csproj" />
