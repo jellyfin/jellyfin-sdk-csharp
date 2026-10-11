@@ -33,6 +33,12 @@
     <PackageReference Include="Microsoft.Kiota.Serialization.Multipart" Version="2.1.2" />
     <PackageReference Include="Microsoft.Kiota.Serialization.Text" Version="2.1.2" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jellyfin.Sdk.SourceGenerators\Jellyfin.Sdk.SourceGenerators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Jellyfin.Sdk.Benchmarks" />
+  </ItemGroup>
   <!-- Code Analyzers-->
   <ItemGroup>
     <PackageReference Include="SerilogAnalyzer" Version="0.15.0" PrivateAssets="All" />
