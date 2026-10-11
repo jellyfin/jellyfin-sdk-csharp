@@ -12,7 +12,7 @@ namespace Jellyfin.Sdk;
 /// </summary>
 public class JellyfinRequestAdapter : HttpClientRequestAdapter
 {
-    private static readonly JsonParseNodeFactory _jsonParseNodeFactory = new(
+    private static readonly JellyfinJsonParseNodeFactory _jsonParseNodeFactory = new(
         new KiotaJsonSerializationContext(
             new JsonSerializerOptions(KiotaJsonSerializationContext.Default.Options)
             {
@@ -45,6 +45,8 @@ public class JellyfinRequestAdapter : HttpClientRequestAdapter
         BaseUrl = _jellyfinSdkSettings.ServerUrl;
         _jellyfinSdkSettings.ServerUrlUpdated += OnServerUrlUpdated;
     }
+
+    internal static KiotaJsonSerializationContext SerializationContext => _jsonParseNodeFactory.Context;
 
     /// <inheritdoc />
     protected override void Dispose(bool disposing)

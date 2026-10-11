@@ -1,4 +1,4 @@
 {
   "$schema": "./build.schema.json",
-  "Solution": "src/Jellyfin.Sdk.sln"
+  "Solution": "src/Jellyfin.Sdk.slnx"
 }

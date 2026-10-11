@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Samples/">
+    <Project Path="../samples/Simple/Simple.csproj" />
+  </Folder>
+  <Project Path="../nuke/_nuke.csproj">
+    <Build Project="false" />
+  </Project>
+  <Project Path="Jellyfin.Sdk.Benchmarks/Jellyfin.Sdk.Benchmarks.csproj" />
+  <Project Path="Jellyfin.Sdk.SourceGenerators/Jellyfin.Sdk.SourceGenerators.csproj" />
+  <Project Path="Jellyfin.Sdk/Jellyfin.Sdk.csproj" />
+</Solution>
