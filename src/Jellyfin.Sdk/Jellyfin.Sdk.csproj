@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="Jellyfin.Sdk.Benchmarks" />
+    <InternalsVisibleTo Include="Jellyfin.Sdk.Tests" />
   </ItemGroup>
   <!-- Code Analyzers-->
   <ItemGroup>
