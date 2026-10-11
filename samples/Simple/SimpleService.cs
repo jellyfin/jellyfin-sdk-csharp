@@ -1,5 +1,6 @@
 using Jellyfin.Sdk;
 using Jellyfin.Sdk.Generated.Models;
+using Jellyfin.Sdk.WebSockets;
 
 namespace Simple;
 
@@ -10,18 +11,22 @@ public class SimpleService : IDisposable
 {
     private readonly JellyfinSdkSettings _sdkClientSettings;
     private readonly JellyfinApiClient _jellyfinApiClient;
+    private readonly JellyfinWebSocketClient _webSocketClient;
 
     /// <summary>
     ///
     /// </summary>
     /// <param name="sdkClientSettings"></param>
     /// <param name="jellyfinApiClient"></param>
+    /// <param name="webSocketClient">The WebSocket client used to watch sessions.</param>
     public SimpleService(
         JellyfinSdkSettings sdkClientSettings,
-        JellyfinApiClient jellyfinApiClient)
+        JellyfinApiClient jellyfinApiClient,
+        JellyfinWebSocketClient webSocketClient)
     {
         _sdkClientSettings = sdkClientSettings;
         _jellyfinApiClient = jellyfinApiClient;
+        _webSocketClient = webSocketClient;
     }
 
     /// <summary>
@@ -103,6 +108,21 @@ public class SimpleService : IDisposable
 
         await PrintViews()
             .ConfigureAwait(false);
+
+        await WatchSessions()
+            .ConfigureAwait(false);
+    }
+
+    private async Task WatchSessions()
+    {
+        Console.WriteLine("Watching sessions for 5 seconds:");
+
+        // The WebSocket connects on the first subscription and closes after the last one is disposed.
+        using var subscription = _webSocketClient.Subscribe<SessionsMessage>(message =>
+            Console.WriteLine($"{message.Data?.Count ?? 0} active sessions"));
+
+        await Task.Delay(TimeSpan.FromSeconds(5))
+            .ConfigureAwait(false);
     }
 
     private async Task PrintViews()
@@ -131,5 +151,6 @@ public class SimpleService : IDisposable
     public void Dispose()
     {
         _jellyfinApiClient.Dispose();
+        _webSocketClient.Dispose();
     }
 }

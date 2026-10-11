@@ -7,5 +7,6 @@
   </Project>
   <Project Path="Jellyfin.Sdk.Benchmarks/Jellyfin.Sdk.Benchmarks.csproj" />
   <Project Path="Jellyfin.Sdk.SourceGenerators/Jellyfin.Sdk.SourceGenerators.csproj" />
+  <Project Path="Jellyfin.Sdk.Tests/Jellyfin.Sdk.Tests.csproj" />
   <Project Path="Jellyfin.Sdk/Jellyfin.Sdk.csproj" />
 </Solution>

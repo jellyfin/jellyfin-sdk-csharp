@@ -3,6 +3,7 @@ using System.Net.Http.Headers;
 using System.Net.Mime;
 using System.Text;
 using Jellyfin.Sdk;
+using Jellyfin.Sdk.WebSockets;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Authentication;
@@ -61,6 +62,7 @@ internal static class Program
             s.GetRequiredService<JellyfinSdkSettings>(),
             s.GetRequiredService<IHttpClientFactory>().CreateClient("Default")));
         serviceCollection.AddScoped<JellyfinApiClient>();
+        serviceCollection.AddSingleton<JellyfinWebSocketClient>();
 
         // Add sample service
         serviceCollection.AddSingleton<SimpleService>();

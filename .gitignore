@@ -240,3 +240,6 @@ pip-log.txt
 .idea/
 
 artifacts/
+
+# Patched OpenAPI specification
+.nuke/temp/jellyfin-openapi.json

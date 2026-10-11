@@ -25,6 +25,8 @@
       "type": "string",
       "enum": [
         "CleanGenerated",
+        "DownloadSpecification",
+        "GenerateClient",
         "RestoreTools",
         "Run",
         "UpdateConfig"

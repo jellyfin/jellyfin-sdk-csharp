@@ -29,5 +29,28 @@
 
 - Uses [Kiota](https://github.com/microsoft/kiota) for generation.
 
+### WebSockets
+
+`JellyfinWebSocketClient` receives server messages such as library changes, remote control commands and session updates.
+It uses the server URL and access token from `JellyfinSdkSettings`.
+
+```csharp
+using var webSocket = new JellyfinWebSocketClient(sdkSettings);
+
+using var subscription = webSocket.Subscribe<LibraryChangedMessage>(message =>
+    Console.WriteLine($"{message.Data?.ItemsAdded?.Count} items added"));
+```
+
+- The connection opens on the first subscription and closes 5 seconds after the last subscription is disposed.
+- Subscribing to `SessionsMessage`, `ActivityLogEntryMessage` or `ScheduledTasksInfoMessage` sends the start and stop
+  messages to the server for you.
+- Keep alive messages are handled for you. `SubscribeAll` receives every other message type, but it does not start the
+  periodic sessions, activity log or scheduled task messages. Those arrive only while a `Subscribe` for that type exists.
+- Each connection attempt reads the server URL and access token from `JellyfinSdkSettings`. Call `Reconnect()` after
+  changing them. A dropped connection reconnects with exponential backoff, configurable through
+  `JellyfinWebSocketOptions.ReconnectPolicy`.
+- Handlers run on the receive loop and should return quickly. Exceptions thrown by handlers are raised through
+  `ErrorOccurred`.
+
 Documentation WIP.
 https://img.shields.io/nuget/v/Jellyfin.Sdk?style=flat-square&label=nuget
