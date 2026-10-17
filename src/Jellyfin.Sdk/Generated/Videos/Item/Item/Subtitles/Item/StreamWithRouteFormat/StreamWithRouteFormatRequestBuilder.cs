@@ -22,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.StreamWithRoute
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="routeFormat">The (route) format of the returned subtitle.</param>
-        public StreamWithRouteFormatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string routeFormat = "") : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/{mediaSource%2Did}/Subtitles/{index%2Did}/Stream.{routeFormat}{?addVttTimeMap*,copyTimestamps*,endPositionTicks*,format*,index*,itemId*,mediaSourceId*,startPositionTicks*}", pathParameters)
+        public StreamWithRouteFormatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string routeFormat = "") : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/{mediaSource%2Did}/Subtitles/{index%2Did}/Stream.{routeFormat}{?addVttTimeMap*,copyTimestamps*,endPositionTicks*,format*,index*,itemId*,mediaSourceId*,startPositionTicks*,vttTimestampMapMpegts*}", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(routeFormat)) PathParameters.Add("routeFormat", routeFormat);
         }
@@ -31,7 +31,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.StreamWithRoute
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamWithRouteFormatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/{mediaSource%2Did}/Subtitles/{index%2Did}/Stream.{routeFormat}{?addVttTimeMap*,copyTimestamps*,endPositionTicks*,format*,index*,itemId*,mediaSourceId*,startPositionTicks*}", rawUrl)
+        public StreamWithRouteFormatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/{mediaSource%2Did}/Subtitles/{index%2Did}/Stream.{routeFormat}{?addVttTimeMap*,copyTimestamps*,endPositionTicks*,format*,index*,itemId*,mediaSourceId*,startPositionTicks*,vttTimestampMapMpegts*}", rawUrl)
         {
         }
         /// <summary>
@@ -128,6 +128,9 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.StreamWithRoute
             /// <summary>The start position of the subtitle in ticks.</summary>
             [QueryParameter("startPositionTicks")]
             public long? StartPositionTicks { get; set; }
+            /// <summary>Optional. The VTT timestamp map MPEGTS value.</summary>
+            [QueryParameter("vttTimestampMapMpegts")]
+            public long? VttTimestampMapMpegts { get; set; }
         }
     }
 }
