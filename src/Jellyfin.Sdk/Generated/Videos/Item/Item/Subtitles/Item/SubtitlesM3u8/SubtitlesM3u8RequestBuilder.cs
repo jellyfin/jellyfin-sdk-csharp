@@ -22,7 +22,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.SubtitlesM3u8
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubtitlesM3u8RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/{mediaSource%2Did}/Subtitles/{index%2Did}/subtitles.m3u8?segmentLength={segmentLength}", pathParameters)
+        public SubtitlesM3u8RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/{mediaSource%2Did}/Subtitles/{index%2Did}/subtitles.m3u8?segmentLength={segmentLength}{&vttTimestampMapMpegts*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.SubtitlesM3u8
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubtitlesM3u8RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/{mediaSource%2Did}/Subtitles/{index%2Did}/subtitles.m3u8?segmentLength={segmentLength}", rawUrl)
+        public SubtitlesM3u8RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/Videos/{item%2Did}/{mediaSource%2Did}/Subtitles/{index%2Did}/subtitles.m3u8?segmentLength={segmentLength}{&vttTimestampMapMpegts*}", rawUrl)
         {
         }
         /// <summary>
@@ -93,6 +93,9 @@ namespace Jellyfin.Sdk.Generated.Videos.Item.Item.Subtitles.Item.SubtitlesM3u8
             /// <summary>The subtitle segment length.</summary>
             [QueryParameter("segmentLength")]
             public int? SegmentLength { get; set; }
+            /// <summary>Optional. The VTT timestamp map MPEGTS value.</summary>
+            [QueryParameter("vttTimestampMapMpegts")]
+            public long? VttTimestampMapMpegts { get; set; }
         }
     }
 }

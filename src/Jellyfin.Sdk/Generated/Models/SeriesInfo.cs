@@ -13,6 +13,14 @@ namespace Jellyfin.Sdk.Generated.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SeriesInfo : IParsable
     {
+        /// <summary>Gets or sets the canned display order group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayOrder { get; set; }
+#nullable restore
+#else
+        public string DisplayOrder { get; set; }
+#endif
         /// <summary>The IndexNumber property</summary>
         public int? IndexNumber { get; set; }
         /// <summary>The IsAutomated property</summary>
@@ -89,6 +97,7 @@ namespace Jellyfin.Sdk.Generated.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "DisplayOrder", n => { DisplayOrder = n.GetStringValue(); } },
                 { "IndexNumber", n => { IndexNumber = n.GetIntValue(); } },
                 { "IsAutomated", n => { IsAutomated = n.GetBoolValue(); } },
                 { "MetadataCountryCode", n => { MetadataCountryCode = n.GetStringValue(); } },
@@ -109,6 +118,7 @@ namespace Jellyfin.Sdk.Generated.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("DisplayOrder", DisplayOrder);
             writer.WriteIntValue("IndexNumber", IndexNumber);
             writer.WriteBoolValue("IsAutomated", IsAutomated);
             writer.WriteStringValue("MetadataCountryCode", MetadataCountryCode);
