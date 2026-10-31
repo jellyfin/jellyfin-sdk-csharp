@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
-    /// <summary>Gets or sets the type of content this segment defines.</summary>
+    /// <summary>Defines the types of content an individual Jellyfin.Database.Implementations.Entities.MediaSegment represents.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MediaSegmentDto_Type
     {

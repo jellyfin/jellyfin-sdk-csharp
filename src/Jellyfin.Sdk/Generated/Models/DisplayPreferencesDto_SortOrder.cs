@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Jellyfin.Sdk.Generated.Models
 {
-    /// <summary>Gets or sets the sort order.</summary>
+    /// <summary>An enum representing the sorting order.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DisplayPreferencesDto_SortOrder
     {

@@ -170,7 +170,7 @@ namespace Jellyfin.Sdk.Generated.Models
 #endif
         /// <summary>The RemoteClientBitrateLimit property</summary>
         public int? RemoteClientBitrateLimit { get; set; }
-        /// <summary>Gets or sets a value indicating what SyncPlay features the user can access.</summary>
+        /// <summary>Enum SyncPlayUserAccessType.</summary>
         public global::Jellyfin.Sdk.Generated.Models.UserPolicy_SyncPlayAccess? SyncPlayAccess { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Jellyfin.Sdk.Generated.Models.UserPolicy"/> and sets the default values.
